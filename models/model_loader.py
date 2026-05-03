@@ -15,7 +15,7 @@ def load_model(model_name: str):
 
         Returns the model_name, None
     """
-    ollama_name = MODEL_NAME_MAP.get(model_name, model_name)
+    ollamaName = MODEL_NAME_MAP.get(model_name, model_name)
 
     # Checking if the ollama model is present on the server or not
     try:
@@ -30,11 +30,44 @@ def load_model(model_name: str):
     
     # Now checking if the model is downloaded or not
     available = [m["name"] for m in response.json().get("models", [])]
-    if not any(ollama_name in a for a in available):
-        print(f" WARNING: Ollama model is not avialbe. Please check again after properly downloing the model")
-        print(f"  Run: ollama pull {ollama_name} and check for the models")
+    if not any(ollamaName in a for a in available):
+        print(f" ERROR: Ollama model is not avialbe. Please check again after properly downloing the model")
+        print(f"  Run: ollama pull {ollamaName} and check for the models")
 
-    print(f"Ollama ready. Using model: {ollama_name}")
-    return ollama_name, None  # (model, tokenizer) — tokenizer is None with Ollama
+    print(f"Ollama ready. Using model: {ollamaName}")
+    return ollamaName, None  # (model, tokenizer) — tokenizer is None with Ollama
+
+def generate_response(model, promptText, maxTokens: int = 2048) -> str:
+    """
+    Generate a response using Ollma model
+
+    Returns:
+        str: Get the response from the ollama model.
+    """
+
+    ollamaName = MODEL_NAME_MAP.get(model, model)
+
+    try:
+        response = requests.post(
+            f"{OLLAMA_BASE_URL}/api/generate",
+            json={
+                "model": ollamaName,
+                "prompt": promptText,
+                "stream": False,
+                "options": {
+                    "temperature": 0,
+                    "num_predict": maxTokens
+                }
+            },
+            timeout=120
+        )
+        response.raise_for_status()
+        return response.json().get("response", "").strip()
+    except requests.exceptions.Timeout:
+        print(f"  WARNING: Request timed out for model {ollamaName}")
+        return ""
+    except Exception as e:
+        print(f"  ERROR: Ollama request failed: {e}")
+        return ""
 
 
