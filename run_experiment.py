@@ -9,6 +9,8 @@ from config import (
     SMOKE_TEST, SMOKE_TEST_SAMPLES, NUM_SAMPLES
 )
 from models.model_loader import load_model, generate_response
+from data.data_loader import load_benchMark
+
 
 def run_liad():
     model, _ = load_model("Qwen/Qwen3.5-9B-Instruct")
@@ -36,6 +38,26 @@ def main():
     # )
     
     # print(f"Response: {response}")
+
+    model, tokenizer = load_model("Qwen/Qwen3.5-9B-Instruct")
+    
+    # Load just 3 questions from the simplest benchmark
+    data = load_benchMark("gsm_symbolic", numSamples=3)
+    
+    # Print the first question to see what it looks like
+    print("Question:", data[0]["question"])
+    print("Answer:", data[0]["answer"])
+    print("Category:", data[0]["category"])
+    print()
+    
+    # Now send it to the model
+    response = generate_response(
+        model,
+        data[0]["question"]
+    )
+    
+    print(f"Model Response: {response}")
+
 
 if __name__ == "__main__":
     main()
