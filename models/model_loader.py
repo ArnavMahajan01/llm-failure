@@ -59,9 +59,10 @@ def generate_response(model, promptText, maxTokens: int = 2048) -> str:
                     "num_predict": maxTokens
                 }
             },
-            timeout=120
+            timeout=180
         )
         response.raise_for_status()
+        print(f"Response: {response.json().get("response", "").strip()}")
         return response.json().get("response", "").strip()
     except requests.exceptions.Timeout:
         print(f"  WARNING: Request timed out for model {ollamaName}")
@@ -70,4 +71,8 @@ def generate_response(model, promptText, maxTokens: int = 2048) -> str:
         print(f"  ERROR: Ollama request failed: {e}")
         return ""
 
-
+def free_model(model):
+    """
+    Nothing to free with Ollama — the server manages memory.
+    """
+    print(f"  Model '{model}' released (Ollama manages memory automatically).")
