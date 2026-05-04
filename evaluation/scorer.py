@@ -49,6 +49,26 @@ def normalize(answer: str) -> str:
 
 
 def isCorrect(predictedAnswer: str, actualAnswer: str) -> bool:
+    predVal = normalize(predictedAnswer)
+    actualVal = normalize(actualAnswer)
 
-    return True
+    if not predVal or not actualVal:
+        return False
+    
+    if predVal == actualVal:
+        return True
+    
+    try:
+        pred_num = float(predVal)
+        truth_num = float(actualVal)
+        if abs(pred_num - truth_num) < 1e-5:
+            return True
+    except ValueError:
+        pass
+
+    # Substring containment (for multi-word answers)
+    if actualVal in predVal or predVal in actualVal:
+        return True
+    #  NNED TO CHECK FOR OTHER DATASET TYPES
+    return False
 
