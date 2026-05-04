@@ -29,7 +29,7 @@ def extractResponse(response: str, benchmark: str) -> str:
     if benchmark in ["gsm_symbolic"]:
         numVal = re.findall(r"-?\d+(?:,\d{3})*(?:\.\d+)?", strippedResponse)
         if numVal:
-            return numVal
+            return numVal[-1].replace(",", "")
         
     lastLine = [line.strip() for line in strippedResponse.split("\n") if line.strip()]
     if lastLine:
@@ -42,7 +42,7 @@ def normalize(answer: str) -> str:
         return ""
     
     answer = answer.strip().lower().replace(",", "")
-    answer = answer.re.sub(r"[$£€¥]", "", answer)
+    answer = re.sub(r"[$£€¥]", "", answer)
     answer = re.sub(r"\.$", "", answer).strip()
 
     return answer
@@ -86,12 +86,12 @@ def score(modelResponse: str, actualVal: str, benchmark: str = "general") -> dic
     """
 
     predictedVal = extractResponse(modelResponse, benchmark)
-    isCorrect = isCorrect(predictedVal, actualVal)
+    correct = isCorrect(predictedVal, actualVal)
 
     return {
         "predicted": predictedVal,
         "ground_truth": actualVal,
-        "correct": isCorrect,
+        "correct": correct,
         "full_response": modelResponse
     }
 
