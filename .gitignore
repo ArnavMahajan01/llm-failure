@@ -2,3 +2,5 @@
 /models/__pycache__
 /deeplearning
 /data/__pycache__
+/evaluation/__pycache__
+/prompts/__pycache__
