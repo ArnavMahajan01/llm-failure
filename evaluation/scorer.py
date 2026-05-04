@@ -1,6 +1,6 @@
 import re
 
-def extractResponse(response: str, benchMark: str) -> str:
+def extractResponse(response: str, benchmark: str) -> str:
 
     if not response:
         return ""
@@ -26,7 +26,7 @@ def extractResponse(response: str, benchMark: str) -> str:
             return value
     
 
-    if benchMark in ["gsm_symbolic"]:
+    if benchmark in ["gsm_symbolic"]:
         numVal = re.findall(r"-?\d+(?:,\d{3})*(?:\.\d+)?", strippedResponse)
         if numVal:
             return numVal
@@ -71,4 +71,27 @@ def isCorrect(predictedAnswer: str, actualAnswer: str) -> bool:
         return True
     #  NNED TO CHECK FOR OTHER DATASET TYPES
     return False
+
+def score(modelResponse: str, actualVal: str, benchmark: str = "general") -> dict:
+    """
+    Full scoring pipeline for a single model response.
+
+    Args:
+        modelResponse:      Full model response string
+        actualVal:  True answer
+        benchmark:     Benchmark name for extraction strategy
+
+    Returns:
+        Dict with keys: predicted, actualVal, correct, full response
+    """
+
+    predictedVal = extractResponse(modelResponse, benchmark)
+    isCorrect = isCorrect(predictedVal, actualVal)
+
+    return {
+        "predicted": predictedVal,
+        "ground_truth": actualVal,
+        "correct": isCorrect,
+        "full_response": modelResponse
+    }
 
