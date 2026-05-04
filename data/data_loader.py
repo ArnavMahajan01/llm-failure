@@ -33,8 +33,8 @@ def _load_gsm_symbolic(numSamples: int) -> list:
 
             sample.append({
                 "question": item.get("question", ""),
-                "answer": str(item.get("answer", "")),
-                # "answer": answer,
+                # "answer": str(item.get("answer", "")),
+                "answer": answer,
                 "category": "arithmetic_symbolic"
             })
             if len(sample) >= numSamples:
