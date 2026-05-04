@@ -37,7 +37,7 @@ def load_model(model_name: str):
     print(f"Ollama ready. Using model: {ollamaName}")
     return ollamaName, None  # (model, tokenizer) — tokenizer is None with Ollama
 
-def generate_response(model, promptText, maxTokens: int = 2048) -> str:
+def generate_response(model, promptText, maxTokens: int = 8192) -> str:
     """
     Generate a response using Ollma model
 
@@ -76,3 +76,4 @@ def free_model(model):
     Nothing to free with Ollama — the server manages memory.
     """
     print(f"  Model '{model}' released (Ollama manages memory automatically).")
+    print(f"  You may need to stop the ollama model manually if the memory is not freed. RUN: ollama stop {model}")
