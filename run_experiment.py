@@ -12,6 +12,8 @@ from config import (
 from models.model_loader import load_model, generate_response
 from data.data_loader import load_benchMark
 from prompts.zeroShot import zeroShotPrompt
+from prompts.randomFewShot import randomFewShotPrompt
+from prompts.targetedFewShots import targetedFewShotPrompt
 from evaluation.scorer import score
 
 
@@ -74,6 +76,12 @@ def run_single_question(
     # Build the prompt
     if condition == "zero_shot":
         prompt = zeroShotPrompt(question, benchmark)
+
+    elif condition == "random_few_shot":
+        prompt = randomFewShotPrompt(question=question, exampleList=example_pool, benchmark=benchmark, numExamples=3, seed=run_idx)
+    
+    elif condition == "targeted_few_shot":
+        prompt, failureType = targetedFewShotPrompt(question=question, benchmark=benchmark, numExamples=3)
 
     else:
         raise ValueError(f"Unknown condition: {condition}")
@@ -141,30 +149,50 @@ def main():
     """
         This is a basic example to see whether the predicted and actual answer are matchng or not
     """
+    conditions = ["zero_shot", "random_few_shot", "targeted_few_shot"]
     model, tokenizer = load_model("Qwen/Qwen3.5-9B-Instruct")
-    data = load_benchMark("gsm_symbolic", numSamples=30)
+    data = load_benchMark("gsm_symbolic", numSamples=25)
+    example_pool = data[:20]   # first 20 as pool
+    eval_data = data[20:]
     
     all_results = []
-    
-    for i, item in enumerate(data):
-        print(f"[{i+1}/30] Processing...")
-        result = run_single_question(
-            model, tokenizer,
-            item["question"],
-            item["answer"],
-            condition="zero_shot",
-            benchmark="gsm_symbolic",
-            example_pool=[],
-            run_idx=i
-        )
 
-        all_results.append(result)
-    
-    saveResult(all_results, "qwen3.5", "gsm_symbolic")
-    
-    # Print summary
-    correct = sum(1 for r in all_results if r["correct"])
-    print(f"\nAccuracy: {correct}/30 ({correct/30*100:.1f}%)")
+    for i, item in enumerate(eval_data):
+        print(f"[{i+1}/{len(eval_data)}] Processing...")
+        item_result = {
+            "question": item["question"],
+            "ground_truth": item["answer"],
+            "conditions": {}
+        }
+
+        for condition in conditions:
+            result = run_single_question(
+                model, tokenizer,
+                item["question"],
+                item["answer"],
+                condition=condition,
+                benchmark="gsm_symbolic",
+                example_pool=example_pool,
+                run_idx=i
+            )
+            item_result["conditions"][condition] = result
+
+        all_results.append(item_result)
+
+        # Save after each question
+        with open(f"{RESULTS_DIR}/qwen3.5__gsm_symbolic.json", "w", encoding="utf-8") as f:
+            json.dump(all_results, f, indent=2, ensure_ascii=False)
+
+    # Print summary AFTER everything is done
+    total = len(all_results)
+    print("\n--- RESULTS SUMMARY ---")
+    for condition in conditions:
+        correct = sum(
+            1 for r in all_results 
+            if r["conditions"][condition]["correct"]
+        )
+        print(f"{condition}: {correct}/{total} ({correct/total*100:.1f}%)")
+
 
 
 if __name__ == "__main__":
