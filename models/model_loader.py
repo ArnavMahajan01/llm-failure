@@ -50,24 +50,25 @@ def generate_response(model, promptText, maxTokens: int = 8192) -> str:
     if "qwen" in ollamaName.lower():
         promptText = promptText + "\n/no_think"
 
-
     try:
         response = requests.post(
-            f"{OLLAMA_BASE_URL}/api/generate",
+            f"{OLLAMA_BASE_URL}/api/chat",
             json={
                 "model": ollamaName,
-                "prompt": promptText,
+                "messages": [{"role": "user", "content": promptText}],
+                "think": False,
                 "stream": False,
                 "options": {
                     "temperature": 0,
                     "num_predict": maxTokens
                 }
             },
-            timeout=180
+            timeout=300
         )
         response.raise_for_status()
-        print(f"Response: {response.json().get("response", "").strip()}")
-        return response.json().get("response", "").strip()
+        result = response.json().get("message", {}).get("content", "").strip()
+        print(f"Response: {result}")
+        return result
     except requests.exceptions.Timeout:
         print(f"  WARNING: Request timed out for model {ollamaName}")
         return ""
