@@ -44,3 +44,57 @@ def _load_gsm_symbolic(numSamples: int) -> list:
     except Exception as error:
         print(f"ERROR: Could not load gsm-symbolic: {error}")
         return list
+    
+def _load_gsm_plus(numSamples: int) -> list:
+    try: 
+        dataset = load_dataset("qintongli/GSM-Plus", split="test")
+        sample = []
+
+        # print(f"Samples {dataset[0]}" )
+
+        for item in dataset:
+            rawAnswer = item.get("answer", "")
+            if "####" in rawAnswer:
+                answer = rawAnswer.split("####")[-1].strip()
+            else:
+                answer = rawAnswer
+
+            sample.append({
+                "question": item.get("question", ""),
+                "answer": str(item.get("answer", "")),
+                # "answer": answer,
+                "category": "arithmetic_symbolic"
+            })
+            if len(sample) >= numSamples:
+                break
+        
+        return sample
+    except Exception as error:
+        print(f"ERROR: Could not load gsm-symbolic: {error}")
+        return list
+    
+def _load_folio(num_samples: int) -> list:
+    try:
+        dataset = load_dataset("yale-nlp/FOLIO", split="validation")
+        samples = []
+
+        for item in dataset:
+            # Combine premises and conclusion into a single question
+            premises = item.get("premises", "")
+            conclusion = item.get("conclusion", "")
+
+            if isinstance(premises, list):
+                premises = " ".join(premises)
+            question = f"Given the following statements:\n{premises}\n\nIs the following true, false, or uncertain?\n{conclusion}"
+            
+            samples.append({
+                "question": question,
+                "answer": str(item.get("label", "")),
+                "category": "formal_logic"
+            })
+            if len(samples) >= num_samples:
+                break
+        return samples
+    except Exception as e:
+        print(f"  WARNING: Could not load FOLIO: {e}")
+        return []
