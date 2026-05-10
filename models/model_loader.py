@@ -47,6 +47,10 @@ def generate_response(model, promptText, maxTokens: int = 8192) -> str:
 
     ollamaName = MODEL_NAME_MAP.get(model, model)
 
+    if "qwen" in ollamaName.lower():
+        promptText = promptText + "\n/no_think"
+
+
     try:
         response = requests.post(
             f"{OLLAMA_BASE_URL}/api/generate",
