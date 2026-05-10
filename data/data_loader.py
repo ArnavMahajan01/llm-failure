@@ -14,6 +14,10 @@ def load_benchMark(benchMarkName: str, numSamples: int = 200) -> list:
 
     if benchMarkName == "gsm_symbolic":
         return _load_gsm_symbolic(numSamples)
+    elif benchMarkName == "gsm_plus":
+        return _load_gsm_plus(numSamples)
+    elif benchMarkName == "folio":
+        return _load_folio(numSamples)
     else:
         raise ValueError(f"Unknown benchmark: {benchMarkName}")
     
@@ -86,7 +90,7 @@ def _load_folio(num_samples: int) -> list:
             if isinstance(premises, list):
                 premises = " ".join(premises)
             question = f"Given the following statements:\n{premises}\n\nIs the following true, false, or uncertain?\n{conclusion}"
-            
+
             samples.append({
                 "question": question,
                 "answer": str(item.get("label", "")),
