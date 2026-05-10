@@ -1,5 +1,5 @@
 SMOKE_TEST = False
-SMOKE_TEST_SAMPLES = 10
+SMOKE_TEST_SAMPLES = 2
 
 # Number of samples to evaluate per benchmark
 NUM_SAMPLES = 200
@@ -9,9 +9,12 @@ MAX_NEW_TOKENS = 8192
 OLLAMA_BASE_URL = "http://localhost:11434"
 
 RESULTS_DIR = "results/raw"
+PROCESSED_DIR = "results/processed"
 
 MODELS = {
-
+    "qwen": [
+         "Qwen/Qwen3.5-9B-Instruct",
+    ]
 }
 
 BENCHMARKS = {
@@ -27,3 +30,9 @@ CONDITIONS = [
     "random_few_shot",
     "targeted_few_shot"
 ]
+
+NUM_EXAMPLES = 3
+# Number of examples reserved from benchmark data for random few-shot pool
+FEW_SHOT_POOL_SIZE = 20
+# Number of times to run each prompt on same model
+NUM_RUNS = 1
