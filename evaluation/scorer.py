@@ -25,8 +25,13 @@ def extractResponse(response: str, benchmark: str) -> str:
         if value:
             return value
     
+    # For FOLIO / logic benchmarks, look for True/False/Uncertain
+    if benchmark == "folio":
+        for label in ["True", "False", "Uncertain"]:
+            if re.search(rf"\b{label}\b", strippedResponse, re.IGNORECASE):
+                return label
 
-    if benchmark in ["gsm_symbolic"]:
+    if benchmark in ["gsm_symbolic", "gsm_plus"]:
         numVal = re.findall(r"-?\d+(?:,\d{3})*(?:\.\d+)?", strippedResponse)
         if numVal:
             return numVal[-1].replace(",", "")
@@ -58,6 +63,7 @@ def isCorrect(predictedAnswer: str, actualAnswer: str) -> bool:
     if predVal == actualVal:
         return True
     
+    # For numeric Values
     try:
         pred_num = float(predVal)
         truth_num = float(actualVal)
@@ -66,6 +72,11 @@ def isCorrect(predictedAnswer: str, actualAnswer: str) -> bool:
     except ValueError:
         pass
 
+    # For Folio
+    for label in ["true", "false", "uncertain"]:
+        if label in predVal and label in actualVal:
+            return True
+        
     # Substring containment (for multi-word answers)
     if actualVal in predVal or predVal in actualVal:
         return True
