@@ -67,7 +67,7 @@ def _load_gsm_plus(numSamples: int) -> list:
                 "question": item.get("question", ""),
                 "answer": str(item.get("answer", "")),
                 # "answer": answer,
-                "category": "arithmetic_symbolic"
+                "category": item.get("perturbation_type", "arithmetic_perturbed")
             })
             if len(sample) >= numSamples:
                 break

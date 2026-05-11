@@ -15,6 +15,7 @@ from prompts.zeroShot import zeroShotPrompt
 from prompts.randomFewShot import randomFewShotPrompt
 from prompts.targetedFewShots import targetedFewShotPrompt
 from evaluation.scorer import score
+from evaluation.taxonomy import classifyError
 
 
 def run_liad():
@@ -71,7 +72,7 @@ def run_single_question(
     Run inference on a single question under one condition.
     Returns a result dict.
     """
-    assigned_failure_type = None
+    failureType = None
 
     # Build the prompt
     if condition == "zero_shot":
@@ -81,7 +82,12 @@ def run_single_question(
         prompt = randomFewShotPrompt(question=question, exampleList=example_pool, benchmark=benchmark, numExamples=NUM_EXAMPLES, seed=run_idx)
     
     elif condition == "targeted_few_shot":
-        prompt, failureType = targetedFewShotPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES)
+        result = targetedFewShotPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES)
+
+        if isinstance(result, tuple):
+            prompt, failureType = result
+        else:
+            prompt = result
 
     else:
         raise ValueError(f"Unknown condition: {condition}")
@@ -96,13 +102,18 @@ def run_single_question(
     # Score the response
     scored = score(response, answer, benchmark)
 
+    errorType = None
+    if not scored["correct"]:
+        errorType = classifyError(question, response, answer, benchmark)
+
     return {
         "run": run_idx,
         "condition": condition,
         "correct": scored["correct"],
         "predicted": scored["predicted"],
         "ground_truth": answer,
-        "assigned_failure_type": assigned_failure_type,
+        "assigned_failure_type": failureType,
+        "error_type": errorType,
         "full_response": response
     }
 
