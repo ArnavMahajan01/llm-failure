@@ -43,6 +43,8 @@ python3 run_experiment.py --smoke
 python3 run_experiment.py --model qwen
 ```
 
+**NOTE: Please note that it takes the model family as paramter in --model and not a single model. Giving the model family like qwen or gemma will process results on all the models present in the model family in config**
+
 ### Single benchmark
 
 ```bash
@@ -61,10 +63,27 @@ python3 run_experiment.py --condition zero_shot
 python3 run_experiment.py
 ```
 
+
+
 **NOTE: You can make a combination of the args to check and test different scenarios**
+
 **Expected runtime:** Full run takes several hours depending on GPU.
+
 Recommended order: run smoke test first, then run one model family at a time.
 
 ## Generating Results
 
 (WORK IN PROGESS FROM THIS POINT ONWARDS)
+
+If you want to process results run **processResults.py**. it can be a wither all the files in the results/raw folder or a combination of files. You can run it as follows
+
+```bash
+python3 -m results.processResults Gemma_Gemma3-1B__gsm_symbolic__20260511_2100.json
+
+```
+
+### Raw Results
+
+At the moment the full and final raw files are as follows
+
+1. Gemma_Gemma3-1B__gsm_symbolic__20260511_2100.json
