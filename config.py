@@ -14,6 +14,9 @@ PROCESSED_DIR = "results/processed"
 MODELS = {
     "qwen": [
          "Qwen/Qwen3.5-9B-Instruct",
+    ],
+    "gemma": [
+        "Gemma/Gemma3-270M"
     ]
 }
 

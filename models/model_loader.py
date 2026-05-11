@@ -6,7 +6,8 @@ from config import (
 )
 
 MODEL_NAME_MAP = {
-    "Qwen/Qwen3.5-9B-Instruct":  "qwen3.5:latest"
+    "Qwen/Qwen3.5-9B-Instruct":  "qwen3.5:latest",
+    "Gemma/Gemma3-270M": "gemma3:270m"
 }
 
 def load_model(model_name: str):
