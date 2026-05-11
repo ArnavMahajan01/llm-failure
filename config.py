@@ -17,6 +17,9 @@ MODELS = {
     ],
     "gemma": [
         "Gemma/Gemma3-1B"
+    ],
+    "llama": [
+        "Llama/Llama3.2-1.5B"
     ]
 }
 

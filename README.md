@@ -86,4 +86,8 @@ python3 -m results.processResults Gemma_Gemma3-1B__gsm_symbolic__20260511_2100.j
 
 At the moment the full and final raw files are as follows
 
+**FOR ~1 Billion Params**
+
 1. Gemma_Gemma3-1B__gsm_symbolic__20260511_2100.json
+2. Qwen_Qwen2-math-1-5B__gsm_symbolic__20260511_2148.json
+3. Llama_Llama3-2-1-5B__gsm_symbolic__20260511_2210.json
