@@ -82,6 +82,34 @@ python3 -m results.processResults Gemma_Gemma3-1B__gsm_symbolic__20260511_2100.j
 
 ```
 
+## Analysis
+
+### Process Results for the Files you want to Visualize
+
+```bash
+python3 -m results.processResults Gemma_Gemma3-1B__gsm_symbolic__20260511_2100.json Qwen_Qwen2-math-1-5B__gsm_symbolic__20260511_2148.json Llama_Llama3-2-1-5B__gsm_symbolic__20260511_2210.json
+
+```
+
+### Visualize
+```bash
+python3 -m analysis.heatmap
+```
+
+Generated charts can then be viewed in ```results/processed/charts```.
+
+#### Figure 1: Baseline vs In-Context Learning Accuracy
+What it tells you: does giving the model examples actually help?
+
+#### Figure 2: Error Taxonomy: Zero-Shot Failure Classification
+This looks at the zero-shot failures specifically and asks: how did the model get it wrong?
+
+#### Figure 3: ICL Recovery Heatmap
+It answers: of the questions each model got wrong under zero-shot, how many did it recover (get right) when given few-shot examples?
+
+#### Figure 4: Failure Mode Profile by Model
+What it tells you: the same insight as fig 2 but visually emphasises the relative composition rather than absolute percentages.
+
 ### Raw Results
 
 At the moment the full and final raw files are as follows
