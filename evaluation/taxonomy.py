@@ -26,6 +26,9 @@ ERROR_TYPES = {
     "off_topic": (
         "Model does not address the question at all. Producing irrelevant context"
     ),
+    "premise_order_sensitivity": (
+        "Model fails when the order of premises or information is changed, even though all the information is still present."
+    ),
     "unknown": (
         "The error is not listed in the model at all."
     )
