@@ -32,6 +32,29 @@ If or when you install a new model you need to add them in **config.py and model
 
 At any time the config values can be changed.
 
+### Variables
+
+| Variable | Description |
+|---|---|
+| `SMOKE_TEST` | Run a quick sanity check instead of full experiment |
+| `SMOKE_TEST_SAMPLES` | Number of samples used in smoke test |
+| `NUM_SAMPLES` | Samples evaluated per benchmark per condition |
+| `MAX_NEW_TOKENS` | Max tokens the model can generate per response |
+| `OLLAMA_BASE_URL` | Local URL where Ollama server is running |
+| `RESULTS_DIR` | Folder path for raw experiment output files |
+| `PROCESSED_DIR` | Folder path for processed/analysed results |
+| `MODELS` | Dict of model families and their HuggingFace IDs |
+| `BENCHMARKS` | Set of benchmarks to evaluate models on |
+| `CONDITIONS` | List of prompting strategies to test |
+| `S5_CONDITIONS` | Conditions that require error-targeted ICL examples |
+| `NUM_EXAMPLES` | Few-shot examples used per prompt (default k=3) |
+| `NUM_EXAMPLES_K5` | Few-shot examples for k=5 targeted condition |
+| `N_SAMPLES_S6` | Samples generated per prompt for self-consistency |
+| `TEMPERATURE_S6` | Sampling temperature for self-consistency decoding |
+| `FEW_SHOT_POOL_SIZE` | Examples reserved from benchmark for random pool |
+| `NUM_RUNS` | Times each prompt is run on the same model |
+
+
 ### Quick Smoke Test (To check if everything works or not)
 ```bash
 python3 run_experiment.py --smoke
