@@ -7,11 +7,11 @@ from datetime import datetime
 import re
 
 from config import (
-    SMOKE_TEST, SMOKE_TEST_SAMPLES, NUM_SAMPLES, RESULTS_DIR, MAX_NEW_TOKENS, NUM_EXAMPLES, FEW_SHOT_POOL_SIZE, NUM_RUNS, MODELS, BENCHMARKS, CONDITIONS
+    SMOKE_TEST, SMOKE_TEST_SAMPLES, NUM_SAMPLES, RESULTS_DIR, MAX_NEW_TOKENS, NUM_EXAMPLES, NUM_EXAMPLES_K5, FEW_SHOT_POOL_SIZE, NUM_RUNS, MODELS, BENCHMARKS, CONDITIONS
 )
 from models.model_loader import load_model, generate_response, free_model
 from data.data_loader import load_benchMark
-from prompts.zeroShot import zeroShotPrompt
+from prompts.zeroShot import zeroShotBaselinePrompt, zeroShotPrompt
 from prompts.randomFewShot import randomFewShotPrompt
 from prompts.targetedFewShots import targetedFewShotPrompt
 from evaluation.scorer import score
@@ -75,14 +75,33 @@ def run_single_question(
     failureType = None
 
     # Build the prompt
-    if condition == "zero_shot":
+    if condition == "zero_shot_baseline":
+        prompt = zeroShotBaselinePrompt(question, benchmark)
+
+    elif condition == "zero_shot":
         prompt = zeroShotPrompt(question, benchmark)
 
     elif condition == "random_few_shot":
         prompt = randomFewShotPrompt(question=question, exampleList=example_pool, benchmark=benchmark, numExamples=NUM_EXAMPLES, seed=run_idx)
     
+    elif condition == "targeted_few_shot_answer_only":
+        result = targetedFewShotPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES, use_cot=False)
+
+        if isinstance(result, tuple):
+            prompt, failureType = result
+        else:
+            prompt = result
+
     elif condition == "targeted_few_shot":
         result = targetedFewShotPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES)
+
+        if isinstance(result, tuple):
+            prompt, failureType = result
+        else:
+            prompt = result
+
+    elif condition == "targeted_few_shot_k5":
+        result = targetedFewShotPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES_K5)
 
         if isinstance(result, tuple):
             prompt, failureType = result
