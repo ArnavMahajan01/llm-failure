@@ -7,14 +7,15 @@ from datetime import datetime
 import re
 
 from config import (
-    SMOKE_TEST, SMOKE_TEST_SAMPLES, NUM_SAMPLES, RESULTS_DIR, MAX_NEW_TOKENS, NUM_EXAMPLES, NUM_EXAMPLES_K5, FEW_SHOT_POOL_SIZE, NUM_RUNS, MODELS, BENCHMARKS, CONDITIONS
+    SMOKE_TEST, SMOKE_TEST_SAMPLES, NUM_SAMPLES, RESULTS_DIR, MAX_NEW_TOKENS, NUM_EXAMPLES, NUM_EXAMPLES_K5, FEW_SHOT_POOL_SIZE, NUM_RUNS, MODELS, BENCHMARKS, CONDITIONS, N_SAMPLES_S6, TEMPERATURE_S6
 )
 from models.model_loader import load_model, generate_response, free_model
 from data.data_loader import load_benchMark
 from prompts.zeroShot import zeroShotBaselinePrompt, zeroShotPrompt
 from prompts.randomFewShot import randomFewShotPrompt
 from prompts.targetedFewShots import targetedFewShotPrompt
-from evaluation.scorer import score
+from prompts.errorTargetedPrompt import errorTargetedICLPrompt
+from evaluation.scorer import score, majorityVote, isCorrect
 from evaluation.taxonomy import classifyError
 
 
@@ -107,6 +108,44 @@ def run_single_question(
             prompt, failureType = result
         else:
             prompt = result
+
+    elif condition == "error_targeted_icl":
+        prompt = errorTargetedICLPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES, showError=True, randomClass=False)
+
+    elif condition == "error_targeted_icl_random":
+        prompt = errorTargetedICLPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES, showError=True, randomClass=True)
+
+    elif condition == "error_targeted_icl_correct_only":
+        prompt = errorTargetedICLPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES, showError=False, randomClass=False)
+
+    elif condition == "self_consistency":
+        prompt = zeroShotPrompt(question, benchmark)
+        predictions = []
+        allResponses = []
+        for _ in range(N_SAMPLES_S6):
+            try:
+                resp = generate_response(model, prompt, temperature=TEMPERATURE_S6)
+            except Exception as e:
+                print(f"      ERROR during self_consistency inference: {e}")
+                resp = ""
+            s = score(resp, answer, benchmark)
+            predictions.append(s["predicted"])
+            allResponses.append(resp)
+
+        votedAnswer = majorityVote(predictions)
+        correct = isCorrect(votedAnswer, answer)
+        errorType = None if correct else classifyError(question, votedAnswer, answer, benchmark)
+
+        return {
+            "run": run_idx,
+            "condition": condition,
+            "correct": correct,
+            "predicted": votedAnswer,
+            "ground_truth": answer,
+            "assigned_failure_type": None,
+            "error_type": errorType,
+            "full_response": " ||| ".join(allResponses)
+        }
 
     else:
         raise ValueError(f"Unknown condition: {condition}")
