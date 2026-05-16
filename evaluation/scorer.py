@@ -1,4 +1,5 @@
 import re
+from collections import Counter
 
 def extractResponse(response: str, benchmark: str) -> str:
 
@@ -82,6 +83,13 @@ def isCorrect(predictedAnswer: str, actualAnswer: str) -> bool:
         return True
     #  NNED TO CHECK FOR OTHER DATASET TYPES
     return False
+
+def majorityVote(predictions: list) -> str:
+    cleaned = [normalize(p) for p in predictions if p]
+    if not cleaned:
+        return ""
+    return Counter(cleaned).most_common(1)[0][0]
+
 
 def score(modelResponse: str, actualVal: str, benchmark: str = "general") -> dict:
     """

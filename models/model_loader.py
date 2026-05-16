@@ -40,7 +40,7 @@ def load_model(model_name: str):
     print(f"Ollama ready. Using model: {ollamaName}")
     return ollamaName, None  # (model, tokenizer) — tokenizer is None with Ollama
 
-def generate_response(model, promptText, maxTokens: int = 8192) -> str:
+def generate_response(model, promptText, maxTokens: int = 8192, temperature: float = 0) -> str:
     """
     Generate a response using Ollma model
 
@@ -62,7 +62,7 @@ def generate_response(model, promptText, maxTokens: int = 8192) -> str:
                 "think": False,
                 "stream": False,
                 "options": {
-                    "temperature": 0,
+                    "temperature": temperature,
                     "num_predict": maxTokens
                 }
             },
