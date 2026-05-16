@@ -32,12 +32,16 @@ BENCHMARKS = {
 }
 
 CONDITIONS = [
+    "zero_shot_baseline",
     "zero_shot",
+    "targeted_few_shot_answer_only",
     "random_few_shot",
-    "targeted_few_shot"
+    "targeted_few_shot",
+    "targeted_few_shot_k5",
 ]
 
 NUM_EXAMPLES = 3
+NUM_EXAMPLES_K5 = 5
 # Number of examples reserved from benchmark data for random few-shot pool
 FEW_SHOT_POOL_SIZE = 20
 # Number of times to run each prompt on same model
