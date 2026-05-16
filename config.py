@@ -38,7 +38,12 @@ CONDITIONS = [
     "random_few_shot",
     "targeted_few_shot",
     "targeted_few_shot_k5",
+    "error_targeted_icl",
+    "error_targeted_icl_random",
+    "error_targeted_icl_correct_only",
 ]
+
+S5_CONDITIONS = {"error_targeted_icl", "error_targeted_icl_random", "error_targeted_icl_correct_only"}
 
 NUM_EXAMPLES = 3
 NUM_EXAMPLES_K5 = 5
