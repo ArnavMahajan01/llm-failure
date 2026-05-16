@@ -1,5 +1,34 @@
 # Builds prompts with no examples.
-# This is the baseline condition for all experiments.
+# zeroShotBaselinePrompt = S0: bare question, no CoT instruction.
+# zeroShotPrompt         = S1: zero-shot with explicit "step by step" CoT trigger.
+
+def zeroShotBaselinePrompt(question: str, benchmark: str) -> str:
+    if benchmark in ["gsm_symbolic", "gsm_plus"]:
+        instructions = (
+            "You are a math teacher. Solve the following math problem.\n"
+            "At the end, give the final answer in a new line starting with 'Answer: '"
+        )
+    elif benchmark in ["folio"]:
+        instructions = (
+            "Read the following statements carefully and determine whether the conclusion is True, False, or Uncertain.\n"
+            "At the end, give the final answer in a new line starting with 'Answer: '\n"
+            "The answer must be exactly one of: True, False, Uncertain."
+        )
+    else:
+        instructions = (
+            "Answer the following question.\n"
+            "At the end, give the final answer in a new line starting with 'Answer: '"
+        )
+
+    prompt = f"""{instructions}
+
+    Problem: {question}
+
+    Solution:
+    """
+
+    return prompt
+
 
 def zeroShotPrompt(question: str, benchmark: str) -> str:
     if benchmark in ["gsm_symbolic", "gsm_plus"]:
