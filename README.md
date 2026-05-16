@@ -36,7 +36,7 @@ At any time the config values can be changed.
 
 | Variable | Description |
 |---|---|
-| `SMOKE_TEST` | Run a quick sanity check instead of full experiment |
+| `SMOKE_TEST` | Run a quick check instead of full experiment |
 | `SMOKE_TEST_SAMPLES` | Number of samples used in smoke test |
 | `NUM_SAMPLES` | Samples evaluated per benchmark per condition |
 | `MAX_NEW_TOKENS` | Max tokens the model can generate per response |
@@ -46,11 +46,11 @@ At any time the config values can be changed.
 | `MODELS` | Dict of model families and their HuggingFace IDs |
 | `BENCHMARKS` | Set of benchmarks to evaluate models on |
 | `CONDITIONS` | List of prompting strategies to test |
-| `S5_CONDITIONS` | Conditions that require error-targeted ICL examples |
+| `S5_CONDITIONS` | Conditions that require errorb targeted ICL examples |
 | `NUM_EXAMPLES` | Few-shot examples used per prompt (default k=3) |
 | `NUM_EXAMPLES_K5` | Few-shot examples for k=5 targeted condition |
-| `N_SAMPLES_S6` | Samples generated per prompt for self-consistency |
-| `TEMPERATURE_S6` | Sampling temperature for self-consistency decoding |
+| `N_SAMPLES_S6` | Samples generated per prompt for self consistency |
+| `TEMPERATURE_S6` | Sampling temperature for self consistency decoding |
 | `FEW_SHOT_POOL_SIZE` | Examples reserved from benchmark for random pool |
 | `NUM_RUNS` | Times each prompt is run on the same model |
 
