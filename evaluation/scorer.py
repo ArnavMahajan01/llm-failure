@@ -37,7 +37,7 @@ def extractResponse(response: str, benchmark: str) -> str:
         if numVal:
             return numVal[-1].replace(",", "")
 
-    if benchmark == "bigbench_hard":
+    if benchmark == "bigbench_hard" or benchmark == "bigbench_hard_tracking":
         match = re.search(r"\\boxed\{([A-Ea-e])\}", strippedResponse)
         if match:
             return f"({match.group(1).upper()})"

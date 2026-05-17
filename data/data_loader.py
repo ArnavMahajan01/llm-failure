@@ -19,7 +19,9 @@ def load_benchMark(benchMarkName: str, numSamples: int = 200) -> list:
     elif benchMarkName == "gsm_ic":
         return _load_gsm_ic(numSamples)
     elif benchMarkName == "bigbench_hard":
-        return _load_bigbench_hard(numSamples)
+        return _load_bigbench_hard(numSamples, "logical_deduction_five_objects", "logical_deduction")
+    elif benchMarkName == "bigbench_hard_tracking":
+        return _load_bigbench_hard(numSamples, "tracking_shuffled_objects_five_objects", "object_tracking")
     elif benchMarkName == "folio":
         return _load_folio(numSamples)
     else:
@@ -133,22 +135,23 @@ def _load_gsm_ic(numSamples: int) -> list:
         print(f"ERROR: Could not load gsm-ic: {error}")
         return list
     
-def _load_bigbench_hard(numSamples: int) -> list:
+def _load_bigbench_hard(numSamples: int, subset: str, category: str) -> list:
     try:
-        dataset = load_dataset("lukaemon/bbh", "logical_deduction_five_objects", split="test")
+        dataset = load_dataset("lukaemon/bbh", subset, split="test")
         sample = []
 
         for item in dataset:
             sample.append({
                 "question": item.get("input", ""),
                 "answer": item.get("target", ""),
-                "category": "logical_deduction"
+                "category": category
             })
             if len(sample) >= numSamples:
                 break
-
+                
         return sample
     except Exception as error:
-        print(f"ERROR: Could not load bigbench-hard: {error}")
+        print(f"ERROR: Could not load bigbench-hard {subset}: {error}")
         return []
+    
     
