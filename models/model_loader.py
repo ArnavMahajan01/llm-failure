@@ -9,7 +9,10 @@ MODEL_NAME_MAP = {
     "Qwen/Qwen3.5-9B-Instruct":  "qwen3.5:latest",
     "Gemma/Gemma3-1B": "gemma3:1b",
     "Qwen/Qwen2-math-1.5B": "qwen2-math:1.5b",
-    "Llama/Llama3.2-1.5B": "llama3.2:1b"
+    "Llama/Llama3.2-1.5B": "llama3.2:1b",
+    "Qwen/Qwen2.5-3B": "qwen2.5:3b",
+    "Gemma/Gemma3-4B": "gemma3:4b",
+    "Llama/Llama3.2-3B": "llama3.2:3b",
 }
 
 def load_model(model_name: str):
