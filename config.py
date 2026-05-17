@@ -2,7 +2,7 @@ SMOKE_TEST = False
 SMOKE_TEST_SAMPLES = 2
 
 # Number of samples to evaluate per benchmark
-NUM_SAMPLES = 200
+NUM_SAMPLES = 10
 MAX_NEW_TOKENS = 8192
 
 # OLLAMA BASE URL

@@ -67,7 +67,8 @@ def run_single_question(
     condition: str,
     benchmark: str,
     example_pool: list,
-    run_idx: int
+    run_idx: int,
+    category: str = None
 ) -> dict:
     """
     Run inference on a single question under one condition.
@@ -77,10 +78,10 @@ def run_single_question(
 
     # Build the prompt
     if condition == "zero_shot_baseline":
-        prompt = zeroShotBaselinePrompt(question, benchmark)
+        prompt = zeroShotBaselinePrompt(question, benchmark, category=category)
 
     elif condition == "zero_shot":
-        prompt = zeroShotPrompt(question, benchmark)
+        prompt = zeroShotPrompt(question, benchmark, category=category)
 
     elif condition == "random_few_shot":
         prompt = randomFewShotPrompt(question=question, exampleList=example_pool, benchmark=benchmark, numExamples=NUM_EXAMPLES, seed=run_idx)
@@ -203,12 +204,12 @@ def runbenchmarkOnModel(model, tokenizer, modelname: str, benchmark: str, condit
         question = item["question"]
         answer = item["answer"]
 
-        print(f"[{i+1} / {total}] Evaluting Wuestion")
+        print(f"[{i+1} / {total}] Evaluting Question")
 
         result = {
             "question": question,
             "ground_truth": answer,
-            "benchmark_category": item.get("category", "unknown"),
+            "benchmark_category": item.get("category") or "unknown",
             "conditions": {}
         }
 
@@ -223,7 +224,8 @@ def runbenchmarkOnModel(model, tokenizer, modelname: str, benchmark: str, condit
                     condition=condition,
                     benchmark=benchmark,
                     example_pool=examplespool,
-                    run_idx=run_idx
+                    run_idx=run_idx,
+                    category=item.get("category")
                 )
                 runs.append(itemResult)
 

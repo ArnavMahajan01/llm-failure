@@ -9,20 +9,22 @@ def extractResponse(response: str, benchmark: str) -> str:
     # To remove the whitespaces from front and back
     strippedResponse = response.strip();
 
-    matchAnswer = re.search(
+    # Search for all "Answer: ..." occurrences and pick the first one that
+    # isn't inside a LaTeX \text{} macro (those start with a stray '}').
+    for matchAnswer in re.finditer(
         r"answer\s*:\s*(.+?)(?:\n|$)",
         strippedResponse,
         re.IGNORECASE
-    )
-
-    # if matchAnswer:
-    #     value = answerMatch() # SOMETHEING HERE
-
-    #     return value
-
-    if matchAnswer:
+    ):
         value = matchAnswer.group(1).strip()
-        value = re.sub(r"[.,;]$", "", value).strip()
+        # Skip captures that are continuations of \text{Answer:} LaTeX noise
+        if value.startswith("}"):
+            continue
+        value = re.sub(r"[.,;*]+$", "", value).strip()
+        # Strip common LaTeX wrappers like \boxed{...} and extract inner text
+        boxed = re.search(r"\\boxed\{([^}]+)\}", value)
+        if boxed:
+            value = boxed.group(1).strip()
         if value:
             return value
     
@@ -53,7 +55,7 @@ def normalize(answer: str) -> str:
         return ""
     
     answer = answer.strip().lower().replace(",", "")
-    answer = re.sub(r"[$£€¥]", "", answer)
+    answer = re.sub(r"[$£€¥%]", "", answer)
     answer = re.sub(r"\.$", "", answer).strip()
 
     return answer
@@ -83,10 +85,19 @@ def isCorrect(predictedAnswer: str, actualAnswer: str) -> bool:
         if label in predVal and label in actualVal:
             return True
         
-    # Substring containment (for multi-word answers)
-    if actualVal in predVal or predVal in actualVal:
-        return True
-    #  NNED TO CHECK FOR OTHER DATASET TYPES
+    # Substring containment only for non-numeric answers (e.g. FOLIO labels)
+    # Avoided for numbers: "7" would incorrectly match inside "17"
+    def is_numeric(s):
+        try:
+            float(s)
+            return True
+        except ValueError:
+            return False
+
+    if not is_numeric(actualVal) and not is_numeric(predVal):
+        if actualVal in predVal or predVal in actualVal:
+            return True
+
     return False
 
 def majorityVote(predictions: list) -> str:

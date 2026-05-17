@@ -75,7 +75,7 @@ def _load_gsm_plus(numSamples: int) -> list:
                 "question": item.get("question", ""),
                 "answer": str(item.get("answer", "")),
                 # "answer": answer,
-                "category": item.get("perturbation_type", "arithmetic_perturbed")
+                "category": "arithmetic_perturbed"
             })
             if len(sample) >= numSamples:
                 break
@@ -127,7 +127,7 @@ def _load_gsm_ic(numSamples: int) -> list:
                 "question": item.get("question", ""),
                 "answer": str(item.get("answer", "")),
                 # "answer": answer,
-                "category": item.get("arithmetic_irrelevant_context")
+                "category": "arithmetic_word_problem"
             })
             if len(sample) >= numSamples:
                 break
