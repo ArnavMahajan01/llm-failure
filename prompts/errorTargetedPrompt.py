@@ -411,7 +411,12 @@ def errorTargetedICLPrompt(
                 f"Answer: {example['answer']}\n\n"
             )
 
-    suffix = "Write your final answer as 'Answer: [number or value]'"
+    if benchmark in ["folio"]:
+        suffix = "Write your final answer as 'Answer: True', 'Answer: False', or 'Answer: Uncertain'"
+    elif benchmark in ["bigbench_hard", "bigbench_hard_tracking"]:
+        suffix = "Write your final answer as 'Answer: (A)', 'Answer: (B)', etc."
+    else:
+        suffix = "Write your final answer as 'Answer: [number or value]'"
 
     prompt = f"""{instruction}
 

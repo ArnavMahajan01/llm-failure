@@ -330,6 +330,260 @@ TARGETED_EXAMPLES = {
             "answer": "7.5",
         },
     ],
+
+    "logical_deduction": [
+        {
+            "question": (
+                "On a branch, there are five birds: a quail, an owl, a raven, a falcon, and a robin.\n"
+                "The owl is the leftmost. The robin is to the left of the raven.\n"
+                "The quail is the rightmost. The raven is the third from the left.\n"
+                "Options:\n(A) The quail is the rightmost\n(B) The owl is the rightmost\n"
+                "(C) The raven is the rightmost\n(D) The falcon is the rightmost\n(E) The robin is the rightmost"
+            ),
+            "solution": (
+                "Step 1: Owl = position 1 (leftmost).\n"
+                "Step 2: Quail = position 5 (rightmost).\n"
+                "Step 3: Raven = position 3 (third from left).\n"
+                "Step 4: Robin is left of raven, so robin = position 2.\n"
+                "Step 5: Falcon fills the remaining position 4.\n"
+                "Order: owl, robin, raven, falcon, quail.\n"
+                "The quail is the rightmost."
+            ),
+            "answer": "(A)",
+        },
+        {
+            "question": (
+                "Five people are standing in a line: Alice, Bob, Carol, Dave, Eve.\n"
+                "Bob is second. Carol is immediately right of Bob. Alice is leftmost.\n"
+                "Dave is rightmost. Which position is Eve?\n"
+                "Options:\n(A) 1st\n(B) 2nd\n(C) 3rd\n(D) 4th\n(E) 5th"
+            ),
+            "solution": (
+                "Step 1: Alice = position 1 (leftmost).\n"
+                "Step 2: Bob = position 2.\n"
+                "Step 3: Carol immediately right of Bob = position 3.\n"
+                "Step 4: Dave = position 5 (rightmost).\n"
+                "Step 5: Eve fills the remaining position 4.\n"
+                "Eve is in position 4."
+            ),
+            "answer": "(D)",
+        },
+        {
+            "question": (
+                "Five books are on a shelf: red, blue, green, yellow, purple.\n"
+                "Red is leftmost. Blue is third from the left. Green is immediately right of blue.\n"
+                "Yellow is rightmost. Which book is second from the left?\n"
+                "Options:\n(A) Red\n(B) Purple\n(C) Blue\n(D) Green\n(E) Yellow"
+            ),
+            "solution": (
+                "Step 1: Red = position 1 (leftmost).\n"
+                "Step 2: Blue = position 3.\n"
+                "Step 3: Green immediately right of blue = position 4.\n"
+                "Step 4: Yellow = position 5 (rightmost).\n"
+                "Step 5: Purple fills the remaining position 2.\n"
+                "The second book is purple."
+            ),
+            "answer": "(B)",
+        },
+        {
+            "question": (
+                "Five animals are in cages in a row: cat, dog, fish, bird, hamster.\n"
+                "Dog is second. Fish is immediately right of dog. Cat is leftmost.\n"
+                "Bird is rightmost. Which position is the hamster?\n"
+                "Options:\n(A) 1st\n(B) 2nd\n(C) 3rd\n(D) 4th\n(E) 5th"
+            ),
+            "solution": (
+                "Step 1: Cat = position 1 (leftmost).\n"
+                "Step 2: Dog = position 2.\n"
+                "Step 3: Fish immediately right of dog = position 3.\n"
+                "Step 4: Bird = position 5 (rightmost).\n"
+                "Step 5: Hamster fills the remaining position 4.\n"
+                "The hamster is in position 4."
+            ),
+            "answer": "(D)",
+        },
+        {
+            "question": (
+                "Five boxes are stacked: white, black, grey, brown, orange.\n"
+                "Grey is in the middle. White is at the bottom. Brown is immediately above grey.\n"
+                "Orange is at the top. Which box is second from the bottom?\n"
+                "Options:\n(A) White\n(B) Black\n(C) Grey\n(D) Brown\n(E) Orange"
+            ),
+            "solution": (
+                "Step 1: White = position 1 (bottom).\n"
+                "Step 2: Grey = position 3 (middle).\n"
+                "Step 3: Brown immediately above grey = position 4.\n"
+                "Step 4: Orange = position 5 (top).\n"
+                "Step 5: Black fills the remaining position 2.\n"
+                "Second from the bottom is black."
+            ),
+            "answer": "(B)",
+        },
+    ],
+
+    "object_tracking": [
+        {
+            "question": (
+                "Alice has a red ball and a blue cube. Bob has a green pen.\n"
+                "Alice passes the red ball to Bob.\n"
+                "Bob passes the green pen to Alice.\n"
+                "Who has the red ball?"
+            ),
+            "solution": (
+                "Start: Alice has red ball, blue cube. Bob has green pen.\n"
+                "Step 1: Alice passes red ball to Bob. Alice has blue cube. Bob has green pen, red ball.\n"
+                "Step 2: Bob passes green pen to Alice. Alice has blue cube, green pen. Bob has red ball.\n"
+                "Bob has the red ball."
+            ),
+            "answer": "Bob",
+        },
+        {
+            "question": (
+                "A coin starts in box A. There are four boxes: A, B, C, D.\n"
+                "The coin is moved from box A to box C.\n"
+                "The coin is moved from box C to box B.\n"
+                "The coin is moved from box B to box D.\n"
+                "Where is the coin?"
+            ),
+            "solution": (
+                "Start: coin in box A.\n"
+                "Step 1: coin moved to box C.\n"
+                "Step 2: coin moved to box B.\n"
+                "Step 3: coin moved to box D.\n"
+                "The coin is in box D."
+            ),
+            "answer": "D",
+        },
+        {
+            "question": (
+                "Carol has a watch. Dave has a notebook. Eve has nothing.\n"
+                "Carol gives the watch to Dave.\n"
+                "Dave gives the notebook to Carol.\n"
+                "Dave gives the watch to Eve.\n"
+                "Who has the watch?"
+            ),
+            "solution": (
+                "Start: Carol has watch. Dave has notebook. Eve has nothing.\n"
+                "Step 1: Carol gives watch to Dave. Carol has nothing. Dave has notebook and watch.\n"
+                "Step 2: Dave gives notebook to Carol. Carol has notebook. Dave has watch.\n"
+                "Step 3: Dave gives watch to Eve. Dave has nothing. Eve has watch.\n"
+                "Eve has the watch."
+            ),
+            "answer": "Eve",
+        },
+        {
+            "question": (
+                "There are three bags: red, blue, green.\n"
+                "A key is in the red bag. A coin is in the blue bag. A pen is in the green bag.\n"
+                "The key is moved to the blue bag.\n"
+                "The coin is moved to the green bag.\n"
+                "What is in the red bag?"
+            ),
+            "solution": (
+                "Start: red bag has key. Blue bag has coin. Green bag has pen.\n"
+                "Step 1: key moved to blue bag. Red bag is empty. Blue bag has coin and key.\n"
+                "Step 2: coin moved to green bag. Blue bag has only key. Green bag has pen and coin.\n"
+                "The red bag is empty."
+            ),
+            "answer": "nothing",
+        },
+        {
+            "question": (
+                "Five people pass a ball in sequence: Ana, Ben, Cai, Dan, Eve.\n"
+                "Ana starts with the ball.\n"
+                "Ana passes to Ben. Ben passes to Cai. Cai passes to Dan. Dan passes to Eve.\n"
+                "Who has the ball?"
+            ),
+            "solution": (
+                "Start: Ana has ball.\n"
+                "Step 1: Ana passes to Ben. Ben has ball.\n"
+                "Step 2: Ben passes to Cai. Cai has ball.\n"
+                "Step 3: Cai passes to Dan. Dan has ball.\n"
+                "Step 4: Dan passes to Eve. Eve has ball.\n"
+                "Eve has the ball."
+            ),
+            "answer": "Eve",
+        },
+    ],
+
+    "formal_logic": [
+        {
+            "question": (
+                "All members of the Zeta club are athletes. All athletes exercise daily.\n"
+                "Maria is a member of the Zeta club.\n"
+                "Conclusion: Maria exercises daily.\n"
+                "Is the conclusion True, False, or Uncertain?"
+            ),
+            "solution": (
+                "P1: All Zeta club members are athletes.\n"
+                "P2: All athletes exercise daily.\n"
+                "P3: Maria is a Zeta club member.\n"
+                "Step 1: Maria is a Zeta club member → Maria is an athlete (by P1).\n"
+                "Step 2: Maria is an athlete → Maria exercises daily (by P2).\n"
+                "The conclusion follows directly from the premises."
+            ),
+            "answer": "True",
+        },
+        {
+            "question": (
+                "Some students passed the exam. Alex is a student.\n"
+                "Conclusion: Alex passed the exam.\n"
+                "Is the conclusion True, False, or Uncertain?"
+            ),
+            "solution": (
+                "P1: Some students passed the exam. (Not all — only a subset.)\n"
+                "P2: Alex is a student.\n"
+                "P1 only tells us that at least one student passed, not that every student passed.\n"
+                "We cannot determine whether Alex specifically passed.\n"
+                "The conclusion cannot be confirmed or denied."
+            ),
+            "answer": "Uncertain",
+        },
+        {
+            "question": (
+                "No mammals are cold-blooded. Snakes are cold-blooded.\n"
+                "Conclusion: Snakes are mammals.\n"
+                "Is the conclusion True, False, or Uncertain?"
+            ),
+            "solution": (
+                "P1: No mammals are cold-blooded.\n"
+                "P2: Snakes are cold-blooded.\n"
+                "If snakes were mammals, they could not be cold-blooded (by P1).\n"
+                "But P2 states snakes are cold-blooded.\n"
+                "Therefore snakes cannot be mammals."
+            ),
+            "answer": "False",
+        },
+        {
+            "question": (
+                "Every student who studies hard passes. Not all students study hard.\n"
+                "Conclusion: Some students fail.\n"
+                "Is the conclusion True, False, or Uncertain?"
+            ),
+            "solution": (
+                "P1: If a student studies hard, they pass.\n"
+                "P2: Not all students study hard — so some students do not study hard.\n"
+                "P1 only guarantees passing for those who study hard.\n"
+                "Students who do not study hard may or may not pass — we are not told.\n"
+                "We cannot confirm that those students definitely fail."
+            ),
+            "answer": "Uncertain",
+        },
+        {
+            "question": (
+                "All fruits contain seeds. Oranges are fruits. Tomatoes are fruits.\n"
+                "Conclusion: Both oranges and tomatoes contain seeds.\n"
+                "Is the conclusion True, False, or Uncertain?"
+            ),
+            "solution": (
+                "P1: All fruits contain seeds.\n"
+                "P2: Oranges are fruits → oranges contain seeds (by P1).\n"
+                "P3: Tomatoes are fruits → tomatoes contain seeds (by P1).\n"
+                "Both conclusions follow directly from the premises."
+            ),
+            "answer": "True",
+        },
+    ],
 }
 
 DISTRACTOR_KEYWORDS = [
@@ -349,6 +603,13 @@ MULTI_HOP_KEYWORDS = [
     "as fast as", "as many as", "as much as", "half as"
 ]
 
+BENCHMARK_CATEGORY_MAP = {
+    "folio": "formal_logic",
+    "bigbench_hard": "logical_deduction",
+    "bigbench_hard_tracking": "object_tracking",
+}
+
+
 def classifyQuestions(question: str) -> str:
     questionLowered = question.lower()
 
@@ -366,13 +627,16 @@ def classifyQuestions(question: str) -> str:
     bestCategory = max(scores, key = scores.get)
 
     if scores[bestCategory] == 0:
-        return "arithmatic"
+        return "arithmetic"
     
     return bestCategory
 
 
 def targetedFewShotPrompt(question: str, benchmark: str, numExamples: int = 3, use_cot: bool = True) -> str:
-    failureType = classifyQuestions(question)
+    if benchmark in BENCHMARK_CATEGORY_MAP:
+        failureType = BENCHMARK_CATEGORY_MAP[benchmark]
+    else:
+        failureType = classifyQuestions(question)
 
     examples = TARGETED_EXAMPLES.get(failureType, TARGETED_EXAMPLES["arithmetic"])
     exampleToUse = examples[:numExamples]
