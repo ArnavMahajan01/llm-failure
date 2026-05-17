@@ -1,0 +1,356 @@
+[
+  {
+    "question": "The school has 14 boys and 10 girls. If 4 boys and 3 girls drop out, how many boys and girls are left?",
+    "ground_truth": "17",
+    "benchmark_category": "arithmetic_perturbed",
+    "conditions": {
+      "zero_shot_baseline": {
+        "majority_correct": false,
+        "correct_count": 0,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "zero_shot_baseline",
+            "correct": false,
+            "predicted": "7 girls and 10 boys",
+            "ground_truth": "17",
+            "assigned_failure_type": null,
+            "error_type": "drifting",
+            "full_response": "Solution:\nStart with the initial number of boys: 14.\nSubtract the 4 boys who dropped out: 14 - 4 = 10 boys.\nSubtract the 3 girls who dropped out: 10 - 3 = 7 girls.\n\nAnswer: 7 girls and 10 boys"
+          }
+        ]
+      },
+      "zero_shot": {
+        "majority_correct": false,
+        "correct_count": 0,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "zero_shot",
+            "correct": false,
+            "predicted": "** There are 10 boys and 7 girls left",
+            "ground_truth": "17",
+            "assigned_failure_type": null,
+            "error_type": "drifting",
+            "full_response": "1. **Start with the initial number of students:**\n   - Boys: 14\n   - Girls: 10\n\n2. **Calculate the number of students who drop out:**\n   - Boys who drop out: 4\n   - Girls who drop out: 3\n   - Total students dropping out: 4 + 3 = 7\n\n3. **Calculate the number of students remaining:**\n   - Boys remaining: 14 - 4 = 10\n   - Girls remaining: 10 - 3 = 7\n\n4. **Answer:** There are 10 boys and 7 girls left.\n\nAnswer: 10"
+          }
+        ]
+      },
+      "targeted_few_shot_answer_only": {
+        "majority_correct": false,
+        "correct_count": 0,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "targeted_few_shot_answer_only",
+            "correct": false,
+            "predicted": "6 boys, 7 girls",
+            "ground_truth": "17",
+            "assigned_failure_type": "arithmatic",
+            "error_type": "off_topic",
+            "full_response": "Answer: 6 boys, 7 girls"
+          }
+        ]
+      },
+      "random_few_shot": {
+        "majority_correct": false,
+        "correct_count": 0,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "random_few_shot",
+            "correct": false,
+            "predicted": "11",
+            "ground_truth": "17",
+            "assigned_failure_type": null,
+            "error_type": "confidently_wrong",
+            "full_response": "Working through this problem step by step and carefully, the answer is 11\n\nAnswer: 11"
+          }
+        ]
+      },
+      "targeted_few_shot": {
+        "majority_correct": false,
+        "correct_count": 0,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "targeted_few_shot",
+            "correct": false,
+            "predicted": "Answer: 10**",
+            "ground_truth": "17",
+            "assigned_failure_type": "arithmatic",
+            "error_type": "drifting",
+            "full_response": "Here’s the step-by-step solution:\n\n1.  **Start with the initial number of boys:** 14 boys\n2.  **Subtract the number of boys who drop out:** 14 - 4 = 10 boys\n3.  **Subtract the number of girls who drop out:** 10 - 3 = 7 girls\n4.  **Total remaining boys:** 10 boys\n5.  **Total remaining girls:** 7 girls\n6.  **Answer: Answer: 10**"
+          }
+        ]
+      },
+      "targeted_few_shot_k5": {
+        "majority_correct": false,
+        "correct_count": 0,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "targeted_few_shot_k5",
+            "correct": false,
+            "predicted": "Answer: 10",
+            "ground_truth": "17",
+            "assigned_failure_type": "arithmatic",
+            "error_type": "drifting",
+            "full_response": "Let’s solve the problem step-by-step:\n\n1.  **Start with the initial number of boys:** The school has 14 boys.\n2.  **Subtract the number of boys who drop out:** 4 boys drop out, so we subtract 4 from 14.\n3.  **Calculate the remaining number of boys:** 14 - 4 = 10 boys.\n4.  **Subtract the number of girls who drop out:** 3 girls drop out, so we subtract 3 from 10.\n5.  **Calculate the remaining number of girls:** 10 - 3 = 7 girls.\n\nAnswer: Answer: 10"
+          }
+        ]
+      },
+      "error_targeted_icl": {
+        "majority_correct": false,
+        "correct_count": 0,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "error_targeted_icl",
+            "correct": false,
+            "predicted": "10 boys and 7 girls",
+            "ground_truth": "17",
+            "assigned_failure_type": null,
+            "error_type": "drifting",
+            "full_response": "Step 1: Calculate the number of boys remaining: 14 - 4 = 10 boys.\nStep 2: Calculate the number of girls remaining: 10 - 3 = 7 girls.\nAnswer: 10 boys and 7 girls"
+          }
+        ]
+      },
+      "error_targeted_icl_random": {
+        "majority_correct": false,
+        "correct_count": 0,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "error_targeted_icl_random",
+            "correct": false,
+            "predicted": "10 boys and 7 girls",
+            "ground_truth": "17",
+            "assigned_failure_type": null,
+            "error_type": "drifting",
+            "full_response": "Step 1: Calculate the number of boys remaining: 14 - 4 = 10 boys.\nStep 2: Calculate the number of girls remaining: 10 - 3 = 7 girls.\nAnswer: 10 boys and 7 girls"
+          }
+        ]
+      },
+      "error_targeted_icl_correct_only": {
+        "majority_correct": false,
+        "correct_count": 0,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "error_targeted_icl_correct_only",
+            "correct": false,
+            "predicted": "10",
+            "ground_truth": "17",
+            "assigned_failure_type": null,
+            "error_type": "drifting",
+            "full_response": "Step 1: Calculate the number of boys remaining: 14 - 4 = 10 boys.\nStep 2: Calculate the number of girls remaining: 10 - 3 = 7 girls.\nAnswer: 10\nAnswer: 7"
+          }
+        ]
+      },
+      "self_consistency": {
+        "majority_correct": false,
+        "correct_count": 0,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "self_consistency",
+            "correct": false,
+            "predicted": "** there are 10 boys and 7 girls left",
+            "ground_truth": "17",
+            "assigned_failure_type": null,
+            "error_type": "confidently_wrong",
+            "full_response": "1. **Start with the initial number of students:**\n   - Boys: 14\n   - Girls: 10\n\n2. **Calculate the number of students who drop out:**\n   - Boys who drop out: 4\n   - Girls who drop out: 3\n   - Total students dropping out: 4 + 3 = 7\n\n3. **Subtract the number of students who dropped out from the initial number of students:**\n   - Remaining boys: 14 - 4 = 10\n   - Remaining girls: 10 - 3 = 7\n\n4. **Answer:** There are 10 boys and 7 girls left.\n\nAnswer: 10 ||| 1. **Start with the initial number of boys and girls:**\n   - Boys: 14\n   - Girls: 10\n\n2. **Calculate the number of students who drop out:**\n   - Boys dropping out: 4\n   - Girls dropping out: 3\n   - Total dropping out: 4 + 3 = 7\n\n3. **Subtract the number of students who dropped out from the initial number of students:**\n   - Remaining boys: 14 - 4 = 10\n   - Remaining girls: 10 - 3 = 7\n\n4. **Answer:** There are 10 boys and 7 girls left.\n\nAnswer: 10 ||| Let's solve this step by step:\n\n1. **Start with the initial number of students:**\n   The school has 14 boys + 10 girls = 24 students.\n\n2. **Calculate the number of students after some students leave:**\n   4 boys drop out, so the number of boys remaining is 14 - 4 = 10 boys.\n   3 girls drop out, so the number of girls remaining is 10 - 3 = 7 girls.\n\n3. **Calculate the total number of students remaining:**\n   The total number of students remaining is 10 boys + 7 girls = 17 students.\n\nAnswer: 17 ||| 1. **Start with the initial number of students:**  14 boys + 10 girls = 24 students\n2. **Calculate the number of students after some dropouts:** 24 students - 4 boys - 3 girls = 17 students\n3. **Calculate the number of boys remaining:** 14 boys - 4 boys = 10 boys\n4. **Calculate the number of girls remaining:** 10 girls - 3 girls = 7 girls\n5. **Final answer:** 10 boys and 7 girls\n\nAnswer: 10 boys and 7 girls ||| 1. **Start with the initial number of students:** There are 14 boys + 10 girls = 24 students.\n2. **Calculate the number of students after some dropouts:** 4 boys drop out, so there are 14 - 4 = 10 boys. 3 girls drop out, so there are 10 - 3 = 7 girls.\n3. **Calculate the total number of students remaining:** 10 boys + 7 girls = 17 students.\n\nFinal Answer: 17"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "question": "An electronic shop offers smartphones for $300 each, personal computers for $500 more than smartphones, and advanced tablets for the sum of the prices of a smartphone and personal computer. How much do you have to pay to buy one of each of the three mentioned products?",
+    "ground_truth": "2200",
+    "benchmark_category": "arithmetic_perturbed",
+    "conditions": {
+      "zero_shot_baseline": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "zero_shot_baseline",
+            "correct": true,
+            "predicted": "2200",
+            "ground_truth": "2200",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "Let's break this down:\n\n*   Smartphone price: $300\n*   Personal computer price: $300 + $500 = $800\n*   Advanced tablet price: $300 + $800 = $1100\n\nTotal cost: $300 + $800 + $1100 = $2200\n\nAnswer: 2200"
+          }
+        ]
+      },
+      "zero_shot": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "zero_shot",
+            "correct": true,
+            "predicted": "2200",
+            "ground_truth": "2200",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "Let's break this problem down step-by-step:\n\n1. **Smartphone Price:** Smartphones cost $300 each.\n\n2. **Personal Computer Price:** Personal computers cost $500 more than smartphones, so they cost $300 + $500 = $800.\n\n3. **Tablet Price:** The sum of the smartphone and personal computer prices is equal to the price of the advanced tablet.  So, the tablet price is $300 + $800 = $1100.\n\n4. **Total Cost:** To buy one of each product, you need to pay $300 + $800 + $1100 = $2200.\n\nAnswer: 2200"
+          }
+        ]
+      },
+      "targeted_few_shot_answer_only": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "targeted_few_shot_answer_only",
+            "correct": true,
+            "predicted": "2200",
+            "ground_truth": "2200",
+            "assigned_failure_type": "multi_hop",
+            "error_type": null,
+            "full_response": "Here’s the solution to the problem:\n\nLet's break down the problem:\n\n*   Smartphone price: $300\n*   Personal computer price: $300 + $500 = $800\n*   Advanced tablet price: $300 + $800 = $1100\n\nTotal cost: $300 + $800 + $1100 = $2200\n\nAnswer: 2200"
+          }
+        ]
+      },
+      "random_few_shot": {
+        "majority_correct": false,
+        "correct_count": 0,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "random_few_shot",
+            "correct": false,
+            "predicted": "750",
+            "ground_truth": "2200",
+            "assigned_failure_type": null,
+            "error_type": "confidently_wrong",
+            "full_response": "Working through this problem step by step and carefully, the answer is 750\nAnswer: 750"
+          }
+        ]
+      },
+      "targeted_few_shot": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "targeted_few_shot",
+            "correct": true,
+            "predicted": "Answer: 2200",
+            "ground_truth": "2200",
+            "assigned_failure_type": "multi_hop",
+            "error_type": null,
+            "full_response": "Step 1: Let’s define the prices of each product.\nSmartphone: $300\nPersonal Computer: $500 + $300 = $800\nAdvanced Tablet: $300 + $800 = $1100\n\nStep 2: The total cost of all three products is the sum of their prices: $300 + $800 + $1100 = $2200.\n\nAnswer: Answer: 2200"
+          }
+        ]
+      },
+      "targeted_few_shot_k5": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "targeted_few_shot_k5",
+            "correct": true,
+            "predicted": "Answer: 2200",
+            "ground_truth": "2200",
+            "assigned_failure_type": "multi_hop",
+            "error_type": null,
+            "full_response": "Step 1: Let’s define the prices of each product.\nSmartphone: $300\nPersonal Computer: $500 + $300 = $800\nAdvanced Tablet: $300 + $800 = $1100\n\nStep 2: Total cost = Smartphone + Personal Computer + Advanced Tablet = $300 + $800 + $1100 = $2200\n\nAnswer: Answer: 2200"
+          }
+        ]
+      },
+      "error_targeted_icl": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "error_targeted_icl",
+            "correct": true,
+            "predicted": "2200",
+            "ground_truth": "2200",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "Step 1: Smartphone price: $300.\nStep 2: Personal computer price: $500 + $300 = $800.\nStep 3: Advanced tablet price: $300 + $800 = $1100.\nStep 4: Total cost: $300 + $800 + $1100 = $2200.\nAnswer: 2200"
+          }
+        ]
+      },
+      "error_targeted_icl_random": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "error_targeted_icl_random",
+            "correct": true,
+            "predicted": "2200",
+            "ground_truth": "2200",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "Step 1: Smartphone price = $300.\nStep 2: Personal computer price = $300 + $500 = $800.\nStep 3: Advanced tablet price = $300 + $800 = $1100.\nStep 4: Total cost = Smartphone price + Personal computer price + Advanced tablet price = $300 + $800 + $1100 = $2200.\nAnswer: 2200"
+          }
+        ]
+      },
+      "error_targeted_icl_correct_only": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "error_targeted_icl_correct_only",
+            "correct": true,
+            "predicted": "2200",
+            "ground_truth": "2200",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "Okay, let's break down this problem and solve it using the same reasoning approach as the previous examples.\n\nStep 1: Calculate the price of a smartphone: $300.\nStep 2: Calculate the price of a personal computer: $300 + $500 = $800.\nStep 3: Calculate the price of an advanced tablet: $300 + $800 = $1100.\nStep 4: Total cost: $300 + $800 + $1100 = $2200.\nAnswer: 2200\nAnswer: 2200"
+          }
+        ]
+      },
+      "self_consistency": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "self_consistency",
+            "correct": true,
+            "predicted": "2200",
+            "ground_truth": "2200",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "Let's break this problem down step-by-step:\n\n1. **Smartphone Price:** Smartphones cost $300 each.\n\n2. **Personal Computer Price:** Personal computers cost $500 more than smartphones, so they cost $300 + $500 = $800 each.\n\n3. **Tablet Price:** The sum of the smartphone and personal computer prices is equal to the advanced tablet price.  So, the tablet price is $300 + $800 = $1100.\n\n4. **Total Cost:** To buy one of each product, you need to pay $300 + $800 + $1100 = $2200.\n\nAnswer: 2200 ||| Let's break this problem down step-by-step:\n\n1. **Smartphone Price:** Smartphones cost $300 each.\n\n2. **Personal Computer Price:** Personal computers cost $500 more than smartphones, so they cost $300 + $500 = $800 each.\n\n3. **Tablet Price:** The sum of the smartphone and personal computer prices is equal to the advanced tablet price.  So, the tablet price is $300 + $800 = $1100.\n\n4. **Total Cost:** To buy one of each product, you need to pay $300 + $800 + $1100 = $2200.\n\nAnswer: 2200 ||| Let's break this problem down step-by-step:\n\n1. **Smartphone Price:** Smartphones cost $300 each.\n\n2. **Personal Computer Price:** Personal computers cost $500 more than smartphones, so they cost $300 + $500 = $800.\n\n3. **Tablet Price:** The sum of the smartphone and personal computer prices is equal to the price of the advanced tablet.  So, the tablet price is $300 + $800 = $1100.\n\n4. **Total Cost:** To buy one of each product, you need to pay $300 + $800 + $1100 = $2200.\n\nAnswer: 2200 ||| Let's break this problem down step-by-step:\n\n1. **Smartphone Price:** Smartphones cost $300 each.\n\n2. **Personal Computer Price:** Personal computers cost $500 more than smartphones, so they cost $300 + $500 = $800 each.\n\n3. **Tablet Price:** The sum of the smartphone and personal computer prices equals the price of the advanced tablet.  So, $300 + $800 = $1100.\n\n4. **Total Cost:** To buy one of each product, you need to pay $300 + $800 + $1100 = $2200.\n\nAnswer: 2200 ||| Let's break this problem down step-by-step:\n\n1. **Smartphone Price:** Smartphones cost $300 each.\n\n2. **Personal Computer Price:** Personal computers cost $500 more than smartphones, so they cost $300 + $500 = $800 each.\n\n3. **Tablet Price:** The sum of the smartphone and personal computer prices equals the price of the advanced tablet, so the tablet costs $300 + $800 = $1100.\n\n4. **Total Cost:** To buy one of each product, you pay $300 + $800 + $1100 = $2200.\n\nAnswer: 2200"
+          }
+        ]
+      }
+    }
+  }
+]
