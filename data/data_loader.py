@@ -24,6 +24,8 @@ def load_benchMark(benchMarkName: str, numSamples: int = 200) -> list:
         return _load_bigbench_hard(numSamples, "tracking_shuffled_objects_five_objects", "object_tracking")
     elif benchMarkName == "folio":
         return _load_folio(numSamples)
+    elif benchMarkName == "gsm8k":
+        return _load_gsm8k(numSamples)
     else:
         raise ValueError(f"Unknown benchmark: {benchMarkName}")
     
@@ -154,4 +156,27 @@ def _load_bigbench_hard(numSamples: int, subset: str, category: str) -> list:
         print(f"ERROR: Could not load bigbench-hard {subset}: {error}")
         return []
     
-    
+def _load_gsm8k(numSamples: int) -> list:
+    try:
+        dataset = load_dataset("openai/gsm8k", "main", split="train")
+        sample = []
+
+        for item in dataset:
+            rawAnswer = item.get("answer", "")
+            if "####" in rawAnswer:
+                answer = rawAnswer.split("####")[-1].strip()
+            else:
+                answer = rawAnswer
+
+            sample.append({
+                "question": item.get("question", ""),
+                "answer": answer,
+                "category": "arithmetic_word_problem"
+            })
+            if len(sample) >= numSamples:
+                break
+
+        return sample
+    except Exception as error:
+        print(f"ERROR: Could not load gsm8k: {error}")
+        return []

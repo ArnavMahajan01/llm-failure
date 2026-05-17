@@ -32,12 +32,12 @@ def extractResponse(response: str, benchmark: str) -> str:
             if re.search(rf"\b{label}\b", strippedResponse, re.IGNORECASE):
                 return label
 
-    if benchmark in ["gsm_symbolic", "gsm_plus", "gsm_ic"]:
+    if benchmark in ["gsm_symbolic", "gsm_plus", "gsm_ic", "gsm8k"]:
         numVal = re.findall(r"-?\d+(?:,\d{3})*(?:\.\d+)?", strippedResponse)
         if numVal:
             return numVal[-1].replace(",", "")
 
-    if benchmark == "bigbench_hard" or benchmark == "bigbench_hard_tracking":
+    if benchmark in ["bigbench_hard", "bigbench_hard_tracking"]:
         match = re.search(r"\\boxed\{([A-Ea-e])\}", strippedResponse)
         if match:
             return f"({match.group(1).upper()})"

@@ -28,6 +28,8 @@ BENCHMARKS = {
     "gsm_plus",
     "gsm_ic",
     "bigbench_hard",
+    "bigbench_hard_tracking",
+    "gsm8k",
     "folio"
 }
 
