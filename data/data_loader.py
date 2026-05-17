@@ -18,6 +18,8 @@ def load_benchMark(benchMarkName: str, numSamples: int = 200) -> list:
         return _load_gsm_plus(numSamples)
     elif benchMarkName == "folio":
         return _load_folio(numSamples)
+    elif benchMarkName == "gsm_ic":
+        return _load_gsm_ic(numSamples)
     else:
         raise ValueError(f"Unknown benchmark: {benchMarkName}")
     
@@ -102,3 +104,30 @@ def _load_folio(num_samples: int) -> list:
     except Exception as e:
         print(f"  WARNING: Could not load FOLIO: {e}")
         return []
+
+def _load_gsm_ic(numSamples: int) -> list:
+    try:
+        dataset = load_dataset("voidful/GSM-IC", split="validation")
+        sample=[]
+
+        for item in dataset:
+            rawAnswer = item.get("answer", "")
+            if "####" in rawAnswer:
+                answer = rawAnswer.split("####")[-1].strip()
+            else:
+                answer = rawAnswer
+
+            sample.append({
+                "question": item.get("question", ""),
+                "answer": str(item.get("answer", "")),
+                # "answer": answer,
+                "category": item.get("arithmetic_irrelevant_context")
+            })
+            if len(sample) >= numSamples:
+                break
+        
+        return sample
+    except Exception as error:
+        print(f"ERROR: Could not load gsm-ic: {error}")
+        return list
+    
