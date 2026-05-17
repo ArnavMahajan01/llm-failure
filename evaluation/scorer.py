@@ -32,10 +32,15 @@ def extractResponse(response: str, benchmark: str) -> str:
             if re.search(rf"\b{label}\b", strippedResponse, re.IGNORECASE):
                 return label
 
-    if benchmark in ["gsm_symbolic", "gsm_plus"]:
+    if benchmark in ["gsm_symbolic", "gsm_plus", "gsm_ic"]:
         numVal = re.findall(r"-?\d+(?:,\d{3})*(?:\.\d+)?", strippedResponse)
         if numVal:
             return numVal[-1].replace(",", "")
+
+    if benchmark == "bigbench_hard":
+        match = re.search(r"\\boxed\{([A-Ea-e])\}", strippedResponse)
+        if match:
+            return f"({match.group(1).upper()})"
         
     lastLine = [line.strip() for line in strippedResponse.split("\n") if line.strip()]
     if lastLine:
@@ -113,4 +118,3 @@ def score(modelResponse: str, actualVal: str, benchmark: str = "general") -> dic
         "correct": correct,
         "full_response": modelResponse
     }
-

@@ -16,10 +16,12 @@ def load_benchMark(benchMarkName: str, numSamples: int = 200) -> list:
         return _load_gsm_symbolic(numSamples)
     elif benchMarkName == "gsm_plus":
         return _load_gsm_plus(numSamples)
-    elif benchMarkName == "folio":
-        return _load_folio(numSamples)
     elif benchMarkName == "gsm_ic":
         return _load_gsm_ic(numSamples)
+    elif benchMarkName == "bigbench_hard":
+        return _load_bigbench_hard(numSamples)
+    elif benchMarkName == "folio":
+        return _load_folio(numSamples)
     else:
         raise ValueError(f"Unknown benchmark: {benchMarkName}")
     
@@ -130,4 +132,23 @@ def _load_gsm_ic(numSamples: int) -> list:
     except Exception as error:
         print(f"ERROR: Could not load gsm-ic: {error}")
         return list
+    
+def _load_bigbench_hard(numSamples: int) -> list:
+    try:
+        dataset = load_dataset("lukaemon/bbh", "logical_deduction_five_objects", split="test")
+        sample = []
+
+        for item in dataset:
+            sample.append({
+                "question": item.get("input", ""),
+                "answer": item.get("target", ""),
+                "category": "logical_deduction"
+            })
+            if len(sample) >= numSamples:
+                break
+
+        return sample
+    except Exception as error:
+        print(f"ERROR: Could not load bigbench-hard: {error}")
+        return []
     
