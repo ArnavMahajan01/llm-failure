@@ -203,7 +203,7 @@ def runbenchmarkOnModel(model, tokenizer, modelname: str, benchmark: str, condit
         question = item["question"]
         answer = item["answer"]
 
-        print(f"[{i+1} / {total}] Evaluting Wuestion")
+        print(f"[{i+1} / {total}] Evaluting Question")
 
         result = {
             "question": question,
