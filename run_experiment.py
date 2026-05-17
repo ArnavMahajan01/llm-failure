@@ -48,10 +48,11 @@ def isMajorityCorrect(totalRuns: list) -> bool:
 
 def saveResult(results: list, model_name: str, benchmark: str):
     """Save results to a JSON file."""
-    os.makedirs(RESULTS_DIR, exist_ok=True)
+    benchmarkDir = f"{RESULTS_DIR}/{benchmark}"
+    os.makedirs(benchmarkDir, exist_ok=True)
     name = model_name.replace("/", "_").replace(".", "-")
     timestamp = datetime.now().strftime("%Y%m%d_%H%M")
-    filename = f"{RESULTS_DIR}/{name}__{benchmark}__{timestamp}.json"
+    filename = f"{benchmarkDir}/{name}__{benchmark}__{timestamp}.json"
 
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
