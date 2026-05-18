@@ -69,7 +69,7 @@ CATEGORY_INSTRUCTIONS_COT = {
 }
 
 # Benchmark-level fallbacks (used when category is None or unrecognised)
-_BENCHMARK_BASELINE_FALLBACK = {
+BENCHMARK_BASELINE_FALLBACK = {
     "gsm_symbolic": CATEGORY_INSTRUCTIONS_BASELINE["arithmetic_symbolic"],
     "gsm_plus": CATEGORY_INSTRUCTIONS_BASELINE["arithmetic_perturbed"],
     "gsm_ic": CATEGORY_INSTRUCTIONS_BASELINE["arithmetic_word_problem"],
@@ -79,7 +79,7 @@ _BENCHMARK_BASELINE_FALLBACK = {
     "bigbench_hard_tracking": CATEGORY_INSTRUCTIONS_BASELINE["object_tracking"],
 }
 
-_BENCHMARK_COT_FALLBACK = {
+BENCHMARK_COT_FALLBACK = {
     "gsm_symbolic": CATEGORY_INSTRUCTIONS_COT["arithmetic_symbolic"],
     "gsm_plus": CATEGORY_INSTRUCTIONS_COT["arithmetic_perturbed"],
     "gsm_ic": CATEGORY_INSTRUCTIONS_COT["arithmetic_word_problem"],
@@ -89,18 +89,18 @@ _BENCHMARK_COT_FALLBACK = {
     "bigbench_hard_tracking": CATEGORY_INSTRUCTIONS_COT["object_tracking"],
 }
 
-_DEFAULT_BASELINE = (
+DEFAULT_BASELINE = (
     "Answer the following question.\n"
     "At the end, give the final answer in a new line starting with 'Answer: '"
 )
 
-_DEFAULT_COT = (
+DEFAULT_COT = (
     "Answer the following question step by step.\n"
     "At the end, give the final answer in a new line starting with 'Answer: '"
 )
 
 
-def _resolve_instructions(lookup: dict, fallback: dict, category, benchmark) -> str:
+def resolveInstructions(lookup: dict, fallback: dict, category, benchmark) -> str:
     if category and category in lookup:
         return lookup[category]
     if benchmark and benchmark in fallback:
@@ -110,8 +110,8 @@ def _resolve_instructions(lookup: dict, fallback: dict, category, benchmark) -> 
 
 def zeroShotBaselinePrompt(question: str, benchmark: str, category: str = None) -> str:
     instructions = (
-        _resolve_instructions(CATEGORY_INSTRUCTIONS_BASELINE, _BENCHMARK_BASELINE_FALLBACK, category, benchmark)
-        or _DEFAULT_BASELINE
+        resolveInstructions(CATEGORY_INSTRUCTIONS_BASELINE, BENCHMARK_BASELINE_FALLBACK, category, benchmark)
+        or DEFAULT_BASELINE
     )
 
     prompt = f"""{instructions}
@@ -126,8 +126,8 @@ def zeroShotBaselinePrompt(question: str, benchmark: str, category: str = None) 
 
 def zeroShotPrompt(question: str, benchmark: str, category: str = None) -> str:
     instructions = (
-        _resolve_instructions(CATEGORY_INSTRUCTIONS_COT, _BENCHMARK_COT_FALLBACK, category, benchmark)
-        or _DEFAULT_COT
+        resolveInstructions(CATEGORY_INSTRUCTIONS_COT, BENCHMARK_COT_FALLBACK, category, benchmark)
+        or DEFAULT_COT
     )
 
     prompt = f"""{instructions}

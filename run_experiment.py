@@ -46,12 +46,14 @@ def isMajorityCorrect(totalRuns: list) -> bool:
     totalCount = sum(1 for i in totalRuns if i["correct"])
     return totalCount > len(totalRuns) / 2
 
-def saveResult(results: list, model_name: str, benchmark: str):
+def saveResult(results: list, model_name: str, benchmark: str, filename: str = None):
     """Save results to a JSON file."""
-    os.makedirs(RESULTS_DIR, exist_ok=True)
-    name = model_name.replace("/", "_").replace(".", "-")
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M")
-    filename = f"{RESULTS_DIR}/{name}__{benchmark}__{timestamp}.json"
+    if filename is None:
+        benchmarkDir = f"{RESULTS_DIR}/{benchmark}"
+        os.makedirs(benchmarkDir, exist_ok=True)
+        name = model_name.replace("/", "_").replace(".", "-")
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+        filename = f"{benchmarkDir}/{name}__{benchmark}__{timestamp}.json"
 
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
@@ -200,6 +202,13 @@ def runbenchmarkOnModel(model, tokenizer, modelname: str, benchmark: str, condit
     allResults = []
     total = len(evaluationSize)
 
+    # Fix the filename once so all incremental saves go to the same file
+    benchmarkDir = f"{RESULTS_DIR}/{benchmark}"
+    os.makedirs(benchmarkDir, exist_ok=True)
+    name = modelname.replace("/", "_").replace(".", "-")
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+    outFile = f"{benchmarkDir}/{name}__{benchmark}__{timestamp}.json"
+
     for i, item in enumerate(evaluationSize):
         question = item["question"]
         answer = item["answer"]
@@ -235,9 +244,10 @@ def runbenchmarkOnModel(model, tokenizer, modelname: str, benchmark: str, condit
                 "total_runs": NUM_RUNS,
                 "runs": runs
             }
-        
+
         allResults.append(result)
-    
+        saveResult(allResults, modelname, benchmark, filename=outFile)
+
     print(f" Completed {total} questions for {benchmark}")
     return allResults
 
@@ -298,7 +308,7 @@ def main():
                 continue
             
             for benchmark in benchmarksToRun:
-                results = runbenchmarkOnModel(
+                runbenchmarkOnModel(
                     model=model,
                     tokenizer=tokenizer,
                     modelname=modelname,
@@ -306,9 +316,6 @@ def main():
                     conditionRunning=conditionToRun,
                     numSamples=num_samples
                 )
-
-                if results:
-                    saveResult(results, modelname, benchmark)
 
             free_model(model)
 

@@ -9,8 +9,8 @@ from evaluation.taxonomy import ERROR_TYPES
 
 def loadResults() -> list:
 
-    path = os.path.join(RESULTS_DIR, "*.json")
-    files = glob.glob(path)
+    path = os.path.join(RESULTS_DIR, "**", "*.json")
+    files = glob.glob(path, recursive=True)
 
     if not files:
         print(f"No files found in {RESULTS_DIR}")
@@ -140,12 +140,6 @@ def loadSpecificResults(filenames: list) -> list:
     loadedFiles = []
 
     for filename in filenames:
-        filePath = os.path.join(RESULTS_DIR, filename)
-
-        if not os.path.exists(filePath):
-            print(f"WARNING: File not found: {filename}. Skipping.")
-            continue
-
         parts = filename.replace(".json", "").split("__")
         if len(parts) < 2:
             print(f"WARNING: Unexpected file format {filename}. Skipping it")
@@ -153,6 +147,12 @@ def loadSpecificResults(filenames: list) -> list:
 
         modelname = parts[0].replace("_", "/", 1)
         benchmark = parts[1]
+
+        filePath = os.path.join(RESULTS_DIR, benchmark, filename)
+
+        if not os.path.exists(filePath):
+            print(f"WARNING: File not found: {filename}. Skipping.")
+            continue
 
         with open(filePath, encoding="utf-8") as f:
             results = json.load(f)

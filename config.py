@@ -11,15 +11,27 @@ OLLAMA_BASE_URL = "http://localhost:11434"
 RESULTS_DIR = "results/raw"
 PROCESSED_DIR = "results/processed"
 
+# MODELS = {
+#     "qwen": [
+#          "Qwen/Qwen2-math-1.5B",
+#     ],
+#     "gemma": [
+#         "Gemma/Gemma3-1B"
+#     ],
+#     "llama": [
+#         "Llama/Llama3.2-1.5B"
+#     ]
+# }
+
 MODELS = {
     "qwen": [
-         "Qwen/Qwen2-math-1.5B",
+         "Qwen/Qwen2.5-3B",
     ],
     "gemma": [
-        "Gemma/Gemma3-1B"
+        "Gemma/Gemma3-4B"
     ],
     "llama": [
-        "Llama/Llama3.2-1.5B"
+        "Llama/Llama3.2-3B"
     ]
 }
 
