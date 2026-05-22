@@ -37,11 +37,23 @@ ERROR_LABELS = {
     "unknown": "Unknown",
 }
 
+STRATEGY_LABELS = {
+    "random_few_shot": "Random ICL",
+    "targeted_few_shot": "Targeted ICL",
+    "targeted_few_shot_k5": "Targeted ICL (k=5)",
+    "error_targeted_icl": "Error-Targeted",
+    "error_targeted_icl_random": "Error-Targeted\n(Random)",
+    "error_targeted_icl_correct_only": "Error-Targeted\n(Correct)",
+    "self_consistency": "Self-Consistency",
+}
+
 BENCHMARK_LABELS = {
     "gsm_symbolic": "GSM-Symbolic",
     "gsm_plus": "GSM-Plus",
     "gsm_ic": "GSM-IC",
     "bigbench_hard": "BIG-Bench Hard",
+    "bigbench_hard_tracking": "BIG-Bench Hard Tracking",
+    "gsm8k": "GSM-8k",
     "folio": "FOLIO",
 }
 
@@ -83,240 +95,75 @@ def friendly_benchmark(name):
     return BENCHMARK_LABELS.get(name, name)
 
 
-# Fig 1: Baseline vs ICL Accuracy
-def fig1_accuracy(df_summary):
-    df = df_summary.copy()
-    df["model_label"] = df["model"].apply(friendly_model)
-    models = df["model_label"].tolist()
-
-    columns = ["zero_shot_acc", "random_few_shot_acc", "targeted_few_shot_acc"]
-    labels = ["Zero-Shot", "Random ICL", "Targeted ICL"]
-    colors = [CONDITION_COLORS[l] for l in labels]
-
-    fig, ax = plt.subplots(figsize=(10, 5))
-    x = np.arange(len(models))
-    width = 0.25
-
-    for i, (col, label, color) in enumerate(zip(columns, labels, colors)):
-        vals = df[col].values
-        bars = ax.bar(
-            x + i * width, vals, width,
-            label=label, color=color,
-            edgecolor="white", linewidth=0.5,
-        )
-        for bar, v in zip(bars, vals):
-            ax.text(
-                bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.01,
-                f"{v:.1%}", ha="center", va="bottom", fontsize=9, fontweight="bold",
-            )
-
-    ax.set_xticks(x + width)
-    ax.set_xticklabels(models, fontweight="bold")
-    ax.set_ylabel("Accuracy")
-    ax.set_title("Baseline vs In-Context Learning Accuracy")
-    ax.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1.0))
-    ax.set_ylim(0, 1.0)
-    ax.legend(loc="upper left")
-    ax.spines[["top", "right"]].set_visible(False)
-    plt.tight_layout()
-
-    path = os.path.join(CHARTS_DIR, "fig1_accuracy.png")
-    plt.savefig(path)
-    plt.close()
-    print(f"  Saved: {path}")
-
-
-# Fig 2: Error Taxonomy (zero-shot failures)
-def fig2_error_taxonomy(df_errors):
-    df = df_errors.copy()
-    df["error_label"] = df["error_type"].map(ERROR_LABELS)
-    df["model_label"] = df["model"].apply(friendly_model)
-
-    # Keep only error types that actually appear
-    active = df.groupby("error_label")["count"].sum()
-    active = active[active > 0].index.tolist()
-    df_plot = df[df["error_label"].isin(active)]
-
-    pivot = df_plot.pivot(
-        index="model_label", columns="error_label", values="percentage"
-    ).fillna(0)
-
-    # Annotate with count + percentage
-    annot_rows = []
-    for _, row in df_plot.iterrows():
-        annot_rows.append({
-            "model_label": row["model_label"],
-            "error_label": row["error_label"],
-            "label": f"{row['percentage']:.1f}%\n(n={int(row['count'])})" if row["count"] > 0 else "—",
-        })
-    annot_df = pd.DataFrame(annot_rows)
-    annot_pivot = annot_df.pivot(
-        index="model_label", columns="error_label", values="label"
-    ).fillna("—")
-    annot_pivot = annot_pivot[pivot.columns]
-
-    fig, ax = plt.subplots(figsize=(10, 4))
-    sns.heatmap(
-        pivot, annot=annot_pivot.values, fmt="",
-        cmap="YlOrRd", vmin=0, vmax=100,
-        linewidths=0.8, linecolor="white", ax=ax,
-        cbar_kws={"label": "% of Zero-Shot Errors", "shrink": 0.8},
-    )
-    ax.set_title("Error Taxonomy: Zero-Shot Failure Classification")
-    ax.set_ylabel("")
-    ax.set_xlabel("")
-    plt.tight_layout()
-
-    path = os.path.join(CHARTS_DIR, "fig2_error_taxonomy.png")
-    plt.savefig(path)
-    plt.close()
-    print(f"  Saved: {path}")
-
-
-# Fig 3: ICL Recovery Heatmap
-def fig3_recovery_heatmap(df_summary):
+# Fig 1: Error × Strategy Recovery Heatmap
+def fig1_error_strategy_heatmap(df_recovery):
     """
-    Shows what prompting can and cannot fix.
+    Heatmap: rows = error type, columns = ICL strategy, values = recovery rate.
+    Shows which prompting strategies fix which failure modes.
     """
-    df = df_summary.copy()
-    df["model_label"] = df["model"].apply(friendly_model)
-    df["benchmark_label"] = df["benchmark"].apply(friendly_benchmark)
+    df = df_recovery.copy()
 
-    benchmarks = df["benchmark_label"].unique()
+    # Drop low-sample error types (n < 10 failures)
+    max_failures = df.groupby("error_type")["failures"].max()
+    df = df[df["error_type"].isin(max_failures[max_failures >= 10].index)]
 
-    if len(benchmarks) == 1:
-        # Single benchmark: show model × strategy
-        _recovery_heatmap_single_benchmark(df)
-    else:
-        # Multiple benchmarks: show model × benchmark (targeted recovery)
-        _recovery_heatmap_multi_benchmark(df)
+    df["error_label"] = df["error_type"].map(ERROR_LABELS).fillna(df["error_type"])
+    df["strategy_label"] = df["strategy"].map(STRATEGY_LABELS).fillna(df["strategy"])
 
+    pivot = df.pivot(index="error_label", columns="strategy_label", values="recovery_rate").fillna(np.nan) * 100
+    failures_pivot = df.pivot(index="error_label", columns="strategy_label", values="failures")
 
-def _recovery_heatmap_single_benchmark(df):
-    benchmark_name = df["benchmark_label"].iloc[0]
-
-    models = df["model_label"].tolist()
-    data = pd.DataFrame({
-        "Random ICL": df["recovery_rate_random"].values * 100,
-        "Targeted ICL": df["recovery_rate_targeted"].values * 100,
-    }, index=models)
-
-    # Compute zero-shot failure counts for annotation
-    n_failures = (df["n_samples"] * (1 - df["zero_shot_acc"])).astype(int).values
-
-    # Annotation: recovery rate + failure count context
-    annot = np.empty(data.shape, dtype=object)
-    for i in range(len(models)):
-        for j, col in enumerate(data.columns):
-            rate = data.iloc[i, j]
-            n = n_failures[i]
-            recovered = int(round(rate * n / 100))
-            annot[i, j] = f"{rate:.1f}%\n({recovered}/{n})"
-
-    # Custom diverging colormap: red -> yellow -> green
-    cmap = LinearSegmentedColormap.from_list(
-        "recovery", ["#d32f2f", "#ff9800", "#fdd835", "#8bc34a", "#2e7d32"]
+    # Sort rows: most frequent error type first
+    row_order = (
+        df.groupby("error_label")["failures"].max()
+        .sort_values(ascending=False)
+        .index.tolist()
     )
+    col_order = [
+        STRATEGY_LABELS[s] for s in [
+            "random_few_shot", "targeted_few_shot", "targeted_few_shot_k5",
+            "error_targeted_icl", "error_targeted_icl_random",
+            "error_targeted_icl_correct_only", "self_consistency",
+        ]
+        if STRATEGY_LABELS[s] in pivot.columns
+    ]
+    pivot = pivot.reindex(row_order)[col_order]
+    failures_pivot = failures_pivot.reindex(row_order)[col_order]
 
-    fig, ax = plt.subplots(figsize=(8, 4))
-    sns.heatmap(
-        data, annot=annot, fmt="",
-        cmap=cmap, vmin=0, vmax=70,
-        linewidths=1.0, linecolor="white", ax=ax,
-        cbar_kws={"label": "Recovery Rate %", "shrink": 0.8},
-        annot_kws={"fontsize": 12, "fontweight": "bold"},
-    )
-    ax.set_title(
-        f"ICL Recovery Heatmap: {benchmark_name}\n"
-        f"What fraction of zero-shot failures does prompting fix?",
-        fontsize=13,
-    )
-    ax.set_ylabel("")
-    ax.set_xlabel("")
-    ax.tick_params(axis="y", labelsize=11)
-    ax.tick_params(axis="x", labelsize=11)
-    plt.tight_layout()
-
-    path = os.path.join(CHARTS_DIR, "fig3_recovery_heatmap.png")
-    plt.savefig(path)
-    plt.close()
-    print(f"  Saved: {path}")
-
-
-def _recovery_heatmap_multi_benchmark(df):
-    """Model x Benchmark recovery heatmap (targeted ICL recovery)."""
-    pivot = df.pivot(
-        index="model_label", columns="benchmark_label",
-        values="recovery_rate_targeted",
-    ).fillna(0) * 100
-
-    # Annotation with rates
-    annot = pivot.map(lambda v: f"{v:.1f}%")
+    annot = np.empty(pivot.shape, dtype=object)
+    for i in range(len(pivot.index)):
+        for j in range(len(pivot.columns)):
+            rate = pivot.iloc[i, j]
+            n = failures_pivot.iloc[i, j]
+            if np.isnan(rate):
+                annot[i, j] = "—"
+            else:
+                annot[i, j] = f"{rate:.1f}%\n(n={int(n)})"
 
     cmap = LinearSegmentedColormap.from_list(
         "recovery", ["#d32f2f", "#ff9800", "#fdd835", "#8bc34a", "#2e7d32"]
     )
 
-    fig, ax = plt.subplots(figsize=(max(8, len(pivot.columns) * 2.5), max(4, len(pivot) * 1.2)))
+    fig, ax = plt.subplots(figsize=(14, max(5, len(pivot) * 0.85)))
     sns.heatmap(
         pivot, annot=annot, fmt="",
-        cmap=cmap, vmin=0, vmax=70,
-        linewidths=1.0, linecolor="white", ax=ax,
-        cbar_kws={"label": "Recovery Rate %", "shrink": 0.8},
-        annot_kws={"fontsize": 12, "fontweight": "bold"},
+        cmap=cmap, vmin=0, vmax=55,
+        linewidths=0.8, linecolor="white", ax=ax,
+        cbar_kws={"label": "Recovery Rate (%)", "shrink": 0.75},
+        annot_kws={"fontsize": 9, "fontweight": "bold"},
     )
     ax.set_title(
-        "ICL Recovery Heatmap — Targeted Few-Shot\n"
-        "What fraction of zero-shot failures does error-matched prompting fix?",
-        fontsize=13,
+        "Fig 1: Which ICL Strategies Fix Which Errors?\n"
+        "Recovery rate: % of zero-shot failures recovered by each prompting strategy",
+        fontsize=13, pad=12,
     )
-    ax.set_ylabel("")
-    ax.set_xlabel("")
+    ax.set_ylabel("Error Type", fontsize=11)
+    ax.set_xlabel("ICL Strategy", fontsize=11)
+    ax.tick_params(axis="y", labelsize=10, rotation=0)
+    ax.tick_params(axis="x", labelsize=9)
     plt.tight_layout()
 
-    path = os.path.join(CHARTS_DIR, "fig3_recovery_heatmap.png")
-    plt.savefig(path)
-    plt.close()
-    print(f"  Saved: {path}")
-
-# Fig 4: Failure Mode Profile, same data as fig 2 but displayed as horizontal stacked bars
-def fig4_failure_profile(df_errors):
-    df = df_errors.copy()
-    df["error_label"] = df["error_type"].map(ERROR_LABELS)
-    df["model_label"] = df["model"].apply(friendly_model)
-
-    active = df.groupby("error_label")["count"].sum()
-    active = active[active > 0].index.tolist()
-    df_plot = df[df["error_label"].isin(active)]
-
-    pivot = df_plot.pivot(
-        index="model_label", columns="error_label", values="percentage"
-    ).fillna(0)
-
-    palette = sns.color_palette("Set2", n_colors=len(active))
-    fig, ax = plt.subplots(figsize=(10, 4))
-    pivot.plot(kind="barh", stacked=True, ax=ax, color=palette, edgecolor="white", linewidth=0.5)
-
-    for i, model in enumerate(pivot.index):
-        cumulative = 0
-        for j, col in enumerate(pivot.columns):
-            val = pivot.loc[model, col]
-            if val > 5:
-                ax.text(
-                    cumulative + val / 2, i,
-                    f"{val:.0f}%", ha="center", va="center",
-                    fontsize=9, fontweight="bold", color="white",
-                )
-            cumulative += val
-
-    ax.set_xlabel("% of Zero-Shot Errors")
-    ax.set_title("Failure Mode Profile by Model")
-    ax.legend(title="Error Taxonomy", bbox_to_anchor=(1.02, 1), loc="upper left")
-    ax.set_xlim(0, 100)
-    ax.spines[["top", "right"]].set_visible(False)
-    plt.tight_layout()
-
-    path = os.path.join(CHARTS_DIR, "fig4_failure_profile.png")
+    path = os.path.join(CHARTS_DIR, "fig1_error_strategy_heatmap.png")
     plt.savefig(path)
     plt.close()
     print(f"  Saved: {path}")
@@ -329,22 +176,15 @@ def main():
     print("Loading processed CSVs from processResults.py...")
     df_summary = load_csv("summary.csv")
     df_errors = load_csv("error_distribution.csv")
+    df_recovery = load_csv("error_strategy_recovery.csv")
 
-    if df_summary is None or df_errors is None:
+    if df_summary is None or df_recovery is None:
         print("\nMissing CSVs. Run processResults.py first:")
         print("  python3 -m results.processResults <files...>")
         return
 
-    models = df_summary["model"].apply(friendly_model).tolist()
-    benchmarks = df_summary["benchmark"].apply(friendly_benchmark).unique().tolist()
-    print(f"\nModels: {models}")
-    print(f"Benchmarks: {benchmarks}")
-
     print("\nGenerating figures...")
-    fig1_accuracy(df_summary)
-    fig2_error_taxonomy(df_errors)
-    fig3_recovery_heatmap(df_summary)
-    fig4_failure_profile(df_errors)
+    fig1_error_strategy_heatmap(df_recovery)
 
     print(f"\nDone. All figures saved to {CHARTS_DIR}/")
 
