@@ -83,7 +83,7 @@ def friendly_model(name):
     if len(parts) == 2:
         raw = parts[1]
         # Extract param size from end of string
-        for size in ["1B", "1-5B", "3B", "8B", "9B"]:
+        for size in ["1B", "1-5B", "3B", "4B", "8B", "9B"]:
             if size in raw:
                 family = parts[0]
                 display_size = size.replace("-", ".")
@@ -259,6 +259,85 @@ def fig2_family_comparison(df_summary):
         print(f"  Saved: {path}")
 
 
+# Fig 3: Strategy Progression Line Chart
+# Does each model get better after each strategy step?
+# One colour per family, two line styles for the two sizes within each family
+FAMILY_STYLES = {
+    "Gemma": {"color": "#4CAF50", "sizes": {"1B": "-",   "4B": "--"}},
+    "Llama": {"color": "#E53935", "sizes": {"1.5B": "-", "3B": "--"}},
+    "Qwen":  {"color": "#7B1FA2", "sizes": {"1.5B": "-", "3B": "--"}},
+}
+
+def fig3_strategy_progression(df_summary):
+    """
+    Line chart: X = strategy steps (ordered baseline -> sophisticated),
+    Y = mean accuracy across benchmarks, one line per model.
+    Shows whether each model improves after each prompting step.
+    """
+    df = df_summary.copy()
+    df["model_label"] = df["model"].apply(friendly_model)
+
+    # Build ordered steps: zero-shot first, then each strategy from STRATEGY_LABELS
+    all_steps = [("zero_shot_acc", "Zero-Shot")] + [
+        (f"{k}_acc", label) for k, label in STRATEGY_LABELS.items()
+    ]
+    cols     = [c     for c, _     in all_steps if c in df.columns]
+    x_labels = [label for c, label in all_steps if c in df.columns]
+
+    # Micro-average: (sum of correct items) / (sum of total items) across benchmarks
+    # correct_items = accuracy * n_samples  -> sum / sum(n_samples)
+    grouped = df.groupby("model_label")
+    agg = grouped.apply(
+        lambda g: pd.Series({
+            c: (g[c] * g["n_samples"]).sum() / g["n_samples"].sum()
+            for c in cols
+        })
+    )
+    x = np.arange(len(cols))
+
+    fig, ax = plt.subplots(figsize=(13, 6))
+
+    for model_label, row in agg.iterrows():
+        # Derive family and size from label e.g. "Gemma 1B", "Llama 1.5B"
+        parts = model_label.split()
+        family = parts[0] if parts else model_label
+        size   = parts[1] if len(parts) > 1 else ""
+
+        style = FAMILY_STYLES.get(family, {"color": "#888", "sizes": {}})
+        color = style["color"]
+        ls    = style["sizes"].get(size, "-")
+        marker = "o" if ls == "-" else "s"
+
+        vals = [row[c] for c in cols]
+        ax.plot(x, vals, linestyle=ls, marker=marker, color=color,
+                linewidth=2, markersize=6, label=model_label)
+
+        # Annotate final point
+        ax.annotate(f"{vals[-1]:.0%}", xy=(x[-1], vals[-1]),
+                    xytext=(4, 0), textcoords="offset points",
+                    fontsize=8, color=color, va="center")
+
+    ax.set_xticks(x)
+    ax.set_xticklabels(x_labels, fontsize=9)
+    ax.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1.0))
+    ax.set_ylabel("Accuracy (mean across benchmarks)", fontsize=11)
+    ax.set_xlabel("Prompting Strategy  ->  increasing sophistication", fontsize=10)
+    ax.set_title(
+        "Fig 3: Does Each Model Improve Across Strategy Steps?\n"
+        "Solid line = smaller model (1B / 1.5B)   Dashed = larger (3B / 4B)",
+        fontsize=12,
+    )
+    ax.legend(loc="lower right", fontsize=9, ncol=2, framealpha=0.9)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.set_xlim(-0.3, len(cols) - 0.3)
+    plt.tight_layout()
+
+    path = os.path.join(CHARTS_DIR, "fig3_strategy_progression.png")
+    plt.savefig(path)
+    plt.close()
+    print(f"  Saved: {path}")
+
+
 # Main
 def main():
     os.makedirs(CHARTS_DIR, exist_ok=True)
@@ -276,6 +355,7 @@ def main():
     print("\nGenerating figures...")
     fig1_error_strategy_heatmap(df_recovery)
     fig2_family_comparison(df_summary)
+    fig3_strategy_progression(df_summary)
 
     print(f"\nDone. All figures saved to {CHARTS_DIR}/")
 
