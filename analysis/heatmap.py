@@ -179,6 +179,86 @@ def fig1_error_strategy_heatmap(df_recovery):
     print(f"  Saved: {path}")
 
 
+# Fig 2: Model Family Comparison (grouped bar, one chart per parameter-size tier)
+# DONE BY CLAUDE
+def _parse_family_tier(model_name):
+    """Return (family, tier_label) from raw model name."""
+    parts = model_name.split("/")
+    if len(parts) != 2:
+        return model_name, "other"
+    family, raw = parts[0], parts[1]
+    for token, tier in [("1-5B", "1B–1.5B"), ("1B", "1B–1.5B"),
+                        ("3B", "3B–4B"),   ("4B", "3B–4B")]:
+        if token in raw:
+            return family, tier
+    return family, "other"
+
+
+def fig2_family_comparison(df_summary):
+    """
+    Grouped bar chart per parameter-size tier.
+    X = model family, bars = ICL conditions, Y = mean accuracy across benchmarks.
+    Saves fig2.1 (1B-1.5B) and fig2.2 (3B-4B).
+    """
+    df = df_summary.copy()
+    df["family"], df["tier"] = zip(*df["model"].apply(_parse_family_tier))
+
+    conditions = [
+        ("zero_shot_acc",          "Zero-Shot",        "#B8C480"),
+        ("random_few_shot_acc",    "Random ICL",       "#922D50"),
+        ("targeted_few_shot_acc",  "Targeted ICL",     "#3C1B43"),
+        ("error_targeted_icl_acc", "Error-Targeted",   "#2E6AA6"),
+    ]
+
+    tiers = [("1B–1.5B", "fig2.1"), ("3B–4B", "fig2.2")]
+
+    for tier_name, fig_id in tiers:
+        tier_df = df[df["tier"] == tier_name]
+        if tier_df.empty:
+            continue
+
+        families = sorted(tier_df["family"].unique())
+        agg = tier_df.groupby("family")[[c for c, _, _ in conditions]].mean()
+
+        x = np.arange(len(families))
+        n_conds = len(conditions)
+        width = 0.18
+        offsets = np.linspace(-(n_conds - 1) / 2, (n_conds - 1) / 2, n_conds) * width
+
+        fig, ax = plt.subplots(figsize=(8, 5))
+
+        for offset, (col, label, color) in zip(offsets, conditions):
+            vals = [agg.loc[f, col] if (f in agg.index and col in agg.columns and not pd.isna(agg.loc[f, col])) else 0
+                    for f in families]
+            bars = ax.bar(x + offset, vals, width, label=label,
+                          color=color, edgecolor="white", linewidth=0.6)
+            for bar, v in zip(bars, vals):
+                if v > 0:
+                    ax.text(bar.get_x() + bar.get_width() / 2,
+                            bar.get_height() + 0.012,
+                            f"{v:.1%}", ha="center", va="bottom",
+                            fontsize=7.5, fontweight="bold")
+
+        ax.set_xticks(x)
+        ax.set_xticklabels(families, fontsize=12, fontweight="bold")
+        ax.set_ylabel("Accuracy (mean across benchmarks)", fontsize=10)
+        ax.set_title(
+            f"Fig 2: Model Family Comparison at {tier_name}\n"
+            "Which family benefits most from ICL?",
+            fontsize=12,
+        )
+        ax.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1.0))
+        ax.set_ylim(0, min(1.0, agg[[c for c, _, _ in conditions]].max().max() + 0.18))
+        ax.legend(loc="upper right", fontsize=9)
+        ax.spines[["top", "right"]].set_visible(False)
+        plt.tight_layout()
+
+        path = os.path.join(CHARTS_DIR, f"{fig_id}_family_comparison.png")
+        plt.savefig(path)
+        plt.close()
+        print(f"  Saved: {path}")
+
+
 # Main
 def main():
     os.makedirs(CHARTS_DIR, exist_ok=True)
@@ -195,6 +275,7 @@ def main():
 
     print("\nGenerating figures...")
     fig1_error_strategy_heatmap(df_recovery)
+    fig2_family_comparison(df_summary)
 
     print(f"\nDone. All figures saved to {CHARTS_DIR}/")
 
