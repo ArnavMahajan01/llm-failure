@@ -83,7 +83,7 @@ def friendly_model(name):
     if len(parts) == 2:
         raw = parts[1]
         # Extract param size from end of string
-        for size in ["270M", "1B", "1-5B", "3B", "8B", "9B"]:
+        for size in ["1B", "1-5B", "3B", "8B", "9B"]:
             if size in raw:
                 family = parts[0]
                 display_size = size.replace("-", ".")
@@ -112,6 +112,7 @@ def fig1_error_strategy_heatmap(df_recovery):
 
     pivot = df.pivot(index="error_label", columns="strategy_label", values="recovery_rate").fillna(np.nan) * 100
     failures_pivot = df.pivot(index="error_label", columns="strategy_label", values="failures")
+    recovered_pivot = df.pivot(index="error_label", columns="strategy_label", values="recovered")
 
     # Sort rows: most frequent error type first
     row_order = (
@@ -129,6 +130,15 @@ def fig1_error_strategy_heatmap(df_recovery):
     ]
     pivot = pivot.reindex(row_order)[col_order]
     failures_pivot = failures_pivot.reindex(row_order)[col_order]
+    recovered_pivot = recovered_pivot.reindex(row_order)[col_order]
+
+    # Add E/S numbering to axis labels
+    pivot.index = [f"E{i+1}  {l}" for i, l in enumerate(pivot.index)]
+    pivot.columns = [f"S{i+1}\n{l}" for i, l in enumerate(pivot.columns)]
+    failures_pivot.index = pivot.index
+    failures_pivot.columns = pivot.columns
+    recovered_pivot.index = pivot.index
+    recovered_pivot.columns = pivot.columns
 
     annot = np.empty(pivot.shape, dtype=object)
     for i in range(len(pivot.index)):
@@ -138,7 +148,7 @@ def fig1_error_strategy_heatmap(df_recovery):
             if np.isnan(rate):
                 annot[i, j] = "—"
             else:
-                annot[i, j] = f"{rate:.1f}%\n(n={int(n)})"
+                annot[i, j] = f"{rate:.1f}%\n({int(recovered_pivot.iloc[i, j])}/{int(n)})"
 
     cmap = LinearSegmentedColormap.from_list(
         "recovery", ["#d32f2f", "#ff9800", "#fdd835", "#8bc34a", "#2e7d32"]
