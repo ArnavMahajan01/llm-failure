@@ -142,3 +142,8 @@ At the moment the full and final raw files are as follows
 1. Gemma_Gemma3-1B__gsm_symbolic__20260511_2100.json
 2. Qwen_Qwen2-math-1-5B__gsm_symbolic__20260511_2148.json
 3. Llama_Llama3-2-1-5B__gsm_symbolic__20260511_2210.json
+
+
+**To Train All the Files**
+python3 -m results.processResults Llama_Llama3-2-3B__gsm_ic__20260520_0310.json Qwen_Qwen2-5-3B__gsm_ic__20260518_1528.json Gemma_Gemma3-4B__gsm_ic__20260519_1000.json Llama_Llama3-2-3B__bigbench_hard_tracking__20260519_2032.json Gemma_Gemma3-4B__bigbench_hard_tracking__20260519_0158.json Qwen_Qwen2-5-3B__bigbench_hard_tracking__20260518_0744.json Qwen_Qwen2-5-3B__bigbench_hard_tracking__20260518_0031.json Llama_Llama3-2-3B__gsm8k__20260520_0138.json Qwen_Qwen2-5-3B__gsm8k__20260518_0224.json Qwen_Qwen2-5-3B__gsm8k__20260518_1331.json Gemma_Gemma3-4B__gsm8k__20260519_0748.json Qwen_Qwen2-5-3B__gsm_plus__20260518_1048.json Llama_Llama3-2-3B__gsm_plus__20260519_2252.json Gemma_Gemma3-4B__gsm_plus__20260519_0431.json Llama_Llama3-2-3B__gsm_symbolic__20260520_0624.json Qwen_Qwen2-5-3B__gsm_symbolic__20260518_0518.json Qwen_Qwen2-5-3B__gsm_symbolic__20260518_1949.json Gemma_Gemma3-4B__gsm_symbolic__20260519_1438.json Llama_Llama3-2-3B__bigbench_hard__20260520_0829.json Qwen_Qwen2-5-3B__bigbench_hard__20260518_2244.json Gemma_Gemma3-4B__bigbench_hard__20260519_1726.json Gemma_Gemma3-4B__folio__20260519_1213.json Llama_Llama3-2-3B__folio__20260520_0431.json Qwen_Qwen2-5-3B__folio__20260518_1727.json Qwen_Qwen2-5-3B__folio__20260518_0741.json
+
