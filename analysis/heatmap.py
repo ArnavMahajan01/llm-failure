@@ -1,3 +1,5 @@
+import glob
+import json
 import os
 import sys
 import numpy as np
@@ -7,7 +9,7 @@ import matplotlib.ticker as mtick
 import seaborn as sns
 from matplotlib.colors import LinearSegmentedColormap
 
-from config import PROCESSED_DIR
+from config import PROCESSED_DIR, RESULTS_DIR
 
 # config
 
@@ -455,6 +457,113 @@ def fig4_radar_model(df_summary, model_name):
         print(f"  Saved: {path}")
 
 
+# Fig 5: Cumulative accuracy per question, one line per dataset
+# BENCHMARK_COLORS keeps lines visually distinct regardless of order
+BENCHMARK_COLORS = {
+    "gsm8k":                "#E53935",
+    "gsm_symbolic":         "#F9A825",
+    "gsm_plus":             "#FB8C00",
+    "gsm_ic":               "#43A047",
+    "bigbench_hard":        "#1E88E5",
+    "bigbench_hard_tracking":"#8E24AA",
+    "folio":                "#00ACC1",
+}
+
+def moving_average(values, window=5):
+    values = np.array(values, dtype=float)
+    if len(values) < window:
+        return values  # not enough points to smooth
+    return np.convolve(values, np.ones(window) / window, mode="same")
+
+
+def fig5_cumulative_accuracy(model_name, condition="zero_shot"):
+    """
+    Line chart: X = question index, Y = running accuracy up to that question.
+    One line per dataset (benchmark) for the given model.
+    Reads raw JSON result files directly from RESULTS_DIR.
+    Usage: python3 -m analysis.heatmap -Llama/Llama3-2-3B
+    """
+    file_prefix = model_name.replace("/", "_", 1)
+    pattern = os.path.join(RESULTS_DIR, "**", f"{file_prefix}__*.json")
+    files = sorted(glob.glob(pattern, recursive=True))
+
+    if not files:
+        print(f"  ERROR: No result files found for model '{model_name}'")
+        print(f"  Searched: {pattern}")
+        return
+
+    model_label = friendly_model(model_name)
+    fallback_colors = list(plt.cm.tab10.colors)
+
+    fig, ax = plt.subplots(figsize=(13, 6))
+    plotted = 0
+
+    # Track seen benchmarks so duplicate runs don't add a second line
+    seen_benchmarks = {}
+
+    for filepath in files:
+        filename  = os.path.basename(filepath)
+        parts     = filename.replace(".json", "").split("__")
+        benchmark = parts[1] if len(parts) >= 2 else filename
+
+        # If we've already plotted this benchmark, skip (keep first file only)
+        if benchmark in seen_benchmarks:
+            continue
+        seen_benchmarks[benchmark] = True
+
+        with open(filepath, encoding="utf-8") as f:
+            results = json.load(f)
+
+        # Extract majority_correct for the requested condition, in question order
+        correct_flags = [
+            item.get("conditions", {}).get(condition, {}).get("majority_correct", False)
+            for item in results
+        ]
+
+        if not correct_flags:
+            print(f"  WARNING: no '{condition}' data in {filename}, skipping")
+            continue
+
+        running_acc = np.cumsum(correct_flags) / np.arange(1, len(correct_flags) + 1)
+        smoothed_acc = moving_average(running_acc, window=5)
+        x = np.arange(1, len(running_acc) + 1)
+
+        color = BENCHMARK_COLORS.get(benchmark, fallback_colors[plotted % len(fallback_colors)])
+        bm_label = friendly_benchmark(benchmark)
+        final_acc = running_acc[-1]
+        ax.plot(x, running_acc, linewidth=1.8, color=color, label=f"{bm_label} (final {final_acc:.1%})" )
+        #ax.plot(x, smoothed_acc, linewidth=2.2, color=color, label=f"{bm_label} (final {final_acc:.1%})")
+
+        # Mark the final accuracy with a dot
+        ax.scatter([x[-1]], [running_acc[-1]], s=40, color=color, zorder=5)
+        plotted += 1
+
+    if plotted == 0:
+        print(f"  No data plotted for {model_name}.")
+        plt.close()
+        return
+
+    ax.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1.0))
+    ax.set_xlabel("Question Index", fontsize=11)
+    ax.set_ylabel("Cumulative Accuracy", fontsize=11)
+    ax.set_title(
+        f"Fig 5: Running Accuracy: {model_label}\n"
+        f"Cumulative accuracy after each question  "
+        f"[condition: {condition.replace('_', ' ')}]",
+        fontsize=12,
+    )
+    ax.legend(loc="lower right", fontsize=9, framealpha=0.9)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.set_xlim(left=1)
+    plt.tight_layout()
+
+    safe_model = model_label.replace(" ", "_").replace("/", "-")
+    path = os.path.join(CHARTS_DIR, f"fig5_{safe_model}_cumulative_accuracy.png")
+    plt.savefig(path)
+    plt.close()
+    print(f"  Saved: {path}")
+
+
 # Main
 def main():
     os.makedirs(CHARTS_DIR, exist_ok=True)
@@ -483,8 +592,10 @@ def main():
     if model_arg:
         print(f"\nGenerating Fig 4 radar chart for model: {model_arg}")
         fig4_radar_model(df_summary, model_arg)
+        print(f"\nGenerating Fig 5 cumulative accuracy for model: {model_arg}")
+        fig5_cumulative_accuracy(model_arg)
     else:
-        print("\nTip: pass -<model> to generate a radar chart, e.g.:")
+        print("\nTip: pass -<model> to generate per-model figures (Fig 4 + Fig 5), e.g.:")
         print("  python3 -m analysis.heatmap -Llama/Llama3-2-3B")
 
     print(f"\nDone. All figures saved to {CHARTS_DIR}/")

@@ -119,25 +119,13 @@ python3 -m results.processResults Gemma_Gemma3-1B__gsm_symbolic__20260511_2100.j
 python3 -m analysis.heatmap
 ```
 
-For Radar charts (Fig 4), pass in the model name as argument
+For Radar charts (Fig 4) and Line charts (Fig 5), pass in the model name as argument
 
 ```bash
 python3 -m analysis.heatmap -Llama/Llama3-2-3B
 ```
 
 Generated charts can then be viewed in ```results/processed/charts```.
-
-#### Figure 1: Baseline vs In-Context Learning Accuracy
-What it tells you: does giving the model examples actually help?
-
-#### Figure 2: Error Taxonomy: Zero-Shot Failure Classification
-This looks at the zero-shot failures specifically and asks: how did the model get it wrong?
-
-#### Figure 3: ICL Recovery Heatmap
-It answers: of the questions each model got wrong under zero-shot, how many did it recover (get right) when given few-shot examples?
-
-#### Figure 4: Failure Mode Profile by Model
-What it tells you: the same insight as fig 2 but visually emphasises the relative composition rather than absolute percentages.
 
 ### Raw Results
 
