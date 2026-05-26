@@ -357,7 +357,7 @@ RADAR_STRATEGIES = [
 BOLD_SPOKE_COL = "zero_shot_baseline_acc"
 
 
-def fig4_radar_model(df_summary, model_name):
+def fig4_radar_model(df_summary, model_name, save_dir=None):
     """
     One radar chart per dataset for the given model.
     Spokes   = ICL strategies (8 spokes, always consistent).
@@ -451,7 +451,7 @@ def fig4_radar_model(df_summary, model_name):
         )
         plt.tight_layout()
 
-        path = os.path.join(CHARTS_DIR, f"fig4_{safe_model}_{safe_bm}_radar.png")
+        path = os.path.join(save_dir or CHARTS_DIR, f"fig4_{safe_model}_{safe_bm}_radar.png")
         plt.savefig(path)
         plt.close()
         print(f"  Saved: {path}")
@@ -476,7 +476,7 @@ def moving_average(values, window=5):
     return np.convolve(values, np.ones(window) / window, mode="same")
 
 
-def fig5_cumulative_accuracy(model_name, condition="zero_shot"):
+def fig5_cumulative_accuracy(model_name, condition="zero_shot", save_dir=None):
     """
     Line chart: X = question index, Y = running accuracy up to that question.
     One line per dataset (benchmark) for the given model.
@@ -555,20 +555,20 @@ def fig5_cumulative_accuracy(model_name, condition="zero_shot"):
         f"[condition: {condition.replace('_', ' ')}]",
         fontsize=12,
     )
-    ax.legend(loc="lower right", fontsize=9, framealpha=0.9)
+    ax.legend(loc="lower right", bbox_to_anchor=(0.95, -0.4), fontsize=9, framealpha=0.9)
     ax.spines[["top", "right"]].set_visible(False)
     ax.set_xlim(left=1)
     plt.tight_layout()
 
     safe_model = model_label.replace(" ", "_").replace("/", "-")
-    path = os.path.join(CHARTS_DIR, f"fig5_{safe_model}_cumulative_accuracy.png")
+    path = os.path.join(save_dir or CHARTS_DIR, f"fig5_{safe_model}_cumulative_accuracy.png")
     plt.savefig(path)
     plt.close()
     print(f"  Saved: {path}")
 
 
 # Fig 6: Cumulative accuracy per question, one line per model, fixed benchmark
-def fig6_cumulative_by_benchmark(benchmark, condition="zero_shot"):
+def fig6_cumulative_by_benchmark(benchmark, condition="zero_shot", save_dir=None):
     """
     Line chart: X = question index, Y = running accuracy up to that question.
     One line per model for the given benchmark/dataset.
@@ -653,12 +653,12 @@ def fig6_cumulative_by_benchmark(benchmark, condition="zero_shot"):
         f"[condition: {condition.replace('_', ' ')}]",
         fontsize=12,
     )
-    ax.legend(loc="lower right", fontsize=9, framealpha=0.9, ncol=2)
+    ax.legend(loc="lower right", bbox_to_anchor=(0.95, -0.3), fontsize=9, framealpha=0.9, ncol=2)
     ax.spines[["top", "right"]].set_visible(False)
     ax.set_xlim(left=1)
     plt.tight_layout()
 
-    path = os.path.join(CHARTS_DIR, f"fig6_{benchmark}_cumulative_accuracy.png")
+    path = os.path.join(save_dir or CHARTS_DIR, f"fig6_{benchmark}_cumulative_accuracy.png")
     plt.savefig(path)
     plt.close()
     print(f"  Saved: {path}")
@@ -680,7 +680,7 @@ ERROR_COLORS = {
 }
 
 
-def fig7_error_distribution_by_benchmark(df_errors, df_summary, benchmark):
+def fig7_error_distribution_by_benchmark(df_errors, df_summary, benchmark, save_dir=None):
     """
     Stacked bar chart: one bar per model, stacked by error type.
     Bar height = total wrong predictions on this benchmark.
@@ -772,10 +772,250 @@ def fig7_error_distribution_by_benchmark(df_errors, df_summary, benchmark):
     ax.set_xlim(-0.5, len(model_labels) - 0.5)
     plt.tight_layout()
 
-    path = os.path.join(CHARTS_DIR, f"fig7_{benchmark}_error_distribution.png")
+    path = os.path.join(save_dir or CHARTS_DIR, f"fig7_{benchmark}_error_distribution.png")
     plt.savefig(path)
     plt.close()
     print(f"  Saved: {path}")
+
+
+# Fig 8: Family radar chart — one file per family, both sizes overlaid, fixed benchmark
+# Size → (line style, fill alpha) so the two polygons are visually distinct
+_SIZE_STYLE = {
+    0: {"ls": "-",  "marker": "o", "fill_alpha": 0.20},   # smaller model
+    1: {"ls": "--", "marker": "s", "fill_alpha": 0.10},   # larger model
+}
+
+
+def fig8_radar_by_benchmark_family(df_summary, benchmark, save_dir=None):
+    """
+    One radar chart per model family for the given benchmark.
+    Spokes  = ICL strategies (same 10 spokes as Fig 4).
+    Polygons = one per model size within the family (e.g. Qwen 1.5B + Qwen 3B).
+    Data source: summary.csv — micro-averages duplicate runs automatically.
+    Usage: python3 -m analysis.heatmap --gsm8k
+    """
+    df = df_summary[df_summary["benchmark"] == benchmark].copy()
+    if df.empty:
+        print(f"  ERROR: '{benchmark}' not found in summary.csv")
+        print(f"  Available: {sorted(df_summary['benchmark'].unique())}")
+        return
+
+    benchmark_label = friendly_benchmark(benchmark)
+
+    # Derive family + size labels
+    df["model_label"] = df["model"].apply(friendly_model)
+    df["family"] = df["model_label"].apply(lambda x: x.split()[0])
+    df["size"]   = df["model_label"].apply(lambda x: x.split()[1] if len(x.split()) > 1 else "")
+
+    acc_cols  = [col for col, _ in RADAR_STRATEGIES if col in df.columns]
+    strategies = [(col, label) for col, label in RADAR_STRATEGIES if col in acc_cols]
+
+    # Micro-average duplicate runs per (family, size)
+    df = (
+        df.groupby(["family", "size"])
+        .apply(lambda g: pd.Series({
+            c: (g[c] * g["n_samples"]).sum() / g["n_samples"].sum()
+            for c in acc_cols
+        }))
+        .reset_index()
+    )
+
+    spoke_labels = [label for _, label in strategies]
+    N      = len(strategies)
+    angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
+    angles += angles[:1]
+
+    bold_idx = next(
+        (i for i, (col, _) in enumerate(strategies) if col == BOLD_SPOKE_COL),
+        None,
+    )
+
+    safe_bm = benchmark.replace("/", "-")
+
+    for family, family_df in df.groupby("family"):
+        fstyle = FAMILY_STYLES.get(family, {"color": "#2E6AA6", "sizes": {}})
+        color  = fstyle["color"]
+
+        # Sort sizes ascending (1B / 1.5B before 3B / 4B)
+        def _size_f(s):
+            try:
+                return float(s.replace("B", ""))
+            except ValueError:
+                return 0.0
+
+        sizes = sorted(family_df["size"].unique(), key=_size_f)
+
+        fig, ax = plt.subplots(figsize=(7, 7), subplot_kw={"polar": True})
+        ax.set_theta_offset(np.pi / 2)
+        ax.set_theta_direction(-1)
+        ax.set_xticks(angles[:-1])
+        ax.set_xticklabels(spoke_labels, fontsize=9)
+        ax.set_ylim(0, 1)
+        ax.set_yticks([0.2, 0.4, 0.6, 0.8, 1.0])
+        ax.set_yticklabels(["20%", "40%", "60%", "80%", "100%"], fontsize=7, color="grey")
+        ax.tick_params(pad=10)
+
+        for rank, size in enumerate(sizes):
+            row   = family_df[family_df["size"] == size].iloc[0]
+            vals  = [row[col] for col, _ in strategies] + [row[strategies[0][0]]]
+            sstyle = _SIZE_STYLE.get(rank, _SIZE_STYLE[1])
+
+            ax.plot(angles, vals,
+                    linestyle=sstyle["ls"], linewidth=2.5, color=color,
+                    marker=sstyle["marker"], markersize=5,
+                    label=f"{family} {size}")
+            ax.fill(angles, vals, alpha=sstyle["fill_alpha"], color=color)
+
+            # Highlight the Zero-Shot Baseline point
+            if bold_idx is not None:
+                ax.scatter(
+                    angles[bold_idx],
+                    vals[bold_idx],
+                    s=120,
+                    color="#212121",
+                    edgecolors="white",
+                    linewidth=1.5,
+                    zorder=6,
+                )
+
+            # Accuracy label per spoke, offset outward a little
+            offset = 0.09 + rank * 0.05   # separate labels for each size
+            for angle, val in zip(angles[:-1], vals[:-1]):
+                ax.annotate(
+                    f"{val:.0%}",
+                    xy=(angle, val),
+                    xytext=(angle, min(val + offset, 0.97)),
+                    ha="center", va="center",
+                    fontsize=8, color=color,
+                    fontweight="bold" if rank == 0 else "normal",
+                )
+
+        ax.legend(loc="lower right", bbox_to_anchor=(1.25, -0.05), fontsize=9, framealpha=0.9)
+        ax.set_title(
+            f"Fig 8: {family}  ·  {benchmark_label}\n"
+            "Accuracy by ICL Strategy  "
+            "(solid = smaller model, dashed = larger)",
+            fontsize=10, pad=22,
+        )
+        plt.tight_layout()
+
+        path = os.path.join(save_dir or CHARTS_DIR, f"fig8_{safe_bm}_{family}_radar.png")
+        plt.savefig(path)
+        plt.close()
+        print(f"  Saved: {path}")
+
+
+# Fig 9: Tier radar chart — one file per parameter tier, all families overlaid, fixed benchmark
+def fig9_radar_by_benchmark_tier(df_summary, benchmark, save_dir=None):
+    """
+    One radar chart per parameter-size tier for the given benchmark.
+    Spokes   = ICL strategies (same as Fig 4/8).
+    Polygons = one per model family (Gemma / Llama / Qwen), each in its family colour.
+    Two output files:
+      fig9_{benchmark}_1B-1.5B_radar.png  — small models from every family
+      fig9_{benchmark}_3B-4B_radar.png    — large models from every family
+    Usage: python3 -m analysis.heatmap --gsm8k
+    """
+    df = df_summary[df_summary["benchmark"] == benchmark].copy()
+    if df.empty:
+        print(f"  ERROR: '{benchmark}' not found in summary.csv")
+        print(f"  Available: {sorted(df_summary['benchmark'].unique())}")
+        return
+
+    benchmark_label = friendly_benchmark(benchmark)
+
+    df["model_label"] = df["model"].apply(friendly_model)
+    df["family"] = df["model_label"].apply(lambda x: x.split()[0])
+    df["size"]   = df["model_label"].apply(lambda x: x.split()[1] if len(x.split()) > 1 else "")
+    df["tier"]   = df["model"].apply(lambda m: _parse_family_tier(m)[1])
+
+    acc_cols   = [col for col, _ in RADAR_STRATEGIES if col in df.columns]
+    strategies = [(col, label) for col, label in RADAR_STRATEGIES if col in acc_cols]
+
+    # Micro-average duplicate runs per (family, size, tier)
+    df = (
+        df.groupby(["family", "size", "tier"])
+        .apply(lambda g: pd.Series({
+            c: (g[c] * g["n_samples"]).sum() / g["n_samples"].sum()
+            for c in acc_cols
+        }))
+        .reset_index()
+    )
+
+    spoke_labels = [label for _, label in strategies]
+    N      = len(strategies)
+    angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
+    angles += angles[:1]
+
+    bold_idx = next(
+        (i for i, (col, _) in enumerate(strategies) if col == BOLD_SPOKE_COL),
+        None,
+    )
+
+    safe_bm = benchmark.replace("/", "-")
+
+    for tier, tier_df in df.groupby("tier"):
+        if tier == "other":
+            continue
+
+        families = sorted(tier_df["family"].unique())
+
+        fig, ax = plt.subplots(figsize=(7, 7), subplot_kw={"polar": True})
+        ax.set_theta_offset(np.pi / 2)
+        ax.set_theta_direction(-1)
+        ax.set_xticks(angles[:-1])
+        ax.set_xticklabels(spoke_labels, fontsize=9)
+        ax.set_ylim(0, 1)
+        ax.set_yticks([0.2, 0.4, 0.6, 0.8, 1.0])
+        ax.set_yticklabels(["20%", "40%", "60%", "80%", "100%"], fontsize=7, color="grey")
+        ax.tick_params(pad=10)
+
+        for rank, family in enumerate(families):
+            frows = tier_df[tier_df["family"] == family]
+            if frows.empty:
+                continue
+            row   = frows.iloc[0]
+            color = FAMILY_STYLES.get(family, {"color": "#2E6AA6"})["color"]
+            vals  = [row[col] for col, _ in strategies] + [row[strategies[0][0]]]
+
+            ax.plot(angles, vals, "-", linewidth=2.5, color=color,
+                    marker="o", markersize=5, label=f"{family} {row['size']}")
+            ax.fill(angles, vals, alpha=0.15, color=color)
+
+            if bold_idx is not None:
+                ax.scatter(
+                    angles[bold_idx],
+                    vals[bold_idx],
+                    s=12,
+                    color="#212121",
+                    linewidth=1.5,
+                    zorder=6,
+                )
+
+            # Annotate each spoke — offset outward by family rank to reduce overlap
+            ann_offset = 0.08 + rank * 0.05
+            for angle, val in zip(angles[:-1], vals[:-1]):
+                ax.annotate(
+                    f"{val:.0%}",
+                    xy=(angle, val),
+                    xytext=(angle, min(val + ann_offset, 0.97)),
+                    ha="center", va="center",
+                    fontsize=7.5, color=color, fontweight="bold",
+                )
+
+        ax.legend(loc="lower right",bbox_to_anchor=(1.25, -0.05), fontsize=9, framealpha=0.9)
+        safe_tier = tier.replace("–", "-")
+        ax.set_title(
+            f"Fig 9: {tier}  ·  {benchmark_label}\n"
+            "Accuracy by ICL Strategy  (one polygon per family)",
+            fontsize=10, pad=22,
+        )
+        plt.tight_layout()
+
+        path = os.path.join(save_dir or CHARTS_DIR, f"fig9_{safe_bm}_{safe_tier}_radar.png")
+        plt.savefig(path)
+        plt.close()
+        print(f"  Saved: {path}")
 
 
 # Main
@@ -811,24 +1051,35 @@ def main():
     fig3_strategy_progression(df_summary)
 
     if model_arg:
+        # Subfolder: charts/<Llama_3B>/
+        model_folder = friendly_model(model_arg).replace(" ", "_")
+        model_dir = os.path.join(CHARTS_DIR, model_folder)
+        os.makedirs(model_dir, exist_ok=True)
         print(f"\nGenerating Fig 4 radar chart for model: {model_arg}")
-        fig4_radar_model(df_summary, model_arg)
+        fig4_radar_model(df_summary, model_arg, save_dir=model_dir)
         print(f"\nGenerating Fig 5 cumulative accuracy for model: {model_arg}")
-        fig5_cumulative_accuracy(model_arg)
+        fig5_cumulative_accuracy(model_arg, save_dir=model_dir)
 
     if benchmark_arg:
+        # Subfolder: charts/<gsm8k>/
+        bm_dir = os.path.join(CHARTS_DIR, benchmark_arg)
+        os.makedirs(bm_dir, exist_ok=True)
         print(f"\nGenerating Fig 6 cumulative accuracy for benchmark: {benchmark_arg}")
-        fig6_cumulative_by_benchmark(benchmark_arg)
+        fig6_cumulative_by_benchmark(benchmark_arg, save_dir=bm_dir)
         print(f"\nGenerating Fig 7 error distribution for benchmark: {benchmark_arg}")
         if df_errors is not None:
-            fig7_error_distribution_by_benchmark(df_errors, df_summary, benchmark_arg)
+            fig7_error_distribution_by_benchmark(df_errors, df_summary, benchmark_arg, save_dir=bm_dir)
         else:
             print("  Skipping Fig 7: error_distribution.csv not found.")
+        print(f"\nGenerating Fig 8 family radar charts for benchmark: {benchmark_arg}")
+        fig8_radar_by_benchmark_family(df_summary, benchmark_arg, save_dir=bm_dir)
+        print(f"\nGenerating Fig 9 tier radar charts for benchmark: {benchmark_arg}")
+        fig9_radar_by_benchmark_tier(df_summary, benchmark_arg, save_dir=bm_dir)
 
     if not model_arg and not benchmark_arg:
         print("\nTip: pass optional args to generate per-model/benchmark figures:")
-        print("  -<model>      → Fig 4 + Fig 5       e.g. -Llama/Llama3-2-3B")
-        print("  --<benchmark> → Fig 6 + Fig 7       e.g. --gsm8k")
+        print("  -<model>      → Fig 4 + Fig 5                 e.g. -Llama/Llama3-2-3B")
+        print("  --<benchmark> → Fig 6 + Fig 7 + Fig 8 + Fig 9 e.g. --gsm8k")
 
     print(f"\nDone. All figures saved to {CHARTS_DIR}/")
 
