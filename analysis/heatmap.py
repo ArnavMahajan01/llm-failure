@@ -483,9 +483,12 @@ def fig5_cumulative_accuracy(model_name, condition="zero_shot"):
     Reads raw JSON result files directly from RESULTS_DIR.
     Usage: python3 -m analysis.heatmap -Llama/Llama3-2-3B
     """
-    file_prefix = model_name.replace("/", "_", 1)
+    # Filename format: {Family}_{ModelName}__{benchmark}__{timestamp}.json
+    # "/" → "_" and "." → "-" so e.g. Llama/Llama3.2-1.5B → Llama_Llama3-2-1-5B
+    file_prefix = model_name.replace("/", "_", 1).replace(".", "-")
     pattern = os.path.join(RESULTS_DIR, "**", f"{file_prefix}__*.json")
-    files = sorted(glob.glob(pattern, recursive=True))
+    # Sort descending so the latest timestamp file comes first
+    files = sorted(glob.glob(pattern, recursive=True), reverse=True)
 
     if not files:
         print(f"  ERROR: No result files found for model '{model_name}'")
@@ -498,18 +501,18 @@ def fig5_cumulative_accuracy(model_name, condition="zero_shot"):
     fig, ax = plt.subplots(figsize=(13, 6))
     plotted = 0
 
-    # Track seen benchmarks so duplicate runs don't add a second line
-    seen_benchmarks = {}
+    # Track seen benchmarks — latest-timestamp file wins (files sorted descending)
+    seen_benchmarks = set()
 
     for filepath in files:
         filename  = os.path.basename(filepath)
         parts     = filename.replace(".json", "").split("__")
+        # parts: [model_prefix, benchmark, timestamp]
         benchmark = parts[1] if len(parts) >= 2 else filename
 
-        # If we've already plotted this benchmark, skip (keep first file only)
         if benchmark in seen_benchmarks:
             continue
-        seen_benchmarks[benchmark] = True
+        seen_benchmarks.add(benchmark)
 
         with open(filepath, encoding="utf-8") as f:
             results = json.load(f)
@@ -564,6 +567,103 @@ def fig5_cumulative_accuracy(model_name, condition="zero_shot"):
     print(f"  Saved: {path}")
 
 
+# Fig 6: Cumulative accuracy per question, one line per model, fixed benchmark
+def fig6_cumulative_by_benchmark(benchmark, condition="zero_shot"):
+    """
+    Line chart: X = question index, Y = running accuracy up to that question.
+    One line per model for the given benchmark/dataset.
+    Reads raw JSON result files directly from RESULTS_DIR.
+    Usage: python3 -m analysis.heatmap --gsm8k
+    """
+    # Files live in RESULTS_DIR/{benchmark}/ with names {model}__{benchmark}__{timestamp}.json
+    bm_dir  = os.path.join(RESULTS_DIR, benchmark)
+    pattern = os.path.join(bm_dir, "*.json")
+    # Sort descending so the latest-timestamp file comes first per model
+    files = sorted(glob.glob(pattern), reverse=True)
+
+    if not files:
+        print(f"  ERROR: No result files found for benchmark '{benchmark}'")
+        print(f"  Searched: {pattern}")
+        return
+
+    benchmark_label = friendly_benchmark(benchmark)
+    fallback_colors = list(plt.cm.tab10.colors)
+
+    fig, ax = plt.subplots(figsize=(13, 6))
+    plotted = 0
+    seen_models = set()
+
+    for filepath in files:
+        filename = os.path.basename(filepath)
+        parts    = filename.replace(".json", "").split("__")
+        # parts: [model_prefix, benchmark, timestamp]
+        if len(parts) < 2:
+            continue
+
+        # Reconstruct model name the same way loadResults() does
+        modelname = parts[0].replace("_", "/", 1)
+
+        # Skip duplicate files for the same model — latest timestamp wins (sorted desc)
+        if modelname in seen_models:
+            continue
+        seen_models.add(modelname)
+
+        with open(filepath, encoding="utf-8") as f:
+            results = json.load(f)
+
+        correct_flags = [
+            item.get("conditions", {}).get(condition, {}).get("majority_correct", False)
+            for item in results
+        ]
+        if not correct_flags:
+            print(f"  WARNING: no '{condition}' data in {filename}, skipping")
+            continue
+
+        running_acc = np.cumsum(correct_flags) / np.arange(1, len(correct_flags) + 1)
+        x = np.arange(1, len(running_acc) + 1)
+
+        # Derive colour + line style from family (same scheme as Fig 3)
+        model_label  = friendly_model(modelname)
+        label_parts  = model_label.split()
+        family       = label_parts[0] if label_parts else model_label
+        size         = label_parts[1] if len(label_parts) > 1 else ""
+        style        = FAMILY_STYLES.get(family, {"color": fallback_colors[plotted % len(fallback_colors)], "sizes": {}})
+        color        = style["color"]
+        ls           = style["sizes"].get(size, "-")
+        marker       = "o" if ls == "-" else "s"
+
+        final_acc = running_acc[-1]
+        ax.plot(x, running_acc, linewidth=1.8, color=color, linestyle=ls,
+                label=f"{model_label}  ({final_acc:.1%})")
+        ax.scatter([x[-1]], [running_acc[-1]], s=45, color=color,
+                   marker=marker, zorder=5)
+        plotted += 1
+
+    if plotted == 0:
+        print(f"  No data plotted for benchmark '{benchmark}'.")
+        plt.close()
+        return
+
+    ax.yaxis.set_major_formatter(mtick.PercentFormatter(xmax=1.0))
+    ax.set_xlabel("Question Index", fontsize=11)
+    ax.set_ylabel("Cumulative Accuracy", fontsize=11)
+    ax.set_title(
+        f"Fig 6: Running Accuracy: {benchmark_label}\n"
+        f"Cumulative accuracy after each question  "
+        f"[condition: {condition.replace('_', ' ')}]",
+        fontsize=12,
+    )
+    ax.legend(loc="lower right", fontsize=9, framealpha=0.9, ncol=2)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.set_xlim(left=1)
+    plt.tight_layout()
+
+    path = os.path.join(CHARTS_DIR, f"fig6_{benchmark}_cumulative_accuracy.png")
+    plt.savefig(path)
+    plt.close()
+    print(f"  Saved: {path}")
+
+
 # Main
 def main():
     os.makedirs(CHARTS_DIR, exist_ok=True)
@@ -578,9 +678,16 @@ def main():
         print("  python3 -m results.processResults <files...>")
         return
 
-    # Optional model arg: python3 -m analysis.heatmap -Llama/Llama3-2-3B
+    # CLI args:
+    #   -<model>      → Fig 4 (radar) + Fig 5 (cumulative per dataset)
+    #   --<benchmark> → Fig 6 (cumulative per model for that dataset)
     model_arg = next(
-        (arg.lstrip("-") for arg in sys.argv[1:] if arg.startswith("-")),
+        (arg.lstrip("-") for arg in sys.argv[1:]
+         if arg.startswith("-") and not arg.startswith("--")),
+        None,
+    )
+    benchmark_arg = next(
+        (arg.lstrip("-") for arg in sys.argv[1:] if arg.startswith("--")),
         None,
     )
 
@@ -594,9 +701,15 @@ def main():
         fig4_radar_model(df_summary, model_arg)
         print(f"\nGenerating Fig 5 cumulative accuracy for model: {model_arg}")
         fig5_cumulative_accuracy(model_arg)
-    else:
-        print("\nTip: pass -<model> to generate per-model figures (Fig 4 + Fig 5), e.g.:")
-        print("  python3 -m analysis.heatmap -Llama/Llama3-2-3B")
+
+    if benchmark_arg:
+        print(f"\nGenerating Fig 6 cumulative accuracy for benchmark: {benchmark_arg}")
+        fig6_cumulative_by_benchmark(benchmark_arg)
+
+    if not model_arg and not benchmark_arg:
+        print("\nTip: pass optional args to generate per-model/benchmark figures:")
+        print("  -<model>      → Fig 4 + Fig 5  e.g. -Llama/Llama3-2-3B")
+        print("  --<benchmark> → Fig 6           e.g. --gsm8k")
 
     print(f"\nDone. All figures saved to {CHARTS_DIR}/")
 
