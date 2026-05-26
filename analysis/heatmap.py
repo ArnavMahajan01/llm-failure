@@ -1,4 +1,5 @@
 import os
+import sys
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -338,6 +339,122 @@ def fig3_strategy_progression(df_summary):
     print(f"  Saved: {path}")
 
 
+# Fig 4: Radar Chart, per-model, accuracy across datasets by strategy
+RADAR_STRATEGIES = [
+    ("zero_shot_baseline_acc",                "Zero-Shot\nBaseline"),  
+    ("zero_shot_acc",                         "Zero-Shot"),
+    ("targeted_few_shot_answer_only_acc",     "Targeted ICL\n(Ans Only)"),
+    ("random_few_shot_acc",                   "Random ICL"),
+    ("targeted_few_shot_acc",                 "Targeted ICL"),
+    ("targeted_few_shot_k5_acc",              "Targeted ICL (k=5)"),
+    ("error_targeted_icl_acc",                "Error-Targeted"),
+    ("error_targeted_icl_random_acc",         "ET (Random)"),
+    ("error_targeted_icl_correct_only_acc",   "ET (Correct)"),
+    ("self_consistency_acc",                  "Self-Consistency"),
+]
+BOLD_SPOKE_COL = "zero_shot_baseline_acc"
+
+
+def fig4_radar_model(df_summary, model_name):
+    """
+    One radar chart per dataset for the given model.
+    Spokes   = ICL strategies (8 spokes, always consistent).
+    Polygon  = model accuracy on each strategy for that dataset.
+    Duplicate runs for the same benchmark are micro-averaged first.
+    Usage: python3 -m analysis.heatmap -Llama/Llama3-2-3B
+    """
+    available = df_summary["model"].unique()
+    if model_name not in available:
+        print(f"  ERROR: '{model_name}' not found.")
+        print(f"  Available models: {sorted(available)}")
+        return
+
+    df = df_summary[df_summary["model"] == model_name].copy()
+    acc_cols = [col for col, _ in RADAR_STRATEGIES if col in df.columns]
+
+    # Micro-average duplicate runs per benchmark
+    df = (
+        df.groupby("benchmark")
+        .apply(lambda g: pd.Series({
+            c: (g[c] * g["n_samples"]).sum() / g["n_samples"].sum()
+            for c in acc_cols
+        }))
+        .reset_index()
+    )
+
+    model_label = friendly_model(model_name)
+    safe_model  = model_label.replace(" ", "_").replace("/", "-")
+    family      = model_label.split()[0]
+    color       = {"Gemma": "#4CAF50", "Llama": "#E53935", "Qwen": "#7B1FA2"}.get(family, "#2E6AA6")
+
+    # Spokes = strategies present in data
+    strategies   = [(col, label) for col, label in RADAR_STRATEGIES if col in acc_cols]
+    spoke_labels = [label for _, label in strategies]
+    N      = len(strategies)
+    angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
+    angles += angles[:1]
+
+    # One file per benchmark
+    for _, row in df.iterrows():
+        benchmark_key   = row["benchmark"]
+        benchmark_label = friendly_benchmark(benchmark_key)
+        safe_bm         = benchmark_key.replace("/", "-")
+
+        vals = [row[col] for col, _ in strategies] + [row[strategies[0][0]]]
+
+        fig, ax = plt.subplots(figsize=(7, 7), subplot_kw={"polar": True})
+        ax.set_theta_offset(np.pi / 2)
+        ax.set_theta_direction(-1)
+        ax.set_xticks(angles[:-1])
+        ax.set_xticklabels(spoke_labels, fontsize=9)
+        ax.set_ylim(0, 1)
+        ax.set_yticks([0.2, 0.4, 0.6, 0.8, 1.0])
+        ax.set_yticklabels(["20%", "40%", "60%", "80%", "100%"], fontsize=7, color="grey")
+        ax.tick_params(pad=10)
+
+        bold_idx = next(
+            (i for i, (col, _) in enumerate(strategies) if col == BOLD_SPOKE_COL),
+            None,
+        )
+        if bold_idx is not None:
+            for i, lbl in enumerate(ax.get_xticklabels()):
+                if i == bold_idx:
+                    lbl.set_fontweight("bold")
+            ax.scatter(
+                angles[bold_idx],
+                vals[bold_idx],
+                s=90,
+                color="#212121",
+                zorder=5,
+                edgecolors="white",
+                linewidth=1.2,
+            )
+
+        ax.plot(angles, vals, "o-", linewidth=2.5, color=color, markersize=6)
+        ax.fill(angles, vals, alpha=0.2, color=color)
+
+        # Accuracy label at each spoke
+        for angle, val in zip(angles[:-1], vals[:-1]):
+            ax.annotate(
+                f"{val:.0%}",
+                xy=(angle, val),
+                xytext=(angle, min(val + 0.09, 0.96)),
+                ha="center", va="center",
+                fontsize=9, fontweight="bold", color=color,
+            )
+
+        ax.set_title(
+            f"Fig 4: {model_label}  ·  {benchmark_label}\nAccuracy by ICL Strategy",
+            fontsize=11, pad=22,
+        )
+        plt.tight_layout()
+
+        path = os.path.join(CHARTS_DIR, f"fig4_{safe_model}_{safe_bm}_radar.png")
+        plt.savefig(path)
+        plt.close()
+        print(f"  Saved: {path}")
+
+
 # Main
 def main():
     os.makedirs(CHARTS_DIR, exist_ok=True)
@@ -352,10 +469,23 @@ def main():
         print("  python3 -m results.processResults <files...>")
         return
 
+    # Optional model arg: python3 -m analysis.heatmap -Llama/Llama3-2-3B
+    model_arg = next(
+        (arg.lstrip("-") for arg in sys.argv[1:] if arg.startswith("-")),
+        None,
+    )
+
     print("\nGenerating figures...")
     fig1_error_strategy_heatmap(df_recovery)
     fig2_family_comparison(df_summary)
     fig3_strategy_progression(df_summary)
+
+    if model_arg:
+        print(f"\nGenerating Fig 4 radar chart for model: {model_arg}")
+        fig4_radar_model(df_summary, model_arg)
+    else:
+        print("\nTip: pass -<model> to generate a radar chart, e.g.:")
+        print("  python3 -m analysis.heatmap -Llama/Llama3-2-3B")
 
     print(f"\nDone. All figures saved to {CHARTS_DIR}/")
 

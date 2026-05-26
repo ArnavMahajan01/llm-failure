@@ -119,6 +119,12 @@ python3 -m results.processResults Gemma_Gemma3-1B__gsm_symbolic__20260511_2100.j
 python3 -m analysis.heatmap
 ```
 
+For Radar charts (Fig 4), pass in the model name as argument
+
+```bash
+python3 -m analysis.heatmap -Llama/Llama3-2-3B
+```
+
 Generated charts can then be viewed in ```results/processed/charts```.
 
 #### Figure 1: Baseline vs In-Context Learning Accuracy
