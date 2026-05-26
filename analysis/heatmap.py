@@ -664,6 +664,120 @@ def fig6_cumulative_by_benchmark(benchmark, condition="zero_shot"):
     print(f"  Saved: {path}")
 
 
+# Fig 7: Error-type distribution stacked bar chart, one bar per model, fixed benchmark
+ERROR_COLORS = {
+    "drifting":                    "#E53935",
+    "format_correct_wrong_answer": "#F9A825",
+    "hallucination":               "#8E24AA",
+    "distractor":                  "#43A047",
+    "multi_hop":                   "#1E88E5",
+    "arithmetic_slip":             "#FB8C00",
+    "off_topic":                   "#00ACC1",
+    "negation":                    "#3949AB",
+    "confidently_wrong":           "#6D4C41",
+    "premise_order_sensitivity":   "#546E7A",
+    "unknown":                     "#9E9E9E",
+}
+
+
+def fig7_error_distribution_by_benchmark(df_errors, df_summary, benchmark):
+    """
+    Stacked bar chart: one bar per model, stacked by error type.
+    Bar height = total wrong predictions on this benchmark.
+    Data source: error_distribution.csv (df_errors) + summary.csv (df_summary).
+    Usage: python3 -m analysis.heatmap --gsm8k
+    """
+    df = df_errors[df_errors["benchmark"] == benchmark].copy()
+    if df.empty:
+        print(f"  ERROR: '{benchmark}' not found in error_distribution.csv")
+        print(f"  Available: {sorted(df_errors['benchmark'].unique())}")
+        return
+
+    benchmark_label = friendly_benchmark(benchmark)
+
+    # Friendly display names
+    df["model_label"] = df["model"].apply(friendly_model)
+
+    # Pivot: rows = model_label, columns = error_type, values = count
+    pivot = (
+        df.pivot_table(index="model_label", columns="error_type",
+                       values="count", aggfunc="sum")
+        .fillna(0)
+    )
+
+    # n_samples per model for this benchmark (for the wrong/total annotation)
+    n_samples = (
+        df_summary[df_summary["benchmark"] == benchmark]
+        .assign(model_label=lambda d: d["model"].apply(friendly_model))
+        .groupby("model_label")["n_samples"]
+        .sum()
+    )
+
+    # Sort models: by family then size ascending
+    def sort_key(label):
+        parts  = label.split()
+        family = parts[0]
+        size   = parts[1] if len(parts) > 1 else "0"
+        try:
+            size_f = float(size.replace("B", ""))
+        except ValueError:
+            size_f = 0.0
+        return (family, size_f)
+
+    model_labels = sorted(pivot.index.tolist(), key=sort_key)
+    pivot = pivot.reindex(model_labels)
+
+    # Only keep error types with at least one occurrence; order most→least common
+    active_errors = [et for et in ERROR_COLORS if et in pivot.columns and pivot[et].sum() > 0]
+    active_errors.sort(key=lambda et: pivot[et].sum(), reverse=True)
+
+    # --- plot -----------------------------------------------------------
+    x      = np.arange(len(model_labels))
+    width  = 0.55
+    bottom = np.zeros(len(model_labels))
+
+    fig, ax = plt.subplots(figsize=(max(9, len(model_labels) * 1.6), 7))
+
+    for et in active_errors:
+        vals  = pivot[et].values.astype(float)
+        ax.bar(x, vals, width, bottom=bottom,
+               label=ERROR_LABELS.get(et, et),
+               color=ERROR_COLORS[et], edgecolor="white", linewidth=0.6)
+        bottom += vals
+
+    # Annotate wrong/total on top of each bar
+    for i, ml in enumerate(model_labels):
+        total_q = int(n_samples.get(ml, 0))
+        wrong   = int(bottom[i])
+        ax.text(
+            x[i], bottom[i] + 1,
+            f"{wrong}/{total_q}" if total_q else str(wrong),
+            ha="center", va="bottom",
+            fontsize=8.5, fontweight="bold", color="#333333",
+        )
+
+    ax.set_xticks(x)
+    ax.set_xticklabels(model_labels, fontsize=10, fontweight="bold")
+    ax.set_ylabel("Number of Wrong Predictions", fontsize=11)
+    ax.set_title(
+        f"Fig 7: Error-Type Distribution: {benchmark_label}\n"
+        "Stacked by error category; bar height = total wrong answers per model",
+        fontsize=12,
+    )
+    ax.legend(
+        loc="upper right", fontsize=9, framealpha=0.9,
+        ncol=2, title="Error Type", title_fontsize=9,
+    )
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.set_xlim(-0.5, len(model_labels) - 0.5)
+    plt.tight_layout()
+
+    path = os.path.join(CHARTS_DIR, f"fig7_{benchmark}_error_distribution.png")
+    plt.savefig(path)
+    plt.close()
+    print(f"  Saved: {path}")
+
+
 # Main
 def main():
     os.makedirs(CHARTS_DIR, exist_ok=True)
@@ -705,11 +819,16 @@ def main():
     if benchmark_arg:
         print(f"\nGenerating Fig 6 cumulative accuracy for benchmark: {benchmark_arg}")
         fig6_cumulative_by_benchmark(benchmark_arg)
+        print(f"\nGenerating Fig 7 error distribution for benchmark: {benchmark_arg}")
+        if df_errors is not None:
+            fig7_error_distribution_by_benchmark(df_errors, df_summary, benchmark_arg)
+        else:
+            print("  Skipping Fig 7: error_distribution.csv not found.")
 
     if not model_arg and not benchmark_arg:
         print("\nTip: pass optional args to generate per-model/benchmark figures:")
-        print("  -<model>      → Fig 4 + Fig 5  e.g. -Llama/Llama3-2-3B")
-        print("  --<benchmark> → Fig 6           e.g. --gsm8k")
+        print("  -<model>      → Fig 4 + Fig 5       e.g. -Llama/Llama3-2-3B")
+        print("  --<benchmark> → Fig 6 + Fig 7       e.g. --gsm8k")
 
     print(f"\nDone. All figures saved to {CHARTS_DIR}/")
 

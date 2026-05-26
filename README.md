@@ -120,7 +120,7 @@ python3 -m analysis.heatmap
 ```
 
 For Radar charts (Fig 4) and Line charts (Fig 5), pass in the model name as argument
-For Line chart (Fig 6), pass in the benchmark name as argument
+For Line chart (Fig 6) and Stacker Bar chart (Fig 7), pass in the benchmark name as argument
 
 ```bash
 python3 -m analysis.heatmap -Llama/Llama3-2-3B --gsm8k
