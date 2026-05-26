@@ -1,0 +1,16 @@
+{
+  "run_id": "qwen__folio__error_targeted_icl__20260524_163432",
+  "family": "qwen",
+  "display_name": "Qwen/Qwen2.5-7B-Instruct",
+  "hf_model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "benchmark": "folio",
+  "condition": "error_targeted_icl",
+  "status": "success",
+  "started_at": "2026-05-24T16:34:32",
+  "finished_at": "2026-05-24T17:44:00",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/qwen__folio__error_targeted_icl__20260524_163432.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/qwen__folio__error_targeted_icl__20260524_163432__folio__Qwen_Qwen2-5-7B-Instruct__folio__20260524_1634.json"
+  ]
+}

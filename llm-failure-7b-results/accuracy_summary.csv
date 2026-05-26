@@ -1,0 +1,2 @@
+family,model,hf_model_id,benchmark,condition,n,correct,accuracy,result_file
+unknown_or_smoke,unknown_or_smoke,unknown_or_smoke,unknown_or_smoke,zero_shot,2,1,0.5,/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/smoke__gsm_symbolic__Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_0830.json

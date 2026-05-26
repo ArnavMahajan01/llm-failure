@@ -1,6 +1,37 @@
-/__pycache__
-/models/__pycache__
-/deeplearning
-/data/__pycache__
-/evaluation/__pycache__
-/prompts/__pycache__
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / editor
+.idea/
+.vscode/
+
+# OS (Windows)
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Local env / secrets
+.env
+.env.*
+
+# Project-local scratch
+deeplearning/
+notes.txt
+*_backup.py
+
+# Regenerated summaries (rebuild with results/processResults.py)
+results/processed/
+
+# Colab 7B artefacts: duplicate copies of results/raw with filenames too long for Windows.
+# Canonical experiment JSON lives under results/raw/<benchmark>/.
+llm-failure-7b-results/raw/
+llm-failure-7b-results/hf-cache/

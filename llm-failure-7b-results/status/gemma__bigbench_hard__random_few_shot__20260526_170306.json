@@ -1,0 +1,14 @@
+{
+  "run_id": "gemma__bigbench_hard__random_few_shot__20260526_170306",
+  "family": "gemma",
+  "display_name": "google/gemma-7b-it",
+  "hf_model_id": "google/gemma-7b-it",
+  "benchmark": "bigbench_hard",
+  "condition": "random_few_shot",
+  "status": "running",
+  "started_at": "2026-05-26T17:03:06",
+  "finished_at": "",
+  "returncode": null,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard__random_few_shot__20260526_170306.log",
+  "output_files": []
+}

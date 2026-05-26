@@ -1,0 +1,2647 @@
+COMMAND: /usr/bin/python3 /content/drive/MyDrive/COMP6242/Project/llm-failure/run_experiment.py --model gemma --benchmark bigbench_hard --condition targeted_few_shot_answer_only
+
+`torch_dtype` is deprecated! Use `dtype` instead!
+FULL RUN: 200 samples per benchmark
+Models: ['gemma']
+Benchmarks: ['bigbench_hard']
+Conditions: ['targeted_few_shot_answer_only']
+Runs per questions: 1
+
+===========
+MODEL: google/gemma-7b-it
+
+===========
+Loading HF model: google/gemma-7b-it
+Quantization: 4-bit; dtype: torch.bfloat16
+
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/254 [00:00<00:00, 13981.01it/s, Materializing param=model.embed_tokens.weight]
+Loading weights:   0%|          | 1/254 [00:00<00:00, 5974.79it/s, Materializing param=model.embed_tokens.weight] 
+Loading weights:   1%|          | 2/254 [00:00<01:47,  2.33it/s, Materializing param=model.embed_tokens.weight]  
+Loading weights:   1%|          | 2/254 [00:00<01:47,  2.33it/s, Materializing param=model.layers.0.input_layernorm.weight]
+Loading weights:   1%|          | 2/254 [00:00<01:47,  2.33it/s, Materializing param=model.layers.0.input_layernorm.weight]
+Loading weights:   1%|          | 3/254 [00:00<01:47,  2.33it/s, Materializing param=model.layers.0.mlp.down_proj.weight]  
+Loading weights:   1%|          | 3/254 [00:00<01:47,  2.33it/s, Materializing param=model.layers.0.mlp.down_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:01<02:07,  1.96it/s, Materializing param=model.layers.0.mlp.down_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:01<02:07,  1.96it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:01<02:07,  1.96it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 5/254 [00:03<02:48,  1.47it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 5/254 [00:03<02:48,  1.47it/s, Materializing param=model.layers.0.mlp.up_proj.weight]  
+Loading weights:   2%|▏         | 5/254 [00:03<02:48,  1.47it/s, Materializing param=model.layers.0.mlp.up_proj.weight]
+Loading weights:   2%|▏         | 6/254 [00:04<03:37,  1.14it/s, Materializing param=model.layers.0.mlp.up_proj.weight]
+Loading weights:   2%|▏         | 6/254 [00:04<03:37,  1.14it/s, Materializing param=model.layers.0.post_attention_layernorm.weight]
+Loading weights:   2%|▏         | 6/254 [00:04<03:37,  1.14it/s, Materializing param=model.layers.0.post_attention_layernorm.weight]
+Loading weights:   3%|▎         | 7/254 [00:04<03:37,  1.14it/s, Materializing param=model.layers.0.self_attn.k_proj.weight]        
+Loading weights:   3%|▎         | 7/254 [00:04<03:37,  1.14it/s, Materializing param=model.layers.0.self_attn.k_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:05<03:15,  1.26it/s, Materializing param=model.layers.0.self_attn.k_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:05<03:15,  1.26it/s, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:05<03:15,  1.26it/s, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:07<04:07,  1.01s/it, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:07<04:07,  1.01s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:07<04:07,  1.01s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:08<04:33,  1.12s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:08<04:33,  1.12s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:08<04:33,  1.12s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 11/254 [00:09<04:23,  1.09s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 11/254 [00:09<04:23,  1.09s/it, Materializing param=model.layers.1.input_layernorm.weight] 
+Loading weights:   4%|▍         | 11/254 [00:09<04:23,  1.09s/it, Materializing param=model.layers.1.input_layernorm.weight]
+Loading weights:   5%|▍         | 12/254 [00:09<04:22,  1.09s/it, Materializing param=model.layers.1.mlp.down_proj.weight]  
+Loading weights:   5%|▍         | 12/254 [00:09<04:22,  1.09s/it, Materializing param=model.layers.1.mlp.down_proj.weight]
+Loading weights:   5%|▌         | 13/254 [00:09<04:21,  1.09s/it, Materializing param=model.layers.1.mlp.gate_proj.weight]
+Loading weights:   5%|▌         | 13/254 [00:09<04:21,  1.09s/it, Materializing param=model.layers.1.mlp.gate_proj.weight]
+Loading weights:   6%|▌         | 14/254 [00:09<04:20,  1.09s/it, Materializing param=model.layers.1.mlp.up_proj.weight]  
+Loading weights:   6%|▌         | 14/254 [00:09<04:20,  1.09s/it, Materializing param=model.layers.1.mlp.up_proj.weight]
+Loading weights:   6%|▌         | 15/254 [00:09<04:19,  1.09s/it, Materializing param=model.layers.1.post_attention_layernorm.weight]
+Loading weights:   6%|▌         | 15/254 [00:09<04:19,  1.09s/it, Materializing param=model.layers.1.post_attention_layernorm.weight]
+Loading weights:   6%|▋         | 16/254 [00:09<04:18,  1.09s/it, Materializing param=model.layers.1.self_attn.k_proj.weight]        
+Loading weights:   6%|▋         | 16/254 [00:09<04:18,  1.09s/it, Materializing param=model.layers.1.self_attn.k_proj.weight]
+Loading weights:   7%|▋         | 17/254 [00:09<04:17,  1.09s/it, Materializing param=model.layers.1.self_attn.o_proj.weight]
+Loading weights:   7%|▋         | 17/254 [00:09<04:17,  1.09s/it, Materializing param=model.layers.1.self_attn.o_proj.weight]
+Loading weights:   7%|▋         | 18/254 [00:09<04:16,  1.09s/it, Materializing param=model.layers.1.self_attn.q_proj.weight]
+Loading weights:   7%|▋         | 18/254 [00:09<04:16,  1.09s/it, Materializing param=model.layers.1.self_attn.q_proj.weight]
+Loading weights:   7%|▋         | 19/254 [00:09<04:15,  1.09s/it, Materializing param=model.layers.1.self_attn.v_proj.weight]
+Loading weights:   7%|▋         | 19/254 [00:09<04:15,  1.09s/it, Materializing param=model.layers.1.self_attn.v_proj.weight]
+Loading weights:   8%|▊         | 20/254 [00:09<04:14,  1.09s/it, Materializing param=model.layers.2.input_layernorm.weight] 
+Loading weights:   8%|▊         | 20/254 [00:09<04:14,  1.09s/it, Materializing param=model.layers.2.input_layernorm.weight]
+Loading weights:   8%|▊         | 21/254 [00:09<04:12,  1.09s/it, Materializing param=model.layers.2.mlp.down_proj.weight]  
+Loading weights:   8%|▊         | 21/254 [00:09<04:12,  1.09s/it, Materializing param=model.layers.2.mlp.down_proj.weight]
+Loading weights:   9%|▊         | 22/254 [00:09<04:11,  1.09s/it, Materializing param=model.layers.2.mlp.gate_proj.weight]
+Loading weights:   9%|▊         | 22/254 [00:09<04:11,  1.09s/it, Materializing param=model.layers.2.mlp.gate_proj.weight]
+Loading weights:   9%|▉         | 23/254 [00:09<04:10,  1.09s/it, Materializing param=model.layers.2.mlp.up_proj.weight]  
+Loading weights:   9%|▉         | 23/254 [00:09<04:10,  1.09s/it, Materializing param=model.layers.2.mlp.up_proj.weight]
+Loading weights:   9%|▉         | 24/254 [00:09<04:09,  1.09s/it, Materializing param=model.layers.2.post_attention_layernorm.weight]
+Loading weights:   9%|▉         | 24/254 [00:09<04:09,  1.09s/it, Materializing param=model.layers.2.post_attention_layernorm.weight]
+Loading weights:  10%|▉         | 25/254 [00:09<04:08,  1.09s/it, Materializing param=model.layers.2.self_attn.k_proj.weight]        
+Loading weights:  10%|▉         | 25/254 [00:09<04:08,  1.09s/it, Materializing param=model.layers.2.self_attn.k_proj.weight]
+Loading weights:  10%|█         | 26/254 [00:09<04:07,  1.09s/it, Materializing param=model.layers.2.self_attn.o_proj.weight]
+Loading weights:  10%|█         | 26/254 [00:09<04:07,  1.09s/it, Materializing param=model.layers.2.self_attn.o_proj.weight]
+Loading weights:  11%|█         | 27/254 [00:09<04:06,  1.09s/it, Materializing param=model.layers.2.self_attn.q_proj.weight]
+Loading weights:  11%|█         | 27/254 [00:09<04:06,  1.09s/it, Materializing param=model.layers.2.self_attn.q_proj.weight]
+Loading weights:  11%|█         | 28/254 [00:09<04:05,  1.09s/it, Materializing param=model.layers.2.self_attn.v_proj.weight]
+Loading weights:  11%|█         | 28/254 [00:09<04:05,  1.09s/it, Materializing param=model.layers.2.self_attn.v_proj.weight]
+Loading weights:  11%|█▏        | 29/254 [00:09<04:04,  1.09s/it, Materializing param=model.layers.3.input_layernorm.weight] 
+Loading weights:  11%|█▏        | 29/254 [00:09<04:04,  1.09s/it, Materializing param=model.layers.3.input_layernorm.weight]
+Loading weights:  12%|█▏        | 30/254 [00:09<04:03,  1.09s/it, Materializing param=model.layers.3.mlp.down_proj.weight]  
+Loading weights:  12%|█▏        | 30/254 [00:09<04:03,  1.09s/it, Materializing param=model.layers.3.mlp.down_proj.weight]
+Loading weights:  12%|█▏        | 31/254 [00:09<04:02,  1.09s/it, Materializing param=model.layers.3.mlp.gate_proj.weight]
+Loading weights:  12%|█▏        | 31/254 [00:09<04:02,  1.09s/it, Materializing param=model.layers.3.mlp.gate_proj.weight]
+Loading weights:  13%|█▎        | 32/254 [00:09<04:01,  1.09s/it, Materializing param=model.layers.3.mlp.up_proj.weight]  
+Loading weights:  13%|█▎        | 32/254 [00:09<04:01,  1.09s/it, Materializing param=model.layers.3.mlp.up_proj.weight]
+Loading weights:  13%|█▎        | 33/254 [00:09<03:59,  1.09s/it, Materializing param=model.layers.3.post_attention_layernorm.weight]
+Loading weights:  13%|█▎        | 33/254 [00:09<03:59,  1.09s/it, Materializing param=model.layers.3.post_attention_layernorm.weight]
+Loading weights:  13%|█▎        | 34/254 [00:09<03:58,  1.09s/it, Materializing param=model.layers.3.self_attn.k_proj.weight]        
+Loading weights:  13%|█▎        | 34/254 [00:09<03:58,  1.09s/it, Materializing param=model.layers.3.self_attn.k_proj.weight]
+Loading weights:  14%|█▍        | 35/254 [00:09<03:57,  1.09s/it, Materializing param=model.layers.3.self_attn.o_proj.weight]
+Loading weights:  14%|█▍        | 35/254 [00:09<03:57,  1.09s/it, Materializing param=model.layers.3.self_attn.o_proj.weight]
+Loading weights:  14%|█▍        | 36/254 [00:09<03:56,  1.09s/it, Materializing param=model.layers.3.self_attn.q_proj.weight]
+Loading weights:  14%|█▍        | 36/254 [00:09<03:56,  1.09s/it, Materializing param=model.layers.3.self_attn.q_proj.weight]
+Loading weights:  15%|█▍        | 37/254 [00:09<03:55,  1.09s/it, Materializing param=model.layers.3.self_attn.v_proj.weight]
+Loading weights:  15%|█▍        | 37/254 [00:09<03:55,  1.09s/it, Materializing param=model.layers.3.self_attn.v_proj.weight]
+Loading weights:  15%|█▍        | 38/254 [00:09<03:54,  1.09s/it, Materializing param=model.layers.4.input_layernorm.weight] 
+Loading weights:  15%|█▍        | 38/254 [00:09<03:54,  1.09s/it, Materializing param=model.layers.4.input_layernorm.weight]
+Loading weights:  15%|█▌        | 39/254 [00:09<03:53,  1.09s/it, Materializing param=model.layers.4.mlp.down_proj.weight]  
+Loading weights:  15%|█▌        | 39/254 [00:09<03:53,  1.09s/it, Materializing param=model.layers.4.mlp.down_proj.weight]
+Loading weights:  16%|█▌        | 40/254 [00:09<03:52,  1.09s/it, Materializing param=model.layers.4.mlp.gate_proj.weight]
+Loading weights:  16%|█▌        | 40/254 [00:09<03:52,  1.09s/it, Materializing param=model.layers.4.mlp.gate_proj.weight]
+Loading weights:  16%|█▌        | 41/254 [00:09<03:51,  1.09s/it, Materializing param=model.layers.4.mlp.up_proj.weight]  
+Loading weights:  16%|█▌        | 41/254 [00:09<03:51,  1.09s/it, Materializing param=model.layers.4.mlp.up_proj.weight]
+Loading weights:  17%|█▋        | 42/254 [00:09<03:50,  1.09s/it, Materializing param=model.layers.4.post_attention_layernorm.weight]
+Loading weights:  17%|█▋        | 42/254 [00:09<03:50,  1.09s/it, Materializing param=model.layers.4.post_attention_layernorm.weight]
+Loading weights:  17%|█▋        | 43/254 [00:09<03:49,  1.09s/it, Materializing param=model.layers.4.self_attn.k_proj.weight]        
+Loading weights:  17%|█▋        | 43/254 [00:09<03:49,  1.09s/it, Materializing param=model.layers.4.self_attn.k_proj.weight]
+Loading weights:  17%|█▋        | 44/254 [00:09<03:47,  1.09s/it, Materializing param=model.layers.4.self_attn.o_proj.weight]
+Loading weights:  17%|█▋        | 44/254 [00:09<03:47,  1.09s/it, Materializing param=model.layers.4.self_attn.o_proj.weight]
+Loading weights:  18%|█▊        | 45/254 [00:09<03:46,  1.09s/it, Materializing param=model.layers.4.self_attn.q_proj.weight]
+Loading weights:  18%|█▊        | 45/254 [00:09<03:46,  1.09s/it, Materializing param=model.layers.4.self_attn.q_proj.weight]
+Loading weights:  18%|█▊        | 46/254 [00:09<03:45,  1.09s/it, Materializing param=model.layers.4.self_attn.v_proj.weight]
+Loading weights:  18%|█▊        | 46/254 [00:09<03:45,  1.09s/it, Materializing param=model.layers.4.self_attn.v_proj.weight]
+Loading weights:  19%|█▊        | 47/254 [00:09<03:44,  1.09s/it, Materializing param=model.layers.5.input_layernorm.weight] 
+Loading weights:  19%|█▊        | 47/254 [00:09<03:44,  1.09s/it, Materializing param=model.layers.5.input_layernorm.weight]
+Loading weights:  19%|█▉        | 48/254 [00:09<03:43,  1.09s/it, Materializing param=model.layers.5.mlp.down_proj.weight]  
+Loading weights:  19%|█▉        | 48/254 [00:09<03:43,  1.09s/it, Materializing param=model.layers.5.mlp.down_proj.weight]
+Loading weights:  19%|█▉        | 49/254 [00:09<03:42,  1.09s/it, Materializing param=model.layers.5.mlp.gate_proj.weight]
+Loading weights:  19%|█▉        | 49/254 [00:09<03:42,  1.09s/it, Materializing param=model.layers.5.mlp.gate_proj.weight]
+Loading weights:  20%|█▉        | 50/254 [00:09<03:41,  1.09s/it, Materializing param=model.layers.5.mlp.up_proj.weight]  
+Loading weights:  20%|█▉        | 50/254 [00:09<03:41,  1.09s/it, Materializing param=model.layers.5.mlp.up_proj.weight]
+Loading weights:  20%|██        | 51/254 [00:09<03:40,  1.09s/it, Materializing param=model.layers.5.post_attention_layernorm.weight]
+Loading weights:  20%|██        | 51/254 [00:09<03:40,  1.09s/it, Materializing param=model.layers.5.post_attention_layernorm.weight]
+Loading weights:  20%|██        | 52/254 [00:09<03:39,  1.09s/it, Materializing param=model.layers.5.self_attn.k_proj.weight]        
+Loading weights:  20%|██        | 52/254 [00:09<03:39,  1.09s/it, Materializing param=model.layers.5.self_attn.k_proj.weight]
+Loading weights:  21%|██        | 53/254 [00:09<03:38,  1.09s/it, Materializing param=model.layers.5.self_attn.o_proj.weight]
+Loading weights:  21%|██        | 53/254 [00:09<03:38,  1.09s/it, Materializing param=model.layers.5.self_attn.o_proj.weight]
+Loading weights:  21%|██▏       | 54/254 [00:09<03:37,  1.09s/it, Materializing param=model.layers.5.self_attn.q_proj.weight]
+Loading weights:  21%|██▏       | 54/254 [00:09<03:37,  1.09s/it, Materializing param=model.layers.5.self_attn.q_proj.weight]
+Loading weights:  22%|██▏       | 55/254 [00:09<03:36,  1.09s/it, Materializing param=model.layers.5.self_attn.v_proj.weight]
+Loading weights:  22%|██▏       | 55/254 [00:09<03:36,  1.09s/it, Materializing param=model.layers.5.self_attn.v_proj.weight]
+Loading weights:  22%|██▏       | 56/254 [00:09<03:34,  1.09s/it, Materializing param=model.layers.6.input_layernorm.weight] 
+Loading weights:  22%|██▏       | 56/254 [00:09<03:34,  1.09s/it, Materializing param=model.layers.6.input_layernorm.weight]
+Loading weights:  22%|██▏       | 57/254 [00:09<03:33,  1.09s/it, Materializing param=model.layers.6.mlp.down_proj.weight]  
+Loading weights:  22%|██▏       | 57/254 [00:09<03:33,  1.09s/it, Materializing param=model.layers.6.mlp.down_proj.weight]
+Loading weights:  23%|██▎       | 58/254 [00:09<03:32,  1.09s/it, Materializing param=model.layers.6.mlp.gate_proj.weight]
+Loading weights:  23%|██▎       | 58/254 [00:09<03:32,  1.09s/it, Materializing param=model.layers.6.mlp.gate_proj.weight]
+Loading weights:  23%|██▎       | 59/254 [00:09<03:31,  1.09s/it, Materializing param=model.layers.6.mlp.up_proj.weight]  
+Loading weights:  23%|██▎       | 59/254 [00:09<03:31,  1.09s/it, Materializing param=model.layers.6.mlp.up_proj.weight]
+Loading weights:  24%|██▎       | 60/254 [00:09<03:30,  1.09s/it, Materializing param=model.layers.6.post_attention_layernorm.weight]
+Loading weights:  24%|██▎       | 60/254 [00:09<03:30,  1.09s/it, Materializing param=model.layers.6.post_attention_layernorm.weight]
+Loading weights:  24%|██▍       | 61/254 [00:09<03:29,  1.09s/it, Materializing param=model.layers.6.self_attn.k_proj.weight]        
+Loading weights:  24%|██▍       | 61/254 [00:09<03:29,  1.09s/it, Materializing param=model.layers.6.self_attn.k_proj.weight]
+Loading weights:  24%|██▍       | 62/254 [00:09<03:28,  1.09s/it, Materializing param=model.layers.6.self_attn.o_proj.weight]
+Loading weights:  24%|██▍       | 62/254 [00:09<03:28,  1.09s/it, Materializing param=model.layers.6.self_attn.o_proj.weight]
+Loading weights:  25%|██▍       | 63/254 [00:09<03:27,  1.09s/it, Materializing param=model.layers.6.self_attn.q_proj.weight]
+Loading weights:  25%|██▍       | 63/254 [00:09<03:27,  1.09s/it, Materializing param=model.layers.6.self_attn.q_proj.weight]
+Loading weights:  25%|██▌       | 64/254 [00:09<03:26,  1.09s/it, Materializing param=model.layers.6.self_attn.v_proj.weight]
+Loading weights:  25%|██▌       | 64/254 [00:09<03:26,  1.09s/it, Materializing param=model.layers.6.self_attn.v_proj.weight]
+Loading weights:  26%|██▌       | 65/254 [00:09<03:25,  1.09s/it, Materializing param=model.layers.7.input_layernorm.weight] 
+Loading weights:  26%|██▌       | 65/254 [00:09<03:25,  1.09s/it, Materializing param=model.layers.7.input_layernorm.weight]
+Loading weights:  26%|██▌       | 66/254 [00:09<03:24,  1.09s/it, Materializing param=model.layers.7.mlp.down_proj.weight]  
+Loading weights:  26%|██▌       | 66/254 [00:09<03:24,  1.09s/it, Materializing param=model.layers.7.mlp.down_proj.weight]
+Loading weights:  26%|██▋       | 67/254 [00:09<03:23,  1.09s/it, Materializing param=model.layers.7.mlp.gate_proj.weight]
+Loading weights:  26%|██▋       | 67/254 [00:09<03:23,  1.09s/it, Materializing param=model.layers.7.mlp.gate_proj.weight]
+Loading weights:  27%|██▋       | 68/254 [00:09<03:21,  1.09s/it, Materializing param=model.layers.7.mlp.up_proj.weight]  
+Loading weights:  27%|██▋       | 68/254 [00:09<03:21,  1.09s/it, Materializing param=model.layers.7.mlp.up_proj.weight]
+Loading weights:  27%|██▋       | 69/254 [00:09<03:20,  1.09s/it, Materializing param=model.layers.7.post_attention_layernorm.weight]
+Loading weights:  27%|██▋       | 69/254 [00:09<03:20,  1.09s/it, Materializing param=model.layers.7.post_attention_layernorm.weight]
+Loading weights:  28%|██▊       | 70/254 [00:09<03:19,  1.09s/it, Materializing param=model.layers.7.self_attn.k_proj.weight]        
+Loading weights:  28%|██▊       | 70/254 [00:09<03:19,  1.09s/it, Materializing param=model.layers.7.self_attn.k_proj.weight]
+Loading weights:  28%|██▊       | 71/254 [00:09<03:18,  1.09s/it, Materializing param=model.layers.7.self_attn.o_proj.weight]
+Loading weights:  28%|██▊       | 71/254 [00:09<03:18,  1.09s/it, Materializing param=model.layers.7.self_attn.o_proj.weight]
+Loading weights:  28%|██▊       | 72/254 [00:09<03:17,  1.09s/it, Materializing param=model.layers.7.self_attn.q_proj.weight]
+Loading weights:  28%|██▊       | 72/254 [00:09<03:17,  1.09s/it, Materializing param=model.layers.7.self_attn.q_proj.weight]
+Loading weights:  29%|██▊       | 73/254 [00:09<03:16,  1.09s/it, Materializing param=model.layers.7.self_attn.v_proj.weight]
+Loading weights:  29%|██▊       | 73/254 [00:09<03:16,  1.09s/it, Materializing param=model.layers.7.self_attn.v_proj.weight]
+Loading weights:  29%|██▉       | 74/254 [00:09<03:15,  1.09s/it, Materializing param=model.layers.8.input_layernorm.weight] 
+Loading weights:  29%|██▉       | 74/254 [00:09<03:15,  1.09s/it, Materializing param=model.layers.8.input_layernorm.weight]
+Loading weights:  30%|██▉       | 75/254 [00:09<03:14,  1.09s/it, Materializing param=model.layers.8.mlp.down_proj.weight]  
+Loading weights:  30%|██▉       | 75/254 [00:09<03:14,  1.09s/it, Materializing param=model.layers.8.mlp.down_proj.weight]
+Loading weights:  30%|██▉       | 76/254 [00:09<03:13,  1.09s/it, Materializing param=model.layers.8.mlp.gate_proj.weight]
+Loading weights:  30%|██▉       | 76/254 [00:09<03:13,  1.09s/it, Materializing param=model.layers.8.mlp.gate_proj.weight]
+Loading weights:  30%|███       | 77/254 [00:09<03:12,  1.09s/it, Materializing param=model.layers.8.mlp.up_proj.weight]  
+Loading weights:  30%|███       | 77/254 [00:09<03:12,  1.09s/it, Materializing param=model.layers.8.mlp.up_proj.weight]
+Loading weights:  31%|███       | 78/254 [00:09<03:11,  1.09s/it, Materializing param=model.layers.8.post_attention_layernorm.weight]
+Loading weights:  31%|███       | 78/254 [00:09<03:11,  1.09s/it, Materializing param=model.layers.8.post_attention_layernorm.weight]
+Loading weights:  31%|███       | 79/254 [00:09<03:09,  1.09s/it, Materializing param=model.layers.8.self_attn.k_proj.weight]        
+Loading weights:  31%|███       | 79/254 [00:09<03:09,  1.09s/it, Materializing param=model.layers.8.self_attn.k_proj.weight]
+Loading weights:  31%|███▏      | 80/254 [00:09<03:08,  1.09s/it, Materializing param=model.layers.8.self_attn.o_proj.weight]
+Loading weights:  31%|███▏      | 80/254 [00:09<03:08,  1.09s/it, Materializing param=model.layers.8.self_attn.o_proj.weight]
+Loading weights:  32%|███▏      | 81/254 [00:09<03:07,  1.09s/it, Materializing param=model.layers.8.self_attn.q_proj.weight]
+Loading weights:  32%|███▏      | 81/254 [00:09<03:07,  1.09s/it, Materializing param=model.layers.8.self_attn.q_proj.weight]
+Loading weights:  32%|███▏      | 82/254 [00:09<03:06,  1.09s/it, Materializing param=model.layers.8.self_attn.v_proj.weight]
+Loading weights:  32%|███▏      | 82/254 [00:09<03:06,  1.09s/it, Materializing param=model.layers.8.self_attn.v_proj.weight]
+Loading weights:  33%|███▎      | 83/254 [00:09<03:05,  1.09s/it, Materializing param=model.layers.9.input_layernorm.weight] 
+Loading weights:  33%|███▎      | 83/254 [00:09<03:05,  1.09s/it, Materializing param=model.layers.9.input_layernorm.weight]
+Loading weights:  33%|███▎      | 84/254 [00:09<03:04,  1.09s/it, Materializing param=model.layers.9.mlp.down_proj.weight]  
+Loading weights:  33%|███▎      | 84/254 [00:09<03:04,  1.09s/it, Materializing param=model.layers.9.mlp.down_proj.weight]
+Loading weights:  33%|███▎      | 85/254 [00:09<03:03,  1.09s/it, Materializing param=model.layers.9.mlp.gate_proj.weight]
+Loading weights:  33%|███▎      | 85/254 [00:09<03:03,  1.09s/it, Materializing param=model.layers.9.mlp.gate_proj.weight]
+Loading weights:  34%|███▍      | 86/254 [00:09<03:02,  1.09s/it, Materializing param=model.layers.9.mlp.up_proj.weight]  
+Loading weights:  34%|███▍      | 86/254 [00:09<03:02,  1.09s/it, Materializing param=model.layers.9.mlp.up_proj.weight]
+Loading weights:  34%|███▍      | 87/254 [00:09<03:01,  1.09s/it, Materializing param=model.layers.9.post_attention_layernorm.weight]
+Loading weights:  34%|███▍      | 87/254 [00:09<03:01,  1.09s/it, Materializing param=model.layers.9.post_attention_layernorm.weight]
+Loading weights:  35%|███▍      | 88/254 [00:09<03:00,  1.09s/it, Materializing param=model.layers.9.self_attn.k_proj.weight]        
+Loading weights:  35%|███▍      | 88/254 [00:09<03:00,  1.09s/it, Materializing param=model.layers.9.self_attn.k_proj.weight]
+Loading weights:  35%|███▌      | 89/254 [00:10<02:59,  1.09s/it, Materializing param=model.layers.9.self_attn.o_proj.weight]
+Loading weights:  35%|███▌      | 89/254 [00:10<02:59,  1.09s/it, Materializing param=model.layers.9.self_attn.o_proj.weight]
+Loading weights:  35%|███▌      | 90/254 [00:10<02:58,  1.09s/it, Materializing param=model.layers.9.self_attn.q_proj.weight]
+Loading weights:  35%|███▌      | 90/254 [00:10<02:58,  1.09s/it, Materializing param=model.layers.9.self_attn.q_proj.weight]
+Loading weights:  36%|███▌      | 91/254 [00:10<02:56,  1.09s/it, Materializing param=model.layers.9.self_attn.v_proj.weight]
+Loading weights:  36%|███▌      | 91/254 [00:10<02:56,  1.09s/it, Materializing param=model.layers.9.self_attn.v_proj.weight]
+Loading weights:  36%|███▌      | 92/254 [00:10<02:55,  1.09s/it, Materializing param=model.layers.10.input_layernorm.weight]
+Loading weights:  36%|███▌      | 92/254 [00:10<02:55,  1.09s/it, Materializing param=model.layers.10.input_layernorm.weight]
+Loading weights:  37%|███▋      | 93/254 [00:10<02:54,  1.09s/it, Materializing param=model.layers.10.mlp.down_proj.weight]  
+Loading weights:  37%|███▋      | 93/254 [00:10<02:54,  1.09s/it, Materializing param=model.layers.10.mlp.down_proj.weight]
+Loading weights:  37%|███▋      | 94/254 [00:10<02:53,  1.09s/it, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 94/254 [00:10<02:53,  1.09s/it, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 95/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 95/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.10.mlp.up_proj.weight]  
+Loading weights:  37%|███▋      | 95/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.10.mlp.up_proj.weight]
+Loading weights:  38%|███▊      | 96/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.10.post_attention_layernorm.weight]
+Loading weights:  38%|███▊      | 96/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.10.post_attention_layernorm.weight]
+Loading weights:  38%|███▊      | 97/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.10.self_attn.k_proj.weight]        
+Loading weights:  38%|███▊      | 97/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.10.self_attn.k_proj.weight]
+Loading weights:  39%|███▊      | 98/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.10.self_attn.o_proj.weight]
+Loading weights:  39%|███▊      | 98/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.10.self_attn.o_proj.weight]
+Loading weights:  39%|███▉      | 99/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.10.self_attn.q_proj.weight]
+Loading weights:  39%|███▉      | 99/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.10.self_attn.q_proj.weight]
+Loading weights:  39%|███▉      | 100/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.10.self_attn.v_proj.weight]
+Loading weights:  39%|███▉      | 100/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.10.self_attn.v_proj.weight]
+Loading weights:  40%|███▉      | 101/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.11.input_layernorm.weight] 
+Loading weights:  40%|███▉      | 101/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.11.input_layernorm.weight]
+Loading weights:  40%|████      | 102/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.11.mlp.down_proj.weight]  
+Loading weights:  40%|████      | 102/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.11.mlp.down_proj.weight]
+Loading weights:  41%|████      | 103/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.11.mlp.gate_proj.weight]
+Loading weights:  41%|████      | 103/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.11.mlp.gate_proj.weight]
+Loading weights:  41%|████      | 104/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.11.mlp.up_proj.weight]  
+Loading weights:  41%|████      | 104/254 [00:10<00:05, 29.84it/s, Materializing param=model.layers.11.mlp.up_proj.weight]
+Loading weights:  41%|████▏     | 105/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.11.post_attention_layernorm.weight]
+Loading weights:  41%|████▏     | 105/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.11.post_attention_layernorm.weight]
+Loading weights:  42%|████▏     | 106/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.11.self_attn.k_proj.weight]        
+Loading weights:  42%|████▏     | 106/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.11.self_attn.k_proj.weight]
+Loading weights:  42%|████▏     | 107/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.11.self_attn.o_proj.weight]
+Loading weights:  42%|████▏     | 107/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.11.self_attn.o_proj.weight]
+Loading weights:  43%|████▎     | 108/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.11.self_attn.q_proj.weight]
+Loading weights:  43%|████▎     | 108/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.11.self_attn.q_proj.weight]
+Loading weights:  43%|████▎     | 109/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.11.self_attn.v_proj.weight]
+Loading weights:  43%|████▎     | 109/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.11.self_attn.v_proj.weight]
+Loading weights:  43%|████▎     | 110/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.input_layernorm.weight] 
+Loading weights:  43%|████▎     | 110/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.input_layernorm.weight]
+Loading weights:  44%|████▎     | 111/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.mlp.down_proj.weight]  
+Loading weights:  44%|████▎     | 111/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.mlp.down_proj.weight]
+Loading weights:  44%|████▍     | 112/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.mlp.gate_proj.weight]
+Loading weights:  44%|████▍     | 112/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.mlp.gate_proj.weight]
+Loading weights:  44%|████▍     | 113/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.mlp.up_proj.weight]  
+Loading weights:  44%|████▍     | 113/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.mlp.up_proj.weight]
+Loading weights:  45%|████▍     | 114/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.post_attention_layernorm.weight]
+Loading weights:  45%|████▍     | 114/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.post_attention_layernorm.weight]
+Loading weights:  45%|████▌     | 115/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.self_attn.k_proj.weight]        
+Loading weights:  45%|████▌     | 115/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.self_attn.k_proj.weight]
+Loading weights:  46%|████▌     | 116/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.self_attn.o_proj.weight]
+Loading weights:  46%|████▌     | 116/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.self_attn.o_proj.weight]
+Loading weights:  46%|████▌     | 117/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.self_attn.q_proj.weight]
+Loading weights:  46%|████▌     | 117/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.self_attn.q_proj.weight]
+Loading weights:  46%|████▋     | 118/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.self_attn.v_proj.weight]
+Loading weights:  46%|████▋     | 118/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.12.self_attn.v_proj.weight]
+Loading weights:  47%|████▋     | 119/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.input_layernorm.weight] 
+Loading weights:  47%|████▋     | 119/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.input_layernorm.weight]
+Loading weights:  47%|████▋     | 120/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.mlp.down_proj.weight]  
+Loading weights:  47%|████▋     | 120/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.mlp.down_proj.weight]
+Loading weights:  48%|████▊     | 121/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.mlp.gate_proj.weight]
+Loading weights:  48%|████▊     | 121/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.mlp.gate_proj.weight]
+Loading weights:  48%|████▊     | 122/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.mlp.up_proj.weight]  
+Loading weights:  48%|████▊     | 122/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.mlp.up_proj.weight]
+Loading weights:  48%|████▊     | 123/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.post_attention_layernorm.weight]
+Loading weights:  48%|████▊     | 123/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.post_attention_layernorm.weight]
+Loading weights:  49%|████▉     | 124/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.self_attn.k_proj.weight]        
+Loading weights:  49%|████▉     | 124/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.self_attn.k_proj.weight]
+Loading weights:  49%|████▉     | 125/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.self_attn.o_proj.weight]
+Loading weights:  49%|████▉     | 125/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.self_attn.o_proj.weight]
+Loading weights:  50%|████▉     | 126/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.self_attn.q_proj.weight]
+Loading weights:  50%|████▉     | 126/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.self_attn.q_proj.weight]
+Loading weights:  50%|█████     | 127/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.self_attn.v_proj.weight]
+Loading weights:  50%|█████     | 127/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.13.self_attn.v_proj.weight]
+Loading weights:  50%|█████     | 128/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.input_layernorm.weight] 
+Loading weights:  50%|█████     | 128/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.input_layernorm.weight]
+Loading weights:  51%|█████     | 129/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.mlp.down_proj.weight]  
+Loading weights:  51%|█████     | 129/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.mlp.down_proj.weight]
+Loading weights:  51%|█████     | 130/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.mlp.gate_proj.weight]
+Loading weights:  51%|█████     | 130/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.mlp.gate_proj.weight]
+Loading weights:  52%|█████▏    | 131/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.mlp.up_proj.weight]  
+Loading weights:  52%|█████▏    | 131/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.mlp.up_proj.weight]
+Loading weights:  52%|█████▏    | 132/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.post_attention_layernorm.weight]
+Loading weights:  52%|█████▏    | 132/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.post_attention_layernorm.weight]
+Loading weights:  52%|█████▏    | 133/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.self_attn.k_proj.weight]        
+Loading weights:  52%|█████▏    | 133/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.self_attn.k_proj.weight]
+Loading weights:  53%|█████▎    | 134/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.self_attn.o_proj.weight]
+Loading weights:  53%|█████▎    | 134/254 [00:10<00:04, 29.84it/s, Materializing param=model.layers.14.self_attn.o_proj.weight]
+Loading weights:  53%|█████▎    | 135/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.14.self_attn.q_proj.weight]
+Loading weights:  53%|█████▎    | 135/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.14.self_attn.q_proj.weight]
+Loading weights:  54%|█████▎    | 136/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.14.self_attn.v_proj.weight]
+Loading weights:  54%|█████▎    | 136/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.14.self_attn.v_proj.weight]
+Loading weights:  54%|█████▍    | 137/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.input_layernorm.weight] 
+Loading weights:  54%|█████▍    | 137/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.input_layernorm.weight]
+Loading weights:  54%|█████▍    | 138/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.mlp.down_proj.weight]  
+Loading weights:  54%|█████▍    | 138/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.mlp.down_proj.weight]
+Loading weights:  55%|█████▍    | 139/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.mlp.gate_proj.weight]
+Loading weights:  55%|█████▍    | 139/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.mlp.gate_proj.weight]
+Loading weights:  55%|█████▌    | 140/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.mlp.up_proj.weight]  
+Loading weights:  55%|█████▌    | 140/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.mlp.up_proj.weight]
+Loading weights:  56%|█████▌    | 141/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.post_attention_layernorm.weight]
+Loading weights:  56%|█████▌    | 141/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.post_attention_layernorm.weight]
+Loading weights:  56%|█████▌    | 142/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.self_attn.k_proj.weight]        
+Loading weights:  56%|█████▌    | 142/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.self_attn.k_proj.weight]
+Loading weights:  56%|█████▋    | 143/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.self_attn.o_proj.weight]
+Loading weights:  56%|█████▋    | 143/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.self_attn.o_proj.weight]
+Loading weights:  57%|█████▋    | 144/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.self_attn.q_proj.weight]
+Loading weights:  57%|█████▋    | 144/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.self_attn.q_proj.weight]
+Loading weights:  57%|█████▋    | 145/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.self_attn.v_proj.weight]
+Loading weights:  57%|█████▋    | 145/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.15.self_attn.v_proj.weight]
+Loading weights:  57%|█████▋    | 146/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.input_layernorm.weight] 
+Loading weights:  57%|█████▋    | 146/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.input_layernorm.weight]
+Loading weights:  58%|█████▊    | 147/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.mlp.down_proj.weight]  
+Loading weights:  58%|█████▊    | 147/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.mlp.down_proj.weight]
+Loading weights:  58%|█████▊    | 148/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.mlp.gate_proj.weight]
+Loading weights:  58%|█████▊    | 148/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.mlp.gate_proj.weight]
+Loading weights:  59%|█████▊    | 149/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.mlp.up_proj.weight]  
+Loading weights:  59%|█████▊    | 149/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.mlp.up_proj.weight]
+Loading weights:  59%|█████▉    | 150/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.post_attention_layernorm.weight]
+Loading weights:  59%|█████▉    | 150/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.post_attention_layernorm.weight]
+Loading weights:  59%|█████▉    | 151/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.self_attn.k_proj.weight]        
+Loading weights:  59%|█████▉    | 151/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.self_attn.k_proj.weight]
+Loading weights:  60%|█████▉    | 152/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.self_attn.o_proj.weight]
+Loading weights:  60%|█████▉    | 152/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.self_attn.o_proj.weight]
+Loading weights:  60%|██████    | 153/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.self_attn.q_proj.weight]
+Loading weights:  60%|██████    | 153/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.self_attn.q_proj.weight]
+Loading weights:  61%|██████    | 154/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.self_attn.v_proj.weight]
+Loading weights:  61%|██████    | 154/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.16.self_attn.v_proj.weight]
+Loading weights:  61%|██████    | 155/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.input_layernorm.weight] 
+Loading weights:  61%|██████    | 155/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.input_layernorm.weight]
+Loading weights:  61%|██████▏   | 156/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.mlp.down_proj.weight]  
+Loading weights:  61%|██████▏   | 156/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.mlp.down_proj.weight]
+Loading weights:  62%|██████▏   | 157/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.mlp.gate_proj.weight]
+Loading weights:  62%|██████▏   | 157/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.mlp.gate_proj.weight]
+Loading weights:  62%|██████▏   | 158/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.mlp.up_proj.weight]  
+Loading weights:  62%|██████▏   | 158/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.mlp.up_proj.weight]
+Loading weights:  63%|██████▎   | 159/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.post_attention_layernorm.weight]
+Loading weights:  63%|██████▎   | 159/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.post_attention_layernorm.weight]
+Loading weights:  63%|██████▎   | 160/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.self_attn.k_proj.weight]        
+Loading weights:  63%|██████▎   | 160/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.self_attn.k_proj.weight]
+Loading weights:  63%|██████▎   | 161/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.self_attn.o_proj.weight]
+Loading weights:  63%|██████▎   | 161/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.self_attn.o_proj.weight]
+Loading weights:  64%|██████▍   | 162/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.self_attn.q_proj.weight]
+Loading weights:  64%|██████▍   | 162/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.self_attn.q_proj.weight]
+Loading weights:  64%|██████▍   | 163/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.self_attn.v_proj.weight]
+Loading weights:  64%|██████▍   | 163/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.17.self_attn.v_proj.weight]
+Loading weights:  65%|██████▍   | 164/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.18.input_layernorm.weight] 
+Loading weights:  65%|██████▍   | 164/254 [00:10<00:03, 29.84it/s, Materializing param=model.layers.18.input_layernorm.weight]
+Loading weights:  65%|██████▍   | 165/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.mlp.down_proj.weight]  
+Loading weights:  65%|██████▍   | 165/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.mlp.down_proj.weight]
+Loading weights:  65%|██████▌   | 166/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.mlp.gate_proj.weight]
+Loading weights:  65%|██████▌   | 166/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.mlp.gate_proj.weight]
+Loading weights:  66%|██████▌   | 167/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.mlp.up_proj.weight]  
+Loading weights:  66%|██████▌   | 167/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.mlp.up_proj.weight]
+Loading weights:  66%|██████▌   | 168/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.post_attention_layernorm.weight]
+Loading weights:  66%|██████▌   | 168/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.post_attention_layernorm.weight]
+Loading weights:  67%|██████▋   | 169/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.self_attn.k_proj.weight]        
+Loading weights:  67%|██████▋   | 169/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.self_attn.k_proj.weight]
+Loading weights:  67%|██████▋   | 170/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.self_attn.o_proj.weight]
+Loading weights:  67%|██████▋   | 170/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.self_attn.o_proj.weight]
+Loading weights:  67%|██████▋   | 171/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.self_attn.q_proj.weight]
+Loading weights:  67%|██████▋   | 171/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.self_attn.q_proj.weight]
+Loading weights:  68%|██████▊   | 172/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.self_attn.v_proj.weight]
+Loading weights:  68%|██████▊   | 172/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.18.self_attn.v_proj.weight]
+Loading weights:  68%|██████▊   | 173/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.input_layernorm.weight] 
+Loading weights:  68%|██████▊   | 173/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.input_layernorm.weight]
+Loading weights:  69%|██████▊   | 174/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.mlp.down_proj.weight]  
+Loading weights:  69%|██████▊   | 174/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.mlp.down_proj.weight]
+Loading weights:  69%|██████▉   | 175/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.mlp.gate_proj.weight]
+Loading weights:  69%|██████▉   | 175/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.mlp.gate_proj.weight]
+Loading weights:  69%|██████▉   | 176/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.mlp.up_proj.weight]  
+Loading weights:  69%|██████▉   | 176/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.mlp.up_proj.weight]
+Loading weights:  70%|██████▉   | 177/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.post_attention_layernorm.weight]
+Loading weights:  70%|██████▉   | 177/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.post_attention_layernorm.weight]
+Loading weights:  70%|███████   | 178/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.self_attn.k_proj.weight]        
+Loading weights:  70%|███████   | 178/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.self_attn.k_proj.weight]
+Loading weights:  70%|███████   | 179/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.self_attn.o_proj.weight]
+Loading weights:  70%|███████   | 179/254 [00:10<00:02, 29.84it/s, Materializing param=model.layers.19.self_attn.o_proj.weight]
+Loading weights:  71%|███████   | 180/254 [00:10<00:01, 68.33it/s, Materializing param=model.layers.19.self_attn.o_proj.weight]
+Loading weights:  71%|███████   | 180/254 [00:10<00:01, 68.33it/s, Materializing param=model.layers.19.self_attn.q_proj.weight]
+Loading weights:  71%|███████   | 180/254 [00:10<00:01, 68.33it/s, Materializing param=model.layers.19.self_attn.q_proj.weight]
+Loading weights:  71%|███████▏  | 181/254 [00:10<00:01, 68.33it/s, Materializing param=model.layers.19.self_attn.v_proj.weight]
+Loading weights:  71%|███████▏  | 181/254 [00:10<00:01, 68.33it/s, Materializing param=model.layers.19.self_attn.v_proj.weight]
+Loading weights:  72%|███████▏  | 182/254 [00:10<00:01, 68.33it/s, Materializing param=model.layers.20.input_layernorm.weight] 
+Loading weights:  72%|███████▏  | 182/254 [00:10<00:01, 68.33it/s, Materializing param=model.layers.20.input_layernorm.weight]
+Loading weights:  72%|███████▏  | 183/254 [00:10<00:01, 68.33it/s, Materializing param=model.layers.20.mlp.down_proj.weight]  
+Loading weights:  72%|███████▏  | 183/254 [00:10<00:01, 68.33it/s, Materializing param=model.layers.20.mlp.down_proj.weight]
+Loading weights:  72%|███████▏  | 184/254 [00:10<00:01, 68.33it/s, Materializing param=model.layers.20.mlp.gate_proj.weight]
+Loading weights:  72%|███████▏  | 184/254 [00:10<00:01, 68.33it/s, Materializing param=model.layers.20.mlp.gate_proj.weight]
+Loading weights:  73%|███████▎  | 185/254 [00:10<00:01, 68.33it/s, Materializing param=model.layers.20.mlp.up_proj.weight]  
+Loading weights:  73%|███████▎  | 185/254 [00:10<00:01, 68.33it/s, Materializing param=model.layers.20.mlp.up_proj.weight]
+Loading weights:  73%|███████▎  | 186/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.20.post_attention_layernorm.weight]
+Loading weights:  73%|███████▎  | 186/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.20.post_attention_layernorm.weight]
+Loading weights:  74%|███████▎  | 187/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.20.self_attn.k_proj.weight]        
+Loading weights:  74%|███████▎  | 187/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.20.self_attn.k_proj.weight]
+Loading weights:  74%|███████▍  | 188/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.20.self_attn.o_proj.weight]
+Loading weights:  74%|███████▍  | 188/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.20.self_attn.o_proj.weight]
+Loading weights:  74%|███████▍  | 189/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.20.self_attn.q_proj.weight]
+Loading weights:  74%|███████▍  | 189/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.20.self_attn.q_proj.weight]
+Loading weights:  75%|███████▍  | 190/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.20.self_attn.v_proj.weight]
+Loading weights:  75%|███████▍  | 190/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.20.self_attn.v_proj.weight]
+Loading weights:  75%|███████▌  | 191/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.input_layernorm.weight] 
+Loading weights:  75%|███████▌  | 191/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.input_layernorm.weight]
+Loading weights:  76%|███████▌  | 192/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.mlp.down_proj.weight]  
+Loading weights:  76%|███████▌  | 192/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.mlp.down_proj.weight]
+Loading weights:  76%|███████▌  | 193/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.mlp.gate_proj.weight]
+Loading weights:  76%|███████▌  | 193/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.mlp.gate_proj.weight]
+Loading weights:  76%|███████▋  | 194/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.mlp.up_proj.weight]  
+Loading weights:  76%|███████▋  | 194/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.mlp.up_proj.weight]
+Loading weights:  77%|███████▋  | 195/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.post_attention_layernorm.weight]
+Loading weights:  77%|███████▋  | 195/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.post_attention_layernorm.weight]
+Loading weights:  77%|███████▋  | 196/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.self_attn.k_proj.weight]        
+Loading weights:  77%|███████▋  | 196/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.self_attn.k_proj.weight]
+Loading weights:  78%|███████▊  | 197/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.self_attn.o_proj.weight]
+Loading weights:  78%|███████▊  | 197/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.self_attn.o_proj.weight]
+Loading weights:  78%|███████▊  | 198/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.self_attn.q_proj.weight]
+Loading weights:  78%|███████▊  | 198/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.self_attn.q_proj.weight]
+Loading weights:  78%|███████▊  | 199/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.self_attn.v_proj.weight]
+Loading weights:  78%|███████▊  | 199/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.21.self_attn.v_proj.weight]
+Loading weights:  79%|███████▊  | 200/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.input_layernorm.weight] 
+Loading weights:  79%|███████▊  | 200/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.input_layernorm.weight]
+Loading weights:  79%|███████▉  | 201/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.mlp.down_proj.weight]  
+Loading weights:  79%|███████▉  | 201/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.mlp.down_proj.weight]
+Loading weights:  80%|███████▉  | 202/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.mlp.gate_proj.weight]
+Loading weights:  80%|███████▉  | 202/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.mlp.gate_proj.weight]
+Loading weights:  80%|███████▉  | 203/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.mlp.up_proj.weight]  
+Loading weights:  80%|███████▉  | 203/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.mlp.up_proj.weight]
+Loading weights:  80%|████████  | 204/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.post_attention_layernorm.weight]
+Loading weights:  80%|████████  | 204/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.post_attention_layernorm.weight]
+Loading weights:  81%|████████  | 205/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.self_attn.k_proj.weight]        
+Loading weights:  81%|████████  | 205/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.self_attn.k_proj.weight]
+Loading weights:  81%|████████  | 206/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.self_attn.o_proj.weight]
+Loading weights:  81%|████████  | 206/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.self_attn.o_proj.weight]
+Loading weights:  81%|████████▏ | 207/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.self_attn.q_proj.weight]
+Loading weights:  81%|████████▏ | 207/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.self_attn.q_proj.weight]
+Loading weights:  82%|████████▏ | 208/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.self_attn.v_proj.weight]
+Loading weights:  82%|████████▏ | 208/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.22.self_attn.v_proj.weight]
+Loading weights:  82%|████████▏ | 209/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.input_layernorm.weight] 
+Loading weights:  82%|████████▏ | 209/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.input_layernorm.weight]
+Loading weights:  83%|████████▎ | 210/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.mlp.down_proj.weight]  
+Loading weights:  83%|████████▎ | 210/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.mlp.down_proj.weight]
+Loading weights:  83%|████████▎ | 211/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.mlp.gate_proj.weight]
+Loading weights:  83%|████████▎ | 211/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.mlp.gate_proj.weight]
+Loading weights:  83%|████████▎ | 212/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.mlp.up_proj.weight]  
+Loading weights:  83%|████████▎ | 212/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.mlp.up_proj.weight]
+Loading weights:  84%|████████▍ | 213/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.post_attention_layernorm.weight]
+Loading weights:  84%|████████▍ | 213/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.post_attention_layernorm.weight]
+Loading weights:  84%|████████▍ | 214/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.self_attn.k_proj.weight]        
+Loading weights:  84%|████████▍ | 214/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.self_attn.k_proj.weight]
+Loading weights:  85%|████████▍ | 215/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.self_attn.o_proj.weight]
+Loading weights:  85%|████████▍ | 215/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.self_attn.o_proj.weight]
+Loading weights:  85%|████████▌ | 216/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.self_attn.q_proj.weight]
+Loading weights:  85%|████████▌ | 216/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.self_attn.q_proj.weight]
+Loading weights:  85%|████████▌ | 217/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.self_attn.v_proj.weight]
+Loading weights:  85%|████████▌ | 217/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.23.self_attn.v_proj.weight]
+Loading weights:  86%|████████▌ | 218/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.input_layernorm.weight] 
+Loading weights:  86%|████████▌ | 218/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.input_layernorm.weight]
+Loading weights:  86%|████████▌ | 219/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.mlp.down_proj.weight]  
+Loading weights:  86%|████████▌ | 219/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.mlp.down_proj.weight]
+Loading weights:  87%|████████▋ | 220/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.mlp.gate_proj.weight]
+Loading weights:  87%|████████▋ | 220/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.mlp.gate_proj.weight]
+Loading weights:  87%|████████▋ | 221/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.mlp.up_proj.weight]  
+Loading weights:  87%|████████▋ | 221/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.mlp.up_proj.weight]
+Loading weights:  87%|████████▋ | 222/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.post_attention_layernorm.weight]
+Loading weights:  87%|████████▋ | 222/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.post_attention_layernorm.weight]
+Loading weights:  88%|████████▊ | 223/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.self_attn.k_proj.weight]        
+Loading weights:  88%|████████▊ | 223/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.self_attn.k_proj.weight]
+Loading weights:  88%|████████▊ | 224/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.self_attn.o_proj.weight]
+Loading weights:  88%|████████▊ | 224/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.self_attn.o_proj.weight]
+Loading weights:  89%|████████▊ | 225/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.self_attn.q_proj.weight]
+Loading weights:  89%|████████▊ | 225/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.self_attn.q_proj.weight]
+Loading weights:  89%|████████▉ | 226/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.self_attn.v_proj.weight]
+Loading weights:  89%|████████▉ | 226/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.24.self_attn.v_proj.weight]
+Loading weights:  89%|████████▉ | 227/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.input_layernorm.weight] 
+Loading weights:  89%|████████▉ | 227/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.input_layernorm.weight]
+Loading weights:  90%|████████▉ | 228/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.mlp.down_proj.weight]  
+Loading weights:  90%|████████▉ | 228/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.mlp.down_proj.weight]
+Loading weights:  90%|█████████ | 229/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.mlp.gate_proj.weight]
+Loading weights:  90%|█████████ | 229/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.mlp.gate_proj.weight]
+Loading weights:  91%|█████████ | 230/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.mlp.up_proj.weight]  
+Loading weights:  91%|█████████ | 230/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.mlp.up_proj.weight]
+Loading weights:  91%|█████████ | 231/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.post_attention_layernorm.weight]
+Loading weights:  91%|█████████ | 231/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.post_attention_layernorm.weight]
+Loading weights:  91%|█████████▏| 232/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.self_attn.k_proj.weight]        
+Loading weights:  91%|█████████▏| 232/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.self_attn.k_proj.weight]
+Loading weights:  92%|█████████▏| 233/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.self_attn.o_proj.weight]
+Loading weights:  92%|█████████▏| 233/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.self_attn.o_proj.weight]
+Loading weights:  92%|█████████▏| 234/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.self_attn.q_proj.weight]
+Loading weights:  92%|█████████▏| 234/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.self_attn.q_proj.weight]
+Loading weights:  93%|█████████▎| 235/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.self_attn.v_proj.weight]
+Loading weights:  93%|█████████▎| 235/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.25.self_attn.v_proj.weight]
+Loading weights:  93%|█████████▎| 236/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.input_layernorm.weight] 
+Loading weights:  93%|█████████▎| 236/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.input_layernorm.weight]
+Loading weights:  93%|█████████▎| 237/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.mlp.down_proj.weight]  
+Loading weights:  93%|█████████▎| 237/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.mlp.down_proj.weight]
+Loading weights:  94%|█████████▎| 238/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.mlp.gate_proj.weight]
+Loading weights:  94%|█████████▎| 238/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.mlp.gate_proj.weight]
+Loading weights:  94%|█████████▍| 239/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.mlp.up_proj.weight]  
+Loading weights:  94%|█████████▍| 239/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.mlp.up_proj.weight]
+Loading weights:  94%|█████████▍| 240/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.post_attention_layernorm.weight]
+Loading weights:  94%|█████████▍| 240/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.post_attention_layernorm.weight]
+Loading weights:  95%|█████████▍| 241/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.self_attn.k_proj.weight]        
+Loading weights:  95%|█████████▍| 241/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.self_attn.k_proj.weight]
+Loading weights:  95%|█████████▌| 242/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.self_attn.o_proj.weight]
+Loading weights:  95%|█████████▌| 242/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.self_attn.o_proj.weight]
+Loading weights:  96%|█████████▌| 243/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.self_attn.q_proj.weight]
+Loading weights:  96%|█████████▌| 243/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.self_attn.q_proj.weight]
+Loading weights:  96%|█████████▌| 244/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.self_attn.v_proj.weight]
+Loading weights:  96%|█████████▌| 244/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.26.self_attn.v_proj.weight]
+Loading weights:  96%|█████████▋| 245/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.input_layernorm.weight] 
+Loading weights:  96%|█████████▋| 245/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.input_layernorm.weight]
+Loading weights:  97%|█████████▋| 246/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.mlp.down_proj.weight]  
+Loading weights:  97%|█████████▋| 246/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.mlp.down_proj.weight]
+Loading weights:  97%|█████████▋| 247/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.mlp.gate_proj.weight]
+Loading weights:  97%|█████████▋| 247/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.mlp.gate_proj.weight]
+Loading weights:  98%|█████████▊| 248/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.mlp.up_proj.weight]  
+Loading weights:  98%|█████████▊| 248/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.mlp.up_proj.weight]
+Loading weights:  98%|█████████▊| 249/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.post_attention_layernorm.weight]
+Loading weights:  98%|█████████▊| 249/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.post_attention_layernorm.weight]
+Loading weights:  98%|█████████▊| 250/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.self_attn.k_proj.weight]        
+Loading weights:  98%|█████████▊| 250/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.self_attn.k_proj.weight]
+Loading weights:  99%|█████████▉| 251/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.self_attn.o_proj.weight]
+Loading weights:  99%|█████████▉| 251/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.self_attn.o_proj.weight]
+Loading weights:  99%|█████████▉| 252/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.self_attn.q_proj.weight]
+Loading weights:  99%|█████████▉| 252/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.self_attn.q_proj.weight]
+Loading weights: 100%|█████████▉| 253/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.self_attn.v_proj.weight]
+Loading weights: 100%|█████████▉| 253/254 [00:10<00:00, 68.33it/s, Materializing param=model.layers.27.self_attn.v_proj.weight]
+Loading weights: 100%|██████████| 254/254 [00:10<00:00, 68.33it/s, Materializing param=model.norm.weight]                      
+Loading weights: 100%|██████████| 254/254 [00:10<00:00, 68.33it/s, Materializing param=model.norm.weight]
+Loading weights: 100%|██████████| 254/254 [00:10<00:00, 24.93it/s, Materializing param=model.norm.weight]
+
+ Loading benchmark: bigbench_hard
+[1 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits: watermelons, apples, mangoes, pears, and cantaloupes. The information about the prices of the fruits is as follows:
+
+* Watermelons are more expensive than cantaloupes.
+* Mangoes are less expensive than pears.
+* Apples are the second-cheapest.
+
+Based on this information, the most logical order for the fruits is:
+
+1. Watermelons
+2. Apples
+3. Mangoes
+4. Pears
+5. Cantaloupes
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[2 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a car show with five vehicles. The convertible is newer than the truck, and the station wagon is newer than the hatchback. Therefore, the truck must be the oldest vehicle, and the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[3 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Ana, Rob, Amy, Dan, and Joe. We know the following information:
+
+* Rob finished below Dan.
+* Joe finished below Ana.
+* Joe finished above Amy.
+* Dan finished below Amy.
+
+Based on this information, the order in which the golfers finished is as follows:
+
+1. Ana
+2. Joe
+3. Dan
+4. Amy
+5. Rob
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[4 / 200] Evaluting Question
+Response: **Answer:** (C) The motorcyle is the oldest
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - The sedan is the second-oldest.
+   - The hatchback is newer than the motorcyle.
+   - The motorcyle is newer than the sedan.
+   - The hatchback is older than the truck.
+
+2. **Analyze the order:**
+   - The statements are logically consistent within each paragraph.
+   - The order of the objects is fixed.
+
+3. **Draw a conclusion:**
+   - Based on the information and the order, the motorcyle is the oldest.
+
+Therefore, the final answer is (C) The motorcyle is the oldest.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[5 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The yellow book is to the right of the purple book, so it is the third book from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[6 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a fruit stand with five fruits in a specific order. The information about the cost of the fruits is as follows:
+
+- Watermelons are the most expensive.
+- Loquats are more expensive than pears.
+- Pears are the second-cheapest.
+- Plums are the second-most expensive.
+
+Based on this information, the most expensive fruits are the watermelons and plums. The third-most expensive fruits are the loquats. Therefore, the final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[7 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament where Joe finished second and Ada finished last. Since Joe finished below Amy, Amy must have finished first. Therefore, the final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[8 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Joe, Eve, Mya, Rob, and Dan. We know that Joe finished below Dan, Mya finished first, and Dan finished below Rob. Therefore, Joe finished second-to-last.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[9 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Amy, Mel, Rob, Joe, and Ada. Joe finished second, so he must have finished after Amy and before Mel and Ada. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[10 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Mel, Dan, Amy, Joe, and Eve. The information is arranged in the order they finished the tournament.
+
+The text states that Amy finished below Dan and Mel finished first. Therefore, the order of the golfers' finishing positions is:
+
+1. Mel
+2. Amy
+3. Dan
+4. Joe
+5. Eve
+
+The final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[11 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The problem describes a set of five birds arranged in a specific order on a branch. The information about the order is consistent within the text. The information about the robin being the second from the left, the quail being the leftmost, the blue jay being to the left of the hummingbird, and the hawk being the third from the left is all accurate. Therefore, the final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[12 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a branch with five birds arranged in a specific order. The information about the order is consistent within the text. The text states that the owl is the leftmost bird, the robin is to the left of the raven, and the quail is the rightmost bird. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[13 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Dan, Mel, Ana, Eli, and Rob. The statements are logically consistent within each paragraph.
+
+The information we have is:
+
+* Rob finished above Mel.
+* Mel finished second.
+* Ana finished above Eli.
+* Dan finished last.
+
+Based on this information, the order of finish is:
+
+1. Rob
+2. Mel
+3. Ana
+4. Eli
+5. Dan
+
+Therefore, the final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[14 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The gray book is to the right of the yellow book, and the blue book is the rightmost. Therefore, the gray book is the second book from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[15 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The information in the text describes a golf tournament where Eve finished first, Mya finished below her, and Rob finished above Mya. Therefore, Eve finished second-to-last.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[16 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The green book is to the left of the brown book, so it must be the second book from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[17 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a fruit stand with five fruits arranged in a specific order. The information about the prices of the fruits is consistent within each paragraph. The text states that the pears are the most expensive, followed by the mangoes, then the oranges, then the kiwis, and finally the peaches. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[18 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The yellow book is the rightmost book, so the second book from the right is the black book.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[19 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+In the golf tournament, Joe finished below Dan, so he finished third.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[20 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The paragraph describes a set of five birds arranged in a fixed order. The statements are logically consistent within the paragraph.
+
+The hummingbird is to the left of the owl and to the right of the cardinal. The crow is to the left of the robin. The owl is to the left of the crow. Therefore, the owl is the second from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[21 / 200] Evaluting Question
+Response: **Answer:** (D)
+
+The truck is older than the hatchback, and the tractor is newer than the hatchback. Therefore, the truck is the oldest and the tractor is the newest.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[22 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers and their finishing positions. We know the following information:
+
+* Ada finished above Eli and finished second.
+* Mel finished below Eli.
+
+Therefore, the order of finish is Ada, Eli, Mel, followed by the remaining two golfers.
+
+The final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[23 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five birds on a branch in the following order: owl, hummingbird, cardinal, robin, and crow.
+
+The hummingbird is to the left of the owl and the right of the cardinal. The crow is to the left of the robin. The owl is to the left of the crow.
+
+Therefore, the owl is the rightmost bird in this arrangement.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[24 / 200] Evaluting Question
+Response: **Answer:** (C) The raven is the third from the left
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - The raven is to the right of the owl.
+   - The raven is the second from the left.
+   - The robin is to the left of the crow.
+   - The robin is the second from the right.
+
+2. **Follow the order:**
+   - The owl is the leftmost bird.
+   - The robin is to the left of the crow.
+   - Therefore, the raven is the third bird from the left.
+
+**Final Answer:**
+
+Answer: (C) The raven is the third from the left
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[25 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+In the text, the tractor is the third-newest vehicle. The text describes the order of the vehicles in the order they are arranged. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[26 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The problem describes a set of five birds on a branch. The statements are logically consistent within the paragraph.
+
+The robin is to the right of the cardinal. The cardinal is to the right of the blue jay. Therefore, the blue jay is the second from the left, and the cardinal is the rightmost bird.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[27 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The paragraph describes a set of five birds arranged in a fixed order. The statements are logically consistent within the paragraph.
+
+The information we have is:
+
+* The quail is the second from the left.
+* The blue jay is to the left of the hummingbird.
+
+Therefore, the final answer is (A) The blue jay is the second from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[28 / 200] Evaluting Question
+Response: **Answer:** (C) The bus is the second-newest
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - The bus is newer than the truck.
+   - The truck is newer than the convertible.
+   - The sedan is the second-oldest.
+   - The motorcyle is newer than the bus.
+
+2. **Find the order of the vehicles:**
+   - The bus is newer than the truck, so it must be in the second position from the right.
+   - The truck is newer than the convertible, so the convertible must be in the third position from the right.
+   - The sedan is the second-oldest, so it must be in the second position from the left.
+
+Therefore, the final answer is (C) The bus is the second-newest.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[29 / 200] Evaluting Question
+Response: **Answer:** (C) The raven is the leftmost
+
+**Explanation:**
+
+The information about the arrangement of the birds is as follows:
+
+* The owl is the leftmost bird.
+* The raven is to the right of the owl, so the raven is the second from the left.
+* The robin is to the left of the crow, so the robin is the second from the right.
+
+Therefore, the final answer is (C) The raven is the leftmost.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[30 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The paragraph describes a set of five birds on a branch. The statements are logically consistent within the paragraph.
+
+The robin is to the right of the falcon, and the quail is to the left of the hawk. Therefore, the order of the birds is: crow, falcon, robin, hawk, quail.
+
+The robin is the second from the left, so the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[31 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The blue book is the leftmost and the red book is the third from the left. Therefore, the blue book is the second book from the right.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[32 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The purple book is the third book from the left. The green book is to the left of the purple book. Therefore, the blue book is the second book from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[33 / 200] Evaluting Question
+Response: **Answer:** (C) The cantaloupes are the cheapest
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - The watermelons are more expensive than the loquats.
+   - The watermelons are less expensive than the kiwis.
+   - The loquats are more expensive than the apples.
+   - The cantaloupes are the cheapest.
+
+2. **Find the logical order:**
+   - The watermelons are more expensive than the loquats, so they must be in the second or third position from the left.
+   - The watermelons are less expensive than the kiwis, so the kiwis must be in the second or third position from the right.
+   - The loquats are more expensive than the apples, so the apples must be in the first position.
+   - The cantaloupes are the cheapest, so they must be in the first position.
+
+3. **Final answer:**
+   - The cantaloupes are the cheapest.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[34 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a set of five vehicles in an antique car show. The information about their order and age is as follows:
+
+* The minivan is older than the sedan.
+* The tractor is older than the hatchback.
+* The minivan is the third-newest.
+* The station wagon is the second-newest.
+
+Based on this information, the logical order of the vehicles from oldest to newest is:
+
+1. Tractor
+2. Minivan
+3. Station wagon
+4. Sedan
+5. Hatchback
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[35 / 200] Evaluting Question
+Response: **Answer:** (B)
+
+**Solution:**
+
+The green book is the rightmost, so it must be the leftmost book in the order. The gray book is to the right of the orange book, so the orange book must be the second book from the left. The purple book is to the right of the gray book and to the left of the yellow book, so the yellow book must be the third book from the left. Therefore, the answer is (B).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[36 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+* The owl is the second from the left, so it is the leftmost bird on the branch.
+* The robin is to the left of the raven, so the raven is the second from the right.
+* Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[37 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers and their finishing positions. Mya finished first, followed by Amy, who finished above Mel. Therefore, Amy finished third.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[38 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The problem describes a set of five birds on a branch. The statements are logically consistent within the paragraph. The hawk is to the right of the owl, the hummingbird is to the right of the hawk, and the robin is the second from the left. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[39 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five birds on a branch. The hawk is the third from the left, and the quail is to the left of the crow. Therefore, the robin is the leftmost bird.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[40 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five vehicles in an antique car show. The tractor is newer than the hatchback, so the hatchback must be older than the tractor. The bus is the second-oldest, so the hatchback must be older than the bus. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[41 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The problem describes a set of five birds on a branch, with the following arrangement:
+
+* The cardinal is the leftmost.
+* The robin is to the right of the raven.
+* The blue jay is the third from the left.
+* The raven is to the right of the blue jay.
+
+Based on this information, the correct answer is (A) The cardinal is the leftmost.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[42 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a set of five vehicles in an antique car show. The statements are logically consistent within each paragraph.
+
+- The sedan is the second-newest.
+- The station wagon is newer than the convertible.
+- The sedan is older than the motorcyle.
+- The bus is the oldest.
+
+Based on these statements, the logical order of the vehicles is: bus, motorcyle, sedan, convertible, station wagon. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[43 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The green book is the leftmost book. The yellow book is to the right of the blue book. The blue book is the second book from the right. Therefore, the green book is the third book from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[44 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a branch with five birds arranged in a specific order. The information about the arrangement is consistent within the text. The text states that the owl is the leftmost bird, the robin is to the left of the raven, and the quail is the rightmost bird. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[45 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The paragraph describes a set of five books on a shelf in a specific order. The red book is to the right of the gray book, the black book is to the left of the blue book, and the blue book is to the left of the gray book. Therefore, the gray book is the rightmost book in this arrangement.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[46 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The green book is to the left of the gray book, and the brown book is the third from the left. Therefore, the brown book is the second book from the right.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[47 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five vehicles in an antique car show. The information about their order and age is as follows:
+
+- The minivan is older than the sedan.
+- The tractor is older than the hatchback.
+- The minivan is the third-newest.
+- The station wagon is the second-newest.
+
+Based on this information, the oldest vehicle in the set is the tractor, followed by the minivan, the station wagon, the sedan, and finally the hatchback. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[48 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The owl is the second from the right. The robin is the second from the left. The robin is to the right of the blue jay. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[49 / 200] Evaluting Question
+Response: **Answer:** (D)
+
+**Explanation:**
+
+1. Identify the key information:
+   - The bus is the oldest.
+   - The sedan is the second-newest.
+   - The station wagon is newer than the convertible.
+   - The sedan is older than the motorcyle.
+
+2. Analyze the order of the objects:
+   - The bus is the first item in the list.
+   - The sedan is the second item.
+   - The convertible is the third item.
+   - The station wagon is the fourth item.
+   - The motorcyle is the fifth item.
+
+3. Based on the information and order, the answer is (D).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[50 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits arranged in a specific order. The information about the cost of each fruit is as follows:
+
+- The plums are the cheapest.
+- The apples are less expensive than the mangoes.
+- The oranges are more expensive than the mangoes.
+- The pears are more expensive than the oranges.
+
+Therefore, the second-cheapest fruit is the apples.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[51 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The green book is to the left of the gray book, so the green book must be the third from the left. The brown book is the third from the left, therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[52 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits arranged in a specific order. The information about the cost of each fruit is as follows:
+
+- Loquats are less expensive than cantaloupes.
+- Cantaloupes are less expensive than apples.
+- Oranges are the most expensive.
+- Apples are the third-most expensive.
+
+Based on this information, the most logical order for the cost of the fruits is:
+
+1. Oranges
+2. Apples
+3. Cantaloupes
+4. Loquats
+5. Peaches
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[53 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Amy, Eve, Mel, Mya, and Rob. We know that Eve finished last, and Rob finished above Mel. Therefore, Amy must have finished third.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[54 / 200] Evaluting Question
+Response: **Answer:** (E)
+
+The text describes a car show with five vehicles in a specific order. The limousine is the newest, followed by the bus, the station wagon, the convertible, and finally the sedan. Therefore, the answer is (E).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[55 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a fruit stand with five fruits in a specific order. The information about the prices of the fruits is consistent within each paragraph. The text states that the mangoes are more expensive than the loquats, the cantaloupes are more expensive than the mangoes, and the watermelons are more expensive than the cantaloupes. Therefore, the mangoes are the third-most expensive fruits on the stand.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[56 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a fruit stand with five fruits in a specific order. The information about the prices of the fruits is as follows:
+
+- Mangoes are more expensive than loquats.
+- Cantaloupes are more expensive than mangoes.
+- Watermelons are more expensive than cantaloupes.
+- Pears are the cheapest.
+
+Based on this information, the most logical order for the prices is:
+
+1. Pears
+2. Mangoes
+3. Cantaloupes
+4. Watermelons
+5. Loquats
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[57 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The owl is the second from the right, so the third object from the left is the blue jay.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[58 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a set of five vehicles in an antique car show. The tractor is newer than the minivan and the tractor is older than the limousine. The convertible is older than the sedan. Therefore, the order of the vehicles is as follows:
+
+1. Red (leftmost)
+2. Convertible
+3. Blue
+4. Minivan
+5. Limousine (rightmost)
+
+The answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[59 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Mel, Dan, Amy, Joe, and Eve. The information about their finishing positions is as follows:
+
+* Amy finished below Dan.
+* Mel finished first.
+* Joe finished above Dan.
+* Eve finished last.
+
+Based on this information, the logical order of their finishing positions is:
+
+1. Mel
+2. Joe
+3. Dan
+4. Amy
+5. Eve
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[60 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The problem describes a set of five birds on a branch, with the robin being the second from the left and the quail being the leftmost. The information about the blue jay and the hawk is also provided. To find the answer, we need to identify the position of the third object from the left.
+
+The information we have is:
+- The robin is the second from the left.
+- The quail is the leftmost.
+- The blue jay is to the left of the hummingbird.
+- The hawk is the third from the left.
+
+Based on this information, the third object from the left is the hawk. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[61 / 200] Evaluting Question
+Response: **Answer:** (C) The brown book is the second from the left
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - The red book is to the left of the brown book.
+   - The yellow book is to the right of the orange book.
+   - The brown book is the second from the left.
+   - The yellow book is to the left of the blue book.
+
+2. **Follow the order:**
+   - The red book is to the left of the brown book, so it must be the leftmost book.
+   - The yellow book is to the right of the orange book, so the orange book must be the rightmost book.
+   - The brown book is the second book from the left.
+
+Therefore, the final answer is (C) The brown book is the second from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[62 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The yellow book is to the right of the purple book, so it must be the second book from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[63 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits: watermelons, apples, mangoes, pears, and cantaloupes. The information about the prices of the fruits is as follows:
+
+* Watermelons are more expensive than cantaloupes.
+* Mangoes are less expensive than pears.
+* Apples are the second-cheapest.
+* Watermelons are less expensive than mangoes.
+
+Based on this information, the most expensive fruit is the watermelon, followed by the apple, and then the pear. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[64 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Amy, Mel, Rob, Joe, and Ada. Joe finished second, and he finished below Amy. Therefore, Amy finished second.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[65 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+In the text, the tractor is the third-newest vehicle, so it must be the second-newest in the order.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[66 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits arranged in a specific order. The information about the prices of the fruits is as follows:
+
+- Apples are more expensive than oranges.
+- Oranges are more expensive than mangoes.
+- Apples are the third-most expensive.
+- Pears are more expensive than watermelons.
+
+Based on this information, the most expensive fruit is the apple, followed by the orange, the pear, and the watermelon. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[67 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a car show where the station wagon is the newest vehicle, followed by the motorcyle, sedan, tractor, and limousine in that order. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[68 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The blue book is the leftmost and the white book is to the right of the gray book. Therefore, the blue book is the rightmost.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[69 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits in a specific order. The information about the pricing of the fruits is as follows:
+
+- Apples are more expensive than oranges.
+- Oranges are more expensive than mangoes.
+- Apples are the third-most expensive.
+- Pears are more expensive than watermelons.
+
+Based on this information, the most expensive fruit is the apple, followed by the orange, then the watermelon, then the pear, and finally the mango. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[70 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The green book is the rightmost book, and the orange book is the third book from the left. Therefore, the green book is the second book from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[71 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a shelf with five books. The black book is to the left of the yellow book, and the red book is the third book from the left. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[72 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five birds on a branch. The robin is to the right of the raven. The cardinal is the leftmost. The raven is to the right of the blue jay. The blue jay is the third from the left. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[73 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Dan, Ana, Eli, Mya, and Amy. Amy finished above Eli, and Ana finished above Amy. Therefore, the order of finish is: Amy, Ana, Eli, Mya, Dan.
+
+The final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[74 / 200] Evaluting Question
+Response: **Answer:** (A) Rob finished third
+
+**Explanation:**
+
+In the text, Ada finished above Mel and Mel finished above Dan. So, the order is as follows: Ada, Mel, Dan, Joe, Rob. Rob finished third.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[75 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The problem describes a set of five birds on a branch in a specific order. The key is to identify the key relationships between the birds:
+
+* The robin is to the right of the raven.
+* The cardinal is the leftmost bird.
+* The raven is to the right of the blue jay.
+* The blue jay is the third bird from the left.
+
+Following these relationships, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[76 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+* The purple book is the third from the left, so it must be the second book from the left.
+* The yellow book is to the left of the black book, so the black book must be the third book from the left.
+* The green book is to the left of the purple book, so the green book must be the third book from the left.
+* The blue book is to the left of the green book, so the blue book must be the second book from the left.
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[77 / 200] Evaluting Question
+Response: **Answer:** (B)
+
+**Explanation:**
+
+The text describes a set of five birds on a branch in a specific order. The cardinal is the second from the right, the hawk is to the right of the falcon, and the raven is the second from the left. The crow is the rightmost bird. Therefore, the answer is (B).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[78 / 200] Evaluting Question
+Response: **Answer:** (D) The loquats are the second-cheapest
+
+**Explanation:**
+
+**1. Identify the key information:**
+- The fruits are arranged in a fixed order.
+- The peaches are more expensive than the oranges.
+- The cantaloupes are more expensive than the peaches.
+- The kiwis are the third-most expensive.
+- The loquats are the second-cheapest.
+
+**2. Analyze the order:**
+- The fruits are sold in the order of their cost, starting with the cheapest and then moving to the most expensive.
+
+**Therefore, the final answer is (D) loquats are the second-cheapest.**
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[79 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a set of five vehicles in an antique car show. The order of the vehicles is as follows:
+
+1. Minivan
+2. Hatchback
+3. Bus
+4. Convertible
+5. Motorcyle
+
+The text states that the hatchback is newer than the convertible, the bus is newer than the hatchback, and the bus is older than the motorcyle. Therefore, the order of the vehicles is as follows:
+
+1. Minivan
+2. Hatchback
+3. Bus
+4. Convertible
+5. Motorcyle
+
+The answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[80 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five birds arranged in a specific order on a branch. The cardinal is the rightmost bird, the raven is to the left of the owl, and the robin is to the right of the hummingbird. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[81 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a golf tournament where Eve finished first, followed by Rob in second place. Eli finished below Mya, and Ana finished below Eli. Therefore, the final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[82 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five vehicles in an antique car show. The motorcyle is the second-newest, the truck is newer than the limousine, and the motorcyle is older than the station wagon. Therefore, the third-newest vehicle is the truck.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[83 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a golf tournament where Joe finished last, Ana finished second, Mya finished second-to-last, and Eve finished below Amy. Therefore, the final answer is (A) Joe finished third.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[84 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five vehicles in an antique car show. The information about their age is as follows:
+
+- The hatchback is older than the sedan.
+- The limousine is older than the bus.
+- The bus is newer than the sedan.
+
+Therefore, the second-oldest vehicle is the hatchback.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[85 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The blue book is the leftmost book. The red book is the third book from the left. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[86 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+In the text, the truck is described as the second-oldest vehicle. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[87 / 200] Evaluting Question
+Response: **Answer:** (D)
+
+**Solution:**
+
+The problem describes a set of five birds arranged in a fixed order on a branch. The statements are logically consistent within the paragraph.
+
+The robin is to the right of the falcon and the quail is to the left of the hawk. The robin is the second from the left and the hawk is the second from the right. Therefore, the answer is (D).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[88 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five vehicles in an antique car show. The information about their order is as follows:
+
+- The hatchback is newer than the convertible.
+- The bus is newer than the hatchback.
+- The bus is older than the motorcyle.
+
+Based on this information, the logical order of the vehicles is:
+
+1. Minivan
+2. Bus
+3. Hatchback
+4. Convertible
+5. Motorcyle
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[89 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The paragraph describes a set of five birds arranged in a fixed order. The statements are logically consistent within the paragraph.
+
+The hummingbird is to the left of the owl, and the hummingbird is to the right of the cardinal. Therefore, the owl is the second from the right.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[90 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five vehicles in an antique car show. The statements are logically consistent within each paragraph.
+
+The information we have is:
+
+* The station wagon is newer than the tractor.
+* The truck is older than the tractor.
+* The minivan is newer than the hatchback.
+* The hatchback is the second-newest.
+
+Based on this information, the logical order of the vehicles is:
+
+1. Station wagon
+2. Hatchback
+3. Minivan
+4. Truck
+5. Tractor
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[91 / 200] Evaluting Question
+Response: **Answer:** (B)
+
+**Solution:**
+
+The blue book is the second book from the right. The blue book is to the right of the yellow book and the white book is to the left of the yellow book. Therefore, the blue book is the second book from the right.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[92 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a set of five vehicles in an antique car show. The order of the vehicles is as follows:
+
+1. Minivan (newest)
+2. Bus (newer than the hatchback)
+3. Hatchback (older than the convertible)
+4. Convertible
+5. Motorcyle (oldest)
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[93 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The yellow book is the rightmost, and the black book is the second from the left. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[94 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The paragraph describes a set of five birds arranged in a fixed order. The statements are logically consistent within the paragraph. The robin is to the left of the quail. The falcon is the third from the left. The crow is to the left of the falcon. The blue jay is the leftmost. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[95 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The tractor is newer than the motorcyle, and the motorcyle is newer than the sedan. Therefore, the station wagon must be the newest vehicle, and the limousine is the oldest vehicle. The second-oldest vehicle is the sedan.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[96 / 200] Evaluting Question
+Response: **Answer:** (C) The pears are the third-most expensive
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits in a specific order. The watermelons are the most expensive, followed by the peaches, plums, pears, and loquats. The statements are logically consistent within each paragraph. Therefore, the answer is (C) the pears are the third-most expensive.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[97 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits: apples, oranges, watermelons, pears, and mangoes. The information about the prices of the fruits is as follows:
+
+* Apples are more expensive than oranges.
+* Oranges are more expensive than mangoes.
+* Apples are the third-most expensive.
+* Pears are more expensive than watermelons.
+
+Based on this information, the most logical order for the prices is:
+
+1. Apples
+2. Oranges
+3. Watermelons
+4. Pears
+5. Mangos
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[98 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The paragraph describes a set of five birds arranged in a fixed order. The cardinal is the rightmost bird. The raven is to the left of the owl, and the robin is to the right of the hummingbird. Therefore, the second bird from the right is the raven.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[99 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The yellow book is to the left of the white book, and the white book is to the left of the gray book. Therefore, the yellow book is the second book from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[100 / 200] Evaluting Question
+Response: **Answer:** (B)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Eve, Amy, Ada, Rob, and Joe. Amy finished second-to-last, which is the second position from the end of the tournament. Rob finished below Eve, so he finished in the third position. Therefore, the final answer is (B).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[101 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The yellow book is to the right of the purple book, so it is the second book from the right.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[102 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Joe, Mya, Eve, Amy, and Ana. We know the following information:
+
+* Eve finished below Joe.
+* Ana finished below Amy.
+* Eve finished above Amy.
+
+Based on this information, the order in which the golfers finished is as follows:
+
+1. Joe
+2. Amy
+3. Eve
+4. Mya
+5. Ana
+
+Therefore, the answer is (A) Joe finished third.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[103 / 200] Evaluting Question
+Response: **Answer:** (E)
+
+The text describes a fruit stand with five fruits arranged in a specific order. The watermelons are the most expensive, followed by the peaches, the plums, the pears, and finally the loquats. Therefore, the answer is (E).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[104 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament where Eve finished first, followed by Rob, Eli, Ana, and Mya. The text states that Eli finished below Mya and Ana finished below Eli. Therefore, the final order is:
+
+Eve, Rob, Eli, Ana, Mya
+
+The second-to-last position is occupied by Eli.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[105 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Dan, Ana, Eli, Mya, and Amy. The statements are logically consistent within each paragraph.
+
+According to the text, Amy finished above Eli and Ana finished above Amy. Therefore, the order of the golfers in the final standings is:
+
+1. Ana
+2. Amy
+3. Eli
+4. Mya
+5. Dan
+
+So, the final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[106 / 200] Evaluting Question
+Response: **Answer:** (D)
+
+**Explanation:**
+
+The loquats are more expensive than the kiwis, so the loquats are the second-most expensive fruits.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[107 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Amy, Eve, Mel, Mya, and Rob. We know that Eve finished last and Rob finished above Mel. Therefore, Amy must have finished second.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[108 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five birds on a branch. The hawk is to the left of the owl, and the raven is the second from the right. The robin is to the left of the raven. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[109 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a set of five birds on a branch. The owl is the leftmost bird, and the robin is the second bird from the left. The hawk is to the right of the owl, and the hummingbird is to the right of the hawk. Therefore, the third bird from the left is the owl.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[110 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a set of five vehicles in an antique car show. The statements are logically consistent within each paragraph.
+
+The text states that the convertible is newer than the truck and the station wagon is newer than the hatchback. Therefore, the truck must be the oldest.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[111 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a set of five vehicles in an antique car show. The statements are logically consistent within each paragraph. The convertible is newer than the truck, the station wagon is newer than the hatchback, and the convertible is older than the hatchback. Therefore, the truck is the third-newest vehicle in the show.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[112 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The red book is to the right of the gray book, so the gray book must be the third book from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[113 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The yellow book is to the right of the gray book, so the gray book must be the rightmost book. The purple book is to the left of the gray book, so it must be the third book from the left. Therefore, the blue book must be the second book from the right.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[114 / 200] Evaluting Question
+Response: **Answer:** (D) The plums are the second-cheapest
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - The watermelons are the most expensive.
+   - The peaches are more expensive than the loquats.
+   - The plums are the second-cheapest.
+   - The pears are the third-most expensive.
+
+2. **Find the logical order:**
+   - The watermelons are the most expensive, so they must be on the right side of the other fruits.
+   - The peaches are more expensive than the loquats, so they must be to the right of the loquats but before the watermelons.
+   - The plums are the second-cheapest, so they must be between the loquats and the peaches.
+   - The pears are the third-most expensive, so they must be to the right of the plums but before the watermelons.
+
+Therefore, the final order is: loquats, plums, peaches, pears, watermelons.
+
+**Answer:** (D)
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[115 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+In the given text, the order of the golfers is as follows:
+
+1. Amy finished above Eli.
+2. Ana finished above Amy.
+3. Mya finished below Eli.
+4. Dan finished last.
+
+Therefore, the golfer who finished second-to-last is Dan.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[116 / 200] Evaluting Question
+Response: **Answer:** (B)
+
+**Solution:**
+
+The brown book is the second book from the left. The statements about the arrangement of the books are logically consistent within the paragraph. The black book is to the left of the yellow book, and the red book is the third book from the left. Therefore, the answer is (B).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[117 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+In the text, it is stated that Rob finished below Dan and Joe finished second. Therefore, Rob finished second-to-last.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[118 / 200] Evaluting Question
+Response: **Answer:** (C)
+
+**Solution:**
+
+The truck is older than the tractor, and the station wagon is newer than the tractor. Therefore, the truck is the oldest, and the station wagon is the second-oldest.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[119 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five vehicles in an antique car show. The statements are logically consistent within each paragraph.
+
+The text states that the hatchback is the second-oldest and the limousine is older than the bus. Therefore, the limousine must be the oldest vehicle, and the hatchback must be the second-oldest vehicle.
+
+The answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[120 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a fruit stand with five fruits arranged in a specific order. The information about the cost of each fruit is also provided. The text states that the apples are less expensive than the peaches and the watermelons are more expensive than the peaches. Therefore, the second-most expensive fruit is the peaches.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[121 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The provided text describes a set of five birds on a branch in a specific order. The information about their arrangement is consistent within the text.
+
+According to the text, the quail is the second from the right. Therefore, the final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[122 / 200] Evaluting Question
+Response: **Answer:** (B)
+
+The text describes a fruit stand with five fruits arranged in a specific order. The kiwis are the second-cheapest, followed by the pears and then the watermelons, which are the most expensive. Therefore, the answer is (B).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[123 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The yellow book is the rightmost, and the black book is the second from the left. The statements are logically consistent within the paragraph. Therefore, the final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[124 / 200] Evaluting Question
+Response: **Answer:** (C) The raven is the rightmost
+
+**Explanation:**
+
+The information about the arrangement of the birds is as follows:
+
+* The owl is the leftmost bird.
+* The raven is to the right of the owl and the second bird from the left.
+* The robin is to the left of the crow and the second bird from the right.
+
+Therefore, the final answer is (C) The raven is the rightmost.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[125 / 200] Evaluting Question
+Response: **Answer:** (C) The crow is the second from the right
+
+**Explanation:**
+
+1. Identify the key information:
+   - The hawk is to the right of the owl.
+   - The hummingbird is to the right of the hawk.
+   - The crow is the second from the right.
+   - The robin is the second from the left.
+
+2. Arrange the order based on the information:
+   - Owl (leftmost)
+   - Robin (second from the left)
+   - Hawk (right of the owl)
+   - Hummingbird (right of the hawk)
+   - Crow (second from the right)
+
+Therefore, the final answer is (C) The crow is the second from the right.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[126 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The paragraph describes a set of five birds arranged in a fixed order. The statements are logically consistent within the paragraph.
+
+The information we know is:
+
+* The quail is the leftmost bird.
+* The cardinal is the third bird from the left.
+* The quail is the second bird from the left.
+* The blue jay is to the left of the hummingbird.
+
+Based on this information, the correct answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[127 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a fruit stand with five fruits in a specific order. The information about the prices of the fruits is consistent within each paragraph. The text states that the mangoes are more expensive than the loquats, the cantaloupes are more expensive than the mangoes, and the watermelons are more expensive than the cantaloupes. Therefore, the second-most expensive fruit is the mangoes.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[128 / 200] Evaluting Question
+Response: **Answer:** (D) Amy finished first
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Rob, Eve, Eli, Amy, and Dan. We know that Dan finished second, so the first place must have been taken by someone else. Since Amy finished below Eve and above Eli, she must have finished first.
+
+Therefore, the final answer is (D) Amy finished first.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[129 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+In the golf tournament, Eve finished below Joe, so Joe finished last.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[130 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a fruit stand with five fruits in a specific order. The information about the prices of the fruits is consistent within the text. The loquats are less expensive than the cantaloupes, and the cantaloupes are less expensive than the apples. Therefore, the oranges are the most expensive, followed by the apples, then the cantaloupes, and finally the loquats.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[131 / 200] Evaluting Question
+Response: **Answer:** (A) Rob finished second-to-last
+
+**Explanation:**
+
+1. **Identify the order of the golfers:**
+   - Ada finished above Mel.
+   - Mel finished above Dan.
+   - Joe finished below Dan.
+
+2. **Find the golfer who finished second-to-last:**
+   - The golfer who finished above the second-to-last golfer is the one who finished second-to-last.
+
+Therefore, the final answer is (A) Rob finished second-to-last.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[132 / 200] Evaluting Question
+Response: **Answer:** (C) The robin is the leftmost
+
+The text describes a set of five birds on a branch. The robin is the leftmost bird, followed by the raven, the hawk, the crow, and the hummingbird. Therefore, the final answer is (C).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[133 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits: pears, mangoes, kiwis, oranges, and peaches. The information about the prices of the fruits is as follows:
+
+- The peaches are more expensive than the mangoes.
+- The oranges are more expensive than the kiwis.
+- The pears are the most expensive.
+- The mangoes are more expensive than the oranges.
+
+Based on this information, the most expensive fruits are the pears, followed by the mangoes, and then the oranges. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[134 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a golf tournament where Eve finished first, followed by Joe, Eli, Mya, and Rob. The information about Rob finishing above Mya and Joe finishing below Mya is consistent with the final answer.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[135 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five vehicles in an antique car show. The sedan is newer than the station wagon, and the limousine is the newest. Therefore, the second-newest vehicle is the convertible.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[136 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits arranged in the order of oranges, apples, peaches, cantaloupes, and loquats. The text states that the loquats are less expensive than the cantaloupes, the cantaloupes are less expensive than the apples, and the oranges are the most expensive. Therefore, the most expensive fruit is the oranges.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[137 / 200] Evaluting Question
+Response: **Answer:** (D)
+
+**Explanation:**
+
+In the text, the truck is newer than the sedan. The bus is the third-newest. Therefore, the answer is (D).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[138 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The yellow book is to the right of the gray book, so the gray book must be the third from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[139 / 200] Evaluting Question
+Response: **Answer:** (B)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits: mangoes, kiwis, plums, pears, and watermelons. The text states that the kiwis are less expensive than the plums, the pears are the third-most expensive, and the watermelons are the most expensive. Therefore, the second-cheapest fruit is the kiwis.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[140 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The green book is to the left of the brown book, and the green book is to the right of the blue book. Therefore, the green book is the leftmost book.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[141 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The problem describes a set of five birds on a branch in a specific order. The key is to identify the key relationships between the birds:
+
+* The hawk is to the right of the owl.
+* The hummingbird is to the right of the hawk.
+* The crow is the second from the right.
+* The robin is the second from the left.
+
+Based on these relationships, the only option that aligns with the problem's logic is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[142 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a golf tournament where Joe finished last, Ana finished second, Mya finished second-to-last, and Eve finished below Amy. The order of the golfers in the tournament is Joe, Ana, Mya, Amy, and Eve. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[143 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+In the text, it is stated that Amy finished above Mel and below Eli. Mya finished first. Therefore, Amy finished second.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[144 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Ana, Rob, Amy, Dan, and Joe. We know the following information:
+
+* Rob finished below Dan.
+* Joe finished below Ana.
+* Joe finished above Amy.
+* Dan finished below Amy.
+
+Based on this information, the order in which the golfers finished is as follows:
+
+1. Ana
+2. Rob
+3. Dan
+4. Amy
+5. Joe
+
+Therefore, the answer is (A) Ana finished second.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[145 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five vehicles in an antique car show. The limousine is older than the truck, and the sedan is newer than the motorcyle. Therefore, the truck must be the second-newest vehicle in the order.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[146 / 200] Evaluting Question
+Response: **Answer:** (C)
+
+**Explanation:**
+
+The text describes a set of five vehicles in an antique car show. The information about their order and age is as follows:
+
+* The minivan is older than the sedan.
+* The tractor is older than the hatchback.
+* The minivan is the third-newest.
+* The station wagon is the second-newest.
+
+Based on this information, the logical order of the vehicles is:
+
+1. Red (leftmost)
+2. Station wagon
+3. Minivan
+4. Sedan
+5. Hatchback (rightmost)
+
+Therefore, the final answer is (C).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[147 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The problem describes a set of five birds arranged in a fixed order on a branch. The statements are logically consistent within the paragraph.
+
+The robin is the leftmost bird, the raven is the second bird from the left, the hawk is the second bird from the right, the crow is the third bird from the left, and the hummingbird is the rightmost bird.
+
+Therefore, the final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[148 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+In the text, Ana finished below Mya, so she finished second-to-last.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[149 / 200] Evaluting Question
+Response: **Answer:** (C) The motorcyle is the third-newest
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - The sedan is the second-oldest.
+   - The hatchback is newer than the motorcyle.
+   - The motorcyle is newer than the sedan.
+   - The hatchback is older than the truck.
+
+2. **Analyze the order:**
+   - The sedan is second-oldest, so it must be in the second position from the left.
+   - The hatchback is newer than the motorcyle, so the motorcyle must be in a position before the hatchback.
+   - The motorcyle is newer than the sedan, so the sedan must be in a position before the motorcyle.
+   - The hatchback is older than the truck, so the truck must be in a position after the hatchback.
+
+Therefore, the order of the vehicles is: bus, sedan, motorcyle, hatchback, truck. The motorcyle is the third-newest.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[150 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+In the text, the tractor is the third-newest vehicle, so it must be the second-oldest.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[151 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a set of five birds on a branch. The blue jay is the rightmost, the robin is to the right of the falcon, the cardinal is to the left of the hawk, and the falcon is to the right of the hawk. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[152 / 200] Evaluting Question
+Response: **Answer:** (D) Mya finished second
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - Ana finished below Mya.
+   - Dan finished above Amy.
+   - Mya finished second-to-last.
+   - Eve finished below Amy.
+
+2. **Arrange the order:**
+   - Ana finished below Mya, so Mya must have finished second-to-last.
+   - Dan finished above Amy, so Amy must have finished third.
+   - Eve finished below Amy, so she must have finished fourth.
+
+Therefore, the final answer is (D) Mya finished second.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[153 / 200] Evaluting Question
+Response: **Answer:** (D) The loquats are the second-cheapest
+
+**Explanation:**
+
+The information in the problem describes a fruit stand with five fruits arranged in a specific order. The statements about the prices of the fruits are consistent within each paragraph.
+
+- The peaches are more expensive than the oranges.
+- The cantaloupes are more expensive than the peaches.
+- The kiwis are the third-most expensive.
+- The loquats are the second-cheapest.
+
+Based on this information, the most logical order for the prices is:
+
+1. Loquats
+2. Oranges
+3. Kiwis
+4. Peaches
+5. Cantaloupes
+
+Therefore, the answer is (D) Loquats are the second-cheapest.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[154 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The red book is to the left of the brown book, and the yellow book is to the right of the orange book. Therefore, the blue book is the rightmost book.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[155 / 200] Evaluting Question
+Response: **Answer:** (C) The red book is the leftmost
+
+**Explanation:**
+
+* The gray book is to the left of the yellow book, so the yellow book must be the rightmost.
+* The white book is to the left of the red book, so the red book must be the second leftmost book.
+* The black book is to the right of the red book and to the left of the gray book, so the red book must be the leftmost book.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[156 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The information in the problem clearly states that the black book is to the left of the yellow book and the red book is the third book from the left. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[157 / 200] Evaluting Question
+Response: **Answer:** (A) Rob finished last
+
+**Explanation:**
+
+In the text, Dan finished second, so he must have finished before the final position, which is last. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[158 / 200] Evaluting Question
+Response: **Answer:** (B)
+
+**Solution:**
+
+The blue book is the second from the right, so the rightmost book is the yellow book.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[159 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five vehicles in an antique car show. The information about the order of the vehicles is as follows:
+
+- The hatchback is newer than the convertible.
+- The bus is newer than the hatchback.
+- The bus is older than the motorcyle.
+
+Based on this information, the logical order of the vehicles is:
+
+1. Minivan
+2. Bus
+3. Hatchback
+4. Convertible
+5. Motorcyle
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[160 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a fruit stand with five fruits arranged in a specific order. The information about the cost of each fruit is as follows:
+
+- Watermelons are the most expensive.
+- Pears are the second-cheapest.
+- Loquats are more expensive than pears.
+- Plums are the second-most expensive.
+
+Based on this information, the most expensive fruit is the watermelons, so the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[161 / 200] Evaluting Question
+Response: **Answer:** (A) Rob finished third
+
+**Explanation:**
+
+1. **Identify the order of the golfers:** Mya finished below Rob, Ana finished below Eve, and Eve finished below Mya. So, the order is Mya, Rob, Eve, Amy, Ana.
+2. **Find the position of the second place:** Amy finished second.
+3. **Therefore, the final answer is:** Rob finished third.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[162 / 200] Evaluting Question
+Response: **Answer:** (C) The raven is the second from the right
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - The raven is to the right of the owl.
+   - The raven is the second from the left.
+   - The robin is to the left of the crow.
+   - The robin is the second from the right.
+
+2. **Follow the order:**
+   - The owl is the leftmost bird.
+   - The robin is to the left of the crow.
+   - Therefore, the raven is the second bird from the right.
+
+**Final Answer:**
+
+Answer: (C) The raven is the second from the right
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[163 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Mel, Dan, Amy, Joe, and Eve. The information is arranged in the order they finished the tournament.
+
+* Mel finished first.
+* Amy finished below Dan.
+* Joe finished above Dan.
+* Eve finished last.
+
+Therefore, the final answer is (A) Mel finished third.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[164 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a fruit stand with five fruits arranged in a specific order. The statements about the order and pricing are logically consistent within each paragraph.
+
+The text states that the apples are less expensive than the peaches and the watermelons are more expensive than the peaches. Therefore, the watermelons must be the third-most expensive fruits on the stand.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[165 / 200] Evaluting Question
+Response: **Answer:** (C) The kiwis are the most expensive
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - The cantaloupes are the second-cheapest.
+   - The mangoes are more expensive than the watermelons.
+   - The kiwis are less expensive than the apples.
+   - The kiwis are more expensive than the mangoes.
+
+2. **Analyze the order:**
+   - The cantaloupes are the second-cheapest, so they must be in the second position from the left.
+   - The mangoes are more expensive than the watermelons, so they must be in the third position from the left.
+   - The kiwis are less expensive than the apples, so they must be in the first position.
+   - The kiwis are more expensive than the mangoes, so they must be in the fourth position from the left.
+
+Therefore, the final answer is (C) The kiwis are the most expensive.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[166 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The yellow book is the rightmost, and the black book is the second from the left. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[167 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+* The purple book is the third from the left, so it must be the second book from the right.
+* The yellow book is to the left of the black book, so the black book must be the third book from the right.
+* The green book is to the left of the purple book, so the green book must be the third book from the left.
+* The blue book is to the left of the green book, so the blue book must be the second book from the left.
+
+Therefore, the final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[168 / 200] Evaluting Question
+Response: **Answer:** (D)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits: watermelons, oranges, loquats, plums, and kiwis. The information about the prices of the fruits is as follows:
+
+- Plums are less expensive than kiwis.
+- Plums are more expensive than watermelons.
+- Loquats are more expensive than kiwis.
+- Oranges are the most expensive.
+
+Based on this information, the second-most expensive fruit is the plums.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[169 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The purple book is the third book from the left. The green book is to the left of the purple book. Therefore, the blue book is the third book from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[170 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a set of five birds on a branch. The order is as follows:
+
+- The owl is the second from the left.
+- The hawk is to the left of the owl.
+- The robin is to the left of the raven.
+- The raven is the second from the right.
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[171 / 200] Evaluting Question
+Response: **Answer:** (C)
+
+The limousine is older than the truck, and the sedan is newer than the motorcyle. Therefore, the limousine is the second oldest vehicle, and the answer is (C).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[172 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+In the given text, the order of the golfers is as follows:
+
+1. Ana
+2. Joe
+3. Amy
+4. Dan
+5. Rob
+
+Rob finished below Dan and Joe finished below Ana. Therefore, Ana finished second-to-last.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[173 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a set of five vehicles in an antique car show. The statements are logically consistent within each paragraph.
+
+The text states that the convertible is newer than the truck and the minivan is the newest. So, the second-oldest vehicle must be the truck.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[174 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits arranged in a specific order. The information about the order and pricing of the fruits is consistent within the text. Based on the information provided, the loquats are the third-most expensive fruit, so the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[175 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The paragraph describes a set of five birds arranged in a fixed order on a branch. The statements are logically consistent within the paragraph.
+
+The hawk is the third from the left and to the right of the crow. The quail is to the left of the crow. The robin is to the right of the owl. Therefore, the robin is the rightmost bird in this arrangement.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[176 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Eve, Amy, Ada, Rob, and Joe. Amy finished second-to-last, which is the third position from the end. Rob finished below Eve, so he finished in the third position as well. Therefore, the final answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[177 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The gray book is to the right of the yellow book, and the blue book is the rightmost. Therefore, the gray book is the third book from the left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[178 / 200] Evaluting Question
+Response: **Answer:** (C)
+
+The yellow book is to the left of the white book, so the yellow book is the leftmost book.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[179 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The blue jay is the rightmost object, so the third object from the left is the blue jay.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[180 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits: watermelons, apples, kiwis, cantaloupes, and mangoes. The information about the prices of the fruits is as follows:
+
+- The cantaloupes are the second-cheapest.
+- The mangoes are more expensive than the watermelons.
+- The kiwis are less expensive than the apples.
+- The kiwis are more expensive than the mangoes.
+
+Based on this information, the most logical order for the prices is:
+
+1. Watermelons
+2. Cantaloupes
+3. Kiwis
+4. Apples
+5. Mangos
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[181 / 200] Evaluting Question
+Response: **Answer:** (C) Eve finished second
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - Eve finished below Joe.
+   - Ana finished below Amy.
+   - Eve finished above Amy.
+   - Mya finished above Joe.
+
+2. **Analyze the order:**
+   - Eve finished below Joe, so she must have finished before him.
+   - Ana finished below Amy, so she must have finished before Amy.
+   - Eve finished above Amy, so she must have finished after Amy.
+   - Mya finished above Joe, so she must have finished after Joe.
+
+Therefore, the final answer is (C) Eve finished second.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[182 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+The text describes a golf tournament where Rob finished below Dan, Joe finished second, and Eve finished above Dan. Therefore, Rob finished last.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[183 / 200] Evaluting Question
+Response: **Answer:** (D) The tractor is the oldest
+
+**Explanation:**
+
+1. **Identify the oldest item:** The tractor is older than the bus, so the tractor is the oldest item.
+2. **Identify the second-newest item:** The hatchback is the second-newest item.
+3. **Eliminate irrelevant items:** The minivan is newer than the bus, and the convertible is younger than the bus. Therefore, the bus, the hatchback, and the convertible are not the oldest items.
+4. **Conclusion:** Therefore, the answer is (D) The tractor is the oldest.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[184 / 200] Evaluting Question
+Response: **Answer:** (C) The plums are the third-most expensive
+
+**Explanation:**
+
+**1. Identify the key information:**
+
+- The fruits are: mangoes, cantaloupes, plums, oranges, and watermelons.
+- The oranges are more expensive than the watermelons.
+- The watermelons are the second-cheapest.
+- The plums are less expensive than the cantaloupes.
+- The plums are the second-most expensive.
+
+**2. Analyze the order:**
+
+- The watermelons are the second-cheapest, so they must be the second item from the left.
+- The plums are less expensive than the cantaloupes, so they must be the third item from the left.
+
+**Therefore, the final answer is (C) The plums are the third-most expensive.**
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[185 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+In the golf tournament, Mya finished first, so she must have finished before everyone else. Joe finished below Dan, so he finished third. Dan finished below Rob, so he finished fourth. Eve finished above Rob, so she finished second. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[186 / 200] Evaluting Question
+Response: **Answer:** (D) The oranges are the most expensive
+
+**Explanation:**
+
+**1. Identify the key information:**
+
+- The oranges are more expensive than the watermelons.
+- The watermelons are the second-cheapest.
+- The plums are less expensive than the cantaloupes.
+- The plums are the second-most expensive.
+
+**2. Analyze the order:**
+
+- The information about the oranges being more expensive than the watermelons is the most important information.
+- The watermelons are the second-cheapest, so they must be the second most expensive fruit.
+- The plums are less expensive than the cantaloupes, so they must be the third most expensive fruit.
+
+**Therefore, the final answer is (D) The oranges are the most expensive.**
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[187 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The problem describes a set of five birds arranged in a fixed order on a branch. The statements are logically consistent within the paragraph.
+
+The raven is to the left of the hummingbird. The hawk is to the left of the owl. The cardinal is to the left of the hawk. The raven is the second from the right.
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[188 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The paragraph describes a shelf with five books in a specific order. The yellow book is to the right of the gray book, the purple book is to the left of the gray book, the red book is to the right of the blue book, and the purple book is the third book from the left. Therefore, the blue book is the rightmost book in this arrangement.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[189 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+In the text, Ada finished above Eli and finished second. So, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[190 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The problem describes a set of five birds on a branch in a specific order. The key is to identify the key relationships between the birds.
+
+- The falcon is the leftmost bird.
+- The crow is to the left of the quail.
+- The blue jay is to the right of the quail.
+- The raven is the second bird from the left.
+
+Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[191 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Explanation:**
+
+The text describes a set of five vehicles in an antique car show. The motorcyle is the second-newest, and the truck is newer than the limousine. Therefore, the truck is the oldest vehicle in the show.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[192 / 200] Evaluting Question
+Response: **Answer:** (C)
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - The sedan is the second-oldest.
+   - The hatchback is newer than the motorcyle.
+   - The motorcyle is newer than the sedan.
+   - The hatchback is older than the truck.
+
+2. **Follow the logical order:**
+   - The sedan is the second-oldest, so it must be older than the motorcyle and the hatchback.
+   - The motorcyle is newer than the sedan, so it must be newer than the sedan but older than the hatchback.
+   - The hatchback is older than the truck, so the truck must be the oldest.
+
+Therefore, the final answer is (C) The motorcyle is the newest.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[193 / 200] Evaluting Question
+Response: **Answer:** (D) The watermelons are the third-most expensive
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - The watermelons are more expensive than the loquats.
+   - The watermelons are less expensive than the kiwis.
+   - The loquats are more expensive than the apples.
+   - The cantaloupes are the cheapest.
+
+2. **Find the common point:**
+   - The watermelons and loquats are more expensive than the apples.
+
+3. **Conclude:**
+   - Therefore, the watermelons are the third-most expensive.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[194 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Amy, Eve, Mel, Mya, and Rob. We know that Eve finished last and Rob finished above Mel. Therefore, Amy must have finished second-to-last.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[195 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a fruit stand with five fruits: peaches, watermelons, pears, apples, and cantaloupes. The text states that the watermelons are the second-cheapest, the apples are the cheapest, and the peaches are the most expensive. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[196 / 200] Evaluting Question
+Response: **Answer:** (D) The minivan is the second-oldest
+
+**Explanation:**
+
+1. **Identify the key information:**
+   - The bus is newer than the tractor.
+   - The convertible is older than the tractor.
+   - The truck is the second-newest.
+   - The minivan is older than the convertible.
+
+2. **Arrange the objects in order:**
+   - The bus is the newest.
+   - The truck is the second-newest.
+   - The convertible is older than the tractor, so it must be in the third position.
+   - The tractor is the oldest.
+   - The minivan is older than the convertible, so it must be in the second position.
+
+Therefore, the final answer is (D) The minivan is the second-oldest.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[197 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The text describes a golf tournament with five golfers: Eve, Amy, Ada, Rob, and Joe. Amy finished second-to-last, which is the second position. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[198 / 200] Evaluting Question
+Response: **Answer:** (B)
+
+**Explanation:**
+
+The text describes a fruit stand with five fruits: mangoes, kiwis, plums, pears, and watermelons. The text states that the kiwis are less expensive than the plums, the pears are the third-most expensive, and the watermelons are the most expensive. Therefore, the second-most expensive fruit is the kiwis.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[199 / 200] Evaluting Question
+Response: **Answer:** (D)
+
+The watermelons are more expensive than the loquats and less expensive than the kiwis. So, the watermelons are the most expensive fruits in this set.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+[200 / 200] Evaluting Question
+Response: **Answer:** (A)
+
+**Solution:**
+
+The green book is the rightmost book. The orange book is the third book from the left. Therefore, the answer is (A).
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/bigbench_hard/google_gemma-7b-it__bigbench_hard__20260526_1646.json
+ Completed 200 questions for bigbench_hard
+Model 'google/gemma-7b-it' released from the notebook process.
+=============
+All experiments are completed. Total time taken: 16.5 minutes
+Results are saved to: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/

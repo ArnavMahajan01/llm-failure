@@ -1,0 +1,16 @@
+{
+  "run_id": "qwen__gsm_ic__zero_shot__20260521_110924",
+  "family": "qwen",
+  "display_name": "Qwen/Qwen2.5-7B-Instruct",
+  "hf_model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "benchmark": "gsm_ic",
+  "condition": "zero_shot",
+  "status": "success",
+  "started_at": "2026-05-21T11:09:24",
+  "finished_at": "2026-05-21T12:02:33",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/qwen__gsm_ic__zero_shot__20260521_110924.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/qwen__gsm_ic__zero_shot__20260521_110924__gsm_ic__Qwen_Qwen2-5-7B-Instruct__gsm_ic__20260521_1110.json"
+  ]
+}

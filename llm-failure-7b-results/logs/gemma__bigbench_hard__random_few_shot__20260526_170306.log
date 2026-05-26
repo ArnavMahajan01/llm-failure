@@ -1,0 +1,2 @@
+COMMAND: /usr/bin/python3 /content/drive/MyDrive/COMP6242/Project/llm-failure/run_experiment.py --model gemma --benchmark bigbench_hard --condition random_few_shot
+

@@ -1,0 +1,16 @@
+{
+  "run_id": "qwen__gsm8k__targeted_few_shot__20260523_151410",
+  "family": "qwen",
+  "display_name": "Qwen/Qwen2.5-7B-Instruct",
+  "hf_model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "benchmark": "gsm8k",
+  "condition": "targeted_few_shot",
+  "status": "success",
+  "started_at": "2026-05-23T15:14:10",
+  "finished_at": "2026-05-23T16:05:46",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/qwen__gsm8k__targeted_few_shot__20260523_151410.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/qwen__gsm8k__targeted_few_shot__20260523_151410__gsm8k__Qwen_Qwen2-5-7B-Instruct__gsm8k__20260523_1514.json"
+  ]
+}
