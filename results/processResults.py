@@ -147,65 +147,6 @@ def getSummary(results: list) -> pd.DataFrame:
 
     return df
 
-
-def getCategoryBreakdown(results: list) -> pd.DataFrame:
-    from collections import defaultdict
-
-    rows = []
-
-    for modelname, benchmark, result in results:
-        if not result:
-            continue
-
-        # Group items by category
-        by_cat = defaultdict(list)
-        for item in result:
-            cat = item.get("benchmark_category") or "unknown"
-            by_cat[cat].append(item)
-
-        present = {c for item in result for c in item["conditions"]}
-
-        for cat, items in by_cat.items():
-            row = {
-                "model": modelname,
-                "benchmark": benchmark,
-                "category": cat,
-                "n_samples": len(items),
-            }
-
-            for cond in ALL_CONDITIONS:
-                if cond in present:
-                    row[f"{cond}_acc"] = accuracy(items, cond)
-
-            # Dominant zero-shot error type for this category slice
-            error_counts = {}
-            for item in items:
-                zs_runs = item["conditions"].get("zero_shot", {}).get("runs", [])
-                for run in zs_runs:
-                    if not run.get("correct") and run.get("error_type"):
-                        et = run["error_type"]
-                        error_counts[et] = error_counts.get(et, 0) + 1
-            if error_counts:
-                top_error = max(error_counts, key=error_counts.get)
-                total_errors = sum(error_counts.values())
-                row["top_error_type"] = top_error
-                row["top_error_pct"] = round(error_counts[top_error] / total_errors * 100, 1)
-            else:
-                row["top_error_type"] = None
-                row["top_error_pct"] = None
-
-            rows.append(row)
-
-    if not rows:
-        return pd.DataFrame()
-
-    df = pd.DataFrame(rows)
-    numeric_cols = [c for c in df.columns if df[c].dtype == float]
-    df[numeric_cols] = df[numeric_cols].round(3)
-
-    return df
-
-
 def recoveryByErrorAndStrategy(results: list) -> pd.DataFrame:
     from collections import defaultdict
 
@@ -310,14 +251,6 @@ def main():
         errorPath = os.path.join(PROCESSED_DIR, "error_distribution.csv")
         errors.to_csv(errorPath, index=False)
         print(f"Error table saved to: {errorPath}")
-
-    print("\nBuilding per-category breakdown table...")
-    catBreakdown = getCategoryBreakdown(allResults)
-    if not catBreakdown.empty:
-        catPath = os.path.join(PROCESSED_DIR, "category_breakdown.csv")
-        catBreakdown.to_csv(catPath, index=False)
-        print(f"Category breakdown saved to: {catPath}")
-        print("\n" + catBreakdown.to_string(index=False))
 
     print("\nBuilding error × strategy recovery table...")
     recovery = recoveryByErrorAndStrategy(allResults)
