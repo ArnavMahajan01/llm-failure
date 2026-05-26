@@ -37,6 +37,7 @@ ERROR_LABELS = {
     "hallucination": "Hallucination",
     "format_correct_wrong_answer": "Format / Extraction",
     "off_topic": "Off-Topic",
+    "premise_order_sensitivity": "Premise Order Sensitivity",
     "unknown": "Unknown",
 }
 
