@@ -1,0 +1,3552 @@
+COMMAND: /usr/bin/python3 /content/drive/MyDrive/COMP6242/Project/llm-failure/run_experiment.py --model gemma --benchmark folio --condition zero_shot_baseline
+
+`torch_dtype` is deprecated! Use `dtype` instead!
+FULL RUN: 200 samples per benchmark
+Models: ['gemma']
+Benchmarks: ['folio']
+Conditions: ['zero_shot_baseline']
+Runs per questions: 1
+
+===========
+MODEL: google/gemma-7b-it
+
+===========
+Loading HF model: google/gemma-7b-it
+Quantization: 4-bit; dtype: torch.bfloat16
+
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/254 [00:00<00:00, 6195.43it/s, Materializing param=model.embed_tokens.weight]
+Loading weights:   0%|          | 1/254 [00:00<00:00, 2966.27it/s, Materializing param=model.embed_tokens.weight]
+Loading weights:   1%|          | 2/254 [00:00<01:44,  2.40it/s, Materializing param=model.embed_tokens.weight]  
+Loading weights:   1%|          | 2/254 [00:00<01:44,  2.40it/s, Materializing param=model.layers.0.input_layernorm.weight]
+Loading weights:   1%|          | 2/254 [00:00<01:44,  2.40it/s, Materializing param=model.layers.0.input_layernorm.weight]
+Loading weights:   1%|          | 3/254 [00:00<01:44,  2.40it/s, Materializing param=model.layers.0.mlp.down_proj.weight]  
+Loading weights:   1%|          | 3/254 [00:00<01:44,  2.40it/s, Materializing param=model.layers.0.mlp.down_proj.weight]/usr/local/lib/python3.12/dist-packages/bitsandbytes/backends/cuda/ops.py:213: FutureWarning: _check_is_size will be removed in a future PyTorch release along with guard_size_oblivious.     Use _check(i >= 0) instead.
+  torch._check_is_size(blocksize)
+
+Loading weights:   2%|▏         | 4/254 [00:01<01:56,  2.15it/s, Materializing param=model.layers.0.mlp.down_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:01<01:56,  2.15it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:01<01:56,  2.15it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 5/254 [00:02<02:47,  1.49it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 5/254 [00:02<02:47,  1.49it/s, Materializing param=model.layers.0.mlp.up_proj.weight]  
+Loading weights:   2%|▏         | 5/254 [00:02<02:47,  1.49it/s, Materializing param=model.layers.0.mlp.up_proj.weight]
+Loading weights:   2%|▏         | 6/254 [00:04<03:38,  1.14it/s, Materializing param=model.layers.0.mlp.up_proj.weight]
+Loading weights:   2%|▏         | 6/254 [00:04<03:38,  1.14it/s, Materializing param=model.layers.0.post_attention_layernorm.weight]
+Loading weights:   2%|▏         | 6/254 [00:04<03:38,  1.14it/s, Materializing param=model.layers.0.post_attention_layernorm.weight]
+Loading weights:   3%|▎         | 7/254 [00:04<03:37,  1.14it/s, Materializing param=model.layers.0.self_attn.k_proj.weight]        
+Loading weights:   3%|▎         | 7/254 [00:04<03:37,  1.14it/s, Materializing param=model.layers.0.self_attn.k_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:05<03:27,  1.18it/s, Materializing param=model.layers.0.self_attn.k_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:05<03:27,  1.18it/s, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:05<03:27,  1.18it/s, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:07<04:16,  1.05s/it, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:07<04:16,  1.05s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:07<04:16,  1.05s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:09<04:40,  1.15s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:09<04:40,  1.15s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:09<04:40,  1.15s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 11/254 [00:09<04:09,  1.03s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 11/254 [00:09<04:09,  1.03s/it, Materializing param=model.layers.1.input_layernorm.weight] 
+Loading weights:   4%|▍         | 11/254 [00:09<04:09,  1.03s/it, Materializing param=model.layers.1.input_layernorm.weight]
+Loading weights:   5%|▍         | 12/254 [00:09<04:08,  1.03s/it, Materializing param=model.layers.1.mlp.down_proj.weight]  
+Loading weights:   5%|▍         | 12/254 [00:09<04:08,  1.03s/it, Materializing param=model.layers.1.mlp.down_proj.weight]
+Loading weights:   5%|▌         | 13/254 [00:09<04:07,  1.03s/it, Materializing param=model.layers.1.mlp.gate_proj.weight]
+Loading weights:   5%|▌         | 13/254 [00:09<04:07,  1.03s/it, Materializing param=model.layers.1.mlp.gate_proj.weight]
+Loading weights:   6%|▌         | 14/254 [00:09<04:06,  1.03s/it, Materializing param=model.layers.1.mlp.up_proj.weight]  
+Loading weights:   6%|▌         | 14/254 [00:09<04:06,  1.03s/it, Materializing param=model.layers.1.mlp.up_proj.weight]
+Loading weights:   6%|▌         | 15/254 [00:09<04:05,  1.03s/it, Materializing param=model.layers.1.post_attention_layernorm.weight]
+Loading weights:   6%|▌         | 15/254 [00:09<04:05,  1.03s/it, Materializing param=model.layers.1.post_attention_layernorm.weight]
+Loading weights:   6%|▋         | 16/254 [00:09<04:04,  1.03s/it, Materializing param=model.layers.1.self_attn.k_proj.weight]        
+Loading weights:   6%|▋         | 16/254 [00:09<04:04,  1.03s/it, Materializing param=model.layers.1.self_attn.k_proj.weight]
+Loading weights:   7%|▋         | 17/254 [00:09<04:03,  1.03s/it, Materializing param=model.layers.1.self_attn.o_proj.weight]
+Loading weights:   7%|▋         | 17/254 [00:09<04:03,  1.03s/it, Materializing param=model.layers.1.self_attn.o_proj.weight]
+Loading weights:   7%|▋         | 18/254 [00:09<04:02,  1.03s/it, Materializing param=model.layers.1.self_attn.q_proj.weight]
+Loading weights:   7%|▋         | 18/254 [00:09<04:02,  1.03s/it, Materializing param=model.layers.1.self_attn.q_proj.weight]
+Loading weights:   7%|▋         | 19/254 [00:09<04:01,  1.03s/it, Materializing param=model.layers.1.self_attn.v_proj.weight]
+Loading weights:   7%|▋         | 19/254 [00:09<04:01,  1.03s/it, Materializing param=model.layers.1.self_attn.v_proj.weight]
+Loading weights:   8%|▊         | 20/254 [00:09<04:00,  1.03s/it, Materializing param=model.layers.2.input_layernorm.weight] 
+Loading weights:   8%|▊         | 20/254 [00:09<04:00,  1.03s/it, Materializing param=model.layers.2.input_layernorm.weight]
+Loading weights:   8%|▊         | 21/254 [00:09<03:59,  1.03s/it, Materializing param=model.layers.2.mlp.down_proj.weight]  
+Loading weights:   8%|▊         | 21/254 [00:09<03:59,  1.03s/it, Materializing param=model.layers.2.mlp.down_proj.weight]
+Loading weights:   9%|▊         | 22/254 [00:09<03:58,  1.03s/it, Materializing param=model.layers.2.mlp.gate_proj.weight]
+Loading weights:   9%|▊         | 22/254 [00:09<03:58,  1.03s/it, Materializing param=model.layers.2.mlp.gate_proj.weight]
+Loading weights:   9%|▉         | 23/254 [00:09<03:57,  1.03s/it, Materializing param=model.layers.2.mlp.up_proj.weight]  
+Loading weights:   9%|▉         | 23/254 [00:09<03:57,  1.03s/it, Materializing param=model.layers.2.mlp.up_proj.weight]
+Loading weights:   9%|▉         | 24/254 [00:09<03:56,  1.03s/it, Materializing param=model.layers.2.post_attention_layernorm.weight]
+Loading weights:   9%|▉         | 24/254 [00:09<03:56,  1.03s/it, Materializing param=model.layers.2.post_attention_layernorm.weight]
+Loading weights:  10%|▉         | 25/254 [00:09<03:54,  1.03s/it, Materializing param=model.layers.2.self_attn.k_proj.weight]        
+Loading weights:  10%|▉         | 25/254 [00:09<03:54,  1.03s/it, Materializing param=model.layers.2.self_attn.k_proj.weight]
+Loading weights:  10%|█         | 26/254 [00:09<03:53,  1.03s/it, Materializing param=model.layers.2.self_attn.o_proj.weight]
+Loading weights:  10%|█         | 26/254 [00:09<03:53,  1.03s/it, Materializing param=model.layers.2.self_attn.o_proj.weight]
+Loading weights:  11%|█         | 27/254 [00:09<03:52,  1.03s/it, Materializing param=model.layers.2.self_attn.q_proj.weight]
+Loading weights:  11%|█         | 27/254 [00:09<03:52,  1.03s/it, Materializing param=model.layers.2.self_attn.q_proj.weight]
+Loading weights:  11%|█         | 28/254 [00:09<03:51,  1.03s/it, Materializing param=model.layers.2.self_attn.v_proj.weight]
+Loading weights:  11%|█         | 28/254 [00:09<03:51,  1.03s/it, Materializing param=model.layers.2.self_attn.v_proj.weight]
+Loading weights:  11%|█▏        | 29/254 [00:09<03:50,  1.03s/it, Materializing param=model.layers.3.input_layernorm.weight] 
+Loading weights:  11%|█▏        | 29/254 [00:09<03:50,  1.03s/it, Materializing param=model.layers.3.input_layernorm.weight]
+Loading weights:  12%|█▏        | 30/254 [00:09<03:49,  1.03s/it, Materializing param=model.layers.3.mlp.down_proj.weight]  
+Loading weights:  12%|█▏        | 30/254 [00:09<03:49,  1.03s/it, Materializing param=model.layers.3.mlp.down_proj.weight]
+Loading weights:  12%|█▏        | 31/254 [00:09<03:48,  1.03s/it, Materializing param=model.layers.3.mlp.gate_proj.weight]
+Loading weights:  12%|█▏        | 31/254 [00:09<03:48,  1.03s/it, Materializing param=model.layers.3.mlp.gate_proj.weight]
+Loading weights:  13%|█▎        | 32/254 [00:09<03:47,  1.03s/it, Materializing param=model.layers.3.mlp.up_proj.weight]  
+Loading weights:  13%|█▎        | 32/254 [00:09<03:47,  1.03s/it, Materializing param=model.layers.3.mlp.up_proj.weight]
+Loading weights:  13%|█▎        | 33/254 [00:09<03:46,  1.03s/it, Materializing param=model.layers.3.post_attention_layernorm.weight]
+Loading weights:  13%|█▎        | 33/254 [00:09<03:46,  1.03s/it, Materializing param=model.layers.3.post_attention_layernorm.weight]
+Loading weights:  13%|█▎        | 34/254 [00:09<03:45,  1.03s/it, Materializing param=model.layers.3.self_attn.k_proj.weight]        
+Loading weights:  13%|█▎        | 34/254 [00:09<03:45,  1.03s/it, Materializing param=model.layers.3.self_attn.k_proj.weight]
+Loading weights:  14%|█▍        | 35/254 [00:09<03:44,  1.03s/it, Materializing param=model.layers.3.self_attn.o_proj.weight]
+Loading weights:  14%|█▍        | 35/254 [00:09<03:44,  1.03s/it, Materializing param=model.layers.3.self_attn.o_proj.weight]
+Loading weights:  14%|█▍        | 36/254 [00:09<03:43,  1.03s/it, Materializing param=model.layers.3.self_attn.q_proj.weight]
+Loading weights:  14%|█▍        | 36/254 [00:09<03:43,  1.03s/it, Materializing param=model.layers.3.self_attn.q_proj.weight]
+Loading weights:  15%|█▍        | 37/254 [00:09<03:42,  1.03s/it, Materializing param=model.layers.3.self_attn.v_proj.weight]
+Loading weights:  15%|█▍        | 37/254 [00:09<03:42,  1.03s/it, Materializing param=model.layers.3.self_attn.v_proj.weight]
+Loading weights:  15%|█▍        | 38/254 [00:09<03:41,  1.03s/it, Materializing param=model.layers.4.input_layernorm.weight] 
+Loading weights:  15%|█▍        | 38/254 [00:09<03:41,  1.03s/it, Materializing param=model.layers.4.input_layernorm.weight]
+Loading weights:  15%|█▌        | 39/254 [00:09<03:40,  1.03s/it, Materializing param=model.layers.4.mlp.down_proj.weight]  
+Loading weights:  15%|█▌        | 39/254 [00:09<03:40,  1.03s/it, Materializing param=model.layers.4.mlp.down_proj.weight]
+Loading weights:  16%|█▌        | 40/254 [00:09<03:39,  1.03s/it, Materializing param=model.layers.4.mlp.gate_proj.weight]
+Loading weights:  16%|█▌        | 40/254 [00:09<03:39,  1.03s/it, Materializing param=model.layers.4.mlp.gate_proj.weight]
+Loading weights:  16%|█▌        | 41/254 [00:09<03:38,  1.03s/it, Materializing param=model.layers.4.mlp.up_proj.weight]  
+Loading weights:  16%|█▌        | 41/254 [00:09<03:38,  1.03s/it, Materializing param=model.layers.4.mlp.up_proj.weight]
+Loading weights:  17%|█▋        | 42/254 [00:09<03:37,  1.03s/it, Materializing param=model.layers.4.post_attention_layernorm.weight]
+Loading weights:  17%|█▋        | 42/254 [00:09<03:37,  1.03s/it, Materializing param=model.layers.4.post_attention_layernorm.weight]
+Loading weights:  17%|█▋        | 43/254 [00:09<03:36,  1.03s/it, Materializing param=model.layers.4.self_attn.k_proj.weight]        
+Loading weights:  17%|█▋        | 43/254 [00:09<03:36,  1.03s/it, Materializing param=model.layers.4.self_attn.k_proj.weight]
+Loading weights:  17%|█▋        | 44/254 [00:09<03:35,  1.03s/it, Materializing param=model.layers.4.self_attn.o_proj.weight]
+Loading weights:  17%|█▋        | 44/254 [00:09<03:35,  1.03s/it, Materializing param=model.layers.4.self_attn.o_proj.weight]
+Loading weights:  18%|█▊        | 45/254 [00:09<03:34,  1.03s/it, Materializing param=model.layers.4.self_attn.q_proj.weight]
+Loading weights:  18%|█▊        | 45/254 [00:09<03:34,  1.03s/it, Materializing param=model.layers.4.self_attn.q_proj.weight]
+Loading weights:  18%|█▊        | 46/254 [00:09<03:33,  1.03s/it, Materializing param=model.layers.4.self_attn.v_proj.weight]
+Loading weights:  18%|█▊        | 46/254 [00:09<03:33,  1.03s/it, Materializing param=model.layers.4.self_attn.v_proj.weight]
+Loading weights:  19%|█▊        | 47/254 [00:09<03:32,  1.03s/it, Materializing param=model.layers.5.input_layernorm.weight] 
+Loading weights:  19%|█▊        | 47/254 [00:09<03:32,  1.03s/it, Materializing param=model.layers.5.input_layernorm.weight]
+Loading weights:  19%|█▉        | 48/254 [00:09<03:31,  1.03s/it, Materializing param=model.layers.5.mlp.down_proj.weight]  
+Loading weights:  19%|█▉        | 48/254 [00:09<03:31,  1.03s/it, Materializing param=model.layers.5.mlp.down_proj.weight]
+Loading weights:  19%|█▉        | 49/254 [00:09<03:30,  1.03s/it, Materializing param=model.layers.5.mlp.gate_proj.weight]
+Loading weights:  19%|█▉        | 49/254 [00:09<03:30,  1.03s/it, Materializing param=model.layers.5.mlp.gate_proj.weight]
+Loading weights:  20%|█▉        | 50/254 [00:09<03:29,  1.03s/it, Materializing param=model.layers.5.mlp.up_proj.weight]  
+Loading weights:  20%|█▉        | 50/254 [00:09<03:29,  1.03s/it, Materializing param=model.layers.5.mlp.up_proj.weight]
+Loading weights:  20%|██        | 51/254 [00:09<03:28,  1.03s/it, Materializing param=model.layers.5.post_attention_layernorm.weight]
+Loading weights:  20%|██        | 51/254 [00:09<03:28,  1.03s/it, Materializing param=model.layers.5.post_attention_layernorm.weight]
+Loading weights:  20%|██        | 52/254 [00:09<03:27,  1.03s/it, Materializing param=model.layers.5.self_attn.k_proj.weight]        
+Loading weights:  20%|██        | 52/254 [00:09<03:27,  1.03s/it, Materializing param=model.layers.5.self_attn.k_proj.weight]
+Loading weights:  21%|██        | 53/254 [00:09<03:26,  1.03s/it, Materializing param=model.layers.5.self_attn.o_proj.weight]
+Loading weights:  21%|██        | 53/254 [00:09<03:26,  1.03s/it, Materializing param=model.layers.5.self_attn.o_proj.weight]
+Loading weights:  21%|██▏       | 54/254 [00:09<03:25,  1.03s/it, Materializing param=model.layers.5.self_attn.q_proj.weight]
+Loading weights:  21%|██▏       | 54/254 [00:09<03:25,  1.03s/it, Materializing param=model.layers.5.self_attn.q_proj.weight]
+Loading weights:  22%|██▏       | 55/254 [00:09<03:24,  1.03s/it, Materializing param=model.layers.5.self_attn.v_proj.weight]
+Loading weights:  22%|██▏       | 55/254 [00:09<03:24,  1.03s/it, Materializing param=model.layers.5.self_attn.v_proj.weight]
+Loading weights:  22%|██▏       | 56/254 [00:09<03:23,  1.03s/it, Materializing param=model.layers.6.input_layernorm.weight] 
+Loading weights:  22%|██▏       | 56/254 [00:09<03:23,  1.03s/it, Materializing param=model.layers.6.input_layernorm.weight]
+Loading weights:  22%|██▏       | 57/254 [00:09<03:22,  1.03s/it, Materializing param=model.layers.6.mlp.down_proj.weight]  
+Loading weights:  22%|██▏       | 57/254 [00:09<03:22,  1.03s/it, Materializing param=model.layers.6.mlp.down_proj.weight]
+Loading weights:  23%|██▎       | 58/254 [00:09<03:21,  1.03s/it, Materializing param=model.layers.6.mlp.gate_proj.weight]
+Loading weights:  23%|██▎       | 58/254 [00:09<03:21,  1.03s/it, Materializing param=model.layers.6.mlp.gate_proj.weight]
+Loading weights:  23%|██▎       | 59/254 [00:09<03:20,  1.03s/it, Materializing param=model.layers.6.mlp.up_proj.weight]  
+Loading weights:  23%|██▎       | 59/254 [00:09<03:20,  1.03s/it, Materializing param=model.layers.6.mlp.up_proj.weight]
+Loading weights:  24%|██▎       | 60/254 [00:09<03:19,  1.03s/it, Materializing param=model.layers.6.post_attention_layernorm.weight]
+Loading weights:  24%|██▎       | 60/254 [00:09<03:19,  1.03s/it, Materializing param=model.layers.6.post_attention_layernorm.weight]
+Loading weights:  24%|██▍       | 61/254 [00:09<03:18,  1.03s/it, Materializing param=model.layers.6.self_attn.k_proj.weight]        
+Loading weights:  24%|██▍       | 61/254 [00:09<03:18,  1.03s/it, Materializing param=model.layers.6.self_attn.k_proj.weight]
+Loading weights:  24%|██▍       | 62/254 [00:09<03:17,  1.03s/it, Materializing param=model.layers.6.self_attn.o_proj.weight]
+Loading weights:  24%|██▍       | 62/254 [00:09<03:17,  1.03s/it, Materializing param=model.layers.6.self_attn.o_proj.weight]
+Loading weights:  25%|██▍       | 63/254 [00:09<03:15,  1.03s/it, Materializing param=model.layers.6.self_attn.q_proj.weight]
+Loading weights:  25%|██▍       | 63/254 [00:09<03:15,  1.03s/it, Materializing param=model.layers.6.self_attn.q_proj.weight]
+Loading weights:  25%|██▌       | 64/254 [00:09<03:14,  1.03s/it, Materializing param=model.layers.6.self_attn.v_proj.weight]
+Loading weights:  25%|██▌       | 64/254 [00:09<03:14,  1.03s/it, Materializing param=model.layers.6.self_attn.v_proj.weight]
+Loading weights:  26%|██▌       | 65/254 [00:09<03:13,  1.03s/it, Materializing param=model.layers.7.input_layernorm.weight] 
+Loading weights:  26%|██▌       | 65/254 [00:09<03:13,  1.03s/it, Materializing param=model.layers.7.input_layernorm.weight]
+Loading weights:  26%|██▌       | 66/254 [00:09<03:12,  1.03s/it, Materializing param=model.layers.7.mlp.down_proj.weight]  
+Loading weights:  26%|██▌       | 66/254 [00:09<03:12,  1.03s/it, Materializing param=model.layers.7.mlp.down_proj.weight]
+Loading weights:  26%|██▋       | 67/254 [00:09<03:11,  1.03s/it, Materializing param=model.layers.7.mlp.gate_proj.weight]
+Loading weights:  26%|██▋       | 67/254 [00:09<03:11,  1.03s/it, Materializing param=model.layers.7.mlp.gate_proj.weight]
+Loading weights:  27%|██▋       | 68/254 [00:09<03:10,  1.03s/it, Materializing param=model.layers.7.mlp.up_proj.weight]  
+Loading weights:  27%|██▋       | 68/254 [00:09<03:10,  1.03s/it, Materializing param=model.layers.7.mlp.up_proj.weight]
+Loading weights:  27%|██▋       | 69/254 [00:09<03:09,  1.03s/it, Materializing param=model.layers.7.post_attention_layernorm.weight]
+Loading weights:  27%|██▋       | 69/254 [00:09<03:09,  1.03s/it, Materializing param=model.layers.7.post_attention_layernorm.weight]
+Loading weights:  28%|██▊       | 70/254 [00:09<03:08,  1.03s/it, Materializing param=model.layers.7.self_attn.k_proj.weight]        
+Loading weights:  28%|██▊       | 70/254 [00:09<03:08,  1.03s/it, Materializing param=model.layers.7.self_attn.k_proj.weight]
+Loading weights:  28%|██▊       | 71/254 [00:09<03:07,  1.03s/it, Materializing param=model.layers.7.self_attn.o_proj.weight]
+Loading weights:  28%|██▊       | 71/254 [00:09<03:07,  1.03s/it, Materializing param=model.layers.7.self_attn.o_proj.weight]
+Loading weights:  28%|██▊       | 72/254 [00:09<03:06,  1.03s/it, Materializing param=model.layers.7.self_attn.q_proj.weight]
+Loading weights:  28%|██▊       | 72/254 [00:09<03:06,  1.03s/it, Materializing param=model.layers.7.self_attn.q_proj.weight]
+Loading weights:  29%|██▊       | 73/254 [00:09<03:05,  1.03s/it, Materializing param=model.layers.7.self_attn.v_proj.weight]
+Loading weights:  29%|██▊       | 73/254 [00:09<03:05,  1.03s/it, Materializing param=model.layers.7.self_attn.v_proj.weight]
+Loading weights:  29%|██▉       | 74/254 [00:09<03:04,  1.03s/it, Materializing param=model.layers.8.input_layernorm.weight] 
+Loading weights:  29%|██▉       | 74/254 [00:09<03:04,  1.03s/it, Materializing param=model.layers.8.input_layernorm.weight]
+Loading weights:  30%|██▉       | 75/254 [00:09<03:03,  1.03s/it, Materializing param=model.layers.8.mlp.down_proj.weight]  
+Loading weights:  30%|██▉       | 75/254 [00:09<03:03,  1.03s/it, Materializing param=model.layers.8.mlp.down_proj.weight]
+Loading weights:  30%|██▉       | 76/254 [00:09<03:02,  1.03s/it, Materializing param=model.layers.8.mlp.gate_proj.weight]
+Loading weights:  30%|██▉       | 76/254 [00:09<03:02,  1.03s/it, Materializing param=model.layers.8.mlp.gate_proj.weight]
+Loading weights:  30%|███       | 77/254 [00:09<03:01,  1.03s/it, Materializing param=model.layers.8.mlp.up_proj.weight]  
+Loading weights:  30%|███       | 77/254 [00:09<03:01,  1.03s/it, Materializing param=model.layers.8.mlp.up_proj.weight]
+Loading weights:  31%|███       | 78/254 [00:09<03:00,  1.03s/it, Materializing param=model.layers.8.post_attention_layernorm.weight]
+Loading weights:  31%|███       | 78/254 [00:09<03:00,  1.03s/it, Materializing param=model.layers.8.post_attention_layernorm.weight]
+Loading weights:  31%|███       | 79/254 [00:09<02:59,  1.03s/it, Materializing param=model.layers.8.self_attn.k_proj.weight]        
+Loading weights:  31%|███       | 79/254 [00:09<02:59,  1.03s/it, Materializing param=model.layers.8.self_attn.k_proj.weight]
+Loading weights:  31%|███▏      | 80/254 [00:09<02:58,  1.03s/it, Materializing param=model.layers.8.self_attn.o_proj.weight]
+Loading weights:  31%|███▏      | 80/254 [00:09<02:58,  1.03s/it, Materializing param=model.layers.8.self_attn.o_proj.weight]
+Loading weights:  32%|███▏      | 81/254 [00:09<02:57,  1.03s/it, Materializing param=model.layers.8.self_attn.q_proj.weight]
+Loading weights:  32%|███▏      | 81/254 [00:09<02:57,  1.03s/it, Materializing param=model.layers.8.self_attn.q_proj.weight]
+Loading weights:  32%|███▏      | 82/254 [00:09<02:56,  1.03s/it, Materializing param=model.layers.8.self_attn.v_proj.weight]
+Loading weights:  32%|███▏      | 82/254 [00:09<02:56,  1.03s/it, Materializing param=model.layers.8.self_attn.v_proj.weight]
+Loading weights:  33%|███▎      | 83/254 [00:09<02:55,  1.03s/it, Materializing param=model.layers.9.input_layernorm.weight] 
+Loading weights:  33%|███▎      | 83/254 [00:09<02:55,  1.03s/it, Materializing param=model.layers.9.input_layernorm.weight]
+Loading weights:  33%|███▎      | 84/254 [00:09<02:54,  1.03s/it, Materializing param=model.layers.9.mlp.down_proj.weight]  
+Loading weights:  33%|███▎      | 84/254 [00:09<02:54,  1.03s/it, Materializing param=model.layers.9.mlp.down_proj.weight]
+Loading weights:  33%|███▎      | 85/254 [00:09<02:53,  1.03s/it, Materializing param=model.layers.9.mlp.gate_proj.weight]
+Loading weights:  33%|███▎      | 85/254 [00:09<02:53,  1.03s/it, Materializing param=model.layers.9.mlp.gate_proj.weight]
+Loading weights:  34%|███▍      | 86/254 [00:09<02:52,  1.03s/it, Materializing param=model.layers.9.mlp.up_proj.weight]  
+Loading weights:  34%|███▍      | 86/254 [00:09<02:52,  1.03s/it, Materializing param=model.layers.9.mlp.up_proj.weight]
+Loading weights:  34%|███▍      | 87/254 [00:09<02:51,  1.03s/it, Materializing param=model.layers.9.post_attention_layernorm.weight]
+Loading weights:  34%|███▍      | 87/254 [00:09<02:51,  1.03s/it, Materializing param=model.layers.9.post_attention_layernorm.weight]
+Loading weights:  35%|███▍      | 88/254 [00:09<02:50,  1.03s/it, Materializing param=model.layers.9.self_attn.k_proj.weight]        
+Loading weights:  35%|███▍      | 88/254 [00:09<02:50,  1.03s/it, Materializing param=model.layers.9.self_attn.k_proj.weight]
+Loading weights:  35%|███▌      | 89/254 [00:09<02:49,  1.03s/it, Materializing param=model.layers.9.self_attn.o_proj.weight]
+Loading weights:  35%|███▌      | 89/254 [00:09<02:49,  1.03s/it, Materializing param=model.layers.9.self_attn.o_proj.weight]
+Loading weights:  35%|███▌      | 90/254 [00:09<02:48,  1.03s/it, Materializing param=model.layers.9.self_attn.q_proj.weight]
+Loading weights:  35%|███▌      | 90/254 [00:09<02:48,  1.03s/it, Materializing param=model.layers.9.self_attn.q_proj.weight]
+Loading weights:  36%|███▌      | 91/254 [00:09<02:47,  1.03s/it, Materializing param=model.layers.9.self_attn.v_proj.weight]
+Loading weights:  36%|███▌      | 91/254 [00:09<02:47,  1.03s/it, Materializing param=model.layers.9.self_attn.v_proj.weight]
+Loading weights:  36%|███▌      | 92/254 [00:09<02:46,  1.03s/it, Materializing param=model.layers.10.input_layernorm.weight]
+Loading weights:  36%|███▌      | 92/254 [00:09<02:46,  1.03s/it, Materializing param=model.layers.10.input_layernorm.weight]
+Loading weights:  37%|███▋      | 93/254 [00:09<02:45,  1.03s/it, Materializing param=model.layers.10.mlp.down_proj.weight]  
+Loading weights:  37%|███▋      | 93/254 [00:09<02:45,  1.03s/it, Materializing param=model.layers.10.mlp.down_proj.weight]
+Loading weights:  37%|███▋      | 94/254 [00:09<02:44,  1.03s/it, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 94/254 [00:09<02:44,  1.03s/it, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 95/254 [00:09<02:43,  1.03s/it, Materializing param=model.layers.10.mlp.up_proj.weight]  
+Loading weights:  37%|███▋      | 95/254 [00:09<02:43,  1.03s/it, Materializing param=model.layers.10.mlp.up_proj.weight]
+Loading weights:  38%|███▊      | 96/254 [00:09<02:42,  1.03s/it, Materializing param=model.layers.10.post_attention_layernorm.weight]
+Loading weights:  38%|███▊      | 96/254 [00:09<02:42,  1.03s/it, Materializing param=model.layers.10.post_attention_layernorm.weight]
+Loading weights:  38%|███▊      | 97/254 [00:09<02:41,  1.03s/it, Materializing param=model.layers.10.self_attn.k_proj.weight]        
+Loading weights:  38%|███▊      | 97/254 [00:09<02:41,  1.03s/it, Materializing param=model.layers.10.self_attn.k_proj.weight]
+Loading weights:  39%|███▊      | 98/254 [00:09<02:40,  1.03s/it, Materializing param=model.layers.10.self_attn.o_proj.weight]
+Loading weights:  39%|███▊      | 98/254 [00:09<02:40,  1.03s/it, Materializing param=model.layers.10.self_attn.o_proj.weight]
+Loading weights:  39%|███▉      | 99/254 [00:09<02:39,  1.03s/it, Materializing param=model.layers.10.self_attn.q_proj.weight]
+Loading weights:  39%|███▉      | 99/254 [00:09<02:39,  1.03s/it, Materializing param=model.layers.10.self_attn.q_proj.weight]
+Loading weights:  39%|███▉      | 100/254 [00:09<02:38,  1.03s/it, Materializing param=model.layers.10.self_attn.v_proj.weight]
+Loading weights:  39%|███▉      | 100/254 [00:09<02:38,  1.03s/it, Materializing param=model.layers.10.self_attn.v_proj.weight]
+Loading weights:  40%|███▉      | 101/254 [00:09<02:37,  1.03s/it, Materializing param=model.layers.11.input_layernorm.weight] 
+Loading weights:  40%|███▉      | 101/254 [00:09<02:37,  1.03s/it, Materializing param=model.layers.11.input_layernorm.weight]
+Loading weights:  40%|████      | 102/254 [00:09<02:35,  1.03s/it, Materializing param=model.layers.11.mlp.down_proj.weight]  
+Loading weights:  40%|████      | 102/254 [00:09<02:35,  1.03s/it, Materializing param=model.layers.11.mlp.down_proj.weight]
+Loading weights:  41%|████      | 103/254 [00:09<02:34,  1.03s/it, Materializing param=model.layers.11.mlp.gate_proj.weight]
+Loading weights:  41%|████      | 103/254 [00:09<02:34,  1.03s/it, Materializing param=model.layers.11.mlp.gate_proj.weight]
+Loading weights:  41%|████      | 104/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.11.mlp.gate_proj.weight]
+Loading weights:  41%|████      | 104/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.11.mlp.up_proj.weight]  
+Loading weights:  41%|████      | 104/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.11.mlp.up_proj.weight]
+Loading weights:  41%|████▏     | 105/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.11.post_attention_layernorm.weight]
+Loading weights:  41%|████▏     | 105/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.11.post_attention_layernorm.weight]
+Loading weights:  42%|████▏     | 106/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.11.self_attn.k_proj.weight]        
+Loading weights:  42%|████▏     | 106/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.11.self_attn.k_proj.weight]
+Loading weights:  42%|████▏     | 107/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.11.self_attn.o_proj.weight]
+Loading weights:  42%|████▏     | 107/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.11.self_attn.o_proj.weight]
+Loading weights:  43%|████▎     | 108/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.11.self_attn.q_proj.weight]
+Loading weights:  43%|████▎     | 108/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.11.self_attn.q_proj.weight]
+Loading weights:  43%|████▎     | 109/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.11.self_attn.v_proj.weight]
+Loading weights:  43%|████▎     | 109/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.11.self_attn.v_proj.weight]
+Loading weights:  43%|████▎     | 110/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.12.input_layernorm.weight] 
+Loading weights:  43%|████▎     | 110/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.12.input_layernorm.weight]
+Loading weights:  44%|████▎     | 111/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.12.mlp.down_proj.weight]  
+Loading weights:  44%|████▎     | 111/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.12.mlp.down_proj.weight]
+Loading weights:  44%|████▍     | 112/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.12.mlp.gate_proj.weight]
+Loading weights:  44%|████▍     | 112/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.12.mlp.gate_proj.weight]
+Loading weights:  44%|████▍     | 113/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.12.mlp.up_proj.weight]  
+Loading weights:  44%|████▍     | 113/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.12.mlp.up_proj.weight]
+Loading weights:  45%|████▍     | 114/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.12.post_attention_layernorm.weight]
+Loading weights:  45%|████▍     | 114/254 [00:09<00:04, 34.78it/s, Materializing param=model.layers.12.post_attention_layernorm.weight]
+Loading weights:  45%|████▌     | 115/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.12.self_attn.k_proj.weight]        
+Loading weights:  45%|████▌     | 115/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.12.self_attn.k_proj.weight]
+Loading weights:  46%|████▌     | 116/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.12.self_attn.o_proj.weight]
+Loading weights:  46%|████▌     | 116/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.12.self_attn.o_proj.weight]
+Loading weights:  46%|████▌     | 117/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.12.self_attn.q_proj.weight]
+Loading weights:  46%|████▌     | 117/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.12.self_attn.q_proj.weight]
+Loading weights:  46%|████▋     | 118/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.12.self_attn.v_proj.weight]
+Loading weights:  46%|████▋     | 118/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.12.self_attn.v_proj.weight]
+Loading weights:  47%|████▋     | 119/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.input_layernorm.weight] 
+Loading weights:  47%|████▋     | 119/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.input_layernorm.weight]
+Loading weights:  47%|████▋     | 120/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.mlp.down_proj.weight]  
+Loading weights:  47%|████▋     | 120/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.mlp.down_proj.weight]
+Loading weights:  48%|████▊     | 121/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.mlp.gate_proj.weight]
+Loading weights:  48%|████▊     | 121/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.mlp.gate_proj.weight]
+Loading weights:  48%|████▊     | 122/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.mlp.up_proj.weight]  
+Loading weights:  48%|████▊     | 122/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.mlp.up_proj.weight]
+Loading weights:  48%|████▊     | 123/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.post_attention_layernorm.weight]
+Loading weights:  48%|████▊     | 123/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.post_attention_layernorm.weight]
+Loading weights:  49%|████▉     | 124/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.self_attn.k_proj.weight]        
+Loading weights:  49%|████▉     | 124/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.self_attn.k_proj.weight]
+Loading weights:  49%|████▉     | 125/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.self_attn.o_proj.weight]
+Loading weights:  49%|████▉     | 125/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.self_attn.o_proj.weight]
+Loading weights:  50%|████▉     | 126/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.self_attn.q_proj.weight]
+Loading weights:  50%|████▉     | 126/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.self_attn.q_proj.weight]
+Loading weights:  50%|█████     | 127/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.self_attn.v_proj.weight]
+Loading weights:  50%|█████     | 127/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.13.self_attn.v_proj.weight]
+Loading weights:  50%|█████     | 128/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.input_layernorm.weight] 
+Loading weights:  50%|█████     | 128/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.input_layernorm.weight]
+Loading weights:  51%|█████     | 129/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.mlp.down_proj.weight]  
+Loading weights:  51%|█████     | 129/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.mlp.down_proj.weight]
+Loading weights:  51%|█████     | 130/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.mlp.gate_proj.weight]
+Loading weights:  51%|█████     | 130/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.mlp.gate_proj.weight]
+Loading weights:  52%|█████▏    | 131/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.mlp.up_proj.weight]  
+Loading weights:  52%|█████▏    | 131/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.mlp.up_proj.weight]
+Loading weights:  52%|█████▏    | 132/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.post_attention_layernorm.weight]
+Loading weights:  52%|█████▏    | 132/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.post_attention_layernorm.weight]
+Loading weights:  52%|█████▏    | 133/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.self_attn.k_proj.weight]        
+Loading weights:  52%|█████▏    | 133/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.self_attn.k_proj.weight]
+Loading weights:  53%|█████▎    | 134/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.self_attn.o_proj.weight]
+Loading weights:  53%|█████▎    | 134/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.self_attn.o_proj.weight]
+Loading weights:  53%|█████▎    | 135/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.self_attn.q_proj.weight]
+Loading weights:  53%|█████▎    | 135/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.self_attn.q_proj.weight]
+Loading weights:  54%|█████▎    | 136/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.self_attn.v_proj.weight]
+Loading weights:  54%|█████▎    | 136/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.14.self_attn.v_proj.weight]
+Loading weights:  54%|█████▍    | 137/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.input_layernorm.weight] 
+Loading weights:  54%|█████▍    | 137/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.input_layernorm.weight]
+Loading weights:  54%|█████▍    | 138/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.mlp.down_proj.weight]  
+Loading weights:  54%|█████▍    | 138/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.mlp.down_proj.weight]
+Loading weights:  55%|█████▍    | 139/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.mlp.gate_proj.weight]
+Loading weights:  55%|█████▍    | 139/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.mlp.gate_proj.weight]
+Loading weights:  55%|█████▌    | 140/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.mlp.up_proj.weight]  
+Loading weights:  55%|█████▌    | 140/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.mlp.up_proj.weight]
+Loading weights:  56%|█████▌    | 141/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.post_attention_layernorm.weight]
+Loading weights:  56%|█████▌    | 141/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.post_attention_layernorm.weight]
+Loading weights:  56%|█████▌    | 142/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.self_attn.k_proj.weight]        
+Loading weights:  56%|█████▌    | 142/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.self_attn.k_proj.weight]
+Loading weights:  56%|█████▋    | 143/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.self_attn.o_proj.weight]
+Loading weights:  56%|█████▋    | 143/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.self_attn.o_proj.weight]
+Loading weights:  57%|█████▋    | 144/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.self_attn.q_proj.weight]
+Loading weights:  57%|█████▋    | 144/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.self_attn.q_proj.weight]
+Loading weights:  57%|█████▋    | 145/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.self_attn.v_proj.weight]
+Loading weights:  57%|█████▋    | 145/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.15.self_attn.v_proj.weight]
+Loading weights:  57%|█████▋    | 146/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.16.input_layernorm.weight] 
+Loading weights:  57%|█████▋    | 146/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.16.input_layernorm.weight]
+Loading weights:  58%|█████▊    | 147/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.16.mlp.down_proj.weight]  
+Loading weights:  58%|█████▊    | 147/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.16.mlp.down_proj.weight]
+Loading weights:  58%|█████▊    | 148/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.16.mlp.gate_proj.weight]
+Loading weights:  58%|█████▊    | 148/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.16.mlp.gate_proj.weight]
+Loading weights:  59%|█████▊    | 149/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.16.mlp.up_proj.weight]  
+Loading weights:  59%|█████▊    | 149/254 [00:09<00:03, 34.78it/s, Materializing param=model.layers.16.mlp.up_proj.weight]
+Loading weights:  59%|█████▉    | 150/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.16.post_attention_layernorm.weight]
+Loading weights:  59%|█████▉    | 150/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.16.post_attention_layernorm.weight]
+Loading weights:  59%|█████▉    | 151/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.16.self_attn.k_proj.weight]        
+Loading weights:  59%|█████▉    | 151/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.16.self_attn.k_proj.weight]
+Loading weights:  60%|█████▉    | 152/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.16.self_attn.o_proj.weight]
+Loading weights:  60%|█████▉    | 152/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.16.self_attn.o_proj.weight]
+Loading weights:  60%|██████    | 153/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.16.self_attn.q_proj.weight]
+Loading weights:  60%|██████    | 153/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.16.self_attn.q_proj.weight]
+Loading weights:  61%|██████    | 154/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.16.self_attn.v_proj.weight]
+Loading weights:  61%|██████    | 154/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.16.self_attn.v_proj.weight]
+Loading weights:  61%|██████    | 155/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.input_layernorm.weight] 
+Loading weights:  61%|██████    | 155/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.input_layernorm.weight]
+Loading weights:  61%|██████▏   | 156/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.mlp.down_proj.weight]  
+Loading weights:  61%|██████▏   | 156/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.mlp.down_proj.weight]
+Loading weights:  62%|██████▏   | 157/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.mlp.gate_proj.weight]
+Loading weights:  62%|██████▏   | 157/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.mlp.gate_proj.weight]
+Loading weights:  62%|██████▏   | 158/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.mlp.up_proj.weight]  
+Loading weights:  62%|██████▏   | 158/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.mlp.up_proj.weight]
+Loading weights:  63%|██████▎   | 159/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.post_attention_layernorm.weight]
+Loading weights:  63%|██████▎   | 159/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.post_attention_layernorm.weight]
+Loading weights:  63%|██████▎   | 160/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.self_attn.k_proj.weight]        
+Loading weights:  63%|██████▎   | 160/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.self_attn.k_proj.weight]
+Loading weights:  63%|██████▎   | 161/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.self_attn.o_proj.weight]
+Loading weights:  63%|██████▎   | 161/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.self_attn.o_proj.weight]
+Loading weights:  64%|██████▍   | 162/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.self_attn.q_proj.weight]
+Loading weights:  64%|██████▍   | 162/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.self_attn.q_proj.weight]
+Loading weights:  64%|██████▍   | 163/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.self_attn.v_proj.weight]
+Loading weights:  64%|██████▍   | 163/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.17.self_attn.v_proj.weight]
+Loading weights:  65%|██████▍   | 164/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.input_layernorm.weight] 
+Loading weights:  65%|██████▍   | 164/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.input_layernorm.weight]
+Loading weights:  65%|██████▍   | 165/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.mlp.down_proj.weight]  
+Loading weights:  65%|██████▍   | 165/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.mlp.down_proj.weight]
+Loading weights:  65%|██████▌   | 166/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.mlp.gate_proj.weight]
+Loading weights:  65%|██████▌   | 166/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.mlp.gate_proj.weight]
+Loading weights:  66%|██████▌   | 167/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.mlp.up_proj.weight]  
+Loading weights:  66%|██████▌   | 167/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.mlp.up_proj.weight]
+Loading weights:  66%|██████▌   | 168/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.post_attention_layernorm.weight]
+Loading weights:  66%|██████▌   | 168/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.post_attention_layernorm.weight]
+Loading weights:  67%|██████▋   | 169/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.self_attn.k_proj.weight]        
+Loading weights:  67%|██████▋   | 169/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.self_attn.k_proj.weight]
+Loading weights:  67%|██████▋   | 170/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.self_attn.o_proj.weight]
+Loading weights:  67%|██████▋   | 170/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.self_attn.o_proj.weight]
+Loading weights:  67%|██████▋   | 171/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.self_attn.q_proj.weight]
+Loading weights:  67%|██████▋   | 171/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.self_attn.q_proj.weight]
+Loading weights:  68%|██████▊   | 172/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.self_attn.v_proj.weight]
+Loading weights:  68%|██████▊   | 172/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.18.self_attn.v_proj.weight]
+Loading weights:  68%|██████▊   | 173/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.input_layernorm.weight] 
+Loading weights:  68%|██████▊   | 173/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.input_layernorm.weight]
+Loading weights:  69%|██████▊   | 174/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.mlp.down_proj.weight]  
+Loading weights:  69%|██████▊   | 174/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.mlp.down_proj.weight]
+Loading weights:  69%|██████▉   | 175/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.mlp.gate_proj.weight]
+Loading weights:  69%|██████▉   | 175/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.mlp.gate_proj.weight]
+Loading weights:  69%|██████▉   | 176/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.mlp.up_proj.weight]  
+Loading weights:  69%|██████▉   | 176/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.mlp.up_proj.weight]
+Loading weights:  70%|██████▉   | 177/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.post_attention_layernorm.weight]
+Loading weights:  70%|██████▉   | 177/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.post_attention_layernorm.weight]
+Loading weights:  70%|███████   | 178/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.self_attn.k_proj.weight]        
+Loading weights:  70%|███████   | 178/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.self_attn.k_proj.weight]
+Loading weights:  70%|███████   | 179/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.self_attn.o_proj.weight]
+Loading weights:  70%|███████   | 179/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.self_attn.o_proj.weight]
+Loading weights:  71%|███████   | 180/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.self_attn.q_proj.weight]
+Loading weights:  71%|███████   | 180/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.self_attn.q_proj.weight]
+Loading weights:  71%|███████▏  | 181/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.self_attn.v_proj.weight]
+Loading weights:  71%|███████▏  | 181/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.19.self_attn.v_proj.weight]
+Loading weights:  72%|███████▏  | 182/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.20.input_layernorm.weight] 
+Loading weights:  72%|███████▏  | 182/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.20.input_layernorm.weight]
+Loading weights:  72%|███████▏  | 183/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.20.mlp.down_proj.weight]  
+Loading weights:  72%|███████▏  | 183/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.20.mlp.down_proj.weight]
+Loading weights:  72%|███████▏  | 184/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.20.mlp.gate_proj.weight]
+Loading weights:  72%|███████▏  | 184/254 [00:09<00:02, 34.78it/s, Materializing param=model.layers.20.mlp.gate_proj.weight]
+Loading weights:  73%|███████▎  | 185/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.20.mlp.up_proj.weight]  
+Loading weights:  73%|███████▎  | 185/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.20.mlp.up_proj.weight]
+Loading weights:  73%|███████▎  | 186/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.20.post_attention_layernorm.weight]
+Loading weights:  73%|███████▎  | 186/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.20.post_attention_layernorm.weight]
+Loading weights:  74%|███████▎  | 187/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.20.self_attn.k_proj.weight]        
+Loading weights:  74%|███████▎  | 187/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.20.self_attn.k_proj.weight]
+Loading weights:  74%|███████▍  | 188/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.20.self_attn.o_proj.weight]
+Loading weights:  74%|███████▍  | 188/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.20.self_attn.o_proj.weight]
+Loading weights:  74%|███████▍  | 189/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.20.self_attn.q_proj.weight]
+Loading weights:  74%|███████▍  | 189/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.20.self_attn.q_proj.weight]
+Loading weights:  75%|███████▍  | 190/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.20.self_attn.v_proj.weight]
+Loading weights:  75%|███████▍  | 190/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.20.self_attn.v_proj.weight]
+Loading weights:  75%|███████▌  | 191/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.input_layernorm.weight] 
+Loading weights:  75%|███████▌  | 191/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.input_layernorm.weight]
+Loading weights:  76%|███████▌  | 192/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.mlp.down_proj.weight]  
+Loading weights:  76%|███████▌  | 192/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.mlp.down_proj.weight]
+Loading weights:  76%|███████▌  | 193/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.mlp.gate_proj.weight]
+Loading weights:  76%|███████▌  | 193/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.mlp.gate_proj.weight]
+Loading weights:  76%|███████▋  | 194/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.mlp.up_proj.weight]  
+Loading weights:  76%|███████▋  | 194/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.mlp.up_proj.weight]
+Loading weights:  77%|███████▋  | 195/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.post_attention_layernorm.weight]
+Loading weights:  77%|███████▋  | 195/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.post_attention_layernorm.weight]
+Loading weights:  77%|███████▋  | 196/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.self_attn.k_proj.weight]        
+Loading weights:  77%|███████▋  | 196/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.self_attn.k_proj.weight]
+Loading weights:  78%|███████▊  | 197/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.self_attn.o_proj.weight]
+Loading weights:  78%|███████▊  | 197/254 [00:09<00:01, 34.78it/s, Materializing param=model.layers.21.self_attn.o_proj.weight]
+Loading weights:  78%|███████▊  | 198/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.21.self_attn.o_proj.weight]
+Loading weights:  78%|███████▊  | 198/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.21.self_attn.q_proj.weight]
+Loading weights:  78%|███████▊  | 198/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.21.self_attn.q_proj.weight]
+Loading weights:  78%|███████▊  | 199/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.21.self_attn.v_proj.weight]
+Loading weights:  78%|███████▊  | 199/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.21.self_attn.v_proj.weight]
+Loading weights:  79%|███████▊  | 200/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.input_layernorm.weight] 
+Loading weights:  79%|███████▊  | 200/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.input_layernorm.weight]
+Loading weights:  79%|███████▉  | 201/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.mlp.down_proj.weight]  
+Loading weights:  79%|███████▉  | 201/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.mlp.down_proj.weight]
+Loading weights:  80%|███████▉  | 202/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.mlp.gate_proj.weight]
+Loading weights:  80%|███████▉  | 202/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.mlp.gate_proj.weight]
+Loading weights:  80%|███████▉  | 203/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.mlp.up_proj.weight]  
+Loading weights:  80%|███████▉  | 203/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.mlp.up_proj.weight]
+Loading weights:  80%|████████  | 204/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.post_attention_layernorm.weight]
+Loading weights:  80%|████████  | 204/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.post_attention_layernorm.weight]
+Loading weights:  81%|████████  | 205/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.self_attn.k_proj.weight]        
+Loading weights:  81%|████████  | 205/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.self_attn.k_proj.weight]
+Loading weights:  81%|████████  | 206/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.self_attn.o_proj.weight]
+Loading weights:  81%|████████  | 206/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.self_attn.o_proj.weight]
+Loading weights:  81%|████████▏ | 207/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.self_attn.q_proj.weight]
+Loading weights:  81%|████████▏ | 207/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.self_attn.q_proj.weight]
+Loading weights:  82%|████████▏ | 208/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.self_attn.v_proj.weight]
+Loading weights:  82%|████████▏ | 208/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.22.self_attn.v_proj.weight]
+Loading weights:  82%|████████▏ | 209/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.input_layernorm.weight] 
+Loading weights:  82%|████████▏ | 209/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.input_layernorm.weight]
+Loading weights:  83%|████████▎ | 210/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.mlp.down_proj.weight]  
+Loading weights:  83%|████████▎ | 210/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.mlp.down_proj.weight]
+Loading weights:  83%|████████▎ | 211/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.mlp.gate_proj.weight]
+Loading weights:  83%|████████▎ | 211/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.mlp.gate_proj.weight]
+Loading weights:  83%|████████▎ | 212/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.mlp.up_proj.weight]  
+Loading weights:  83%|████████▎ | 212/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.mlp.up_proj.weight]
+Loading weights:  84%|████████▍ | 213/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.post_attention_layernorm.weight]
+Loading weights:  84%|████████▍ | 213/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.post_attention_layernorm.weight]
+Loading weights:  84%|████████▍ | 214/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.self_attn.k_proj.weight]        
+Loading weights:  84%|████████▍ | 214/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.self_attn.k_proj.weight]
+Loading weights:  85%|████████▍ | 215/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.self_attn.o_proj.weight]
+Loading weights:  85%|████████▍ | 215/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.self_attn.o_proj.weight]
+Loading weights:  85%|████████▌ | 216/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.self_attn.q_proj.weight]
+Loading weights:  85%|████████▌ | 216/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.self_attn.q_proj.weight]
+Loading weights:  85%|████████▌ | 217/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.self_attn.v_proj.weight]
+Loading weights:  85%|████████▌ | 217/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.23.self_attn.v_proj.weight]
+Loading weights:  86%|████████▌ | 218/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.24.input_layernorm.weight] 
+Loading weights:  86%|████████▌ | 218/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.24.input_layernorm.weight]
+Loading weights:  86%|████████▌ | 219/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.24.mlp.down_proj.weight]  
+Loading weights:  86%|████████▌ | 219/254 [00:09<00:00, 79.50it/s, Materializing param=model.layers.24.mlp.down_proj.weight]
+Loading weights:  87%|████████▋ | 220/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.mlp.gate_proj.weight]
+Loading weights:  87%|████████▋ | 220/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.mlp.gate_proj.weight]
+Loading weights:  87%|████████▋ | 221/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.mlp.up_proj.weight]  
+Loading weights:  87%|████████▋ | 221/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.mlp.up_proj.weight]
+Loading weights:  87%|████████▋ | 222/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.post_attention_layernorm.weight]
+Loading weights:  87%|████████▋ | 222/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.post_attention_layernorm.weight]
+Loading weights:  88%|████████▊ | 223/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.self_attn.k_proj.weight]        
+Loading weights:  88%|████████▊ | 223/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.self_attn.k_proj.weight]
+Loading weights:  88%|████████▊ | 224/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.self_attn.o_proj.weight]
+Loading weights:  88%|████████▊ | 224/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.self_attn.o_proj.weight]
+Loading weights:  89%|████████▊ | 225/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.self_attn.q_proj.weight]
+Loading weights:  89%|████████▊ | 225/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.self_attn.q_proj.weight]
+Loading weights:  89%|████████▉ | 226/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.self_attn.v_proj.weight]
+Loading weights:  89%|████████▉ | 226/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.24.self_attn.v_proj.weight]
+Loading weights:  89%|████████▉ | 227/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.input_layernorm.weight] 
+Loading weights:  89%|████████▉ | 227/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.input_layernorm.weight]
+Loading weights:  90%|████████▉ | 228/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.mlp.down_proj.weight]  
+Loading weights:  90%|████████▉ | 228/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.mlp.down_proj.weight]
+Loading weights:  90%|█████████ | 229/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.mlp.gate_proj.weight]
+Loading weights:  90%|█████████ | 229/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.mlp.gate_proj.weight]
+Loading weights:  91%|█████████ | 230/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.mlp.up_proj.weight]  
+Loading weights:  91%|█████████ | 230/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.mlp.up_proj.weight]
+Loading weights:  91%|█████████ | 231/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.post_attention_layernorm.weight]
+Loading weights:  91%|█████████ | 231/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.post_attention_layernorm.weight]
+Loading weights:  91%|█████████▏| 232/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.self_attn.k_proj.weight]        
+Loading weights:  91%|█████████▏| 232/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.self_attn.k_proj.weight]
+Loading weights:  92%|█████████▏| 233/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.self_attn.o_proj.weight]
+Loading weights:  92%|█████████▏| 233/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.self_attn.o_proj.weight]
+Loading weights:  92%|█████████▏| 234/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.self_attn.q_proj.weight]
+Loading weights:  92%|█████████▏| 234/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.self_attn.q_proj.weight]
+Loading weights:  93%|█████████▎| 235/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.self_attn.v_proj.weight]
+Loading weights:  93%|█████████▎| 235/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.25.self_attn.v_proj.weight]
+Loading weights:  93%|█████████▎| 236/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.input_layernorm.weight] 
+Loading weights:  93%|█████████▎| 236/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.input_layernorm.weight]
+Loading weights:  93%|█████████▎| 237/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.mlp.down_proj.weight]  
+Loading weights:  93%|█████████▎| 237/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.mlp.down_proj.weight]
+Loading weights:  94%|█████████▎| 238/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.mlp.gate_proj.weight]
+Loading weights:  94%|█████████▎| 238/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.mlp.gate_proj.weight]
+Loading weights:  94%|█████████▍| 239/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.mlp.up_proj.weight]  
+Loading weights:  94%|█████████▍| 239/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.mlp.up_proj.weight]
+Loading weights:  94%|█████████▍| 240/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.post_attention_layernorm.weight]
+Loading weights:  94%|█████████▍| 240/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.post_attention_layernorm.weight]
+Loading weights:  95%|█████████▍| 241/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.self_attn.k_proj.weight]        
+Loading weights:  95%|█████████▍| 241/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.self_attn.k_proj.weight]
+Loading weights:  95%|█████████▌| 242/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.self_attn.o_proj.weight]
+Loading weights:  95%|█████████▌| 242/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.self_attn.o_proj.weight]
+Loading weights:  96%|█████████▌| 243/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.self_attn.q_proj.weight]
+Loading weights:  96%|█████████▌| 243/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.self_attn.q_proj.weight]
+Loading weights:  96%|█████████▌| 244/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.self_attn.v_proj.weight]
+Loading weights:  96%|█████████▌| 244/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.26.self_attn.v_proj.weight]
+Loading weights:  96%|█████████▋| 245/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.input_layernorm.weight] 
+Loading weights:  96%|█████████▋| 245/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.input_layernorm.weight]
+Loading weights:  97%|█████████▋| 246/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.mlp.down_proj.weight]  
+Loading weights:  97%|█████████▋| 246/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.mlp.down_proj.weight]
+Loading weights:  97%|█████████▋| 247/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.mlp.gate_proj.weight]
+Loading weights:  97%|█████████▋| 247/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.mlp.gate_proj.weight]
+Loading weights:  98%|█████████▊| 248/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.mlp.up_proj.weight]  
+Loading weights:  98%|█████████▊| 248/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.mlp.up_proj.weight]
+Loading weights:  98%|█████████▊| 249/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.post_attention_layernorm.weight]
+Loading weights:  98%|█████████▊| 249/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.post_attention_layernorm.weight]
+Loading weights:  98%|█████████▊| 250/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.self_attn.k_proj.weight]        
+Loading weights:  98%|█████████▊| 250/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.self_attn.k_proj.weight]
+Loading weights:  99%|█████████▉| 251/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.self_attn.o_proj.weight]
+Loading weights:  99%|█████████▉| 251/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.self_attn.o_proj.weight]
+Loading weights:  99%|█████████▉| 252/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.self_attn.q_proj.weight]
+Loading weights:  99%|█████████▉| 252/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.self_attn.q_proj.weight]
+Loading weights: 100%|█████████▉| 253/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.self_attn.v_proj.weight]
+Loading weights: 100%|█████████▉| 253/254 [00:10<00:00, 79.50it/s, Materializing param=model.layers.27.self_attn.v_proj.weight]
+Loading weights: 100%|██████████| 254/254 [00:10<00:00, 79.50it/s, Materializing param=model.norm.weight]                      
+Loading weights: 100%|██████████| 254/254 [00:10<00:00, 79.50it/s, Materializing param=model.norm.weight]
+Loading weights: 100%|██████████| 254/254 [00:10<00:00, 25.31it/s, Materializing param=model.norm.weight]
+/usr/local/lib/python3.12/dist-packages/bitsandbytes/backends/cuda/ops.py:468: FutureWarning: _check_is_size will be removed in a future PyTorch release along with guard_size_oblivious.     Use _check(i >= 0) instead.
+  torch._check_is_size(blocksize)
+
+ Loading benchmark: folio
+[1 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All rabbits that can be spotted near the campus are cute.
+2. Some turtles can be spotted near the campus.
+3. The only animals that can be spotted near the campus are rabbits and squirrels.
+4. If something is skittish, then it is not calm.
+5. All the squirrels that can be spotted near the campus are skittish.
+6. Rockie can be spotted near the campus, and it is calm.
+
+**Conclusion:**
+
+If Rockie is cute and calm, then Rockie is a skittish turtle.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+The statement "If Rockie is cute and calm, then Rockie is a skittish turtle" is uncertain. The information about Rockie's species and temperament is not sufficient to draw a conclusion about his status as a skittish turtle.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[2 / 183] Evaluting Question
+Response: **Statements:**
+
+1. "Stranger Things" is a popular Netflix show.
+2. If a Netflix show is popular, Karen will binge-watch it.
+3. If and only if Karen binge-watches a Netflix show, she will download it.
+4. Karen does not download "Black Mirror."
+5. "Black Mirror" is a Netflix show.
+6. If Karen binge-watches a Netflix show, she will share it with Lisa.
+
+**Conclusion:**
+
+Karen will share "Stranger Things" with Lisa.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+The conclusion is uncertain because the statement "If Karen binge-watches a Netflix show, she will share it with Lisa" does not provide enough information to determine whether it is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[3 / 183] Evaluting Question
+Response: **Statements:**
+
+1. "Stranger Things" is a popular Netflix show.
+2. If a Netflix show is popular, Karen will binge-watch it.
+3. If and only if Karen binge-watches a Netflix show, she will download it.
+4. Karen does not download "Black Mirror."
+5. "Black Mirror" is a Netflix show.
+6. If Karen binge-watches a Netflix show, she will share it with Lisa.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+**Explanation:**
+
+The information about the popularity of "Black Mirror" is not provided in the text, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[4 / 183] Evaluting Question
+Response: **Statements:**
+
+1. "Stranger Things" is a popular Netflix show.
+2. If a Netflix show is popular, Karen will binge-watch it.
+3. If and only if Karen binge-watches a Netflix show, she will download it.
+4. Karen does not download "Black Mirror."
+5. "Black Mirror" is a Netflix show.
+6. If Karen binge-watches a Netflix show, she will share it with Lisa.
+
+**Conclusion:**
+
+**Answer:** False
+
+**Explanation:**
+
+The conclusion is false because the statement "If Karen binge-watches a Netflix show, she will share it with Lisa" does not necessarily follow from the other statements.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[5 / 183] Evaluting Question
+Response: **Solution:**
+
+The statement "Beijing hosted both the 2008 Summer Olympics and the Winter Olympics" is true.
+
+**Answer:**
+
+True
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[6 / 183] Evaluting Question
+Response: **Statements:**
+
+* Beijing is the capital of the People's Republic of China.
+* Beijing is the capital city of the world's most populous nation.
+* Beijing is located in Northern China.
+* Beijing hosted the 2008 Summer Olympics and 2008 Summer Paralympics Games.
+* Beijing has hosted the Summer and Winter Olympics and the Summer and Winter Paralympics.
+* Many of Beijing's 91 universities consistently rank among the best universities in the world.
+
+**Conclusion:**
+
+**Answer:** False
+
+The text does not provide information about the location of Beijing in China, therefore I cannot answer the question.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[7 / 183] Evaluting Question
+Response: **Statements:**
+
+* Beijing is the capital of the People's Republic of China.
+* Beijing is the capital city of the world's most populous nation.
+* Beijing is located in Northern China.
+* Beijing hosted the 2008 Summer Olympics and 2008 Summer Paralympics Games.
+* Beijing has hosted the Summer and Winter Olympics and the Summer and Winter Paralympics.
+* Many of Beijing's 91 universities consistently rank among the best universities in the world.
+
+**Conclusion:**
+
+The text does not provide information about the size of Beijing, therefore I cannot determine whether the conclusion is true or false.
+
+**Answer:**
+
+Uncertain
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[8 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All aliens are extraterrestrials.
+2. If someone is from Mars, then they are an alien.
+3. No extraterrestrials are human.
+4. All highly intelligent beings from Earth are humans.
+5. Marvin is a highly intelligent being.
+6. Marvin is either from Earth and from Mars, or he is from neither.
+7. If Marvin is not from Earth, then Marvin is an extraterrestrial.
+
+**Conclusion:**
+
+Marvin is an alien.
+
+**Answer:**
+
+Uncertain
+
+The statement "Marvin is an alien" is uncertain because the information about Marvin's origin is not enough to determine whether he is an alien or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[9 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All aliens are extraterrestrials.
+2. If someone is from Mars, then they are an alien.
+3. No extraterrestrials are human.
+4. All highly intelligent beings from Earth are humans.
+5. Marvin is a highly intelligent being.
+6. Marvin is either from Earth and from Mars, or he is from neither.
+7. If Marvin is not from Earth, then Marvin is an extraterrestrial.
+
+**Conclusion:**
+
+Marvin is neither a human nor from Mars.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+The conclusion is uncertain because the statements do not provide enough information to determine whether Marvin is an alien or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[10 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All aliens are extraterrestrials.
+2. If someone is from Mars, then they are an alien.
+3. No extraterrestrials are human.
+4. All highly intelligent beings from Earth are humans.
+5. Marvin is a highly intelligent being from Earth.
+6. Marvin is either from Earth and from Mars, or he is from neither.
+7. If Marvin is not from Earth, then Marvin is an extraterrestrial.
+
+**Conclusion:**
+
+**Answer:** False
+
+**Explanation:**
+
+The statement "If Marvin is not from Mars, then Marvin is a human" is false because the statement "No extraterrestrials are human" is false. Marvin could be an extraterrestrial, even if he is not from Mars.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[11 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Everyone at the mixer is a Grand Slam champion or an Oscar-nominated actor.
+2. Every Grand Slam champion at the mixer is a professional tennis player.
+3. All Oscar-nominated actors at the mixer are celebrities.
+4. All professional tennis players at the mixer are athletes.
+5. If a person at the mixer is a celebrity, then they are well-paid.
+6. If a person at the mixer is an athlete, then they are famous.
+7. All well-paid people at the mixer live in tax havens.
+8. Djokovic is at the mixer: if Djokovic is a famous athlete, then Djokovic is well-paid.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statement "Djokovic is a Grand Slam champion" is uncertain because the information about Djokovic's status as a Grand Slam champion is not provided in the text.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[12 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Everyone at the mixer is a Grand Slam champion or an Oscar-nominated actor.
+2. Every Grand Slam champion at the mixer is a professional tennis player.
+3. All Oscar-nominated actors at the mixer are celebrities.
+4. All professional tennis players at the mixer are athletes.
+5. If a person at the mixer is a celebrity, then they are well-paid.
+6. If a person at the mixer is an athlete, then they are famous.
+7. All well-paid people at the mixer live in tax havens.
+8. Djokovic is at the mixer: if Djokovic is a famous athlete, then Djokovic is well-paid.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statement "Djokovic lives in a tax haven" is uncertain because the information about Djokovic's residence and his status as a famous athlete is not provided in the text. Therefore, I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[13 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Everyone at the mixer is a Grand Slam champion or an Oscar-nominated actor.
+2. Every Grand Slam champion at the mixer is a professional tennis player.
+3. All Oscar-nominated actors at the mixer are celebrities.
+4. All professional tennis players at the mixer are athletes.
+5. If a person at the mixer is a celebrity, then they are well-paid.
+6. If a person at the mixer is an athlete, then they are famous.
+7. All well-paid people at the mixer live in tax havens.
+8. Djokovic is at the mixer: if Djokovic is a famous athlete, then Djokovic is well-paid.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statement "Djokovic does not live in a tax haven" is uncertain because the information about Djokovic's residence and the relationship between being a famous athlete and living in a tax haven is not provided in the text.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[14 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Diamond Mine is a professional wrestling stable formed in WWE.
+2. Roderick Strong leads Diamond Mine.
+3. Diamond Mine includes the Creed Brothers and Ivy Nile.
+4. Imperium has a feud with Diamond Mine.
+
+**Conclusion:**
+
+**Answer:** True
+
+The statement "Roderick Strong leads a professional wrestling stable" is true based on the information provided in the statements.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[15 / 183] Evaluting Question
+Response: **Statements:**
+
+* Diamond Mine is a professional wrestling stable formed in WWE.
+* Roderick Strong leads Diamond Mine.
+* Diamond Mine includes the Creed Brothers and Ivy Nile.
+* Imperium has a feud with Diamond Mine.
+
+**Conclusion:**
+
+Roderick Strong leads the Creed Brothers.
+
+**Answer:**
+
+Uncertain
+
+The statement "Roderick Strong leads the Creed Brothers" is uncertain because the text does not provide information about the relationship between Roderick Strong and the Creed Brothers.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[16 / 183] Evaluting Question
+Response: **Statements:**
+
+* Diamond Mine is a professional wrestling stable formed in WWE.
+* Roderick Strong leads Diamond Mine.
+* Diamond Mine includes the Creed Brothers and Ivy Nile.
+* Imperium has a feud with Diamond Mine.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statement "Imperium doesn't have a feud with a professional wrestling stable that includes Ivy Nile" is uncertain because the information about the feud between Imperium and Diamond Mine is not provided in the text. Therefore, I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[17 / 183] Evaluting Question
+Response: **Statements:**
+
+* Symphony No. 9 is a music piece.
+* Composers write music pieces.
+* Beethoven wrote Symphony No. 9.
+* Vienna Music Society premiered Symphony No. 9.
+* Vienna Music Society is an orchestra.
+* Beethoven leads the Vienna Music Society.
+* Orchestras are led by conductors.
+
+**Conclusion:**
+
+Beethoven is a composer.
+
+**Answer:** True
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[18 / 183] Evaluting Question
+Response: **Statements:**
+
+* Symphony No. 9 is a music piece.
+* Composers write music pieces.
+* Beethoven wrote Symphony No. 9.
+* Vienna Music Society premiered Symphony No. 9.
+* Vienna Music Society is an orchestra.
+* Beethoven leads the Vienna Music Society.
+* Orchestras are led by conductors.
+
+**Conclusion:**
+
+**Answer:** True
+
+The statement "Some orchestras premiered music pieces" is true based on the information provided in the statements.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[19 / 183] Evaluting Question
+Response: **Statements:**
+
+* Symphony No. 9 is a music piece.
+* Composers write music pieces.
+* Beethoven wrote Symphony No. 9.
+* Vienna Music Society premiered Symphony No. 9.
+* Vienna Music Society is an orchestra.
+* Beethoven leads the Vienna Music Society.
+* Orchestras are led by conductors.
+
+**Conclusion:**
+
+Beethoven is not a conductor.
+
+**Answer:**
+
+Uncertain
+
+The text does not provide information about Beethoven's role as a conductor, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[20 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All of Zaha Hadid's design styles that Max adores have interesting geometries.
+2. No brutalist buildings that Max adores have interesting geometries.
+3. Every style that Max adores is either Zaha Hadid's design style or Kelly Wearstler's design style.
+4. All of Kelly Wearstler's design styles that Max adores are evocative.
+5. All of Kelly Wearstler's design styles that Max adores are dreamy.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The text does not provide enough information to determine whether the design is a brutalist building or not. Therefore, the answer is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[21 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All of Zaha Hadid's design styles that Max adores have interesting geometries.
+2. No brutalist buildings that Max adores have interesting geometries.
+3. Every style that Max adores is either Zaha Hadid's design style or Kelly Wearstler's design style.
+4. All of Kelly Wearstler's design styles that Max adores are evocative.
+5. All of Kelly Wearstler's design styles that Max adores are dreamy.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The text does not provide enough information to determine whether the conclusion is true or false. It is uncertain because the text does not provide information about Max's preferences or the specific design in question.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[22 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All of Zaha Hadid's design styles that Max adores have interesting geometries.
+2. No brutalist buildings that Max adores have interesting geometries.
+3. Every style that Max adores is either Zaha Hadid's design style or Kelly Wearstler's design style.
+4. All of Kelly Wearstler's design styles that Max adores are evocative.
+5. All of Kelly Wearstler's design styles that Max adores are dreamy.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The text does not provide enough information to determine whether the conclusion is true or false. It is uncertain because the text does not provide information about Max's preferences or the specific design in question.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[23 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is False.
+
+**Solution:**
+
+The text does not provide information about Coco Gauff's activity level or her gender, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[24 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is False.
+
+**Answer:**
+
+The text does not provide information about Coco Gauff's loss to Rafael Nadal, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[25 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If someone is ranked highly by the Women's Tennis Association, then they are one of the most active players in major tennis.
+2. Everyone who lost to Iga Świątek at Roland Garros 2022 is ranked highly by the Women's Tennis Association.
+3. All female tennis players at Roland Garros 2022 lost to Iga Świątek.
+4. All tennis players at Roland Garros 2022 are either female or male.
+5. All male tennis players at Roland Garros in 2022 lost to Rafael Nadal.
+6. If Coco Gauff is ranked highly by the Women's Tennis Association or lost to Rafael Nadal, then Coco Gauff is not a male tennis player at Roland Garros 2022.
+7. Coco Gauff is at Roland Garros 2022.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statement "Coco Gauff is not both a player who lost to Iga Świątek at Roland Garros 2022 and one of the most active players in major tennis" is uncertain because the information about Coco Gauff's ranking and her loss to Iga Świątek at Roland Garros 2022 is not available in the text
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[26 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All cats are mammals.
+2. Some pets are not mammals.
+
+**Conclusion:**
+
+No pets are cats.
+
+**Solution:**
+
+The statement "No pets are cats" is false. The first statement states that all cats are mammals, so there is no contradiction in saying that some pets are not mammals. However, the statement "No pets are cats" is false because there are many pets that are not cats.
+
+**Answer:**
+
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[27 / 183] Evaluting Question
+Response: **Statements:**
+
+1. There are four seasons in a year: Spring, Summer, Fall, and Winter.
+2. All students who want to have a long vacation have summer as their favorite season.
+3. Emma's favorite season is summer.
+4. Mia's favorite season is not the same as Emma's.
+5. James wants to have a long vacation.
+
+**Conclusion:**
+
+Is James's favorite season is summer?
+
+**Solution:**
+
+The statement "James's favorite season is summer" is false. The text does not provide information about James's favorite season, therefore I cannot determine whether the statement is true or false.
+
+**Answer:**
+
+Uncertain
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[28 / 183] Evaluting Question
+Response: **Statements:**
+
+1. There are four seasons in a year: Spring, Summer, Fall, and Winter.
+2. All students who want to have a long vacation have summer as their favorite season.
+3. Emma's favorite season is summer.
+4. Mia's favorite season is not the same as Emma's.
+5. James wants to have a long vacation.
+
+**Conclusion:**
+
+Mia's favorite season is spring.
+
+**Answer:**
+
+Uncertain
+
+The text does not provide information about Mia's favorite season, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[29 / 183] Evaluting Question
+Response: **Statements:**
+
+1. No digital media are analog.
+2. Every printed text is analog media.
+3. All streaming services are digital media.
+4. If an object is a hardcover book, then it is printed text.
+5. If 1984 is a streaming service, then 1984 is a hardcover book.
+
+**Conclusion:**
+
+1984 is printed text.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+1984 is printed text. The statement is uncertain because the information about the relationship between digital and analog media, and the relationship between printed text and hardcover books, is not sufficient to determine whether 1984 is printed text or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[30 / 183] Evaluting Question
+Response: **Statements:**
+
+1. No digital media are analog.
+2. Every printed text is analog media.
+3. All streaming services are digital media.
+4. If an object is a hardcover book, then it is printed text.
+5. If 1984 is a streaming service, then 1984 is a hardcover book.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statement "1984 is a streaming service" is uncertain because the information about 1984 being a streaming service is not provided in the text. Therefore, I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[31 / 183] Evaluting Question
+Response: **Statements:**
+
+1. No digital media are analog.
+2. Every printed text is analog media.
+3. All streaming services are digital media.
+4. If an object is a hardcover book, then it is printed text.
+5. If 1984 is a streaming service, then 1984 is a hardcover book.
+
+**Conclusion:**
+
+1984 is not a streaming service.
+
+**Answer:**
+
+Uncertain
+
+The statement "1984 is not a streaming service" is uncertain because the information about the relationship between streaming services and printed text is not complete. The statement is false because 1984 is not a streaming service. However, the statement is also uncertain because it is not clear whether printed text and streaming services are mutually exclusive or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[32 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All Romance languages are Indo-European languages.
+2. Romance languages are a language family.
+3. All languages within a language family are related to each other.
+4. French and Spanish are both Romance languages.
+5. German is related to Spanish.
+6. Basque is not related to any other language.
+
+**Conclusion:**
+
+Basque is a Romance language.
+
+**Answer:**
+
+Uncertain
+
+The statement "Basque is a Romance language" is uncertain because Basque is not related to any other language in the Indo-European language family. Therefore, the conclusion is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[33 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All Romance languages are Indo-European languages.
+2. Romance languages are a language family.
+3. All languages within a language family are related to each other.
+4. French and Spanish are both Romance languages.
+5. German is related to Spanish.
+6. Basque is not related to any other language.
+
+**Conclusion:**
+
+German is a Romance language.
+
+**Answer:** False
+
+The statement "German is a Romance language" is false. German is a Germanic language, not a Romance language.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[34 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All Romance languages are Indo-European languages.
+2. Romance languages are a language family.
+3. All languages within a language family are related to each other.
+4. French and Spanish are both Romance languages.
+5. German is related to Spanish.
+6. Basque is not related to any other language.
+
+**Conclusion:**
+
+French is an Indo-European language.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+French is an Indo-European language. It is uncertain whether French is an Indo-European language or not, as the text does not provide enough information to make a definitive conclusion.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[35 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Robert Lewandowski is a striker.
+2. Strikers are soccer players.
+3. Robert Lewandowski left Bayern Munchen.
+4. If a player leaves a team, they no longer play for that team.
+
+**Conclusion:**
+
+**Answer:** True
+
+**Explanation:**
+
+The statement "Robert Lewandowski is a soccer player" is true based on the information provided in the statements 1 and 2.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[36 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Robert Lewandowski is a striker.
+2. Strikers are soccer players.
+3. Robert Lewandowski left Bayern Munchen.
+4. If a player leaves a team, they no longer play for that team.
+
+**Conclusion:**
+
+**Answer:** False
+
+**Explanation:**
+
+The first two statements are true, but the third statement is false. Robert Lewandowski has left Bayern Munchen, but that does not necessarily mean that he is no longer playing for them.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[37 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Robert Lewandowski is a striker.
+2. Strikers are soccer players.
+3. Robert Lewandowski left Bayern Munchen.
+4. If a player leaves a team, they no longer play for that team.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+**Explanation:**
+
+The statements are as follows:
+
+1. Robert Lewandowski is a striker. This is true.
+2. Strikers are soccer players. This is also true.
+3. Robert Lewandowski left Bayern Munchen. This is unknown.
+4. If a player leaves a team, they no longer play for that team. This is true.
+
+Therefore, the conclusion is uncertain as the third statement is unknown.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[38 / 183] Evaluting Question
+Response: **Conclusion:**
+
+**True, False, Uncertain**
+
+**Answer:**
+
+The answer is False. Butte and St Pierre are in different states.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[39 / 183] Evaluting Question
+Response: **Statements:**
+
+- Billings is a city in the state of Montana in the U.S.
+- The state of Montana includes the cities of Butte, Helena, and Missoula.
+- White Sulphur Springs and Butte are cities in the same state in U.S.
+- The city of St Pierre is not in the state of Montana.
+- Any city in Butte is not in St Pierre.
+- A city can only be in one state in U.S. except for Bristol, Texarkana, Texhoma and Union City.
+
+**Conclusion:**
+
+St Pierre and Bismarck are in the same state.
+
+**Answer:**
+
+Uncertain
+
+The text does not provide information about the state of St Pierre and Bismarck, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[40 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Billings is a city in the state of Montana in the U.S.
+2. The state of Montana includes the cities of Butte, Helena, and Missoula.
+3. White Sulphur Springs and Butte are cities in the same state in U.S.
+4. The city of St Pierre is not in the state of Montana.
+5. Any city in Butte is not in St Pierre.
+6. A city can only be in one state in U.S. except for Bristol, Texarkana, Texhoma and Union City.
+
+**Conclusion:**
+
+Montana is home to the city of Missoula.
+
+**Answer:**
+
+True
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[41 / 183] Evaluting Question
+Response: **Statements:**
+
+1. International students in the US have either an F1 visa or a J1 visa.
+2. An international student in the US with an F1 visa needs to apply for CPT or OPT if the student wants to work in the US.
+3. Mike is an international student.
+4. Mike needs to apply for CPT if he wants to work in the US.
+
+**Conclusion:**
+
+**Answer:** True
+
+**Explanation:**
+
+Based on the statements, the conclusion is true. If Mike has an F1 visa, he is an international student in the US. Therefore, he needs to apply for CPT or OPT if he wants to work in the US.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[42 / 183] Evaluting Question
+Response: **Statements:**
+
+1. International students in the US have either an F1 visa or a J1 visa.
+2. An international student in the US with an F1 visa needs to apply for CPT or OPT if the student wants to work in the US.
+3. Mike is an international student.
+4. Mike needs to apply for CPT if he wants to work in the US.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The text does not provide information about Mike's visa status, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[43 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All Brown Swiss cattle are cows.
+2. Some pets are Brown Swiss Cattle.
+3. All cows are domesticated animals.
+4. Alligators are not domesticated animals.
+5. Ted is an alligator.
+
+**Conclusion:**
+
+**Is the following true, false, or uncertain?**
+
+Ted is a pet.
+
+**Solution:**
+
+**Answer:** False
+
+**Explanation:**
+
+- The statement "All Brown Swiss cattle are cows" is true.
+- The statement "Some pets are Brown Swiss Cattle" is false.
+- The statement "All cows are domesticated animals" is true.
+- The statement "Alligators are not domesticated animals" is true.
+- The statement "Ted is an alligator" is true.
+
+However, the statement "Ted is a pet" is false because Ted is an alligator, and alligators are not domesticated animals.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[44 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All Brown Swiss cattle are cows.
+2. Some pets are Brown Swiss Cattle.
+3. All cows are domesticated animals.
+4. Alligators are not domesticated animals.
+5. Ted is an alligator.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+**Explanation:**
+
+The statement "Ted is a pet and Brown Swiss cattle" is uncertain because the following information is not complete:
+
+* Whether Ted is a pet or not.
+* Whether Ted is a Brown Swiss cattle or not.
+
+Therefore, I cannot determine whether the conclusion is true or false without additional information.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[45 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All Brown Swiss cattle are cows.
+2. Some pets are Brown Swiss Cattle.
+3. All cows are domesticated animals.
+4. Alligators are not domesticated animals.
+5. Ted is an alligator.
+
+**Conclusion:**
+
+If Ted is a Brown Swiss cattle, then Ted is not a pet.
+
+**Solution:**
+
+The statement "If Ted is a Brown Swiss cattle, then Ted is not a pet" is false.
+
+**Answer:**
+
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[46 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The answer is True.
+
+The text states that Yale University is a private Ivy League research university that moved to New Haven in 1716. Therefore, the conclusion is true.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[47 / 183] Evaluting Question
+Response: **Conclusion:**
+The answer is False. The text does not provide information about the size of other university endowments, therefore I cannot determine whether Yale University has the largest university endowment of any educational institution.
+
+**Answer:**
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[48 / 183] Evaluting Question
+Response: **True, False, Uncertain**
+
+**Answer:**
+True
+
+The text states that Pierson College is a residential college at Yale University.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[49 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Badults is a British Sitcom series starring members of Pappy's.
+2. Badults was piloted in July 2013 on BBC Three.
+3. The working title "The Secret Dude Society" was used for Badults.
+4. Andrew Collins was the script editor for Badults.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The text does not provide information about the script editor for the series with the working title "The Secret Dude Society", therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[50 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Badults is a British Sitcom series starring members of Pappy's.
+2. Badults was piloted in July 2013 on BBC Three.
+3. The Working title "The Secret Dude Society" was used for Badults.
+4. Andrew Collins was the script editor for Badults.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The text does not provide information about the members of Pappy's starring in a show piloting on BBC Two or BBC Three. Therefore, I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[51 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All growth stocks are bought to earn profits from rapid price appreciation.
+2. If the stock price is bought to earn profits from rapid price appreciation, then it is not suitable for a retirement fund.
+3. Some stocks are growth stocks.
+4. All mature stocks are suitable for a retirement fund.
+5. KO is a mature stock.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statement "KO is a stock" is uncertain because the information about KO's status as a growth or mature stock is not provided in the text.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[52 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All growth stocks are bought to earn profits from rapid price appreciation.
+2. If the stock price is bought to earn profits from rapid price appreciation, then it is not suitable for a retirement fund.
+3. Some stocks are growth stocks.
+4. All mature stocks are suitable for a retirement fund.
+5. KO is a mature stock.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statement "KO is a stock and a growth stock" is uncertain because the information about KO's status as a growth stock is not provided in the text.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[53 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All growth stocks are bought to earn profits from rapid price appreciation.
+2. If the stock price is bought to earn profits from rapid price appreciation, then it is not suitable for a retirement fund.
+3. Some stocks are growth stocks.
+4. All mature stocks are suitable for a retirement fund.
+5. KO is a mature stock.
+
+**Conclusion:**
+
+The conclusion is false.
+
+**Answer:**
+
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[54 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All vehicle registration plates in Istanbul begin with the number 34.
+2. Plates that do not begin with the number 34 are not from Istanbul.
+3. Joe's vehicle registration plate is from Istanbul.
+4. Tom's license plate begins with the number 35.
+5. If a license plate begins with the number 35, then it does not begin with the number 34.
+
+**Conclusion:**
+
+Joe's license plate begins with the number 34.
+
+**Answer:**
+
+Uncertain
+
+**Explanation:**
+
+The statement "Joe's license plate begins with the number 34" is uncertain because the information about Joe's license plate is not provided in the text. Therefore, I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[55 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All vehicle registration plates in Istanbul begin with the number 34.
+2. Plates that do not begin with the number 34 are not from Istanbul.
+3. Joe's vehicle registration plate is from Istanbul.
+4. Tom's license plate begins with the number 35.
+5. If a license plate begins with the number 35, then it does not begin with the number 34.
+
+**Conclusion:**
+
+Tom's license plate is from Istanbul.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+Tom's license plate is from Istanbul. The information about Tom's license plate is not sufficient to determine its location, therefore the answer is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[56 / 183] Evaluting Question
+Response: **Solution:**
+
+The statements are as follows:
+
+1. If people at Mary's school work in student jobs on campus, then they need to earn money to help pay for their college tuition.
+2. If people at Mary's school order takeout frequently in college, then they work in student jobs on campus.
+3. People at Mary's school order takeout frequently in college or enjoy the dining hall meals and recipes.
+4. If people at Mary's school enjoy the dining hall meals and recipes, then they are not picky eaters.
+5. If people at Mary's school enjoy the dining hall meals and recipes, then they spend a lot of their time eating and catching up with friends in the campus dining halls.
+
+Hannah is at Mary's school and works in student jobs on campus.
+
+**Conclusion:**
+
+The conclusion is false. The statement "If people at Mary's school work in student jobs on campus, then they need to earn money to help pay for their college tuition" is not necessarily true. There is no information about Hannah's pickiness or her fi
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[57 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If people at Mary's school work in student jobs on campus, then they need to earn money to help pay for their college tuition.
+2. If people at Mary's school order takeout frequently in college, then they work in student jobs on campus.
+3. People at Mary's school order takeout frequently in college or enjoy the dining hall meals and recipes.
+4. If people at Mary's school enjoy the dining hall meals and recipes, then they are not picky eaters.
+5. If people at Mary's school enjoy the dining hall meals and recipes, then they spend a lot of their time eating and catching up with friends in the campus dining halls.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statements are not necessarily true or false, as they are not related to each other in a logical sequence. Therefore, I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[58 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is Uncertain.
+
+**Answer:**
+
+The conclusion is uncertain because the statements do not provide enough information to determine whether Hannah is picky or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[59 / 183] Evaluting Question
+Response: **Statements:**
+
+- No baked sweets are spicy.
+- All cupcakes are baked sweets.
+- All mala hotpots are spicy.
+- All products from Baked by Melissa are cupcakes.
+- Dried Thai chilies are spicy or mala hotpots or not baked sweets.
+
+**Conclusion:**
+
+The conclusion is false. The statement "Dried Thai chilies are products of Baked by Melissa" is not necessarily true based on the information available.
+
+**Answer:**
+
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[60 / 183] Evaluting Question
+Response: **Statements:**
+
+1. No baked sweets are spicy.
+2. All cupcakes are baked sweets.
+3. All mala hotpots are spicy.
+4. All products from Baked by Melissa are cupcakes.
+5. Dried Thai chilies are spicy or mala hotpots or not baked sweets.
+
+**Conclusion:**
+
+Dried Thai chilies are not products of Baked by Melissa.
+
+**Answer:**
+
+Uncertain
+
+The statement "Dried Thai chilies are not products of Baked by Melissa" is uncertain because the statement "All products from Baked by Melissa are cupcakes" is not necessarily true.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[61 / 183] Evaluting Question
+Response: **Statements:**
+
+- No baked sweets are spicy.
+- All cupcakes are baked sweets.
+- All mala hotpots are spicy.
+- All products from Baked by Melissa are cupcakes.
+- Dried Thai chilies are spicy or mala hotpots or not baked sweets.
+
+**Conclusion:**
+
+The conclusion is false. Dried Thai chilies are not necessarily mala hotpots.
+
+**Answer:**
+
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[62 / 183] Evaluting Question
+Response: **Statements:**
+
+1. No baked sweets are spicy.
+2. All cupcakes are baked sweets.
+3. All mala hotpots are spicy.
+4. All products from Baked by Melissa are cupcakes.
+5. Dried Thai chilies are spicy or mala hotpots or not baked sweets.
+
+**Conclusion:**
+
+Dried Thai chilies are neither products of Baked by Melissa nor baked sweets.
+
+**Answer:**
+
+Uncertain
+
+The statement "Dried Thai chilies are neither products of Baked by Melissa nor baked sweets" is uncertain because the statement "No baked sweets are spicy" is false. There are baked sweets that are not spicy, such as cupcakes. Therefore, the conclusion is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[63 / 183] Evaluting Question
+Response: **Statements:**
+
+1. No baked sweets are spicy.
+2. All cupcakes are baked sweets.
+3. All mala hotpots are spicy.
+4. All products from Baked by Melissa are cupcakes.
+5. Dried Thai chilies are spicy or mala hotpots or not baked sweets.
+
+**Conclusion:**
+
+Dried Thai chilies are cupcakes and products of Baked by Melissa.
+
+**Answer:**
+
+Uncertain
+
+The statement is uncertain because the relationship between the statements is not clear. The first two statements are true, but the third statement is false. The fourth statement is also true, but it is not clear whether the products of Baked by Melissa are cupcakes or not. The fifth statement is true, but it is not clear whether the dried Thai chilies are also spicy or not. Therefore, the conclusion is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[64 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If a restaurant is listed in Yelp’s recommendations, then the restaurant has not received many negative reviews.
+2. All restaurants with a rating greater than four are listed in Yelp’s recommendations.
+3. Some restaurants that do not provide take-out service receive many negative reviews.
+4. All restaurants that are popular among local residents have ratings greater than four.
+
+**Conclusion:**
+
+The conclusion is false.
+
+**Answer:**
+
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[65 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If a restaurant is listed in Yelp’s recommendations, then the restaurant has not received many negative reviews.
+2. All restaurants with a rating greater than four are listed in Yelp’s recommendations.
+3. Some restaurants that do not provide take-out service receive many negative reviews.
+4. All restaurants that are popular among local residents have ratings greater than four.
+
+**Conclusion:**
+
+The Hamden Plaza Subway store has a rating greater than four, or it is popular among local residents.
+
+**Answer:**
+
+Uncertain
+
+The provided text does not provide information about the Hamden Plaza Subway store's take-out service or its popularity among local residents, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[66 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If a restaurant is listed in Yelp’s recommendations, then the restaurant has not received many negative reviews.
+2. All restaurants with a rating greater than four are listed in Yelp’s recommendations.
+3. Some restaurants that do not provide take-out service receive many negative reviews.
+4. All restaurants that are popular among local residents have ratings greater than four.
+5. The Hamden Plaza Subway store has a rating greater than four, or it is popular among local residents.
+
+**Conclusion:**
+
+The Hamden Plaza store does not provide take-out service.
+
+**Answer:**
+
+Uncertain
+
+The provided text does not contain information about the Hamden Plaza store's take-out service or its popularity among local residents, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[67 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The answer is True.
+
+The movie "The Surprising Adventures of Sir Digby Chicken Caesar" is named after Sir Digby, and in the movie, Sir Digby's nemesis does not win.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[68 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Books contain tons of knowledge.
+2. When a person reads a book, that person gains knowledge.
+3. If a person gains knowledge, they become smarter.
+4. Harry read the book “Walden” by Henry Thoreau.
+
+**Conclusion:**
+
+Walden contains knowledge.
+
+**Answer:**
+
+Uncertain
+
+The statement "Walden contains knowledge" is uncertain because the book "Walden" has not been included in the text, therefore I cannot determine whether the book contains knowledge or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[69 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Books contain tons of knowledge.
+2. When a person reads a book, that person gains knowledge.
+3. If a person gains knowledge, they become smarter.
+
+**Conclusion:**
+
+Harry read the book "Walden" by Henry Thoreau. Is Harry smarter than before?
+
+**Solution:**
+
+The statements are true, but the conclusion is uncertain.
+
+**Answer:**
+
+Uncertain
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[70 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Books contain tons of knowledge.
+2. When a person reads a book, that person gains knowledge.
+3. If a person gains knowledge, they become smarter.
+4. Harry read the book "Walden" by Henry Thoreau.
+
+**Conclusion:**
+
+A smarter person has gained knowledge.
+
+**Answer:**
+
+True
+
+The statement "A smarter person has gained knowledge" is true based on the above statements.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[71 / 183] Evaluting Question
+Response: **Statements:**
+
+1. A natural language processing task can be categorized as either a language generation task or a language understanding task.
+2. If the output of a natural language processing task is a text sequence, then it is a language generation task.
+3. Machine translation is a natural language processing task.
+4. The output of machine translation is a text sequence.
+
+**Conclusion:**
+
+**Answer:** True
+
+**Final Answer:**
+
+Machine translation is a language generation task.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[72 / 183] Evaluting Question
+Response: **Statements:**
+
+1. A natural language processing task can be categorized as either a language generation task or a language understanding task.
+2. If the output of a natural language processing task is a text sequence, then it is a language generation task.
+3. Machine translation is a natural language processing task.
+4. The output of machine translation is a text sequence.
+
+**Conclusion:**
+
+**Answer:** False
+
+**Final Answer:**
+
+Machine translation is a language generation task.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[73 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is False.
+
+**Solution:**
+
+The statement "If a managed building allows pets, then people are allowed to move in with a pet" is false. While pets are allowed in some managed buildings, it does not necessarily mean that people are allowed to move in with a pet.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[74 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The answer is Uncertain.
+
+**Solution:**
+
+The text states that pets are allowed in some managed buildings and the Olive Garden is a managed building. However, it does not state whether Tom is allowed to move into an apartment in the Olive Garden with Fluffy or not. Therefore, the conclusion is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[75 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The security deposit at the Olive Garden is either $2000 or more.
+
+**Answer:** Uncertain
+
+The text does not provide information about the security deposit at the Olive Garden, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[76 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All business organizations are legal entities.
+2. All companies are business organizations.
+3. All private companies are companies.
+4. All legal entities are created under law.
+5. All legal entities have legal obligations.
+
+**Conclusion:**
+
+The Harvard Weekly Book Club is created under law, therefore it is not a private company.
+
+**Answer:**
+
+Uncertain
+
+The statement "The Harvard Weekly Book club has legal obligations" is uncertain because the provided text does not provide enough information to determine whether the club is a private company or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[77 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All business organizations are legal entities.
+2. All companies are business organizations.
+3. All private companies are companies.
+4. All legal entities are created under law.
+5. All legal entities have legal obligations.
+
+**Conclusion:**
+
+The Harvard Weekly Book Club is created under law, therefore it is not a private company.
+
+**Answer:**
+
+False
+
+The statement "The Harvard Weekly Book club has legal obligations and is a private company" is false. The Harvard Weekly Book Club is not a business organization, therefore it does not have legal obligations.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[78 / 183] Evaluting Question
+Response: **Solution:**
+
+The statement "If the Harvard Weekly Book club is a private company, then it either has legal obligations or is created under law" is true.
+
+**Answer:**
+
+True
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[79 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Animals are either invertebrates or vertebrates.
+2. All animals with backbones reproduce by male-and-female mating.
+3. All vertebrate animals have a backbone.
+4. All bees do not reproduce by male-and-female mating.
+5. All queen bees are bees.
+6. Harry is a bee.
+
+**Conclusion:**
+
+The conclusion is false.
+
+**Answer:**
+
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[80 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Animals are either invertebrates or vertebrates.
+2. All animals with backbones reproduce by male-and-female mating.
+3. All vertebrate animals have a backbone.
+4. All bees do not reproduce by male-and-female mating.
+5. All queen bees are bees.
+6. Harry is a bee.
+
+**Conclusion:**
+
+**Answer:** False
+
+**Explanation:**
+
+The statement "Harry is an invertebrate or a queen bee" is false. The information about Harry being a bee is not provided in the text, therefore I cannot determine whether he is an invertebrate or a queen bee.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[81 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Animals are either invertebrates or vertebrates.
+2. All animals with backbones reproduce by male-and-female mating.
+3. All vertebrate animals have a backbone.
+4. All bees do not reproduce by male-and-female mating.
+5. All queen bees are bees.
+6. Harry is a bee.
+
+**Conclusion:**
+
+If Harry is either both a vertebrate and an animal with a backbone, or neither a vertebrate nor an animal with a backbone, then Harry is neither an invertebrate nor a queen bee.
+
+**Answer:**
+
+Uncertain
+
+The statement is uncertain because the information about Harry's status as a vertebrate and animal with a backbone is not provided in the text. Therefore, I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[82 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The provided text does not contain any information about Luke's birth or living arrangements, therefore I cannot determine whether the conclusion is true, false, or uncertain.
+
+**Answer:**
+
+Uncertain
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[83 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is False.
+
+**Answer:**
+
+False
+
+The statement "If people spend a lot of time hanging out with and playing with their siblings, then they often live at home" is not necessarily true. There are many factors that could influence where someone lives, such as their age, financial stability, and personal preferences.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[84 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is Uncertain.
+
+**Solution:**
+
+The statements provided do not provide enough information to determine whether Luke is born in a multiple birth or not. Therefore, the conclusion is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[85 / 183] Evaluting Question
+Response: **Statements:**
+
+* It costs $205 to take the GRE test, which is cheaper than $300.
+* ETS provides financial aid to those GRE applicants who prove economic hardship.
+* Those living in single-parent families or having few resources available to them can prove economic hardship.
+* Tom lives in a single-parent family.
+* Tom's dad has been out of work, and Tom has few resources available to them.
+* Tom is applying to take the GRE test.
+
+**Conclusion:**
+
+**Answer:** True
+
+**Reasoning:**
+
+* The statement "ETS provides financial aid to those GRE applicants who prove economic hardship" is true based on the information provided.
+* Tom lives in a single-parent family and has few resources available to him, so he may be eligible for financial aid.
+* Therefore, the conclusion is true.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[86 / 183] Evaluting Question
+Response: **Statements:**
+
+1. It costs $205 to take the GRE test, which is cheaper than $300.
+2. ETS provides financial aid to those GRE applicants who prove economic hardship.
+3. Those living in single-parent families or having few resources available to them can prove economic hardship.
+4. Tom lives in a single-parent family.
+5. Tom's dad has been out of work, and Tom has few resources available to them.
+6. Tom is applying to take the GRE test.
+
+**Conclusion:**
+
+**Answer:** True
+
+The cost of taking the GRE test is $205, which is cheaper than $300. Therefore, the conclusion is true.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[87 / 183] Evaluting Question
+Response: **Statements:**
+
+1. It costs $205 to take the GRE test, which is cheaper than $300.
+2. ETS provides financial aid to those GRE applicants who prove economic hardship.
+3. Those living in single-parent families or having few resources available to them can prove economic hardship.
+4. Tom lives in a single-parent family.
+5. Tom's dad has been out of work, and Tom has few resources available to them.
+6. Tom is applying to take the GRE test.
+
+**Conclusion:**
+
+No one taking the GRE test has financial aid provided to them by something.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+The conclusion is uncertain because the text does not provide information about the financial aid status of Tom or any other GRE test taker.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[88 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If people spill a lot of food on their clothing, then they are not notably tidy.
+2. All clumsy foodies who go out frequently to find new food restaurants to try are people who spill a lot of food on their clothing.
+3. If people are cleanly, then they are notably tidy.
+4. If people value order and spotlessness, then they are cleanly.
+5. All people whose families prioritize order and spotlessness themselves value order and spotlessness.
+
+**Conclusion:**
+
+Peter is either a person who spills a lot of food on his clothing and is cleanly, or a person who does not spill a lot of food on his clothing and is not cleanly.
+
+**Answer:**
+
+Uncertain
+
+The statement is uncertain because it is not clear whether Peter's tidiness is related to his spilling food or his cleanliness.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[89 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is Uncertain.
+
+**Answer:**
+
+Uncertain
+
+The text does not provide enough information to determine whether Peter is a clumsy foodie or someone whose family prioritizes order and spotlessness.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[90 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is Uncertain.
+
+**Answer:**
+
+Uncertain
+
+The statement is complex and involves multiple assumptions and inferences. While the statements about spilling food on clothing and being cleanly are related to the concept of tidiness, they do not necessarily imply that Peter is both a clumsy foodie and someone whose family prioritizes order and spotlessness. Therefore, the conclusion is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[91 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All fir trees are evergreens.
+2. Some objects of worship are fir trees.
+
+**Conclusion:**
+
+Some evergreens are not objects of worship.
+
+**Answer:**
+
+Uncertain
+
+The statement "All fir trees are evergreens" is true, but the statement "Some objects of worship are fir trees" is not necessarily true. Therefore, the conclusion "Some evergreens are not objects of worship" is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[92 / 183] Evaluting Question
+Response: **Statements:**
+
+1. The Picuris Mountains are a mountain range in New Mexico or Texas.
+2. Juan de Onate visited the Picuris Mountains.
+3. The Harding Pegmatite Mine, located in the Picuris Mountains, was donated.
+
+**Conclusion:**
+
+**Answer:** True
+
+The Picuris Mountains are a mountain range in New Mexico. Therefore, Juan de Onate visited a mountain range in New Mexico.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[93 / 183] Evaluting Question
+Response: **Statements:**
+
+1. The Picuris Mountains are a mountain range in New Mexico or Texas.
+2. Juan de Onate visited the Picuris Mountains.
+3. The Harding Pegmatite Mine, located in the Picuris Mountains, was donated.
+
+**Conclusion:**
+
+**Answer:** False
+
+The Picuris Mountains are in New Mexico, not Texas. Therefore, Juan de Onate did not visit a mountain range in Texas.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[94 / 183] Evaluting Question
+Response: **Statements:**
+
+1. The Picuris Mountains are a mountain range in New Mexico or Texas.
+2. Juan de Onate visited the Picuris Mountains.
+3. The Harding Pegmatite Mine, located in the Picuris Mountains, was donated.
+4. There are no mountain ranges in Texas that have mines that have been donated.
+
+**Conclusion:**
+
+The conclusion is False. The Harding Pegmatite Mine is located in the Picuris Mountains, which are in New Mexico. Therefore, the conclusion is False.
+
+**Answer:**
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[95 / 183] Evaluting Question
+Response: **Statements:**
+
+If a man is taller than another man, the taller one can block the other's shooting.
+Michael is a man who is taller than everyone else in his class.
+If person x is taller than person y, and person y is taller than person z, then x is taller than z.
+Peter is a man who is taller than Michael.
+Michael can block any shooting from a person as long as the person does not jump when shooting.
+Michael cannot block Windy's shooting.
+Every shooter who can jump when shooting is a great shooter.
+
+**Conclusion:**
+
+Peter is shorter than a man in Michael's class.
+
+**Answer:**
+
+Uncertain
+
+The text does not provide information about Peter's height relative to the men in Michael's class, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[96 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If a man is taller than another man, the taller one can block the other's shooting.
+2. Michael is a man who is taller than everyone else in his class.
+3. If person x is taller than person y, and person y is taller than person z, then x is taller than z.
+4. Peter is a man who is taller than Michael.
+5. Michael can block any shooting from a person as long as the person does not jump when shooting.
+6. Michael cannot block Windy's shooting.
+7. Every shooter who can jump when shooting is a great shooter.
+
+**Conclusion:**
+
+Windy is a great shooter.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+The conclusion is uncertain because the information about Windy's shooting ability is not sufficient to determine whether he is a great shooter or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[97 / 183] Evaluting Question
+Response: **Statement:** Peter can block Windy's shooting.
+
+**Conclusion:**
+
+**True, False, Uncertain:**
+
+**Answer:** False
+
+**Explanation:**
+
+The statement "Peter can block Windy's shooting" is false because it does not consider the condition of whether Windy is jumping or not when shooting. The statement "Michael can block any shooting from a person as long as the person does not jump when shooting" states that if a person does not jump when shooting, Michael can block their shooting. However, this statement does not apply to Windy. Therefore, Peter cannot block Windy's shooting.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[98 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Barutin Cove is a cove named after the Bulgarian settlement of Barutin.
+2. Barutin Cove is on the southwest coast of Snow Island.
+3. Snow Island, Greenwich Island, and Deception Island are located in the South Shetland Islands.
+4. Antarctica is located on the South Shetland Islands.
+
+**Conclusion:**
+
+The conclusion is false. Barutin Cove is not named after all islands in Antarctica.
+
+**Answer:**
+
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[99 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Barutin Cove is a cove named after the Bulgarian settlement of Barutin.
+2. Barutin Cove is on the southwest coast of Snow Island.
+3. Snow Island, Greenwich Island, and Deception Island are located in the South Shetland Islands.
+4. Antarctica is located on the South Shetland Islands.
+
+**Conclusion:**
+
+The conclusion is False. The statement "If place A is located in place B and place B is located in place C, then place A is located in place C" is not necessarily true. It is only true if place A is directly connected to place C. In this case, there is no direct connection between Barutin Cove and Antarctica.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[100 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Barutin Cove is a cove named after the Bulgarian settlement of Barutin.
+2. Barutin Cove is on the southwest coast of Snow Island.
+3. Snow Island, Greenwich Island, and Deception Island are located in the South Shetland Islands.
+4. Antarctica is located on the South Shetland Islands.
+
+**Conclusion:**
+
+Barutin Cove is not located in Antarctica.
+
+**Answer:**
+
+Uncertain
+
+The statement "If place A is located in place B and place B is located in place C, then place A is located in place C" is not necessarily true. It is only true if place A is directly connected to place C. In this case, the statement is uncertain because Barutin Cove is not directly connected to Antarctica.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[101 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Some affection is love.
+2. Some love is positive.
+
+**Conclusion:**
+
+Some affection is positive.
+
+**Answer:**
+
+True
+
+The statement "Some affection is positive" is true because some affection is indeed love, and love is positive.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[102 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If something can transport multiple passengers, then they are not one-seaters.
+2. All Tesla Model 3 can transport multiple passengers.
+3. All single-seat electric cars are one-seaters.
+4. All Solo EV cars are single-seat electric cars.
+5. If John's car is not a Tesla Model 3, then John's car is not a Tesla Model 3 or a single-seat electric car.
+
+**Conclusion:**
+
+**Answer:** False
+
+**Explanation:**
+
+The statement "John's car is a Tesla Model 3" is false based on the information provided. The text does not state any information about John's car or its relationship to the Tesla Model 3, therefore I cannot determine whether the statement is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[103 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If something can transport multiple passengers, then they are not one-seaters.
+2. All Tesla Model 3 can transport multiple passengers.
+3. All single-seat electric cars are one-seaters.
+4. All Solo EV cars are single-seat electric cars.
+5. If John's car is not a Tesla Model 3, then John's car is not a Tesla Model 3 or a single-seat electric car.
+
+**Conclusion:**
+
+John's car is a Solo EV.
+
+**Answer:**
+
+Uncertain
+
+**Explanation:**
+
+The statement "John's car is a Solo EV" is uncertain because the information about John's car is not provided in the text. Therefore, I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[104 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If something can transport multiple passengers, then they are not one-seaters.
+2. All Tesla Model 3 can transport multiple passengers.
+3. All single-seat electric cars are one-seaters.
+4. All Solo EV cars are single-seat electric cars.
+5. If John's car is not a Tesla Model 3, then John's car is not a Tesla Model 3 or a single-seat electric car.
+
+**Conclusion:**
+
+John's car is not a Solo EV.
+
+**Answer:**
+
+Uncertain
+
+**Explanation:**
+
+The statement "John's car is not a Solo EV" is uncertain because the information about John's car is not provided in the text. Therefore, I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[105 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All of Peter's pets that are mammals are also animals.
+2. All monkeys are mammals.
+3. Peter's pets are all either monkeys or birds.
+4. Peter's birds can fly.
+5. All animals that are Peter's pets can breathe.
+6. If Peter's pet can fly, then it has wings.
+7. Rock is Peter's pet.
+8. Rock can fly, or Rock is a bird, or Rock cannot breathe.
+
+**Conclusion:**
+
+Rock is a monkey.
+
+**Answer:**
+
+Uncertain
+
+The statement "Rock is a monkey" is uncertain because the information about Rock's species is not enough to determine whether he is a monkey or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[106 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All of Peter's pets that are mammals are also animals.
+2. All monkeys are mammals.
+3. Peter's pets are all either monkeys or birds.
+4. Peter's birds can fly.
+5. All animals that are Peter's pets can breathe.
+6. If Peter's pet can fly, then it has wings.
+7. Rock is Peter's pet.
+8. Rock can fly, or Rock is a bird, or Rock cannot breathe.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statement "Rock has wings" is uncertain because the information about Rock's status as a pet and his ability to fly is not sufficient to determine whether he has wings or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[107 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All of Peter's pets that are mammals are also animals.
+2. All monkeys are mammals.
+3. Peter's pets are all either monkeys or birds.
+4. Peter's birds can fly.
+5. All animals that are Peter's pets can breathe.
+6. If Peter's pet can fly, then it has wings.
+7. Rock is Peter's pet.
+8. Rock can fly, or Rock is a bird, or Rock cannot breathe.
+
+**Conclusion:**
+
+**Answer:** False
+
+**Explanation:**
+
+The conclusion is false because Rock is not necessarily a bird. The statement "If Peter's pet can fly, then it has wings" is not necessarily true. Rock can fly, but it is not clear whether he is a bird or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[108 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All people who make wedding plans are people who are engaged.
+2. All people who invite others to come to their ceremony make wedding plans.
+3. Anyone who has a well-attended wedding invites others to come to their ceremony.
+4. Some people that have well-attended weddings have larger families.
+5. If John is engaged, then John does not invite friends to their ceremony and make wedding plans.
+6. If John has a larger family, then either John has a well-attended wedding or invites friends to their ceremony.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statements are complex and interconnected, and there are some assumptions that are not explicitly stated. Therefore, I cannot determine whether the conclusion is true or false with certainty.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[109 / 183] Evaluting Question
+Response: **Conclusion:**
+
+**True, False, Uncertain**
+
+**Answer:**
+
+The conclusion is true.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[110 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All people who make wedding plans are people who are engaged.
+2. All people who invite others to come to their ceremony make wedding plans.
+3. Anyone who has a well-attended wedding invites others to come to their ceremony.
+4. Some people that have well-attended weddings have larger families.
+5. If John is engaged, then John does not invite friends to their ceremony and make wedding plans.
+6. If John has a larger family, then either John has a well-attended wedding or invites friends to their ceremony.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statements are not necessarily true or false, as they are all related to the same event, but there is not enough information to determine the truth of the statements.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[111 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is False.
+
+**Answer:**
+
+Answer: False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[112 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Some mammals have teeth.
+2. Platypuses have no teeth.
+3. Platypuses are mammals.
+4. Humans have teeth.
+
+**Conclusion:**
+
+Platypuses are mammals with no teeth.
+
+**Answer:**
+
+False
+
+The statement "Platypuses are mammals with no teeth" is false. Platypuses are mammals, but they have no teeth.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[113 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Some mammals have teeth.
+2. Platypuses have no teeth.
+3. Platypuses are mammals.
+4. Humans have teeth.
+
+**Conclusion:**
+
+**Platypuses are reptiles?**
+
+**Solution:**
+
+The answer is False. Platypuses are mammals, not reptiles.
+
+**Answer:**
+
+True, False, Uncertain
+Answer: False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[114 / 183] Evaluting Question
+Response: **Statements:**
+1. Some mammals have teeth.
+2. Platypuses have no teeth.
+3. Platypuses are mammals.
+4. Humans have teeth.
+
+**Conclusion:**
+Humans are mammals.
+
+**Answer:**
+True
+
+The statement "Humans are mammals" is true because humans are mammals.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[115 / 183] Evaluting Question
+Response: **Statements:**
+
+* Plungers suck.
+* Vacuums suck.
+* Vampires suck.
+* Space is a vacuum.
+* A duster is a household appliance that doesn't suck.
+
+**Conclusion:**
+
+**Space sucks.**
+
+**Answer:**
+
+Uncertain
+
+The statement "Space sucks" is uncertain because the statement "Space is a vacuum" is not necessarily true. Space is not a perfect vacuum, and there is evidence to suggest that it is not even close to being a perfect vacuum.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[116 / 183] Evaluting Question
+Response: **Statements:**
+
+* Plungers suck.
+* Vacuums suck.
+* Vampires suck.
+* Space is a vacuum.
+* A duster is a household appliance that doesn't suck.
+
+**Conclusion:**
+
+**Space is a vampire.**
+
+**Answer:**
+
+Uncertain
+
+The statement "Space is a vampire" is uncertain because the statement "Space is a vacuum" is not necessarily true. Space is not a vacuum, it is a vast expanse of empty space. However, the statement "Vampires suck" is not necessarily true either. Vampires are fictional creatures and do not exist in the real world. Therefore, the conclusion is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[117 / 183] Evaluting Question
+Response: **Statements:**
+
+Plungers suck.
+Vacuums suck.
+Vampires suck.
+Space is a vacuum.
+A duster is a household appliance that doesn't suck.
+
+**Conclusion:**
+
+If something is a household appliance, it sucks.
+
+**Answer:**
+
+Uncertain
+
+The statement is not necessarily true. While vacuums and plungers are household appliances, they do suck. However, the statement does not specify whether other household appliances suck or not. Therefore, the conclusion is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[118 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Machine Learning algorithms can be categorized as supervised learning, unsupervised learning, and reinforcement learning.
+2. Unsupervised learning algorithms do not require labeled data.
+3. The state-of-the-art text summarization model is trained with machine learning algorithms.
+4. Reinforcement learning is not used to train the state-of-the-art text summarization model.
+5. The Machine Learning algorithm for training text summarization models requires labeled data.
+
+**Conclusion:**
+
+**Answer:** False
+
+The text summarization model is trained with supervised learning algorithms, not reinforcement learning algorithms.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[119 / 183] Evaluting Question
+Response: **Statement:** Unsupervised learning is used to train the state-of-the-art text summarization model.
+
+**Conclusion:**
+
+**Answer:** False
+
+**Explanation:**
+The text summarization model is trained with supervised learning algorithms, not unsupervised learning algorithms.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[120 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is False. The text does not provide information about the rating of "Hachi: A dog's Tale," therefore I cannot determine whether the conclusion is true or false.
+
+**Answer:**
+
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[121 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is Uncertain.
+
+The text does not provide information about the content of "Hachi: A dog's Tale", therefore I cannot determine whether it contains excessive erotic and violent content or not.
+
+**Answer:**
+
+Uncertain
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[122 / 183] Evaluting Question
+Response: **Answer:** Uncertain
+
+The text does not provide enough information to determine whether "Hachi: A dog's Tale" contains excessive erotic and violent content or whether it is a film in the "Frozen" series. Therefore, the conclusion is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[123 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Breeding back is a form of artificial selection by the deliberate selective breeding of domestic animals.
+2. Heck cattle were bred back in the 1920s to resemble the aurochs.
+3. Heck cattle are animals.
+4. Aurochs are animals.
+5. Some animals to be bred back resemble extinct animals.
+
+**Conclusion:**
+
+**Answer:** True
+
+The statement "Some Heck cattle are artificially selected" is true because breeding back is a form of artificial selection, and Heck cattle are animals that were bred back to resemble the aurochs.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[124 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Breeding back is a form of artificial selection by the deliberate selective breeding of domestic animals.
+2. Heck cattle were bred back in the 1920s to resemble the aurochs.
+3. Heck cattle are animals.
+4. Aurochs are animals.
+5. Some animals to be bred back resemble extinct animals.
+
+**Conclusion:**
+
+Aurochs are extinct.
+
+**Answer:**
+
+Uncertain
+
+The statement "Aurochs are extinct" is uncertain because the text does not provide enough information about the status of the aurochs.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[125 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Everyone who can register to vote in the United States can participate in the 2024 United States presidential election.
+2. If someone has United States citizenship, then they can register to vote in the United States.
+3. A person either has United States citizenship or Taiwanese citizenship.
+4. No Russian Federation officials hold Taiwanese citizenship.
+5. Vladimir neither holds Taiwanese citizenship nor is he a manager at Gazprom.
+6. Ekaterina can register to vote in the United States, or she is a Russian federation official.
+
+**Conclusion:**
+
+**Answer:** False
+
+The statement "Vladimir is a Russian federation official" is false because the text does not provide information about Vladimir's citizenship or his relationship to the Russian Federation.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[126 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Everyone who can register to vote in the United States can participate in the 2024 United States presidential election.
+2. If someone has United States citizenship, then they can register to vote in the United States.
+3. A person either has United States citizenship or Taiwanese citizenship.
+4. No Russian Federation officials hold Taiwanese citizenship.
+5. Vladimir neither holds Taiwanese citizenship nor is he a manager at Gazprom.
+6. Ekaterina can register to vote in the United States, or she is a Russian federation official.
+
+**Conclusion:**
+
+**Answer:** True
+
+The statement "Vladimir is not a Russian federation official" is true based on the information available in the text.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[127 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Everyone who can register to vote in the United States can participate in the 2024 United States presidential election.
+2. If someone has United States citizenship, then they can register to vote in the United States.
+3. A person either has United States citizenship or Taiwanese citizenship.
+4. No Russian Federation officials hold Taiwanese citizenship.
+5. Vladimir neither holds Taiwanese citizenship nor is he a manager at Gazprom.
+6. Ekaterina can register to vote in the United States, or she is a Russian federation official.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The text does not provide information about Ekaterina's eligibility to vote in the 2024 United States presidential election or her relationship with Gazprom, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[128 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Everyone who can register to vote in the United States can participate in the 2024 United States presidential election.
+2. If someone has United States citizenship, then they can register to vote in the United States.
+3. A person either has United States citizenship or Taiwanese citizenship.
+4. No Russian Federation officials hold Taiwanese citizenship.
+5. Vladimir neither holds Taiwanese citizenship nor is he a manager at Gazprom.
+6. Ekaterina can register to vote in the United States, or she is a Russian federation official.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The text does not provide information about Ekaterina's eligibility to vote in the 2024 United States presidential election or Vladimir's position at Gazprom, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[129 / 183] Evaluting Question
+Response: **Answer:** Uncertain
+
+The text does not provide enough information to determine whether Ekaterina can register to vote in the United States or Vladimir can participate in the 2024 United States presidential election. Therefore, the answer is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[130 / 183] Evaluting Question
+Response: **Statements:**
+
+* New Vessel Press is a publishing house specializing in translating foreign literature into English.
+* All of New Vessel Press's published books are in English.
+* Neapolitan Chronicles is a book published by New Vessel Press.
+* Neapolitan Chronicles was translated from Italian.
+* Palace of Flies is a book published by New Vessel Press.
+
+**Conclusion:**
+
+Neapolitan Chronicles is an English book.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+Neapolitan Chronicles is an English book. The text does not provide information about the language of Neapolitan Chronicles, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[131 / 183] Evaluting Question
+Response: **Statements:**
+
+* New Vessel Press is a publishing house specializing in translating foreign literature into English.
+* All of New Vessel Press's published books are in English.
+* Neapolitan Chronicles is a book published by New Vessel Press.
+* Neapolitan Chronicles was translated from Italian.
+* Palace of Flies is a book published by New Vessel Press.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The text does not provide information about Harry Potter or its relationship to New Vessel Press, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[132 / 183] Evaluting Question
+Response: **Statements:**
+
+1. New Vessel Press is a publishing house specializing in translating foreign literature into English.
+2. All of New Vessel Press's published books are in English.
+3. Neapolitan Chronicles is a book published by New Vessel Press.
+4. Neapolitan Chronicles was translated from Italian.
+5. Palace of Flies is a book published by New Vessel Press.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The text does not provide information about the translation of Palace of Flies, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[133 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All hydrocarbons are organic compounds.
+2. All alkanes are hydrocarbons.
+3. All organic compounds are chemical compounds.
+4. All organic compounds contain carbon.
+5. No chemical compound contains only one element.
+
+**Conclusion:**
+
+The mixture contains carbon.
+
+**Answer:**
+
+Uncertain
+
+The statement "The mixture contains carbon" is uncertain because the mixture could contain carbon or not, depending on the composition of the mixture.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[134 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All hydrocarbons are organic compounds.
+2. All alkanes are hydrocarbons.
+3. All organic compounds are chemical compounds.
+4. All organic compounds contain carbon.
+5. No chemical compound contains only one element.
+
+**Conclusion:**
+
+The mixture is an alkane and contains carbon.
+
+**Answer:**
+
+False
+
+The mixture is an alkane, which is a type of hydrocarbon. However, the mixture does not necessarily contain carbon.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[135 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All hydrocarbons are organic compounds.
+2. All alkanes are hydrocarbons.
+3. All organic compounds are chemical compounds.
+4. All organic compounds contain carbon.
+5. No chemical compound contains only one element.
+
+**Conclusion:**
+
+The conclusion is false.
+
+**Answer:**
+
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[136 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All humans are mortal.
+2. All Greeks are humans.
+
+**Conclusion:**
+
+Some Greeks are mortal.
+
+**Solution:**
+
+The statement "Some Greeks are mortal" is true.
+
+**Answer:**
+
+True
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[137 / 183] Evaluting Question
+Response: **Statements:**
+
+* None of the students who currently work in the library are from the computer science department.
+* All of the students with part-time jobs offered by the university currently work in the library.
+* All of the students who are taking the database course are from the computer science department.
+* All of the students taking a class with Professor David are taking the database course.
+* All students working in the lab are taking a class with Professor David.
+* James is a student working in the lab.
+* James doesn't work in the lab or have a part-time job offered by the university.
+
+**Conclusion:**
+
+**Answer:** False
+
+**Explanation:**
+
+The statement "James has a part-time job offered by the university" is false because James doesn't work in the lab or have a part-time job offered by the university.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[138 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is True.
+
+**Solution:**
+
+- The statement "None of the students who currently work in the library are from the computer science department" is true.
+- The statement "All of the students with part-time jobs offered by the university currently work in the library" is false.
+- The statement "All of the students who are taking the database course are from the computer science department" is false.
+- The statement "All of the students taking a class with Professor David are taking the database course" is true.
+- The statement "All students working in the lab are taking a class with Professor David" is false.
+- The statement "James is a student working in the lab" is true.
+- The statement "James doesn't work in the lab or have a part-time job offered by the university" is true.
+
+Therefore, the conclusion is true.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[139 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is Uncertain.
+
+**Solution:**
+
+The information provided does not have enough information to determine whether James takes the database course or has a part-time job offered by the university. Therefore, the conclusion is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[140 / 183] Evaluting Question
+Response: **Statements:**
+
+* None of the students who currently work in the library are from the computer science department.
+* All of the students with part-time jobs offered by the university currently work in the library.
+* All of the students who are taking the database course are from the computer science department.
+* All of the students taking a class with Professor David are taking the database course.
+* All students working in the lab are taking a class with Professor David.
+* James is a student working in the lab.
+* James doesn't work in the lab or have a part-time job offered by the university.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The information about James's class enrollment and the relationship between his work and the database course is not sufficient to determine whether he is taking the database course or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[141 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If George likes music, he wants to compose.
+2. If George has access to a program, he can compose.
+3. If George can compose and wants to compose, he will compose.
+
+**Conclusion:**
+
+If George likes music and has access to a program, he will compose.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+If George likes music and has access to a program, he will compose. The answer is Uncertain because the statement "If George can compose and wants to compose, he will compose" is not necessarily true.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[142 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If George likes music, he wants to compose.
+2. If George has access to a program, he can compose.
+3. If George can compose and wants to compose, he will compose.
+
+**Conclusion:**
+
+If George will not compose, George can not compose.
+
+**Answer:**
+
+Uncertain
+
+The conclusion is uncertain because it is not clear whether George will actually compose or not, even if he has access to a program and wants to compose.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[143 / 183] Evaluting Question
+Response: **Statements:**
+
+* A hawk never swims.
+* Some birds are hawks.
+
+**Conclusion:**
+
+All birds swim.
+
+**Answer:**
+
+False
+
+The statement "all birds swim" is false because there are some birds that do not swim, such as the hawk.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[144 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Some show airing at 8 pm on Monday gives out roses on TV.
+2. If a show gives out roses on TV, then the show is an episode of The Bachelor.
+3. The Bachelor portrays the lives of real people.
+4. All shows portraying the lives of real people are reality TV shows.
+5. Breaking Bad is a show.
+6. Breaking Bad is not a reality TV show.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statement "Breaking Bad is on Monday at 8 pm" is uncertain because the information about the time and date of the show's airing is not provided in the text, therefore I cannot determine whether the statement is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[145 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Some show airing at 8 pm on Monday gives out roses on TV.
+2. If a show gives out roses on TV, then the show is an episode of The Bachelor.
+3. The Bachelor portrays the lives of real people.
+4. All shows portraying the lives of real people are reality TV shows.
+5. Breaking Bad is a show.
+6. Breaking Bad is not a reality TV show.
+
+**Conclusion:**
+
+The conclusion is false. Breaking Bad is not a show in which roses are given out on Monday at 8 pm.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[146 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Some show airing at 8 pm on Monday gives out roses on TV.
+2. If a show gives out roses on TV, then the show is an episode of The Bachelor.
+3. The Bachelor portrays the lives of real people.
+4. All shows portraying the lives of real people are reality TV shows.
+5. Breaking Bad is a show.
+6. Breaking Bad is not a reality TV show.
+
+**Conclusion:**
+
+The conclusion is false. The statement "If roses are given out during Breaking Bad, then it is on Monday at 8 pm" is not necessarily true.
+
+**Answer:**
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[147 / 183] Evaluting Question
+Response: **Statements:**
+
+* Heinrich Schmidt was a German politician.
+* Heinrich Schmidt was also a member of the Prussian State Parliament and the Nazi Reichstag.
+
+**Conclusion:**
+
+**Answer:** True
+
+The text states that Heinrich Schmidt was German and a member of the Prussian State Parliament and the Nazi Reichstag. Therefore, the conclusion is true.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[148 / 183] Evaluting Question
+Response: **Statements:**
+1. Heinrich Schmidt was a German politician.
+2. Heinrich Schmidt was also a member of the Prussian State Parliament and the Nazi Reichstag.
+
+**Conclusion:**
+Some German politician was part of both the Prussian State Parliament and the Nazi Reichstag.
+
+**Answer:**
+True
+
+The statement "Some German politician was part of both the Prussian State Parliament and the Nazi Reichstag" is true because Heinrich Schmidt was a German politician who was also a member of the Prussian State Parliament and the Nazi Reichstag.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[149 / 183] Evaluting Question
+Response: **Statements:**
+- Heinrich Schmidt was a German politician.
+- Heinrich Schmidt was also a member of the Prussian State Parliament and the Nazi Reichstag.
+
+**Conclusion:**
+No politicians are part of the Nazi Reichstag.
+
+**Answer:**
+False
+
+The statement "No politicians are part of the Nazi Reichstag" is false. There are many examples of politicians who have been members of the Nazi party.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[150 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If something is a deadly disease, then it comes with a low survival rate.
+2. Severe cancers are deadly diseases.
+3. Bile duct cancer is a severe form of cancer.
+4. All Cholangiocarcinoma is bile duct cancer.
+5. Mild flu comes with a low survival rate.
+6. Colorectal cancer is not both a bile duct cancer and with a low survival rate.
+
+**Conclusion:**
+
+**Answer:** True
+
+The statement "Colorectal cancer is a kind of severe cancer" is true based on the information provided in the text.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[151 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If something is a deadly disease, then it comes with a low survival rate.
+2. Severe cancers are deadly diseases.
+3. Bile duct cancer is a severe form of cancer.
+4. All Cholangiocarcinoma is bile duct cancer.
+5. Mild flu comes with a low survival rate.
+6. Colorectal cancer is not both a bile duct cancer and with a low survival rate.
+
+**Conclusion:**
+
+**Answer:** False
+
+Colorectal cancer is not a bile duct cancer and does not necessarily come with a low survival rate.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[152 / 183] Evaluting Question
+Response: **Statements:**
+
+1. If something is a deadly disease, then it comes with a low survival rate.
+2. Severe cancers are deadly diseases.
+3. Bile duct cancer is a severe form of cancer.
+4. All Cholangiocarcinoma is bile duct cancer.
+5. Mild flu comes with a low survival rate.
+6. Colorectal cancer is not both a bile duct cancer and with a low survival rate.
+
+**Conclusion:**
+
+**Answer:** False
+
+Colorectal cancer is not a bile duct cancer and does not necessarily come with a low survival rate.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[153 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All people who eat salads regularly are very conscious about their health and eating habits.
+2. All people who grew up in health-conscious childhood homes eat salads regularly.
+3. All people who fulfill their daily nutritional intakes grew up in health-conscious childhood homes.
+4. All people who disregard their physical well-being are not very conscious about their health and eating habits.
+5. If people visit the gym at least once a day, then they always fulfill their daily nutritional intakes.
+
+**Conclusion:**
+
+Taylor either grew up in a health-conscious childhood home and disregard her physical well-being, or she did neither. Is Taylor eating salads regularly?
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+Taylor either grew up in a health-conscious childhood home and disregarded her physical well-being, or she did neither. Therefore, whether Taylor eats salads regularly is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[154 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All people who eat salads regularly are very conscious about their health and eating habits.
+2. All people who grew up in health-conscious childhood homes eat salads regularly.
+3. All people who fulfill their daily nutritional intakes grew up in health-conscious childhood homes.
+4. All people who disregard their physical well-being are not very conscious about their health and eating habits.
+5. If people visit the gym at least once a day, then they always fulfill their daily nutritional intakes.
+
+**Conclusion:**
+
+Taylor either grew up in a health-conscious childhood home and disregard her physical well-being, or she did neither.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+The information about Taylor's gym visits and her health consciousness is not sufficient to determine whether she fulfills her daily nutritional intakes or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[155 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The conclusion is Uncertain.
+
+**Solution:**
+
+The statements provided are not necessarily true or false. The first two statements are related to the concept of health consciousness and eating habits. They may be true in some cases, but not in all. The third statement is also related to health consciousness and nutritional intakes. It may be true in some cases, but not in all. The fourth statement is about physical well-being and health consciousness. It may be true in some cases, but not in all. The fifth statement is about the relationship between gym visits and nutritional intakes. It is not necessarily true or false.
+
+Therefore, the conclusion is uncertain. We do not have enough information to determine whether Taylor has grown up in a health-conscious childhood home or whether she visits the gym at least once a day.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[156 / 183] Evaluting Question
+Response: **Statements:**
+
+1. The summer Olympic games is a sporting event.
+2. The last summer Olympic games was in Tokyo.
+3. The United States won the most medals in Tokyo.
+
+**Conclusion:**
+
+The world championships is a sporting event.
+
+**Answer:**
+
+Uncertain
+
+The text does not provide information about the world championships, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[157 / 183] Evaluting Question
+Response: **Statements:**
+
+1. The summer Olympic games is a sporting event.
+2. The last summer Olympic games was in Tokyo.
+3. The United States won the most medals in Tokyo.
+
+**Conclusion:**
+
+The last summer Olympic games were not in Tokyo.
+
+**Answer:**
+
+Uncertain
+
+The first two statements are true, but the third statement is not necessarily true. Therefore, the conclusion is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[158 / 183] Evaluting Question
+Response: **Statements:**
+1. The summer Olympic games is a sporting event.
+2. The last summer Olympic games was in Tokyo.
+3. The United States won the most medals in Tokyo.
+
+**Conclusion:**
+The United States won the most medals in the last summer Olympic games.
+
+**Answer:**
+True
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[159 / 183] Evaluting Question
+Response: **Statements:**
+
+1. All horses have hooves.
+2. No humans have hooves.
+
+**Conclusion:**
+
+Is the following true, false, or uncertain?
+Some humans are horses.
+
+**Solution:**
+
+The answer is false. The first statement states that all horses have hooves, while the second statement states that no humans have hooves. Therefore, the conclusion is false.
+
+**Answer:**
+
+False
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[160 / 183] Evaluting Question
+Response: **Statements:**
+1. Susan flies to LGA airport.
+2. The departure and arrival can not be at the same airport.
+3. John flies from LGA airport.
+
+**Conclusion:**
+Is Susan flies from LGA airport true, false, or uncertain?
+
+**Answer:**
+False
+
+The statement "Susan flies from LGA airport" is false because the departure and arrival airports are not necessarily the same.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[161 / 183] Evaluting Question
+Response: **Statements:**
+1. Susan flies to LGA airport.
+2. The departure and arrival cannot be at the same airport.
+3. John flies from LGA airport.
+
+**Conclusion:**
+John flies to LGA airport.
+
+**Answer:**
+True
+
+The first statement is about Susan's flight, and the second statement is a general rule about departures and arrivals. The third statement is about John's flight. Since Susan's flight is to LGA airport, and the departure and arrival cannot be at the same airport, it is true that John will fly to LGA airport.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[162 / 183] Evaluting Question
+Response: **Statements:**
+
+No one nice to animals is also mean to animals.
+Some grumpy people are mean to animals.
+All animal lovers are nice to animals.
+All pet owners love animals.
+Tom is a pet owner.
+
+**Conclusion:**
+
+Tom is a grumpy person.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+Tom is a grumpy person. Uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[163 / 183] Evaluting Question
+Response: **Statements:**
+
+1. No one who is nice to animals is also mean to animals.
+2. Some grumpy people are mean to animals.
+3. All animal lovers are nice to animals.
+4. All pet owners love animals.
+5. Tom is a pet owner.
+
+**Conclusion:**
+
+Tom is not both a grumpy person and mean to animals.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+Tom is not both a grumpy person and mean to animals. The statement is uncertain because it is not clear whether Tom is an animal lover or not.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[164 / 183] Evaluting Question
+Response: **Statements:**
+
+1. No one who is nice to animals is also mean to animals.
+2. Some grumpy people are mean to animals.
+3. All animal lovers are nice to animals.
+4. All pet owners love animals.
+5. Tom is a pet owner.
+
+**Conclusion:**
+
+If Tom is not both a grumpy person and mean to animals, then Tom is neither a grumpy person nor an animal lover.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+If Tom is not both a grumpy person and mean to animals, then Tom is neither a grumpy person nor an animal lover. The answer is Uncertain because the statement "No one nice to animals is also mean to animals" is not necessarily true. There could be exceptions to this rule.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[165 / 183] Evaluting Question
+Response: **Statements:**
+
+* A podcast is not a novel.
+* If a person is born in American City, the person is American.
+* If a book is a novel and it is written by a person, then the person is a novel writer.
+* Dani Shapiro is an American writer.
+* Family History is written by Dani Shapiro.
+* Family History is a novel written in 2003.
+* Dani Shapiro created a podcast called Family Secrets.
+* Boston is an American city.
+
+**Conclusion:**
+
+**Answer:** True
+
+**Final Answer:**
+
+The conclusion is true based on the information provided in the statements. Dani Shapiro is an American writer and Family History is a novel written by her.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[166 / 183] Evaluting Question
+Response: **Statements:**
+
+* A podcast is not a novel.
+* If a person is born in American City, the person is American.
+* If a book is a novel and it is written by a person, then the person is a novel writer.
+* Dani Shapiro is an American writer.
+* Family History is written by Dani Shapiro.
+* Family History is a novel written in 2003.
+* Dani Shapiro created a podcast called Family Secrets.
+* Boston is an American city.
+
+**Conclusion:**
+
+Family Secrets is a novel.
+
+**Answer:**
+
+Uncertain
+
+The statement "Family Secrets is a novel" is uncertain because the information about the novel Family History is not complete. We do not know whether Family History is a novel or not, therefore the answer is uncertain.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[167 / 183] Evaluting Question
+Response: **Statements:**
+
+* A podcast is not a novel.
+* If a person is born in American City, the person is American.
+* If a book is a novel and it is written by a person, then the person is a novel writer.
+* Dani Shapiro is an American writer.
+* Family History is written by Dani Shapiro.
+* Family History is a novel written in 2003.
+* Dani Shapiro created a podcast called Family Secrets.
+* Boston is an American city.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The conclusion is uncertain because the information about Dani Shapiro's birthplace is not included in the text, therefore I cannot determine whether the statement "Dani Shapiro was born in Boston" is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[168 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Some professional basketball players are not American nationals.
+2. All professional basketball players can do jump shots.
+3. If someone can jump shots, they leap straight into the air.
+4. If someone leaps straight into the air, they activate their leg muscles.
+5. Yuri does not activate his leg muscles.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The statement "Yuri is an American national" is uncertain based on the provided information. The text does not provide any information about Yuri's nationality, therefore I cannot determine whether the statement is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[169 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Some professional basketball players are not American nationals.
+2. All professional basketball players can do jump shots.
+3. If someone can jump shots, they leap straight into the air.
+4. If someone leaps straight into the air, they activate their leg muscles.
+5. Yuri does not activate his leg muscles.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+**Explanation:**
+
+The statement "Yuri is not an American professional basketball player" is uncertain because the information about Yuri's nationality and his relationship to professional basketball is not provided in the text. Therefore, I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[170 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Some professional basketball players are not American nationals.
+2. All professional basketball players can do jump shots.
+3. If someone can jump shots, they leap straight into the air.
+4. If someone leaps straight into the air, they activate their leg muscles.
+5. Yuri does not activate his leg muscles.
+
+**Conclusion:**
+
+**Answer:** Uncertain
+
+The text does not provide information about Yuri's nationality or his ability to play basketball, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[171 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Some professional basketball players are not American nationals.
+2. All professional basketball players can do jump shots.
+3. If someone can jump shots, they leap straight into the air.
+4. If someone leaps straight into the air, they activate their leg muscles.
+5. Yuri does not activate his leg muscles.
+
+**Conclusion:**
+
+**Answer:** False
+
+**Explanation:**
+
+The conclusion is false because the statement "If Yuri does not leap straight into the air, then Yuri is an American professional basketball player" is not necessarily true. The statement "If someone leaps straight into the air, they activate their leg muscles" is also not necessarily true. Therefore, the conclusion is false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[172 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Some professional basketball players are not American nationals.
+2. All professional basketball players can do jump shots.
+3. If someone can jump shots, they leap straight into the air.
+4. If someone leaps straight into the air, they activate their leg muscles.
+5. Yuri does not activate his leg muscles.
+
+**Conclusion:**
+
+**Answer:** False
+
+**Explanation:**
+
+The conclusion is false because the statement "If Yuri is not an American professional basketball player, then Yuri is a professional basketball player" is not necessarily true. The statement "If Yuri is not an American professional basketball player, then Yuri is a professional basketball player" is false because there is no relationship between being an American national and being a professional basketball player.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[173 / 183] Evaluting Question
+Response: **Statements:**
+1. Events are either happy or sad.
+2. At least one event is happy.
+
+**Conclusion:**
+All events are sad.
+
+**Answer:**
+False
+
+The first statement states that events are either happy or sad. The second statement states that at least one event is happy. Therefore, it is false to conclude that all events are sad.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[174 / 183] Evaluting Question
+Response: **Statements:**
+
+1. The winner of the 1992 du Maurier Classic was Steinhauer.
+2. Steinhauer participated in the 1992 du Maurier Classic.
+3. One six-way tie was on the leaderboard, and one person in the six-way tie was from Belgium.
+4. Descampe is from Belgium and is on the leaderboard of the 1992 du Maurier Classic.
+5. All people on the leaderboard of the 1992 du Maurier Classic participated in the 1992 du Maurier Classic.
+
+**Conclusion:**
+
+**Answer:** False
+
+**Explanation:**
+
+The text does not state whether Steinhauer won the 1992 du Maurier Classic, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[175 / 183] Evaluting Question
+Response: **Conclusion:**
+
+The answer is Uncertain.
+
+**Solution:**
+
+The text does not provide information about Descampe's participation in the 1992 du Maurier Classic, therefore I cannot determine whether Descampe is in the six-way tie in the leaderboard of the 1992 du Maurier Classic.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[176 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Jane does not like any animals that bark.
+2. All dogs are animals that bark.
+3. Jane likes all animals that jump.
+4. If an animal has legs, then it jumps.
+5. If an animal is terricolous, then it has legs.
+6. KiKi is an animal.
+7. If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.
+
+**Conclusion:**
+
+KiKi is terricolous.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+KiKi is terricolous. The statement is uncertain because the information about KiKi's characteristics is incomplete and there is a lack of information about the relationship between terriculosity and legs.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[177 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Jane does not like any animals that bark.
+2. All dogs are animals that bark.
+3. Jane likes all animals that jump.
+4. If an animal has legs, then it jumps.
+5. If an animal is terricolous, then it has legs.
+6. KiKi is an animal.
+7. If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.
+
+**Conclusion:**
+
+KiKi is a barking dog.
+
+**Solution:**
+
+The statement "KiKi is a barking dog" is false. The information about KiKi not jumping or having legs is not sufficient to determine whether he is a barking dog or not. Therefore, the conclusion is uncertain.
+
+**Answer:**
+
+Uncertain
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[178 / 183] Evaluting Question
+Response: **Statements:**
+
+1. Jane does not like any animals that bark.
+2. All dogs are animals that bark.
+3. Jane likes all animals that jump.
+4. If an animal has legs, then it jumps.
+5. If an animal is terricolous, then it has legs.
+6. KiKi is an animal.
+7. If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.
+
+**Conclusion:**
+
+KiKi does not bark and he is not a dog.
+
+**Answer:**
+
+Uncertain
+
+**Final Answer:**
+
+KiKi does not bark and he is not a dog. The statement is uncertain because the information about KiKi's characteristics is incomplete and there are dependencies between the statements.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[179 / 183] Evaluting Question
+Response: **Statements:**
+
+Ailton Silva, born in 1995, is commonly known as Ailton.
+Ailton is a football player who was loaned out to Braga.
+Ailton Silva is a Brazilian footballer who plays for Náutico.
+Náutico is a football club along with Braga.
+Fluminense is a football club.
+
+**Conclusion:**
+
+No one playing for Nautico is Brazilian.
+
+**Answer:**
+
+Uncertain
+
+The text does not provide information about the nationality of the players who are playing for Náutico, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[180 / 183] Evaluting Question
+Response: **Statements:**
+
+Ailton Silva, born in 1995, is commonly known as Ailton.
+Ailton is a football player who was loaned out to Braga.
+Ailton Silva is a Brazilian footballer who plays for Náutico.
+Náutico is a football club along with Braga.
+Fluminense is a football club.
+
+**Conclusion:**
+
+Ailton Silva does not play for a football club.
+
+**Answer:**
+
+Uncertain
+
+The text does not provide information about Ailton Silva's current status or his club affiliation, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[181 / 183] Evaluting Question
+Response: **Statements:**
+
+Ailton Silva, born in 1995, is commonly known as Ailton.
+Ailton is a football player who was loaned out to Braga.
+Ailton Silva is a Brazilian footballer who plays for Náutico.
+Náutico is a football club along with Braga.
+Fluminense is a football club.
+
+**Conclusion:**
+
+Ailton was not loaned out to a football club.
+
+**Answer:**
+
+False
+
+The statement "Ailton was not loaned out to a football club" is false based on the information provided in the text.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[182 / 183] Evaluting Question
+Response: **Statements:**
+
+Ailton Silva, born in 1995, is commonly known as Ailton.
+Ailton is a football player who was loaned out to Braga.
+Ailton Silva is a Brazilian footballer who plays for Náutico.
+Náutico is a football club along with Braga.
+Fluminense is a football club.
+
+**Conclusion:**
+
+Ailton Silva played for Fluminense.
+
+**Answer:**
+
+Uncertain
+
+The text does not provide information about Ailton Silva's relationship with Fluminense, therefore I cannot determine whether the conclusion is true or false.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+[183 / 183] Evaluting Question
+Response: **Statements:**
+
+Ailton Silva, born in 1995, is commonly known as Ailton.
+Ailton is a football player who was loaned out to Braga.
+Ailton Silva is a Brazilian footballer who plays for Náutico.
+Náutico is a football club along with Braga.
+Fluminense is a football club.
+
+**Conclusion:**
+
+Ailton Silva was loaned out to a football club.
+
+**Answer:**
+
+True
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/folio/google_gemma-7b-it__folio__20260527_1703.json
+ Completed 183 questions for folio
+Model 'google/gemma-7b-it' released from the notebook process.
+=============
+All experiments are completed. Total time taken: 22.6 minutes
+Results are saved to: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/

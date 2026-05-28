@@ -5,10 +5,12 @@
   "hf_model_id": "google/gemma-7b-it",
   "benchmark": "bigbench_hard",
   "condition": "random_few_shot",
-  "status": "running",
+  "status": "success",
   "started_at": "2026-05-26T17:03:06",
-  "finished_at": "",
-  "returncode": null,
+  "finished_at": "2026-05-26T17:36:51",
+  "returncode": 0,
   "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard__random_few_shot__20260526_170306.log",
-  "output_files": []
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard__random_few_shot__20260526_170306__bigbench_hard__google_gemma-7b-it__bigbench_hard__20260526_1703.json"
+  ]
 }

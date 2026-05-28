@@ -1668,11 +1668,589 @@
     "hf_model_id": "google/gemma-7b-it",
     "benchmark": "bigbench_hard",
     "condition": "random_few_shot",
-    "status": "running",
+    "status": "success",
     "started_at": "2026-05-26T17:03:06",
-    "finished_at": "",
-    "returncode": null,
+    "finished_at": "2026-05-26T17:36:51",
+    "returncode": 0,
     "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard__random_few_shot__20260526_170306.log",
-    "output_files": []
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard__random_few_shot__20260526_170306__bigbench_hard__google_gemma-7b-it__bigbench_hard__20260526_1703.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard__targeted_few_shot__20260526_173651",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard",
+    "condition": "targeted_few_shot",
+    "status": "success",
+    "started_at": "2026-05-26T17:36:51",
+    "finished_at": "2026-05-26T18:05:46",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard__targeted_few_shot__20260526_173651.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard__targeted_few_shot__20260526_173651__bigbench_hard__google_gemma-7b-it__bigbench_hard__20260526_1737.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard__targeted_few_shot_k5__20260526_180547",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard",
+    "condition": "targeted_few_shot_k5",
+    "status": "success",
+    "started_at": "2026-05-26T18:05:47",
+    "finished_at": "2026-05-26T18:34:58",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard__targeted_few_shot_k5__20260526_180547.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard__targeted_few_shot_k5__20260526_180547__bigbench_hard__google_gemma-7b-it__bigbench_hard__20260526_1806.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard__error_targeted_icl__20260526_183458",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard",
+    "condition": "error_targeted_icl",
+    "status": "success",
+    "started_at": "2026-05-26T18:34:58",
+    "finished_at": "2026-05-26T19:07:43",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard__error_targeted_icl__20260526_183458.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard__error_targeted_icl__20260526_183458__bigbench_hard__google_gemma-7b-it__bigbench_hard__20260526_1835.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard__error_targeted_icl_random__20260526_190743",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard",
+    "condition": "error_targeted_icl_random",
+    "status": "success",
+    "started_at": "2026-05-26T19:07:43",
+    "finished_at": "2026-05-26T19:46:16",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard__error_targeted_icl_random__20260526_190743.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard__error_targeted_icl_random__20260526_190743__bigbench_hard__google_gemma-7b-it__bigbench_hard__20260526_1908.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard__error_targeted_icl_correct_only__20260526_194616",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard",
+    "condition": "error_targeted_icl_correct_only",
+    "status": "success",
+    "started_at": "2026-05-26T19:46:16",
+    "finished_at": "2026-05-26T20:15:32",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard__error_targeted_icl_correct_only__20260526_194616.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard__error_targeted_icl_correct_only__20260526_194616__bigbench_hard__google_gemma-7b-it__bigbench_hard__20260526_1946.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard__self_consistency__20260526_201532",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard",
+    "condition": "self_consistency",
+    "status": "success",
+    "started_at": "2026-05-26T20:15:32",
+    "finished_at": "2026-05-26T22:43:41",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard__self_consistency__20260526_201532.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard__self_consistency__20260526_201532__bigbench_hard__google_gemma-7b-it__bigbench_hard__20260526_2016.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard_tracking__zero_shot_baseline__20260526_224341",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard_tracking",
+    "condition": "zero_shot_baseline",
+    "status": "success",
+    "started_at": "2026-05-26T22:43:41",
+    "finished_at": "2026-05-26T23:23:11",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard_tracking__zero_shot_baseline__20260526_224341.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard_tracking__zero_shot_baseline__20260526_224341__bigbench_hard_tracking__google_gemma-7b-it__bigbench_hard_tracking__20260526_2244.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard_tracking__zero_shot__20260526_232312",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard_tracking",
+    "condition": "zero_shot",
+    "status": "success",
+    "started_at": "2026-05-26T23:23:12",
+    "finished_at": "2026-05-26T23:59:33",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard_tracking__zero_shot__20260526_232312.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard_tracking__zero_shot__20260526_232312__bigbench_hard_tracking__google_gemma-7b-it__bigbench_hard_tracking__20260526_2323.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard_tracking__targeted_few_shot_answer_only__20260526_235933",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard_tracking",
+    "condition": "targeted_few_shot_answer_only",
+    "status": "success",
+    "started_at": "2026-05-26T23:59:33",
+    "finished_at": "2026-05-27T00:29:55",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard_tracking__targeted_few_shot_answer_only__20260526_235933.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard_tracking__targeted_few_shot_answer_only__20260526_235933__bigbench_hard_tracking__google_gemma-7b-it__bigbench_hard_tracking__20260527_0000.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard_tracking__random_few_shot__20260527_002955",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard_tracking",
+    "condition": "random_few_shot",
+    "status": "success",
+    "started_at": "2026-05-27T00:29:55",
+    "finished_at": "2026-05-27T01:05:41",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard_tracking__random_few_shot__20260527_002955.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard_tracking__random_few_shot__20260527_002955__bigbench_hard_tracking__google_gemma-7b-it__bigbench_hard_tracking__20260527_0030.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard_tracking__targeted_few_shot__20260527_010541",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard_tracking",
+    "condition": "targeted_few_shot",
+    "status": "success",
+    "started_at": "2026-05-27T01:05:41",
+    "finished_at": "2026-05-27T02:39:55",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard_tracking__targeted_few_shot__20260527_010541.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard_tracking__targeted_few_shot__20260527_010541__bigbench_hard_tracking__google_gemma-7b-it__bigbench_hard_tracking__20260527_0106.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard_tracking__targeted_few_shot_k5__20260527_023955",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard_tracking",
+    "condition": "targeted_few_shot_k5",
+    "status": "success",
+    "started_at": "2026-05-27T02:39:55",
+    "finished_at": "2026-05-27T04:27:59",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard_tracking__targeted_few_shot_k5__20260527_023955.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard_tracking__targeted_few_shot_k5__20260527_023955__bigbench_hard_tracking__google_gemma-7b-it__bigbench_hard_tracking__20260527_0240.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard_tracking__error_targeted_icl__20260527_042759",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard_tracking",
+    "condition": "error_targeted_icl",
+    "status": "success",
+    "started_at": "2026-05-27T04:27:59",
+    "finished_at": "2026-05-27T05:16:57",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard_tracking__error_targeted_icl__20260527_042759.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard_tracking__error_targeted_icl__20260527_042759__bigbench_hard_tracking__google_gemma-7b-it__bigbench_hard_tracking__20260527_0428.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard_tracking__error_targeted_icl_random__20260527_051657",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard_tracking",
+    "condition": "error_targeted_icl_random",
+    "status": "success",
+    "started_at": "2026-05-27T05:16:57",
+    "finished_at": "2026-05-27T06:11:58",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard_tracking__error_targeted_icl_random__20260527_051657.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard_tracking__error_targeted_icl_random__20260527_051657__bigbench_hard_tracking__google_gemma-7b-it__bigbench_hard_tracking__20260527_0517.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard_tracking__error_targeted_icl_correct_only__20260527_061158",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard_tracking",
+    "condition": "error_targeted_icl_correct_only",
+    "status": "success",
+    "started_at": "2026-05-27T06:11:58",
+    "finished_at": "2026-05-27T06:47:44",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard_tracking__error_targeted_icl_correct_only__20260527_061158.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard_tracking__error_targeted_icl_correct_only__20260527_061158__bigbench_hard_tracking__google_gemma-7b-it__bigbench_hard_tracking__20260527_0612.json"
+    ]
+  },
+  {
+    "run_id": "gemma__bigbench_hard_tracking__self_consistency__20260527_064744",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "bigbench_hard_tracking",
+    "condition": "self_consistency",
+    "status": "success",
+    "started_at": "2026-05-27T06:47:44",
+    "finished_at": "2026-05-27T09:56:44",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard_tracking__self_consistency__20260527_064744.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard_tracking__self_consistency__20260527_064744__bigbench_hard_tracking__google_gemma-7b-it__bigbench_hard_tracking__20260527_0648.json"
+    ]
+  },
+  {
+    "run_id": "gemma__gsm8k__zero_shot_baseline__20260527_095644",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "gsm8k",
+    "condition": "zero_shot_baseline",
+    "status": "success",
+    "started_at": "2026-05-27T09:56:44",
+    "finished_at": "2026-05-27T10:10:19",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__gsm8k__zero_shot_baseline__20260527_095644.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__gsm8k__zero_shot_baseline__20260527_095644__gsm8k__google_gemma-7b-it__gsm8k__20260527_0957.json"
+    ]
+  },
+  {
+    "run_id": "gemma__gsm8k__zero_shot__20260527_101019",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "gsm8k",
+    "condition": "zero_shot",
+    "status": "success",
+    "started_at": "2026-05-27T10:10:19",
+    "finished_at": "2026-05-27T10:31:40",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__gsm8k__zero_shot__20260527_101019.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__gsm8k__zero_shot__20260527_101019__gsm8k__google_gemma-7b-it__gsm8k__20260527_1010.json"
+    ]
+  },
+  {
+    "run_id": "gemma__gsm8k__targeted_few_shot_answer_only__20260527_103140",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "gsm8k",
+    "condition": "targeted_few_shot_answer_only",
+    "status": "success",
+    "started_at": "2026-05-27T10:31:40",
+    "finished_at": "2026-05-27T11:05:20",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__gsm8k__targeted_few_shot_answer_only__20260527_103140.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__gsm8k__targeted_few_shot_answer_only__20260527_103140__gsm8k__google_gemma-7b-it__gsm8k__20260527_1032.json"
+    ]
+  },
+  {
+    "run_id": "gemma__gsm8k__random_few_shot__20260527_110520",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "gsm8k",
+    "condition": "random_few_shot",
+    "status": "success",
+    "started_at": "2026-05-27T11:05:20",
+    "finished_at": "2026-05-27T11:41:25",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__gsm8k__random_few_shot__20260527_110520.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__gsm8k__random_few_shot__20260527_110520__gsm8k__google_gemma-7b-it__gsm8k__20260527_1105.json"
+    ]
+  },
+  {
+    "run_id": "gemma__gsm8k__targeted_few_shot__20260527_114125",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "gsm8k",
+    "condition": "targeted_few_shot",
+    "status": "success",
+    "started_at": "2026-05-27T11:41:25",
+    "finished_at": "2026-05-27T12:13:24",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__gsm8k__targeted_few_shot__20260527_114125.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__gsm8k__targeted_few_shot__20260527_114125__gsm8k__google_gemma-7b-it__gsm8k__20260527_1141.json"
+    ]
+  },
+  {
+    "run_id": "gemma__gsm8k__targeted_few_shot_k5__20260527_121324",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "gsm8k",
+    "condition": "targeted_few_shot_k5",
+    "status": "success",
+    "started_at": "2026-05-27T12:13:24",
+    "finished_at": "2026-05-27T12:49:57",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__gsm8k__targeted_few_shot_k5__20260527_121324.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__gsm8k__targeted_few_shot_k5__20260527_121324__gsm8k__google_gemma-7b-it__gsm8k__20260527_1213.json"
+    ]
+  },
+  {
+    "run_id": "gemma__gsm8k__error_targeted_icl__20260527_124958",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "gsm8k",
+    "condition": "error_targeted_icl",
+    "status": "success",
+    "started_at": "2026-05-27T12:49:58",
+    "finished_at": "2026-05-27T13:34:21",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__gsm8k__error_targeted_icl__20260527_124958.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__gsm8k__error_targeted_icl__20260527_124958__gsm8k__google_gemma-7b-it__gsm8k__20260527_1250.json"
+    ]
+  },
+  {
+    "run_id": "gemma__gsm8k__error_targeted_icl_random__20260527_133421",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "gsm8k",
+    "condition": "error_targeted_icl_random",
+    "status": "success",
+    "started_at": "2026-05-27T13:34:21",
+    "finished_at": "2026-05-27T14:44:22",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__gsm8k__error_targeted_icl_random__20260527_133421.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__gsm8k__error_targeted_icl_random__20260527_133421__gsm8k__google_gemma-7b-it__gsm8k__20260527_1334.json"
+    ]
+  },
+  {
+    "run_id": "gemma__gsm8k__error_targeted_icl_correct_only__20260527_144422",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "gsm8k",
+    "condition": "error_targeted_icl_correct_only",
+    "status": "success",
+    "started_at": "2026-05-27T14:44:22",
+    "finished_at": "2026-05-27T15:15:31",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__gsm8k__error_targeted_icl_correct_only__20260527_144422.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__gsm8k__error_targeted_icl_correct_only__20260527_144422__gsm8k__google_gemma-7b-it__gsm8k__20260527_1444.json"
+    ]
+  },
+  {
+    "run_id": "gemma__gsm8k__self_consistency__20260527_151531",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "gsm8k",
+    "condition": "self_consistency",
+    "status": "success",
+    "started_at": "2026-05-27T15:15:31",
+    "finished_at": "2026-05-27T17:03:21",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__gsm8k__self_consistency__20260527_151531.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__gsm8k__self_consistency__20260527_151531__gsm8k__google_gemma-7b-it__gsm8k__20260527_1516.json"
+    ]
+  },
+  {
+    "run_id": "gemma__folio__zero_shot_baseline__20260527_170322",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "folio",
+    "condition": "zero_shot_baseline",
+    "status": "success",
+    "started_at": "2026-05-27T17:03:22",
+    "finished_at": "2026-05-27T17:26:06",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__folio__zero_shot_baseline__20260527_170322.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__folio__zero_shot_baseline__20260527_170322__folio__google_gemma-7b-it__folio__20260527_1703.json"
+    ]
+  },
+  {
+    "run_id": "gemma__folio__zero_shot__20260527_172606",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "folio",
+    "condition": "zero_shot",
+    "status": "success",
+    "started_at": "2026-05-27T17:26:06",
+    "finished_at": "2026-05-27T17:59:59",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__folio__zero_shot__20260527_172606.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__folio__zero_shot__20260527_172606__folio__google_gemma-7b-it__folio__20260527_1726.json"
+    ]
+  },
+  {
+    "run_id": "gemma__folio__targeted_few_shot_answer_only__20260527_175959",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "folio",
+    "condition": "targeted_few_shot_answer_only",
+    "status": "success",
+    "started_at": "2026-05-27T17:59:59",
+    "finished_at": "2026-05-27T18:16:23",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__folio__targeted_few_shot_answer_only__20260527_175959.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__folio__targeted_few_shot_answer_only__20260527_175959__folio__google_gemma-7b-it__folio__20260527_1800.json"
+    ]
+  },
+  {
+    "run_id": "gemma__folio__random_few_shot__20260527_181623",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "folio",
+    "condition": "random_few_shot",
+    "status": "success",
+    "started_at": "2026-05-27T18:16:23",
+    "finished_at": "2026-05-27T19:38:40",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__folio__random_few_shot__20260527_181623.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__folio__random_few_shot__20260527_181623__folio__google_gemma-7b-it__folio__20260527_1816.json"
+    ]
+  },
+  {
+    "run_id": "gemma__folio__targeted_few_shot__20260527_193840",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "folio",
+    "condition": "targeted_few_shot",
+    "status": "success",
+    "started_at": "2026-05-27T19:38:40",
+    "finished_at": "2026-05-27T20:15:48",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__folio__targeted_few_shot__20260527_193840.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__folio__targeted_few_shot__20260527_193840__folio__google_gemma-7b-it__folio__20260527_1939.json"
+    ]
+  },
+  {
+    "run_id": "gemma__folio__targeted_few_shot_k5__20260527_201548",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "folio",
+    "condition": "targeted_few_shot_k5",
+    "status": "success",
+    "started_at": "2026-05-27T20:15:48",
+    "finished_at": "2026-05-27T20:54:11",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__folio__targeted_few_shot_k5__20260527_201548.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__folio__targeted_few_shot_k5__20260527_201548__folio__google_gemma-7b-it__folio__20260527_2016.json"
+    ]
+  },
+  {
+    "run_id": "gemma__folio__error_targeted_icl__20260527_205411",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "folio",
+    "condition": "error_targeted_icl",
+    "status": "success",
+    "started_at": "2026-05-27T20:54:11",
+    "finished_at": "2026-05-27T21:27:02",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__folio__error_targeted_icl__20260527_205411.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__folio__error_targeted_icl__20260527_205411__folio__google_gemma-7b-it__folio__20260527_2054.json"
+    ]
+  },
+  {
+    "run_id": "gemma__folio__error_targeted_icl_random__20260527_212702",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "folio",
+    "condition": "error_targeted_icl_random",
+    "status": "success",
+    "started_at": "2026-05-27T21:27:02",
+    "finished_at": "2026-05-27T22:00:37",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__folio__error_targeted_icl_random__20260527_212702.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__folio__error_targeted_icl_random__20260527_212702__folio__google_gemma-7b-it__folio__20260527_2127.json"
+    ]
+  },
+  {
+    "run_id": "gemma__folio__error_targeted_icl_correct_only__20260527_220037",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "folio",
+    "condition": "error_targeted_icl_correct_only",
+    "status": "success",
+    "started_at": "2026-05-27T22:00:37",
+    "finished_at": "2026-05-27T22:33:26",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__folio__error_targeted_icl_correct_only__20260527_220037.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__folio__error_targeted_icl_correct_only__20260527_220037__folio__google_gemma-7b-it__folio__20260527_2201.json"
+    ]
+  },
+  {
+    "run_id": "gemma__folio__self_consistency__20260527_223326",
+    "family": "gemma",
+    "display_name": "google/gemma-7b-it",
+    "hf_model_id": "google/gemma-7b-it",
+    "benchmark": "folio",
+    "condition": "self_consistency",
+    "status": "success",
+    "started_at": "2026-05-27T22:33:26",
+    "finished_at": "2026-05-28T01:18:56",
+    "returncode": 0,
+    "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__folio__self_consistency__20260527_223326.log",
+    "output_files": [
+      "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__folio__self_consistency__20260527_223326__folio__google_gemma-7b-it__folio__20260527_2233.json"
+    ]
   }
 ]

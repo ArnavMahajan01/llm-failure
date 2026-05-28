@@ -1,0 +1,16 @@
+{
+  "run_id": "gemma__bigbench_hard_tracking__targeted_few_shot__20260527_010541",
+  "family": "gemma",
+  "display_name": "google/gemma-7b-it",
+  "hf_model_id": "google/gemma-7b-it",
+  "benchmark": "bigbench_hard_tracking",
+  "condition": "targeted_few_shot",
+  "status": "success",
+  "started_at": "2026-05-27T01:05:41",
+  "finished_at": "2026-05-27T02:39:55",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard_tracking__targeted_few_shot__20260527_010541.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard_tracking__targeted_few_shot__20260527_010541__bigbench_hard_tracking__google_gemma-7b-it__bigbench_hard_tracking__20260527_0106.json"
+  ]
+}

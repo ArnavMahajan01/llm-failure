@@ -1,0 +1,16 @@
+{
+  "run_id": "gemma__folio__zero_shot__20260527_172606",
+  "family": "gemma",
+  "display_name": "google/gemma-7b-it",
+  "hf_model_id": "google/gemma-7b-it",
+  "benchmark": "folio",
+  "condition": "zero_shot",
+  "status": "success",
+  "started_at": "2026-05-27T17:26:06",
+  "finished_at": "2026-05-27T17:59:59",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__folio__zero_shot__20260527_172606.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__folio__zero_shot__20260527_172606__folio__google_gemma-7b-it__folio__20260527_1726.json"
+  ]
+}
