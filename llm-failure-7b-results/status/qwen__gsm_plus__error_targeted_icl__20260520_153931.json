@@ -1,0 +1,16 @@
+{
+  "run_id": "qwen__gsm_plus__error_targeted_icl__20260520_153931",
+  "family": "qwen",
+  "display_name": "Qwen/Qwen2.5-7B-Instruct",
+  "hf_model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "benchmark": "gsm_plus",
+  "condition": "error_targeted_icl",
+  "status": "success",
+  "started_at": "2026-05-20T15:39:31",
+  "finished_at": "2026-05-21T02:56:12",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/qwen__gsm_plus__error_targeted_icl__20260520_153931.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/qwen__gsm_plus__error_targeted_icl__20260520_153931__gsm_plus__Qwen_Qwen2-5-7B-Instruct__gsm_plus__20260520_1540.json"
+  ]
+}

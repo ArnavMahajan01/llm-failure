@@ -1,0 +1,24 @@
+COMMAND: /usr/bin/python3 /content/drive/MyDrive/COMP6242/Project/llm-failure/run_experiment.py --model gemma --benchmark gsm_symbolic --condition zero_shot_baseline
+
+FULL RUN: 200 samples per benchmark
+Models: ['gemma']
+Benchmarks: ['gsm_symbolic']
+Conditions: ['zero_shot_baseline']
+Runs per questions: 1
+
+===========
+MODEL: google/gemma-7b-it
+
+===========
+Loading HF model: google/gemma-7b-it
+Quantization: 4-bit; dtype: torch.bfloat16
+ERROR: Error loading model google/gemma-7b-it: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/google/gemma-7b-it.
+403 Client Error. (Request ID: Root=1-6a13abd3-4578c6417ad53ce53fd36d41;f5c760a4-9e07-4ddb-8052-20ac2a58d42e)
+
+Cannot access gated repo for url https://huggingface.co/google/gemma-7b-it/resolve/main/config.json.
+Access to model google/gemma-7b-it is restricted and you are not in the authorized list. Visit https://huggingface.co/google/gemma-7b-it to ask for access.
+Skipping the model.
+=============
+All experiments are completed. Total time taken: 0.0 minutes
+Results are saved to: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/

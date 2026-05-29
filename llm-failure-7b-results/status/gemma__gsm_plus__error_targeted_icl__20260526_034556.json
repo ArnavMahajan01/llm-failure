@@ -1,0 +1,16 @@
+{
+  "run_id": "gemma__gsm_plus__error_targeted_icl__20260526_034556",
+  "family": "gemma",
+  "display_name": "google/gemma-7b-it",
+  "hf_model_id": "google/gemma-7b-it",
+  "benchmark": "gsm_plus",
+  "condition": "error_targeted_icl",
+  "status": "success",
+  "started_at": "2026-05-26T03:45:56",
+  "finished_at": "2026-05-26T04:32:22",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__gsm_plus__error_targeted_icl__20260526_034556.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__gsm_plus__error_targeted_icl__20260526_034556__gsm_plus__google_gemma-7b-it__gsm_plus__20260526_0346.json"
+  ]
+}

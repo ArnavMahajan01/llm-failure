@@ -1,0 +1,2753 @@
+COMMAND: /usr/bin/python3 /content/drive/MyDrive/COMP6242/Project/llm-failure/run_experiment.py --model qwen --benchmark gsm_symbolic --condition error_targeted_icl
+
+`torch_dtype` is deprecated! Use `dtype` instead!
+FULL RUN: 200 samples per benchmark
+Models: ['qwen']
+Benchmarks: ['gsm_symbolic']
+Conditions: ['error_targeted_icl']
+Runs per questions: 1
+
+===========
+MODEL: Qwen/Qwen2.5-7B-Instruct
+
+===========
+Loading HF model: Qwen/Qwen2.5-7B-Instruct
+Quantization: 4-bit; dtype: torch.bfloat16
+
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/339 [00:00<00:00, 14665.40it/s, Materializing param=lm_head.weight]
+Loading weights:   0%|          | 1/339 [00:00<00:00, 6898.53it/s, Materializing param=lm_head.weight] 
+Loading weights:   1%|          | 2/339 [00:01<03:29,  1.61it/s, Materializing param=lm_head.weight]  
+Loading weights:   1%|          | 2/339 [00:01<03:29,  1.61it/s, Materializing param=model.embed_tokens.weight]
+Loading weights:   1%|          | 2/339 [00:01<03:29,  1.61it/s, Materializing param=model.embed_tokens.weight]
+Loading weights:   1%|          | 3/339 [00:01<03:28,  1.61it/s, Materializing param=model.layers.0.input_layernorm.weight]
+Loading weights:   1%|          | 3/339 [00:01<03:28,  1.61it/s, Materializing param=model.layers.0.input_layernorm.weight]
+Loading weights:   1%|          | 4/339 [00:01<03:28,  1.61it/s, Materializing param=model.layers.0.mlp.down_proj.weight]  
+Loading weights:   1%|          | 4/339 [00:01<03:28,  1.61it/s, Materializing param=model.layers.0.mlp.down_proj.weight]
+Loading weights:   1%|▏         | 5/339 [00:02<02:10,  2.56it/s, Materializing param=model.layers.0.mlp.down_proj.weight]
+Loading weights:   1%|▏         | 5/339 [00:02<02:10,  2.56it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   1%|▏         | 5/339 [00:02<02:10,  2.56it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 6/339 [00:02<02:25,  2.29it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 6/339 [00:02<02:25,  2.29it/s, Materializing param=model.layers.0.mlp.up_proj.weight]  
+Loading weights:   2%|▏         | 6/339 [00:02<02:25,  2.29it/s, Materializing param=model.layers.0.mlp.up_proj.weight]
+Loading weights:   2%|▏         | 7/339 [00:25<34:40,  6.27s/it, Materializing param=model.layers.0.mlp.up_proj.weight]
+Loading weights:   2%|▏         | 7/339 [00:25<34:40,  6.27s/it, Materializing param=model.layers.0.post_attention_layernorm.weight]
+Loading weights:   2%|▏         | 7/339 [00:25<34:40,  6.27s/it, Materializing param=model.layers.0.post_attention_layernorm.weight]
+Loading weights:   2%|▏         | 8/339 [00:25<34:34,  6.27s/it, Materializing param=model.layers.0.self_attn.k_proj.bias]          
+Loading weights:   2%|▏         | 8/339 [00:25<34:34,  6.27s/it, Materializing param=model.layers.0.self_attn.k_proj.bias]
+Loading weights:   3%|▎         | 9/339 [00:25<34:28,  6.27s/it, Materializing param=model.layers.0.self_attn.k_proj.weight]
+Loading weights:   3%|▎         | 9/339 [00:25<34:28,  6.27s/it, Materializing param=model.layers.0.self_attn.k_proj.weight]
+Loading weights:   3%|▎         | 10/339 [00:37<27:51,  5.08s/it, Materializing param=model.layers.0.self_attn.k_proj.weight]
+Loading weights:   3%|▎         | 10/339 [00:37<27:51,  5.08s/it, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   3%|▎         | 10/339 [00:37<27:51,  5.08s/it, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   3%|▎         | 11/339 [00:52<38:26,  7.03s/it, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   3%|▎         | 11/339 [00:52<38:26,  7.03s/it, Materializing param=model.layers.0.self_attn.q_proj.bias]  
+Loading weights:   3%|▎         | 11/339 [00:52<38:26,  7.03s/it, Materializing param=model.layers.0.self_attn.q_proj.bias]
+Loading weights:   4%|▎         | 12/339 [00:52<38:19,  7.03s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▎         | 12/339 [00:52<38:19,  7.03s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▍         | 13/339 [01:03<35:28,  6.53s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▍         | 13/339 [01:03<35:28,  6.53s/it, Materializing param=model.layers.0.self_attn.v_proj.bias]  
+Loading weights:   4%|▍         | 13/339 [01:03<35:28,  6.53s/it, Materializing param=model.layers.0.self_attn.v_proj.bias]
+Loading weights:   4%|▍         | 14/339 [01:03<35:21,  6.53s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 14/339 [01:03<35:21,  6.53s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 15/339 [01:06<25:42,  4.76s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 15/339 [01:06<25:42,  4.76s/it, Materializing param=model.layers.1.input_layernorm.weight] 
+Loading weights:   4%|▍         | 15/339 [01:06<25:42,  4.76s/it, Materializing param=model.layers.1.input_layernorm.weight]
+Loading weights:   5%|▍         | 16/339 [01:06<25:38,  4.76s/it, Materializing param=model.layers.1.mlp.down_proj.weight]  
+Loading weights:   5%|▍         | 16/339 [01:06<25:38,  4.76s/it, Materializing param=model.layers.1.mlp.down_proj.weight]
+Loading weights:   5%|▌         | 17/339 [01:07<18:01,  3.36s/it, Materializing param=model.layers.1.mlp.down_proj.weight]
+Loading weights:   5%|▌         | 17/339 [01:07<18:01,  3.36s/it, Materializing param=model.layers.1.mlp.gate_proj.weight]
+Loading weights:   5%|▌         | 17/339 [01:07<18:01,  3.36s/it, Materializing param=model.layers.1.mlp.gate_proj.weight]
+Loading weights:   5%|▌         | 18/339 [01:08<15:10,  2.84s/it, Materializing param=model.layers.1.mlp.gate_proj.weight]
+Loading weights:   5%|▌         | 18/339 [01:08<15:10,  2.84s/it, Materializing param=model.layers.1.mlp.up_proj.weight]  
+Loading weights:   5%|▌         | 18/339 [01:08<15:10,  2.84s/it, Materializing param=model.layers.1.mlp.up_proj.weight]
+Loading weights:   6%|▌         | 19/339 [01:08<12:46,  2.40s/it, Materializing param=model.layers.1.mlp.up_proj.weight]
+Loading weights:   6%|▌         | 19/339 [01:08<12:46,  2.40s/it, Materializing param=model.layers.1.post_attention_layernorm.weight]
+Loading weights:   6%|▌         | 19/339 [01:08<12:46,  2.40s/it, Materializing param=model.layers.1.post_attention_layernorm.weight]
+Loading weights:   6%|▌         | 20/339 [01:08<12:44,  2.40s/it, Materializing param=model.layers.1.self_attn.k_proj.bias]          
+Loading weights:   6%|▌         | 20/339 [01:08<12:44,  2.40s/it, Materializing param=model.layers.1.self_attn.k_proj.bias]
+Loading weights:   6%|▌         | 21/339 [01:08<12:41,  2.40s/it, Materializing param=model.layers.1.self_attn.k_proj.weight]
+Loading weights:   6%|▌         | 21/339 [01:08<12:41,  2.40s/it, Materializing param=model.layers.1.self_attn.k_proj.weight]
+Loading weights:   6%|▋         | 22/339 [01:09<07:15,  1.37s/it, Materializing param=model.layers.1.self_attn.k_proj.weight]
+Loading weights:   6%|▋         | 22/339 [01:09<07:15,  1.37s/it, Materializing param=model.layers.1.self_attn.o_proj.weight]
+Loading weights:   6%|▋         | 22/339 [01:09<07:15,  1.37s/it, Materializing param=model.layers.1.self_attn.o_proj.weight]
+Loading weights:   7%|▋         | 23/339 [01:09<06:00,  1.14s/it, Materializing param=model.layers.1.self_attn.o_proj.weight]
+Loading weights:   7%|▋         | 23/339 [01:09<06:00,  1.14s/it, Materializing param=model.layers.1.self_attn.q_proj.bias]  
+Loading weights:   7%|▋         | 23/339 [01:09<06:00,  1.14s/it, Materializing param=model.layers.1.self_attn.q_proj.bias]
+Loading weights:   7%|▋         | 24/339 [01:09<05:58,  1.14s/it, Materializing param=model.layers.1.self_attn.q_proj.weight]
+Loading weights:   7%|▋         | 24/339 [01:09<05:58,  1.14s/it, Materializing param=model.layers.1.self_attn.q_proj.weight]
+Loading weights:   7%|▋         | 25/339 [01:09<05:57,  1.14s/it, Materializing param=model.layers.1.self_attn.v_proj.bias]  
+Loading weights:   7%|▋         | 25/339 [01:09<05:57,  1.14s/it, Materializing param=model.layers.1.self_attn.v_proj.bias]
+Loading weights:   8%|▊         | 26/339 [01:09<05:56,  1.14s/it, Materializing param=model.layers.1.self_attn.v_proj.weight]
+Loading weights:   8%|▊         | 26/339 [01:09<05:56,  1.14s/it, Materializing param=model.layers.1.self_attn.v_proj.weight]
+Loading weights:   8%|▊         | 27/339 [01:09<05:55,  1.14s/it, Materializing param=model.layers.2.input_layernorm.weight] 
+Loading weights:   8%|▊         | 27/339 [01:09<05:55,  1.14s/it, Materializing param=model.layers.2.input_layernorm.weight]
+Loading weights:   8%|▊         | 28/339 [01:09<05:54,  1.14s/it, Materializing param=model.layers.2.mlp.down_proj.weight]  
+Loading weights:   8%|▊         | 28/339 [01:09<05:54,  1.14s/it, Materializing param=model.layers.2.mlp.down_proj.weight]
+Loading weights:   9%|▊         | 29/339 [01:09<05:53,  1.14s/it, Materializing param=model.layers.2.mlp.gate_proj.weight]
+Loading weights:   9%|▊         | 29/339 [01:09<05:53,  1.14s/it, Materializing param=model.layers.2.mlp.gate_proj.weight]
+Loading weights:   9%|▉         | 30/339 [01:09<05:52,  1.14s/it, Materializing param=model.layers.2.mlp.up_proj.weight]  
+Loading weights:   9%|▉         | 30/339 [01:09<05:52,  1.14s/it, Materializing param=model.layers.2.mlp.up_proj.weight]
+Loading weights:   9%|▉         | 31/339 [01:09<05:50,  1.14s/it, Materializing param=model.layers.2.post_attention_layernorm.weight]
+Loading weights:   9%|▉         | 31/339 [01:09<05:50,  1.14s/it, Materializing param=model.layers.2.post_attention_layernorm.weight]
+Loading weights:   9%|▉         | 32/339 [01:09<05:49,  1.14s/it, Materializing param=model.layers.2.self_attn.k_proj.bias]          
+Loading weights:   9%|▉         | 32/339 [01:09<05:49,  1.14s/it, Materializing param=model.layers.2.self_attn.k_proj.bias]
+Loading weights:  10%|▉         | 33/339 [01:09<05:48,  1.14s/it, Materializing param=model.layers.2.self_attn.k_proj.weight]
+Loading weights:  10%|▉         | 33/339 [01:09<05:48,  1.14s/it, Materializing param=model.layers.2.self_attn.k_proj.weight]
+Loading weights:  10%|█         | 34/339 [01:09<05:47,  1.14s/it, Materializing param=model.layers.2.self_attn.o_proj.weight]
+Loading weights:  10%|█         | 34/339 [01:09<05:47,  1.14s/it, Materializing param=model.layers.2.self_attn.o_proj.weight]
+Loading weights:  10%|█         | 35/339 [01:09<05:46,  1.14s/it, Materializing param=model.layers.2.self_attn.q_proj.bias]  
+Loading weights:  10%|█         | 35/339 [01:09<05:46,  1.14s/it, Materializing param=model.layers.2.self_attn.q_proj.bias]
+Loading weights:  11%|█         | 36/339 [01:09<05:45,  1.14s/it, Materializing param=model.layers.2.self_attn.q_proj.weight]
+Loading weights:  11%|█         | 36/339 [01:09<05:45,  1.14s/it, Materializing param=model.layers.2.self_attn.q_proj.weight]
+Loading weights:  11%|█         | 37/339 [01:09<05:44,  1.14s/it, Materializing param=model.layers.2.self_attn.v_proj.bias]  
+Loading weights:  11%|█         | 37/339 [01:09<05:44,  1.14s/it, Materializing param=model.layers.2.self_attn.v_proj.bias]
+Loading weights:  11%|█         | 38/339 [01:09<05:42,  1.14s/it, Materializing param=model.layers.2.self_attn.v_proj.weight]
+Loading weights:  11%|█         | 38/339 [01:09<05:42,  1.14s/it, Materializing param=model.layers.2.self_attn.v_proj.weight]
+Loading weights:  12%|█▏        | 39/339 [01:09<05:41,  1.14s/it, Materializing param=model.layers.3.input_layernorm.weight] 
+Loading weights:  12%|█▏        | 39/339 [01:09<05:41,  1.14s/it, Materializing param=model.layers.3.input_layernorm.weight]
+Loading weights:  12%|█▏        | 40/339 [01:09<05:40,  1.14s/it, Materializing param=model.layers.3.mlp.down_proj.weight]  
+Loading weights:  12%|█▏        | 40/339 [01:09<05:40,  1.14s/it, Materializing param=model.layers.3.mlp.down_proj.weight]
+Loading weights:  12%|█▏        | 41/339 [01:09<05:39,  1.14s/it, Materializing param=model.layers.3.mlp.gate_proj.weight]
+Loading weights:  12%|█▏        | 41/339 [01:09<05:39,  1.14s/it, Materializing param=model.layers.3.mlp.gate_proj.weight]
+Loading weights:  12%|█▏        | 42/339 [01:09<05:38,  1.14s/it, Materializing param=model.layers.3.mlp.up_proj.weight]  
+Loading weights:  12%|█▏        | 42/339 [01:09<05:38,  1.14s/it, Materializing param=model.layers.3.mlp.up_proj.weight]
+Loading weights:  13%|█▎        | 43/339 [01:09<05:37,  1.14s/it, Materializing param=model.layers.3.post_attention_layernorm.weight]
+Loading weights:  13%|█▎        | 43/339 [01:09<05:37,  1.14s/it, Materializing param=model.layers.3.post_attention_layernorm.weight]
+Loading weights:  13%|█▎        | 44/339 [01:09<05:36,  1.14s/it, Materializing param=model.layers.3.self_attn.k_proj.bias]          
+Loading weights:  13%|█▎        | 44/339 [01:09<05:36,  1.14s/it, Materializing param=model.layers.3.self_attn.k_proj.bias]
+Loading weights:  13%|█▎        | 45/339 [01:09<05:34,  1.14s/it, Materializing param=model.layers.3.self_attn.k_proj.weight]
+Loading weights:  13%|█▎        | 45/339 [01:09<05:34,  1.14s/it, Materializing param=model.layers.3.self_attn.k_proj.weight]
+Loading weights:  14%|█▎        | 46/339 [01:09<05:33,  1.14s/it, Materializing param=model.layers.3.self_attn.o_proj.weight]
+Loading weights:  14%|█▎        | 46/339 [01:09<05:33,  1.14s/it, Materializing param=model.layers.3.self_attn.o_proj.weight]
+Loading weights:  14%|█▍        | 47/339 [01:09<05:32,  1.14s/it, Materializing param=model.layers.3.self_attn.q_proj.bias]  
+Loading weights:  14%|█▍        | 47/339 [01:09<05:32,  1.14s/it, Materializing param=model.layers.3.self_attn.q_proj.bias]
+Loading weights:  14%|█▍        | 48/339 [01:09<05:31,  1.14s/it, Materializing param=model.layers.3.self_attn.q_proj.weight]
+Loading weights:  14%|█▍        | 48/339 [01:09<05:31,  1.14s/it, Materializing param=model.layers.3.self_attn.q_proj.weight]
+Loading weights:  14%|█▍        | 49/339 [01:09<05:30,  1.14s/it, Materializing param=model.layers.3.self_attn.v_proj.bias]  
+Loading weights:  14%|█▍        | 49/339 [01:09<05:30,  1.14s/it, Materializing param=model.layers.3.self_attn.v_proj.bias]
+Loading weights:  15%|█▍        | 50/339 [01:09<05:29,  1.14s/it, Materializing param=model.layers.3.self_attn.v_proj.weight]
+Loading weights:  15%|█▍        | 50/339 [01:09<05:29,  1.14s/it, Materializing param=model.layers.3.self_attn.v_proj.weight]
+Loading weights:  15%|█▌        | 51/339 [01:09<05:28,  1.14s/it, Materializing param=model.layers.4.input_layernorm.weight] 
+Loading weights:  15%|█▌        | 51/339 [01:09<05:28,  1.14s/it, Materializing param=model.layers.4.input_layernorm.weight]
+Loading weights:  15%|█▌        | 52/339 [01:09<05:26,  1.14s/it, Materializing param=model.layers.4.mlp.down_proj.weight]  
+Loading weights:  15%|█▌        | 52/339 [01:09<05:26,  1.14s/it, Materializing param=model.layers.4.mlp.down_proj.weight]
+Loading weights:  16%|█▌        | 53/339 [01:09<05:25,  1.14s/it, Materializing param=model.layers.4.mlp.gate_proj.weight]
+Loading weights:  16%|█▌        | 53/339 [01:09<05:25,  1.14s/it, Materializing param=model.layers.4.mlp.gate_proj.weight]
+Loading weights:  16%|█▌        | 54/339 [01:09<05:24,  1.14s/it, Materializing param=model.layers.4.mlp.up_proj.weight]  
+Loading weights:  16%|█▌        | 54/339 [01:09<05:24,  1.14s/it, Materializing param=model.layers.4.mlp.up_proj.weight]
+Loading weights:  16%|█▌        | 55/339 [01:09<05:23,  1.14s/it, Materializing param=model.layers.4.post_attention_layernorm.weight]
+Loading weights:  16%|█▌        | 55/339 [01:09<05:23,  1.14s/it, Materializing param=model.layers.4.post_attention_layernorm.weight]
+Loading weights:  17%|█▋        | 56/339 [01:09<05:22,  1.14s/it, Materializing param=model.layers.4.self_attn.k_proj.bias]          
+Loading weights:  17%|█▋        | 56/339 [01:09<05:22,  1.14s/it, Materializing param=model.layers.4.self_attn.k_proj.bias]
+Loading weights:  17%|█▋        | 57/339 [01:09<05:21,  1.14s/it, Materializing param=model.layers.4.self_attn.k_proj.weight]
+Loading weights:  17%|█▋        | 57/339 [01:09<05:21,  1.14s/it, Materializing param=model.layers.4.self_attn.k_proj.weight]
+Loading weights:  17%|█▋        | 58/339 [01:09<05:20,  1.14s/it, Materializing param=model.layers.4.self_attn.o_proj.weight]
+Loading weights:  17%|█▋        | 58/339 [01:09<05:20,  1.14s/it, Materializing param=model.layers.4.self_attn.o_proj.weight]
+Loading weights:  17%|█▋        | 59/339 [01:09<05:19,  1.14s/it, Materializing param=model.layers.4.self_attn.q_proj.bias]  
+Loading weights:  17%|█▋        | 59/339 [01:09<05:19,  1.14s/it, Materializing param=model.layers.4.self_attn.q_proj.bias]
+Loading weights:  18%|█▊        | 60/339 [01:09<05:17,  1.14s/it, Materializing param=model.layers.4.self_attn.q_proj.weight]
+Loading weights:  18%|█▊        | 60/339 [01:09<05:17,  1.14s/it, Materializing param=model.layers.4.self_attn.q_proj.weight]
+Loading weights:  18%|█▊        | 61/339 [01:09<05:16,  1.14s/it, Materializing param=model.layers.4.self_attn.v_proj.bias]  
+Loading weights:  18%|█▊        | 61/339 [01:09<05:16,  1.14s/it, Materializing param=model.layers.4.self_attn.v_proj.bias]
+Loading weights:  18%|█▊        | 62/339 [01:09<05:15,  1.14s/it, Materializing param=model.layers.4.self_attn.v_proj.weight]
+Loading weights:  18%|█▊        | 62/339 [01:09<05:15,  1.14s/it, Materializing param=model.layers.4.self_attn.v_proj.weight]
+Loading weights:  19%|█▊        | 63/339 [01:09<05:14,  1.14s/it, Materializing param=model.layers.5.input_layernorm.weight] 
+Loading weights:  19%|█▊        | 63/339 [01:09<05:14,  1.14s/it, Materializing param=model.layers.5.input_layernorm.weight]
+Loading weights:  19%|█▉        | 64/339 [01:09<05:13,  1.14s/it, Materializing param=model.layers.5.mlp.down_proj.weight]  
+Loading weights:  19%|█▉        | 64/339 [01:09<05:13,  1.14s/it, Materializing param=model.layers.5.mlp.down_proj.weight]
+Loading weights:  19%|█▉        | 65/339 [01:09<05:12,  1.14s/it, Materializing param=model.layers.5.mlp.gate_proj.weight]
+Loading weights:  19%|█▉        | 65/339 [01:09<05:12,  1.14s/it, Materializing param=model.layers.5.mlp.gate_proj.weight]
+Loading weights:  19%|█▉        | 66/339 [01:09<05:11,  1.14s/it, Materializing param=model.layers.5.mlp.up_proj.weight]  
+Loading weights:  19%|█▉        | 66/339 [01:09<05:11,  1.14s/it, Materializing param=model.layers.5.mlp.up_proj.weight]
+Loading weights:  20%|█▉        | 67/339 [01:09<05:09,  1.14s/it, Materializing param=model.layers.5.post_attention_layernorm.weight]
+Loading weights:  20%|█▉        | 67/339 [01:09<05:09,  1.14s/it, Materializing param=model.layers.5.post_attention_layernorm.weight]
+Loading weights:  20%|██        | 68/339 [01:09<05:08,  1.14s/it, Materializing param=model.layers.5.self_attn.k_proj.bias]          
+Loading weights:  20%|██        | 68/339 [01:09<05:08,  1.14s/it, Materializing param=model.layers.5.self_attn.k_proj.bias]
+Loading weights:  20%|██        | 69/339 [01:09<05:07,  1.14s/it, Materializing param=model.layers.5.self_attn.k_proj.weight]
+Loading weights:  20%|██        | 69/339 [01:09<05:07,  1.14s/it, Materializing param=model.layers.5.self_attn.k_proj.weight]
+Loading weights:  21%|██        | 70/339 [01:09<05:06,  1.14s/it, Materializing param=model.layers.5.self_attn.o_proj.weight]
+Loading weights:  21%|██        | 70/339 [01:09<05:06,  1.14s/it, Materializing param=model.layers.5.self_attn.o_proj.weight]
+Loading weights:  21%|██        | 71/339 [01:09<05:05,  1.14s/it, Materializing param=model.layers.5.self_attn.q_proj.bias]  
+Loading weights:  21%|██        | 71/339 [01:09<05:05,  1.14s/it, Materializing param=model.layers.5.self_attn.q_proj.bias]
+Loading weights:  21%|██        | 72/339 [01:09<05:04,  1.14s/it, Materializing param=model.layers.5.self_attn.q_proj.weight]
+Loading weights:  21%|██        | 72/339 [01:09<05:04,  1.14s/it, Materializing param=model.layers.5.self_attn.q_proj.weight]
+Loading weights:  22%|██▏       | 73/339 [01:09<05:03,  1.14s/it, Materializing param=model.layers.5.self_attn.v_proj.bias]  
+Loading weights:  22%|██▏       | 73/339 [01:09<05:03,  1.14s/it, Materializing param=model.layers.5.self_attn.v_proj.bias]
+Loading weights:  22%|██▏       | 74/339 [01:09<05:01,  1.14s/it, Materializing param=model.layers.5.self_attn.v_proj.weight]
+Loading weights:  22%|██▏       | 74/339 [01:09<05:01,  1.14s/it, Materializing param=model.layers.5.self_attn.v_proj.weight]
+Loading weights:  22%|██▏       | 75/339 [01:09<05:00,  1.14s/it, Materializing param=model.layers.6.input_layernorm.weight] 
+Loading weights:  22%|██▏       | 75/339 [01:09<05:00,  1.14s/it, Materializing param=model.layers.6.input_layernorm.weight]
+Loading weights:  22%|██▏       | 76/339 [01:09<04:59,  1.14s/it, Materializing param=model.layers.6.mlp.down_proj.weight]  
+Loading weights:  22%|██▏       | 76/339 [01:09<04:59,  1.14s/it, Materializing param=model.layers.6.mlp.down_proj.weight]
+Loading weights:  23%|██▎       | 77/339 [01:09<04:58,  1.14s/it, Materializing param=model.layers.6.mlp.gate_proj.weight]
+Loading weights:  23%|██▎       | 77/339 [01:09<04:58,  1.14s/it, Materializing param=model.layers.6.mlp.gate_proj.weight]
+Loading weights:  23%|██▎       | 78/339 [01:09<04:57,  1.14s/it, Materializing param=model.layers.6.mlp.up_proj.weight]  
+Loading weights:  23%|██▎       | 78/339 [01:09<04:57,  1.14s/it, Materializing param=model.layers.6.mlp.up_proj.weight]
+Loading weights:  23%|██▎       | 79/339 [01:09<04:56,  1.14s/it, Materializing param=model.layers.6.post_attention_layernorm.weight]
+Loading weights:  23%|██▎       | 79/339 [01:09<04:56,  1.14s/it, Materializing param=model.layers.6.post_attention_layernorm.weight]
+Loading weights:  24%|██▎       | 80/339 [01:09<04:55,  1.14s/it, Materializing param=model.layers.6.self_attn.k_proj.bias]          
+Loading weights:  24%|██▎       | 80/339 [01:09<04:55,  1.14s/it, Materializing param=model.layers.6.self_attn.k_proj.bias]
+Loading weights:  24%|██▍       | 81/339 [01:09<04:53,  1.14s/it, Materializing param=model.layers.6.self_attn.k_proj.weight]
+Loading weights:  24%|██▍       | 81/339 [01:09<04:53,  1.14s/it, Materializing param=model.layers.6.self_attn.k_proj.weight]
+Loading weights:  24%|██▍       | 82/339 [01:09<04:52,  1.14s/it, Materializing param=model.layers.6.self_attn.o_proj.weight]
+Loading weights:  24%|██▍       | 82/339 [01:09<04:52,  1.14s/it, Materializing param=model.layers.6.self_attn.o_proj.weight]
+Loading weights:  24%|██▍       | 83/339 [01:09<04:51,  1.14s/it, Materializing param=model.layers.6.self_attn.q_proj.bias]  
+Loading weights:  24%|██▍       | 83/339 [01:09<04:51,  1.14s/it, Materializing param=model.layers.6.self_attn.q_proj.bias]
+Loading weights:  25%|██▍       | 84/339 [01:09<04:50,  1.14s/it, Materializing param=model.layers.6.self_attn.q_proj.weight]
+Loading weights:  25%|██▍       | 84/339 [01:09<04:50,  1.14s/it, Materializing param=model.layers.6.self_attn.q_proj.weight]
+Loading weights:  25%|██▌       | 85/339 [01:09<04:49,  1.14s/it, Materializing param=model.layers.6.self_attn.v_proj.bias]  
+Loading weights:  25%|██▌       | 85/339 [01:09<04:49,  1.14s/it, Materializing param=model.layers.6.self_attn.v_proj.bias]
+Loading weights:  25%|██▌       | 86/339 [01:09<04:48,  1.14s/it, Materializing param=model.layers.6.self_attn.v_proj.weight]
+Loading weights:  25%|██▌       | 86/339 [01:09<04:48,  1.14s/it, Materializing param=model.layers.6.self_attn.v_proj.weight]
+Loading weights:  26%|██▌       | 87/339 [01:09<04:47,  1.14s/it, Materializing param=model.layers.7.input_layernorm.weight] 
+Loading weights:  26%|██▌       | 87/339 [01:09<04:47,  1.14s/it, Materializing param=model.layers.7.input_layernorm.weight]
+Loading weights:  26%|██▌       | 88/339 [01:09<04:45,  1.14s/it, Materializing param=model.layers.7.mlp.down_proj.weight]  
+Loading weights:  26%|██▌       | 88/339 [01:09<04:45,  1.14s/it, Materializing param=model.layers.7.mlp.down_proj.weight]
+Loading weights:  26%|██▋       | 89/339 [01:09<04:44,  1.14s/it, Materializing param=model.layers.7.mlp.gate_proj.weight]
+Loading weights:  26%|██▋       | 89/339 [01:09<04:44,  1.14s/it, Materializing param=model.layers.7.mlp.gate_proj.weight]
+Loading weights:  27%|██▋       | 90/339 [01:09<04:43,  1.14s/it, Materializing param=model.layers.7.mlp.up_proj.weight]  
+Loading weights:  27%|██▋       | 90/339 [01:09<04:43,  1.14s/it, Materializing param=model.layers.7.mlp.up_proj.weight]
+Loading weights:  27%|██▋       | 91/339 [01:09<04:42,  1.14s/it, Materializing param=model.layers.7.post_attention_layernorm.weight]
+Loading weights:  27%|██▋       | 91/339 [01:09<04:42,  1.14s/it, Materializing param=model.layers.7.post_attention_layernorm.weight]
+Loading weights:  27%|██▋       | 92/339 [01:09<04:41,  1.14s/it, Materializing param=model.layers.7.self_attn.k_proj.bias]          
+Loading weights:  27%|██▋       | 92/339 [01:09<04:41,  1.14s/it, Materializing param=model.layers.7.self_attn.k_proj.bias]
+Loading weights:  27%|██▋       | 93/339 [01:09<04:40,  1.14s/it, Materializing param=model.layers.7.self_attn.k_proj.weight]
+Loading weights:  27%|██▋       | 93/339 [01:09<04:40,  1.14s/it, Materializing param=model.layers.7.self_attn.k_proj.weight]
+Loading weights:  28%|██▊       | 94/339 [01:09<04:39,  1.14s/it, Materializing param=model.layers.7.self_attn.o_proj.weight]
+Loading weights:  28%|██▊       | 94/339 [01:09<04:39,  1.14s/it, Materializing param=model.layers.7.self_attn.o_proj.weight]
+Loading weights:  28%|██▊       | 95/339 [01:09<04:38,  1.14s/it, Materializing param=model.layers.7.self_attn.q_proj.bias]  
+Loading weights:  28%|██▊       | 95/339 [01:09<04:38,  1.14s/it, Materializing param=model.layers.7.self_attn.q_proj.bias]
+Loading weights:  28%|██▊       | 96/339 [01:09<04:36,  1.14s/it, Materializing param=model.layers.7.self_attn.q_proj.weight]
+Loading weights:  28%|██▊       | 96/339 [01:09<04:36,  1.14s/it, Materializing param=model.layers.7.self_attn.q_proj.weight]
+Loading weights:  29%|██▊       | 97/339 [01:09<04:35,  1.14s/it, Materializing param=model.layers.7.self_attn.v_proj.bias]  
+Loading weights:  29%|██▊       | 97/339 [01:09<04:35,  1.14s/it, Materializing param=model.layers.7.self_attn.v_proj.bias]
+Loading weights:  29%|██▉       | 98/339 [01:09<04:34,  1.14s/it, Materializing param=model.layers.7.self_attn.v_proj.weight]
+Loading weights:  29%|██▉       | 98/339 [01:09<04:34,  1.14s/it, Materializing param=model.layers.7.self_attn.v_proj.weight]
+Loading weights:  29%|██▉       | 99/339 [01:09<04:33,  1.14s/it, Materializing param=model.layers.8.input_layernorm.weight] 
+Loading weights:  29%|██▉       | 99/339 [01:09<04:33,  1.14s/it, Materializing param=model.layers.8.input_layernorm.weight]
+Loading weights:  29%|██▉       | 100/339 [01:09<04:32,  1.14s/it, Materializing param=model.layers.8.mlp.down_proj.weight] 
+Loading weights:  29%|██▉       | 100/339 [01:09<04:32,  1.14s/it, Materializing param=model.layers.8.mlp.down_proj.weight]
+Loading weights:  30%|██▉       | 101/339 [01:09<04:31,  1.14s/it, Materializing param=model.layers.8.mlp.gate_proj.weight]
+Loading weights:  30%|██▉       | 101/339 [01:09<04:31,  1.14s/it, Materializing param=model.layers.8.mlp.gate_proj.weight]
+Loading weights:  30%|███       | 102/339 [01:09<04:30,  1.14s/it, Materializing param=model.layers.8.mlp.up_proj.weight]  
+Loading weights:  30%|███       | 102/339 [01:09<04:30,  1.14s/it, Materializing param=model.layers.8.mlp.up_proj.weight]
+Loading weights:  30%|███       | 103/339 [01:09<04:28,  1.14s/it, Materializing param=model.layers.8.post_attention_layernorm.weight]
+Loading weights:  30%|███       | 103/339 [01:09<04:28,  1.14s/it, Materializing param=model.layers.8.post_attention_layernorm.weight]
+Loading weights:  31%|███       | 104/339 [01:09<04:27,  1.14s/it, Materializing param=model.layers.8.self_attn.k_proj.bias]          
+Loading weights:  31%|███       | 104/339 [01:09<04:27,  1.14s/it, Materializing param=model.layers.8.self_attn.k_proj.bias]
+Loading weights:  31%|███       | 105/339 [01:09<04:26,  1.14s/it, Materializing param=model.layers.8.self_attn.k_proj.weight]
+Loading weights:  31%|███       | 105/339 [01:09<04:26,  1.14s/it, Materializing param=model.layers.8.self_attn.k_proj.weight]
+Loading weights:  31%|███▏      | 106/339 [01:09<04:25,  1.14s/it, Materializing param=model.layers.8.self_attn.o_proj.weight]
+Loading weights:  31%|███▏      | 106/339 [01:09<04:25,  1.14s/it, Materializing param=model.layers.8.self_attn.o_proj.weight]
+Loading weights:  32%|███▏      | 107/339 [01:09<04:24,  1.14s/it, Materializing param=model.layers.8.self_attn.q_proj.bias]  
+Loading weights:  32%|███▏      | 107/339 [01:09<04:24,  1.14s/it, Materializing param=model.layers.8.self_attn.q_proj.bias]
+Loading weights:  32%|███▏      | 108/339 [01:09<04:23,  1.14s/it, Materializing param=model.layers.8.self_attn.q_proj.weight]
+Loading weights:  32%|███▏      | 108/339 [01:09<04:23,  1.14s/it, Materializing param=model.layers.8.self_attn.q_proj.weight]
+Loading weights:  32%|███▏      | 109/339 [01:09<04:22,  1.14s/it, Materializing param=model.layers.8.self_attn.v_proj.bias]  
+Loading weights:  32%|███▏      | 109/339 [01:09<04:22,  1.14s/it, Materializing param=model.layers.8.self_attn.v_proj.bias]
+Loading weights:  32%|███▏      | 110/339 [01:09<04:20,  1.14s/it, Materializing param=model.layers.8.self_attn.v_proj.weight]
+Loading weights:  32%|███▏      | 110/339 [01:09<04:20,  1.14s/it, Materializing param=model.layers.8.self_attn.v_proj.weight]
+Loading weights:  33%|███▎      | 111/339 [01:09<04:19,  1.14s/it, Materializing param=model.layers.9.input_layernorm.weight] 
+Loading weights:  33%|███▎      | 111/339 [01:09<04:19,  1.14s/it, Materializing param=model.layers.9.input_layernorm.weight]
+Loading weights:  33%|███▎      | 112/339 [01:09<04:18,  1.14s/it, Materializing param=model.layers.9.mlp.down_proj.weight]  
+Loading weights:  33%|███▎      | 112/339 [01:09<04:18,  1.14s/it, Materializing param=model.layers.9.mlp.down_proj.weight]
+Loading weights:  33%|███▎      | 113/339 [01:09<04:17,  1.14s/it, Materializing param=model.layers.9.mlp.gate_proj.weight]
+Loading weights:  33%|███▎      | 113/339 [01:09<04:17,  1.14s/it, Materializing param=model.layers.9.mlp.gate_proj.weight]
+Loading weights:  34%|███▎      | 114/339 [01:09<04:16,  1.14s/it, Materializing param=model.layers.9.mlp.up_proj.weight]  
+Loading weights:  34%|███▎      | 114/339 [01:09<04:16,  1.14s/it, Materializing param=model.layers.9.mlp.up_proj.weight]
+Loading weights:  34%|███▍      | 115/339 [01:09<04:15,  1.14s/it, Materializing param=model.layers.9.post_attention_layernorm.weight]
+Loading weights:  34%|███▍      | 115/339 [01:09<04:15,  1.14s/it, Materializing param=model.layers.9.post_attention_layernorm.weight]
+Loading weights:  34%|███▍      | 116/339 [01:09<04:14,  1.14s/it, Materializing param=model.layers.9.self_attn.k_proj.bias]          
+Loading weights:  34%|███▍      | 116/339 [01:09<04:14,  1.14s/it, Materializing param=model.layers.9.self_attn.k_proj.bias]
+Loading weights:  35%|███▍      | 117/339 [01:09<04:12,  1.14s/it, Materializing param=model.layers.9.self_attn.k_proj.weight]
+Loading weights:  35%|███▍      | 117/339 [01:09<04:12,  1.14s/it, Materializing param=model.layers.9.self_attn.k_proj.weight]
+Loading weights:  35%|███▍      | 118/339 [01:09<04:11,  1.14s/it, Materializing param=model.layers.9.self_attn.o_proj.weight]
+Loading weights:  35%|███▍      | 118/339 [01:09<04:11,  1.14s/it, Materializing param=model.layers.9.self_attn.o_proj.weight]
+Loading weights:  35%|███▌      | 119/339 [01:09<04:10,  1.14s/it, Materializing param=model.layers.9.self_attn.q_proj.bias]  
+Loading weights:  35%|███▌      | 119/339 [01:09<04:10,  1.14s/it, Materializing param=model.layers.9.self_attn.q_proj.bias]
+Loading weights:  35%|███▌      | 120/339 [01:09<04:09,  1.14s/it, Materializing param=model.layers.9.self_attn.q_proj.weight]
+Loading weights:  35%|███▌      | 120/339 [01:09<04:09,  1.14s/it, Materializing param=model.layers.9.self_attn.q_proj.weight]
+Loading weights:  36%|███▌      | 121/339 [01:09<04:08,  1.14s/it, Materializing param=model.layers.9.self_attn.v_proj.bias]  
+Loading weights:  36%|███▌      | 121/339 [01:09<04:08,  1.14s/it, Materializing param=model.layers.9.self_attn.v_proj.bias]
+Loading weights:  36%|███▌      | 122/339 [01:09<04:07,  1.14s/it, Materializing param=model.layers.9.self_attn.v_proj.weight]
+Loading weights:  36%|███▌      | 122/339 [01:09<04:07,  1.14s/it, Materializing param=model.layers.9.self_attn.v_proj.weight]
+Loading weights:  36%|███▋      | 123/339 [01:09<04:06,  1.14s/it, Materializing param=model.layers.10.input_layernorm.weight]
+Loading weights:  36%|███▋      | 123/339 [01:09<04:06,  1.14s/it, Materializing param=model.layers.10.input_layernorm.weight]
+Loading weights:  37%|███▋      | 124/339 [01:09<04:04,  1.14s/it, Materializing param=model.layers.10.mlp.down_proj.weight]  
+Loading weights:  37%|███▋      | 124/339 [01:09<04:04,  1.14s/it, Materializing param=model.layers.10.mlp.down_proj.weight]
+Loading weights:  37%|███▋      | 125/339 [01:09<04:03,  1.14s/it, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 125/339 [01:09<04:03,  1.14s/it, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 126/339 [01:09<04:02,  1.14s/it, Materializing param=model.layers.10.mlp.up_proj.weight]  
+Loading weights:  37%|███▋      | 126/339 [01:09<04:02,  1.14s/it, Materializing param=model.layers.10.mlp.up_proj.weight]
+Loading weights:  37%|███▋      | 127/339 [01:09<04:01,  1.14s/it, Materializing param=model.layers.10.post_attention_layernorm.weight]
+Loading weights:  37%|███▋      | 127/339 [01:09<04:01,  1.14s/it, Materializing param=model.layers.10.post_attention_layernorm.weight]
+Loading weights:  38%|███▊      | 128/339 [01:09<04:00,  1.14s/it, Materializing param=model.layers.10.self_attn.k_proj.bias]          
+Loading weights:  38%|███▊      | 128/339 [01:09<04:00,  1.14s/it, Materializing param=model.layers.10.self_attn.k_proj.bias]
+Loading weights:  38%|███▊      | 129/339 [01:09<03:59,  1.14s/it, Materializing param=model.layers.10.self_attn.k_proj.weight]
+Loading weights:  38%|███▊      | 129/339 [01:09<03:59,  1.14s/it, Materializing param=model.layers.10.self_attn.k_proj.weight]
+Loading weights:  38%|███▊      | 130/339 [01:09<03:58,  1.14s/it, Materializing param=model.layers.10.self_attn.o_proj.weight]
+Loading weights:  38%|███▊      | 130/339 [01:09<03:58,  1.14s/it, Materializing param=model.layers.10.self_attn.o_proj.weight]
+Loading weights:  39%|███▊      | 131/339 [01:09<03:56,  1.14s/it, Materializing param=model.layers.10.self_attn.q_proj.bias]  
+Loading weights:  39%|███▊      | 131/339 [01:09<03:56,  1.14s/it, Materializing param=model.layers.10.self_attn.q_proj.bias]
+Loading weights:  39%|███▉      | 132/339 [01:09<03:55,  1.14s/it, Materializing param=model.layers.10.self_attn.q_proj.weight]
+Loading weights:  39%|███▉      | 132/339 [01:09<03:55,  1.14s/it, Materializing param=model.layers.10.self_attn.q_proj.weight]
+Loading weights:  39%|███▉      | 133/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.10.self_attn.q_proj.weight]
+Loading weights:  39%|███▉      | 133/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.10.self_attn.v_proj.bias]  
+Loading weights:  39%|███▉      | 133/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.10.self_attn.v_proj.bias]
+Loading weights:  40%|███▉      | 134/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.10.self_attn.v_proj.weight]
+Loading weights:  40%|███▉      | 134/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.10.self_attn.v_proj.weight]
+Loading weights:  40%|███▉      | 135/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.input_layernorm.weight] 
+Loading weights:  40%|███▉      | 135/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.input_layernorm.weight]
+Loading weights:  40%|████      | 136/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.mlp.down_proj.weight]  
+Loading weights:  40%|████      | 136/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.mlp.down_proj.weight]
+Loading weights:  40%|████      | 137/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.mlp.gate_proj.weight]
+Loading weights:  40%|████      | 137/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.mlp.gate_proj.weight]
+Loading weights:  41%|████      | 138/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.mlp.up_proj.weight]  
+Loading weights:  41%|████      | 138/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.mlp.up_proj.weight]
+Loading weights:  41%|████      | 139/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.post_attention_layernorm.weight]
+Loading weights:  41%|████      | 139/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.post_attention_layernorm.weight]
+Loading weights:  41%|████▏     | 140/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.k_proj.bias]          
+Loading weights:  41%|████▏     | 140/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.k_proj.bias]
+Loading weights:  42%|████▏     | 141/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.k_proj.weight]
+Loading weights:  42%|████▏     | 141/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.k_proj.weight]
+Loading weights:  42%|████▏     | 142/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.o_proj.weight]
+Loading weights:  42%|████▏     | 142/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.o_proj.weight]
+Loading weights:  42%|████▏     | 143/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.q_proj.bias]  
+Loading weights:  42%|████▏     | 143/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.q_proj.bias]
+Loading weights:  42%|████▏     | 144/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.q_proj.weight]
+Loading weights:  42%|████▏     | 144/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.q_proj.weight]
+Loading weights:  43%|████▎     | 145/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.v_proj.bias]  
+Loading weights:  43%|████▎     | 145/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.v_proj.bias]
+Loading weights:  43%|████▎     | 146/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.v_proj.weight]
+Loading weights:  43%|████▎     | 146/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.11.self_attn.v_proj.weight]
+Loading weights:  43%|████▎     | 147/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.input_layernorm.weight] 
+Loading weights:  43%|████▎     | 147/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.input_layernorm.weight]
+Loading weights:  44%|████▎     | 148/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.mlp.down_proj.weight]  
+Loading weights:  44%|████▎     | 148/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.mlp.down_proj.weight]
+Loading weights:  44%|████▍     | 149/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.mlp.gate_proj.weight]
+Loading weights:  44%|████▍     | 149/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.mlp.gate_proj.weight]
+Loading weights:  44%|████▍     | 150/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.mlp.up_proj.weight]  
+Loading weights:  44%|████▍     | 150/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.mlp.up_proj.weight]
+Loading weights:  45%|████▍     | 151/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.post_attention_layernorm.weight]
+Loading weights:  45%|████▍     | 151/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.post_attention_layernorm.weight]
+Loading weights:  45%|████▍     | 152/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.k_proj.bias]          
+Loading weights:  45%|████▍     | 152/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.k_proj.bias]
+Loading weights:  45%|████▌     | 153/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.k_proj.weight]
+Loading weights:  45%|████▌     | 153/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.k_proj.weight]
+Loading weights:  45%|████▌     | 154/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.o_proj.weight]
+Loading weights:  45%|████▌     | 154/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.o_proj.weight]
+Loading weights:  46%|████▌     | 155/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.q_proj.bias]  
+Loading weights:  46%|████▌     | 155/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.q_proj.bias]
+Loading weights:  46%|████▌     | 156/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.q_proj.weight]
+Loading weights:  46%|████▌     | 156/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.q_proj.weight]
+Loading weights:  46%|████▋     | 157/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.v_proj.bias]  
+Loading weights:  46%|████▋     | 157/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.v_proj.bias]
+Loading weights:  47%|████▋     | 158/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.v_proj.weight]
+Loading weights:  47%|████▋     | 158/339 [01:09<00:07, 25.84it/s, Materializing param=model.layers.12.self_attn.v_proj.weight]
+Loading weights:  47%|████▋     | 159/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.input_layernorm.weight] 
+Loading weights:  47%|████▋     | 159/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.input_layernorm.weight]
+Loading weights:  47%|████▋     | 160/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.mlp.down_proj.weight]  
+Loading weights:  47%|████▋     | 160/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.mlp.down_proj.weight]
+Loading weights:  47%|████▋     | 161/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.mlp.gate_proj.weight]
+Loading weights:  47%|████▋     | 161/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.mlp.gate_proj.weight]
+Loading weights:  48%|████▊     | 162/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.mlp.up_proj.weight]  
+Loading weights:  48%|████▊     | 162/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.mlp.up_proj.weight]
+Loading weights:  48%|████▊     | 163/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.post_attention_layernorm.weight]
+Loading weights:  48%|████▊     | 163/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.post_attention_layernorm.weight]
+Loading weights:  48%|████▊     | 164/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.k_proj.bias]          
+Loading weights:  48%|████▊     | 164/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.k_proj.bias]
+Loading weights:  49%|████▊     | 165/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.k_proj.weight]
+Loading weights:  49%|████▊     | 165/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.k_proj.weight]
+Loading weights:  49%|████▉     | 166/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.o_proj.weight]
+Loading weights:  49%|████▉     | 166/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.o_proj.weight]
+Loading weights:  49%|████▉     | 167/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.q_proj.bias]  
+Loading weights:  49%|████▉     | 167/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.q_proj.bias]
+Loading weights:  50%|████▉     | 168/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.q_proj.weight]
+Loading weights:  50%|████▉     | 168/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.q_proj.weight]
+Loading weights:  50%|████▉     | 169/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.v_proj.bias]  
+Loading weights:  50%|████▉     | 169/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.v_proj.bias]
+Loading weights:  50%|█████     | 170/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.v_proj.weight]
+Loading weights:  50%|█████     | 170/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.13.self_attn.v_proj.weight]
+Loading weights:  50%|█████     | 171/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.input_layernorm.weight] 
+Loading weights:  50%|█████     | 171/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.input_layernorm.weight]
+Loading weights:  51%|█████     | 172/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.mlp.down_proj.weight]  
+Loading weights:  51%|█████     | 172/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.mlp.down_proj.weight]
+Loading weights:  51%|█████     | 173/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.mlp.gate_proj.weight]
+Loading weights:  51%|█████     | 173/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.mlp.gate_proj.weight]
+Loading weights:  51%|█████▏    | 174/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.mlp.up_proj.weight]  
+Loading weights:  51%|█████▏    | 174/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.mlp.up_proj.weight]
+Loading weights:  52%|█████▏    | 175/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.post_attention_layernorm.weight]
+Loading weights:  52%|█████▏    | 175/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.post_attention_layernorm.weight]
+Loading weights:  52%|█████▏    | 176/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.k_proj.bias]          
+Loading weights:  52%|█████▏    | 176/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.k_proj.bias]
+Loading weights:  52%|█████▏    | 177/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.k_proj.weight]
+Loading weights:  52%|█████▏    | 177/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.k_proj.weight]
+Loading weights:  53%|█████▎    | 178/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.o_proj.weight]
+Loading weights:  53%|█████▎    | 178/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.o_proj.weight]
+Loading weights:  53%|█████▎    | 179/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.q_proj.bias]  
+Loading weights:  53%|█████▎    | 179/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.q_proj.bias]
+Loading weights:  53%|█████▎    | 180/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.q_proj.weight]
+Loading weights:  53%|█████▎    | 180/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.q_proj.weight]
+Loading weights:  53%|█████▎    | 181/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.v_proj.bias]  
+Loading weights:  53%|█████▎    | 181/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.v_proj.bias]
+Loading weights:  54%|█████▎    | 182/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.v_proj.weight]
+Loading weights:  54%|█████▎    | 182/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.14.self_attn.v_proj.weight]
+Loading weights:  54%|█████▍    | 183/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.15.input_layernorm.weight] 
+Loading weights:  54%|█████▍    | 183/339 [01:09<00:06, 25.84it/s, Materializing param=model.layers.15.input_layernorm.weight]
+Loading weights:  54%|█████▍    | 184/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.mlp.down_proj.weight]  
+Loading weights:  54%|█████▍    | 184/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.mlp.down_proj.weight]
+Loading weights:  55%|█████▍    | 185/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.mlp.gate_proj.weight]
+Loading weights:  55%|█████▍    | 185/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.mlp.gate_proj.weight]
+Loading weights:  55%|█████▍    | 186/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.mlp.up_proj.weight]  
+Loading weights:  55%|█████▍    | 186/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.mlp.up_proj.weight]
+Loading weights:  55%|█████▌    | 187/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.post_attention_layernorm.weight]
+Loading weights:  55%|█████▌    | 187/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.post_attention_layernorm.weight]
+Loading weights:  55%|█████▌    | 188/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.k_proj.bias]          
+Loading weights:  55%|█████▌    | 188/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.k_proj.bias]
+Loading weights:  56%|█████▌    | 189/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.k_proj.weight]
+Loading weights:  56%|█████▌    | 189/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.k_proj.weight]
+Loading weights:  56%|█████▌    | 190/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.o_proj.weight]
+Loading weights:  56%|█████▌    | 190/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.o_proj.weight]
+Loading weights:  56%|█████▋    | 191/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.q_proj.bias]  
+Loading weights:  56%|█████▋    | 191/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.q_proj.bias]
+Loading weights:  57%|█████▋    | 192/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.q_proj.weight]
+Loading weights:  57%|█████▋    | 192/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.q_proj.weight]
+Loading weights:  57%|█████▋    | 193/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.v_proj.bias]  
+Loading weights:  57%|█████▋    | 193/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.v_proj.bias]
+Loading weights:  57%|█████▋    | 194/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.v_proj.weight]
+Loading weights:  57%|█████▋    | 194/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.15.self_attn.v_proj.weight]
+Loading weights:  58%|█████▊    | 195/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.input_layernorm.weight] 
+Loading weights:  58%|█████▊    | 195/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.input_layernorm.weight]
+Loading weights:  58%|█████▊    | 196/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.mlp.down_proj.weight]  
+Loading weights:  58%|█████▊    | 196/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.mlp.down_proj.weight]
+Loading weights:  58%|█████▊    | 197/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.mlp.gate_proj.weight]
+Loading weights:  58%|█████▊    | 197/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.mlp.gate_proj.weight]
+Loading weights:  58%|█████▊    | 198/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.mlp.up_proj.weight]  
+Loading weights:  58%|█████▊    | 198/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.mlp.up_proj.weight]
+Loading weights:  59%|█████▊    | 199/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.post_attention_layernorm.weight]
+Loading weights:  59%|█████▊    | 199/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.post_attention_layernorm.weight]
+Loading weights:  59%|█████▉    | 200/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.k_proj.bias]          
+Loading weights:  59%|█████▉    | 200/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.k_proj.bias]
+Loading weights:  59%|█████▉    | 201/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.k_proj.weight]
+Loading weights:  59%|█████▉    | 201/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.k_proj.weight]
+Loading weights:  60%|█████▉    | 202/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.o_proj.weight]
+Loading weights:  60%|█████▉    | 202/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.o_proj.weight]
+Loading weights:  60%|█████▉    | 203/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.q_proj.bias]  
+Loading weights:  60%|█████▉    | 203/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.q_proj.bias]
+Loading weights:  60%|██████    | 204/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.q_proj.weight]
+Loading weights:  60%|██████    | 204/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.q_proj.weight]
+Loading weights:  60%|██████    | 205/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.v_proj.bias]  
+Loading weights:  60%|██████    | 205/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.v_proj.bias]
+Loading weights:  61%|██████    | 206/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.v_proj.weight]
+Loading weights:  61%|██████    | 206/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.16.self_attn.v_proj.weight]
+Loading weights:  61%|██████    | 207/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.17.input_layernorm.weight] 
+Loading weights:  61%|██████    | 207/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.17.input_layernorm.weight]
+Loading weights:  61%|██████▏   | 208/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.17.mlp.down_proj.weight]  
+Loading weights:  61%|██████▏   | 208/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.17.mlp.down_proj.weight]
+Loading weights:  62%|██████▏   | 209/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.17.mlp.gate_proj.weight]
+Loading weights:  62%|██████▏   | 209/339 [01:09<00:05, 25.84it/s, Materializing param=model.layers.17.mlp.gate_proj.weight]
+Loading weights:  62%|██████▏   | 210/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.mlp.up_proj.weight]  
+Loading weights:  62%|██████▏   | 210/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.mlp.up_proj.weight]
+Loading weights:  62%|██████▏   | 211/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.post_attention_layernorm.weight]
+Loading weights:  62%|██████▏   | 211/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.post_attention_layernorm.weight]
+Loading weights:  63%|██████▎   | 212/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.k_proj.bias]          
+Loading weights:  63%|██████▎   | 212/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.k_proj.bias]
+Loading weights:  63%|██████▎   | 213/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.k_proj.weight]
+Loading weights:  63%|██████▎   | 213/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.k_proj.weight]
+Loading weights:  63%|██████▎   | 214/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.o_proj.weight]
+Loading weights:  63%|██████▎   | 214/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.o_proj.weight]
+Loading weights:  63%|██████▎   | 215/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.q_proj.bias]  
+Loading weights:  63%|██████▎   | 215/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.q_proj.bias]
+Loading weights:  64%|██████▎   | 216/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.q_proj.weight]
+Loading weights:  64%|██████▎   | 216/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.q_proj.weight]
+Loading weights:  64%|██████▍   | 217/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.v_proj.bias]  
+Loading weights:  64%|██████▍   | 217/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.v_proj.bias]
+Loading weights:  64%|██████▍   | 218/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.v_proj.weight]
+Loading weights:  64%|██████▍   | 218/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.17.self_attn.v_proj.weight]
+Loading weights:  65%|██████▍   | 219/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.input_layernorm.weight] 
+Loading weights:  65%|██████▍   | 219/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.input_layernorm.weight]
+Loading weights:  65%|██████▍   | 220/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.mlp.down_proj.weight]  
+Loading weights:  65%|██████▍   | 220/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.mlp.down_proj.weight]
+Loading weights:  65%|██████▌   | 221/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.mlp.gate_proj.weight]
+Loading weights:  65%|██████▌   | 221/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.mlp.gate_proj.weight]
+Loading weights:  65%|██████▌   | 222/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.mlp.up_proj.weight]  
+Loading weights:  65%|██████▌   | 222/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.mlp.up_proj.weight]
+Loading weights:  66%|██████▌   | 223/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.post_attention_layernorm.weight]
+Loading weights:  66%|██████▌   | 223/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.post_attention_layernorm.weight]
+Loading weights:  66%|██████▌   | 224/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.k_proj.bias]          
+Loading weights:  66%|██████▌   | 224/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.k_proj.bias]
+Loading weights:  66%|██████▋   | 225/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.k_proj.weight]
+Loading weights:  66%|██████▋   | 225/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.k_proj.weight]
+Loading weights:  67%|██████▋   | 226/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.o_proj.weight]
+Loading weights:  67%|██████▋   | 226/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.o_proj.weight]
+Loading weights:  67%|██████▋   | 227/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.q_proj.bias]  
+Loading weights:  67%|██████▋   | 227/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.q_proj.bias]
+Loading weights:  67%|██████▋   | 228/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.q_proj.weight]
+Loading weights:  67%|██████▋   | 228/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.q_proj.weight]
+Loading weights:  68%|██████▊   | 229/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.v_proj.bias]  
+Loading weights:  68%|██████▊   | 229/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.v_proj.bias]
+Loading weights:  68%|██████▊   | 230/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.v_proj.weight]
+Loading weights:  68%|██████▊   | 230/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.18.self_attn.v_proj.weight]
+Loading weights:  68%|██████▊   | 231/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.19.input_layernorm.weight] 
+Loading weights:  68%|██████▊   | 231/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.19.input_layernorm.weight]
+Loading weights:  68%|██████▊   | 232/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.19.mlp.down_proj.weight]  
+Loading weights:  68%|██████▊   | 232/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.19.mlp.down_proj.weight]
+Loading weights:  69%|██████▊   | 233/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.19.mlp.gate_proj.weight]
+Loading weights:  69%|██████▊   | 233/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.19.mlp.gate_proj.weight]
+Loading weights:  69%|██████▉   | 234/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.19.mlp.up_proj.weight]  
+Loading weights:  69%|██████▉   | 234/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.19.mlp.up_proj.weight]
+Loading weights:  69%|██████▉   | 235/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.19.post_attention_layernorm.weight]
+Loading weights:  69%|██████▉   | 235/339 [01:09<00:04, 25.84it/s, Materializing param=model.layers.19.post_attention_layernorm.weight]
+Loading weights:  70%|██████▉   | 236/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.k_proj.bias]          
+Loading weights:  70%|██████▉   | 236/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.k_proj.bias]
+Loading weights:  70%|██████▉   | 237/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.k_proj.weight]
+Loading weights:  70%|██████▉   | 237/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.k_proj.weight]
+Loading weights:  70%|███████   | 238/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.o_proj.weight]
+Loading weights:  70%|███████   | 238/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.o_proj.weight]
+Loading weights:  71%|███████   | 239/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.q_proj.bias]  
+Loading weights:  71%|███████   | 239/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.q_proj.bias]
+Loading weights:  71%|███████   | 240/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.q_proj.weight]
+Loading weights:  71%|███████   | 240/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.q_proj.weight]
+Loading weights:  71%|███████   | 241/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.v_proj.bias]  
+Loading weights:  71%|███████   | 241/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.v_proj.bias]
+Loading weights:  71%|███████▏  | 242/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.v_proj.weight]
+Loading weights:  71%|███████▏  | 242/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.19.self_attn.v_proj.weight]
+Loading weights:  72%|███████▏  | 243/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.input_layernorm.weight] 
+Loading weights:  72%|███████▏  | 243/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.input_layernorm.weight]
+Loading weights:  72%|███████▏  | 244/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.mlp.down_proj.weight]  
+Loading weights:  72%|███████▏  | 244/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.mlp.down_proj.weight]
+Loading weights:  72%|███████▏  | 245/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.mlp.gate_proj.weight]
+Loading weights:  72%|███████▏  | 245/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.mlp.gate_proj.weight]
+Loading weights:  73%|███████▎  | 246/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.mlp.up_proj.weight]  
+Loading weights:  73%|███████▎  | 246/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.mlp.up_proj.weight]
+Loading weights:  73%|███████▎  | 247/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.post_attention_layernorm.weight]
+Loading weights:  73%|███████▎  | 247/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.post_attention_layernorm.weight]
+Loading weights:  73%|███████▎  | 248/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.k_proj.bias]          
+Loading weights:  73%|███████▎  | 248/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.k_proj.bias]
+Loading weights:  73%|███████▎  | 249/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.k_proj.weight]
+Loading weights:  73%|███████▎  | 249/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.k_proj.weight]
+Loading weights:  74%|███████▎  | 250/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.o_proj.weight]
+Loading weights:  74%|███████▎  | 250/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.o_proj.weight]
+Loading weights:  74%|███████▍  | 251/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.q_proj.bias]  
+Loading weights:  74%|███████▍  | 251/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.q_proj.bias]
+Loading weights:  74%|███████▍  | 252/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.q_proj.weight]
+Loading weights:  74%|███████▍  | 252/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.q_proj.weight]
+Loading weights:  75%|███████▍  | 253/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.v_proj.bias]  
+Loading weights:  75%|███████▍  | 253/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.v_proj.bias]
+Loading weights:  75%|███████▍  | 254/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.v_proj.weight]
+Loading weights:  75%|███████▍  | 254/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.20.self_attn.v_proj.weight]
+Loading weights:  75%|███████▌  | 255/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.21.input_layernorm.weight] 
+Loading weights:  75%|███████▌  | 255/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.21.input_layernorm.weight]
+Loading weights:  76%|███████▌  | 256/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.21.mlp.down_proj.weight]  
+Loading weights:  76%|███████▌  | 256/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.21.mlp.down_proj.weight]
+Loading weights:  76%|███████▌  | 257/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.21.mlp.gate_proj.weight]
+Loading weights:  76%|███████▌  | 257/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.21.mlp.gate_proj.weight]
+Loading weights:  76%|███████▌  | 258/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.21.mlp.up_proj.weight]  
+Loading weights:  76%|███████▌  | 258/339 [01:09<00:03, 25.84it/s, Materializing param=model.layers.21.mlp.up_proj.weight]
+Loading weights:  76%|███████▋  | 259/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.mlp.up_proj.weight]
+Loading weights:  76%|███████▋  | 259/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.post_attention_layernorm.weight]
+Loading weights:  76%|███████▋  | 259/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.post_attention_layernorm.weight]
+Loading weights:  77%|███████▋  | 260/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.k_proj.bias]          
+Loading weights:  77%|███████▋  | 260/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.k_proj.bias]
+Loading weights:  77%|███████▋  | 261/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.k_proj.weight]
+Loading weights:  77%|███████▋  | 261/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.k_proj.weight]
+Loading weights:  77%|███████▋  | 262/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.o_proj.weight]
+Loading weights:  77%|███████▋  | 262/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.o_proj.weight]
+Loading weights:  78%|███████▊  | 263/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.q_proj.bias]  
+Loading weights:  78%|███████▊  | 263/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.q_proj.bias]
+Loading weights:  78%|███████▊  | 264/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.q_proj.weight]
+Loading weights:  78%|███████▊  | 264/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.q_proj.weight]
+Loading weights:  78%|███████▊  | 265/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.v_proj.bias]  
+Loading weights:  78%|███████▊  | 265/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.v_proj.bias]
+Loading weights:  78%|███████▊  | 266/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.v_proj.weight]
+Loading weights:  78%|███████▊  | 266/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.21.self_attn.v_proj.weight]
+Loading weights:  79%|███████▉  | 267/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.input_layernorm.weight] 
+Loading weights:  79%|███████▉  | 267/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.input_layernorm.weight]
+Loading weights:  79%|███████▉  | 268/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.mlp.down_proj.weight]  
+Loading weights:  79%|███████▉  | 268/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.mlp.down_proj.weight]
+Loading weights:  79%|███████▉  | 269/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.mlp.gate_proj.weight]
+Loading weights:  79%|███████▉  | 269/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.mlp.gate_proj.weight]
+Loading weights:  80%|███████▉  | 270/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.mlp.up_proj.weight]  
+Loading weights:  80%|███████▉  | 270/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.mlp.up_proj.weight]
+Loading weights:  80%|███████▉  | 271/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.post_attention_layernorm.weight]
+Loading weights:  80%|███████▉  | 271/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.post_attention_layernorm.weight]
+Loading weights:  80%|████████  | 272/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.self_attn.k_proj.bias]          
+Loading weights:  80%|████████  | 272/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.self_attn.k_proj.bias]
+Loading weights:  81%|████████  | 273/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.self_attn.k_proj.weight]
+Loading weights:  81%|████████  | 273/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.self_attn.k_proj.weight]
+Loading weights:  81%|████████  | 274/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.self_attn.o_proj.weight]
+Loading weights:  81%|████████  | 274/339 [01:09<00:01, 64.58it/s, Materializing param=model.layers.22.self_attn.o_proj.weight]
+Loading weights:  81%|████████  | 275/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.22.self_attn.q_proj.bias]  
+Loading weights:  81%|████████  | 275/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.22.self_attn.q_proj.bias]
+Loading weights:  81%|████████▏ | 276/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.22.self_attn.q_proj.weight]
+Loading weights:  81%|████████▏ | 276/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.22.self_attn.q_proj.weight]
+Loading weights:  82%|████████▏ | 277/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.22.self_attn.v_proj.bias]  
+Loading weights:  82%|████████▏ | 277/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.22.self_attn.v_proj.bias]
+Loading weights:  82%|████████▏ | 278/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.22.self_attn.v_proj.weight]
+Loading weights:  82%|████████▏ | 278/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.22.self_attn.v_proj.weight]
+Loading weights:  82%|████████▏ | 279/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.input_layernorm.weight] 
+Loading weights:  82%|████████▏ | 279/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.input_layernorm.weight]
+Loading weights:  83%|████████▎ | 280/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.mlp.down_proj.weight]  
+Loading weights:  83%|████████▎ | 280/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.mlp.down_proj.weight]
+Loading weights:  83%|████████▎ | 281/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.mlp.gate_proj.weight]
+Loading weights:  83%|████████▎ | 281/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.mlp.gate_proj.weight]
+Loading weights:  83%|████████▎ | 282/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.mlp.up_proj.weight]  
+Loading weights:  83%|████████▎ | 282/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.mlp.up_proj.weight]
+Loading weights:  83%|████████▎ | 283/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.post_attention_layernorm.weight]
+Loading weights:  83%|████████▎ | 283/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.post_attention_layernorm.weight]
+Loading weights:  84%|████████▍ | 284/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.k_proj.bias]          
+Loading weights:  84%|████████▍ | 284/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.k_proj.bias]
+Loading weights:  84%|████████▍ | 285/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.k_proj.weight]
+Loading weights:  84%|████████▍ | 285/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.k_proj.weight]
+Loading weights:  84%|████████▍ | 286/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.o_proj.weight]
+Loading weights:  84%|████████▍ | 286/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.o_proj.weight]
+Loading weights:  85%|████████▍ | 287/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.q_proj.bias]  
+Loading weights:  85%|████████▍ | 287/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.q_proj.bias]
+Loading weights:  85%|████████▍ | 288/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.q_proj.weight]
+Loading weights:  85%|████████▍ | 288/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.q_proj.weight]
+Loading weights:  85%|████████▌ | 289/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.v_proj.bias]  
+Loading weights:  85%|████████▌ | 289/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.v_proj.bias]
+Loading weights:  86%|████████▌ | 290/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.v_proj.weight]
+Loading weights:  86%|████████▌ | 290/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.23.self_attn.v_proj.weight]
+Loading weights:  86%|████████▌ | 291/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.input_layernorm.weight] 
+Loading weights:  86%|████████▌ | 291/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.input_layernorm.weight]
+Loading weights:  86%|████████▌ | 292/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.mlp.down_proj.weight]  
+Loading weights:  86%|████████▌ | 292/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.mlp.down_proj.weight]
+Loading weights:  86%|████████▋ | 293/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.mlp.gate_proj.weight]
+Loading weights:  86%|████████▋ | 293/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.mlp.gate_proj.weight]
+Loading weights:  87%|████████▋ | 294/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.mlp.up_proj.weight]  
+Loading weights:  87%|████████▋ | 294/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.mlp.up_proj.weight]
+Loading weights:  87%|████████▋ | 295/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.post_attention_layernorm.weight]
+Loading weights:  87%|████████▋ | 295/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.post_attention_layernorm.weight]
+Loading weights:  87%|████████▋ | 296/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.k_proj.bias]          
+Loading weights:  87%|████████▋ | 296/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.k_proj.bias]
+Loading weights:  88%|████████▊ | 297/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.k_proj.weight]
+Loading weights:  88%|████████▊ | 297/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.k_proj.weight]
+Loading weights:  88%|████████▊ | 298/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.o_proj.weight]
+Loading weights:  88%|████████▊ | 298/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.o_proj.weight]
+Loading weights:  88%|████████▊ | 299/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.q_proj.bias]  
+Loading weights:  88%|████████▊ | 299/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.q_proj.bias]
+Loading weights:  88%|████████▊ | 300/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.q_proj.weight]
+Loading weights:  88%|████████▊ | 300/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.q_proj.weight]
+Loading weights:  89%|████████▉ | 301/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.v_proj.bias]  
+Loading weights:  89%|████████▉ | 301/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.v_proj.bias]
+Loading weights:  89%|████████▉ | 302/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.v_proj.weight]
+Loading weights:  89%|████████▉ | 302/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.24.self_attn.v_proj.weight]
+Loading weights:  89%|████████▉ | 303/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.input_layernorm.weight] 
+Loading weights:  89%|████████▉ | 303/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.input_layernorm.weight]
+Loading weights:  90%|████████▉ | 304/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.mlp.down_proj.weight]  
+Loading weights:  90%|████████▉ | 304/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.mlp.down_proj.weight]
+Loading weights:  90%|████████▉ | 305/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.mlp.gate_proj.weight]
+Loading weights:  90%|████████▉ | 305/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.mlp.gate_proj.weight]
+Loading weights:  90%|█████████ | 306/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.mlp.up_proj.weight]  
+Loading weights:  90%|█████████ | 306/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.mlp.up_proj.weight]
+Loading weights:  91%|█████████ | 307/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.post_attention_layernorm.weight]
+Loading weights:  91%|█████████ | 307/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.post_attention_layernorm.weight]
+Loading weights:  91%|█████████ | 308/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.k_proj.bias]          
+Loading weights:  91%|█████████ | 308/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.k_proj.bias]
+Loading weights:  91%|█████████ | 309/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.k_proj.weight]
+Loading weights:  91%|█████████ | 309/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.k_proj.weight]
+Loading weights:  91%|█████████▏| 310/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.o_proj.weight]
+Loading weights:  91%|█████████▏| 310/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.o_proj.weight]
+Loading weights:  92%|█████████▏| 311/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.q_proj.bias]  
+Loading weights:  92%|█████████▏| 311/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.q_proj.bias]
+Loading weights:  92%|█████████▏| 312/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.q_proj.weight]
+Loading weights:  92%|█████████▏| 312/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.q_proj.weight]
+Loading weights:  92%|█████████▏| 313/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.v_proj.bias]  
+Loading weights:  92%|█████████▏| 313/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.v_proj.bias]
+Loading weights:  93%|█████████▎| 314/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.v_proj.weight]
+Loading weights:  93%|█████████▎| 314/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.25.self_attn.v_proj.weight]
+Loading weights:  93%|█████████▎| 315/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.input_layernorm.weight] 
+Loading weights:  93%|█████████▎| 315/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.input_layernorm.weight]
+Loading weights:  93%|█████████▎| 316/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.mlp.down_proj.weight]  
+Loading weights:  93%|█████████▎| 316/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.mlp.down_proj.weight]
+Loading weights:  94%|█████████▎| 317/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.mlp.gate_proj.weight]
+Loading weights:  94%|█████████▎| 317/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.mlp.gate_proj.weight]
+Loading weights:  94%|█████████▍| 318/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.mlp.up_proj.weight]  
+Loading weights:  94%|█████████▍| 318/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.mlp.up_proj.weight]
+Loading weights:  94%|█████████▍| 319/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.post_attention_layernorm.weight]
+Loading weights:  94%|█████████▍| 319/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.post_attention_layernorm.weight]
+Loading weights:  94%|█████████▍| 320/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.k_proj.bias]          
+Loading weights:  94%|█████████▍| 320/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.k_proj.bias]
+Loading weights:  95%|█████████▍| 321/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.k_proj.weight]
+Loading weights:  95%|█████████▍| 321/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.k_proj.weight]
+Loading weights:  95%|█████████▍| 322/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.o_proj.weight]
+Loading weights:  95%|█████████▍| 322/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.o_proj.weight]
+Loading weights:  95%|█████████▌| 323/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.q_proj.bias]  
+Loading weights:  95%|█████████▌| 323/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.q_proj.bias]
+Loading weights:  96%|█████████▌| 324/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.q_proj.weight]
+Loading weights:  96%|█████████▌| 324/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.q_proj.weight]
+Loading weights:  96%|█████████▌| 325/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.v_proj.bias]  
+Loading weights:  96%|█████████▌| 325/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.v_proj.bias]
+Loading weights:  96%|█████████▌| 326/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.v_proj.weight]
+Loading weights:  96%|█████████▌| 326/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.26.self_attn.v_proj.weight]
+Loading weights:  96%|█████████▋| 327/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.input_layernorm.weight] 
+Loading weights:  96%|█████████▋| 327/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.input_layernorm.weight]
+Loading weights:  97%|█████████▋| 328/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.mlp.down_proj.weight]  
+Loading weights:  97%|█████████▋| 328/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.mlp.down_proj.weight]
+Loading weights:  97%|█████████▋| 329/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.mlp.gate_proj.weight]
+Loading weights:  97%|█████████▋| 329/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.mlp.gate_proj.weight]
+Loading weights:  97%|█████████▋| 330/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.mlp.up_proj.weight]  
+Loading weights:  97%|█████████▋| 330/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.mlp.up_proj.weight]
+Loading weights:  98%|█████████▊| 331/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.post_attention_layernorm.weight]
+Loading weights:  98%|█████████▊| 331/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.post_attention_layernorm.weight]
+Loading weights:  98%|█████████▊| 332/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.k_proj.bias]          
+Loading weights:  98%|█████████▊| 332/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.k_proj.bias]
+Loading weights:  98%|█████████▊| 333/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.k_proj.weight]
+Loading weights:  98%|█████████▊| 333/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.k_proj.weight]
+Loading weights:  99%|█████████▊| 334/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.o_proj.weight]
+Loading weights:  99%|█████████▊| 334/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.o_proj.weight]
+Loading weights:  99%|█████████▉| 335/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.q_proj.bias]  
+Loading weights:  99%|█████████▉| 335/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.q_proj.bias]
+Loading weights:  99%|█████████▉| 336/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.q_proj.weight]
+Loading weights:  99%|█████████▉| 336/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.q_proj.weight]
+Loading weights:  99%|█████████▉| 337/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.v_proj.bias]  
+Loading weights:  99%|█████████▉| 337/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.v_proj.bias]
+Loading weights: 100%|█████████▉| 338/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.v_proj.weight]
+Loading weights: 100%|█████████▉| 338/339 [01:09<00:00, 64.58it/s, Materializing param=model.layers.27.self_attn.v_proj.weight]
+Loading weights: 100%|██████████| 339/339 [01:09<00:00, 64.58it/s, Materializing param=model.norm.weight]                      
+Loading weights: 100%|██████████| 339/339 [01:09<00:00, 64.58it/s, Materializing param=model.norm.weight]
+Loading weights: 100%|██████████| 339/339 [01:09<00:00,  4.84it/s, Materializing param=model.norm.weight]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+ Loading benchmark: gsm_symbolic
+[1 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the whale's length to inches.
+- Whale length: 40 feet * 12 inches/foot = 480 inches.
+
+Step 2: Calculate the combined length of the remoras.
+- Remora length: 2 * 48 inches = 96 inches.
+
+Step 3: Calculate the percentage of the whale's body length that the combined length of the remoras represents.
+- Percentage: (96 / 480) * 100 = 20%.
+
+Answer: 20
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[2 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the dolphin's body length to inches.
+\[ \text{Dolphin length} = 150 \text{ feet} \times 12 \text{ inches/foot} = 1800 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 6 \times 30 \text{ inches} = 180 \text{ inches} \]
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{180}{1800} \right) \times 100 = 10\% \]
+
+Answer: 10
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[3 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the dolphin's length to inches.
+\[ \text{Dolphin length} = 100 \text{ feet} \times 12 \text{ inches/foot} = 1200 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 3 \times 8 \text{ inches} = 24 \text{ inches} \]
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{24 \text{ inches}}{1200 \text{ inches}} \right) \times 100 = \frac{24}{1200} \times 100 = 0.02 \times 100 = 2\% \]
+
+Answer: 2
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[4 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the shark's length to inches.
+- Shark length: 30 feet * 12 inches/foot = 360 inches.
+
+Step 2: Calculate the combined length of the remoras.
+- Remora length: 3 * 12 inches = 36 inches.
+
+Step 3: Calculate the percentage of the shark's body length that the combined length of the remoras represents.
+- Percentage: (36 / 360) * 100 = 10%.
+
+Answer: 10
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[5 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the dolphin's length to inches.
+\[ \text{Dolphin length} = 100 \text{ feet} \times 12 \text{ inches/foot} = 1200 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 8 \times 30 \text{ inches} = 240 \text{ inches} \]
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{240 \text{ inches}}{1200 \text{ inches}} \right) \times 100 = 20\% \]
+
+Answer: 20
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[6 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the shark's length to inches.
+- Shark length: 30 feet * 12 inches/foot = 360 inches.
+
+Step 2: Calculate the combined length of the remoras.
+- Remora length: 9 * 20 inches = 180 inches.
+
+Step 3: Calculate the percentage of the shark's body length that the combined length of the remoras represents.
+- Percentage: (180 / 360) * 100 = 50%.
+
+Answer: 50
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[7 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the whale's length to inches.
+\[ \text{Whale length} = 440 \text{ feet} \times 12 \text{ inches/foot} = 5280 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 8 \times 66 \text{ inches} = 528 \text{ inches} \]
+
+Step 3: Calculate the percentage of the whale's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{528 \text{ inches}}{5280 \text{ inches}} \right) \times 100 = \frac{528}{5280} \times 100 = 0.1 \times 100 = 10\% \]
+
+Answer: 10
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[8 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the dolphin's body length to inches.
+\[ \text{Dolphin length} = 300 \text{ feet} \times 12 \text{ inches/foot} = 3600 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 4 \times 18 \text{ inches} = 72 \text{ inches} \]
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{72}{3600} \right) \times 100 = 2\% \]
+
+Answer: 2
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[9 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the whale's length to inches.
+\[ \text{Whale length} = 100 \text{ feet} \times 12 \text{ inches/foot} = 1200 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 5 \times 48 \text{ inches} = 240 \text{ inches} \]
+
+Step 3: Calculate the percentage of the whale's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{240 \text{ inches}}{1200 \text{ inches}} \right) \times 100 = 20\% \]
+
+Answer: 20
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[10 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the dolphin's length to inches.
+\[ \text{Dolphin length} = 450 \text{ feet} \times 12 \text{ inches/foot} = 5400 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 6 \times 90 \text{ inches} = 540 \text{ inches} \]
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{540 \text{ inches}}{5400 \text{ inches}} \right) \times 100 = 10\% \]
+
+Answer: 10
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[11 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the dolphin's body length to inches.
+\[ \text{Dolphin length} = 200 \text{ feet} \times 12 \text{ inches/foot} = 2400 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 4 \times 60 \text{ inches} = 240 \text{ inches} \]
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{240 \text{ inches}}{2400 \text{ inches}} \right) \times 100 = 10\% \]
+
+Answer: 10
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[12 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the whale's length to inches.
+\[ \text{Whale length} = 150 \text{ feet} \times 12 \text{ inches/foot} = 1800 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 9 \times 4 \text{ inches} = 36 \text{ inches} \]
+
+Step 3: Calculate the percentage of the whale's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{36}{1800} \right) \times 100 = 2\% \]
+
+Answer: 2
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[13 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the dolphin's length to inches.
+\[ \text{Dolphin length} = 480 \text{ feet} \times 12 \text{ inches/foot} = 5760 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 4 \times 72 \text{ inches} = 288 \text{ inches} \]
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{288}{5760} \right) \times 100 = 5\% \]
+
+Answer: 5
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[14 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the shark's length to inches.
+- Shark length: 250 feet * 12 inches/foot = 3000 inches.
+
+Step 2: Calculate the combined length of the remoras.
+- Remora length: 2 * 30 inches = 60 inches.
+
+Step 3: Calculate the percentage of the shark's body length that the combined length of the remoras represents.
+- Percentage: (60 / 3000) * 100 = 2%.
+
+Answer: 2
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[15 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the whale's length to inches.
+- Whale length: 50 feet * 12 inches/foot = 600 inches.
+
+Step 2: Calculate the combined length of the remoras.
+- Remora length: 4 * 6 inches = 24 inches.
+
+Step 3: Calculate the percentage of the whale's body length that the combined length of the remoras represents.
+- Percentage: (24 inches / 600 inches) * 100 = 4%.
+
+Answer: 4
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[16 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the dolphin's length to inches.
+\[ \text{Dolphin length} = 350 \text{ feet} \times 12 \text{ inches/foot} = 4200 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 7 \times 60 \text{ inches} = 420 \text{ inches} \]
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{420 \text{ inches}}{4200 \text{ inches}} \right) \times 100 = 10\% \]
+
+Answer: 10
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[17 / 200] Evaluting Question
+Response: Step 1: Convert the shark's length to inches: 90 * 12 = 1080 inches.
+Step 2: Calculate the combined length of the remoras: 4 * 54 = 216 inches.
+Step 3: Calculate the percentage: (216 / 1080) * 100 = 20%.
+
+Answer: 20
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[18 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the dolphin's length to inches.
+\[ \text{Dolphin length} = 240 \text{ feet} \times 12 \text{ inches/foot} = 2880 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 9 \times 32 \text{ inches} = 288 \text{ inches} \]
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{288 \text{ inches}}{2880 \text{ inches}} \right) \times 100 = \frac{288}{2880} \times 100 = 0.1 \times 100 = 10\% \]
+
+Answer: 10
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[19 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the dolphin's length to inches.
+\[ \text{Dolphin length} = 180 \text{ feet} \times 12 \text{ inches/foot} = 2160 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 9 \times 48 \text{ inches} = 432 \text{ inches} \]
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{432}{2160} \right) \times 100 = 20\% \]
+
+Answer: 20
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[20 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the shark's length to inches.
+\[ 80 \text{ feet} \times 12 \text{ inches/foot} = 960 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ 8 \text{ remoras} \times 30 \text{ inches/remora} = 240 \text{ inches} \]
+
+Step 3: Calculate the percentage of the shark's body length that the combined length of the remoras represents.
+\[ \left( \frac{240 \text{ inches}}{960 \text{ inches}} \right) \times 100 = 25\% \]
+
+Answer: 25
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[21 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the whale's length to inches.
+- Whale length: 200 feet * 12 inches/foot = 2400 inches.
+
+Step 2: Calculate the combined length of the remoras.
+- Remora length: 2 * 12 inches = 24 inches.
+
+Step 3: Calculate the percentage of the whale's body length that the combined length of the remoras represents.
+- Percentage: (24 inches / 2400 inches) * 100 = 1%.
+
+Answer: 1
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[22 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the dolphin's length to inches.
+- Dolphin length: 250 feet * 12 inches/foot = 3000 inches.
+
+Step 2: Calculate the combined length of the remoras.
+- Remora length: 3 * 20 inches = 60 inches.
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+- Percentage: (60 / 3000) * 100 = 2%.
+
+Answer: 2
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[23 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the whale's length to inches.
+\[ \text{Whale length} = 140 \text{ feet} \times 12 \text{ inches/foot} = 1680 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 5 \times 84 \text{ inches} = 420 \text{ inches} \]
+
+Step 3: Calculate the percentage of the whale's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{420}{1680} \right) \times 100 = 25\% \]
+
+Answer: 25
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[24 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the shark's length to inches.
+\[ 70 \text{ feet} \times 12 \text{ inches/foot} = 840 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ 2 \times 42 \text{ inches} = 84 \text{ inches} \]
+
+Step 3: Calculate the percentage of the shark's body length that the combined length of the remoras represents.
+\[ \left( \frac{84 \text{ inches}}{840 \text{ inches}} \right) \times 100 = 10\% \]
+
+Answer: 10
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[25 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the whale's length to inches.
+- Whale length: 300 feet * 12 inches/foot = 3600 inches.
+
+Step 2: Calculate the combined length of the remoras.
+- Remora length: 6 * 30 inches = 180 inches.
+
+Step 3: Calculate the percentage of the whale's body length that the combined length of the remoras represents.
+- Percentage: (180 / 3600) * 100 = 5%.
+
+Answer: 5
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[26 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the shark's length to inches.
+\[ 80 \text{ feet} \times 12 \text{ inches/foot} = 960 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ 3 \times 16 \text{ inches} = 48 \text{ inches} \]
+
+Step 3: Calculate the percentage of the shark's body length that the combined length of the remoras represents.
+\[ \left( \frac{48 \text{ inches}}{960 \text{ inches}} \right) \times 100 = 5\% \]
+
+Answer: 5
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[27 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the dolphin's body length to inches.
+\[ 60 \text{ feet} \times 12 \text{ inches/foot} = 720 \text{ inches} \]
+
+Step 2: Calculate the combined length of the 6 remoras.
+\[ 6 \times 6 \text{ inches} = 36 \text{ inches} \]
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+\[ \left( \frac{36}{720} \right) \times 100 = 5\% \]
+
+Answer: 5
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[28 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the dolphin's length to inches.
+\[ 70 \text{ feet} \times 12 \text{ inches/foot} = 840 \text{ inches} \]
+
+Step 2: Calculate the combined length of the 4 remoras.
+\[ 4 \times 21 \text{ inches} = 84 \text{ inches} \]
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+\[ \left( \frac{84 \text{ inches}}{840 \text{ inches}} \right) \times 100 = 10\% \]
+
+Answer: 10
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[29 / 200] Evaluting Question
+Response: Let's solve this step-by-step while avoiding the drifting error:
+
+Step 1: Convert the dolphin's length to inches.
+- Dolphin length: 50 feet * 12 inches/foot = 600 inches.
+
+Step 2: Calculate the combined length of the remoras.
+- Remora length: 2 * 6 inches = 12 inches.
+
+Step 3: Calculate the percentage of the dolphin's body length that the combined length of the remoras represents.
+- Percentage: (12 inches / 600 inches) * 100 = 2%.
+
+Answer: 2
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[30 / 200] Evaluting Question
+Response: Let's solve this step-by-step to avoid any drifting errors:
+
+Step 1: Convert the shark's length to inches.
+\[ \text{Shark length} = 490 \text{ feet} \times 12 \text{ inches/foot} = 5880 \text{ inches} \]
+
+Step 2: Calculate the combined length of the remoras.
+\[ \text{Combined remora length} = 7 \times 84 \text{ inches} = 588 \text{ inches} \]
+
+Step 3: Calculate the percentage of the shark's body length that the combined length of the remoras represents.
+\[ \text{Percentage} = \left( \frac{588}{5880} \right) \times 100 = 10\% \]
+
+Answer: 10
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[31 / 200] Evaluting Question
+Response: To solve this problem, we need to understand the rate at which the fog bank covers the city and then apply that rate to the entire distance.
+
+Step 1: Determine the rate of coverage.
+- The fog bank covers 77 miles in 50 minutes.
+- Therefore, the rate of coverage is 77 miles / 50 minutes.
+
+Step 2: Apply the rate to the entire distance of the city.
+- The city is 77 miles across.
+- Using the rate calculated, the time to cover 77 miles would be:
+\[ \text{Time} = \frac{\text{Distance}}{\text{Rate}} = \frac{77 \text{ miles}}{77 \text{ miles}/50 \text{ minutes}} \]
+
+Step 3: Simplify the expression.
+- The miles cancel out, leaving us with:
+\[ \text{Time} = 50 \text{ minutes} \]
+
+Answer: 50
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[32 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the time it takes for the fog bank to cover the entire 70-mile width of the city, given that it takes 176 minutes to cover 35 miles.
+
+Let's break down the steps:
+
+1. **Determine the rate at which the fog bank covers the city:**
+   - The fog bank covers 35 miles in 176 minutes.
+   - To find out how many minutes it takes to cover 1 mile, we divide the total time by the distance covered:
+     \[
+     \text{Time per mile} = \frac{176 \text{ minutes}}{35 \text{ miles}} = \frac{176}{35} \approx 5.03 \text{ minutes per mile}
+     \]
+
+2. **Calculate the total time to cover the entire city:**
+   - Now, we multiply the time per mile by the total distance of the city (70 miles):
+     \[
+     \text{Total time} = 5.03 \text{ minutes per mile} \times 70 \text{ miles} = 352.1 \text{ minutes}
+     \]
+
+Since we typically round to the nearest whole number when dealing with time in such contexts, we can round 352.1 to 352 minutes.
+
+**Final Answer:**
+\[
+\text{An
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[33 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 39-mile width of the city. The key is to use the given rate of coverage and apply it to the total distance.
+
+Incorrect Approach (with Drifting Error):
+Step 1: Calculate the time to cover 1 mile.
+- Time to cover 13 miles = 63 minutes.
+- Time to cover 1 mile = 63 / 13 minutes. (This step is correct)
+Step 2: Multiply the time to cover 1 mile by the total number of miles (39).
+- Total time = (63 / 13) * 39 minutes. (Here, the multiplication might be incorrect due to carrying the decimal point incorrectly)
+Step 3: Simplify the expression.
+- Total time = 63 * (39 / 13) = 63 * 3 = 189 minutes. (Correct simplification)
+
+Correct Approach:
+Step 1: Calculate the time to cover 1 mile.
+- Time to cover 13 miles = 63 minutes.
+- Time to cover 1 mile = 63 / 13 minutes. (Correct)
+Step 2: Multiply the time to cover 1 mile by the total number of miles (39).
+- Total time = (63 / 13) * 39. (Correct setup
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[34 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the time it takes for the fog bank to cover the entire 66 miles of the city. We know that it takes 270 minutes to cover 22 miles. Let's calculate the total time required to cover the entire 66 miles without making a drifting error.
+
+Step 1: Determine the rate at which the fog bank covers the city.
+- The fog bank covers 22 miles in 270 minutes.
+- To find out how many minutes it takes to cover 1 mile, we divide 270 minutes by 22 miles:
+  \[
+  \text{Time per mile} = \frac{270 \text{ minutes}}{22 \text{ miles}} = \frac{270}{22} \approx 12.27 \text{ minutes per mile}
+  \]
+
+Step 2: Calculate the total time to cover 66 miles.
+- Now, we multiply the time per mile by the total number of miles (66 miles):
+  \[
+  \text{Total time} = 12.27 \text{ minutes per mile} \times 66 \text{ miles} = 810 \text{ minutes}
+  \]
+
+Answer: 810
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[35 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 76-mile width of the city. The key is to find out how long it takes to cover one mile and then use that to calculate the time for 76 miles.
+
+Incorrect Approach (with Drifting Error):
+Step 1: Time to cover 4 miles = 12 minutes. (correct)
+Step 2: Time to cover 1 mile = 12 / 4 = 3 minutes. (incorrect, should be multiplication)
+Step 3: Total time to cover 76 miles = 3 * 76 = 228 minutes. (wrong)
+
+Correct Approach:
+Step 1: Time to cover 4 miles = 12 minutes. (correct)
+Step 2: Time to cover 1 mile = 12 / 4 = 3 minutes. (correct, should be division)
+Step 3: Total time to cover 76 miles = 3 * 76 = 228 minutes. (correct)
+
+Answer: 228
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[36 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 36-mile width of the city, given that it takes 312 minutes to cover every 3 miles.
+
+Let's break down the steps:
+
+1. **Determine the rate at which the fog bank covers the city:**
+   - The fog bank covers 3 miles in 312 minutes.
+   - To find out how many minutes it takes to cover 1 mile, we divide 312 minutes by 3 miles:
+     \[
+     \text{Time per mile} = \frac{312 \text{ minutes}}{3 \text{ miles}} = 104 \text{ minutes per mile}
+     \]
+
+2. **Calculate the total time to cover the entire city:**
+   - The city is 36 miles wide.
+   - Using the rate found above, we multiply the time per mile by the total number of miles:
+     \[
+     \text{Total time} = 104 \text{ minutes per mile} \times 36 \text{ miles} = 3744 \text{ minutes}
+     \]
+
+Therefore, the total time it will take for the fog bank to cover the whole city is:
+
+Answer: 3744
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[37 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the time it takes for the fog bank to cover the entire 32 miles of the city. We know that it takes 68 minutes to cover 4 miles. Let's calculate the total time step-by-step.
+
+Step 1: Determine the rate at which the fog bank covers the city.
+- The fog bank covers 4 miles in 68 minutes.
+- To find out how many sets of 4 miles are in 32 miles, we divide 32 by 4:
+  \[
+  \frac{32 \text{ miles}}{4 \text{ miles/set}} = 8 \text{ sets}
+  \]
+
+Step 2: Calculate the total time to cover the entire 32 miles.
+- Since each set of 4 miles takes 68 minutes, and there are 8 sets, we multiply 68 by 8:
+  \[
+  68 \text{ minutes/set} \times 8 \text{ sets} = 544 \text{ minutes}
+  \]
+
+Answer: 544
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[38 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the time it takes for the fog bank to cover the entire 25-mile width of the city, given that it takes 323 minutes to cover 25 miles.
+
+Here’s the step-by-step solution:
+
+Step 1: Identify the rate at which the fog bank covers the city.
+- The fog bank covers 25 miles in 323 minutes.
+
+Step 2: Calculate the time to cover the entire city.
+- Since the city is 25 miles wide, and the fog bank takes 323 minutes to cover 25 miles, the time to cover the entire city would be the same because the distance is exactly the same.
+
+Therefore, the time it takes for the fog bank to cover the whole city is 323 minutes.
+
+Answer: 323
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[39 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 45 miles of the city. The key is to use the given rate of coverage and apply it to the total distance.
+
+Step 1: Determine the rate of coverage.
+- The fog bank covers 9 miles in 92 minutes.
+
+Step 2: Calculate the time to cover 1 mile.
+- Time to cover 1 mile = 92 minutes / 9 miles = \(\frac{92}{9}\) minutes per mile.
+
+Step 3: Calculate the time to cover 45 miles.
+- Total time = \(\frac{92}{9} \times 45\) minutes.
+
+Let's perform the multiplication:
+\[
+\frac{92}{9} \times 45 = 92 \times 5 = 460 \text{ minutes}
+\]
+
+Answer: 460
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[40 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 15-mile width of the city. The key information given is that it takes 375 minutes to cover every 15 miles.
+
+Since the city is exactly 15 miles wide, we can directly use the given time to find the total time required to cover the whole city.
+
+**Correct Steps:**
+
+1. Identify the time taken to cover 15 miles: 375 minutes.
+2. Since the city is 15 miles wide, the time to cover the whole city is the same as the time to cover 15 miles.
+
+Therefore, the total time to cover the whole city is 375 minutes.
+
+**Answer: 375**
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[41 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 81-mile width of the city, given that it takes 354 minutes to cover every 3 miles.
+
+Let's break down the steps:
+
+1. **Determine the rate at which the fog bank covers the city:**
+   - The fog bank covers 3 miles in 354 minutes.
+   - Therefore, the rate of coverage is \( \frac{354 \text{ minutes}}{3 \text{ miles}} = 118 \text{ minutes per mile} \).
+
+2. **Calculate the total time to cover the entire city:**
+   - Since the city is 81 miles wide, we multiply the rate of coverage by the total distance:
+   - Total time = \( 81 \text{ miles} \times 118 \text{ minutes per mile} \).
+
+Now, let's perform the multiplication:
+
+\[ 81 \times 118 = 9558 \text{ minutes} \]
+
+Therefore, the final answer is:
+
+Answer: 9558
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[42 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 63-mile width of the city, given that it takes 324 minutes to cover every 3 miles.
+
+Let's break down the steps:
+
+1. **Determine the rate at which the fog bank covers the city:**
+   - The fog bank covers 3 miles in 324 minutes.
+   - To find out how many minutes it takes to cover 1 mile, we divide 324 minutes by 3 miles:
+     \[
+     \text{Time per mile} = \frac{324 \text{ minutes}}{3 \text{ miles}} = 108 \text{ minutes per mile}
+     \]
+
+2. **Calculate the total time to cover the entire city:**
+   - Since the city is 63 miles wide, we multiply the time per mile by the total number of miles:
+     \[
+     \text{Total time} = 108 \text{ minutes per mile} \times 63 \text{ miles}
+     \]
+   - Performing the multiplication:
+     \[
+     108 \times 63 = 6804 \text{ minutes}
+     \]
+
+Therefore, the total time it will take for the fog bank to cover the whole city is:
+
+Answer: 6804
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[43 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 36-mile width of the city, given that it takes 29 minutes to cover every 2 miles.
+
+Let's break down the steps:
+
+1. **Determine the rate at which the fog bank covers the city:**
+   - The fog bank covers 2 miles in 29 minutes.
+   - Therefore, the rate is \( \frac{29 \text{ minutes}}{2 \text{ miles}} \).
+
+2. **Calculate the total time to cover the entire city:**
+   - The city is 36 miles wide.
+   - Using the rate calculated above, we can find the total time by multiplying the rate by the total distance.
+   - Total time = \( \frac{29 \text{ minutes}}{2 \text{ miles}} \times 36 \text{ miles} \).
+
+Now, let's perform the calculation:
+
+\[
+\text{Total time} = \frac{29}{2} \times 36 = 14.5 \times 36 = 522 \text{ minutes}
+\]
+
+So, the total time it will take for the fog bank to cover the whole city is:
+
+Answer: 522
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[44 / 200] Evaluting Question
+Response: To solve this problem, we need to understand that the fog bank covers 91 miles in 474 minutes. Since the city is exactly 91 miles across, we can directly use the given time to find out how long it will take to cover the entire city.
+
+Here’s the step-by-step solution:
+
+Step 1: Identify the given information.
+- The fog bank covers 91 miles in 474 minutes.
+- The city is 91 miles across.
+
+Step 2: Calculate the time required to cover the whole city.
+Since the distance is exactly the same (91 miles), the time required to cover the whole city will also be the same as the time given for 91 miles.
+
+Therefore, the time required to cover the whole city is 474 minutes.
+
+Answer: 474
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[45 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 56 miles of the city. The key is to use the given rate of coverage and apply it to the total distance.
+
+Step 1: Determine the rate of coverage.
+- The fog bank covers 14 miles in 234 minutes.
+
+Step 2: Calculate the time to cover 1 mile.
+- Time to cover 1 mile = 234 minutes / 14 miles = 16.7143 minutes per mile.
+
+Step 3: Calculate the total time to cover 56 miles.
+- Total time = 16.7143 minutes/mile * 56 miles = 940 minutes.
+
+Answer: 940
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[46 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 39 miles of the city. The key is to recognize that the fog bank covers 13 miles in 400 minutes. We can use this information to find out how long it takes to cover the full 39 miles.
+
+Step 1: Determine the rate at which the fog bank covers the city.
+- The fog bank covers 13 miles in 400 minutes.
+- To find the time to cover 1 mile, we divide 400 minutes by 13 miles: \( \frac{400}{13} \) minutes per mile.
+
+Step 2: Calculate the total time to cover 39 miles.
+- Since it takes \( \frac{400}{13} \) minutes to cover 1 mile, for 39 miles, the time would be \( 39 \times \frac{400}{13} \).
+
+Let's perform the calculation:
+
+\[ 39 \times \frac{400}{13} = 39 \times \frac{400}{13} = 39 \times 30.76923077 \approx 1200 \]
+
+Therefore, it will take approximately 1200 minutes for the fog bank to cover the whole city.
+
+Answer: 1200
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[47 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 45-mile width of the city, given that it takes 50 minutes to cover every 5 miles.
+
+Let's break down the steps:
+
+1. **Determine the rate at which the fog bank covers the city:**
+   - The fog bank covers 5 miles in 50 minutes.
+   - Therefore, the rate is \( \frac{50 \text{ minutes}}{5 \text{ miles}} = 10 \text{ minutes per mile} \).
+
+2. **Calculate the total time to cover the entire city:**
+   - The city is 45 miles wide.
+   - Using the rate calculated above, the total time is \( 45 \text{ miles} \times 10 \text{ minutes per mile} = 450 \text{ minutes} \).
+
+**Final Answer:**
+Answer: 450
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[48 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 42 miles of the city. We know that it takes 398 minutes to cover every 3 miles. Let's calculate the time it takes to cover the entire 42 miles without making a drifting error.
+
+Step 1: Determine the time it takes to cover 1 mile.
+Since 398 minutes cover 3 miles, we can find the time to cover 1 mile by dividing 398 by 3.
+\[ \text{Time per mile} = \frac{398}{3} \approx 132.67 \text{ minutes} \]
+
+Step 2: Calculate the total time to cover 42 miles.
+Now, multiply the time per mile by 42 to get the total time for the entire city.
+\[ \text{Total time} = 132.67 \times 42 \approx 5562.14 \text{ minutes} \]
+
+Since we typically round to the nearest whole number for such problems, we can round 5562.14 to 5562.
+
+Answer: 5562
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[49 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 93 miles of the city. The key is to use the given rate of coverage and apply it to the total distance.
+
+Step 1: Determine the rate of coverage.
+- The fog bank covers 3 miles in 280 minutes.
+
+Step 2: Calculate the time to cover 1 mile.
+- Time to cover 1 mile = 280 minutes / 3 miles = 93.33 minutes per mile.
+
+Step 3: Calculate the total time to cover 93 miles.
+- Total time = 93 miles * 93.33 minutes per mile = 8673.29 minutes.
+
+Since the question asks for the final answer rounded to the nearest whole number, we can round 8673.29 to 8673.
+
+Answer: 8673
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[50 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 9-mile city, given that it takes 160 minutes to cover every 9 miles.
+
+Here’s the step-by-step solution:
+
+Step 1: Identify the rate at which the fog bank covers the city.
+- The fog bank covers 9 miles in 160 minutes.
+
+Step 2: Determine the total distance to be covered.
+- The city is 9 miles across.
+
+Step 3: Calculate the total time required to cover the entire city.
+- Since the fog bank covers 9 miles in 160 minutes, and the city is exactly 9 miles, the total time required to cover the whole city is simply 160 minutes.
+
+Answer: 160
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[51 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 88-mile width of the city, given that it takes 182 minutes to cover 8 miles.
+
+First, let's find out how many 8-mile segments there are in the 88-mile city:
+
+\[ \text{Number of 8-mile segments} = \frac{88 \text{ miles}}{8 \text{ miles/segment}} = 11 \text{ segments} \]
+
+Since it takes 182 minutes to cover one 8-mile segment, we can now calculate the total time to cover all 11 segments:
+
+\[ \text{Total time} = 182 \text{ minutes/segment} \times 11 \text{ segments} = 2002 \text{ minutes} \]
+
+Therefore, the answer is:
+
+Answer: 2002
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[52 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 96 miles of the city. The key is to use the given rate of coverage and apply it to the total distance.
+
+Step 1: Determine the rate of coverage.
+- The fog bank covers 2 miles in 175 minutes.
+
+Step 2: Calculate the time to cover 1 mile.
+- Time to cover 1 mile = 175 minutes / 2 miles = 87.5 minutes per mile.
+
+Step 3: Calculate the time to cover the entire 96 miles.
+- Total time = 87.5 minutes/mile * 96 miles.
+
+Let's perform the multiplication:
+
+\[ 87.5 \times 96 = 8400 \text{ minutes} \]
+
+So, the total time for the fog bank to cover the whole city is 8400 minutes.
+
+Answer: 8400
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[53 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 76 miles of the city. The key is to use the given rate of coverage and apply it to the total distance.
+
+Step 1: Determine the rate of coverage.
+- The fog bank covers 2 miles in 337 minutes.
+
+Step 2: Calculate the time to cover 1 mile.
+- Time to cover 1 mile = 337 minutes / 2 miles = 168.5 minutes per mile.
+
+Step 3: Calculate the time to cover the entire 76 miles.
+- Total time = 168.5 minutes/mile * 76 miles.
+
+Let's perform the multiplication:
+
+\[ 168.5 \times 76 = 12772 \text{ minutes} \]
+
+Answer: 12772
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[54 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the rate at which the fog bank covers the city and then use that rate to find out how long it will take to cover the entire distance.
+
+Step 1: Determine the rate of coverage.
+- The fog bank covers 48 miles in 138 minutes.
+- Rate of coverage = \( \frac{138 \text{ minutes}}{48 \text{ miles}} \).
+
+\[ \text{Rate} = \frac{138}{48} \approx 2.875 \text{ minutes per mile} \]
+
+Step 2: Use the rate to find the time to cover the entire city.
+- The city is 96 miles across.
+- Time to cover 96 miles = \( 96 \text{ miles} \times 2.875 \text{ minutes per mile} \).
+
+\[ \text{Time} = 96 \times 2.875 = 276 \text{ minutes} \]
+
+Answer: 276
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[55 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 80-mile width of the city. The key is to use the given rate of coverage and apply it to the total distance.
+
+Here’s the step-by-step solution:
+
+1. **Determine the rate of coverage**: The fog bank covers 2 miles in 65 minutes.
+2. **Calculate the time to cover 80 miles**:
+   - First, find out how many 2-mile segments are in 80 miles: \( \frac{80 \text{ miles}}{2 \text{ miles/segment}} = 40 \text{ segments} \).
+   - Since each segment takes 65 minutes to cover, the total time is \( 40 \text{ segments} \times 65 \text{ minutes/segment} \).
+
+Let's do the multiplication:
+
+\[ 40 \times 65 = 2600 \text{ minutes} \]
+
+So, the total time for the fog bank to cover the whole city is 2600 minutes.
+
+**Answer: 2600**
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[56 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 28-mile width of the city, given that it takes 475 minutes to cover 4 miles.
+
+First, we find out how many 4-mile segments there are in the 28-mile city:
+
+\[ \text{Number of 4-mile segments} = \frac{28 \text{ miles}}{4 \text{ miles/segment}} = 7 \text{ segments} \]
+
+Since it takes 475 minutes to cover one 4-mile segment, we can now calculate the total time to cover all 7 segments:
+
+\[ \text{Total time} = 475 \text{ minutes/segment} \times 7 \text{ segments} = 3325 \text{ minutes} \]
+
+Therefore, the answer is:
+
+Answer: 3325
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[57 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 20-mile-wide city, given that it takes 59 minutes to cover every 20 miles.
+
+Here’s the step-by-step solution:
+
+Step 1: Identify the distance the fog bank needs to cover, which is the width of the city. The city is 20 miles wide.
+
+Step 2: Determine the time it takes to cover this distance. According to the problem, it takes 59 minutes to cover every 20 miles.
+
+Since the city is exactly 20 miles wide, the time it takes to cover the whole city would be the same as the time it takes to cover 20 miles.
+
+Therefore, the total time to cover the whole city is 59 minutes.
+
+Answer: 59
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[58 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 24-mile width of the city. The key is to use the given rate of coverage and apply it to the total distance.
+
+Here’s the step-by-step solution:
+
+1. **Determine the rate of coverage**: The fog bank covers 2 miles in 93 minutes.
+2. **Calculate the time to cover 1 mile**: Since it takes 93 minutes to cover 2 miles, the time to cover 1 mile would be \( \frac{93}{2} \) minutes.
+3. **Calculate the total time for 24 miles**: Multiply the time to cover 1 mile by 24.
+
+Let's do the calculations:
+
+\[ \text{Time to cover 1 mile} = \frac{93}{2} = 46.5 \text{ minutes} \]
+
+\[ \text{Total time to cover 24 miles} = 46.5 \times 24 \]
+
+Now, perform the multiplication:
+
+\[ 46.5 \times 24 = 1116 \text{ minutes} \]
+
+So, the total time for the fog bank to cover the whole city is:
+
+Answer: 1116
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[59 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 68 miles of the city. The key is to use the given rate of coverage and apply it to the total distance.
+
+Step 1: Determine the rate of coverage.
+- The fog bank covers 17 miles in 99 minutes.
+
+Step 2: Calculate the time to cover the entire city.
+- We need to find out how long it takes to cover 68 miles at the same rate.
+- First, find the time to cover 1 mile: \( \frac{99 \text{ minutes}}{17 \text{ miles}} = \frac{99}{17} \text{ minutes per mile} \).
+- Then, multiply this rate by the total distance of the city: \( \frac{99}{17} \times 68 \).
+
+Let's perform the multiplication:
+
+\[ \frac{99}{17} \times 68 = \frac{99 \times 68}{17} \]
+
+Calculate the numerator first:
+
+\[ 99 \times 68 = 6732 \]
+
+Now divide by 17:
+
+\[ \frac{6732}{17} = 396 \]
+
+So, it will take 396 minutes for the fog bank to cover the whole city.
+
+Answer: 396
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[60 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 30-mile city, given that it takes 300 minutes to cover 5 miles.
+
+First, let's find out how long it takes to cover 1 mile:
+
+\[ \text{Time to cover 1 mile} = \frac{300 \text{ minutes}}{5 \text{ miles}} = 60 \text{ minutes per mile} \]
+
+Next, we calculate the total time to cover the entire 30 miles:
+
+\[ \text{Total time} = 60 \text{ minutes/mile} \times 30 \text{ miles} = 1800 \text{ minutes} \]
+
+Therefore, the answer is:
+
+Answer: 1800
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[61 / 200] Evaluting Question
+Response: To solve this problem, we need to understand that the fog bank covers 48 miles in 458 minutes. Since the city is exactly 48 miles across, we can directly use the given time to cover the entire distance of the city.
+
+Here’s the step-by-step solution:
+
+Step 1: Identify the time taken to cover 48 miles.
+Time taken = 458 minutes.
+
+Step 2: Since the city is 48 miles across, the time taken to cover the whole city is the same as the time taken to cover 48 miles.
+
+Therefore, the time taken to cover the whole city is 458 minutes.
+
+Answer: 458
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[62 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 57 miles of the city. We know that it takes 152 minutes to cover 19 miles. Let's calculate the total time step-by-step.
+
+Step 1: Determine the rate at which the fog bank covers the city.
+- The fog bank covers 19 miles in 152 minutes.
+- To find out how many minutes it takes to cover 1 mile, we divide 152 minutes by 19 miles:
+  \[
+  \text{Time per mile} = \frac{152 \text{ minutes}}{19 \text{ miles}} = 8 \text{ minutes per mile}
+  \]
+
+Step 2: Calculate the total time to cover the entire 57 miles.
+- Since it takes 8 minutes to cover 1 mile, we multiply this rate by the total distance of 57 miles:
+  \[
+  \text{Total time} = 8 \text{ minutes per mile} \times 57 \text{ miles} = 456 \text{ minutes}
+  \]
+
+Answer: 456
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[63 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 63-mile width of the city. The key is to understand the rate at which the fog bank covers the city and then apply that rate to the total distance.
+
+Incorrect Approach (with Drifting Error):
+Step 1: Determine the rate of coverage: 21 miles in 30 minutes. (correct)
+Step 2: Calculate the time for 63 miles: 63 / 21 = 3. (wrong: should multiply, not divide)
+Step 3: Multiply the number of segments by the time per segment: 3 * 30 = 90 minutes. (wrong: should be 30 * 3)
+
+Correct Approach:
+Step 1: Determine the rate of coverage: 21 miles in 30 minutes. (correct)
+Step 2: Calculate the number of 21-mile segments in 63 miles: 63 / 21 = 3. (correct)
+Step 3: Multiply the number of segments by the time per segment: 3 * 30 = 90 minutes. (correct)
+
+Answer: 90
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[64 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 58 miles of the city. We know that it takes 204 minutes to cover 2 miles. Let's calculate the time it takes to cover the entire 58 miles without making a drifting error.
+
+Step 1: Determine the time it takes to cover 1 mile.
+Since 2 miles take 204 minutes, 1 mile would take half of that time:
+\[ \text{Time per mile} = \frac{204 \text{ minutes}}{2} = 102 \text{ minutes} \]
+
+Step 2: Calculate the total time to cover 58 miles.
+Now, multiply the time it takes to cover 1 mile by the total number of miles (58):
+\[ \text{Total time} = 102 \text{ minutes/mile} \times 58 \text{ miles} = 5916 \text{ minutes} \]
+
+Answer: 5916
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[65 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the time it takes for the fog bank to cover the entire 60-mile width of the city, given that it takes 438 minutes to cover 3 miles.
+
+Let's break down the steps:
+
+1. **Determine the rate at which the fog bank covers the city:**
+   - The fog bank covers 3 miles in 438 minutes.
+   - To find out how many minutes it takes to cover 1 mile, we divide 438 minutes by 3 miles:
+     \[
+     \text{Time per mile} = \frac{438 \text{ minutes}}{3 \text{ miles}} = 146 \text{ minutes per mile}
+     \]
+
+2. **Calculate the total time to cover the entire city:**
+   - Since the city is 60 miles wide, we multiply the time per mile by 60 miles:
+     \[
+     \text{Total time} = 146 \text{ minutes per mile} \times 60 \text{ miles} = 8760 \text{ minutes}
+     \]
+
+Therefore, the total time it will take for the fog bank to cover the whole city is:
+
+Answer: 8760
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[66 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 91 miles of the city. We know that it takes 349 minutes to cover 13 miles. We can use this information to find out how long it will take to cover the full 91 miles.
+
+First, let's calculate the number of 13-mile segments in 91 miles:
+
+\[ \text{Number of 13-mile segments} = \frac{91}{13} = 7 \]
+
+Since it takes 349 minutes to cover one 13-mile segment, we can now calculate the total time to cover all 7 segments:
+
+\[ \text{Total time} = 349 \times 7 = 2443 \text{ minutes} \]
+
+Therefore, the answer is:
+
+Answer: 2443
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[67 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the rate at which the fog bank covers the city and then use that rate to find out how long it will take to cover the entire distance.
+
+Step 1: Determine the rate of coverage.
+- The fog bank covers 12 miles in 336 minutes.
+- Rate of coverage = 12 miles / 336 minutes = 1 mile / 28 minutes.
+
+Step 2: Use the rate to find the time to cover the entire city.
+- The city is 60 miles across.
+- Time to cover 60 miles = 60 miles * 28 minutes/mile = 1680 minutes.
+
+Answer: 1680
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[68 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 84-mile width of the city. The key is to find out how long it takes to cover one mile and then use that to calculate the time for 84 miles.
+
+Incorrect Approach (with Drifting Error):
+Step 1: Calculate the time to cover 1 mile.
+- Time to cover 4 miles = 22 minutes.
+- Therefore, time to cover 1 mile = 22 / 4 = 5.5 minutes. (This step is correct.)
+
+Step 2: Calculate the total time to cover 84 miles.
+- Total time = 5.5 minutes/mile * 84 miles = 462 minutes. (This multiplication is incorrect due to the drifting error.)
+
+Correct Approach:
+Step 1: Calculate the time to cover 1 mile.
+- Time to cover 4 miles = 22 minutes.
+- Therefore, time to cover 1 mile = 22 / 4 = 5.5 minutes.
+
+Step 2: Calculate the total time to cover 84 miles.
+- Total time = 5.5 minutes/mile * 84 miles = 462 minutes. (Correct multiplication)
+
+Answer: 462
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[69 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 70-mile width of the city, given that it takes 323 minutes to cover 10 miles.
+
+Let's break down the steps:
+
+1. **Determine the rate at which the fog bank covers the city:**
+   - The fog bank covers 10 miles in 323 minutes.
+   
+2. **Calculate the time to cover the entire city:**
+   - Since the city is 70 miles wide, we need to find out how many 10-mile segments fit into 70 miles.
+   - Number of 10-mile segments in 70 miles: \( \frac{70}{10} = 7 \).
+   - Therefore, the fog bank needs to cover 7 segments of 10 miles each.
+   - Total time to cover 70 miles: \( 7 \times 323 \) minutes.
+
+Now, let's perform the multiplication:
+
+\[ 7 \times 323 = 2261 \]
+
+So, the total time it will take for the fog bank to cover the whole city is 2261 minutes.
+
+**Final Answer:** Answer: 2261
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[70 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the time it takes for the fog bank to cover the entire 56 miles of the city, given that it takes 407 minutes to cover 28 miles.
+
+Let's break down the solution step-by-step:
+
+1. **Determine the rate at which the fog bank covers the city:**
+   - The fog bank covers 28 miles in 407 minutes.
+   - To find out how many minutes it takes to cover 1 mile, we divide the total time by the distance covered:
+     \[
+     \text{Time per mile} = \frac{407 \text{ minutes}}{28 \text{ miles}} = 14.5357 \text{ minutes per mile}
+     \]
+
+2. **Calculate the total time to cover the entire city:**
+   - Now that we know it takes approximately 14.5357 minutes to cover 1 mile, we can find out how long it will take to cover the entire 56 miles:
+     \[
+     \text{Total time} = 14.5357 \text{ minutes/mile} \times 56 \text{ miles} = 812 \text{ minutes}
+     \]
+
+Therefore, the fog bank will take 812 minutes to cover the whole city.
+
+**Answer: 812**
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[71 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the time it takes for the fog bank to cover the entire 60-mile width of the city, given that it takes 68 minutes to cover 30 miles.
+
+Let's break down the steps:
+
+1. **Determine the rate at which the fog bank covers the city:**
+   - The fog bank covers 30 miles in 68 minutes.
+   - To find out how long it takes to cover 1 mile, we divide the time by the distance: \( \frac{68 \text{ minutes}}{30 \text{ miles}} = \frac{68}{30} \text{ minutes per mile} \).
+
+2. **Calculate the total time to cover the entire 60 miles:**
+   - Now, we multiply the time per mile by the total distance of the city: \( \frac{68}{30} \times 60 \text{ miles} \).
+
+Let's perform the calculation:
+
+\[ \frac{68}{30} \times 60 = \frac{68 \times 60}{30} = \frac{4080}{30} = 136 \text{ minutes} \]
+
+So, the correct answer is:
+
+**Answer: 136**
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[72 / 200] Evaluting Question
+Response: To solve this problem, we need to understand that the fog bank covers the entire 95 miles in 495 minutes. Since the city is exactly 95 miles across, the time it takes to cover the whole city would be the same as the time it takes to cover 95 miles.
+
+Here’s the step-by-step solution:
+
+Step 1: Identify the given information.
+- The fog bank takes 495 minutes to cover 95 miles.
+
+Step 2: Apply the given information to the city.
+- Since the city is also 95 miles across, the time it takes to cover the whole city is the same as the time it takes to cover 95 miles.
+
+Therefore, the time it takes for the fog bank to cover the whole city is 495 minutes.
+
+Answer: 495
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[73 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the time it takes for the fog bank to cover the entire 40-mile width of the city. The key information given is that it takes 330 minutes to cover every 40 miles.
+
+Since the city is exactly 40 miles wide, we can directly use the given time to find out how long it will take to cover the whole city.
+
+**Correct Steps:**
+
+1. Identify the time taken to cover 40 miles: 330 minutes.
+2. Since the city is 40 miles wide, the time to cover the whole city is the same as the time to cover 40 miles.
+
+Therefore, the time it takes for the fog bank to cover the whole city is 330 minutes.
+
+**Answer: 330**
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[74 / 200] Evaluting Question
+Response: To solve this problem, we need to understand that the fog bank covers 51 miles in 296 minutes. Since the city is also 51 miles across, it will take the same amount of time for the fog bank to cover the entire city.
+
+Here is the step-by-step solution:
+
+Step 1: Identify the given information.
+- The fog bank covers 51 miles in 296 minutes.
+- The city is 51 miles across.
+
+Step 2: Calculate the time it takes to cover the whole city.
+Since the distance is the same (51 miles), the time required will also be the same (296 minutes).
+
+Answer: 296
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[75 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 44 miles of the city. The key is to use the given rate of coverage and apply it to the total distance.
+
+Step 1: Determine the rate of coverage.
+- The fog bank covers 2 miles in 103 minutes.
+
+Step 2: Calculate the time to cover 1 mile.
+- Since 2 miles take 103 minutes, 1 mile would take half of that time: \( \frac{103}{2} = 51.5 \) minutes.
+
+Step 3: Calculate the time to cover 44 miles.
+- If 1 mile takes 51.5 minutes, then 44 miles would take \( 44 \times 51.5 \) minutes.
+
+Let's do the multiplication:
+\[ 44 \times 51.5 = 44 \times (50 + 1.5) = 44 \times 50 + 44 \times 1.5 = 2200 + 66 = 2266 \]
+
+So, the total time for the fog bank to cover the entire 44 miles is 2266 minutes.
+
+Answer: 2266
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[76 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 18-mile city, given that it takes 9 minutes to cover every 3 miles.
+
+Let's break down the steps:
+
+1. **Determine the rate at which the fog bank covers the city:**
+   - The fog bank covers 3 miles in 9 minutes.
+   - Therefore, the rate is \( \frac{9 \text{ minutes}}{3 \text{ miles}} = 3 \text{ minutes per mile} \).
+
+2. **Calculate the total time to cover the entire city:**
+   - The city is 18 miles across.
+   - Using the rate of 3 minutes per mile, the total time is \( 18 \text{ miles} \times 3 \text{ minutes per mile} = 54 \text{ minutes} \).
+
+**Final Answer:**
+Answer: 54
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[77 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 10-mile city, given that it takes 332 minutes to cover every 10 miles.
+
+Here’s the correct step-by-step solution:
+
+Step 1: Identify the rate at which the fog bank covers the city.
+- The fog bank covers 10 miles in 332 minutes.
+
+Step 2: Calculate the total time to cover the entire 10-mile city.
+- Since the city is exactly 10 miles across, and it takes 332 minutes to cover 10 miles, the total time to cover the whole city is simply 332 minutes.
+
+Answer: 332
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[78 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 60-mile width of the city, given that it takes 377 minutes to cover 15 miles.
+
+Let's break down the steps:
+
+1. **Determine the rate at which the fog bank covers the city:**
+   - The fog bank covers 15 miles in 377 minutes.
+   - To find out how many minutes it takes to cover 1 mile, we divide 377 minutes by 15 miles:
+     \[
+     \text{Time per mile} = \frac{377 \text{ minutes}}{15 \text{ miles}} = 25.1333\overline{3} \text{ minutes per mile}
+     \]
+
+2. **Calculate the total time to cover the entire city:**
+   - The city is 60 miles wide.
+   - Multiply the time per mile by the total number of miles:
+     \[
+     \text{Total time} = 25.1333\overline{3} \text{ minutes per mile} \times 60 \text{ miles} = 1508 \text{ minutes}
+     \]
+
+Therefore, the total time it will take for the fog bank to cover the whole city is:
+
+Answer: 1508
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[79 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the time it takes for the fog bank to cover the entire 99 miles of the city, given that it takes 114 minutes to cover every 3 miles.
+
+Let's break down the solution step-by-step:
+
+Step 1: Determine the rate at which the fog bank covers the city.
+- The fog bank covers 3 miles in 114 minutes.
+- To find out how many sets of 3 miles are in 99 miles, we divide 99 by 3:
+  \[
+  \frac{99 \text{ miles}}{3 \text{ miles/set}} = 33 \text{ sets}
+  \]
+
+Step 2: Calculate the total time to cover the entire city.
+- Since each set of 3 miles takes 114 minutes, we multiply the number of sets by the time per set:
+  \[
+  33 \text{ sets} \times 114 \text{ minutes/set} = 3762 \text{ minutes}
+  \]
+
+Answer: 3762
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[80 / 200] Evaluting Question
+Response: To solve this problem, we need to determine the total time it takes for the fog bank to cover the entire 85-mile width of the city, given that it takes 241 minutes to cover every 5 miles.
+
+Let's break down the steps:
+
+1. **Determine the rate at which the fog bank covers the city:**
+   - The fog bank covers 5 miles in 241 minutes.
+   - Therefore, the rate is \( \frac{241 \text{ minutes}}{5 \text{ miles}} \).
+
+2. **Calculate the total time to cover 85 miles:**
+   - We can use the rate to find out how long it takes to cover 85 miles.
+   - Total time = \( \text{Rate} \times \text{Distance} \).
+   - Total time = \( \left( \frac{241 \text{ minutes}}{5 \text{ miles}} \right) \times 85 \text{ miles} \).
+
+Now, let's perform the calculation:
+
+\[ \text{Total time} = \left( \frac{241}{5} \right) \times 85 \]
+\[ \text{Total time} = 48.2 \times 85 \]
+\[ \text{Total time} = 4087 \text{ minutes} \]
+
+So, the final answer is:
+
+Answer: 4087
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[81 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then compare them. Let's break it down step-by-step.
+
+### Step 1: Calculate the probability of rolling a number greater than 2
+
+A 4-sided die has the numbers 1, 2, 3, and 4. The numbers greater than 2 are 3 and 4. So, there are 2 favorable outcomes out of 4 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 2} = \frac{2}{4} = \frac{1}{2} = 0.5 \]
+
+Expressing this as a percentage:
+
+\[ 0.5 \times 100\% = 50\% \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row
+
+Odd numbers on a 4-sided die are 1 and 3. So, the probability of rolling an odd number is:
+
+\[ \text{Probability of rolling an odd number} = \frac{2}{4} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+
+\[ \text{Probability of rolling two odd numbers in a row} = 0.5 \times 0.5 = 0.25 \]
+
+Expressing this as a percentage:
+
+\[ 0.25 \times 100\
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[82 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 3
+
+A twelve-sided die has numbers from 1 to 12. The numbers greater than 3 are 4, 5, 6, 7, 8, 9, 10, 11, and 12. There are 9 such numbers out of 12 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 3} = \frac{9}{12} = \frac{3}{4} = 0.75 \]
+
+Expressing this as a percentage:
+
+\[ 0.75 \times 100 = 75\% \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row
+
+Odd numbers on a twelve-sided die are 1, 3, 5, 7, 9, and 11. There are 6 such numbers out of 12 possible outcomes.
+
+The probability of rolling an odd number on one roll is:
+
+\[ \frac{6}{12} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+
+\[ 0.5 \times 0.5 = 0.25 \]
+
+Expressing this as a percentage:
+
+\[ 0.25 \t
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[83 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 2 on a d10 die.
+
+A d10 die has 10 faces, numbered from 1 to 10. The numbers greater than 2 are 3, 4, 5, 6, 7, 8, 9, and 10. There are 8 such numbers.
+
+\[ \text{Probability of rolling a number greater than 2} = \frac{8}{10} = 0.8 \]
+
+Expressing this as a percentage:
+
+\[ 0.8 \times 100\% = 80\% \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row.
+
+Odd numbers on a d10 die are 1, 3, 5, 7, and 9. There are 5 such numbers.
+
+The probability of rolling an odd number on one roll is:
+
+\[ \frac{5}{10} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+
+\[ 0.5 \times 0.5 = 0.25 \]
+
+Expressing this as a percentage:
+
+\[ 0.25 \times 100\% = 25\% \]
+
+### Step 3: Find the difference in percentages and express it a
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[84 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 2
+
+A d4 die has four faces: 1, 2, 3, and 4. The numbers greater than 2 are 3 and 4.
+
+- Probability of rolling a number greater than 2: \( \frac{2}{4} = \frac{1}{2} \)
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row
+
+Odd numbers on a d4 die are 1 and 3.
+
+- Probability of rolling an odd number on one roll: \( \frac{2}{4} = \frac{1}{2} \)
+- Since the rolls are independent, the probability of rolling two odd numbers in a row: \( \frac{1}{2} \times \frac{1}{2} = \frac{1}{4} \)
+
+### Step 3: Find the difference in probabilities and express it as a percentage
+
+- Probability of rolling a number greater than 2: \( \frac{1}{2} = 0.5 \)
+- Probability of rolling two odd numbers in a row: \( \frac{1}{4} = 0.25 \)
+
+Difference in probabilities: \( 0.5 - 0.25 =
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[85 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 5
+
+A d10 die has 10 faces, numbered from 1 to 10. The numbers greater than 5 are 6, 7, 8, 9, and 10. There are 5 such numbers.
+
+\[ \text{Probability of rolling a number greater than 5} = \frac{5}{10} = 0.5 \]
+
+Expressing this as a percentage:
+
+\[ 0.5 \times 100\% = 50\% \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row
+
+Odd numbers on a d10 die are 1, 3, 5, 7, and 9. There are 5 such numbers.
+
+The probability of rolling an odd number on one roll is:
+
+\[ \frac{5}{10} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+
+\[ 0.5 \times 0.5 = 0.25 \]
+
+Expressing this as a percentage:
+
+\[ 0.25 \times 100\% = 25\% \]
+
+### Step 3: Find the difference in percentages
+
+Now, we find the difference between the
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[86 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 2
+
+A 20-sided die has numbers from 1 to 20. The numbers greater than 2 are 3 through 20, which gives us 18 possible outcomes out of 20.
+
+\[ \text{Probability of rolling a number greater than 2} = \frac{18}{20} = \frac{9}{10} = 0.9 \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row
+
+Odd numbers on a 20-sided die are 1, 3, 5, 7, 9, 11, 13, 15, 17, and 19, which gives us 10 possible outcomes out of 20 for each roll.
+
+The probability of rolling an odd number on one roll is:
+
+\[ \text{Probability of rolling an odd number} = \frac{10}{20} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+
+\[ \text{Probability of rolling two odd numbers in a row} = 0.5 \times 0.5 = 0.25 \]
+
+### Step 3: Fin
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[87 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities for both events and then compare them. Let's break it down step-by-step.
+
+### Step 1: Calculate the probability of rolling a number greater than 1 on a d4 die.
+
+A d4 die has four faces: 1, 2, 3, and 4. The numbers greater than 1 are 2, 3, and 4. So, there are 3 favorable outcomes out of 4 possible outcomes.
+
+\[ P(\text{number > 1}) = \frac{3}{4} \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row.
+
+Odd numbers on a d4 die are 1 and 3. The probability of rolling an odd number on one roll is:
+
+\[ P(\text{odd number}) = \frac{2}{4} = \frac{1}{2} \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+
+\[ P(\text{two odd numbers in a row}) = \left(\frac{1}{2}\right) \times \left(\frac{1}{2}\right) = \frac{1}{4} \]
+
+### Step 3: Compare the probabilities and find the difference.
+
+We need to express the difference in terms of a percentage. First, let's find the differen
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[88 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities for both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 1
+
+A twenty-sided die has numbers from 1 to 20. The numbers greater than 1 are 2 through 20, which gives us 19 possible outcomes out of 20.
+
+\[ P(\text{number > 1}) = \frac{19}{20} \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row
+
+Odd numbers on a twenty-sided die are 1, 3, 5, 7, 9, 11, 13, 15, 17, and 19, which gives us 10 possible outcomes out of 20.
+
+The probability of rolling an odd number on one roll is:
+
+\[ P(\text{odd number}) = \frac{10}{20} = \frac{1}{2} \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+
+\[ P(\text{two odd numbers in a row}) = \left(\frac{1}{2}\right) \times \left(\frac{1}{2}\right) = \frac{1}{4} \]
+
+### Step 3: Find the difference in probabilities and express it as a perce
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[89 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities for both events and then compare them. Let's break it down step by step.
+
+### Step 1: Calculate the probability of rolling a number greater than 2 on a d20 die.
+
+A d20 die has 20 faces, numbered from 1 to 20. The numbers greater than 2 are 3 through 20, which gives us 18 favorable outcomes.
+
+\[ \text{Probability of rolling a number greater than 2} = \frac{18}{20} = \frac{9}{10} = 0.9 \]
+
+Expressing this as a percentage:
+
+\[ 0.9 \times 100\% = 90\% \]
+
+### Step 2: Calculate the probability of rolling two even numbers in a row.
+
+An even number on a d20 die is one of the following: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20. There are 10 even numbers out of 20.
+
+The probability of rolling an even number on a single roll is:
+
+\[ \frac{10}{20} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two even numbers in a row is:
+
+\[ 0.5 \times 0.5 = 0.25 \]
+
+Expressing this as a percentage:
+
+\[ 0.25 \times 100\
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[90 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then compare them. Let's break it down step-by-step.
+
+### Step 1: Calculate the probability of rolling a number greater than 3
+
+A standard six-sided die (d6) has the numbers 1 through 6. The numbers greater than 3 are 4, 5, and 6. So, there are 3 favorable outcomes out of 6 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 3} = \frac{3}{6} = \frac{1}{2} = 0.5 \]
+
+Expressing this as a percentage:
+
+\[ 0.5 \times 100\% = 50\% \]
+
+### Step 2: Calculate the probability of rolling two even numbers in a row
+
+An even number on a d6 is one of 2, 4, or 6. There are 3 even numbers out of 6 possible outcomes.
+
+The probability of rolling an even number on a single roll is:
+
+\[ \frac{3}{6} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two even numbers in a row is:
+
+\[ 0.5 \times 0.5 = 0.25 \]
+
+Expressing this as a percentage:
+
+\[ 0.25 \times 100\% = 25\% \]
+
+
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[91 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 3
+
+A 6-sided die has the numbers 1 through 6. The numbers greater than 3 are 4, 5, and 6. So, there are 3 favorable outcomes out of 6 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 3} = \frac{3}{6} = \frac{1}{2} \]
+
+### Step 2: Calculate the probability of rolling two even numbers in a row
+
+The even numbers on a 6-sided die are 2, 4, and 6. So, there are 3 favorable outcomes for each roll. The probability of rolling an even number on one roll is:
+
+\[ \text{Probability of rolling an even number} = \frac{3}{6} = \frac{1}{2} \]
+
+Since the rolls are independent, the probability of rolling two even numbers in a row is:
+
+\[ \text{Probability of rolling two even numbers in a row} = \left(\frac{1}{2}\right) \times \left(\frac{1}{2}\right) = \frac{1}{4}
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[92 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 3
+
+A 6-sided die has the numbers 1 through 6. The numbers greater than 3 are 4, 5, and 6. So there are 3 favorable outcomes out of 6 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 3} = \frac{3}{6} = \frac{1}{2} \]
+
+### Step 2: Calculate the probability of rolling two even numbers in a row
+
+The even numbers on a 6-sided die are 2, 4, and 6. So there are 3 favorable outcomes for each roll, and the probability of rolling an even number is:
+
+\[ \text{Probability of rolling an even number} = \frac{3}{6} = \frac{1}{2} \]
+
+Since the rolls are independent, the probability of rolling two even numbers in a row is:
+
+\[ \left(\frac{1}{2}\right) \times \left(\frac{1}{2}\right) = \frac{1}{4} \]
+
+### Step 3: Find the difference in probabilities and express it
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[93 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then compare them. Let's break it down step by step.
+
+### Step 1: Calculate the probability of rolling a number greater than 6
+
+A twelve-sided die has numbers from 1 to 12. The numbers greater than 6 are 7, 8, 9, 10, 11, and 12. There are 6 such numbers out of 12 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 6} = \frac{6}{12} = \frac{1}{2} = 0.5 \]
+
+Expressing this as a percentage:
+
+\[ 0.5 \times 100 = 50\% \]
+
+### Step 2: Calculate the probability of rolling two even numbers in a row
+
+An even number on a twelve-sided die is one of the following: 2, 4, 6, 8, 10, or 12. There are 6 even numbers out of 12 possible outcomes.
+
+The probability of rolling an even number on a single roll is:
+
+\[ \frac{6}{12} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two even numbers in a row is:
+
+\[ 0.5 \times 0.5 = 0.25 \]
+
+Expressing this as a percentage:
+
+\[
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[94 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then compare them. Let's break it down step by step.
+
+### Step 1: Calculate the probability of rolling a number greater than 2
+
+A ten-sided die has the numbers 1 through 10. The numbers greater than 2 are 3, 4, 5, 6, 7, 8, 9, and 10. There are 8 such numbers out of 10 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 2} = \frac{8}{10} = 0.8 \]
+
+Expressing this as a percentage:
+
+\[ 0.8 \times 100\% = 80\% \]
+
+### Step 2: Calculate the probability of rolling two even numbers in a row
+
+An even number on a ten-sided die is one of the following: 2, 4, 6, 8, or 10. There are 5 even numbers out of 10 possible outcomes.
+
+The probability of rolling an even number on a single roll is:
+
+\[ \frac{5}{10} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two even numbers in a row is:
+
+\[ 0.5 \times 0.5 = 0.25 \]
+
+Expressing this as a percentage:
+
+\[ 0.25 \times 100\% = 25\% \]
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[95 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then compare them. Let's break it down step by step.
+
+### Step 1: Calculate the probability of rolling a number greater than 1
+
+A ten-sided die has the numbers 1 through 10. The numbers greater than 1 are 2 through 10, which gives us 9 possible outcomes out of 10.
+
+\[ \text{Probability of rolling a number greater than 1} = \frac{9}{10} \]
+
+### Step 2: Calculate the probability of rolling two even numbers in a row
+
+An even number on a ten-sided die is one of the following: 2, 4, 6, 8, or 10. This gives us 5 possible outcomes out of 10 for each roll.
+
+The probability of rolling an even number on a single roll is:
+
+\[ \text{Probability of rolling an even number} = \frac{5}{10} = \frac{1}{2} \]
+
+Since the rolls are independent, the probability of rolling two even numbers in a row is:
+
+\[ \text{Probability of rolling two even numbers in a row} = \left(\frac{1}{2}\right) \times \left(\frac{1}{2}\right) = \frac{1
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[96 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then compare them. Let's break it down step-by-step.
+
+### Step 1: Calculate the probability of rolling a number greater than 3
+
+A six-sided die has the numbers 1, 2, 3, 4, 5, and 6. The numbers greater than 3 are 4, 5, and 6. So, there are 3 favorable outcomes out of 6 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 3} = \frac{3}{6} = \frac{1}{2} = 0.5 \]
+
+Expressing this as a percentage:
+
+\[ 0.5 \times 100 = 50\% \]
+
+### Step 2: Calculate the probability of rolling two even numbers in a row
+
+An even number on a six-sided die is one of 2, 4, or 6. So, there are 3 favorable outcomes for an even number out of 6 possible outcomes.
+
+The probability of rolling an even number on the first roll is:
+
+\[ \frac{3}{6} = \frac{1}{2} \]
+
+Since the rolls are independent, the probability of rolling an even number on the second roll is also:
+
+\[ \frac{1}{2} \]
+
+So, the probability of rolling two 
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[97 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 10
+
+A 20-sided die has numbers from 1 to 20. The numbers greater than 10 are 11 through 20, which gives us 10 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 10} = \frac{10}{20} = \frac{1}{2} = 0.5 \]
+
+Expressing this as a percentage:
+
+\[ 0.5 \times 100\% = 50\% \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row
+
+Odd numbers on a 20-sided die are 1, 3, 5, 7, 9, 11, 13, 15, 17, and 19, which gives us 10 possible outcomes for each roll.
+
+The probability of rolling an odd number on one roll is:
+
+\[ \frac{10}{20} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+
+\[ 0.5 \times 0.5 = 0.25 \]
+
+Expressing this as a percentage:
+
+\[ 0.25 \times 100\% = 25\% \]
+
+### 
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[98 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 2
+
+An eight-sided die (d8) has the numbers 1 through 8. The numbers greater than 2 are 3, 4, 5, 6, 7, and 8. There are 6 such numbers out of 8 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 2} = \frac{6}{8} = \frac{3}{4} = 0.75 \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row
+
+Odd numbers on an eight-sided die are 1, 3, 5, and 7. There are 4 such numbers out of 8 possible outcomes.
+
+The probability of rolling an odd number on one roll is:
+
+\[ \text{Probability of rolling an odd number} = \frac{4}{8} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+
+\[ \text{Probability of rolling two odd numbers in a row} = 0.5 \times 0.5 = 0.25 \]
+
+### Step 3: Find the
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[99 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities for both events and then compare them. Let's break it down step-by-step.
+
+### Step 1: Calculate the probability of rolling a number greater than 1 on a d20 die.
+
+A d20 die has 20 faces, numbered from 1 to 20. The numbers greater than 1 are 2 through 20, which gives us 19 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 1} = \frac{19}{20} \]
+
+### Step 2: Calculate the probability of rolling two even numbers in a row.
+
+An even number on a d20 die is one of the following: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20. There are 10 even numbers out of 20.
+
+The probability of rolling an even number on a single roll is:
+
+\[ \text{Probability of rolling an even number} = \frac{10}{20} = \frac{1}{2} \]
+
+Since the rolls are independent, the probability of rolling two even numbers in a row is:
+
+\[ \left(\frac{1}{2}\right) \times \left(\frac{1}{2}\right) = \frac{1}{4} \]
+
+### Step 3: Compare the probabilities and find the
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[100 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities for both events and then compare them. Let's break it down step by step.
+
+### Step 1: Calculate the probability of rolling a number greater than 2 on a d20 die.
+
+A d20 die has 20 faces, numbered from 1 to 20. The numbers greater than 2 are 3 through 20, which gives us 18 favorable outcomes.
+
+\[ \text{Probability of rolling a number greater than 2} = \frac{18}{20} = \frac{9}{10} = 0.9 \]
+
+Expressing this as a percentage:
+
+\[ 0.9 \times 100\% = 90\% \]
+
+### Step 2: Calculate the probability of rolling two even numbers in a row.
+
+An even number on a d20 die is one of the following: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20. There are 10 even numbers out of 20.
+
+The probability of rolling an even number on a single roll is:
+
+\[ \frac{10}{20} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two even numbers in a row is:
+
+\[ 0.5 \times 0.5 = 0.25 \]
+
+Expressing this as a percentage:
+
+\[ 0.25 \times 100\
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[101 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then compare them. Let's break it down step by step.
+
+### Step 1: Calculate the probability of rolling a number greater than 4 on a d20 die.
+
+A d20 die has 20 faces, numbered from 1 to 20. The numbers greater than 4 are 5 through 20, which gives us 16 favorable outcomes.
+
+\[ \text{Probability of rolling a number greater than 4} = \frac{16}{20} = \frac{4}{5} = 0.8 \]
+
+Expressing this as a percentage:
+
+\[ 0.8 \times 100 = 80\% \]
+
+### Step 2: Calculate the probability of rolling two even numbers in a row.
+
+An even number on a d20 die is one of the following: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20. There are 10 even numbers out of 20.
+
+The probability of rolling an even number on a single roll is:
+
+\[ \frac{10}{20} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two even numbers in a row is:
+
+\[ 0.5 \times 0.5 = 0.25 \]
+
+Expressing this as a percentage:
+
+\[ 0.25 \times 100 = 25
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[102 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 3
+
+A 12-sided die has numbers from 1 to 12. The numbers greater than 3 are 4, 5, 6, 7, 8, 9, 10, 11, and 12. There are 9 such numbers.
+
+The probability of rolling a number greater than 3 is:
+\[ P(\text{greater than 3}) = \frac{9}{12} = \frac{3}{4} = 0.75 \]
+
+Expressing this as a percentage:
+\[ 0.75 \times 100 = 75\% \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row
+
+Odd numbers on a 12-sided die are 1, 3, 5, 7, 9, and 11. There are 6 such numbers.
+
+The probability of rolling an odd number on one roll is:
+\[ P(\text{odd}) = \frac{6}{12} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+\[ P(\text{two odd in a row}) = 0.5 \times 0.5 = 0.25 \]
+
+Expressing this as a percentage:
+\[ 0.25
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[103 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 3 on a d12 die.
+
+A d12 die has 12 faces, numbered from 1 to 12. The numbers greater than 3 are 4, 5, 6, 7, 8, 9, 10, 11, and 12. There are 9 such numbers.
+
+\[ \text{Probability of rolling a number greater than 3} = \frac{9}{12} = \frac{3}{4} = 0.75 \]
+
+Expressing this as a percentage:
+
+\[ 0.75 \times 100 = 75\% \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row.
+
+Odd numbers on a d12 die are 1, 3, 5, 7, 9, and 11. There are 6 such numbers.
+
+The probability of rolling an odd number on one roll is:
+
+\[ \frac{6}{12} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+
+\[ 0.5 \times 0.5 = 0.25 \]
+
+Expressing this as a percentage:
+
+\[ 0.25 \times 100 = 25\% \]
+
+### Step 3: Find the differe
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[104 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities for both events and then compare them. Let's break it down step-by-step.
+
+### Step 1: Calculate the probability of rolling a number greater than 10
+
+A twenty-sided die has numbers from 1 to 20. The numbers greater than 10 are 11, 12, 13, 14, 15, 16, 17, 18, 19, and 20. There are 10 such numbers.
+
+The probability \( P(\text{greater than 10}) \) is:
+\[ P(\text{greater than 10}) = \frac{\text{Number of favorable outcomes}}{\text{Total possible outcomes}} = \frac{10}{20} = \frac{1}{2} = 0.5 \]
+
+Expressing this as a percentage:
+\[ 0.5 \times 100\% = 50\% \]
+
+### Step 2: Calculate the probability of rolling two even numbers in a row
+
+An even number on a twenty-sided die is one of the following: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20. There are 10 even numbers out of 20.
+
+The probability of rolling an even number on a single roll is:
+\[ P(\text{even}) = \frac{10}{20} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probabil
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[105 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then compare them. Let's break it down step-by-step.
+
+### Step 1: Calculate the probability of rolling a number greater than 2
+
+A 4-sided die has the numbers 1, 2, 3, and 4. The numbers greater than 2 are 3 and 4. So, there are 2 favorable outcomes out of 4 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 2} = \frac{2}{4} = \frac{1}{2} = 0.5 \]
+
+To express this as a percentage:
+
+\[ 0.5 \times 100\% = 50\% \]
+
+### Step 2: Calculate the probability of rolling two even numbers in a row
+
+An even number on a 4-sided die is either 2 or 4. So, there are 2 favorable outcomes for each roll. The probability of rolling an even number on one roll is:
+
+\[ \text{Probability of rolling an even number} = \frac{2}{4} = \frac{1}{2} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two even numbers in a row is:
+
+\[ \text{Probability of rolling two even numbers in a row} = 0.5 \tim
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[106 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 6
+
+A twelve-sided die has numbers from 1 to 12. The numbers greater than 6 are 7, 8, 9, 10, 11, and 12. There are 6 such numbers out of 12 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 6} = \frac{6}{12} = \frac{1}{2} = 0.5 \]
+
+Expressing this as a percentage:
+
+\[ 0.5 \times 100\% = 50\% \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row
+
+Odd numbers on a twelve-sided die are 1, 3, 5, 7, 9, and 11. There are 6 odd numbers out of 12 possible outcomes.
+
+The probability of rolling an odd number on one roll is:
+
+\[ \frac{6}{12} = \frac{1}{2} \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+
+\[ \left(\frac{1}{2}\right) \times \left(\frac{1}{2}\right) = \frac{1}{4} = 0.25 \]
+
+Expr
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[107 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then find the difference between them, expressed as a percentage.
+
+### Step 1: Calculate the probability of rolling a number greater than 2
+
+A 20-sided die has numbers from 1 to 20. The numbers greater than 2 are 3 through 20, which gives us 18 possible outcomes out of 20.
+
+\[ \text{Probability of rolling a number greater than 2} = \frac{18}{20} = 0.9 \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row
+
+Odd numbers on a 20-sided die are 1, 3, 5, 7, 9, 11, 13, 15, 17, and 19, which gives us 10 possible outcomes out of 20 for each roll.
+
+The probability of rolling an odd number on one roll is:
+
+\[ \text{Probability of rolling an odd number} = \frac{10}{20} = 0.5 \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+
+\[ \text{Probability of rolling two odd numbers in a row} = 0.5 \times 0.5 = 0.25 \]
+
+### Step 3: Find the difference in probabili
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_1523.json
+[108 / 200] Evaluting Question
+Response: To solve this problem, we need to calculate the probabilities of both events and then compare them. Let's break it down step by step.
+
+### Step 1: Calculate the probability of rolling a number greater than 6
+
+A twelve-sided die has numbers from 1 to 12. The numbers greater than 6 are 7, 8, 9, 10, 11, and 12. There are 6 such numbers out of 12 possible outcomes.
+
+\[ \text{Probability of rolling a number greater than 6} = \frac{6}{12} = \frac{1}{2} = 0.5 \]
+
+### Step 2: Calculate the probability of rolling two odd numbers in a row
+
+Odd numbers on a twelve-sided die are 1, 3, 5, 7, 9, and 11. There are 6 odd numbers out of 12 possible outcomes.
+
+The probability of rolling an odd number on one roll is:
+
+\[ \text{Probability of rolling an odd number} = \frac{6}{12} = \frac{1}{2} \]
+
+Since the rolls are independent, the probability of rolling two odd numbers in a row is:
+
+\[ \text{Probability of rolling two odd numbers in a row} = \left(\frac{1}{2}\right) \times \left(\frac{1}{2}\right) = \f

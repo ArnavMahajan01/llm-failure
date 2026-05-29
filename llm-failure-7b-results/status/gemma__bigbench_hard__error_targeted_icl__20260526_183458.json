@@ -1,0 +1,16 @@
+{
+  "run_id": "gemma__bigbench_hard__error_targeted_icl__20260526_183458",
+  "family": "gemma",
+  "display_name": "google/gemma-7b-it",
+  "hf_model_id": "google/gemma-7b-it",
+  "benchmark": "bigbench_hard",
+  "condition": "error_targeted_icl",
+  "status": "success",
+  "started_at": "2026-05-26T18:34:58",
+  "finished_at": "2026-05-26T19:07:43",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__bigbench_hard__error_targeted_icl__20260526_183458.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__bigbench_hard__error_targeted_icl__20260526_183458__bigbench_hard__google_gemma-7b-it__bigbench_hard__20260526_1835.json"
+  ]
+}

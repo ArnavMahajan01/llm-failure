@@ -7,7 +7,12 @@ from config import (
 
 MODEL_NAME_MAP = {
     "Qwen/Qwen3.5-9B-Instruct":  "qwen3.5:latest",
-    "Gemma/Gemma3-270M": "gemma3:270m"
+    "Gemma/Gemma3-1B": "gemma3:1b",
+    "Qwen/Qwen2-math-1.5B": "qwen2-math:1.5b",
+    "Llama/Llama3.2-1.5B": "llama3.2:1b",
+    "Qwen/Qwen2.5-3B": "qwen2.5:3b",
+    "Gemma/Gemma3-4B": "gemma3:4b",
+    "Llama/Llama3.2-3B": "llama3.2:3b",
 }
 
 def load_model(model_name: str):
@@ -38,7 +43,7 @@ def load_model(model_name: str):
     print(f"Ollama ready. Using model: {ollamaName}")
     return ollamaName, None  # (model, tokenizer) — tokenizer is None with Ollama
 
-def generate_response(model, promptText, maxTokens: int = 8192) -> str:
+def generate_response(model, promptText, maxTokens: int = 8192, temperature: float = 0) -> str:
     """
     Generate a response using Ollma model
 
@@ -51,24 +56,25 @@ def generate_response(model, promptText, maxTokens: int = 8192) -> str:
     if "qwen" in ollamaName.lower():
         promptText = promptText + "\n/no_think"
 
-
     try:
         response = requests.post(
-            f"{OLLAMA_BASE_URL}/api/generate",
+            f"{OLLAMA_BASE_URL}/api/chat",
             json={
                 "model": ollamaName,
-                "prompt": promptText,
+                "messages": [{"role": "user", "content": promptText}],
+                "think": False,
                 "stream": False,
                 "options": {
-                    "temperature": 0,
+                    "temperature": temperature,
                     "num_predict": maxTokens
                 }
             },
-            timeout=180
+            timeout=300
         )
         response.raise_for_status()
-        print(f"Response: {response.json().get("response", "").strip()}")
-        return response.json().get("response", "").strip()
+        result = response.json().get("message", {}).get("content", "").strip()
+        print(f"Response: {result}")
+        return result
     except requests.exceptions.Timeout:
         print(f"  WARNING: Request timed out for model {ollamaName}")
         return ""

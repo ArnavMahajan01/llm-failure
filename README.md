@@ -32,6 +32,29 @@ If or when you install a new model you need to add them in **config.py and model
 
 At any time the config values can be changed.
 
+### Variables
+
+| Variable | Description |
+|---|---|
+| `SMOKE_TEST` | Run a quick check instead of full experiment |
+| `SMOKE_TEST_SAMPLES` | Number of samples used in smoke test |
+| `NUM_SAMPLES` | Samples evaluated per benchmark per condition |
+| `MAX_NEW_TOKENS` | Max tokens the model can generate per response |
+| `OLLAMA_BASE_URL` | Local URL where Ollama server is running |
+| `RESULTS_DIR` | Folder path for raw experiment output files |
+| `PROCESSED_DIR` | Folder path for processed/analysed results |
+| `MODELS` | Dict of model families and their HuggingFace IDs |
+| `BENCHMARKS` | Set of benchmarks to evaluate models on |
+| `CONDITIONS` | List of prompting strategies to test |
+| `S5_CONDITIONS` | Conditions that require errorb targeted ICL examples |
+| `NUM_EXAMPLES` | Few-shot examples used per prompt (default k=3) |
+| `NUM_EXAMPLES_K5` | Few-shot examples for k=5 targeted condition |
+| `N_SAMPLES_S6` | Samples generated per prompt for self consistency |
+| `TEMPERATURE_S6` | Sampling temperature for self consistency decoding |
+| `FEW_SHOT_POOL_SIZE` | Examples reserved from benchmark for random pool |
+| `NUM_RUNS` | Times each prompt is run on the same model |
+
+
 ### Quick Smoke Test (To check if everything works or not)
 ```bash
 python3 run_experiment.py --smoke
@@ -42,6 +65,8 @@ python3 run_experiment.py --smoke
 ```bash
 python3 run_experiment.py --model qwen
 ```
+
+**NOTE: Please note that it takes the model family as paramter in --model and not a single model. Giving the model family like qwen or gemma will process results on all the models present in the model family in config**
 
 ### Single benchmark
 
@@ -61,10 +86,59 @@ python3 run_experiment.py --condition zero_shot
 python3 run_experiment.py
 ```
 
+
+
 **NOTE: You can make a combination of the args to check and test different scenarios**
+
 **Expected runtime:** Full run takes several hours depending on GPU.
+
 Recommended order: run smoke test first, then run one model family at a time.
 
 ## Generating Results
 
 (WORK IN PROGESS FROM THIS POINT ONWARDS)
+
+If you want to process results run **processResults.py**. it can be a wither all the files in the results/raw folder or a combination of files. You can run it as follows
+
+```bash
+python3 -m results.processResults Gemma_Gemma3-1B__gsm_symbolic__20260511_2100.json
+
+```
+
+## Analysis
+
+### Process Results for the Files you want to Visualize
+
+```bash
+python3 -m results.processResults Gemma_Gemma3-1B__gsm_symbolic__20260511_2100.json Qwen_Qwen2-math-1-5B__gsm_symbolic__20260511_2148.json Llama_Llama3-2-1-5B__gsm_symbolic__20260511_2210.json
+
+```
+
+### Visualize
+```bash
+python3 -m analysis.heatmap
+```
+
+For Radar charts (Fig 4) and Line charts (Fig 5), pass in the model name as argument
+For Line chart (Fig 6), Stacked Bar chart (Fig 7), Radar Charts (Fig 8 and Fig 9) pass in the benchmark name as argument
+
+```bash
+python3 -m analysis.heatmap -Llama/Llama3-2-3B --gsm8k
+```
+
+To run for all datasets and models, run the following command
+```bash
+python3 -m analysis.heatmap --all
+```
+
+Generated charts can then be viewed in ```results/processed/charts```.
+
+### Raw Results
+
+At the moment the full and final raw files are as follows
+
+**FOR ~1 Billion Params**
+
+1. Gemma_Gemma3-1B__gsm_symbolic__20260511_2100.json
+2. Qwen_Qwen2-math-1-5B__gsm_symbolic__20260511_2148.json
+3. Llama_Llama3-2-1-5B__gsm_symbolic__20260511_2210.json

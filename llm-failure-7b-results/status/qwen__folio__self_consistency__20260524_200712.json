@@ -1,0 +1,16 @@
+{
+  "run_id": "qwen__folio__self_consistency__20260524_200712",
+  "family": "qwen",
+  "display_name": "Qwen/Qwen2.5-7B-Instruct",
+  "hf_model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "benchmark": "folio",
+  "condition": "self_consistency",
+  "status": "success",
+  "started_at": "2026-05-24T20:07:12",
+  "finished_at": "2026-05-25T01:54:20",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/qwen__folio__self_consistency__20260524_200712.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/qwen__folio__self_consistency__20260524_200712__folio__Qwen_Qwen2-5-7B-Instruct__folio__20260524_2007.json"
+  ]
+}

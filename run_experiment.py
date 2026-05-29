@@ -7,14 +7,16 @@ from datetime import datetime
 import re
 
 from config import (
-    SMOKE_TEST, SMOKE_TEST_SAMPLES, NUM_SAMPLES, RESULTS_DIR, MAX_NEW_TOKENS, NUM_EXAMPLES, FEW_SHOT_POOL_SIZE, NUM_RUNS, MODELS, BENCHMARKS, CONDITIONS
+    SMOKE_TEST, SMOKE_TEST_SAMPLES, NUM_SAMPLES, RESULTS_DIR, MAX_NEW_TOKENS, NUM_EXAMPLES, NUM_EXAMPLES_K5, FEW_SHOT_POOL_SIZE, NUM_RUNS, MODELS, BENCHMARKS, CONDITIONS, N_SAMPLES_S6, TEMPERATURE_S6
 )
 from models.model_loader import load_model, generate_response, free_model
 from data.data_loader import load_benchMark
-from prompts.zeroShot import zeroShotPrompt
+from prompts.zeroShot import zeroShotBaselinePrompt, zeroShotPrompt
 from prompts.randomFewShot import randomFewShotPrompt
 from prompts.targetedFewShots import targetedFewShotPrompt
-from evaluation.scorer import score
+from prompts.errorTargetedPrompt import errorTargetedICLPrompt
+from evaluation.scorer import score, majorityVote, isCorrect
+from evaluation.taxonomy import classifyError
 
 
 def run_liad():
@@ -44,12 +46,14 @@ def isMajorityCorrect(totalRuns: list) -> bool:
     totalCount = sum(1 for i in totalRuns if i["correct"])
     return totalCount > len(totalRuns) / 2
 
-def saveResult(results: list, model_name: str, benchmark: str):
+def saveResult(results: list, model_name: str, benchmark: str, filename: str = None):
     """Save results to a JSON file."""
-    os.makedirs(RESULTS_DIR, exist_ok=True)
-    name = model_name.replace("/", "_").replace(".", "-")
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M")
-    filename = f"{RESULTS_DIR}/{name}__{benchmark}__{timestamp}.json"
+    if filename is None:
+        benchmarkDir = f"{RESULTS_DIR}/{benchmark}"
+        os.makedirs(benchmarkDir, exist_ok=True)
+        name = model_name.replace("/", "_").replace(".", "-")
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+        filename = f"{benchmarkDir}/{name}__{benchmark}__{timestamp}.json"
 
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
@@ -65,23 +69,86 @@ def run_single_question(
     condition: str,
     benchmark: str,
     example_pool: list,
-    run_idx: int
+    run_idx: int,
+    category: str = None
 ) -> dict:
     """
     Run inference on a single question under one condition.
     Returns a result dict.
     """
-    assigned_failure_type = None
+    failureType = None
 
     # Build the prompt
-    if condition == "zero_shot":
-        prompt = zeroShotPrompt(question, benchmark)
+    if condition == "zero_shot_baseline":
+        prompt = zeroShotBaselinePrompt(question, benchmark, category=category)
+
+    elif condition == "zero_shot":
+        prompt = zeroShotPrompt(question, benchmark, category=category)
 
     elif condition == "random_few_shot":
         prompt = randomFewShotPrompt(question=question, exampleList=example_pool, benchmark=benchmark, numExamples=NUM_EXAMPLES, seed=run_idx)
     
+    elif condition == "targeted_few_shot_answer_only":
+        result = targetedFewShotPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES, use_cot=False)
+
+        if isinstance(result, tuple):
+            prompt, failureType = result
+        else:
+            prompt = result
+
     elif condition == "targeted_few_shot":
-        prompt, failureType = targetedFewShotPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES)
+        result = targetedFewShotPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES)
+
+        if isinstance(result, tuple):
+            prompt, failureType = result
+        else:
+            prompt = result
+
+    elif condition == "targeted_few_shot_k5":
+        result = targetedFewShotPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES_K5)
+
+        if isinstance(result, tuple):
+            prompt, failureType = result
+        else:
+            prompt = result
+
+    elif condition == "error_targeted_icl":
+        prompt = errorTargetedICLPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES, showError=True, randomClass=False)
+
+    elif condition == "error_targeted_icl_random":
+        prompt = errorTargetedICLPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES, showError=True, randomClass=True)
+
+    elif condition == "error_targeted_icl_correct_only":
+        prompt = errorTargetedICLPrompt(question=question, benchmark=benchmark, numExamples=NUM_EXAMPLES, showError=False, randomClass=False)
+
+    elif condition == "self_consistency":
+        prompt = zeroShotPrompt(question, benchmark)
+        predictions = []
+        allResponses = []
+        for _ in range(N_SAMPLES_S6):
+            try:
+                resp = generate_response(model, prompt, temperature=TEMPERATURE_S6)
+            except Exception as e:
+                print(f"      ERROR during self_consistency inference: {e}")
+                resp = ""
+            s = score(resp, answer, benchmark)
+            predictions.append(s["predicted"])
+            allResponses.append(resp)
+
+        votedAnswer = majorityVote(predictions)
+        correct = isCorrect(votedAnswer, answer)
+        errorType = None if correct else classifyError(question, votedAnswer, answer, benchmark)
+
+        return {
+            "run": run_idx,
+            "condition": condition,
+            "correct": correct,
+            "predicted": votedAnswer,
+            "ground_truth": answer,
+            "assigned_failure_type": None,
+            "error_type": errorType,
+            "full_response": " ||| ".join(allResponses)
+        }
 
     else:
         raise ValueError(f"Unknown condition: {condition}")
@@ -96,13 +163,18 @@ def run_single_question(
     # Score the response
     scored = score(response, answer, benchmark)
 
+    errorType = None
+    if not scored["correct"]:
+        errorType = classifyError(question, response, answer, benchmark)
+
     return {
         "run": run_idx,
         "condition": condition,
         "correct": scored["correct"],
         "predicted": scored["predicted"],
         "ground_truth": answer,
-        "assigned_failure_type": assigned_failure_type,
+        "assigned_failure_type": failureType,
+        "error_type": errorType,
         "full_response": response
     }
 
@@ -130,16 +202,23 @@ def runbenchmarkOnModel(model, tokenizer, modelname: str, benchmark: str, condit
     allResults = []
     total = len(evaluationSize)
 
+    # Fix the filename once so all incremental saves go to the same file
+    benchmarkDir = f"{RESULTS_DIR}/{benchmark}"
+    os.makedirs(benchmarkDir, exist_ok=True)
+    name = modelname.replace("/", "_").replace(".", "-")
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+    outFile = f"{benchmarkDir}/{name}__{benchmark}__{timestamp}.json"
+
     for i, item in enumerate(evaluationSize):
         question = item["question"]
         answer = item["answer"]
 
-        print(f"[{i+1} / {total}] Evaluting Wuestion")
+        print(f"[{i+1} / {total}] Evaluting Question")
 
         result = {
             "question": question,
             "ground_truth": answer,
-            "benchmark_category": item.get("category", "unknown"),
+            "benchmark_category": item.get("category") or "unknown",
             "conditions": {}
         }
 
@@ -154,7 +233,8 @@ def runbenchmarkOnModel(model, tokenizer, modelname: str, benchmark: str, condit
                     condition=condition,
                     benchmark=benchmark,
                     example_pool=examplespool,
-                    run_idx=run_idx
+                    run_idx=run_idx,
+                    category=item.get("category")
                 )
                 runs.append(itemResult)
 
@@ -164,9 +244,10 @@ def runbenchmarkOnModel(model, tokenizer, modelname: str, benchmark: str, condit
                 "total_runs": NUM_RUNS,
                 "runs": runs
             }
-        
+
         allResults.append(result)
-    
+        saveResult(allResults, modelname, benchmark, filename=outFile)
+
     print(f" Completed {total} questions for {benchmark}")
     return allResults
 
@@ -227,7 +308,7 @@ def main():
                 continue
             
             for benchmark in benchmarksToRun:
-                results = runbenchmarkOnModel(
+                runbenchmarkOnModel(
                     model=model,
                     tokenizer=tokenizer,
                     modelname=modelname,
@@ -235,9 +316,6 @@ def main():
                     conditionRunning=conditionToRun,
                     numSamples=num_samples
                 )
-
-                if results:
-                    saveResult(results, modelname, benchmark)
 
             free_model(model)
 

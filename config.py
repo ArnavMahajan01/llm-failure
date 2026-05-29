@@ -11,12 +11,27 @@ OLLAMA_BASE_URL = "http://localhost:11434"
 RESULTS_DIR = "results/raw"
 PROCESSED_DIR = "results/processed"
 
+# MODELS = {
+#     "qwen": [
+#          "Qwen/Qwen2-math-1.5B",
+#     ],
+#     "gemma": [
+#         "Gemma/Gemma3-1B"
+#     ],
+#     "llama": [
+#         "Llama/Llama3.2-1.5B"
+#     ]
+# }
+
 MODELS = {
     "qwen": [
-         "Qwen/Qwen3.5-9B-Instruct",
+         "Qwen/Qwen2.5-3B",
     ],
     "gemma": [
-        "Gemma/Gemma3-270M"
+        "Gemma/Gemma3-4B"
+    ],
+    "llama": [
+        "Llama/Llama3.2-3B"
     ]
 }
 
@@ -25,16 +40,30 @@ BENCHMARKS = {
     "gsm_plus",
     "gsm_ic",
     "bigbench_hard",
+    "bigbench_hard_tracking",
+    "gsm8k",
     "folio"
 }
 
 CONDITIONS = [
+    "zero_shot_baseline",
     "zero_shot",
+    "targeted_few_shot_answer_only",
     "random_few_shot",
-    "targeted_few_shot"
+    "targeted_few_shot",
+    "targeted_few_shot_k5",
+    "error_targeted_icl",
+    "error_targeted_icl_random",
+    "error_targeted_icl_correct_only",
+    "self_consistency",
 ]
 
+S5_CONDITIONS = {"error_targeted_icl", "error_targeted_icl_random", "error_targeted_icl_correct_only"}
+
 NUM_EXAMPLES = 3
+NUM_EXAMPLES_K5 = 5
+N_SAMPLES_S6 = 5
+TEMPERATURE_S6 = 0.7
 # Number of examples reserved from benchmark data for random few-shot pool
 FEW_SHOT_POOL_SIZE = 20
 # Number of times to run each prompt on same model

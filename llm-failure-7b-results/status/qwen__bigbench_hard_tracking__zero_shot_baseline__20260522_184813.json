@@ -1,0 +1,16 @@
+{
+  "run_id": "qwen__bigbench_hard_tracking__zero_shot_baseline__20260522_184813",
+  "family": "qwen",
+  "display_name": "Qwen/Qwen2.5-7B-Instruct",
+  "hf_model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "benchmark": "bigbench_hard_tracking",
+  "condition": "zero_shot_baseline",
+  "status": "success",
+  "started_at": "2026-05-22T18:48:13",
+  "finished_at": "2026-05-22T19:55:31",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/qwen__bigbench_hard_tracking__zero_shot_baseline__20260522_184813.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/qwen__bigbench_hard_tracking__zero_shot_baseline__20260522_184813__bigbench_hard_tracking__Qwen_Qwen2-5-7B-Instruct__bigbench_hard_tracking__20260522_1848.json"
+  ]
+}

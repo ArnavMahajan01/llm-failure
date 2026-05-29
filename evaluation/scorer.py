@@ -1,4 +1,5 @@
 import re
+from collections import Counter
 
 def extractResponse(response: str, benchmark: str) -> str:
 
@@ -8,20 +9,26 @@ def extractResponse(response: str, benchmark: str) -> str:
     # To remove the whitespaces from front and back
     strippedResponse = response.strip();
 
-    matchAnswer = re.search(
-        r"answer\s*:\s*(.+?)(?:\n|$)",
+    # Search for all "Answer: ..." occurrences and pick the first one that
+    # isn't inside a LaTeX \text{} macro (those start with a stray '}').
+    for matchAnswer in re.finditer(
+        r"answer\s*:[ \t]*(.+?)(?:\n|$)",
         strippedResponse,
         re.IGNORECASE
-    )
-
-    # if matchAnswer:
-    #     value = answerMatch() # SOMETHEING HERE
-
-    #     return value
-
-    if matchAnswer:
+    ):
         value = matchAnswer.group(1).strip()
-        value = re.sub(r"[.,;]$", "", value).strip()
+        # Skip captures that are continuations of \text{Answer:} LaTeX noise
+        if value.startswith("}"):
+            continue
+        # Strip a nested "Answer: " prefix (e.g. model writes "Answer: Answer: 42")
+        nested = re.match(r"answer\s*:[ \t]*(.+)", value, re.IGNORECASE)
+        if nested:
+            value = nested.group(1).strip()
+        value = re.sub(r"[.,;*`_]+$", "", value).strip()
+        # Strip common LaTeX wrappers like \boxed{...} and extract inner text
+        boxed = re.search(r"\\boxed\{([^}]+)\}", value)
+        if boxed:
+            value = boxed.group(1).strip()
         if value:
             return value
     
@@ -31,10 +38,15 @@ def extractResponse(response: str, benchmark: str) -> str:
             if re.search(rf"\b{label}\b", strippedResponse, re.IGNORECASE):
                 return label
 
-    if benchmark in ["gsm_symbolic", "gsm_plus"]:
+    if benchmark in ["gsm_symbolic", "gsm_plus", "gsm_ic", "gsm8k"]:
         numVal = re.findall(r"-?\d+(?:,\d{3})*(?:\.\d+)?", strippedResponse)
         if numVal:
             return numVal[-1].replace(",", "")
+
+    if benchmark in ["bigbench_hard", "bigbench_hard_tracking"]:
+        match = re.search(r"\\boxed\{([A-Ea-e])\}", strippedResponse)
+        if match:
+            return f"({match.group(1).upper()})"
         
     lastLine = [line.strip() for line in strippedResponse.split("\n") if line.strip()]
     if lastLine:
@@ -45,12 +57,16 @@ def extractResponse(response: str, benchmark: str) -> str:
 def normalize(answer: str) -> str:
     if not answer:
         return ""
-    
+
     answer = answer.strip().lower().replace(",", "")
-    answer = re.sub(r"[$£€¥]", "", answer)
+    answer = re.sub(r"[$£€¥%]", "", answer)
     answer = re.sub(r"\.$", "", answer).strip()
 
     return answer
+
+def stripBrackets(s: str) -> str:
+    """Remove all bracket/paren characters so (C), [C], C all compare equal."""
+    return re.sub(r"[(){}\[\]]", "", s).strip()
 
 
 def isCorrect(predictedAnswer: str, actualAnswer: str) -> bool:
@@ -77,11 +93,31 @@ def isCorrect(predictedAnswer: str, actualAnswer: str) -> bool:
         if label in predVal and label in actualVal:
             return True
         
-    # Substring containment (for multi-word answers)
-    if actualVal in predVal or predVal in actualVal:
+    # Bracket-insensitive match: (C), [C], C all treated as equal
+    if stripBrackets(predVal) == stripBrackets(actualVal):
         return True
-    #  NNED TO CHECK FOR OTHER DATASET TYPES
+
+    # Substring containment only for non-numeric answers (e.g. FOLIO labels)
+    # Avoided for numbers: "7" would incorrectly match inside "17"
+    def is_numeric(s):
+        try:
+            float(s)
+            return True
+        except ValueError:
+            return False
+
+    if not is_numeric(actualVal) and not is_numeric(predVal):
+        if actualVal in predVal or predVal in actualVal:
+            return True
+
     return False
+
+def majorityVote(predictions: list) -> str:
+    cleaned = [normalize(p) for p in predictions if p]
+    if not cleaned:
+        return ""
+    return Counter(cleaned).most_common(1)[0][0]
+
 
 def score(modelResponse: str, actualVal: str, benchmark: str = "general") -> dict:
     """
@@ -105,4 +141,3 @@ def score(modelResponse: str, actualVal: str, benchmark: str = "general") -> dic
         "correct": correct,
         "full_response": modelResponse
     }
-

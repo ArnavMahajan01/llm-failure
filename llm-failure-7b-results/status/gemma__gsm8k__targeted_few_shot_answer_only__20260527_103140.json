@@ -1,0 +1,16 @@
+{
+  "run_id": "gemma__gsm8k__targeted_few_shot_answer_only__20260527_103140",
+  "family": "gemma",
+  "display_name": "google/gemma-7b-it",
+  "hf_model_id": "google/gemma-7b-it",
+  "benchmark": "gsm8k",
+  "condition": "targeted_few_shot_answer_only",
+  "status": "success",
+  "started_at": "2026-05-27T10:31:40",
+  "finished_at": "2026-05-27T11:05:20",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__gsm8k__targeted_few_shot_answer_only__20260527_103140.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__gsm8k__targeted_few_shot_answer_only__20260527_103140__gsm8k__google_gemma-7b-it__gsm8k__20260527_1032.json"
+  ]
+}
