@@ -1,0 +1,356 @@
+[
+  {
+    "question": "Qasim saw a 40-foot whale with 2 48-inch remoras attached to it. What percentage of the whale's body length is the combined length of the remoras?",
+    "ground_truth": "20",
+    "benchmark_category": "arithmetic_symbolic",
+    "conditions": {
+      "zero_shot_baseline": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "zero_shot_baseline",
+            "correct": true,
+            "predicted": "20",
+            "ground_truth": "20",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To determine what percentage of the whale's body length is the combined length of the remoras, we need to follow these steps:\n\n1. Convert the length of the whale from feet to inches.\n2. Calculate the total length of the remoras in inches.\n3. Determine the percentage of the whale's body length that the combined length of the remoras represents.\n\nFirst, let's convert the length of the whale from feet to inches. Since there are 12 inches in a foot, we have:\n\\[ 40 \\text{ feet} = 40 \\times 12 = 480 \\text{ inches} \\]\n\nNext, we need to find the combined length of the remoras in inches. Each remora is 48 inches long, and there are 2 remoras, so:\n\\[ 2 \\times 48 = 96 \\text{ inches} \\]\n\nNow, we need to find what percentage 96 inches is of 480 inches. We do this by dividing the combined length of the remoras by the whale's body length and then multiplying by 100 to get the percentage:\n\\[ \\left( \\frac{96}{480} \\right) \\times 100 = 0.2 \\times 100 = 20\\% \\]\n\nTherefore, the combined length of the remoras is \\(\\boxed{20}\\%\\) of the whale's body length."
+          }
+        ]
+      },
+      "zero_shot": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "zero_shot",
+            "correct": true,
+            "predicted": "20",
+            "ground_truth": "20",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To determine what percentage of the whale's body length is the combined length of the remoras, we need to follow these steps:\n\n1. Convert the length of the whale from feet to inches.\n2. Determine the total length of the remoras in inches.\n3. Calculate the percentage of the whale's body length that the combined length of the remoras represents.\n\nLet's start with step 1: Convert the length of the whale from feet to inches.\nSince there are 12 inches in a foot, we multiply the length of the whale by 12:\n\\[ 40 \\text{ feet} \\times 12 \\text{ inches/foot} = 480 \\text{ inches} \\]\n\nNext, step 2: Determine the total length of the remoras in inches.\nEach remora is 48 inches long and there are 2 remoras, so we multiply the length of one remora by 2:\n\\[ 2 \\times 48 \\text{ inches} = 96 \\text{ inches} \\]\n\nNow, step 3: Calculate the percentage of the whale's body length that the combined length of the remoras represents.\nWe use the formula for percentage:\n\\[ \\left( \\frac{\\text{length of remoras}}{\\text{length of whale}} \\right) \\times 100 \\]\nSubstituting the values we have:\n\\[ \\left( \\frac{96 \\text{ inches}}{480 \\text{ inches}} \\right) \\times 100 = 20\\% \\]\n\nSo, the combined length of the remoras is \\(\\boxed{20}\\%\\) of the whale's body length."
+          }
+        ]
+      },
+      "targeted_few_shot_answer_only": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "targeted_few_shot_answer_only",
+            "correct": true,
+            "predicted": "20",
+            "ground_truth": "20",
+            "assigned_failure_type": "arithmatic",
+            "error_type": null,
+            "full_response": "To determine what percentage of the whale's body length is the combined length of the remoras, we need to follow these steps:\n\n1. Convert the length of the whale from feet to inches.\n2. Calculate the total length of the remoras in inches.\n3. Determine what percentage this total length is of the whale's body length.\n\nFirst, let's convert the length of the whale from feet to inches. Since there are 12 inches in a foot, we have:\n\\[ 40 \\text{ feet} \\times 12 \\text{ inches/foot} = 480 \\text{ inches} \\]\n\nNext, we calculate the total length of the remoras. Each remora is 48 inches long and there are 2 remoras, so the combined length of the remoras is:\n\\[ 2 \\times 48 \\text{ inches} = 96 \\text{ inches} \\]\n\nNow, we need to find what percentage 96 inches is of 480 inches. We do this by dividing the total length of the remoras by the whale's body length and then multiplying by 100 to get the percentage:\n\\[ \\left( \\frac{96}{480} \\right) \\times 100 = 20\\% \\]\n\nSo, the combined length of the remoras is 20% of the whale's body length. The final answer is:\n\\[ \\boxed{20} \\]"
+          }
+        ]
+      },
+      "random_few_shot": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "random_few_shot",
+            "correct": true,
+            "predicted": "20",
+            "ground_truth": "20",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To determine what percentage of the whale's body length the combined length of the remoras represents, we need to follow these steps:\n\n1. **Convert the length of each remora from inches to feet:**\n   Each remora is 48 inches long. Since there are 12 inches in a foot, we convert 48 inches to feet by dividing by 12:\n   \\[\n   48 \\text{ inches} = \\frac{48}{12} \\text{ feet} = 4 \\text{ feet}\n   \\]\n\n2. **Calculate the combined length of the two remoras:**\n   Since there are 2 remoras, each 4 feet long, the total length of the remoras is:\n   \\[\n   2 \\times 4 \\text{ feet} = 8 \\text{ feet}\n   \\]\n\n3. **Determine what percentage the combined length of the remoras is of the whale's body length:**\n   The whale's body length is 40 feet. To find the percentage, we use the formula:\n   \\[\n   \\left( \\frac{\\text{Combined length of remoras}}{\\text{Whale's body length}} \\right) \\times 100\n   \\]\n   Substituting the values we have:\n   \\[\n   \\left( \\frac{8 \\text{ feet}}{40 \\text{ feet}} \\right) \\times 100 = 0.2 \\times 100 = 20\\%\n   \\]\n\nTherefore, the combined length of the remoras is 20% of the whale's body length. The final answer is:\n\\[\n\\boxed{20}\n\\]"
+          }
+        ]
+      },
+      "targeted_few_shot": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "targeted_few_shot",
+            "correct": true,
+            "predicted": "20",
+            "ground_truth": "20",
+            "assigned_failure_type": "arithmatic",
+            "error_type": null,
+            "full_response": "To determine what percentage of the whale's body length is the combined length of the remoras, we need to follow these steps:\n\n1. Convert the length of the whale from feet to inches.\n2. Calculate the total length of the remoras in inches.\n3. Determine what percentage this total length is of the whale's length.\n\nFirst, let's convert the length of the whale from feet to inches. Since there are 12 inches in a foot, we have:\n\\[ 40 \\text{ feet} = 40 \\times 12 = 480 \\text{ inches} \\]\n\nNext, we calculate the total length of the remoras. Each remora is 48 inches long and there are 2 remoras, so:\n\\[ 2 \\times 48 = 96 \\text{ inches} \\]\n\nNow, we need to find what percentage 96 inches is of 480 inches. We do this by dividing the total length of the remoras by the length of the whale and then multiplying by 100 to get the percentage:\n\\[ \\left( \\frac{96}{480} \\right) \\times 100 = 20\\% \\]\n\nSo, the combined length of the remoras is 20% of the whale's body length. The final answer is:\n\\[ \\boxed{20} \\]"
+          }
+        ]
+      },
+      "targeted_few_shot_k5": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "targeted_few_shot_k5",
+            "correct": true,
+            "predicted": "20",
+            "ground_truth": "20",
+            "assigned_failure_type": "arithmatic",
+            "error_type": null,
+            "full_response": "To determine what percentage of the whale's body length is the combined length of the remoras, we need to follow these steps:\n\n1. Convert the length of the whale from feet to inches.\n2. Calculate the total length of the remoras in inches.\n3. Determine what percentage this total length is of the whale's length.\n\nFirst, let's convert the length of the whale from feet to inches. Since there are 12 inches in a foot, we have:\n\\[ 40 \\text{ feet} = 40 \\times 12 = 480 \\text{ inches} \\]\n\nNext, we calculate the total length of the remoras. Each remora is 48 inches long and there are 2 remoras, so:\n\\[ 2 \\times 48 = 96 \\text{ inches} \\]\n\nNow, we need to find what percentage 96 inches is of 480 inches. We do this by dividing the total length of the remoras by the length of the whale and then multiplying by 100 to get the percentage:\n\\[ \\left( \\frac{96}{480} \\right) \\times 100 = 20\\% \\]\n\nSo, the combined length of the remoras is 20% of the whale's body length. The final answer is:\n\\[ \\boxed{20} \\]"
+          }
+        ]
+      },
+      "error_targeted_icl": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "error_targeted_icl",
+            "correct": true,
+            "predicted": "20",
+            "ground_truth": "20",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To solve this problem, we need to determine what percentage of the whale's body length is the combined length of the two 48-inch remoras attached to it. Let's break down the steps:\n\n1. **Convert the whale's length from feet to inches:**\n   The whale is 40 feet long.\n   Since there are 12 inches in a foot, we convert the whale's length to inches:\n   \\[\n   40 \\text{ feet} \\times 12 \\text{ inches/foot} = 480 \\text{ inches}\n   \\]\n\n2. **Calculate the combined length of the two remoras:**\n   Each remora is 48 inches long, and there are two remoras.\n   Therefore, the combined length of the remoras is:\n   \\[\n   2 \\times 48 \\text{ inches} = 96 \\text{ inches}\n   \\]\n\n3. **Determine what percentage the combined length of the remoras is of the whale's body length:**\n   We need to find what percentage 96 inches is of 480 inches.\n   This can be calculated using the formula:\n   \\[\n   \\left( \\frac{\\text{combined length of remoras}}{\\text{whale's length}} \\right) \\times 100\n   \\]\n   Substituting the values, we get:\n   \\[\n   \\left( \\frac{96}{480} \\right) \\times 100 = 20\\%\n   \\]\n\nTherefore, the percentage of the whale's body length that is the combined length of the remoras is \\(\\boxed{20}\\)."
+          }
+        ]
+      },
+      "error_targeted_icl_random": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "error_targeted_icl_random",
+            "correct": true,
+            "predicted": "20",
+            "ground_truth": "20",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To solve this problem, we need to determine what percentage of the whale's total length is occupied by the combined length of the two 48-inch Remoras.\n\n1. **Convert lengths to a common unit**:\n   - The whale's length is given in feet.\n   - Convert the whale's length from feet to inches: \n     \\[\n     40 \\text{ feet} = 40 \\times 12 = 480 \\text{ inches}\n     \\]\n\n2. **Calculate the combined length of the two Remoras**:\n   - Each Remora is 48 inches long.\n   - The total length of both Remoras is:\n     \\[\n     2 \\times 48 = 96 \\text{ inches}\n     \\]\n\n3. **Determine the percentage of the whale's body length occupied by the combined length of the Remoras**:\n   - Use the formula for percentage: \n     \\[\n     \\text{Percentage} = \\left( \\frac{\\text{Part}}{\\text{Whole}} \\right) \\times 100\n     \\]\n   - Here, the part is the total length of the two Remoras (96 inches), and the whole is the whale's length (480 inches):\n     \\[\n     \\text{Percentage} = \\left( \\frac{96}{480} \\right) \\times 100\n     \\]\n\n4. **Simplify the fraction**:\n   - Simplify \\( \\frac{96}{480} \\):\n     \\[\n     \\frac{96}{480} = \\frac{1}{5}\n     \\]\n   - Convert the simplified fraction to a percentage:\n     \\[\n     \\left( \\frac{1}{5} \\right) \\times 100 = 20\\%\n     \\]\n\nTherefore, the combined length of the two Remoras is \\( 20\\% \\) of the whale's total body length.\n\nThe final answer is:\n\\[\n\\boxed{20}\n\\]"
+          }
+        ]
+      },
+      "error_targeted_icl_correct_only": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "error_targeted_icl_correct_only",
+            "correct": true,
+            "predicted": "20",
+            "ground_truth": "20",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To determine what percentage of the whale's body length the combined length of the remoras represents, we need to follow these steps:\n\n1. Convert the whale's length from feet to inches.\n2. Calculate the total length of the remoras in inches.\n3. Determine the percentage of the whale's length that the total length of the remoras represents.\n\nLet's start with the first step:\n\n1. Convert the whale's length from feet to inches:\n   \\[\n   40 \\text{ feet} \\times 12 \\text{ inches/foot} = 480 \\text{ inches}\n   \\]\n\n2. Calculate the total length of the remoras in inches:\n   Each remora is 48 inches long and there are 2 remoras, so:\n   \\[\n   2 \\times 48 \\text{ inches} = 96 \\text{ inches}\n   \\]\n\n3. Determine the percentage of the whale's length that the total length of the remoras represents:\n   \\[\n   \\left( \\frac{96 \\text{ inches}}{480 \\text{ inches}} \\right) \\times 100 = 20\\%\n   \\]\n\nSo, the combined length of the remoras is 20% of the whale's body length. The final answer is:\n\\[\n\\boxed{20}\n\\]"
+          }
+        ]
+      },
+      "self_consistency": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "self_consistency",
+            "correct": true,
+            "predicted": "20",
+            "ground_truth": "20",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To determine what percentage of the whale's body length is the combined length of the remoras, we need to follow these steps:\n\n1. Convert the length of the whale from feet to inches.\n2. Determine the total length of the remoras in inches.\n3. Calculate the percentage of the whale's body length that the combined length of the remoras represents.\n\nFirst, let's convert the length of the whale from feet to inches. Since there are 12 inches in a foot, we have:\n\\[ 40 \\text{ feet} = 40 \\times 12 = 480 \\text{ inches} \\]\n\nNext, we need to find the total length of the remoras. The problem states that there are 2 remoras, each 48 inches long. So, the combined length of the remoras is:\n\\[ 2 \\times 48 = 96 \\text{ inches} \\]\n\nNow, we need to calculate what percentage 96 inches is of 480 inches. We do this by dividing the combined length of the remoras by the whale's body length and then multiplying by 100 to get the percentage:\n\\[ \\left( \\frac{96}{480} \\right) \\times 100 = 0.2 \\times 100 = 20\\% \\]\n\nSo, the combined length of the remoras is \\(\\boxed{20}\\%\\) of the whale's body length. ||| To solve the problem, we need to determine what percentage of the whale's body length is the combined length of the two remoras.\n\n1. **Convert all lengths to a common unit (inches):**\n   - The whale's body length is 40 feet.\n     \\[\n     40 \\text{ feet} = 40 \\times 12 = 480 \\text{ inches}\n     \\]\n   - Each remoras is 48 inches long.\n\n2. **Calculate the combined length of the two remoras:**\n   - Since each remora is 48 inches and there are 2 remoras:\n     \\[\n     2 \\times 48 = 96 \\text{ inches}\n     \\]\n\n3. **Determine what percentage the combined length of the remoras (96 inches) is of the whale's body length (480 inches):**\n   - The formula to calculate the percentage is:\n     \\[\n     \\left( \\frac{\\text{Combined length of remoras}}{\\text{ whale's body length}} \\right) \\times 100\n     \\]\n   - Substitute the values into the formula:\n     \\[\n     \\left( \\frac{96}{480} \\right) \\times 100\n     \\]\n\n4. **Simplify the fraction:**\n   - Divide both numerator and denominator by their greatest common divisor, which is 96 in this case:\n     \\[\n     \\frac{96}{480} = \\frac{1}{5}\n     \\]\n   - Thus:\n     \\[\n     \\left( \\frac{1}{5} \\right) \\times 100 = 20\n     \\]\n\nTherefore, the combined length of the remoras is \\( \\boxed{20\\%} \\) of the whale's body length. ||| To determine what percentage of the whale's body length is the combined length of the remoras, we need to follow these steps:\n\n1. Convert the length of the whale from feet to inches.\n2. Calculate the total length of the remoras in inches.\n3. Determine the percentage of the whale's body length that the combined length of the remoras represents.\n\nStep 1: Convert the length of the whale from feet to inches.\nThe whale is 40 feet long. Since there are 12 inches in a foot, we multiply 40 by 12:\n\\[ 40 \\text{ feet} \\times 12 \\text{ inches/foot} = 480 \\text{ inches} \\]\n\nStep 2: Calculate the total length of the remoras in inches.\nEach remora is 48 inches long, and there are 2 remoras. Therefore, the combined length of the remoras is:\n\\[ 2 \\times 48 \\text{ inches} = 96 \\text{ inches} \\]\n\nStep 3: Determine the percentage of the whale's body length that the combined length of the remoras represents.\nWe need to find what fraction of the whale's body length (480 inches) is the combined length of the remoras (96 inches), and then convert that fraction to a percentage:\n\\[ \\left( \\frac{96 \\text{ inches}}{480 \\text{ inches}} \\right) \\times 100 = \\left( \\frac{96}{480} \\right) \\times 100 = 0.2 \\times 100 = 20\\% \\]\n\nTherefore, the combined length of the remoras is \\(\\boxed{20\\%}\\) of the whale's body length. ||| To solve this problem, we need to determine what percentage of the whale's total length the combined length of the two remoras represents.\n\nFirst, let's establish the lengths involved:\n1. The length of the whale itself: \n   \\[\n   40 \\text{ feet}\n   \\]\n\n2. Each remora has a length of 48 inches. To convert this to feet (since the whale's length is given in feet):\n   \\[\n   48 \\text{ inches} = \\frac{48}{12} \\text{ feet} = 4 \\text{ feet}\n   \\]\n\n3. Since there are two remoras attached to the whale, we need to find the combined length of these two:\n   \\[\n   2 \\times 4 \\text{ feet} = 8 \\text{ feet}\n   \\]\n\nNext, we calculate what fraction of the whale's total length (which is 40 feet) the combined length of the remoras (which is 8 feet) represents. This can be done using the following ratio:\n\\[\n\\frac{\\text{Combined length of remoras}}{\\text{Length of the whale}} = \\frac{8 \\text{ feet}}{40 \\text{ feet}}\n\\]\n\nTo convert this fraction to a percentage, we multiply by 100:\n\\[\n\\left( \\frac{8}{40} \\right) \\times 100 = 20\\%\n\\]\n\nThus, the combined length of the remoras is \\(\\boxed{20\\%}\\) of the whale's total body length. ||| 1. **Understand the given data**:\n   - The length of the whale: \\( 40 \\) feet.\n   - Number of attached fish: \\( 2 \\).\n   - Length of each fish: \\( 48 \\) inches.\n\n2. **Convert all measurements to a common unit**:\n   - Convert the length of the whale from feet to inches (since \\(1\\) foot = \\(12\\) inches):\n     \\[\n     40 \\text{ feet} \\times 12 \\text{ inches/foot} = 480 \\text{ inches}\n     \\]\n   - Length of each fish is already in inches, so:\n     \\[\n     48 \\text{ inches per fish}\n     \\]\n\n3. **Calculate the combined length of the fish**:\n   - There are \\(2\\) fish, each measuring \\(48\\) inches.\n     \\[\n     2 \\times 48 \\text{ inches} = 96 \\text{ inches}\n     \\]\n\n4. **Determine what percentage the total length of the fish is of the whale's body length**:\n   - The formula to find the percentage is:\n     \\[\n     \\left( \\frac{\\text{Total length of fish}}{\\text{Length of whale}} \\right) \\times 100\n     \\]\n   - Substitute the values into the formula:\n     \\[\n     \\left( \\frac{96 \\text{ inches}}{480 \\text{ inches}} \\right) \\times 100\n     \\]\n\n5. **Perform the calculation**:\n   - Simplify the fraction inside the parentheses first:\n     \\[\n     \\frac{96}{480} = \\frac{1}{5}\n     \\]\n   - Then multiply by \\(100\\):\n     \\[\n     \\left( \\frac{1}{5} \\right) \\times 100 = 20\n     \\]\n\nThus, the combined length of the fish as a percentage of the whale's body length is:\n\\[\n\\boxed{20}\n\\]"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "question": "Camila saw a 150-foot dolphin with 6 30-inch remoras attached to it. What percentage of the dolphin's body length is the combined length of the remoras?",
+    "ground_truth": "10",
+    "benchmark_category": "arithmetic_symbolic",
+    "conditions": {
+      "zero_shot_baseline": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "zero_shot_baseline",
+            "correct": true,
+            "predicted": "10",
+            "ground_truth": "10",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To determine what percentage of the dolphin's body length is the combined length of the remoras, we need to follow these steps:\n\n1. Convert the length of the dolphin from feet to inches.\n2. Calculate the total length of the remoras in inches.\n3. Determine the percentage of the dolphin's body length that the combined length of the remoras represents.\n\nFirst, let's convert the length of the dolphin from feet to inches. Since there are 12 inches in a foot, we have:\n\\[ 150 \\text{ feet} \\times 12 \\text{ inches/foot} = 1800 \\text{ inches} \\]\n\nNext, we calculate the total length of the remoras. Each remora is 30 inches long and there are 6 remoras, so:\n\\[ 6 \\times 30 \\text{ inches} = 180 \\text{ inches} \\]\n\nNow, we need to find what percentage 180 inches is of 1800 inches. We do this by dividing the combined length of the remoras by the length of the dolphin and then multiplying by 100 to get the percentage:\n\\[ \\left( \\frac{180 \\text{ inches}}{1800 \\text{ inches}} \\right) \\times 100 = 10\\% \\]\n\nSo, the combined length of the remoras is 10% of the dolphin's body length. The final answer is:\n\\[ \\boxed{10} \\]"
+          }
+        ]
+      },
+      "zero_shot": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "zero_shot",
+            "correct": true,
+            "predicted": "10",
+            "ground_truth": "10",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To determine what percentage of the dolphin's body length is the combined length of the remoras, we need to follow these steps:\n\n1. **Convert the length of the dolphin from feet to inches:**\n   The dolphin is 150 feet long. Since there are 12 inches in a foot, we multiply:\n   \\[\n   150 \\text{ feet} \\times 12 \\text{ inches/foot} = 1800 \\text{ inches}\n   \\]\n\n2. **Calculate the combined length of the remoras:**\n   Each remora is 30 inches long, and there are 6 remoras attached to the dolphin. Therefore, the total length of the remoras is:\n   \\[\n   6 \\times 30 \\text{ inches} = 180 \\text{ inches}\n   \\]\n\n3. **Determine what percentage the combined length of the remoras is of the dolphin's body length:**\n   To find this percentage, we use the formula for percentage:\n   \\[\n   \\left( \\frac{\\text{part}}{\\text{whole}} \\right) \\times 100\n   \\]\n   Here, the part is the combined length of the remoras (180 inches), and the whole is the length of the dolphin (1800 inches). So we have:\n   \\[\n   \\left( \\frac{180 \\text{ inches}}{1800 \\text{ inches}} \\right) \\times 100 = \\left( \\frac{180}{1800} \\right) \\times 100\n   \\]\n   Simplify the fraction:\n   \\[\n   \\frac{180}{1800} = \\frac{1}{10}\n   \\]\n   Then multiply by 100 to get the percentage:\n   \\[\n   \\left( \\frac{1}{10} \\right) \\times 100 = 10\\%\n   \\]\n\nTherefore, the combined length of the remoras is \\(\\boxed{10\\%}\\) of the dolphin's body length."
+          }
+        ]
+      },
+      "targeted_few_shot_answer_only": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "targeted_few_shot_answer_only",
+            "correct": true,
+            "predicted": "10",
+            "ground_truth": "10",
+            "assigned_failure_type": "arithmatic",
+            "error_type": null,
+            "full_response": "To determine what percentage of the dolphin's body length is the combined length of the remoras, we need to follow these steps:\n\n1. Convert the length of each remora from inches to feet.\n2. Calculate the total length of the remoras.\n3. Determine what percentage this total length is of the dolphin's body length.\n\nFirst, let's convert the length of each remora from inches to feet. Since there are 12 inches in a foot, we have:\n\\[ 30 \\text{ inches} = \\frac{30}{12} \\text{ feet} = 2.5 \\text{ feet} \\]\n\nNext, we calculate the total length of the 6 remoras:\n\\[ 6 \\times 2.5 \\text{ feet} = 15 \\text{ feet} \\]\n\nNow, we need to find what percentage 15 feet is of the dolphin's body length, which is 150 feet. We use the formula for percentage:\n\\[ \\left( \\frac{\\text{length of remoras}}{\\text{length of dolphin}} \\right) \\times 100 = \\left( \\frac{15}{150} \\right) \\times 100 \\]\n\nSimplifying the fraction inside the parentheses:\n\\[ \\frac{15}{150} = \\frac{1}{10} \\]\n\nThen, we multiply by 100 to get the percentage:\n\\[ \\left( \\frac{1}{10} \\right) \\times 100 = 10\\% \\]\n\nSo, the combined length of the remoras is 10% of the dolphin's body length. The final answer is:\n\\[ \\boxed{10} \\]"
+          }
+        ]
+      },
+      "random_few_shot": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "random_few_shot",
+            "correct": true,
+            "predicted": "10",
+            "ground_truth": "10",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To determine what percentage of the dolphin's body length the combined length of the remoras represents, we need to follow these steps:\n\n1. Calculate the total length of the remoras.\n2. Determine what fraction of the dolphin's body length this total length is.\n3. Convert this fraction to a percentage.\n\nLet's start with step 1: Calculate the total length of the remoras.\n\nEach remora is 30 inches long, and there are 6 remoras. So, the total length of the remoras in inches is:\n\\[ 6 \\times 30 = 180 \\text{ inches} \\]\n\nNext, we need to convert this length from inches to feet because the length of the dolphin is given in feet. There are 12 inches in a foot, so:\n\\[ 180 \\text{ inches} = \\frac{180}{12} = 15 \\text{ feet} \\]\n\nNow, we know the total length of the remoras is 15 feet. The dolphin's body length is 150 feet. To find what percentage of the dolphin's body length the combined length of the remoras is, we use the formula for percentage:\n\\[ \\left( \\frac{\\text{length of remoras}}{\\text{length of dolphin}} \\right) \\times 100 = \\left( \\frac{15}{150} \\right) \\times 100 \\]\n\nSimplify the fraction:\n\\[ \\frac{15}{150} = \\frac{1}{10} \\]\n\nNow, convert this to a percentage:\n\\[ \\frac{1}{10} \\times 100 = 10\\% \\]\n\nSo, the combined length of the remoras is 10% of the dolphin's body length. The final answer is:\n\\[ \\boxed{10} \\]"
+          }
+        ]
+      },
+      "targeted_few_shot": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "targeted_few_shot",
+            "correct": true,
+            "predicted": "10",
+            "ground_truth": "10",
+            "assigned_failure_type": "arithmatic",
+            "error_type": null,
+            "full_response": "To determine what percentage of the dolphin's body length is the combined length of the remoras, we need to follow these steps:\n\n1. Convert the length of each remora from inches to feet.\n2. Calculate the total length of all the remoras.\n3. Determine what percentage this total length is of the dolphin's body length.\n\nFirst, let's convert the length of each remora from inches to feet. Since there are 12 inches in a foot, we have:\n\\[ 30 \\text{ inches} = \\frac{30}{12} \\text{ feet} = 2.5 \\text{ feet} \\]\n\nNext, we calculate the total length of the 6 remoras:\n\\[ 6 \\times 2.5 \\text{ feet} = 15 \\text{ feet} \\]\n\nNow, we need to find what percentage this combined length (15 feet) is of the dolphin's body length (150 feet). We use the formula for percentage:\n\\[ \\left( \\frac{\\text{length of remoras}}{\\text{length of dolphin}} \\right) \\times 100 = \\left( \\frac{15}{150} \\right) \\times 100 \\]\n\nSimplifying the fraction inside the parentheses:\n\\[ \\frac{15}{150} = \\frac{1}{10} \\]\n\nThen, we multiply by 100 to convert it to a percentage:\n\\[ \\left( \\frac{1}{10} \\right) \\times 100 = 10\\% \\]\n\nSo, the combined length of the remoras is 10% of the dolphin's body length. The final answer is:\n\\[ \\boxed{10} \\]"
+          }
+        ]
+      },
+      "targeted_few_shot_k5": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "targeted_few_shot_k5",
+            "correct": true,
+            "predicted": "10",
+            "ground_truth": "10",
+            "assigned_failure_type": "arithmatic",
+            "error_type": null,
+            "full_response": "To determine what percentage of the dolphin's body length is the combined length of the remoras, we need to follow these steps:\n\n1. Convert the length of each remora from inches to feet.\n2. Calculate the total length of the remoras.\n3. Determine what percentage this total length is of the dolphin's body length.\n\nFirst, let's convert the length of each remora from inches to feet. Since there are 12 inches in a foot, we have:\n\\[ 30 \\text{ inches} = \\frac{30}{12} \\text{ feet} = 2.5 \\text{ feet} \\]\n\nNext, we calculate the total length of the 6 remoras:\n\\[ 6 \\times 2.5 \\text{ feet} = 15 \\text{ feet} \\]\n\nNow, we need to find out what percentage 15 feet is of the dolphin's body length, which is 150 feet:\n\\[ \\text{Percentage} = \\left( \\frac{15}{150} \\right) \\times 100\\% = 10\\% \\]\n\nSo, the combined length of the remoras is 10% of the dolphin's body length. The final answer is:\n\\[ \\boxed{10} \\]"
+          }
+        ]
+      },
+      "error_targeted_icl": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "error_targeted_icl",
+            "correct": true,
+            "predicted": "10",
+            "ground_truth": "10",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To solve this problem, we need to determine what percentage of the dolphin's body length is occupied by the combined length of the 6 remoras attached to it. Let's break down the steps:\n\n1. **Convert the lengths to a common unit**: The dolphin's length is given in feet and the remoras' lengths are given in inches. We need to convert all measurements to the same unit, preferably inches.\n\n2. **Calculate the total length of the remoras**:\n   - Each remora is 30 inches long.\n   - There are 6 remoras.\n   \\[\n   \\text{Total length of the remoras} = 6 \\times 30 = 180 \\text{ inches}\n   \\]\n\n3. **Convert the dolphin's length to inches**:\n   - The dolphin is 150 feet long.\n   - There are 12 inches in a foot.\n   \\[\n   \\text{Dolphin's length in inches} = 150 \\times 12 = 1800 \\text{ inches}\n   \\]\n\n4. **Calculate the percentage of the dolphin's body length that is occupied by the remoras**:\n   - The total length of the remoras is 180 inches.\n   - The total length of the dolphin is 1800 inches.\n   \\[\n   \\text{Percentage} = \\left( \\frac{\\text{Total length of the remoras}}{\\text{Dolphin's length}} \\right) \\times 100\n   \\]\n   \\[\n   \\text{Percentage} = \\left( \\frac{180}{1800} \\right) \\times 100\n   \\]\n   \\[\n   \\text{Percentage} = \\left( \\frac{1}{10} \\right) \\times 100\n   \\]\n   \\[\n   \\text{Percentage} = 10\\%\n   \\]\n\nThus, the percentage of the dolphin's body length that is occupied by the combined length of the remoras is \\(\\boxed{10}\\)."
+          }
+        ]
+      },
+      "error_targeted_icl_random": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "error_targeted_icl_random",
+            "correct": true,
+            "predicted": "10",
+            "ground_truth": "10",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To solve the problem, we need to determine what percentage of the dolphin's body length is the combined length of the 6 remoras. Let's break it down step by step.\n\n1. **Convert the length of the remoras from inches to feet:**\n   Each remora is 30 inches long. Since there are 12 inches in a foot, we convert 30 inches to feet:\n   \\[\n   30 \\text{ inches} = \\frac{30}{12} \\text{ feet} = 2.5 \\text{ feet}\n   \\]\n   Therefore, the length of each remora is 2.5 feet.\n\n2. **Calculate the combined length of the 6 remoras:**\n   Since there are 6 remoras, the total length of the remoras is:\n   \\[\n   6 \\times 2.5 \\text{ feet} = 15 \\text{ feet}\n   \\]\n\n3. **Determine what percentage of the dolphin's body length (150 feet) is the combined length of the remoras (15 feet):**\n   The percentage is calculated by dividing the combined length of the remoras by the total length of the dolphin and then multiplying by 100:\n   \\[\n   \\left( \\frac{15 \\text{ feet}}{150 \\text{ feet}} \\right) \\times 100 = 10\\%\n   \\]\n\nSo, the percentage of the dolphin's body length that is the combined length of the remoras is:\n\\[\n\\boxed{10}\n\\]"
+          }
+        ]
+      },
+      "error_targeted_icl_correct_only": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "error_targeted_icl_correct_only",
+            "correct": true,
+            "predicted": "10",
+            "ground_truth": "10",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To determine what percentage of the dolphin's body length is the combined length of the remoras, we need to follow these steps:\n\n1. Convert the length of the dolphin from feet to inches.\n2. Calculate the total length of the remoras in inches.\n3. Determine the percentage of the dolphin's length that the remoras represent.\n\nLet's start with step 1: Convert the length of the dolphin from feet to inches.\nThe dolphin is 150 feet long, and since there are 12 inches in a foot, we have:\n\\[ 150 \\text{ feet} \\times 12 \\text{ inches/foot} = 1800 \\text{ inches} \\]\n\nNext, step 2: Calculate the total length of the remoras in inches.\nEach remora is 30 inches long, and there are 6 remoras attached to the dolphin. So, the total length of the remoras is:\n\\[ 6 \\times 30 = 180 \\text{ inches} \\]\n\nFinally, step 3: Determine the percentage of the dolphin's length that the remoras represent.\nWe need to find what percentage 180 inches is of 1800 inches. This can be calculated using the formula:\n\\[ \\left( \\frac{\\text{length of remoras}}{\\text{length of dolphin}} \\right) \\times 100 = \\left( \\frac{180}{1800} \\right) \\times 100 = 10\\% \\]\n\nSo, the percentage of the dolphin's body length that is the combined length of the remoras is:\n\\[ \\boxed{10} \\]"
+          }
+        ]
+      },
+      "self_consistency": {
+        "majority_correct": true,
+        "correct_count": 1,
+        "total_runs": 1,
+        "runs": [
+          {
+            "run": 0,
+            "condition": "self_consistency",
+            "correct": true,
+            "predicted": "10",
+            "ground_truth": "10",
+            "assigned_failure_type": null,
+            "error_type": null,
+            "full_response": "To find the percentage of the dolphin's body length that the combined length of the remoras represents, we need to follow these steps:\n\n1. **Convert the lengths to a common unit**:\n   - The length of the dolphin is given as 150 feet.\n   - The length of each remora is given as 30 inches.\n\n2. **Convert the length of one remora from inches to feet**:\n   \\[\n   30 \\text{ inches} = \\frac{30}{12} \\text{ feet} = 2.5 \\text{ feet}\n   \\]\n\n3. **Calculate the total length of all six remoras**:\n   \\[\n   \\text{Total length of six remoras} = 6 \\times 2.5 \\text{ feet} = 15 \\text{ feet}\n   \\]\n\n4. **Determine what percentage the combined length of the remoras is of the dolphin's body length**:\n   \\[\n   \\text{Percentage} = \\left(\\frac{\\text{Total length of six remoras}}{\\text{Length of the dolphin}}\\right) \\times 100\n   \\]\n   Substitute the values we have:\n   \\[\n   \\text{Percentage} = \\left(\\frac{15 \\text{ feet}}{150 \\text{ feet}}\\right) \\times 100\n   \\]\n\n5. **Simplify the fraction and calculate the percentage**:\n   \\[\n   \\left(\\frac{15}{150}\\right) \\times 100 = \\left(\\frac{1}{10}\\right) \\times 100 = 10\\%\n   \\]\n\nThus, the combined length of the remoras is \\boxed{10\\%} of the dolphin's body length. ||| To determine what percentage of the dolphin's body length is the combined length of the remoras, we need to follow these steps:\n\n1. Convert the length of the dolphin from feet to inches.\n2. Calculate the total length of the remoras in inches.\n3. Determine what percentage this length is of the dolphin's body length.\n\nStep 1: Convert the length of the dolphin from feet to inches.\nSince there are 12 inches in a foot, we multiply the length of the dolphin by 12:\n\\[ 150 \\text{ feet} \\times 12 \\text{ inches/foot} = 1800 \\text{ inches} \\]\n\nStep 2: Calculate the total length of the remoras in inches.\nEach remora is 30 inches long and there are 6 remoras, so we multiply the length of one remora by the number of remoras:\n\\[ 6 \\times 30 \\text{ inches} = 180 \\text{ inches} \\]\n\nStep 3: Determine what percentage the combined length of the remoras is of the dolphin's body length.\nWe use the formula for percentage:\n\\[ \\left( \\frac{\\text{length of remoras}}{\\text{length of dolphin}} \\right) \\times 100 \\]\nSubstituting the values we have:\n\\[ \\left( \\frac{180 \\text{ inches}}{1800 \\text{ inches}} \\right) \\times 100 = 10\\% \\]\n\nTherefore, the combined length of the remoras is \\(\\boxed{10}\\%\\) of the dolphin's body length. ||| To solve this problem, we need to determine what percentage the combined length of the remoras is of the total length of the dolphin.\n\nFirst, let's identify the lengths involved in the problem:\n\n1. **Dolphin's body length:**\n   \\[\n   150 \\text{ feet}\n   \\]\n\n2. **Length of each remora:**\n   Given as 30 inches.\n   \n   We need to convert this length into feet because the dolphin’s length is given in feet:\n   \\[\n   30 \\text{ inches} = \\frac{30}{12} \\text{ feet} = 2.5 \\text{ feet}\n   \\]\n\n3. **Number of remoras:**\n   There are 6 remoras.\n   \n4. **Combined length of all the remoras:**\n   \\[\n   \\text{Total length of remoras} = 6 \\times 2.5 \\text{ feet} = 15 \\text{ feet}\n   \\]\n\nNext, we need to find what percentage this combined length (remoras) is of the total length of the dolphin.\n\n\\[\n\\text{Percentage} = \\left( \\frac{\\text{Combined length of remoras}}{\\text{Dolphin's body length}} \\right) \\times 100\n\\]\n\nPlugging in the values:\n\n\\[\n\\text{Percentage} = \\left( \\frac{15 \\text{ feet}}{150 \\text{ feet}} \\right) \\times 100\n\\]\n\nCalculate the fraction:\n\n\\[\n\\frac{15}{150} = \\frac{1}{10}\n\\]\n\nConvert to percentage:\n\n\\[\n\\left( \\frac{1}{10} \\right) \\times 100 = 10\\%\n\\]\n\nSo, the combined length of the remoras is \\(10\\%\\) of the dolphin's body length.\n\nTherefore, the final answer is:\n\\[\n\\boxed{10\\%}\n\\] ||| To determine what percentage of the dolphin's body length is the combined length of the remoras, we need to follow these steps:\n\n1. **Convert the lengths to a common unit**: We will convert all measurements to inches for consistency.\n\n2. **Calculate the total length of the remoras**:\n   - Each remora is 30 inches long.\n   - There are 6 remoras attached to the dolphin.\n   \\[\n   \\text{Total length of the remoras} = 6 \\times 30 = 180 \\text{ inches}\n   \\]\n\n3. **Convert the dolphin's body length to inches**:\n   - The dolphin's body length is 150 feet.\n   - Since there are 12 inches in a foot, we convert feet to inches by multiplying by 12.\n   \\[\n   \\text{Dolphin's body length in inches} = 150 \\times 12 = 1800 \\text{ inches}\n   \\]\n\n4. **Calculate the percentage of the dolphin's body length that is the combined length of the remoras**:\n   - The formula to find the percentage is:\n   \\[\n   \\text{Percentage} = \\left( \\frac{\\text{Total length of the remoras}}{\\text{Dolphin's body length}} \\right) \\times 100\n   \\]\n   Substituting the values we found:\n   \\[\n   \\text{Percentage} = \\left( \\frac{180}{1800} \\right) \\times 100\n   \\]\n\n5. **Simplify the fraction and calculate the percentage**:\n   \\[\n   \\frac{180}{1800} = \\frac{1}{10}\n   \\]\n   \\[\n   \\left( \\frac{1}{10} \\right) \\times 100 = 10\\%\n   \\]\n\nTherefore, the percentage of the dolphin's body length that is the combined length of the remoras is \\(\\boxed{10}\\). ||| To solve this problem, we need to find out what percentage of the dolphin’s total length the combined length of the six 30-inch Remoras is.\n\nFirstly, let's convert the length of one Remora from inches to feet. Given that there are 12 inches in a foot:\n\\[\n30 \\text{ inches} = \\frac{30}{12} \\text{ feet} = 2.5 \\text{ feet}\n\\]\n\nNext, we need to calculate the total length of the six Remoras combined. Each Remora is 2.5 feet long, so:\n\\[\n6 \\times 2.5 \\text{ feet} = 15 \\text{ feet}\n\\]\n\nNow, we have the lengths of the dolphin and the combined length of the Remoras. The dolphin's total length is 150 feet, and the combined length of the six Remoras is 15 feet.\n\nTo find what percentage the combined length of the Remoras is of the dolphin’s body length, we use the formula for percentage:\n\\[\n\\text{Percentage} = \\left( \\frac{\\text{Part}}{\\text{Whole}} \\right) \\times 100\n\\]\n\nPlugging in our values:\n\\[\n\\text{Percentage} = \\left( \\frac{15 \\text{ feet}}{150 \\text{ feet}} \\right) \\times 100\n\\]\n\nCalculating the fraction and multiplying by 100:\n\\[\n\\text{Percentage} = \\left( \\frac{15}{150} \\right) \\times 100 = 0.1 \\times 100 = 10\n\\]\n\nTherefore, the combined length of the six Remoras is \\(10\\%\\) of the dolphin’s body length.\n\nThe final answer is:\n\\[\n\\boxed{10}\n\\]"
+          }
+        ]
+      }
+    }
+  }
+]
