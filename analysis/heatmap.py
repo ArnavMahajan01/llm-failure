@@ -81,19 +81,20 @@ def load_csv(filename):
     return df
 
 
-# display name formatter 
+# display name formatter
+_MODEL_DISPLAY = {
+    "Gemma/Gemma3-1B":             "Gemma 3 1B",
+    "Gemma/Gemma3-4B":             "Gemma 3 4B",
+    "google/gemma-7b-it":          "Gemma 1 7B-IT",
+    "Llama/Llama3-2-1-5B":         "Llama 3.2 1.5B",
+    "Llama/Llama3-2-3B":           "Llama 3.2 3B",
+    "Qwen/Qwen2-math-1-5B":        "Qwen 2 1.5B Math",
+    "Qwen/Qwen2-5-3B":             "Qwen 2.5 3B",
+    "Qwen/Qwen2-5-7B-Instruct":    "Qwen 2.5 7B Instruct",
+}
+
 def friendly_model(name):
-    parts = name.split("/")
-    if len(parts) == 2:
-        raw = parts[1]
-        # Extract param size from end of string
-        FAMILY_ALIASES = {"google": "Gemma"}
-        for size in ["1B", "1-5B", "3B", "4B", "7B", "8B", "9B"]:
-            if size.lower() in raw.lower():
-                family = FAMILY_ALIASES.get(parts[0], parts[0])
-                display_size = size.replace("-", ".")
-                return f"{family} {display_size}"
-    return name
+    return _MODEL_DISPLAY.get(name, name)
 
 
 def friendly_benchmark(name):
@@ -269,9 +270,9 @@ def fig2_family_comparison(df_summary):
 # Does each model get better after each strategy step?
 # One colour per family, two line styles for the two sizes within each family
 FAMILY_STYLES = {
-    "Gemma": {"color": "#4CAF50", "sizes": {"1B": "-",   "4B": "--", "7B": ":"}},
-    "Llama": {"color": "#E53935", "sizes": {"1.5B": "-", "3B": "--"}},
-    "Qwen":  {"color": "#7B1FA2", "sizes": {"1.5B": "-", "3B": "--", "7B": ":"}},
+    "Gemma": {"color": "#4CAF50", "sizes": {"3 1B": "-",   "3 4B": "--", "1 7B-IT": ":"}},
+    "Llama": {"color": "#E53935", "sizes": {"3.2 1.5B": "-", "3.2 3B": "--"}},
+    "Qwen":  {"color": "#7B1FA2", "sizes": {"2 1.5B Math": "-", "2.5 3B": "--", "2.5 7B Instruct": ":"}},
 }
 
 def fig3_strategy_progression(df_summary):
@@ -304,10 +305,10 @@ def fig3_strategy_progression(df_summary):
     fig, ax = plt.subplots(figsize=(13, 6))
 
     for model_label, row in agg.iterrows():
-        # Derive family and size from label e.g. "Gemma 1B", "Llama 1.5B"
+        # Derive family and size from label e.g. "Gemma 3 1B", "Qwen 2.5 7B Instruct"
         parts = model_label.split()
         family = parts[0] if parts else model_label
-        size   = parts[1] if len(parts) > 1 else ""
+        size   = " ".join(parts[1:]) if len(parts) > 1 else ""
 
         style = FAMILY_STYLES.get(family, {"color": "#888", "sizes": {}})
         color = style["color"]
@@ -333,7 +334,7 @@ def fig3_strategy_progression(df_summary):
         "Solid = smaller (1B / 1.5B)   Dashed = mid (3B / 4B)   Dotted = larger (7B)",
         fontsize=12,
     )
-    ax.legend(loc="lower right", fontsize=9, ncol=2, framealpha=0.9)
+    ax.legend(loc="lower right", bbox_to_anchor=(1, -0.4), fontsize=9, ncol=2, framealpha=0.9)
     ax.spines[["top", "right"]].set_visible(False)
     ax.set_xlim(-0.3, len(cols) - 0.3)
     plt.tight_layout()
@@ -629,7 +630,7 @@ def fig6_cumulative_by_benchmark(benchmark, condition="zero_shot", save_dir=None
         model_label  = friendly_model(modelname)
         label_parts  = model_label.split()
         family       = label_parts[0] if label_parts else model_label
-        size         = label_parts[1] if len(label_parts) > 1 else ""
+        size         = " ".join(label_parts[1:]) if len(label_parts) > 1 else ""
         style        = FAMILY_STYLES.get(family, {"color": fallback_colors[plotted % len(fallback_colors)], "sizes": {}})
         color        = style["color"]
         ls           = style["sizes"].get(size, "-")
@@ -809,7 +810,7 @@ def fig8_radar_by_benchmark_family(df_summary, benchmark, save_dir=None):
     # Derive family + size labels
     df["model_label"] = df["model"].apply(friendly_model)
     df["family"] = df["model_label"].apply(lambda x: x.split()[0])
-    df["size"]   = df["model_label"].apply(lambda x: x.split()[1] if len(x.split()) > 1 else "")
+    df["size"]   = df["model_label"].apply(lambda x: " ".join(x.split()[1:]) if len(x.split()) > 1 else "")
 
     acc_cols  = [col for col, _ in RADAR_STRATEGIES if col in df.columns]
     strategies = [(col, label) for col, label in RADAR_STRATEGIES if col in acc_cols]
@@ -930,7 +931,7 @@ def fig9_radar_by_benchmark_tier(df_summary, benchmark, save_dir=None):
 
     df["model_label"] = df["model"].apply(friendly_model)
     df["family"] = df["model_label"].apply(lambda x: x.split()[0])
-    df["size"]   = df["model_label"].apply(lambda x: x.split()[1] if len(x.split()) > 1 else "")
+    df["size"]   = df["model_label"].apply(lambda x: " ".join(x.split()[1:]) if len(x.split()) > 1 else "")
     df["tier"]   = df["model"].apply(lambda m: _parse_family_tier(m)[1])
 
     acc_cols   = [col for col, _ in RADAR_STRATEGIES if col in df.columns]
