@@ -1,0 +1,16 @@
+{
+  "run_id": "qwen__folio__zero_shot__20260524_005723",
+  "family": "qwen",
+  "display_name": "Qwen/Qwen2.5-7B-Instruct",
+  "hf_model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "benchmark": "folio",
+  "condition": "zero_shot",
+  "status": "success",
+  "started_at": "2026-05-24T00:57:23",
+  "finished_at": "2026-05-24T02:08:14",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/qwen__folio__zero_shot__20260524_005723.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/qwen__folio__zero_shot__20260524_005723__folio__Qwen_Qwen2-5-7B-Instruct__folio__20260524_0057.json"
+  ]
+}

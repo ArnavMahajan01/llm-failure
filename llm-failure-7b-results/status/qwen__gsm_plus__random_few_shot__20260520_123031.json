@@ -1,0 +1,16 @@
+{
+  "run_id": "qwen__gsm_plus__random_few_shot__20260520_123031",
+  "family": "qwen",
+  "display_name": "Qwen/Qwen2.5-7B-Instruct",
+  "hf_model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "benchmark": "gsm_plus",
+  "condition": "random_few_shot",
+  "status": "success",
+  "started_at": "2026-05-20T12:30:31",
+  "finished_at": "2026-05-20T13:26:55",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/qwen__gsm_plus__random_few_shot__20260520_123031.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/qwen__gsm_plus__random_few_shot__20260520_123031__gsm_plus__Qwen_Qwen2-5-7B-Instruct__gsm_plus__20260520_1231.json"
+  ]
+}

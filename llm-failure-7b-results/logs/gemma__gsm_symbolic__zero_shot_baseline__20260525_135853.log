@@ -1,0 +1,3134 @@
+COMMAND: /usr/bin/python3 /content/drive/MyDrive/COMP6242/Project/llm-failure/run_experiment.py --model gemma --benchmark gsm_symbolic --condition zero_shot_baseline
+
+`torch_dtype` is deprecated! Use `dtype` instead!
+FULL RUN: 200 samples per benchmark
+Models: ['gemma']
+Benchmarks: ['gsm_symbolic']
+Conditions: ['zero_shot_baseline']
+Runs per questions: 1
+
+===========
+MODEL: google/gemma-7b-it
+
+===========
+Loading HF model: google/gemma-7b-it
+Quantization: 4-bit; dtype: torch.bfloat16
+
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]
+Fetching 4 files:  25%|██▌       | 1/4 [00:50<02:32, 50.99s/it]
+Fetching 4 files: 100%|██████████| 4/4 [00:50<00:00, 12.75s/it]
+
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/254 [00:00<00:00, 10894.30it/s, Materializing param=model.embed_tokens.weight]
+Loading weights:   0%|          | 1/254 [00:00<00:00, 5809.29it/s, Materializing param=model.embed_tokens.weight] 
+Loading weights:   1%|          | 2/254 [00:01<02:47,  1.50it/s, Materializing param=model.embed_tokens.weight]  
+Loading weights:   1%|          | 2/254 [00:01<02:47,  1.50it/s, Materializing param=model.layers.0.input_layernorm.weight]
+Loading weights:   1%|          | 2/254 [00:01<02:47,  1.50it/s, Materializing param=model.layers.0.input_layernorm.weight]
+Loading weights:   1%|          | 3/254 [00:01<02:47,  1.50it/s, Materializing param=model.layers.0.mlp.down_proj.weight]  
+Loading weights:   1%|          | 3/254 [00:01<02:47,  1.50it/s, Materializing param=model.layers.0.mlp.down_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:02<02:54,  1.44it/s, Materializing param=model.layers.0.mlp.down_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:02<02:54,  1.44it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:02<02:54,  1.44it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 5/254 [00:03<03:23,  1.22it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 5/254 [00:03<03:23,  1.22it/s, Materializing param=model.layers.0.mlp.up_proj.weight]  
+Loading weights:   2%|▏         | 5/254 [00:03<03:23,  1.22it/s, Materializing param=model.layers.0.mlp.up_proj.weight]
+Loading weights:   2%|▏         | 6/254 [00:05<04:21,  1.05s/it, Materializing param=model.layers.0.mlp.up_proj.weight]
+Loading weights:   2%|▏         | 6/254 [00:05<04:21,  1.05s/it, Materializing param=model.layers.0.post_attention_layernorm.weight]
+Loading weights:   2%|▏         | 6/254 [00:05<04:21,  1.05s/it, Materializing param=model.layers.0.post_attention_layernorm.weight]
+Loading weights:   3%|▎         | 7/254 [00:05<04:20,  1.05s/it, Materializing param=model.layers.0.self_attn.k_proj.weight]        
+Loading weights:   3%|▎         | 7/254 [00:05<04:20,  1.05s/it, Materializing param=model.layers.0.self_attn.k_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:07<03:59,  1.03it/s, Materializing param=model.layers.0.self_attn.k_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:07<03:59,  1.03it/s, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:07<03:59,  1.03it/s, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:09<04:58,  1.22s/it, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:09<04:58,  1.22s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:09<04:58,  1.22s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:10<05:16,  1.30s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:10<05:16,  1.30s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:10<05:16,  1.30s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 11/254 [00:11<05:05,  1.26s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 11/254 [00:11<05:05,  1.26s/it, Materializing param=model.layers.1.input_layernorm.weight] 
+Loading weights:   4%|▍         | 11/254 [00:11<05:05,  1.26s/it, Materializing param=model.layers.1.input_layernorm.weight]
+Loading weights:   5%|▍         | 12/254 [00:11<05:03,  1.26s/it, Materializing param=model.layers.1.mlp.down_proj.weight]  
+Loading weights:   5%|▍         | 12/254 [00:11<05:03,  1.26s/it, Materializing param=model.layers.1.mlp.down_proj.weight]
+Loading weights:   5%|▌         | 13/254 [00:11<05:02,  1.26s/it, Materializing param=model.layers.1.mlp.gate_proj.weight]
+Loading weights:   5%|▌         | 13/254 [00:11<05:02,  1.26s/it, Materializing param=model.layers.1.mlp.gate_proj.weight]
+Loading weights:   6%|▌         | 14/254 [00:11<05:01,  1.26s/it, Materializing param=model.layers.1.mlp.up_proj.weight]  
+Loading weights:   6%|▌         | 14/254 [00:11<05:01,  1.26s/it, Materializing param=model.layers.1.mlp.up_proj.weight]
+Loading weights:   6%|▌         | 15/254 [00:11<05:00,  1.26s/it, Materializing param=model.layers.1.post_attention_layernorm.weight]
+Loading weights:   6%|▌         | 15/254 [00:11<05:00,  1.26s/it, Materializing param=model.layers.1.post_attention_layernorm.weight]
+Loading weights:   6%|▋         | 16/254 [00:11<04:58,  1.26s/it, Materializing param=model.layers.1.self_attn.k_proj.weight]        
+Loading weights:   6%|▋         | 16/254 [00:11<04:58,  1.26s/it, Materializing param=model.layers.1.self_attn.k_proj.weight]
+Loading weights:   7%|▋         | 17/254 [00:11<04:57,  1.26s/it, Materializing param=model.layers.1.self_attn.o_proj.weight]
+Loading weights:   7%|▋         | 17/254 [00:11<04:57,  1.26s/it, Materializing param=model.layers.1.self_attn.o_proj.weight]
+Loading weights:   7%|▋         | 18/254 [00:11<04:56,  1.26s/it, Materializing param=model.layers.1.self_attn.q_proj.weight]
+Loading weights:   7%|▋         | 18/254 [00:11<04:56,  1.26s/it, Materializing param=model.layers.1.self_attn.q_proj.weight]
+Loading weights:   7%|▋         | 19/254 [00:11<04:55,  1.26s/it, Materializing param=model.layers.1.self_attn.v_proj.weight]
+Loading weights:   7%|▋         | 19/254 [00:11<04:55,  1.26s/it, Materializing param=model.layers.1.self_attn.v_proj.weight]
+Loading weights:   8%|▊         | 20/254 [00:11<04:53,  1.26s/it, Materializing param=model.layers.2.input_layernorm.weight] 
+Loading weights:   8%|▊         | 20/254 [00:11<04:53,  1.26s/it, Materializing param=model.layers.2.input_layernorm.weight]
+Loading weights:   8%|▊         | 21/254 [00:11<04:52,  1.26s/it, Materializing param=model.layers.2.mlp.down_proj.weight]  
+Loading weights:   8%|▊         | 21/254 [00:11<04:52,  1.26s/it, Materializing param=model.layers.2.mlp.down_proj.weight]
+Loading weights:   9%|▊         | 22/254 [00:11<04:51,  1.26s/it, Materializing param=model.layers.2.mlp.gate_proj.weight]
+Loading weights:   9%|▊         | 22/254 [00:11<04:51,  1.26s/it, Materializing param=model.layers.2.mlp.gate_proj.weight]
+Loading weights:   9%|▉         | 23/254 [00:11<04:50,  1.26s/it, Materializing param=model.layers.2.mlp.up_proj.weight]  
+Loading weights:   9%|▉         | 23/254 [00:11<04:50,  1.26s/it, Materializing param=model.layers.2.mlp.up_proj.weight]
+Loading weights:   9%|▉         | 24/254 [00:11<04:48,  1.26s/it, Materializing param=model.layers.2.post_attention_layernorm.weight]
+Loading weights:   9%|▉         | 24/254 [00:11<04:48,  1.26s/it, Materializing param=model.layers.2.post_attention_layernorm.weight]
+Loading weights:  10%|▉         | 25/254 [00:11<04:47,  1.26s/it, Materializing param=model.layers.2.self_attn.k_proj.weight]        
+Loading weights:  10%|▉         | 25/254 [00:11<04:47,  1.26s/it, Materializing param=model.layers.2.self_attn.k_proj.weight]
+Loading weights:  10%|█         | 26/254 [00:11<04:46,  1.26s/it, Materializing param=model.layers.2.self_attn.o_proj.weight]
+Loading weights:  10%|█         | 26/254 [00:11<04:46,  1.26s/it, Materializing param=model.layers.2.self_attn.o_proj.weight]
+Loading weights:  11%|█         | 27/254 [00:11<04:45,  1.26s/it, Materializing param=model.layers.2.self_attn.q_proj.weight]
+Loading weights:  11%|█         | 27/254 [00:11<04:45,  1.26s/it, Materializing param=model.layers.2.self_attn.q_proj.weight]
+Loading weights:  11%|█         | 28/254 [00:11<04:43,  1.26s/it, Materializing param=model.layers.2.self_attn.v_proj.weight]
+Loading weights:  11%|█         | 28/254 [00:11<04:43,  1.26s/it, Materializing param=model.layers.2.self_attn.v_proj.weight]
+Loading weights:  11%|█▏        | 29/254 [00:11<04:42,  1.26s/it, Materializing param=model.layers.3.input_layernorm.weight] 
+Loading weights:  11%|█▏        | 29/254 [00:11<04:42,  1.26s/it, Materializing param=model.layers.3.input_layernorm.weight]
+Loading weights:  12%|█▏        | 30/254 [00:11<04:41,  1.26s/it, Materializing param=model.layers.3.mlp.down_proj.weight]  
+Loading weights:  12%|█▏        | 30/254 [00:11<04:41,  1.26s/it, Materializing param=model.layers.3.mlp.down_proj.weight]
+Loading weights:  12%|█▏        | 31/254 [00:11<04:40,  1.26s/it, Materializing param=model.layers.3.mlp.gate_proj.weight]
+Loading weights:  12%|█▏        | 31/254 [00:11<04:40,  1.26s/it, Materializing param=model.layers.3.mlp.gate_proj.weight]
+Loading weights:  13%|█▎        | 32/254 [00:11<04:38,  1.26s/it, Materializing param=model.layers.3.mlp.up_proj.weight]  
+Loading weights:  13%|█▎        | 32/254 [00:11<04:38,  1.26s/it, Materializing param=model.layers.3.mlp.up_proj.weight]
+Loading weights:  13%|█▎        | 33/254 [00:11<04:37,  1.26s/it, Materializing param=model.layers.3.post_attention_layernorm.weight]
+Loading weights:  13%|█▎        | 33/254 [00:11<04:37,  1.26s/it, Materializing param=model.layers.3.post_attention_layernorm.weight]
+Loading weights:  13%|█▎        | 34/254 [00:11<04:36,  1.26s/it, Materializing param=model.layers.3.self_attn.k_proj.weight]        
+Loading weights:  13%|█▎        | 34/254 [00:11<04:36,  1.26s/it, Materializing param=model.layers.3.self_attn.k_proj.weight]
+Loading weights:  14%|█▍        | 35/254 [00:11<04:35,  1.26s/it, Materializing param=model.layers.3.self_attn.o_proj.weight]
+Loading weights:  14%|█▍        | 35/254 [00:11<04:35,  1.26s/it, Materializing param=model.layers.3.self_attn.o_proj.weight]
+Loading weights:  14%|█▍        | 36/254 [00:11<04:33,  1.26s/it, Materializing param=model.layers.3.self_attn.q_proj.weight]
+Loading weights:  14%|█▍        | 36/254 [00:11<04:33,  1.26s/it, Materializing param=model.layers.3.self_attn.q_proj.weight]
+Loading weights:  15%|█▍        | 37/254 [00:11<04:32,  1.26s/it, Materializing param=model.layers.3.self_attn.v_proj.weight]
+Loading weights:  15%|█▍        | 37/254 [00:11<04:32,  1.26s/it, Materializing param=model.layers.3.self_attn.v_proj.weight]
+Loading weights:  15%|█▍        | 38/254 [00:11<04:31,  1.26s/it, Materializing param=model.layers.4.input_layernorm.weight] 
+Loading weights:  15%|█▍        | 38/254 [00:11<04:31,  1.26s/it, Materializing param=model.layers.4.input_layernorm.weight]
+Loading weights:  15%|█▌        | 39/254 [00:11<04:30,  1.26s/it, Materializing param=model.layers.4.mlp.down_proj.weight]  
+Loading weights:  15%|█▌        | 39/254 [00:11<04:30,  1.26s/it, Materializing param=model.layers.4.mlp.down_proj.weight]
+Loading weights:  16%|█▌        | 40/254 [00:11<04:28,  1.26s/it, Materializing param=model.layers.4.mlp.gate_proj.weight]
+Loading weights:  16%|█▌        | 40/254 [00:11<04:28,  1.26s/it, Materializing param=model.layers.4.mlp.gate_proj.weight]
+Loading weights:  16%|█▌        | 41/254 [00:11<04:27,  1.26s/it, Materializing param=model.layers.4.mlp.up_proj.weight]  
+Loading weights:  16%|█▌        | 41/254 [00:11<04:27,  1.26s/it, Materializing param=model.layers.4.mlp.up_proj.weight]
+Loading weights:  17%|█▋        | 42/254 [00:11<04:26,  1.26s/it, Materializing param=model.layers.4.post_attention_layernorm.weight]
+Loading weights:  17%|█▋        | 42/254 [00:11<04:26,  1.26s/it, Materializing param=model.layers.4.post_attention_layernorm.weight]
+Loading weights:  17%|█▋        | 43/254 [00:11<04:25,  1.26s/it, Materializing param=model.layers.4.self_attn.k_proj.weight]        
+Loading weights:  17%|█▋        | 43/254 [00:11<04:25,  1.26s/it, Materializing param=model.layers.4.self_attn.k_proj.weight]
+Loading weights:  17%|█▋        | 44/254 [00:11<04:23,  1.26s/it, Materializing param=model.layers.4.self_attn.o_proj.weight]
+Loading weights:  17%|█▋        | 44/254 [00:11<04:23,  1.26s/it, Materializing param=model.layers.4.self_attn.o_proj.weight]
+Loading weights:  18%|█▊        | 45/254 [00:11<04:22,  1.26s/it, Materializing param=model.layers.4.self_attn.q_proj.weight]
+Loading weights:  18%|█▊        | 45/254 [00:11<04:22,  1.26s/it, Materializing param=model.layers.4.self_attn.q_proj.weight]
+Loading weights:  18%|█▊        | 46/254 [00:11<04:21,  1.26s/it, Materializing param=model.layers.4.self_attn.v_proj.weight]
+Loading weights:  18%|█▊        | 46/254 [00:11<04:21,  1.26s/it, Materializing param=model.layers.4.self_attn.v_proj.weight]
+Loading weights:  19%|█▊        | 47/254 [00:11<04:20,  1.26s/it, Materializing param=model.layers.5.input_layernorm.weight] 
+Loading weights:  19%|█▊        | 47/254 [00:11<04:20,  1.26s/it, Materializing param=model.layers.5.input_layernorm.weight]
+Loading weights:  19%|█▉        | 48/254 [00:11<04:18,  1.26s/it, Materializing param=model.layers.5.mlp.down_proj.weight]  
+Loading weights:  19%|█▉        | 48/254 [00:11<04:18,  1.26s/it, Materializing param=model.layers.5.mlp.down_proj.weight]
+Loading weights:  19%|█▉        | 49/254 [00:11<04:17,  1.26s/it, Materializing param=model.layers.5.mlp.gate_proj.weight]
+Loading weights:  19%|█▉        | 49/254 [00:11<04:17,  1.26s/it, Materializing param=model.layers.5.mlp.gate_proj.weight]
+Loading weights:  20%|█▉        | 50/254 [00:11<04:16,  1.26s/it, Materializing param=model.layers.5.mlp.up_proj.weight]  
+Loading weights:  20%|█▉        | 50/254 [00:11<04:16,  1.26s/it, Materializing param=model.layers.5.mlp.up_proj.weight]
+Loading weights:  20%|██        | 51/254 [00:11<04:14,  1.26s/it, Materializing param=model.layers.5.post_attention_layernorm.weight]
+Loading weights:  20%|██        | 51/254 [00:11<04:14,  1.26s/it, Materializing param=model.layers.5.post_attention_layernorm.weight]
+Loading weights:  20%|██        | 52/254 [00:11<04:13,  1.26s/it, Materializing param=model.layers.5.self_attn.k_proj.weight]        
+Loading weights:  20%|██        | 52/254 [00:11<04:13,  1.26s/it, Materializing param=model.layers.5.self_attn.k_proj.weight]
+Loading weights:  21%|██        | 53/254 [00:11<04:12,  1.26s/it, Materializing param=model.layers.5.self_attn.o_proj.weight]
+Loading weights:  21%|██        | 53/254 [00:11<04:12,  1.26s/it, Materializing param=model.layers.5.self_attn.o_proj.weight]
+Loading weights:  21%|██▏       | 54/254 [00:11<04:11,  1.26s/it, Materializing param=model.layers.5.self_attn.q_proj.weight]
+Loading weights:  21%|██▏       | 54/254 [00:11<04:11,  1.26s/it, Materializing param=model.layers.5.self_attn.q_proj.weight]
+Loading weights:  22%|██▏       | 55/254 [00:11<04:09,  1.26s/it, Materializing param=model.layers.5.self_attn.v_proj.weight]
+Loading weights:  22%|██▏       | 55/254 [00:11<04:09,  1.26s/it, Materializing param=model.layers.5.self_attn.v_proj.weight]
+Loading weights:  22%|██▏       | 56/254 [00:11<04:08,  1.26s/it, Materializing param=model.layers.6.input_layernorm.weight] 
+Loading weights:  22%|██▏       | 56/254 [00:11<04:08,  1.26s/it, Materializing param=model.layers.6.input_layernorm.weight]
+Loading weights:  22%|██▏       | 57/254 [00:11<04:07,  1.26s/it, Materializing param=model.layers.6.mlp.down_proj.weight]  
+Loading weights:  22%|██▏       | 57/254 [00:11<04:07,  1.26s/it, Materializing param=model.layers.6.mlp.down_proj.weight]
+Loading weights:  23%|██▎       | 58/254 [00:11<04:06,  1.26s/it, Materializing param=model.layers.6.mlp.gate_proj.weight]
+Loading weights:  23%|██▎       | 58/254 [00:11<04:06,  1.26s/it, Materializing param=model.layers.6.mlp.gate_proj.weight]
+Loading weights:  23%|██▎       | 59/254 [00:11<04:04,  1.26s/it, Materializing param=model.layers.6.mlp.up_proj.weight]  
+Loading weights:  23%|██▎       | 59/254 [00:11<04:04,  1.26s/it, Materializing param=model.layers.6.mlp.up_proj.weight]
+Loading weights:  24%|██▎       | 60/254 [00:11<04:03,  1.26s/it, Materializing param=model.layers.6.post_attention_layernorm.weight]
+Loading weights:  24%|██▎       | 60/254 [00:11<04:03,  1.26s/it, Materializing param=model.layers.6.post_attention_layernorm.weight]
+Loading weights:  24%|██▍       | 61/254 [00:11<04:02,  1.26s/it, Materializing param=model.layers.6.self_attn.k_proj.weight]        
+Loading weights:  24%|██▍       | 61/254 [00:11<04:02,  1.26s/it, Materializing param=model.layers.6.self_attn.k_proj.weight]
+Loading weights:  24%|██▍       | 62/254 [00:11<04:01,  1.26s/it, Materializing param=model.layers.6.self_attn.o_proj.weight]
+Loading weights:  24%|██▍       | 62/254 [00:11<04:01,  1.26s/it, Materializing param=model.layers.6.self_attn.o_proj.weight]
+Loading weights:  25%|██▍       | 63/254 [00:11<03:59,  1.26s/it, Materializing param=model.layers.6.self_attn.q_proj.weight]
+Loading weights:  25%|██▍       | 63/254 [00:11<03:59,  1.26s/it, Materializing param=model.layers.6.self_attn.q_proj.weight]
+Loading weights:  25%|██▌       | 64/254 [00:11<03:58,  1.26s/it, Materializing param=model.layers.6.self_attn.v_proj.weight]
+Loading weights:  25%|██▌       | 64/254 [00:11<03:58,  1.26s/it, Materializing param=model.layers.6.self_attn.v_proj.weight]
+Loading weights:  26%|██▌       | 65/254 [00:11<03:57,  1.26s/it, Materializing param=model.layers.7.input_layernorm.weight] 
+Loading weights:  26%|██▌       | 65/254 [00:11<03:57,  1.26s/it, Materializing param=model.layers.7.input_layernorm.weight]
+Loading weights:  26%|██▌       | 66/254 [00:11<03:56,  1.26s/it, Materializing param=model.layers.7.mlp.down_proj.weight]  
+Loading weights:  26%|██▌       | 66/254 [00:11<03:56,  1.26s/it, Materializing param=model.layers.7.mlp.down_proj.weight]
+Loading weights:  26%|██▋       | 67/254 [00:11<03:54,  1.26s/it, Materializing param=model.layers.7.mlp.gate_proj.weight]
+Loading weights:  26%|██▋       | 67/254 [00:11<03:54,  1.26s/it, Materializing param=model.layers.7.mlp.gate_proj.weight]
+Loading weights:  27%|██▋       | 68/254 [00:11<03:53,  1.26s/it, Materializing param=model.layers.7.mlp.up_proj.weight]  
+Loading weights:  27%|██▋       | 68/254 [00:11<03:53,  1.26s/it, Materializing param=model.layers.7.mlp.up_proj.weight]
+Loading weights:  27%|██▋       | 69/254 [00:11<03:52,  1.26s/it, Materializing param=model.layers.7.post_attention_layernorm.weight]
+Loading weights:  27%|██▋       | 69/254 [00:11<03:52,  1.26s/it, Materializing param=model.layers.7.post_attention_layernorm.weight]
+Loading weights:  28%|██▊       | 70/254 [00:11<03:51,  1.26s/it, Materializing param=model.layers.7.self_attn.k_proj.weight]        
+Loading weights:  28%|██▊       | 70/254 [00:11<03:51,  1.26s/it, Materializing param=model.layers.7.self_attn.k_proj.weight]
+Loading weights:  28%|██▊       | 71/254 [00:11<03:49,  1.26s/it, Materializing param=model.layers.7.self_attn.o_proj.weight]
+Loading weights:  28%|██▊       | 71/254 [00:11<03:49,  1.26s/it, Materializing param=model.layers.7.self_attn.o_proj.weight]
+Loading weights:  28%|██▊       | 72/254 [00:11<03:48,  1.26s/it, Materializing param=model.layers.7.self_attn.q_proj.weight]
+Loading weights:  28%|██▊       | 72/254 [00:11<03:48,  1.26s/it, Materializing param=model.layers.7.self_attn.q_proj.weight]
+Loading weights:  29%|██▊       | 73/254 [00:11<03:47,  1.26s/it, Materializing param=model.layers.7.self_attn.v_proj.weight]
+Loading weights:  29%|██▊       | 73/254 [00:11<03:47,  1.26s/it, Materializing param=model.layers.7.self_attn.v_proj.weight]
+Loading weights:  29%|██▉       | 74/254 [00:11<03:46,  1.26s/it, Materializing param=model.layers.8.input_layernorm.weight] 
+Loading weights:  29%|██▉       | 74/254 [00:11<03:46,  1.26s/it, Materializing param=model.layers.8.input_layernorm.weight]
+Loading weights:  30%|██▉       | 75/254 [00:11<03:44,  1.26s/it, Materializing param=model.layers.8.mlp.down_proj.weight]  
+Loading weights:  30%|██▉       | 75/254 [00:11<03:44,  1.26s/it, Materializing param=model.layers.8.mlp.down_proj.weight]
+Loading weights:  30%|██▉       | 76/254 [00:11<03:43,  1.26s/it, Materializing param=model.layers.8.mlp.gate_proj.weight]
+Loading weights:  30%|██▉       | 76/254 [00:11<03:43,  1.26s/it, Materializing param=model.layers.8.mlp.gate_proj.weight]
+Loading weights:  30%|███       | 77/254 [00:11<03:42,  1.26s/it, Materializing param=model.layers.8.mlp.up_proj.weight]  
+Loading weights:  30%|███       | 77/254 [00:11<03:42,  1.26s/it, Materializing param=model.layers.8.mlp.up_proj.weight]
+Loading weights:  31%|███       | 78/254 [00:11<03:41,  1.26s/it, Materializing param=model.layers.8.post_attention_layernorm.weight]
+Loading weights:  31%|███       | 78/254 [00:11<03:41,  1.26s/it, Materializing param=model.layers.8.post_attention_layernorm.weight]
+Loading weights:  31%|███       | 79/254 [00:11<03:39,  1.26s/it, Materializing param=model.layers.8.self_attn.k_proj.weight]        
+Loading weights:  31%|███       | 79/254 [00:11<03:39,  1.26s/it, Materializing param=model.layers.8.self_attn.k_proj.weight]
+Loading weights:  31%|███▏      | 80/254 [00:11<03:38,  1.26s/it, Materializing param=model.layers.8.self_attn.o_proj.weight]
+Loading weights:  31%|███▏      | 80/254 [00:11<03:38,  1.26s/it, Materializing param=model.layers.8.self_attn.o_proj.weight]
+Loading weights:  32%|███▏      | 81/254 [00:11<03:37,  1.26s/it, Materializing param=model.layers.8.self_attn.q_proj.weight]
+Loading weights:  32%|███▏      | 81/254 [00:11<03:37,  1.26s/it, Materializing param=model.layers.8.self_attn.q_proj.weight]
+Loading weights:  32%|███▏      | 82/254 [00:11<03:36,  1.26s/it, Materializing param=model.layers.8.self_attn.v_proj.weight]
+Loading weights:  32%|███▏      | 82/254 [00:11<03:36,  1.26s/it, Materializing param=model.layers.8.self_attn.v_proj.weight]
+Loading weights:  33%|███▎      | 83/254 [00:11<03:34,  1.26s/it, Materializing param=model.layers.9.input_layernorm.weight] 
+Loading weights:  33%|███▎      | 83/254 [00:11<03:34,  1.26s/it, Materializing param=model.layers.9.input_layernorm.weight]
+Loading weights:  33%|███▎      | 84/254 [00:11<03:33,  1.26s/it, Materializing param=model.layers.9.mlp.down_proj.weight]  
+Loading weights:  33%|███▎      | 84/254 [00:11<03:33,  1.26s/it, Materializing param=model.layers.9.mlp.down_proj.weight]
+Loading weights:  33%|███▎      | 85/254 [00:11<03:32,  1.26s/it, Materializing param=model.layers.9.mlp.gate_proj.weight]
+Loading weights:  33%|███▎      | 85/254 [00:11<03:32,  1.26s/it, Materializing param=model.layers.9.mlp.gate_proj.weight]
+Loading weights:  34%|███▍      | 86/254 [00:11<00:07, 23.22it/s, Materializing param=model.layers.9.mlp.gate_proj.weight]
+Loading weights:  34%|███▍      | 86/254 [00:11<00:07, 23.22it/s, Materializing param=model.layers.9.mlp.up_proj.weight]  
+Loading weights:  34%|███▍      | 86/254 [00:11<00:07, 23.22it/s, Materializing param=model.layers.9.mlp.up_proj.weight]
+Loading weights:  34%|███▍      | 87/254 [00:11<00:07, 23.22it/s, Materializing param=model.layers.9.post_attention_layernorm.weight]
+Loading weights:  34%|███▍      | 87/254 [00:11<00:07, 23.22it/s, Materializing param=model.layers.9.post_attention_layernorm.weight]
+Loading weights:  35%|███▍      | 88/254 [00:11<00:07, 23.22it/s, Materializing param=model.layers.9.self_attn.k_proj.weight]        
+Loading weights:  35%|███▍      | 88/254 [00:11<00:07, 23.22it/s, Materializing param=model.layers.9.self_attn.k_proj.weight]
+Loading weights:  35%|███▌      | 89/254 [00:11<00:07, 23.22it/s, Materializing param=model.layers.9.self_attn.o_proj.weight]
+Loading weights:  35%|███▌      | 89/254 [00:11<00:07, 23.22it/s, Materializing param=model.layers.9.self_attn.o_proj.weight]
+Loading weights:  35%|███▌      | 90/254 [00:11<00:07, 23.22it/s, Materializing param=model.layers.9.self_attn.q_proj.weight]
+Loading weights:  35%|███▌      | 90/254 [00:11<00:07, 23.22it/s, Materializing param=model.layers.9.self_attn.q_proj.weight]
+Loading weights:  36%|███▌      | 91/254 [00:11<00:07, 23.22it/s, Materializing param=model.layers.9.self_attn.v_proj.weight]
+Loading weights:  36%|███▌      | 91/254 [00:11<00:07, 23.22it/s, Materializing param=model.layers.9.self_attn.v_proj.weight]
+Loading weights:  36%|███▌      | 92/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.input_layernorm.weight]
+Loading weights:  36%|███▌      | 92/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.input_layernorm.weight]
+Loading weights:  37%|███▋      | 93/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.mlp.down_proj.weight]  
+Loading weights:  37%|███▋      | 93/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.mlp.down_proj.weight]
+Loading weights:  37%|███▋      | 94/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 94/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 95/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.mlp.up_proj.weight]  
+Loading weights:  37%|███▋      | 95/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.mlp.up_proj.weight]
+Loading weights:  38%|███▊      | 96/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.post_attention_layernorm.weight]
+Loading weights:  38%|███▊      | 96/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.post_attention_layernorm.weight]
+Loading weights:  38%|███▊      | 97/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.self_attn.k_proj.weight]        
+Loading weights:  38%|███▊      | 97/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.self_attn.k_proj.weight]
+Loading weights:  39%|███▊      | 98/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.self_attn.o_proj.weight]
+Loading weights:  39%|███▊      | 98/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.self_attn.o_proj.weight]
+Loading weights:  39%|███▉      | 99/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.self_attn.q_proj.weight]
+Loading weights:  39%|███▉      | 99/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.self_attn.q_proj.weight]
+Loading weights:  39%|███▉      | 100/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.self_attn.v_proj.weight]
+Loading weights:  39%|███▉      | 100/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.10.self_attn.v_proj.weight]
+Loading weights:  40%|███▉      | 101/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.11.input_layernorm.weight] 
+Loading weights:  40%|███▉      | 101/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.11.input_layernorm.weight]
+Loading weights:  40%|████      | 102/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.11.mlp.down_proj.weight]  
+Loading weights:  40%|████      | 102/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.11.mlp.down_proj.weight]
+Loading weights:  41%|████      | 103/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.11.mlp.gate_proj.weight]
+Loading weights:  41%|████      | 103/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.11.mlp.gate_proj.weight]
+Loading weights:  41%|████      | 104/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.11.mlp.up_proj.weight]  
+Loading weights:  41%|████      | 104/254 [00:11<00:06, 23.22it/s, Materializing param=model.layers.11.mlp.up_proj.weight]
+Loading weights:  41%|████▏     | 105/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.11.post_attention_layernorm.weight]
+Loading weights:  41%|████▏     | 105/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.11.post_attention_layernorm.weight]
+Loading weights:  42%|████▏     | 106/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.11.self_attn.k_proj.weight]        
+Loading weights:  42%|████▏     | 106/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.11.self_attn.k_proj.weight]
+Loading weights:  42%|████▏     | 107/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.11.self_attn.o_proj.weight]
+Loading weights:  42%|████▏     | 107/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.11.self_attn.o_proj.weight]
+Loading weights:  43%|████▎     | 108/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.11.self_attn.q_proj.weight]
+Loading weights:  43%|████▎     | 108/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.11.self_attn.q_proj.weight]
+Loading weights:  43%|████▎     | 109/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.11.self_attn.v_proj.weight]
+Loading weights:  43%|████▎     | 109/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.11.self_attn.v_proj.weight]
+Loading weights:  43%|████▎     | 110/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.12.input_layernorm.weight] 
+Loading weights:  43%|████▎     | 110/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.12.input_layernorm.weight]
+Loading weights:  44%|████▎     | 111/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.12.mlp.down_proj.weight]  
+Loading weights:  44%|████▎     | 111/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.12.mlp.down_proj.weight]
+Loading weights:  44%|████▍     | 112/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.12.mlp.gate_proj.weight]
+Loading weights:  44%|████▍     | 112/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.12.mlp.gate_proj.weight]
+Loading weights:  44%|████▍     | 113/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.12.mlp.up_proj.weight]  
+Loading weights:  44%|████▍     | 113/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.12.mlp.up_proj.weight]
+Loading weights:  45%|████▍     | 114/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.12.post_attention_layernorm.weight]
+Loading weights:  45%|████▍     | 114/254 [00:12<00:06, 23.22it/s, Materializing param=model.layers.12.post_attention_layernorm.weight]
+Loading weights:  45%|████▌     | 115/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.12.self_attn.k_proj.weight]        
+Loading weights:  45%|████▌     | 115/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.12.self_attn.k_proj.weight]
+Loading weights:  46%|████▌     | 116/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.12.self_attn.o_proj.weight]
+Loading weights:  46%|████▌     | 116/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.12.self_attn.o_proj.weight]
+Loading weights:  46%|████▌     | 117/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.12.self_attn.q_proj.weight]
+Loading weights:  46%|████▌     | 117/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.12.self_attn.q_proj.weight]
+Loading weights:  46%|████▋     | 118/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.12.self_attn.v_proj.weight]
+Loading weights:  46%|████▋     | 118/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.12.self_attn.v_proj.weight]
+Loading weights:  47%|████▋     | 119/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.input_layernorm.weight] 
+Loading weights:  47%|████▋     | 119/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.input_layernorm.weight]
+Loading weights:  47%|████▋     | 120/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.mlp.down_proj.weight]  
+Loading weights:  47%|████▋     | 120/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.mlp.down_proj.weight]
+Loading weights:  48%|████▊     | 121/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.mlp.gate_proj.weight]
+Loading weights:  48%|████▊     | 121/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.mlp.gate_proj.weight]
+Loading weights:  48%|████▊     | 122/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.mlp.up_proj.weight]  
+Loading weights:  48%|████▊     | 122/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.mlp.up_proj.weight]
+Loading weights:  48%|████▊     | 123/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.post_attention_layernorm.weight]
+Loading weights:  48%|████▊     | 123/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.post_attention_layernorm.weight]
+Loading weights:  49%|████▉     | 124/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.self_attn.k_proj.weight]        
+Loading weights:  49%|████▉     | 124/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.self_attn.k_proj.weight]
+Loading weights:  49%|████▉     | 125/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.self_attn.o_proj.weight]
+Loading weights:  49%|████▉     | 125/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.self_attn.o_proj.weight]
+Loading weights:  50%|████▉     | 126/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.self_attn.q_proj.weight]
+Loading weights:  50%|████▉     | 126/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.self_attn.q_proj.weight]
+Loading weights:  50%|█████     | 127/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.self_attn.v_proj.weight]
+Loading weights:  50%|█████     | 127/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.13.self_attn.v_proj.weight]
+Loading weights:  50%|█████     | 128/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.input_layernorm.weight] 
+Loading weights:  50%|█████     | 128/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.input_layernorm.weight]
+Loading weights:  51%|█████     | 129/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.mlp.down_proj.weight]  
+Loading weights:  51%|█████     | 129/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.mlp.down_proj.weight]
+Loading weights:  51%|█████     | 130/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.mlp.gate_proj.weight]
+Loading weights:  51%|█████     | 130/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.mlp.gate_proj.weight]
+Loading weights:  52%|█████▏    | 131/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.mlp.up_proj.weight]  
+Loading weights:  52%|█████▏    | 131/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.mlp.up_proj.weight]
+Loading weights:  52%|█████▏    | 132/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.post_attention_layernorm.weight]
+Loading weights:  52%|█████▏    | 132/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.post_attention_layernorm.weight]
+Loading weights:  52%|█████▏    | 133/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.self_attn.k_proj.weight]        
+Loading weights:  52%|█████▏    | 133/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.self_attn.k_proj.weight]
+Loading weights:  53%|█████▎    | 134/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.self_attn.o_proj.weight]
+Loading weights:  53%|█████▎    | 134/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.self_attn.o_proj.weight]
+Loading weights:  53%|█████▎    | 135/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.self_attn.q_proj.weight]
+Loading weights:  53%|█████▎    | 135/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.self_attn.q_proj.weight]
+Loading weights:  54%|█████▎    | 136/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.self_attn.v_proj.weight]
+Loading weights:  54%|█████▎    | 136/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.14.self_attn.v_proj.weight]
+Loading weights:  54%|█████▍    | 137/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.15.input_layernorm.weight] 
+Loading weights:  54%|█████▍    | 137/254 [00:12<00:05, 23.22it/s, Materializing param=model.layers.15.input_layernorm.weight]
+Loading weights:  54%|█████▍    | 138/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.mlp.down_proj.weight]  
+Loading weights:  54%|█████▍    | 138/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.mlp.down_proj.weight]
+Loading weights:  55%|█████▍    | 139/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.mlp.gate_proj.weight]
+Loading weights:  55%|█████▍    | 139/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.mlp.gate_proj.weight]
+Loading weights:  55%|█████▌    | 140/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.mlp.up_proj.weight]  
+Loading weights:  55%|█████▌    | 140/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.mlp.up_proj.weight]
+Loading weights:  56%|█████▌    | 141/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.post_attention_layernorm.weight]
+Loading weights:  56%|█████▌    | 141/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.post_attention_layernorm.weight]
+Loading weights:  56%|█████▌    | 142/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.self_attn.k_proj.weight]        
+Loading weights:  56%|█████▌    | 142/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.self_attn.k_proj.weight]
+Loading weights:  56%|█████▋    | 143/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.self_attn.o_proj.weight]
+Loading weights:  56%|█████▋    | 143/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.self_attn.o_proj.weight]
+Loading weights:  57%|█████▋    | 144/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.self_attn.q_proj.weight]
+Loading weights:  57%|█████▋    | 144/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.self_attn.q_proj.weight]
+Loading weights:  57%|█████▋    | 145/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.self_attn.v_proj.weight]
+Loading weights:  57%|█████▋    | 145/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.15.self_attn.v_proj.weight]
+Loading weights:  57%|█████▋    | 146/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.input_layernorm.weight] 
+Loading weights:  57%|█████▋    | 146/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.input_layernorm.weight]
+Loading weights:  58%|█████▊    | 147/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.mlp.down_proj.weight]  
+Loading weights:  58%|█████▊    | 147/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.mlp.down_proj.weight]
+Loading weights:  58%|█████▊    | 148/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.mlp.gate_proj.weight]
+Loading weights:  58%|█████▊    | 148/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.mlp.gate_proj.weight]
+Loading weights:  59%|█████▊    | 149/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.mlp.up_proj.weight]  
+Loading weights:  59%|█████▊    | 149/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.mlp.up_proj.weight]
+Loading weights:  59%|█████▉    | 150/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.post_attention_layernorm.weight]
+Loading weights:  59%|█████▉    | 150/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.post_attention_layernorm.weight]
+Loading weights:  59%|█████▉    | 151/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.self_attn.k_proj.weight]        
+Loading weights:  59%|█████▉    | 151/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.self_attn.k_proj.weight]
+Loading weights:  60%|█████▉    | 152/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.self_attn.o_proj.weight]
+Loading weights:  60%|█████▉    | 152/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.self_attn.o_proj.weight]
+Loading weights:  60%|██████    | 153/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.self_attn.q_proj.weight]
+Loading weights:  60%|██████    | 153/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.self_attn.q_proj.weight]
+Loading weights:  61%|██████    | 154/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.self_attn.v_proj.weight]
+Loading weights:  61%|██████    | 154/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.16.self_attn.v_proj.weight]
+Loading weights:  61%|██████    | 155/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.input_layernorm.weight] 
+Loading weights:  61%|██████    | 155/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.input_layernorm.weight]
+Loading weights:  61%|██████▏   | 156/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.mlp.down_proj.weight]  
+Loading weights:  61%|██████▏   | 156/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.mlp.down_proj.weight]
+Loading weights:  62%|██████▏   | 157/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.mlp.gate_proj.weight]
+Loading weights:  62%|██████▏   | 157/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.mlp.gate_proj.weight]
+Loading weights:  62%|██████▏   | 158/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.mlp.up_proj.weight]  
+Loading weights:  62%|██████▏   | 158/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.mlp.up_proj.weight]
+Loading weights:  63%|██████▎   | 159/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.post_attention_layernorm.weight]
+Loading weights:  63%|██████▎   | 159/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.post_attention_layernorm.weight]
+Loading weights:  63%|██████▎   | 160/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.self_attn.k_proj.weight]        
+Loading weights:  63%|██████▎   | 160/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.self_attn.k_proj.weight]
+Loading weights:  63%|██████▎   | 161/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.self_attn.o_proj.weight]
+Loading weights:  63%|██████▎   | 161/254 [00:12<00:04, 23.22it/s, Materializing param=model.layers.17.self_attn.o_proj.weight]
+Loading weights:  64%|██████▍   | 162/254 [00:12<00:03, 23.22it/s, Materializing param=model.layers.17.self_attn.q_proj.weight]
+Loading weights:  64%|██████▍   | 162/254 [00:12<00:03, 23.22it/s, Materializing param=model.layers.17.self_attn.q_proj.weight]
+Loading weights:  64%|██████▍   | 163/254 [00:12<00:03, 23.22it/s, Materializing param=model.layers.17.self_attn.v_proj.weight]
+Loading weights:  64%|██████▍   | 163/254 [00:12<00:03, 23.22it/s, Materializing param=model.layers.17.self_attn.v_proj.weight]
+Loading weights:  65%|██████▍   | 164/254 [00:12<00:03, 23.22it/s, Materializing param=model.layers.18.input_layernorm.weight] 
+Loading weights:  65%|██████▍   | 164/254 [00:12<00:03, 23.22it/s, Materializing param=model.layers.18.input_layernorm.weight]
+Loading weights:  65%|██████▍   | 165/254 [00:12<00:03, 23.22it/s, Materializing param=model.layers.18.mlp.down_proj.weight]  
+Loading weights:  65%|██████▍   | 165/254 [00:12<00:03, 23.22it/s, Materializing param=model.layers.18.mlp.down_proj.weight]
+Loading weights:  65%|██████▌   | 166/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.mlp.down_proj.weight]
+Loading weights:  65%|██████▌   | 166/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.mlp.gate_proj.weight]
+Loading weights:  65%|██████▌   | 166/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.mlp.gate_proj.weight]
+Loading weights:  66%|██████▌   | 167/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.mlp.up_proj.weight]  
+Loading weights:  66%|██████▌   | 167/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.mlp.up_proj.weight]
+Loading weights:  66%|██████▌   | 168/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.post_attention_layernorm.weight]
+Loading weights:  66%|██████▌   | 168/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.post_attention_layernorm.weight]
+Loading weights:  67%|██████▋   | 169/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.self_attn.k_proj.weight]        
+Loading weights:  67%|██████▋   | 169/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.self_attn.k_proj.weight]
+Loading weights:  67%|██████▋   | 170/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.self_attn.o_proj.weight]
+Loading weights:  67%|██████▋   | 170/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.self_attn.o_proj.weight]
+Loading weights:  67%|██████▋   | 171/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.self_attn.q_proj.weight]
+Loading weights:  67%|██████▋   | 171/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.self_attn.q_proj.weight]
+Loading weights:  68%|██████▊   | 172/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.self_attn.v_proj.weight]
+Loading weights:  68%|██████▊   | 172/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.18.self_attn.v_proj.weight]
+Loading weights:  68%|██████▊   | 173/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.input_layernorm.weight] 
+Loading weights:  68%|██████▊   | 173/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.input_layernorm.weight]
+Loading weights:  69%|██████▊   | 174/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.mlp.down_proj.weight]  
+Loading weights:  69%|██████▊   | 174/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.mlp.down_proj.weight]
+Loading weights:  69%|██████▉   | 175/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.mlp.gate_proj.weight]
+Loading weights:  69%|██████▉   | 175/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.mlp.gate_proj.weight]
+Loading weights:  69%|██████▉   | 176/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.mlp.up_proj.weight]  
+Loading weights:  69%|██████▉   | 176/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.mlp.up_proj.weight]
+Loading weights:  70%|██████▉   | 177/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.post_attention_layernorm.weight]
+Loading weights:  70%|██████▉   | 177/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.post_attention_layernorm.weight]
+Loading weights:  70%|███████   | 178/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.self_attn.k_proj.weight]        
+Loading weights:  70%|███████   | 178/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.self_attn.k_proj.weight]
+Loading weights:  70%|███████   | 179/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.self_attn.o_proj.weight]
+Loading weights:  70%|███████   | 179/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.self_attn.o_proj.weight]
+Loading weights:  71%|███████   | 180/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.self_attn.q_proj.weight]
+Loading weights:  71%|███████   | 180/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.self_attn.q_proj.weight]
+Loading weights:  71%|███████▏  | 181/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.self_attn.v_proj.weight]
+Loading weights:  71%|███████▏  | 181/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.19.self_attn.v_proj.weight]
+Loading weights:  72%|███████▏  | 182/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.input_layernorm.weight] 
+Loading weights:  72%|███████▏  | 182/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.input_layernorm.weight]
+Loading weights:  72%|███████▏  | 183/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.mlp.down_proj.weight]  
+Loading weights:  72%|███████▏  | 183/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.mlp.down_proj.weight]
+Loading weights:  72%|███████▏  | 184/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.mlp.gate_proj.weight]
+Loading weights:  72%|███████▏  | 184/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.mlp.gate_proj.weight]
+Loading weights:  73%|███████▎  | 185/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.mlp.up_proj.weight]  
+Loading weights:  73%|███████▎  | 185/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.mlp.up_proj.weight]
+Loading weights:  73%|███████▎  | 186/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.post_attention_layernorm.weight]
+Loading weights:  73%|███████▎  | 186/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.post_attention_layernorm.weight]
+Loading weights:  74%|███████▎  | 187/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.self_attn.k_proj.weight]        
+Loading weights:  74%|███████▎  | 187/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.self_attn.k_proj.weight]
+Loading weights:  74%|███████▍  | 188/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.self_attn.o_proj.weight]
+Loading weights:  74%|███████▍  | 188/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.self_attn.o_proj.weight]
+Loading weights:  74%|███████▍  | 189/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.self_attn.q_proj.weight]
+Loading weights:  74%|███████▍  | 189/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.self_attn.q_proj.weight]
+Loading weights:  75%|███████▍  | 190/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.self_attn.v_proj.weight]
+Loading weights:  75%|███████▍  | 190/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.20.self_attn.v_proj.weight]
+Loading weights:  75%|███████▌  | 191/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.input_layernorm.weight] 
+Loading weights:  75%|███████▌  | 191/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.input_layernorm.weight]
+Loading weights:  76%|███████▌  | 192/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.mlp.down_proj.weight]  
+Loading weights:  76%|███████▌  | 192/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.mlp.down_proj.weight]
+Loading weights:  76%|███████▌  | 193/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.mlp.gate_proj.weight]
+Loading weights:  76%|███████▌  | 193/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.mlp.gate_proj.weight]
+Loading weights:  76%|███████▋  | 194/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.mlp.up_proj.weight]  
+Loading weights:  76%|███████▋  | 194/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.mlp.up_proj.weight]
+Loading weights:  77%|███████▋  | 195/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.post_attention_layernorm.weight]
+Loading weights:  77%|███████▋  | 195/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.post_attention_layernorm.weight]
+Loading weights:  77%|███████▋  | 196/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.self_attn.k_proj.weight]        
+Loading weights:  77%|███████▋  | 196/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.self_attn.k_proj.weight]
+Loading weights:  78%|███████▊  | 197/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.self_attn.o_proj.weight]
+Loading weights:  78%|███████▊  | 197/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.self_attn.o_proj.weight]
+Loading weights:  78%|███████▊  | 198/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.self_attn.q_proj.weight]
+Loading weights:  78%|███████▊  | 198/254 [00:12<00:01, 55.04it/s, Materializing param=model.layers.21.self_attn.q_proj.weight]
+Loading weights:  78%|███████▊  | 199/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.21.self_attn.v_proj.weight]
+Loading weights:  78%|███████▊  | 199/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.21.self_attn.v_proj.weight]
+Loading weights:  79%|███████▊  | 200/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.input_layernorm.weight] 
+Loading weights:  79%|███████▊  | 200/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.input_layernorm.weight]
+Loading weights:  79%|███████▉  | 201/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.mlp.down_proj.weight]  
+Loading weights:  79%|███████▉  | 201/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.mlp.down_proj.weight]
+Loading weights:  80%|███████▉  | 202/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.mlp.gate_proj.weight]
+Loading weights:  80%|███████▉  | 202/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.mlp.gate_proj.weight]
+Loading weights:  80%|███████▉  | 203/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.mlp.up_proj.weight]  
+Loading weights:  80%|███████▉  | 203/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.mlp.up_proj.weight]
+Loading weights:  80%|████████  | 204/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.post_attention_layernorm.weight]
+Loading weights:  80%|████████  | 204/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.post_attention_layernorm.weight]
+Loading weights:  81%|████████  | 205/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.self_attn.k_proj.weight]        
+Loading weights:  81%|████████  | 205/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.self_attn.k_proj.weight]
+Loading weights:  81%|████████  | 206/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.self_attn.o_proj.weight]
+Loading weights:  81%|████████  | 206/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.self_attn.o_proj.weight]
+Loading weights:  81%|████████▏ | 207/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.self_attn.q_proj.weight]
+Loading weights:  81%|████████▏ | 207/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.self_attn.q_proj.weight]
+Loading weights:  82%|████████▏ | 208/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.self_attn.v_proj.weight]
+Loading weights:  82%|████████▏ | 208/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.22.self_attn.v_proj.weight]
+Loading weights:  82%|████████▏ | 209/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.input_layernorm.weight] 
+Loading weights:  82%|████████▏ | 209/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.input_layernorm.weight]
+Loading weights:  83%|████████▎ | 210/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.mlp.down_proj.weight]  
+Loading weights:  83%|████████▎ | 210/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.mlp.down_proj.weight]
+Loading weights:  83%|████████▎ | 211/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.mlp.gate_proj.weight]
+Loading weights:  83%|████████▎ | 211/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.mlp.gate_proj.weight]
+Loading weights:  83%|████████▎ | 212/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.mlp.up_proj.weight]  
+Loading weights:  83%|████████▎ | 212/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.mlp.up_proj.weight]
+Loading weights:  84%|████████▍ | 213/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.post_attention_layernorm.weight]
+Loading weights:  84%|████████▍ | 213/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.post_attention_layernorm.weight]
+Loading weights:  84%|████████▍ | 214/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.self_attn.k_proj.weight]        
+Loading weights:  84%|████████▍ | 214/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.self_attn.k_proj.weight]
+Loading weights:  85%|████████▍ | 215/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.self_attn.o_proj.weight]
+Loading weights:  85%|████████▍ | 215/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.self_attn.o_proj.weight]
+Loading weights:  85%|████████▌ | 216/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.self_attn.q_proj.weight]
+Loading weights:  85%|████████▌ | 216/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.self_attn.q_proj.weight]
+Loading weights:  85%|████████▌ | 217/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.self_attn.v_proj.weight]
+Loading weights:  85%|████████▌ | 217/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.23.self_attn.v_proj.weight]
+Loading weights:  86%|████████▌ | 218/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.input_layernorm.weight] 
+Loading weights:  86%|████████▌ | 218/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.input_layernorm.weight]
+Loading weights:  86%|████████▌ | 219/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.mlp.down_proj.weight]  
+Loading weights:  86%|████████▌ | 219/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.mlp.down_proj.weight]
+Loading weights:  87%|████████▋ | 220/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.mlp.gate_proj.weight]
+Loading weights:  87%|████████▋ | 220/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.mlp.gate_proj.weight]
+Loading weights:  87%|████████▋ | 221/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.mlp.up_proj.weight]  
+Loading weights:  87%|████████▋ | 221/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.mlp.up_proj.weight]
+Loading weights:  87%|████████▋ | 222/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.post_attention_layernorm.weight]
+Loading weights:  87%|████████▋ | 222/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.post_attention_layernorm.weight]
+Loading weights:  88%|████████▊ | 223/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.self_attn.k_proj.weight]        
+Loading weights:  88%|████████▊ | 223/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.self_attn.k_proj.weight]
+Loading weights:  88%|████████▊ | 224/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.self_attn.o_proj.weight]
+Loading weights:  88%|████████▊ | 224/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.self_attn.o_proj.weight]
+Loading weights:  89%|████████▊ | 225/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.self_attn.q_proj.weight]
+Loading weights:  89%|████████▊ | 225/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.self_attn.q_proj.weight]
+Loading weights:  89%|████████▉ | 226/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.self_attn.v_proj.weight]
+Loading weights:  89%|████████▉ | 226/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.24.self_attn.v_proj.weight]
+Loading weights:  89%|████████▉ | 227/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.input_layernorm.weight] 
+Loading weights:  89%|████████▉ | 227/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.input_layernorm.weight]
+Loading weights:  90%|████████▉ | 228/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.mlp.down_proj.weight]  
+Loading weights:  90%|████████▉ | 228/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.mlp.down_proj.weight]
+Loading weights:  90%|█████████ | 229/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.mlp.gate_proj.weight]
+Loading weights:  90%|█████████ | 229/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.mlp.gate_proj.weight]
+Loading weights:  91%|█████████ | 230/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.mlp.up_proj.weight]  
+Loading weights:  91%|█████████ | 230/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.mlp.up_proj.weight]
+Loading weights:  91%|█████████ | 231/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.post_attention_layernorm.weight]
+Loading weights:  91%|█████████ | 231/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.post_attention_layernorm.weight]
+Loading weights:  91%|█████████▏| 232/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.self_attn.k_proj.weight]        
+Loading weights:  91%|█████████▏| 232/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.self_attn.k_proj.weight]
+Loading weights:  92%|█████████▏| 233/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.self_attn.o_proj.weight]
+Loading weights:  92%|█████████▏| 233/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.self_attn.o_proj.weight]
+Loading weights:  92%|█████████▏| 234/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.self_attn.q_proj.weight]
+Loading weights:  92%|█████████▏| 234/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.self_attn.q_proj.weight]
+Loading weights:  93%|█████████▎| 235/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.self_attn.v_proj.weight]
+Loading weights:  93%|█████████▎| 235/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.25.self_attn.v_proj.weight]
+Loading weights:  93%|█████████▎| 236/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.26.input_layernorm.weight] 
+Loading weights:  93%|█████████▎| 236/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.26.input_layernorm.weight]
+Loading weights:  93%|█████████▎| 237/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.26.mlp.down_proj.weight]  
+Loading weights:  93%|█████████▎| 237/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.26.mlp.down_proj.weight]
+Loading weights:  94%|█████████▎| 238/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.26.mlp.gate_proj.weight]
+Loading weights:  94%|█████████▎| 238/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.26.mlp.gate_proj.weight]
+Loading weights:  94%|█████████▍| 239/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.26.mlp.up_proj.weight]  
+Loading weights:  94%|█████████▍| 239/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.26.mlp.up_proj.weight]
+Loading weights:  94%|█████████▍| 240/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.26.post_attention_layernorm.weight]
+Loading weights:  94%|█████████▍| 240/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.26.post_attention_layernorm.weight]
+Loading weights:  95%|█████████▍| 241/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.26.self_attn.k_proj.weight]        
+Loading weights:  95%|█████████▍| 241/254 [00:12<00:00, 55.04it/s, Materializing param=model.layers.26.self_attn.k_proj.weight]
+Loading weights:  95%|█████████▌| 242/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.26.self_attn.k_proj.weight]
+Loading weights:  95%|█████████▌| 242/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.26.self_attn.o_proj.weight]
+Loading weights:  95%|█████████▌| 242/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.26.self_attn.o_proj.weight]
+Loading weights:  96%|█████████▌| 243/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.26.self_attn.q_proj.weight]
+Loading weights:  96%|█████████▌| 243/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.26.self_attn.q_proj.weight]
+Loading weights:  96%|█████████▌| 244/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.26.self_attn.v_proj.weight]
+Loading weights:  96%|█████████▌| 244/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.26.self_attn.v_proj.weight]
+Loading weights:  96%|█████████▋| 245/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.input_layernorm.weight] 
+Loading weights:  96%|█████████▋| 245/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.input_layernorm.weight]
+Loading weights:  97%|█████████▋| 246/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.mlp.down_proj.weight]  
+Loading weights:  97%|█████████▋| 246/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.mlp.down_proj.weight]
+Loading weights:  97%|█████████▋| 247/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.mlp.gate_proj.weight]
+Loading weights:  97%|█████████▋| 247/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.mlp.gate_proj.weight]
+Loading weights:  98%|█████████▊| 248/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.mlp.up_proj.weight]  
+Loading weights:  98%|█████████▊| 248/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.mlp.up_proj.weight]
+Loading weights:  98%|█████████▊| 249/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.post_attention_layernorm.weight]
+Loading weights:  98%|█████████▊| 249/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.post_attention_layernorm.weight]
+Loading weights:  98%|█████████▊| 250/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.self_attn.k_proj.weight]        
+Loading weights:  98%|█████████▊| 250/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.self_attn.k_proj.weight]
+Loading weights:  99%|█████████▉| 251/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.self_attn.o_proj.weight]
+Loading weights:  99%|█████████▉| 251/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.self_attn.o_proj.weight]
+Loading weights:  99%|█████████▉| 252/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.self_attn.q_proj.weight]
+Loading weights:  99%|█████████▉| 252/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.self_attn.q_proj.weight]
+Loading weights: 100%|█████████▉| 253/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.self_attn.v_proj.weight]
+Loading weights: 100%|█████████▉| 253/254 [00:12<00:00, 94.00it/s, Materializing param=model.layers.27.self_attn.v_proj.weight]
+Loading weights: 100%|██████████| 254/254 [00:12<00:00, 94.00it/s, Materializing param=model.norm.weight]                      
+Loading weights: 100%|██████████| 254/254 [00:12<00:00, 94.00it/s, Materializing param=model.norm.weight]
+Loading weights: 100%|██████████| 254/254 [00:12<00:00, 20.83it/s, Materializing param=model.norm.weight]
+
+ Loading benchmark: gsm_symbolic
+[1 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 2 x 48 = 96 inches.
+
+The total length of the whale is 40 feet, which is equivalent to 480 inches.
+
+The combined length of the remoras is 96 inches out of a total of 480 inches, so the percentage of the whale's body length that the combined length of the remoras takes up is 96/480 = 20%.
+
+**Answer:**
+
+The combined length of the remoras is 20% of the whale's body length.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[2 / 200] Evaluting Question
+Response: **Solution:**
+
+The 30-inch remoras combined are equal to 6 x 30 = 180 inches.
+
+180 inches is equal to 1.8 meters.
+
+The total length of the dolphin is 150 feet, which is equal to 4.5 meters.
+
+The combined length of the remoras is 1.8 meters, which is 40% of the total length of the dolphin.
+
+**Answer:**
+
+40%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[3 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 3 * 8 inches = 24 inches.
+
+The total length of the dolphin is 100 feet = 1200 inches.
+
+The combined length of the remoras as a percentage of the dolphin's body length is 24/1200 * 100% = 2%.
+
+**Answer:**
+
+The combined length of the remoras is 2%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[4 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 3 x 12 = 36 inches. This is equivalent to 0.36 meters.
+
+The percentage of the shark's body length that the combined length of the remoras represents is 0.36 / 30 = 12%.
+
+**Answer:**
+
+12%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[5 / 200] Evaluting Question
+Response: **Solution:**
+
+The 30-inch remoras are attached to a 100-foot dolphin. So, the combined length of the remoras is 8 * 30 = 240 inches.
+
+The combined length of the remoras is 240 inches out of a total of 100 feet, which is equivalent to 240/100 = 2.4 or 240%.
+
+**Answer:**
+
+The combined length of the remoras is 2.4 or 240% of the dolphin's body length.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[6 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 9 * 20 = 180 inches. This is 180/30 = 0.6 of the shark's body length.
+
+**Answer:**
+
+0.6
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[7 / 200] Evaluting Question
+Response: **Solution:**
+
+The whale's body length is 440 feet, and the combined length of the remoras is 8 * 66 inches. We need to convert the combined length of the remoras to feet. There are 12 inches in a foot, so the combined length of the remoras is 8 * 66 / 12 = 6.66 feet.
+
+The combined length of the remoras is 6.66 feet, which is 66.6% of the whale's body length.
+
+**Answer:**
+
+The combined length of the remoras is 66.6% of the whale's body length.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[8 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 4 x 18 inches = 72 inches.
+
+The total length of the dolphin is 300 feet, which is equivalent to 300 x 12 = 3600 inches.
+
+The combined length of the remoras is 72/3600 = 2% of the dolphin's body length.
+
+**Answer:**
+
+The combined length of the remoras is 2%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[9 / 200] Evaluting Question
+Response: **Solution:**
+
+The 5 48-inch remoras combined have a length of 5 x 48 = 240 inches. This is equivalent to 240/100 = 2.4 meters.
+
+The percentage of the whale's body length that the combined length of the remoras represents is 2.4/100 = 2.4%.
+
+**Answer:**
+
+The combined length of the remoras is 2.4% of the whale's body length.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[10 / 200] Evaluting Question
+Response: **Solution:**
+
+The conversion factor is 90 inches to feet is 1/3.
+
+Therefore, the combined length of the remoras in feet is 6 x 1/3 = 2 feet.
+
+The percentage of the dolphin's body length that the combined length of the remoras is equal to is 2/450 = 0.44%.
+
+**Answer:**
+
+0.44%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[11 / 200] Evaluting Question
+Response: **Solution:**
+
+The conversion factor is 60 inches = 5 feet
+
+The combined length of the remoras is 4 x 5 = 20 feet
+
+The total length of the dolphin is 200 feet
+
+The percentage of the dolphin's body length that the combined length of the remoras is equal to is 20/200 = 10%
+
+**Answer:**
+
+10%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[12 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 9 * 4 = 36 inches.
+
+The total length of the whale is 150 feet, which is equivalent to 1800 inches.
+
+The combined length of the remoras is 36 inches out of a total of 1800 inches.
+
+Therefore, the combined length of the remoras is 36/1800 * 100% = 2% of the whale's body length.
+
+**Answer:**
+
+The combined length of the remoras is 2% of the whale's body length.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[13 / 200] Evaluting Question
+Response: **Solution:**
+
+The conversion factor is 1 foot = 12 inches.
+
+Therefore, 480 feet is equal to 480 x 12 = 5760 inches.
+
+The combined length of the remoras is 4 x 72 = 288 inches.
+
+The percentage of the dolphin's body length that the combined length of the remoras takes up is 288 / 5760 = 5%.
+
+**Answer:**
+
+The combined length of the remoras takes up 5% of the dolphin's body length.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[14 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 2 x 30 inches = 60 inches.
+
+The total length of the shark is 250 feet = 250 x 12 inches = 2880 inches.
+
+The combined length of the remoras is 60/2880 = 2% of the shark's body length.
+
+**Answer:**
+
+The combined length of the remoras is 2% of the shark's body length.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[15 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 4 x 6 inches = 24 inches.
+
+The total length of the whale is 50 feet = 600 inches.
+
+The combined length of the remoras as a percentage of the whale's body length is 24/600 * 100% = 4%.
+
+**Answer:**
+
+4%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[16 / 200] Evaluting Question
+Response: **Solution:**
+
+The conversion factor is 60 inches = 5 feet.
+
+The total length of the remoras is 7 x 5 = 35 feet.
+
+The total length of the dolphin is 350 feet.
+
+The combined length of the remoras is 35/350 = 10%.
+
+**Answer:**
+
+The combined length of the remoras is 10%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[17 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 4 x 54 inches = 216 inches.
+
+The total length of the shark is 90 feet = 90 x 12 inches = 1080 inches.
+
+The combined length of the remoras is 216/1080 = 0.20, or 20%.
+
+**Answer:**
+
+20%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[18 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 9 * 32 = 288 inches.
+
+The total length of the dolphin is 240 feet, which is equivalent to 240 * 12 = 2880 inches.
+
+The combined length of the remoras is 288 out of a total length of 2880, so the percentage of the dolphin's body length that the combined length of the remoras is equal to is 288 / 2880 * 100% = 10%.
+
+**Answer:**
+
+10%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[19 / 200] Evaluting Question
+Response: **Solution:**
+
+The 48-inch remoras add up to a total length of 9 * 48 = 432 inches. This is equivalent to 4.32 meters.
+
+The total length of the dolphin is 180 feet, which is equivalent to 5.48 meters.
+
+The combined length of the remoras is 4.32 / 5.48 * 100% = 80% of the dolphin's body length.
+
+**Answer:**
+
+The combined length of the remoras is 80% of the dolphin's body length.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[20 / 200] Evaluting Question
+Response: **Solution:**
+
+The 8 30-inch remoras combined would be 8 x 30 = 240 inches. This is equivalent to 240/80 = 0.75 or 75% of the shark's body length.
+
+**Answer:**
+
+Answer: 75%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[21 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the two 12-inch remoras is 2 x 12 = 24 inches.
+
+The total length of the whale is 200 feet, which is equivalent to 240 inches.
+
+Therefore, the combined length of the remoras is 24/240 = 10% of the whale's body length.
+
+**Answer:**
+
+The combined length of the remoras is 10% of the whale's body length.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[22 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 3 x 20 inches = 60 inches.
+
+The total length of the dolphin is 250 feet, which is equivalent to 250 x 12 = 2880 inches.
+
+The combined length of the remoras is 60 out of 2880, which is equivalent to 2%.
+
+**Answer:**
+
+The combined length of the remoras is 2%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[23 / 200] Evaluting Question
+Response: **Solution:**
+
+The whale's body length is 140 feet, and the combined length of the remoras is 5 * 84 = 420 inches.
+
+The combined length of the remoras is 420 inches, which is equivalent to 4.2 feet.
+
+The percentage of the whale's body length that the combined length of the remoras is equal to is 4.2/140 * 100% = 3%.
+
+**Answer:**
+
+The combined length of the remoras is 3% of the whale's body length.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[24 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 2 x 42 inches = 84 inches.
+
+The total length of the shark is 70 feet = 70 x 12 inches = 840 inches.
+
+The combined length of the remoras is 84/840 = 0.1 or 10% of the shark's body length.
+
+**Answer:**
+
+10%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[25 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 6 x 30 = 180 inches. This is 180/300 = 0.6 or 60% of the whale's body length.
+
+**Answer:**
+
+60%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[26 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 3 x 16 inches = 48 inches.
+
+The total length of the shark is 80 feet = 96 inches.
+
+The combined length of the remoras as a percentage of the shark's body length is 48/96 * 100% = 50%.
+
+**Answer:**
+
+50%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[27 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 6 inches. The dolphin's body length is 60 feet, which is equivalent to 600 inches. So, the combined length of the remoras is 6/600 = 0.01% of the dolphin's body length.
+
+**Answer:**
+
+The combined length of the remoras is 0.01% of the dolphin's body length.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[28 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 4 x 21 = 84 inches.
+
+The total length of the dolphin is 70 feet, which is equivalent to 70 x 12 = 840 inches.
+
+The combined length of the remoras is 84 inches out of a total length of 840 inches, so the percentage of the dolphin's body length that the combined length of the remoras takes up is 84/840 = 10%.
+
+**Answer:**
+
+The combined length of the remoras is 10% of the dolphin's body length.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[29 / 200] Evaluting Question
+Response: **Solution:**
+
+The combined length of the remoras is 2 x 6 inches = 12 inches.
+
+The total length of the dolphin is 50 feet, which is equivalent to 600 inches.
+
+The combined length of the remoras is 12/600 = 2% of the dolphin's body length.
+
+**Answer:**
+
+The combined length of the remoras is 2% of the dolphin's body length.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[30 / 200] Evaluting Question
+Response: **Solution:**
+
+The conversion factor is 1 foot = 12 inches.
+
+So, 490 feet = 5880 inches.
+
+The combined length of the remoras is 7 x 84 = 606 inches.
+
+The percentage of the shark's body length that the combined length of the remoras is equal to is 606/5880 = 10%.
+
+**Answer:**
+
+10%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[31 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 77 miles across, and the fog bank covers 77 miles in 50 minutes. So, the time it takes to cover the whole city is the same as the time it takes to cover 77 miles.
+
+Therefore, the time it takes to cover the whole city is 50 minutes.
+
+**Answer:**
+
+50 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[32 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 70 miles across, and it takes 176 minutes to cover every 35 miles. So, to cover the whole city, it will take 70 / 35 * 176 minutes.
+
+**Answer:**
+
+The fog bank will take 2 hours and 16 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[33 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 39 miles across, and the fog bank covers 13 miles every 63 minutes. So, the time it takes to cover the whole city is the number of miles the fog bank has to cover divided by the number of miles it covers per 63 minutes.
+
+The number of miles the fog bank has to cover is 39 miles. So, the time it takes to cover the whole city is 39 miles divided by 13 miles per 63 minutes.
+
+The answer is 3 hours.
+
+**Answer:**
+
+3 hours
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[34 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 66 miles across, and it takes 22 miles to cover every 270 minutes. So, to cover the whole city, it will take 66/22 * 270 minutes.
+
+**Answer:**
+
+The fog bank will take 66/22 * 270 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[35 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 76 miles across, and it takes 12 minutes to cover every 4 miles. So, the total number of minutes it will take to cover the whole city is 76/4 * 12 = 19 minutes.
+
+**Answer:**
+
+19 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[36 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 36 miles across, and it takes 3 miles to cover every 312 minutes. So, to cover the whole city, the fog bank will need to cover a total of 36 miles. This will take 36 * 312 = 10,832 minutes.
+
+**Answer:**
+
+10,832 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[37 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 32 miles across, and the fog bank covers 4 miles every 68 minutes. So, to cover the whole city, the fog bank will need to cover a total of 32 miles. This means that it will take 32 * 68 minutes to cover the whole city.
+
+**Answer:**
+
+The fog bank will take a total of 2112 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[38 / 200] Evaluting Question
+Response: **Solution:**
+
+The fog bank covers 25 miles in 323 minutes. So, to cover the entire city, it will take the same amount of time.
+
+**Answer:**
+
+The fog bank will take 323 minutes to cover the entire city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[39 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 45 miles across, and the fog bank covers 9 miles every 92 minutes. So, to cover the whole city, the fog bank will need to cover a total of 45 miles. This will take 45 * 92 = 4082 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 4082 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[40 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 15 miles across, and the fog bank takes 375 minutes to cover 15 miles. So, to cover the whole city, it will take 15 * 375 = 5,625 minutes.
+
+**Answer:**
+
+The fog bank will take 5,625 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[41 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 81 miles across, and the fog bank covers 3 miles every 354 minutes. So, to cover the whole city, the fog bank will need to cover a total of 81 miles.
+
+The number of minutes it will take to cover the whole city is 81 * 354 = 27,000 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 27,000 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[42 / 200] Evaluting Question
+Response: **Solution:**
+
+The problem is to find out how many minutes it will take for the fog bank to cover the whole city, which is 63 miles across from the oceanfront to the opposite inland edge.
+
+The information we have is that it takes 324 minutes to cover every 3 miles of the city. So, to cover a total of 63 miles, it will take 63/3 = 21 times the time it takes to cover 3 miles.
+
+Therefore, the total time it will take for the fog bank to cover the whole city is 21 x 324 = 6616 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 6616 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[43 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 36 miles across, and the fog bank covers 2 miles every 29 minutes. So, the number of minutes it will take to cover the whole city is 36 divided by 2, which is 18.
+
+**Answer:**
+
+18
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[44 / 200] Evaluting Question
+Response: **Solution:**
+
+The problem is asking how many minutes it will take for the fog bank to cover the entire city, which is 91 miles away from the oceanfront. The fog bank covers 91 miles in 474 minutes. So, the time it will take to cover the entire city is 474 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 474 minutes to cover the entire city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[45 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 56 miles across, and the fog bank covers 14 miles every 234 minutes. So, to cover the whole city, the fog bank will need to cover a total of 56 miles.
+
+The number of minutes it will take to cover the whole city is 56 * 234 = 13,008 minutes.
+
+**Answer:**
+
+13,008 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[46 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 39 miles across, and the fog bank covers 13 miles every 400 minutes. So, to cover the whole city, the fog bank will need to cover a total of 39 miles. This will take 39 * 400 minutes.
+
+**Answer:**
+
+The fog bank will take 39 * 400 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[47 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 45 miles across, and it takes 50 minutes to cover every 5 miles. So, to cover the whole city, the fog bank will need to cover a total of 45 miles.
+
+To find out how many minutes it will take to cover the whole city, we need to divide the total distance by the distance covered per minute.
+
+45 miles divided by 5 miles per minute = 9 minutes
+
+**Answer:**
+
+The fog bank will take a total of 9 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[48 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 42 miles across, and it takes 3 miles every 398 minutes to cover. So, to cover the whole city, the fog bank will need to cover a total of 42 miles. Therefore, the time it will take to cover the whole city is 42 * 3 miles per 398 minutes = 16 hours.
+
+**Answer:**
+
+The fog bank will take a total of 16 hours to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[49 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 93 miles across, and the fog bank covers 3 miles every 280 minutes. So, to cover the whole city, the fog bank will need to cover a total of 93 miles.
+
+The number of minutes it will take to cover the whole city is 93 miles * 280 minutes per 3 miles = 300 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 300 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[50 / 200] Evaluting Question
+Response: **Solution:**
+
+The problem is to find out how many minutes it will take for the fog bank to cover the entire city. We know that it takes 160 minutes to cover 9 miles. So, to find out the time it will take to cover the entire city, we need to know the total number of miles the fog bank has to cover.
+
+The city is 9 miles across from the oceanfront to the opposite inland edge, so the total number of miles the fog bank has to cover is also 9 miles.
+
+Therefore, the time it will take for the fog bank to cover the whole city is:
+
+Time = Distance/Speed
+
+Time = 9 miles / 9 miles per hour
+
+Time = 1 hour
+
+**Answer:**
+
+The fog bank will take 1 hour to cover the entire city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[51 / 200] Evaluting Question
+Response: **Solution:**
+
+The problem is to find out how many minutes it will take for the fog bank to cover the entire city of 88 miles. We know that it takes 182 minutes to cover 8 miles of the city. So, to find out the time it will take to cover the entire city, we need to see how many multiples of 8 miles are there in 88 miles.
+
+88 miles is equal to 11 multiples of 8 miles. Therefore, the fog bank will take a total of 11 multiples of 182 minutes to cover the entire city, which is a total of 1902 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 1902 minutes to cover the entire city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[52 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 96 miles across, and it takes 175 minutes to cover every 2 miles. So, the total number of miles to cover is 96 miles. The number of minutes it will take to cover the whole city is 96 miles divided by 2 miles per 175 minutes. This is equal to 5 hours and 25 minutes.
+
+**Answer:**
+
+The fog bank will take 5 hours and 25 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[53 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 76 miles across, and it takes 337 minutes to cover every 2 miles of the city. So, the total number of miles to cover is 76 miles. The number of minutes it will take to cover the whole city is 76 miles divided by 2 miles per 337 minutes.
+
+The result is 230 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 230 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[54 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 96 miles across, and it takes 138 minutes to cover every 48 miles. So, the time it will take to cover the whole city is 96/48 * 138 = 2 hours and 18 minutes.
+
+**Answer:**
+
+2 hours and 18 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[55 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 80 miles across, and it takes 65 minutes to cover every 2 miles. So, the total number of miles to cover is 80 / 2 = 40 miles. Therefore, the time it will take to cover the whole city is 40 * 65 = 2600 minutes.
+
+**Answer:**
+
+2600 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[56 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 28 miles across, and it takes 4 miles every 475 minutes. So, the time it will take to cover the whole city is 28/4 = 7 hours.
+
+**Answer:**
+
+The fog bank will take a total of 7 hours to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[57 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 20 miles across, and the fog bank covers 20 miles in 59 minutes. So, to cover the whole city, the fog bank will need to cover a total of 20 miles in 59 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 59 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[58 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 24 miles across, and it takes 93 minutes to cover every 2 miles. So, to cover the whole city, the fog bank will need to cover a total of 24 miles.
+
+The number of minutes it will take to cover the whole city is 24 * 93 = 2280 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 2280 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[59 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 68 miles across, and the fog bank covers 17 miles every 99 minutes. So, to cover the whole city, the fog bank will need to cover a total of 68 miles. This means that it will take 68 miles / 17 miles per 99 minutes = 4 hours to cover the whole city.
+
+**Answer:**
+
+The fog bank will take 4 hours to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[60 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 30 miles across, and it takes 300 minutes to cover every 5 miles. So, to cover the whole city, the fog bank will need to cover a total of 30 miles.
+
+The number of minutes it will take to cover the whole city is 30 miles multiplied by 300 minutes per 5 miles.
+
+The total number of minutes it will take is 30 * 300 = 900 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 900 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[61 / 200] Evaluting Question
+Response: **Solution:**
+
+The fog bank takes 458 minutes to cover 48 miles. So, to cover the entire city of 48 miles, it will take the same number of minutes, which is 458 minutes.
+
+**Answer:**
+
+458
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[62 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 57 miles across, and the fog bank covers 19 miles every 152 minutes. So, to cover the whole city, the fog bank will need to cover a total of 57 miles. To find out how many minutes it will take, we need to divide the total distance by the distance covered per unit time.
+
+57 miles / 19 miles per 152 minutes = 3 hours
+
+**Answer:**
+
+The fog bank will take a total of 3 hours to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[63 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 63 miles across, and it takes 30 minutes to cover every 21 miles. So, to cover the whole city, it will take 63/21 * 30 minutes.
+
+**Answer:**
+
+The fog bank will take 2 hours to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[64 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 58 miles across, and the fog bank covers 2 miles every 204 minutes. So, to cover the whole city, the fog bank will need to cover a total of 58 miles. Therefore, the time it will take for the fog bank to cover the whole city is 58 * 204 minutes.
+
+**Answer:**
+
+58 * 204 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[65 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 60 miles across, and the fog bank covers 3 miles every 438 minutes. So, to cover the whole city, the fog bank will need to cover a total of 60 miles.
+
+The number of minutes it will take for the fog bank to cover the whole city is 60 * 438 = 26200 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 26200 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[66 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 91 miles across, and the fog bank covers 13 miles every 349 minutes. So, to cover the whole city, the fog bank will need to cover a total of 91 miles.
+
+The number of minutes it will take to cover the whole city is 91 miles * 349 minutes per 13 miles = 600 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 600 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[67 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 60 miles across, and the fog bank covers 12 miles every 336 minutes. So, to cover the whole city, the fog bank will need to cover a total of 60 miles. Therefore, the time it will take to cover the whole city is 60 * 336 = 19,440 minutes.
+
+**Answer:**
+
+19,440 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[68 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 84 miles across, and it takes 22 minutes to cover every 4 miles. So, the total number of miles to cover is 84 / 4 = 21. Therefore, the time it will take to cover the whole city is 21 * 22 = 462 minutes.
+
+**Answer:**
+
+462
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[69 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 70 miles across, and the fog bank covers 10 miles every 323 minutes. So, to cover the whole city, the fog bank will need to cover a total of 70 miles. Therefore, the time it will take to cover the whole city is 70 * 323 = 22,000 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 22,000 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[70 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 56 miles across, and it takes 407 minutes to cover every 28 miles. So, to cover the whole city, it will take 56/28 * 407 minutes.
+
+**Answer:**
+
+The fog bank will take 56/28 * 407 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[71 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 60 miles across, and the fog bank covers 30 miles every 68 minutes. So, to cover the whole city, it will take 60/30 * 68 minutes.
+
+**Answer:**
+
+The fog bank will take 60/30 * 68 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[72 / 200] Evaluting Question
+Response: **Solution:**
+
+The problem is asking how many minutes it will take for the fog bank to cover the entire city, which is 95 miles away from the oceanfront. We know that it takes 495 minutes to cover every 95 miles. So, to find out the total number of minutes it will take to cover the entire city, we need to divide the total distance by the distance covered per minute.
+
+95 miles divided by 95 miles per 495 minutes = 5 minutes
+
+**Answer:**
+
+The fog bank will take a total of 5 minutes to cover the entire city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[73 / 200] Evaluting Question
+Response: **Solution:**
+
+The problem is asking how long it will take for the fog bank to cover a city that is 40 miles across from the oceanfront to the opposite inland edge. If it takes 330 minutes to cover every 40 miles, then the time it will take to cover the entire city will be the number of 40-mile sections the city covers divided by the number of minutes it takes to cover each section.
+
+The number of 40-mile sections the city covers is equal to the city's width divided by 40.
+
+Therefore, the time it will take for the fog bank to cover the entire city is equal to the city's width divided by 40 multiplied by 330.
+
+**Answer:**
+
+The time it will take for the fog bank to cover the entire city is equal to the city's width divided by 40 multiplied by 330.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[74 / 200] Evaluting Question
+Response: **Solution:**
+
+The problem is asking how long it will take for the fog bank to cover a city that is 51 miles across from the oceanfront to the opposite inland edge. The fog bank covers 51 miles in 296 minutes. So, the time it will take to cover the whole city is the same as the time it takes to cover 51 miles.
+
+**Answer:**
+
+The fog bank will take a total of 296 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[75 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 44 miles across, and it takes 103 minutes to cover every 2 miles. So, the total number of miles to cover is 44 miles. The number of minutes it will take to cover the whole city is 44 miles multiplied by 103 minutes per 2 miles.
+
+The total number of minutes it will take to cover the whole city is 44 * 103 = 4560 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 4560 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[76 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 18 miles across, and the fog bank covers 3 miles every 9 minutes. So, to cover the whole city, the fog bank will need to cover a total of 18 miles. This means that it will take 18 miles * 9 minutes per 3 miles = 2 hours to cover the whole city.
+
+**Answer:**
+
+2 hours
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[77 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 10 miles across, and the fog bank covers 10 miles in 332 minutes. So, to cover the whole city, the fog bank will need to cover a total of 10 miles. Therefore, the time it will take for the fog bank to cover the whole city is 332 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 332 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[78 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 60 miles across, and the fog bank covers 15 miles every 377 minutes. So, to cover the whole city, the fog bank will need to cover a total of 60 miles.
+
+The number of minutes it will take for the fog bank to cover the whole city is 60 * 377 = 22,620 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 22,620 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[79 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 99 miles across, and the fog bank covers 3 miles every 114 minutes. So, to cover the whole city, the fog bank will need to cover a total of 99 miles.
+
+The number of minutes it will take to cover the whole city is 99 * 114 = 11004 minutes.
+
+**Answer:**
+
+The fog bank will take a total of 11004 minutes to cover the whole city.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[80 / 200] Evaluting Question
+Response: **Solution:**
+
+The city is 85 miles across, and it takes 241 minutes to cover every 5 miles. So, the total number of miles to cover is 85 miles. The number of minutes it will take to cover the whole city is 85 miles * 241 minutes per 5 miles = 200 minutes.
+
+**Answer:**
+
+200 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[81 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a 4-sided die is 3/4, which is 75%.
+
+The probability of rolling an odd number on a 4-sided die is 3/4, which is also 75%.
+
+The probability of rolling two odd numbers in a row is 3/4 * 3/4 = 9/16 = 56.25%.
+
+Therefore, the probability of rolling a number greater than 2 is 75% and the probability of rolling two odd numbers in a row is 56.25%.
+
+**Answer:**
+
+The probability of rolling a number greater than 2 is 75% and the probability of rolling two odd numbers in a row is 56.25%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[82 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 3 on a twelve-sided die is 5/12. The probability of rolling an odd number on a twelve-sided die is 3/12 = 1/4. The probability of rolling two odd numbers in a row is 1/4 * 1/4 = 1/16.
+
+Therefore, the probability of rolling a number greater than 3 is 5/12, and the probability of rolling two odd numbers in a row is 1/16. The difference between the two probabilities is 5/12 - 1/16 = 1/16 = 6.25%.
+
+**Answer:**
+
+The probability of rolling a number greater than 3 is 5/12, and the probability of rolling two odd numbers in a row is 1/16. The difference between the two probabilities is 6.25%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[83 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a d10 die is 4/10 = 40%.
+
+The probability of rolling an odd number on a d10 die is 3/10 = 30%.
+
+The probability of rolling two odd numbers in a row is 3/10 * 3/10 = 9%
+
+The probability of rolling a number greater than 2 is 40% and the probability of rolling two odd numbers in a row is 9%.
+
+Therefore, the probability of rolling a number greater than 2 is more likely than rolling two odd numbers in a row by 31%.
+
+**Answer:**
+
+The probability of rolling a number greater than 2 on a d10 die is more likely than rolling two odd numbers in a row by 31%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[84 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a d4 die is 3/4. The probability of rolling an odd number on a d4 die is 3/4. The probability of rolling two odd numbers in a row is 3/4 x 3/4 = 9/16 = 56%.
+
+**Answer:**
+
+Answer: 44%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[85 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 5 on a d10 die is 4/10 = 40%.
+
+The probability of rolling an odd number on a d10 die is 3/10 = 30%.
+
+The probability of rolling two odd numbers in a row is 3/10 * 3/10 = 9%
+
+The probability of rolling a number greater than 5 is 40% - 9% = 31%
+
+**Answer:**
+
+Answer: 31%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[86 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a 20-sided die is 18/20 = 90%.
+
+The probability of rolling an odd number on a 20-sided die is 11/20 = 55%.
+
+The probability of rolling two odd numbers in a row is 55% * 55% = 30.25%.
+
+The probability of rolling a number greater than 2 and not rolling two odd numbers in a row is 90% - 30.25% = 59.75%.
+
+Therefore, Luis is more likely to roll a number greater than 2 than he is to roll two odd numbers in a row by a margin of 59.75%.
+
+**Answer:**
+
+The probability of rolling a number greater than 2 on a 20-sided die is 59.75% more likely than the probability of rolling two odd numbers in a row.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[87 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 1 on a d4 die is 3/4. The probability of rolling an odd number on a d4 die is 3/4. The probability of rolling two odd numbers in a row is 3/4 * 3/4 = 9/16 = 50%.
+
+**Answer:**
+
+Answer: 50%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[88 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 1 on a twenty-sided die is 19/20, which is 95%.
+
+The probability of rolling an odd number on a twenty-sided die is 3/20, which is 15%.
+
+The probability of rolling two odd numbers in a row is 3/20 * 3/20 = 9/400, which is 2.25%.
+
+The probability of rolling a number greater than 1 is 95% and the probability of rolling two odd numbers in a row is 2.25%.
+
+Therefore, the probability of rolling a number greater than 1 is more likely than rolling two odd numbers in a row by 92.75%.
+
+**Answer:**
+
+The probability of rolling a number greater than 1 is more likely than rolling two odd numbers in a row by 92.75%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[89 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a d20 die is 16/20 = 8%.
+
+The probability of rolling an even number on a d20 die is 10/20 = 5%.
+
+The probability of rolling two even numbers in a row is 5/20 * 5/20 = 2.5%.
+
+The probability of rolling a number greater than 2 is 8% - 2.5% = 5.5%.
+
+**Answer:**
+
+Answer: 5.5%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[90 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 3 on a d6 die is 4/6 = 2/3.
+
+The probability of rolling an even number on a d6 die is 3/6 = 1/2.
+
+The probability of rolling two even numbers in a row is 1/2 * 1/2 = 1/4.
+
+The probability of rolling a number greater than 3 is 2/3. The probability of rolling two even numbers in a row is 1/4.
+
+Therefore, the probability of rolling a number greater than 3 is more likely than rolling two even numbers in a row by 2/3 - 1/4 = 1/3 = 33%.
+
+**Answer:**
+
+The probability of rolling a number greater than 3 on a d6 die is more likely than rolling two even numbers in a row by 33%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[91 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 3 on a 6-sided die is 4/6 = 2/3.
+
+The probability of rolling an even number on a 6-sided die is 3/6 = 1/2.
+
+The probability of rolling two even numbers in a row is 1/2 * 1/2 = 1/4.
+
+The probability of rolling a number greater than 3 is 2/3. The probability of rolling two even numbers in a row is 1/4.
+
+Therefore, the probability of rolling a number greater than 3 is more likely than rolling two even numbers in a row by 2/3 - 1/4 = 3/12 = 25%.
+
+**Answer:**
+
+The probability of rolling a number greater than 3 is more likely than rolling two even numbers in a row by 25%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[92 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 3 on a 6-sided die is 4/6 = 2/3.
+
+The probability of rolling an even number on a 6-sided die is 3/6 = 1/2.
+
+The probability of rolling two even numbers in a row is 1/2 x 1/2 = 1/4.
+
+The probability of rolling a number greater than 3 is 2/3. The probability of rolling two even numbers in a row is 1/4.
+
+Therefore, the probability of rolling a number greater than 3 is more likely than rolling two even numbers in a row by 2/3 - 1/4 = 3/12 = 25%.
+
+**Answer:**
+
+The probability of rolling a number greater than 3 on a 6-sided die is more likely than rolling two even numbers in a row by 25%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[93 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 6 on a twelve-sided die is 6/12 = 0.5.
+
+The probability of rolling an even number on a twelve-sided die is 6/12 = 0.5.
+
+The probability of rolling two even numbers in a row is 6/12 * 6/12 = 0.25.
+
+The probability of rolling a number greater than 6 is 0.5 and the probability of rolling two even numbers in a row is 0.25.
+
+Therefore, the probability of rolling a number greater than 6 is more likely than rolling two even numbers in a row by 0.25 or 25%.
+
+**Answer:**
+
+The probability of rolling a number greater than 6 is more likely than rolling two even numbers in a row by 25%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[94 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a ten-sided die is 4/10 = 40%.
+
+The probability of rolling an even number on a ten-sided die is 5/10 = 50%.
+
+The probability of rolling two even numbers in a row is 5/10 * 5/10 = 25%.
+
+The probability of rolling a number greater than 2 and not rolling two even numbers in a row is 40% - 25% = 15%.
+
+The probability of rolling a number greater than 2 is 40%, and the probability of rolling two even numbers in a row is 25%. Therefore, Diego is more likely to roll a number greater than 2 than he is to roll two even numbers in a row by 15%.
+
+**Answer:**
+
+The probability of rolling a number greater than 2 is 40%, and the probability of rolling two even numbers in a row is 25%. Therefore, Diego is more likely to roll a number greater than 2 than he is to roll two even numbers in a row by 15%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[95 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 1 on a ten-sided die is 9/10, which is 90%.
+
+The probability of rolling an even number on a ten-sided die is 5/10, which is 50%.
+
+The probability of rolling two even numbers in a row is 5/10 * 5/10 = 25%.
+
+The probability of rolling a number greater than 1 and not rolling two even numbers in a row is 9/10 - 25% = 65%.
+
+**Answer:**
+
+The probability of rolling a number greater than 1 is 90%, and the probability of rolling two even numbers in a row is 25%. Therefore, the probability of rolling a number greater than 1 is more likely than rolling two even numbers in a row by 65%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[96 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 3 on a six-sided die is 4/6 = 2/3.
+
+The probability of rolling an even number on a six-sided die is 3/6 = 1/2.
+
+The probability of rolling two even numbers in a row is 1/2 * 1/2 = 1/4.
+
+The probability of rolling a number greater than 3 is 2/3. The probability of rolling two even numbers in a row is 1/4.
+
+Therefore, the probability of rolling a number greater than 3 is more likely than rolling two even numbers in a row by 2/3 - 1/4 = 3/12 = 25%.
+
+**Answer:**
+
+The probability of rolling a number greater than 3 is more likely than rolling two even numbers in a row by 25%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[97 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 10 on a 20-sided die is 11/20 = 55%.
+
+The probability of rolling an odd number on a 20-sided die is 3/20 = 15%.
+
+The probability of rolling two odd numbers in a row is 3/20 * 3/20 = 9%
+
+The probability of rolling a number greater than 10 is 55% and the probability of rolling two odd numbers in a row is 9%.
+
+Therefore, the probability of rolling a number greater than 10 is more likely than rolling two odd numbers in a row by 46%.
+
+**Answer:**
+
+The probability of rolling a number greater than 10 on a 20-sided die is more likely than rolling two odd numbers in a row by 46%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[98 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a d8 die is 5/8. The probability of rolling an odd number on a d8 die is 3/8. The probability of rolling two odd numbers in a row is 3/8 * 3/8 = 9/64.
+
+Therefore, the probability of rolling a number greater than 2 is 5/8, and the probability of rolling two odd numbers in a row is 9/64.
+
+**Answer:**
+
+The probability of rolling a number greater than 2 on a d8 die is 5/8, and the probability of rolling two odd numbers in a row is 9/64.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[99 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 1 on a d20 die is 19/20, which is 95%.
+
+The probability of rolling an even number on a d20 die is 10/20, which is 50%.
+
+The probability of rolling two even numbers in a row is 5/20 * 5/20 = 25%.
+
+The probability of rolling a number greater than 1 and not rolling two even numbers in a row is 95% - 25% = 70%.
+
+**Answer:**
+
+The probability of rolling a number greater than 1 is 95% and the probability of rolling two even numbers in a row is 25%. Therefore, the probability of rolling a number greater than 1 is more likely than rolling two even numbers in a row by 65%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[100 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a d20 die is 16/20 = 8%.
+
+The probability of rolling an even number on a d20 die is 10/20 = 5%.
+
+The probability of rolling two even numbers in a row is 5/20 * 5/20 = 2.5%.
+
+The probability of rolling a number greater than 2 is 8% - 2.5% = 5.5%.
+
+**Answer:**
+
+Answer: 5.5%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[101 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 4 on a d20 die is 16/20 = 8%.
+
+The probability of rolling an even number on a d20 die is 10/20 = 5%.
+
+The probability of rolling two even numbers in a row is 5/20 * 5/20 = 2.5%.
+
+The probability of rolling a number greater than 4 is 8% - 2.5% = 5.5%.
+
+**Answer:**
+
+Answer: 5.5%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[102 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 3 on a 12-sided die is 5/12 or 41.66%.
+
+The probability of rolling an odd number on a 12-sided die is 3/12 or 25%.
+
+The probability of rolling two odd numbers in a row is 3/12 * 3/12 = 9/12 = 75%.
+
+Therefore, the probability of rolling a number greater than 3 is 41.66% and the probability of rolling two odd numbers in a row is 75%.
+
+**Answer:**
+
+The probability of rolling a number greater than 3 is 41.66% and the probability of rolling two odd numbers in a row is 75%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[103 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 3 on a d12 die is 5/12. The probability of rolling an odd number on a d12 die is 3/12 = 1/4. The probability of rolling two odd numbers in a row is 1/4 x 1/4 = 1/16.
+
+Therefore, the probability of rolling a number greater than 3 is 5/12, and the probability of rolling two odd numbers in a row is 1/16. The difference between these probabilities is 5/12 - 1/16 = 1/16 = 6.25%.
+
+**Answer:**
+
+The probability of rolling a number greater than 3 on a d12 die is 5/12. The probability of rolling two odd numbers in a row is 1/16. The difference between these probabilities is 6.25%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[104 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 10 on a twenty-sided die is 11/20, which is 55%.
+
+The probability of rolling an even number on a twenty-sided die is 10/20, which is 50%.
+
+The probability of rolling two even numbers in a row is 10/20 x 10/20 = 1/20, which is 5%.
+
+The probability of rolling a number greater than 10 is 55% and the probability of rolling two even numbers in a row is 5%.
+
+Therefore, the probability of rolling a number greater than 10 is more likely than rolling two even numbers in a row by 50 - 5 = 45%.
+
+**Answer:**
+
+At the end of the problem, the final answer is:
+
+Answer: The probability of rolling a number greater than 10 is more likely than rolling two even numbers in a row by 45%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[105 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a 4-sided die is 3/4. The probability of rolling an even number on a 4-sided die is 2/4 = 1/2. The probability of rolling two even numbers in a row is 1/2 * 1/2 = 1/4.
+
+Therefore, the probability of rolling a number greater than 2 is 3/4 and the probability of rolling two even numbers in a row is 1/4.
+
+**Answer:**
+
+The probability of rolling a number greater than 2 is 3/4 and the probability of rolling two even numbers in a row is 1/4.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[106 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 6 on a twelve-sided die is 6/12 = 0.5.
+
+The probability of rolling an odd number on a twelve-sided die is 3/12 = 0.25.
+
+The probability of rolling two odd numbers in a row is 0.25^2 = 0.0625.
+
+The probability of rolling a number greater than 6 is 0.5 and the probability of rolling two odd numbers in a row is 0.0625.
+
+Therefore, the probability of rolling a number greater than 6 is more likely than rolling two odd numbers in a row by 0.4375 or 43.75%.
+
+**Answer:**
+
+The probability of rolling a number greater than 6 is more likely than rolling two odd numbers in a row by 43.75%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[107 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a 20-sided die is 18/20 = 90%.
+
+The probability of rolling an odd number on a 20-sided die is 11/20 = 55%.
+
+The probability of rolling two odd numbers in a row is 55% * 55% = 30.25%.
+
+The difference between the probability of rolling a number greater than 2 and the probability of rolling two odd numbers in a row is 90% - 30.25% = 59.75%.
+
+**Answer:**
+
+The probability of rolling a number greater than 2 on a 20-sided die is 59.75% more likely than the probability of rolling two odd numbers in a row.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[108 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 6 on a twelve-sided die is 6/12 = 0.5.
+
+The probability of rolling an odd number on a twelve-sided die is 3/12 = 0.25.
+
+The probability of rolling two odd numbers in a row is 0.25^2 = 0.0625.
+
+The probability of rolling a number greater than 6 is 0.5. The probability of rolling two odd numbers in a row is 0.0625.
+
+Therefore, the probability of rolling a number greater than 6 is more likely than rolling two odd numbers in a row by 0.4375 or 43.75%.
+
+**Answer:**
+
+The probability of rolling a number greater than 6 is more likely than rolling two odd numbers in a row by 43.75%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[109 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 4 on a twenty-sided die is 16/20 = 0.8.
+
+The probability of rolling an even number on a twenty-sided die is 10/20 = 0.5.
+
+The probability of rolling two even numbers in a row is 5/20 = 0.25.
+
+The probability of rolling a number greater than 4 and not rolling two even numbers in a row is 0.8 - 0.25 = 0.55.
+
+The probability of rolling a number greater than 4 is 0.8 and the probability of rolling two even numbers in a row is 0.25.
+
+Therefore, the probability of rolling a number greater than 4 is more likely than rolling two even numbers in a row by 0.8 - 0.25 = 0.55 or 55%.
+
+**Answer:**
+
+The probability of rolling a number greater than 4 is more likely than rolling two even numbers in a row by 55%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[110 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 5 on a d10 die is 4/10 = 40%.
+
+The probability of rolling an odd number on a d10 die is 3/10 = 30%.
+
+The probability of rolling two odd numbers in a row is 3/10 * 3/10 = 9%
+
+The probability of rolling a number greater than 5 is 40% and the probability of rolling two odd numbers in a row is 9%.
+
+Therefore, the probability of rolling a number greater than 5 is more likely than rolling two odd numbers in a row by 31%.
+
+**Answer:**
+
+The probability of rolling a number greater than 5 is more likely than rolling two odd numbers in a row by 31%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[111 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 5 on a 20-sided die is 11/20, which is 55%.
+
+The probability of rolling an even number on a 20-sided die is 10/20, which is 50%.
+
+The probability of rolling two even numbers in a row is 10/20 x 10/20 = 1/20, which is 5%.
+
+The probability of rolling a number greater than 5 is 55% and the probability of rolling two even numbers in a row is 5%.
+
+Therefore, the probability of rolling a number greater than 5 is more likely than rolling two even numbers in a row by 50 - 5 = 45%.
+
+**Answer:**
+
+At the end of the problem, Wei is more likely to roll a number greater than 5 than to roll two even numbers in a row by 45%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[112 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a d4 die is 3/4. The probability of rolling an even number on a d4 die is 2/4 = 1/2. To roll two even numbers in a row, the probability of rolling an even number on the first roll is 1/2 and the probability of rolling an even number on the second roll is also 1/2. The probability of rolling two even numbers in a row is 1/2 * 1/2 = 1/4.
+
+**Answer:**
+
+The probability of rolling a number greater than 2 on a d4 die is 3/4 and the probability of rolling two even numbers in a row is 1/4. Therefore, the probability of rolling a number greater than 2 is more likely than rolling two even numbers in a row by a factor of 3/4 - 1/4 = 2/4 = 50%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[113 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 10 on a twenty-sided die is 11/20, which is 55%.
+
+The probability of rolling an odd number on a twenty-sided die is 3/20, which is 15%.
+
+The probability of rolling two odd numbers in a row is 3/20 * 3/20 = 9/400, which is 2.25%.
+
+The difference between the probability of rolling a number greater than 10 and the probability of rolling two odd numbers in a row is 55% - 2.25% = 52.75%.
+
+**Answer:**
+
+The probability of rolling a number greater than 10 on a twenty-sided die is 55%. The probability of rolling two odd numbers in a row is 2.25%. The difference between the probability of rolling a number greater than 10 and the probability of rolling two odd numbers in a row is 52.75%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[114 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 5 on a ten-sided die is 4/10 = 40%.
+
+The probability of rolling an odd number on a ten-sided die is 3/10 = 30%.
+
+The probability of rolling two odd numbers in a row is 3/10 * 3/10 = 9%
+
+The probability of rolling a number greater than 5 is 40% and the probability of rolling two odd numbers in a row is 9%.
+
+Therefore, the probability of rolling a number greater than 5 is more likely than rolling two odd numbers in a row by 31%.
+
+**Answer:**
+
+The probability of rolling a number greater than 5 is more likely than rolling two odd numbers in a row by 31%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[115 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 6 on a 12-sided die is 6/12 = 0.5.
+
+The probability of rolling an odd number on a 12-sided die is 3/12 = 0.25.
+
+The probability of rolling two odd numbers in a row is 0.25^2 = 0.0625.
+
+The probability of rolling a number greater than 6 is 0.5 and the probability of rolling two odd numbers in a row is 0.0625.
+
+Therefore, the probability of rolling a number greater than 6 is more likely than rolling two odd numbers in a row by 0.4375 or 43.75%.
+
+**Answer:**
+
+At the end of the problem, the final answer is:
+
+Answer: The probability of rolling a number greater than 6 is more likely than rolling two odd numbers in a row by 43.75%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[116 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 10 on a twenty-sided die is 11/20, which is 55%.
+
+The probability of rolling an even number on a twenty-sided die is 10/20, which is 50%.
+
+The probability of rolling two even numbers in a row is 10/20 * 10/20 = 1/20, which is 5%.
+
+The probability of rolling a number greater than 10 is 55% and the probability of rolling two even numbers in a row is 5%.
+
+Therefore, the probability of rolling a number greater than 10 is more likely than rolling two even numbers in a row by 50 - 5 = 45%.
+
+**Answer:**
+
+Qasim is more likely to roll a number greater than 10 than to roll two even numbers in a row by 45%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[117 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 5 on a d20 die is 11/20 or 55%.
+
+The probability of rolling an even number on a d20 die is 10/20 or 50%.
+
+The probability of rolling two even numbers in a row is 10/20 x 10/20 = 1/20 or 5%.
+
+The probability of rolling a number greater than 5 is 55% and the probability of rolling two even numbers in a row is 5%.
+
+Therefore, the probability of rolling a number greater than 5 is more likely than rolling two even numbers in a row by 50% - 5% = 45%.
+
+**Answer:**
+
+The probability of rolling a number greater than 5 on a d20 die is more likely than rolling two even numbers in a row by 45%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[118 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 1 on a 10-sided die is 9/10, which is 90%.
+
+The probability of rolling an even number on a 10-sided die is 5/10, which is 50%.
+
+The probability of rolling two even numbers in a row is 5/10 * 5/10 = 25%.
+
+The probability of rolling a number greater than 1 and not rolling two even numbers in a row is 9/10 - 25% = 65%.
+
+**Answer:**
+
+The probability of rolling a number greater than 1 and not rolling two even numbers in a row is 65%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[119 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 5 on a 20-sided die is 11/20, which is 55%.
+
+The probability of rolling an even number on a 20-sided die is 10/20, which is 50%.
+
+The probability of rolling two even numbers in a row is 10/20 x 10/20 = 1/20, which is 5%.
+
+The probability of rolling a number greater than 5 is 55% and the probability of rolling two even numbers in a row is 5%.
+
+Therefore, the probability of rolling a number greater than 5 is more likely than rolling two even numbers in a row by 50 - 5 = 45%.
+
+**Answer:**
+
+At the end of the problem, the final answer is:
+
+Answer: The probability of rolling a number greater than 5 is more likely than rolling two even numbers in a row by 45%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[120 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a four-sided die is 3/4. The probability of rolling an odd number on a die is 3/4. The probability of rolling two odd numbers in a row is 3/4 x 3/4 = 9/16.
+
+**Answer:**
+
+The probability of rolling a number greater than 2 on a four-sided die is 3/4. The probability of rolling two odd numbers in a row is 9/16. Therefore, the probability of rolling a number greater than 2 is more likely than rolling two odd numbers in a row by 3/4 - 9/16 = 7/16, which is a 43.7% chance.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[121 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 5 on a 10-sided die is 4/10 = 40%.
+
+The probability of rolling an even number on a 10-sided die is 5/10 = 50%.
+
+The probability of rolling two even numbers in a row is 5/10 * 5/10 = 25%.
+
+The probability of rolling a number greater than 5 is 40% and the probability of rolling two even numbers in a row is 25%.
+
+Therefore, the probability of rolling a number greater than 5 is more likely than rolling two even numbers in a row by 15%.
+
+**Answer:**
+
+The probability of rolling a number greater than 5 is more likely than rolling two even numbers in a row by 15%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[122 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 5 on a twenty-sided die is 11/20, which is 55%.
+
+The probability of rolling an odd number on a twenty-sided die is 3/20, which is 15%.
+
+The probability of rolling two odd numbers in a row is 3/20 * 3/20 = 9/400, which is 2.25%.
+
+The probability of rolling a number greater than 5 is 55% and the probability of rolling two odd numbers in a row is 2.25%.
+
+Therefore, the probability of rolling a number greater than 5 is more likely than rolling two odd numbers in a row by 52.75%.
+
+**Answer:**
+
+The probability of rolling a number greater than 5 is more likely than rolling two odd numbers in a row by 52.75%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[123 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 3 on a d6 die is 4/6 = 2/3.
+
+The probability of rolling an odd number on a d6 die is 3/6 = 1/2.
+
+The probability of rolling two odd numbers in a row is 1/2 x 1/2 = 1/4.
+
+The probability of rolling a number greater than 3 is 2/3. The probability of rolling two odd numbers in a row is 1/4.
+
+Therefore, the probability of rolling a number greater than 3 is more likely than rolling two odd numbers in a row by 2/3 - 1/4 = 1/3 = 33%.
+
+**Answer:**
+
+The probability of rolling a number greater than 3 on a d6 die is more likely than rolling two odd numbers in a row by 33%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[124 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 3 on a twelve-sided die is 5/12. The probability of rolling an odd number on a twelve-sided die is 3/12 = 1/4. The probability of rolling two odd numbers in a row is 1/4 * 1/4 = 1/16.
+
+Therefore, the probability of rolling a number greater than 3 is 5/12 and the probability of rolling two odd numbers in a row is 1/16. The difference between these probabilities is 5/12 - 1/16 = 1/16 = 6.25%.
+
+**Answer:**
+
+The probability of rolling a number greater than 3 is 5/12 and the probability of rolling two odd numbers in a row is 1/16. The difference between these probabilities is 6.25%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[125 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a ten-sided die is 5/10 = 50%.
+
+The probability of rolling an even number on a ten-sided die is 5/10 = 50%.
+
+The probability of rolling two even numbers in a row is 5/10 * 5/10 = 25%.
+
+The probability of rolling a number greater than 2 and not rolling two even numbers in a row is 50% - 25% = 25%.
+
+The probability of rolling a number greater than 2 is 25% more likely than rolling two even numbers in a row.
+
+**Answer:**
+
+The probability of rolling a number greater than 2 is 25% more likely than rolling two even numbers in a row.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[126 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 4 on a 20-sided die is 16/20 = 8%.
+
+The probability of rolling an odd number on a 20-sided die is 11/20 = 55%.
+
+The probability of rolling two odd numbers in a row is 55% x 55% = 30.25%.
+
+The probability of rolling a number greater than 4 is 8% more likely than rolling two odd numbers in a row.
+
+**Answer:**
+
+The probability of rolling a number greater than 4 is 8% more likely than rolling two odd numbers in a row.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[127 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 4 on a d8 die is 4/8 = 50%.
+
+The probability of rolling an odd number on a d8 die is 3/8 = 37.5%.
+
+The probability of rolling two odd numbers in a row is 3/8 * 3/8 = 9.37%.
+
+The probability of rolling a number greater than 4 is 50% and the probability of rolling two odd numbers in a row is 9.37%.
+
+Therefore, the probability of rolling a number greater than 4 is more likely than rolling two odd numbers in a row by 40.63%.
+
+**Answer:**
+
+The probability of rolling a number greater than 4 on a d8 die is more likely than rolling two odd numbers in a row by 40.63%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[128 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a 10-sided die is 5/10 = 50%.
+
+The probability of rolling an even number on a 10-sided die is 5/10 = 50%.
+
+The probability of rolling two even numbers in a row is 5/10 * 5/10 = 25%.
+
+The probability of rolling a number greater than 2 and not rolling two even numbers in a row is 50% - 25% = 25%.
+
+Therefore, the probability of rolling a number greater than 2 is 25% more likely than rolling two even numbers in a row.
+
+**Answer:**
+
+The probability of rolling a number greater than 2 is 25% more likely than rolling two even numbers in a row.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[129 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 2 on a 4-sided die is 3/4. The probability of rolling an even number on a 4-sided die is 2/4 = 1/2. The probability of rolling two even numbers in a row is 1/2 * 1/2 = 1/4.
+
+Therefore, the probability of rolling a number greater than 2 is 3/4 and the probability of rolling two even numbers in a row is 1/4. The difference between the probabilities is 3/4 - 1/4 = 2/4 = 50%.
+
+**Answer:**
+
+The probability of rolling a number greater than 2 is 50% more likely than the probability of rolling two even numbers in a row.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[130 / 200] Evaluting Question
+Response: **Solution:**
+
+The probability of rolling a number greater than 1 on a four-sided die is 3/4. The probability of rolling an even number on a four-sided die is 2/4 = 1/2. The probability of rolling two even numbers in a row is 1/2 x 1/2 = 1/4.
+
+Therefore, the probability of rolling a number greater than 1 is 3/4 and the probability of rolling two even numbers in a row is 1/4. The difference between the probabilities is 3/4 - 1/4 = 2/4 = 50%.
+
+**Answer:**
+
+The probability of rolling a number greater than 1 is 3/4 and the probability of rolling two even numbers in a row is 1/4. The difference between the probabilities is 50%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[131 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 190 students. 19 like to paint, 7 like to play football. So, the remaining number of students who like to bake or hike is 190 - 19 - 7 = 164.
+
+Since the number of students who like to hike is twice the number of students who like to play football, the number of students who like to bake is 164 - 7 = 157.
+
+**Answer:**
+
+Answer: 157
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[132 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 54 students. 35 like to dance, 2 like to play badminton. So, the remaining number of students who like to paint or bake is 17 (54 - 35 - 2 = 17).
+
+Since the number of students who like to bake is twice the number of students who like to play badminton, the number of students who like to paint is 17 / 2 = 8.5.
+
+**Answer:**
+
+8.5
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[133 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 157 students. 23 like to play video games and 41 like to play volleyball. So, the remaining number of students who like to hike or paint is 157 - 23 - 41 = 93.
+
+Since the number of students who like to paint is twice the number of students who like to play volleyball, the number of students who like to paint is 41 * 2 = 82.
+
+Therefore, the number of students who like to hike is 93 - 82 = 11.
+
+**Answer:**
+
+The number of students who like to hike is 11.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[134 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 17 students who like to play video games and 5 students who like to play tennis. Therefore, the remaining number of students who like to bake or paint is 109 - 17 - 5 = 87.
+
+Since the number of students who like to paint is twice the number of students who like to play tennis, the number of students who like to paint is 87 / 2 = 43.
+
+**Answer:**
+
+The number of students who like to bake is 43.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[135 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 183 students in the class. 42 students like to bake and 25 students like to play tennis. Therefore, the remaining number of students who like to play music or paint is 183 - 42 - 25 = 96 students.
+
+If the number of students who like to paint is twice the number of students who play tennis, then the number of students who like to play music is 96 - 25 = 71 students.
+
+**Answer:**
+
+The number of students who like to play music is 71.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[136 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 192 students. 90 like to dance and 21 like to play basketball. So, the remaining number of students who like to hike or bake is 192 - 90 - 21 = 81.
+
+Since the number of students who like to bake is twice the number of students who like to play basketball, the number of students who like to bake is 21 * 2 = 42.
+
+Therefore, the number of students who like to hike is 81 - 42 = 39.
+
+**Answer:**
+
+The number of students who like to hike is 39.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[137 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 182 students in the class. 91 like to play music, 6 like to play badminton. So, the remaining number of students who like to play video games or dance is 182 - 91 - 6 = 85.
+
+Since the number of students who like to dance is twice the number of students who like to play badminton, the number of students who like to play video games is 85 - 6 = 79.
+
+**Answer:**
+
+The number of students who like to play video games is 79.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[138 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 175 students in the class. 134 students like to hike, 4 students like to play cricket. Therefore, the remaining 37 students like to dance or play video games.
+
+If the number of students who like to play video games is twice the number of students who like to play cricket, then the number of students who like to play video games is 4 * 2 = 8 students.
+
+The number of students who like to dance is therefore 37 - 8 = 29 students.
+
+**Answer:**
+
+The number of students who like to dance is 29.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[139 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 154 students. 13 like to bake, and 40 like to play football. So, the remaining number of students who like to play music or read is 101.
+
+If the number of students who like to read is twice the number of students who like to play football, then the number of students who like to read is 40 * 2 = 80.
+
+Therefore, the number of students who like to play music is 101 - 80 = 21.
+
+**Answer:**
+
+At the end of the school year, there are a total of 21 students who like to play music.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[140 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 155 students in the class. 17 like to play video games and 13 like to play cricket. So, the remaining number of students like to hike or play music is 155 - 17 - 13 = 125.
+
+The number of students who like to play music is twice the number of students who like to play cricket. So, the number of students who like to play music is 125 / 2 = 62.
+
+**Answer:**
+
+The number of students who like to hike is 62.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[141 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 116 students. 14 like to play video games and 28 like to play hurling. So, the remaining number of students who like to dance or paint is 116 - 14 - 28 = 74.
+
+If the number of students who like to paint is twice the number of students who like to play hurling, then the number of students who like to paint is 28 * 2 = 56.
+
+Therefore, the number of students who like to dance is 74 - 56 = 18.
+
+**Answer:**
+
+The number of students who like to dance is 18.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[142 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 171 students. 7 like to play video games and 43 like to play hurling. Therefore, the remaining number of students who like to paint or read is 171 - 7 - 43 = 81.
+
+Since the number of students who like to read is twice the number of students who like to play hurling, the number of students who like to read is 81 / 2 = 40.
+
+**Answer:**
+
+The number of students who like to paint is 40.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[143 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 122 students. 35 like to paint and 18 like to play badminton. So, the remaining number of students who like to read or hike is 122 - 35 - 18 = 69.
+
+**Answer:**
+
+The number of students who like to read is 69.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[144 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 15 students who like to paint and 2 students who like to play volleyball. Therefore, the remaining number of students who like to play video games or dance is 175 - 15 - 2 = 158 students.
+
+Since the number of students who like to dance is twice the number of students who like to play volleyball, the number of students who like to play video games is 158 - 2 * 2 = 154 students.
+
+**Answer:**
+
+The number of students who like to play video games is 154.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[145 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 189 students in the class. 7 students like to hike, and 34 students like to play hurling. So, the remaining number of students who like to play music or dance is 189 - 7 - 34 = 148 students.
+
+Since the number of students who like to dance is twice the number of students who like to play hurling, the number of students who like to play music is equal to the number of students who like to dance, which is 148 / 2 = 74 students.
+
+**Answer:**
+
+The number of students who like to play music is 74.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[146 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 146 students in the class. 7 like to read, and 21 like to play cricket. Therefore, the remaining number of students who like to paint or play music is 146 - 7 - 21 = 118.
+
+If the number of students who like to play music is twice the number of students who like to play cricket, then the number of students who like to play music is 21 * 2 = 42.
+
+Therefore, the number of students who like to paint is 118 - 42 = 76.
+
+**Answer:**
+
+The number of students who like to paint is 76.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[147 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 145 students. 21 like to dance, and 41 like to play hurling. So, the remaining number of students who like to play music or paint is 145 - 21 - 41 = 83.
+
+Since the number of students who like to paint is twice the number of students who like to play hurling, the number of students who like to play music is 83 - 41 = 42.
+
+**Answer:**
+
+The number of students who like to play music is 42.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[148 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 176 students in the class. 40 students like to read and 18 students like to play football. Therefore, the remaining number of students who like to hike or paint is 176 - 40 - 18 = 118 students.
+
+Since the number of students who like to paint is twice the number of students who like to play football, the number of students who like to paint is 2 * 18 = 36 students.
+
+Therefore, the number of students who like to hike is 118 - 36 = 82 students.
+
+**Answer:**
+
+The number of students who like to hike is 82.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[149 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 124 students in the class. 100 students like to read, 6 students like to play football. Therefore, the remaining number of students who like to bake or dance is 124 - 100 - 6 = 18 students.
+
+**Answer:**
+
+The number of students who like to bake is 18.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[150 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 107 students in the class. 15 like to paint and 20 like to play tennis. So, the remaining number of students who like to dance or bake is 107 - 15 - 20 = 72.
+
+Since the number of students who like to bake is twice the number of students who like to play tennis, the number of students who like to dance is 72 - 20 = 52.
+
+**Answer:**
+
+The number of students who like to dance is 52.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[151 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 197 students. 64 like to hike and 38 like to play volleyball. So, the remaining number of students like to dance or paint is 197 - 64 - 38 = 95.
+
+Since the number of students who like to paint is twice the number of students who like to play volleyball, the number of students who like to paint is 2 * 38 = 76.
+
+Therefore, the number of students who like to dance is 95 - 76 = 19.
+
+**Answer:**
+
+The number of students who like to dance is 19.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[152 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 161 students in the class. 84 students like to play video games and 5 students like to play hurling. Therefore, the remaining number of students who like to hike or bake is 161 - 84 - 5 = 72 students.
+
+If the number of students who like to bake is twice the number of students who like to play hurling, then the number of students who like to hike is 72 - 2 * 5 = 62 students.
+
+**Answer:**
+
+The number of students who like to hike is 62.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[153 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 173 students. 33 like to play video games and 42 like to play badminton. So, the remaining number of students like to paint or hike is 173 - 33 - 42 = 98.
+
+Since the number of students who like to hike is twice the number of students who like to play badminton, the number of students who like to paint is 98 - 42 = 56.
+
+**Answer:**
+
+The number of students who like to paint is 56.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[154 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 139 students who like to play video games and 10 students who like to play cricket. Therefore, the remaining number of students who like to read or bake is 195 - 139 - 10 = 46.
+
+Since the number of students who like to bake is twice the number of students who like to play cricket, the number of students who like to read is equal to the number of students who like to bake, which is 46 / 2 = 23.
+
+**Answer:**
+
+The number of students who like to read is 23.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[155 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 155 students. 35 like to play music, 14 like to play cricket. Therefore, the remaining number of students who like to play video games or dance is 155 - 35 - 14 = 106.
+
+The number of students who like to dance is twice the number of students who like to play cricket. So, the number of students who like to play video games is equal to the number of students who like to dance, which is 106 / 2 = 53.
+
+**Answer:**
+
+The number of students who like to play video games is 53.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[156 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 139 students. 27 like to read and 37 like to play cricket. So, the remaining number of students who like to play video games or hike is 139 - 27 - 37 = 75 students.
+
+If the number of students who like to hike is twice the number of students who prefer playing cricket, then the number of students who like to play video games is 75 - 2 * 37 = 0 students.
+
+**Answer:**
+
+The number of students who like to play video games is 0.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[157 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 131 students. 25 like to paint and 7 like to play tennis. Therefore, the remaining number of students who like to hike or bake is 131 - 25 - 7 = 99.
+
+Since the number of students who like to bake is twice the number of students who like to play tennis, the number of students who like to hike is 99 - 2 * 7 = 85.
+
+**Answer:**
+
+Answer: 85
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[158 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 166 students in the class. 49 like to hike, and 20 like to play tennis. So, the remaining number of students who like to play video games or paint is 166 - 49 - 20 = 97.
+
+Since the number of students who like to paint is twice the number of students who like to play tennis, the number of students who like to play video games is 97 - 20 = 77.
+
+**Answer:**
+
+The number of students who like to play video games is 77.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[159 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 198 students in the class. 60 students like to read, and 22 students like to play hurling. So, the remaining number of students who like to paint or play music is 198 - 60 - 22 = 76 students.
+
+If the number of students who like to play music is twice the number of students who like to play hurling, then the number of students who like to play music is 22 * 2 = 44 students.
+
+Therefore, the number of students who like to paint is 76 - 44 = 32 students.
+
+**Answer:**
+
+The number of students who like to paint is 32.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[160 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 173 students. 62 like to hike, and 14 like to play hurling. So, the remaining number of students who like to bake or play music is 173 - 62 - 14 = 97.
+
+If the number of students who like to play music is twice the number of students who like to play hurling, then the number of students who like to play music is 14 * 2 = 28.
+
+Therefore, the number of students who like to bake is 97 - 28 = 69.
+
+**Answer:**
+
+The number of students who like to bake is 69.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[161 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 113 students in the class. 79 like to bake, 11 like to play badminton. Therefore, the remaining number of students who like to play video games or music is 133 - 79 = 54.
+
+If the number of students who like to play music is twice the number of students who like to play badminton, then the number of students who like to play music is 11 * 2 = 22.
+
+Therefore, the number of students who like to play video games is 54 - 22 = 32.
+
+**Answer:**
+
+The number of students who like to play video games is 32.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[162 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 96 students. 3 like to read, 22 like to play cricket. So, the remaining number of students who like to play video games or hike is 96 - 3 - 22 = 71 students.
+
+If the number of students who like to hike is twice the number of students who like to play video games, then the number of students who like to play video games is 71 / 2 = 35 students.
+
+**Answer:**
+
+The number of students who like to play video games is 35.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[163 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 145 students in the class. 88 students like to read, and 10 students like to play basketball. Therefore, the remaining number of students who like to bake or hike is 145 - 88 - 10 = 47.
+
+If the number of students who like to hike is twice the number of students who like to play basketball, then the number of students who like to hike is 2 * 10 = 20 students.
+
+Therefore, the number of students who like to bake is 47 - 20 = 27 students.
+
+**Answer:**
+
+The number of students who like to bake is 27.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[164 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 162 students in the class. 64 students like to bake and 29 students like to play football. Therefore, the remaining number of students who like to read or hike is 162 - 64 - 29 = 69 students.
+
+**Answer:**
+
+The number of students who like to read is 69.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[165 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 108 students that like to read and 7 students that like to play volleyball. Therefore, the remaining number of students that like to hike or play video games is 193 - 108 - 7 = 78.
+
+Since the number of students that like to play video games is twice the number that prefer playing volleyball, the number of students that like to hike is 78 - 14 = 64.
+
+**Answer:**
+
+The number of students that like to hike is 64.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[166 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 195 students in the class. 132 like to read, 15 like to play badminton. So, the remaining number of students who like to play music or video games is 195 - 132 - 15 = 48.
+
+If the number of students who like to play video games is twice the number of students who like to play badminton, then the number of students who like to play video games is 2 * 15 = 30.
+
+Therefore, the number of students who like to play music is 48 - 30 = 18.
+
+**Answer:**
+
+The number of students who like to play music is 18.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[167 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 112 students who like to play music and 15 students who like to play basketball. So, the remaining number of students who like to dance or play video games is 195 - 112 - 15 = 68 students.
+
+If the number of students who like to play video games is twice the number of students who like to play basketball, then the number of students who like to dance is 68 - 15 = 53 students.
+
+**Answer:**
+
+The number of students who like to dance is 53.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[168 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 143 students in the class. 48 students like to bake and 31 students like to play football. Therefore, the remaining number of students who like to play music or hike is 143 - 48 - 31 = 64 students.
+
+If the number of students who like to hike is twice the number of students who like to play football, then the number of students who like to play music is 64 - 2 * 31 = 33 students.
+
+**Answer:**
+
+The number of students who like to play music is 33.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[169 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 121 students in the class. 69 students like to play video games and 4 students like to play volleyball. Therefore, the remaining number of students who like to read or paint is 121 - 69 - 4 = 48 students.
+
+**Answer:**
+
+The number of students who like to read is 48.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[170 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 162 students in the class. 14 like to dance and 42 like to play basketball. So, the remaining number of students who like to either hike or play music is 162 - 14 - 42 = 106.
+
+Since the number of students who like to play music is twice the number of students who like to play basketball, the number of students who like to play music is 42 * 2 = 84.
+
+Therefore, the number of students who like to hike is 106 - 84 = 22.
+
+**Answer:**
+
+The number of students who like to hike is 22.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[171 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 143 students in the class. 100 students like to read, 11 students like to play hurling. Therefore, the remaining number of students who like to paint or bake is 143 - 100 - 11 = 32 students.
+
+The number of students who like to bake is twice the number of students who like to play hurling, which is 11 students. So, the number of students who like to paint is 32 - 11 = 21 students.
+
+**Answer:**
+
+The number of students who like to paint is 21.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[172 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 177 students in the class. 26 like to hike, and 31 like to play football. So, the remaining number of students who like to play video games or bake is 177 - 26 - 31 = 120 students.
+
+Since the number of students who like to bake is twice the number of students who like to play football, 60 students (which is half of 120) like to bake.
+
+**Answer:**
+
+The number of students who like to play video games is 120 - 60 = 60 students.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[173 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 186 students in the class. 
+
+- 74 students like to dance.
+- 6 students like to play badminton.
+
+Therefore, the remaining number of students who like to read or paint is 186 - 74 - 6 = 106.
+
+**Answer:**
+
+The number of students who like to read is 106.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[174 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 181 students in the class. 114 students like to dance, and 19 students like to play volleyball. Therefore, the remaining number of students who like to hike or play music is 181 - 114 - 19 = 48 students.
+
+**Answer:**
+
+The number of students who like to hike is 48.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[175 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 154 students. 31 like to dance and 10 like to play tennis. Therefore, the remaining number of students who like to hike or paint is 154 - 31 - 10 = 113.
+
+Since the number of students who like to paint is twice the number of students who like to play tennis, the number of students who like to paint is 2 * 10 = 20.
+
+Therefore, the number of students who like to hike is 113 - 20 = 93.
+
+**Answer:**
+
+The number of students who like to hike is 93.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[176 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 164 students. 48 like to read and 29 like to play volleyball. So, the remaining number of students like to hike or paint is 164 - 48 - 29 = 87.
+
+Since the number of students who like to paint is twice the number of students who like to play volleyball, the number of students who like to paint is 2 * 29 = 58.
+
+Therefore, the number of students who like to hike is 87 - 58 = 29.
+
+**Answer:**
+
+The number of students who like to hike is 29.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[177 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 151 students in the class. 2 like to read and 29 like to play tennis. So, the remaining number of students who like to paint or dance is 151 - 2 - 29 = 110.
+
+Since the number of students who like to dance is twice the number of students who like to play tennis, the number of students who like to paint is equal to the number of students who like to dance, which is 110 / 2 = 55.
+
+**Answer:**
+
+The number of students who like to paint is 55.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[178 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 148 students. 71 like to play music, and 23 like to play basketball. Therefore, the remaining number of students who like to paint or play video games is 148 - 71 - 23 = 54.
+
+**Answer:**
+
+The number of students who like to paint is 54.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[179 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 185 students. 10 like to paint and 49 like to play tennis. So, the remaining number of students who like to read or play music is 185 - 10 - 49 = 86.
+
+**Answer:**
+
+The number of students who like to read is 86.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[180 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 160 students. 50 like to paint and 36 like to play basketball, so the remaining number of students like to read or play music is 160 - 50 - 36 = 74.
+
+**Answer:**
+
+The number of students who like to read is 74.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[181 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is as follows:
+
+- 60 pops in the first 30 seconds
+- 4 times the number of pops in the first 30 seconds in the next 30 seconds
+- 6 times the number of pops in the first 30 seconds in the next 30 seconds
+- Half the number of pops in the final 30 seconds as the past 30 seconds
+- A quarter of the number of pops in the final 30 seconds of cooking also pop from the residual heat
+
+To find the total number of pieces of popcorn, we need to calculate the number of pops in each section and then add them all up.
+
+**1. Calculate the number of pops in the first 30 seconds:**
+- 60 pops
+
+**2. Calculate the number of pops in the next 30 seconds:**
+- 4 times the number of pops in the first 30 seconds = 240 pops
+
+**3. Calculate the number of pops in the next 30 seconds:**
+- 6 times the number of pops in the first 30 seconds = 360 pops
+
+**4. Calculate the number of pops in the final 30 seconds:**
+- Half the number of pops in the final 30 seconds as the past 30 second
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[182 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is as follows:
+
+- 20 pops in the first 18 seconds
+- 3 times the number of pops in the next 18 seconds, which is 3 * 20 = 60 pops
+- 4 times the number of pops in the next 18 seconds, which is 4 * 60 = 240 pops
+- The final 18 seconds of cooking slows down the popping rate to half the rate of the past 18 seconds, which is 0.5 * 240 = 120 pops
+- A quarter of the number of kernels that popped in the final 18 seconds of cooking also pop from the residual heat, which is 0.25 * 120 = 30 pops
+
+**Answer:**
+
+The total number of pieces of popcorn that Isabella has to eat is 20 + 60 + 240 + 120 + 30 = 560 pieces of popcorn.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[183 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is as follows:
+
+- 30 pops in the first 10 seconds
+- 3 times the number of pops in the next 10 seconds, which is 3 * 30 = 90 pops
+- 4 times the number of pops in the next 10 seconds, which is 4 * 30 = 120 pops
+- The final 10 seconds of cooking slows down the popping rate to half the rate of the previous 10 seconds, which is 0.5 * 120 = 60 pops
+- A quarter of the number of kernels that popped in the final 10 seconds of cooking also pop from the residual heat, which is 0.25 * 60 = 15 pops
+
+**Answer:**
+
+The total number of pieces of popcorn that Ali has to eat is 30 + 90 + 120 - 60 - 15 = 165
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[184 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is as follows:
+
+- 40 pops in the first 16 seconds.
+- 4 times the number of pops in the first 16 seconds (which is 4 * 40 = 160 pops) in the next 16 seconds.
+- 5 times the number of pops in the first 16 seconds (which is 5 * 40 = 200 pops) in the next 16 seconds.
+- Half the number of pops in the final 16 seconds (which is 0.5 * 200 = 100 pops)
+- A quarter of the number of pops in the final 16 seconds (which is 0.25 * 100 = 25 pops)
+
+Total number of pops = 40 + 160 + 200 - 100 - 25 = 380
+
+**Answer:**
+
+The total number of pieces of popcorn that Olga has to eat is 380.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[185 / 200] Evaluting Question
+Response: **Solution:**
+
+The information given is as follows:
+
+- 30 pops in the first 20 seconds.
+- The number of pops increases to double the initial popping rate in the next 20 seconds, which is 2 * 30 = 60 pops.
+- The number of pops increases to four times the initial popping rate in the next 20 seconds, which is 4 * 30 = 120 pops.
+- The number of pops slows down to half the rate of the final 20 seconds, which is 0.5 * 120 = 60 pops.
+- A quarter of the number of kernels that popped in the final 20 seconds of cooking also pop from the residual heat, which is 0.25 * 60 = 15 pops.
+
+**Final Answer:**
+
+Answer: 235
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[186 / 200] Evaluting Question
+Response: **Solution:**
+
+The information provided describes a sequence of popping kernels in a pot of hot oil.
+
+- The popping rate increases in the first 10 seconds to 50 pops.
+- In the next 10 seconds, the popping rate increases to 3 times the initial rate, which is 150 pops.
+- In the final 10 seconds, the popping rate decreases to half the rate of the previous 10 seconds, which is 75 pops.
+- After taking the pot off the heat, a quarter of the number of kernels that popped in the final 10 seconds of cooking also pop from the residual heat, which is 18 pops.
+
+**Answer:**
+
+The total number of pieces of popcorn that Ravi has to eat is 243 pops.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[187 / 200] Evaluting Question
+Response: **Solution:**
+
+The information given in the problem is as follows:
+
+- 40 pops in the first 14 seconds
+- 4 times that amount (160 pops) in the next 14 seconds
+- 5 times the initial popping rate (200 pops) in the next 14 seconds
+- Half the rate of the final 14 seconds (100 pops)
+- A quarter of the number of kernels that popped in the final 14 seconds of cooking (25 pops)
+
+Total number of pops = 40 + 160 + 200 - 100 - 25 = 425
+
+**Answer:**
+
+Answer: 425
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[188 / 200] Evaluting Question
+Response: **Solution:**
+
+The information given in the problem is as follows:
+
+- 40 pops in the first 20 seconds
+- 2 times the number of pops in the next 20 seconds, which is 2 * 40 = 80 pops
+- 3 times the number of pops in the next 20 seconds, which is 3 * 40 = 120 pops
+- The popping slows down to half the rate of the final 20 seconds, which is 0.5 * 120 = 60 pops
+- A quarter of the number of kernels that popped in the final 20 seconds of cooking, which is 0.25 * 60 = 15 pops
+
+**Answer:**
+
+The total number of pieces of popcorn that Viktor has to eat is 40 + 80 + 120 - 60 - 15 = 155 pieces.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[189 / 200] Evaluting Question
+Response: **Solution:**
+
+The information provided in the problem is as follows:
+
+- 40 pops in the first 30 seconds
+- 2 times the number of pops in the first 30 seconds in the next 30 seconds
+- 4 times the number of pops in the first 30 seconds in the next 30 seconds
+- Half the number of pops in the final 30 seconds as the number of pops in the previous 30 seconds
+- A quarter of the number of pops in the final 30 seconds of cooking also pop from the residual heat
+
+**Calculating the number of pops in each consecutive 30-second interval:**
+
+- First 30 seconds: 40 pops
+- Next 30 seconds: 2 * 40 = 80 pops
+- Next 30 seconds: 4 * 40 = 160 pops
+- Final 30 seconds: 0.5 * 160 = 80 pops
+
+**Calculating the number of pops from residual heat:**
+
+- Quarter of the number of pops in the final 30 seconds of cooking: 0.25 * 80 = 20 pops
+
+**Final Answer:**
+
+**Answer:**
+
+The total number of pieces of popcorn that Camila has to eat is 40 + 80 + 160 + 80 + 20 = 400 pieces of popcorn.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[190 / 200] Evaluting Question
+Response: **Solution:**
+
+The information given in the problem is as follows:
+
+* 60 pops in the first 18 seconds.
+* 3 times the number of pops in the next 18 seconds.
+* 4 times the number of pops in the next 18 seconds.
+* Half the number of pops in the final 18 seconds.
+* A quarter of the number of pops in the final 18 seconds also pop from the residual heat.
+
+**Calculating the number of pops in each section:**
+
+* The number of pops in the first 18 seconds is 60.
+* The number of pops in the next 18 seconds is 3 times the number of pops in the first 18 seconds, which is 180.
+* The number of pops in the final 18 seconds is half the number of pops in the previous 18 seconds, which is 90.
+* The number of pops from the residual heat is a quarter of the number of pops in the final 18 seconds, which is 22.5.
+
+**Final Answer:**
+
+Answer:
+
+The total number of pieces of popcorn that Carlos has to eat is 60 + 180 + 90 + 22.5 = 362.5 pieces of popcorn.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[191 / 200] Evaluting Question
+Response: **Solution:**
+
+The information given is as follows:
+
+* 40 pops in the first 28 seconds.
+* The number of pops increases to double the previous amount in the next 28 seconds.
+* The number of pops increases to five times the previous amount in the next 28 seconds.
+* The number of pops slows down to half the rate of the previous 28 seconds in the final 28 seconds.
+* A quarter of the number of kernels that popped in the final 28 seconds of cooking also pop from the residual heat.
+
+**To calculate the number of pops in each section:**
+
+* The number of pops in the first 28 seconds is 40.
+* The number of pops in the next 28 seconds is 2 * 40 = 80 pops.
+* The number of pops in the next 28 seconds is 5 * 40 = 200 pops.
+* The number of pops in the final 28 seconds is 0.5 * 200 = 100 pops.
+* The number of pops from the residual heat is 0.25 * 100 = 25 pops.
+
+**Total number of pops:**
+
+40 + 80 + 200 + 100 + 25 = 470 pops
+
+**Answer:**
+
+The total number of pieces of popcorn that Rania has to eat is 47
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[192 / 200] Evaluting Question
+Response: **Solution:**
+
+The information provided describes a sequence of events that occur when Santiago is popping popcorn. Here is a breakdown of the popping rate for each segment of time:
+
+* **First 18 seconds:** 60 pops
+* **Next 18 seconds:** 4 times the rate of the first 18 seconds, which is 240 pops
+* **Next 18 seconds:** 6 times the rate of the first 18 seconds, which is 360 pops
+* **Final 18 seconds:** Half the rate of the previous 18 seconds, which is 180 pops
+* **Residual heat:** A quarter of the number of kernels that popped in the final 18 seconds, which is 45 pops
+
+**Total number of pops:**
+
+60 + 240 + 360 - 180 + 45 = 605 pops
+
+**Answer:**
+
+The total number of pieces of popcorn that Santiago has to eat is 605.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[193 / 200] Evaluting Question
+Response: **Solution:**
+
+The information provided describes a sequence of popping kernels in a pan of hot oil.
+
+**1. Calculate the number of pops in the first 20 seconds:**
+- 80 pops in the first 20 seconds.
+
+**2. Calculate the number of pops in the next 20 seconds:**
+- 3 times the number of pops in the first 20 seconds = 240 pops in the next 20 seconds.
+
+**3. Calculate the number of pops in the final 20 seconds:**
+- 6 times the number of pops in the first 20 seconds = 480 pops in the final 20 seconds.
+
+**4. Calculate the number of pops from residual heat:**
+- A quarter of the number of pops in the final 20 seconds = 120 pops from residual heat.
+
+**Final Answer:**
+
+Answer: 80 + 240 + 480 + 120 = 1080 pieces of popcorn
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[194 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is as follows:
+
+* 70 pops in the first 14 seconds.
+* 3 times that amount (210 pops) in the next 14 seconds.
+* 4 times the initial popping rate (280 pops) in the next 14 seconds.
+* Half the rate of the final 14 seconds (140 pops)
+* A quarter of the number of kernels that popped in the final 14 seconds of cooking (35 pops)
+
+To find the total number of pieces of popcorn that Yuki has, we need to add all of the pops together.
+
+**Total number of pops = 70 + 210 + 280 - 140 + 35 = 600**
+
+**Answer:**
+
+The total number of pieces of popcorn that Yuki has to eat is 600.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[195 / 200] Evaluting Question
+Response: **Solution:**
+
+The information given is as follows:
+
+- 90 pops in the first 22 seconds.
+- The number of pops increases to 3 times the initial popping rate in the next 22 seconds.
+- The number of pops increases to 4 times the initial popping rate in the next 22 seconds.
+- The number of pops slows down to half the rate of the final 22 seconds in the final 22 seconds.
+- A quarter of the number of kernels that popped in the final 22 seconds of cooking also pop from the residual heat.
+
+**Total number of pops:**
+
+- 90 pops in the first 22 seconds.
+- 3 times the initial popping rate in the next 22 seconds, which is 3 x 90 = 270 pops.
+- 4 times the initial popping rate in the next 22 seconds, which is 4 x 90 = 360 pops.
+- The number of pops slows down to half the rate of the final 22 seconds in the final 22 seconds, which is 0.5 x 360 = 180 pops.
+- A quarter of the number of kernels that popped in the final 22 seconds of cooking also pop from the residual heat, which is 0.25 x 180 = 45 pops.
+
+
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[196 / 200] Evaluting Question
+Response: **Solution:**
+
+The information given in the problem is as follows:
+
+* 40 pops in the first 18 seconds
+* 2 times the number of pops in the next 18 seconds, which is 2 * 40 = 80 pops
+* 5 times the number of pops in the next 18 seconds, which is 5 * 40 = 200 pops
+* The popping slows down to half the rate of the final 18 seconds, which is 0.5 * 200 = 100 pops
+* A quarter of the number of kernels that popped in the final 18 seconds of cooking, which is 0.25 * 100 = 25 pops
+
+**Answer:**
+
+The total number of pieces of popcorn that Wei has to eat is 40 + 80 + 200 - 100 - 25 = 325
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[197 / 200] Evaluting Question
+Response: **Solution:**
+
+The information provided states that the number of popped kernels increases rapidly in the first 24 seconds, followed by a significant increase in the next 24 seconds and a decrease in the final 24 seconds. Therefore, the total number of popped kernels can be calculated in the following steps:
+
+**1. Calculate the number of popped kernels in the first 24 seconds:**
+- 40 popped in the first 24 seconds.
+
+**2. Calculate the number of popped kernels in the next 24 seconds:**
+- The number of popped kernels increases by a factor of 4 from the first 24 seconds, therefore, 4 x 40 = 160 popped kernels in the next 24 seconds.
+
+**3. Calculate the number of popped kernels in the final 24 seconds:**
+- The number of popped kernels decreases by a factor of 2 from the previous 24 seconds, therefore, 160 x 0.5 = 80 popped kernels in the final 24 seconds.
+
+**4. Calculate the number of popped kernels from residual heat:**
+- A quarter of the number of popped kernels in the final 24 seconds a
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[198 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is as follows:
+
+* 80 pops in the first 18 seconds.
+* The number of pops increases to 2 times the initial popping rate in the next 18 seconds, which is 160 pops.
+* The number of pops increases to 4 times the initial popping rate in the next 18 seconds, which is 320 pops.
+* The number of pops slows down to half the rate of the past 18 seconds in the final 18 seconds, which is 160 pops.
+* A quarter of the number of kernels that popped in the final 18 seconds of cooking also pop from the residual heat, which is 40 pops.
+
+The total number of pops is 80 + 160 + 320 - 160 + 40 = 500
+
+**Answer:**
+
+The total number of pieces of popcorn that Noah has to eat is 500.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[199 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is as follows:
+
+* 60 pops in the first 14 seconds.
+* 3 times the number of pops in the next 14 seconds, which is 3 * 60 = 180 pops.
+* 6 times the number of pops in the next 14 seconds, which is 6 * 60 = 360 pops.
+* The final 14 seconds of cooking slows down the popping rate to half the rate of the past 14 seconds, which is 0.5 * 360 = 180 pops.
+* A quarter of the number of kernels that popped in the final 14 seconds of cooking also pop from the residual heat, which is 0.25 * 180 = 45 pops.
+
+**Final Answer:**
+
+The total number of pieces of popcorn that Arjun has to eat is 60 + 180 + 360 - 180 - 45 = 605 pieces of popcorn.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+[200 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is as follows:
+
+* 20 pops in the first 12 seconds
+* 3 times the number of pops in the next 12 seconds, which is 3 * 20 = 60 pops
+* 4 times the number of pops in the next 12 seconds, which is 4 * 20 = 80 pops
+* The final 12 seconds of cooking slows down the popping rate to half the rate of the past 12 seconds, which is 0.5 * 80 = 40 pops
+* A quarter of the number of kernels that popped in the final 12 seconds of cooking also pop from the residual heat, which is 0.25 * 40 = 10 pops
+
+**Answer:**
+
+The total number of pieces of popcorn Keisha has to eat is 20 + 60 + 80 - 40 - 10 = 110 pieces of popcorn.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_symbolic/google_gemma-7b-it__gsm_symbolic__20260525_1400.json
+ Completed 200 questions for gsm_symbolic
+Model 'google/gemma-7b-it' released from the notebook process.
+=============
+All experiments are completed. Total time taken: 32.8 minutes
+Results are saved to: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/

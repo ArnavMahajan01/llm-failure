@@ -87,9 +87,10 @@ def friendly_model(name):
     if len(parts) == 2:
         raw = parts[1]
         # Extract param size from end of string
-        for size in ["1B", "1-5B", "3B", "4B", "8B", "9B"]:
-            if size in raw:
-                family = parts[0]
+        FAMILY_ALIASES = {"google": "Gemma"}
+        for size in ["1B", "1-5B", "3B", "4B", "7B", "8B", "9B"]:
+            if size.lower() in raw.lower():
+                family = FAMILY_ALIASES.get(parts[0], parts[0])
                 display_size = size.replace("-", ".")
                 return f"{family} {display_size}"
     return name

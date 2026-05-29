@@ -1,0 +1,16 @@
+{
+  "run_id": "qwen__gsm_symbolic__zero_shot_baseline__20260519_085203",
+  "family": "qwen",
+  "display_name": "Qwen/Qwen2.5-7B-Instruct",
+  "hf_model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "benchmark": "gsm_symbolic",
+  "condition": "zero_shot_baseline",
+  "status": "success",
+  "started_at": "2026-05-19T08:52:03",
+  "finished_at": "2026-05-19T09:59:03",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/qwen__gsm_symbolic__zero_shot_baseline__20260519_085203.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/qwen__gsm_symbolic__zero_shot_baseline__20260519_085203__gsm_symbolic__Qwen_Qwen2-5-7B-Instruct__gsm_symbolic__20260519_0853.json"
+  ]
+}

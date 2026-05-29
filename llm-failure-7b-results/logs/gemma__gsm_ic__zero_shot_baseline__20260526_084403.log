@@ -1,0 +1,2924 @@
+COMMAND: /usr/bin/python3 /content/drive/MyDrive/COMP6242/Project/llm-failure/run_experiment.py --model gemma --benchmark gsm_ic --condition zero_shot_baseline
+
+`torch_dtype` is deprecated! Use `dtype` instead!
+FULL RUN: 200 samples per benchmark
+Models: ['gemma']
+Benchmarks: ['gsm_ic']
+Conditions: ['zero_shot_baseline']
+Runs per questions: 1
+
+===========
+MODEL: google/gemma-7b-it
+
+===========
+Loading HF model: google/gemma-7b-it
+Quantization: 4-bit; dtype: torch.bfloat16
+
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/254 [00:00<00:00, 9868.95it/s, Materializing param=model.embed_tokens.weight]
+Loading weights:   0%|          | 1/254 [00:00<00:00, 4228.13it/s, Materializing param=model.embed_tokens.weight]
+Loading weights:   1%|          | 2/254 [00:00<01:46,  2.36it/s, Materializing param=model.embed_tokens.weight]  
+Loading weights:   1%|          | 2/254 [00:00<01:46,  2.36it/s, Materializing param=model.layers.0.input_layernorm.weight]
+Loading weights:   1%|          | 2/254 [00:00<01:46,  2.36it/s, Materializing param=model.layers.0.input_layernorm.weight]
+Loading weights:   1%|          | 3/254 [00:00<01:46,  2.36it/s, Materializing param=model.layers.0.mlp.down_proj.weight]  
+Loading weights:   1%|          | 3/254 [00:00<01:46,  2.36it/s, Materializing param=model.layers.0.mlp.down_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:02<02:16,  1.83it/s, Materializing param=model.layers.0.mlp.down_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:02<02:16,  1.83it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:02<02:16,  1.83it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 5/254 [00:02<02:33,  1.62it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 5/254 [00:02<02:33,  1.62it/s, Materializing param=model.layers.0.mlp.up_proj.weight]  
+Loading weights:   2%|▏         | 5/254 [00:02<02:33,  1.62it/s, Materializing param=model.layers.0.mlp.up_proj.weight]
+Loading weights:   2%|▏         | 6/254 [00:04<03:43,  1.11it/s, Materializing param=model.layers.0.mlp.up_proj.weight]
+Loading weights:   2%|▏         | 6/254 [00:04<03:43,  1.11it/s, Materializing param=model.layers.0.post_attention_layernorm.weight]
+Loading weights:   2%|▏         | 6/254 [00:04<03:43,  1.11it/s, Materializing param=model.layers.0.post_attention_layernorm.weight]
+Loading weights:   3%|▎         | 7/254 [00:04<03:42,  1.11it/s, Materializing param=model.layers.0.self_attn.k_proj.weight]        
+Loading weights:   3%|▎         | 7/254 [00:04<03:42,  1.11it/s, Materializing param=model.layers.0.self_attn.k_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:05<03:22,  1.21it/s, Materializing param=model.layers.0.self_attn.k_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:05<03:22,  1.21it/s, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:05<03:22,  1.21it/s, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:07<04:11,  1.02s/it, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:07<04:11,  1.02s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:07<04:11,  1.02s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:09<04:52,  1.20s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:09<04:52,  1.20s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:09<04:52,  1.20s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 11/254 [00:09<04:20,  1.07s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 11/254 [00:09<04:20,  1.07s/it, Materializing param=model.layers.1.input_layernorm.weight] 
+Loading weights:   4%|▍         | 11/254 [00:09<04:20,  1.07s/it, Materializing param=model.layers.1.input_layernorm.weight]
+Loading weights:   5%|▍         | 12/254 [00:09<04:19,  1.07s/it, Materializing param=model.layers.1.mlp.down_proj.weight]  
+Loading weights:   5%|▍         | 12/254 [00:09<04:19,  1.07s/it, Materializing param=model.layers.1.mlp.down_proj.weight]
+Loading weights:   5%|▌         | 13/254 [00:09<04:18,  1.07s/it, Materializing param=model.layers.1.mlp.gate_proj.weight]
+Loading weights:   5%|▌         | 13/254 [00:09<04:18,  1.07s/it, Materializing param=model.layers.1.mlp.gate_proj.weight]
+Loading weights:   6%|▌         | 14/254 [00:09<04:17,  1.07s/it, Materializing param=model.layers.1.mlp.up_proj.weight]  
+Loading weights:   6%|▌         | 14/254 [00:09<04:17,  1.07s/it, Materializing param=model.layers.1.mlp.up_proj.weight]
+Loading weights:   6%|▌         | 15/254 [00:09<04:15,  1.07s/it, Materializing param=model.layers.1.post_attention_layernorm.weight]
+Loading weights:   6%|▌         | 15/254 [00:09<04:15,  1.07s/it, Materializing param=model.layers.1.post_attention_layernorm.weight]
+Loading weights:   6%|▋         | 16/254 [00:09<04:14,  1.07s/it, Materializing param=model.layers.1.self_attn.k_proj.weight]        
+Loading weights:   6%|▋         | 16/254 [00:09<04:14,  1.07s/it, Materializing param=model.layers.1.self_attn.k_proj.weight]
+Loading weights:   7%|▋         | 17/254 [00:10<04:13,  1.07s/it, Materializing param=model.layers.1.self_attn.o_proj.weight]
+Loading weights:   7%|▋         | 17/254 [00:10<04:13,  1.07s/it, Materializing param=model.layers.1.self_attn.o_proj.weight]
+Loading weights:   7%|▋         | 18/254 [00:10<04:12,  1.07s/it, Materializing param=model.layers.1.self_attn.q_proj.weight]
+Loading weights:   7%|▋         | 18/254 [00:10<04:12,  1.07s/it, Materializing param=model.layers.1.self_attn.q_proj.weight]
+Loading weights:   7%|▋         | 19/254 [00:10<04:11,  1.07s/it, Materializing param=model.layers.1.self_attn.v_proj.weight]
+Loading weights:   7%|▋         | 19/254 [00:10<04:11,  1.07s/it, Materializing param=model.layers.1.self_attn.v_proj.weight]
+Loading weights:   8%|▊         | 20/254 [00:10<04:10,  1.07s/it, Materializing param=model.layers.2.input_layernorm.weight] 
+Loading weights:   8%|▊         | 20/254 [00:10<04:10,  1.07s/it, Materializing param=model.layers.2.input_layernorm.weight]
+Loading weights:   8%|▊         | 21/254 [00:10<04:09,  1.07s/it, Materializing param=model.layers.2.mlp.down_proj.weight]  
+Loading weights:   8%|▊         | 21/254 [00:10<04:09,  1.07s/it, Materializing param=model.layers.2.mlp.down_proj.weight]
+Loading weights:   9%|▊         | 22/254 [00:10<04:08,  1.07s/it, Materializing param=model.layers.2.mlp.gate_proj.weight]
+Loading weights:   9%|▊         | 22/254 [00:10<04:08,  1.07s/it, Materializing param=model.layers.2.mlp.gate_proj.weight]
+Loading weights:   9%|▉         | 23/254 [00:10<04:07,  1.07s/it, Materializing param=model.layers.2.mlp.up_proj.weight]  
+Loading weights:   9%|▉         | 23/254 [00:10<04:07,  1.07s/it, Materializing param=model.layers.2.mlp.up_proj.weight]
+Loading weights:   9%|▉         | 24/254 [00:10<04:06,  1.07s/it, Materializing param=model.layers.2.post_attention_layernorm.weight]
+Loading weights:   9%|▉         | 24/254 [00:10<04:06,  1.07s/it, Materializing param=model.layers.2.post_attention_layernorm.weight]
+Loading weights:  10%|▉         | 25/254 [00:10<04:05,  1.07s/it, Materializing param=model.layers.2.self_attn.k_proj.weight]        
+Loading weights:  10%|▉         | 25/254 [00:10<04:05,  1.07s/it, Materializing param=model.layers.2.self_attn.k_proj.weight]
+Loading weights:  10%|█         | 26/254 [00:10<04:04,  1.07s/it, Materializing param=model.layers.2.self_attn.o_proj.weight]
+Loading weights:  10%|█         | 26/254 [00:10<04:04,  1.07s/it, Materializing param=model.layers.2.self_attn.o_proj.weight]
+Loading weights:  11%|█         | 27/254 [00:10<04:03,  1.07s/it, Materializing param=model.layers.2.self_attn.q_proj.weight]
+Loading weights:  11%|█         | 27/254 [00:10<04:03,  1.07s/it, Materializing param=model.layers.2.self_attn.q_proj.weight]
+Loading weights:  11%|█         | 28/254 [00:10<04:02,  1.07s/it, Materializing param=model.layers.2.self_attn.v_proj.weight]
+Loading weights:  11%|█         | 28/254 [00:10<04:02,  1.07s/it, Materializing param=model.layers.2.self_attn.v_proj.weight]
+Loading weights:  11%|█▏        | 29/254 [00:10<04:00,  1.07s/it, Materializing param=model.layers.3.input_layernorm.weight] 
+Loading weights:  11%|█▏        | 29/254 [00:10<04:00,  1.07s/it, Materializing param=model.layers.3.input_layernorm.weight]
+Loading weights:  12%|█▏        | 30/254 [00:10<03:59,  1.07s/it, Materializing param=model.layers.3.mlp.down_proj.weight]  
+Loading weights:  12%|█▏        | 30/254 [00:10<03:59,  1.07s/it, Materializing param=model.layers.3.mlp.down_proj.weight]
+Loading weights:  12%|█▏        | 31/254 [00:10<03:58,  1.07s/it, Materializing param=model.layers.3.mlp.gate_proj.weight]
+Loading weights:  12%|█▏        | 31/254 [00:10<03:58,  1.07s/it, Materializing param=model.layers.3.mlp.gate_proj.weight]
+Loading weights:  13%|█▎        | 32/254 [00:10<03:57,  1.07s/it, Materializing param=model.layers.3.mlp.up_proj.weight]  
+Loading weights:  13%|█▎        | 32/254 [00:10<03:57,  1.07s/it, Materializing param=model.layers.3.mlp.up_proj.weight]
+Loading weights:  13%|█▎        | 33/254 [00:10<03:56,  1.07s/it, Materializing param=model.layers.3.post_attention_layernorm.weight]
+Loading weights:  13%|█▎        | 33/254 [00:10<03:56,  1.07s/it, Materializing param=model.layers.3.post_attention_layernorm.weight]
+Loading weights:  13%|█▎        | 34/254 [00:10<03:55,  1.07s/it, Materializing param=model.layers.3.self_attn.k_proj.weight]        
+Loading weights:  13%|█▎        | 34/254 [00:10<03:55,  1.07s/it, Materializing param=model.layers.3.self_attn.k_proj.weight]
+Loading weights:  14%|█▍        | 35/254 [00:10<03:54,  1.07s/it, Materializing param=model.layers.3.self_attn.o_proj.weight]
+Loading weights:  14%|█▍        | 35/254 [00:10<03:54,  1.07s/it, Materializing param=model.layers.3.self_attn.o_proj.weight]
+Loading weights:  14%|█▍        | 36/254 [00:10<03:53,  1.07s/it, Materializing param=model.layers.3.self_attn.q_proj.weight]
+Loading weights:  14%|█▍        | 36/254 [00:10<03:53,  1.07s/it, Materializing param=model.layers.3.self_attn.q_proj.weight]
+Loading weights:  15%|█▍        | 37/254 [00:10<03:52,  1.07s/it, Materializing param=model.layers.3.self_attn.v_proj.weight]
+Loading weights:  15%|█▍        | 37/254 [00:10<03:52,  1.07s/it, Materializing param=model.layers.3.self_attn.v_proj.weight]
+Loading weights:  15%|█▍        | 38/254 [00:10<03:51,  1.07s/it, Materializing param=model.layers.4.input_layernorm.weight] 
+Loading weights:  15%|█▍        | 38/254 [00:10<03:51,  1.07s/it, Materializing param=model.layers.4.input_layernorm.weight]
+Loading weights:  15%|█▌        | 39/254 [00:10<03:50,  1.07s/it, Materializing param=model.layers.4.mlp.down_proj.weight]  
+Loading weights:  15%|█▌        | 39/254 [00:10<03:50,  1.07s/it, Materializing param=model.layers.4.mlp.down_proj.weight]
+Loading weights:  16%|█▌        | 40/254 [00:10<03:49,  1.07s/it, Materializing param=model.layers.4.mlp.gate_proj.weight]
+Loading weights:  16%|█▌        | 40/254 [00:10<03:49,  1.07s/it, Materializing param=model.layers.4.mlp.gate_proj.weight]
+Loading weights:  16%|█▌        | 41/254 [00:10<03:48,  1.07s/it, Materializing param=model.layers.4.mlp.up_proj.weight]  
+Loading weights:  16%|█▌        | 41/254 [00:10<03:48,  1.07s/it, Materializing param=model.layers.4.mlp.up_proj.weight]
+Loading weights:  17%|█▋        | 42/254 [00:10<03:47,  1.07s/it, Materializing param=model.layers.4.post_attention_layernorm.weight]
+Loading weights:  17%|█▋        | 42/254 [00:10<03:47,  1.07s/it, Materializing param=model.layers.4.post_attention_layernorm.weight]
+Loading weights:  17%|█▋        | 43/254 [00:10<03:45,  1.07s/it, Materializing param=model.layers.4.self_attn.k_proj.weight]        
+Loading weights:  17%|█▋        | 43/254 [00:10<03:45,  1.07s/it, Materializing param=model.layers.4.self_attn.k_proj.weight]
+Loading weights:  17%|█▋        | 44/254 [00:10<03:44,  1.07s/it, Materializing param=model.layers.4.self_attn.o_proj.weight]
+Loading weights:  17%|█▋        | 44/254 [00:10<03:44,  1.07s/it, Materializing param=model.layers.4.self_attn.o_proj.weight]
+Loading weights:  18%|█▊        | 45/254 [00:10<03:43,  1.07s/it, Materializing param=model.layers.4.self_attn.q_proj.weight]
+Loading weights:  18%|█▊        | 45/254 [00:10<03:43,  1.07s/it, Materializing param=model.layers.4.self_attn.q_proj.weight]
+Loading weights:  18%|█▊        | 46/254 [00:10<03:42,  1.07s/it, Materializing param=model.layers.4.self_attn.v_proj.weight]
+Loading weights:  18%|█▊        | 46/254 [00:10<03:42,  1.07s/it, Materializing param=model.layers.4.self_attn.v_proj.weight]
+Loading weights:  19%|█▊        | 47/254 [00:10<03:41,  1.07s/it, Materializing param=model.layers.5.input_layernorm.weight] 
+Loading weights:  19%|█▊        | 47/254 [00:10<03:41,  1.07s/it, Materializing param=model.layers.5.input_layernorm.weight]
+Loading weights:  19%|█▉        | 48/254 [00:10<03:40,  1.07s/it, Materializing param=model.layers.5.mlp.down_proj.weight]  
+Loading weights:  19%|█▉        | 48/254 [00:10<03:40,  1.07s/it, Materializing param=model.layers.5.mlp.down_proj.weight]
+Loading weights:  19%|█▉        | 49/254 [00:10<03:39,  1.07s/it, Materializing param=model.layers.5.mlp.gate_proj.weight]
+Loading weights:  19%|█▉        | 49/254 [00:10<03:39,  1.07s/it, Materializing param=model.layers.5.mlp.gate_proj.weight]
+Loading weights:  20%|█▉        | 50/254 [00:10<03:38,  1.07s/it, Materializing param=model.layers.5.mlp.up_proj.weight]  
+Loading weights:  20%|█▉        | 50/254 [00:10<03:38,  1.07s/it, Materializing param=model.layers.5.mlp.up_proj.weight]
+Loading weights:  20%|██        | 51/254 [00:10<03:37,  1.07s/it, Materializing param=model.layers.5.post_attention_layernorm.weight]
+Loading weights:  20%|██        | 51/254 [00:10<03:37,  1.07s/it, Materializing param=model.layers.5.post_attention_layernorm.weight]
+Loading weights:  20%|██        | 52/254 [00:10<03:36,  1.07s/it, Materializing param=model.layers.5.self_attn.k_proj.weight]        
+Loading weights:  20%|██        | 52/254 [00:10<03:36,  1.07s/it, Materializing param=model.layers.5.self_attn.k_proj.weight]
+Loading weights:  21%|██        | 53/254 [00:10<03:35,  1.07s/it, Materializing param=model.layers.5.self_attn.o_proj.weight]
+Loading weights:  21%|██        | 53/254 [00:10<03:35,  1.07s/it, Materializing param=model.layers.5.self_attn.o_proj.weight]
+Loading weights:  21%|██▏       | 54/254 [00:10<03:34,  1.07s/it, Materializing param=model.layers.5.self_attn.q_proj.weight]
+Loading weights:  21%|██▏       | 54/254 [00:10<03:34,  1.07s/it, Materializing param=model.layers.5.self_attn.q_proj.weight]
+Loading weights:  22%|██▏       | 55/254 [00:10<03:33,  1.07s/it, Materializing param=model.layers.5.self_attn.v_proj.weight]
+Loading weights:  22%|██▏       | 55/254 [00:10<03:33,  1.07s/it, Materializing param=model.layers.5.self_attn.v_proj.weight]
+Loading weights:  22%|██▏       | 56/254 [00:10<03:32,  1.07s/it, Materializing param=model.layers.6.input_layernorm.weight] 
+Loading weights:  22%|██▏       | 56/254 [00:10<03:32,  1.07s/it, Materializing param=model.layers.6.input_layernorm.weight]
+Loading weights:  22%|██▏       | 57/254 [00:10<03:30,  1.07s/it, Materializing param=model.layers.6.mlp.down_proj.weight]  
+Loading weights:  22%|██▏       | 57/254 [00:10<03:30,  1.07s/it, Materializing param=model.layers.6.mlp.down_proj.weight]
+Loading weights:  23%|██▎       | 58/254 [00:10<03:29,  1.07s/it, Materializing param=model.layers.6.mlp.gate_proj.weight]
+Loading weights:  23%|██▎       | 58/254 [00:10<03:29,  1.07s/it, Materializing param=model.layers.6.mlp.gate_proj.weight]
+Loading weights:  23%|██▎       | 59/254 [00:10<03:28,  1.07s/it, Materializing param=model.layers.6.mlp.up_proj.weight]  
+Loading weights:  23%|██▎       | 59/254 [00:10<03:28,  1.07s/it, Materializing param=model.layers.6.mlp.up_proj.weight]
+Loading weights:  24%|██▎       | 60/254 [00:10<03:27,  1.07s/it, Materializing param=model.layers.6.post_attention_layernorm.weight]
+Loading weights:  24%|██▎       | 60/254 [00:10<03:27,  1.07s/it, Materializing param=model.layers.6.post_attention_layernorm.weight]
+Loading weights:  24%|██▍       | 61/254 [00:10<03:26,  1.07s/it, Materializing param=model.layers.6.self_attn.k_proj.weight]        
+Loading weights:  24%|██▍       | 61/254 [00:10<03:26,  1.07s/it, Materializing param=model.layers.6.self_attn.k_proj.weight]
+Loading weights:  24%|██▍       | 62/254 [00:10<03:25,  1.07s/it, Materializing param=model.layers.6.self_attn.o_proj.weight]
+Loading weights:  24%|██▍       | 62/254 [00:10<03:25,  1.07s/it, Materializing param=model.layers.6.self_attn.o_proj.weight]
+Loading weights:  25%|██▍       | 63/254 [00:10<03:24,  1.07s/it, Materializing param=model.layers.6.self_attn.q_proj.weight]
+Loading weights:  25%|██▍       | 63/254 [00:10<03:24,  1.07s/it, Materializing param=model.layers.6.self_attn.q_proj.weight]
+Loading weights:  25%|██▌       | 64/254 [00:10<03:23,  1.07s/it, Materializing param=model.layers.6.self_attn.v_proj.weight]
+Loading weights:  25%|██▌       | 64/254 [00:10<03:23,  1.07s/it, Materializing param=model.layers.6.self_attn.v_proj.weight]
+Loading weights:  26%|██▌       | 65/254 [00:10<03:22,  1.07s/it, Materializing param=model.layers.7.input_layernorm.weight] 
+Loading weights:  26%|██▌       | 65/254 [00:10<03:22,  1.07s/it, Materializing param=model.layers.7.input_layernorm.weight]
+Loading weights:  26%|██▌       | 66/254 [00:10<03:21,  1.07s/it, Materializing param=model.layers.7.mlp.down_proj.weight]  
+Loading weights:  26%|██▌       | 66/254 [00:10<03:21,  1.07s/it, Materializing param=model.layers.7.mlp.down_proj.weight]
+Loading weights:  26%|██▋       | 67/254 [00:10<03:20,  1.07s/it, Materializing param=model.layers.7.mlp.gate_proj.weight]
+Loading weights:  26%|██▋       | 67/254 [00:10<03:20,  1.07s/it, Materializing param=model.layers.7.mlp.gate_proj.weight]
+Loading weights:  27%|██▋       | 68/254 [00:10<03:19,  1.07s/it, Materializing param=model.layers.7.mlp.up_proj.weight]  
+Loading weights:  27%|██▋       | 68/254 [00:10<03:19,  1.07s/it, Materializing param=model.layers.7.mlp.up_proj.weight]
+Loading weights:  27%|██▋       | 69/254 [00:10<03:18,  1.07s/it, Materializing param=model.layers.7.post_attention_layernorm.weight]
+Loading weights:  27%|██▋       | 69/254 [00:10<03:18,  1.07s/it, Materializing param=model.layers.7.post_attention_layernorm.weight]
+Loading weights:  28%|██▊       | 70/254 [00:10<03:17,  1.07s/it, Materializing param=model.layers.7.self_attn.k_proj.weight]        
+Loading weights:  28%|██▊       | 70/254 [00:10<03:17,  1.07s/it, Materializing param=model.layers.7.self_attn.k_proj.weight]
+Loading weights:  28%|██▊       | 71/254 [00:10<03:16,  1.07s/it, Materializing param=model.layers.7.self_attn.o_proj.weight]
+Loading weights:  28%|██▊       | 71/254 [00:10<03:16,  1.07s/it, Materializing param=model.layers.7.self_attn.o_proj.weight]
+Loading weights:  28%|██▊       | 72/254 [00:10<03:14,  1.07s/it, Materializing param=model.layers.7.self_attn.q_proj.weight]
+Loading weights:  28%|██▊       | 72/254 [00:10<03:14,  1.07s/it, Materializing param=model.layers.7.self_attn.q_proj.weight]
+Loading weights:  29%|██▊       | 73/254 [00:10<03:13,  1.07s/it, Materializing param=model.layers.7.self_attn.v_proj.weight]
+Loading weights:  29%|██▊       | 73/254 [00:10<03:13,  1.07s/it, Materializing param=model.layers.7.self_attn.v_proj.weight]
+Loading weights:  29%|██▉       | 74/254 [00:10<03:12,  1.07s/it, Materializing param=model.layers.8.input_layernorm.weight] 
+Loading weights:  29%|██▉       | 74/254 [00:10<03:12,  1.07s/it, Materializing param=model.layers.8.input_layernorm.weight]
+Loading weights:  30%|██▉       | 75/254 [00:10<03:11,  1.07s/it, Materializing param=model.layers.8.mlp.down_proj.weight]  
+Loading weights:  30%|██▉       | 75/254 [00:10<03:11,  1.07s/it, Materializing param=model.layers.8.mlp.down_proj.weight]
+Loading weights:  30%|██▉       | 76/254 [00:10<03:10,  1.07s/it, Materializing param=model.layers.8.mlp.gate_proj.weight]
+Loading weights:  30%|██▉       | 76/254 [00:10<03:10,  1.07s/it, Materializing param=model.layers.8.mlp.gate_proj.weight]
+Loading weights:  30%|███       | 77/254 [00:10<03:09,  1.07s/it, Materializing param=model.layers.8.mlp.up_proj.weight]  
+Loading weights:  30%|███       | 77/254 [00:10<03:09,  1.07s/it, Materializing param=model.layers.8.mlp.up_proj.weight]
+Loading weights:  31%|███       | 78/254 [00:10<03:08,  1.07s/it, Materializing param=model.layers.8.post_attention_layernorm.weight]
+Loading weights:  31%|███       | 78/254 [00:10<03:08,  1.07s/it, Materializing param=model.layers.8.post_attention_layernorm.weight]
+Loading weights:  31%|███       | 79/254 [00:10<03:07,  1.07s/it, Materializing param=model.layers.8.self_attn.k_proj.weight]        
+Loading weights:  31%|███       | 79/254 [00:10<03:07,  1.07s/it, Materializing param=model.layers.8.self_attn.k_proj.weight]
+Loading weights:  31%|███▏      | 80/254 [00:10<03:06,  1.07s/it, Materializing param=model.layers.8.self_attn.o_proj.weight]
+Loading weights:  31%|███▏      | 80/254 [00:10<03:06,  1.07s/it, Materializing param=model.layers.8.self_attn.o_proj.weight]
+Loading weights:  32%|███▏      | 81/254 [00:10<03:05,  1.07s/it, Materializing param=model.layers.8.self_attn.q_proj.weight]
+Loading weights:  32%|███▏      | 81/254 [00:10<03:05,  1.07s/it, Materializing param=model.layers.8.self_attn.q_proj.weight]
+Loading weights:  32%|███▏      | 82/254 [00:10<03:04,  1.07s/it, Materializing param=model.layers.8.self_attn.v_proj.weight]
+Loading weights:  32%|███▏      | 82/254 [00:10<03:04,  1.07s/it, Materializing param=model.layers.8.self_attn.v_proj.weight]
+Loading weights:  33%|███▎      | 83/254 [00:10<03:03,  1.07s/it, Materializing param=model.layers.9.input_layernorm.weight] 
+Loading weights:  33%|███▎      | 83/254 [00:10<03:03,  1.07s/it, Materializing param=model.layers.9.input_layernorm.weight]
+Loading weights:  33%|███▎      | 84/254 [00:10<03:02,  1.07s/it, Materializing param=model.layers.9.mlp.down_proj.weight]  
+Loading weights:  33%|███▎      | 84/254 [00:10<03:02,  1.07s/it, Materializing param=model.layers.9.mlp.down_proj.weight]
+Loading weights:  33%|███▎      | 85/254 [00:10<03:01,  1.07s/it, Materializing param=model.layers.9.mlp.gate_proj.weight]
+Loading weights:  33%|███▎      | 85/254 [00:10<03:01,  1.07s/it, Materializing param=model.layers.9.mlp.gate_proj.weight]
+Loading weights:  34%|███▍      | 86/254 [00:10<02:59,  1.07s/it, Materializing param=model.layers.9.mlp.up_proj.weight]  
+Loading weights:  34%|███▍      | 86/254 [00:10<02:59,  1.07s/it, Materializing param=model.layers.9.mlp.up_proj.weight]
+Loading weights:  34%|███▍      | 87/254 [00:10<02:58,  1.07s/it, Materializing param=model.layers.9.post_attention_layernorm.weight]
+Loading weights:  34%|███▍      | 87/254 [00:10<02:58,  1.07s/it, Materializing param=model.layers.9.post_attention_layernorm.weight]
+Loading weights:  35%|███▍      | 88/254 [00:10<02:57,  1.07s/it, Materializing param=model.layers.9.self_attn.k_proj.weight]        
+Loading weights:  35%|███▍      | 88/254 [00:10<02:57,  1.07s/it, Materializing param=model.layers.9.self_attn.k_proj.weight]
+Loading weights:  35%|███▌      | 89/254 [00:10<02:56,  1.07s/it, Materializing param=model.layers.9.self_attn.o_proj.weight]
+Loading weights:  35%|███▌      | 89/254 [00:10<02:56,  1.07s/it, Materializing param=model.layers.9.self_attn.o_proj.weight]
+Loading weights:  35%|███▌      | 90/254 [00:10<02:55,  1.07s/it, Materializing param=model.layers.9.self_attn.q_proj.weight]
+Loading weights:  35%|███▌      | 90/254 [00:10<02:55,  1.07s/it, Materializing param=model.layers.9.self_attn.q_proj.weight]
+Loading weights:  36%|███▌      | 91/254 [00:10<02:54,  1.07s/it, Materializing param=model.layers.9.self_attn.v_proj.weight]
+Loading weights:  36%|███▌      | 91/254 [00:10<02:54,  1.07s/it, Materializing param=model.layers.9.self_attn.v_proj.weight]
+Loading weights:  36%|███▌      | 92/254 [00:10<02:53,  1.07s/it, Materializing param=model.layers.10.input_layernorm.weight]
+Loading weights:  36%|███▌      | 92/254 [00:10<02:53,  1.07s/it, Materializing param=model.layers.10.input_layernorm.weight]
+Loading weights:  37%|███▋      | 93/254 [00:10<02:52,  1.07s/it, Materializing param=model.layers.10.mlp.down_proj.weight]  
+Loading weights:  37%|███▋      | 93/254 [00:10<02:52,  1.07s/it, Materializing param=model.layers.10.mlp.down_proj.weight]
+Loading weights:  37%|███▋      | 94/254 [00:10<02:51,  1.07s/it, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 94/254 [00:10<02:51,  1.07s/it, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 95/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 95/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.10.mlp.up_proj.weight]  
+Loading weights:  37%|███▋      | 95/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.10.mlp.up_proj.weight]
+Loading weights:  38%|███▊      | 96/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.10.post_attention_layernorm.weight]
+Loading weights:  38%|███▊      | 96/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.10.post_attention_layernorm.weight]
+Loading weights:  38%|███▊      | 97/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.10.self_attn.k_proj.weight]        
+Loading weights:  38%|███▊      | 97/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.10.self_attn.k_proj.weight]
+Loading weights:  39%|███▊      | 98/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.10.self_attn.o_proj.weight]
+Loading weights:  39%|███▊      | 98/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.10.self_attn.o_proj.weight]
+Loading weights:  39%|███▉      | 99/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.10.self_attn.q_proj.weight]
+Loading weights:  39%|███▉      | 99/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.10.self_attn.q_proj.weight]
+Loading weights:  39%|███▉      | 100/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.10.self_attn.v_proj.weight]
+Loading weights:  39%|███▉      | 100/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.10.self_attn.v_proj.weight]
+Loading weights:  40%|███▉      | 101/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.11.input_layernorm.weight] 
+Loading weights:  40%|███▉      | 101/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.11.input_layernorm.weight]
+Loading weights:  40%|████      | 102/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.11.mlp.down_proj.weight]  
+Loading weights:  40%|████      | 102/254 [00:10<00:05, 30.24it/s, Materializing param=model.layers.11.mlp.down_proj.weight]
+Loading weights:  41%|████      | 103/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.mlp.gate_proj.weight]
+Loading weights:  41%|████      | 103/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.mlp.gate_proj.weight]
+Loading weights:  41%|████      | 104/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.mlp.up_proj.weight]  
+Loading weights:  41%|████      | 104/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.mlp.up_proj.weight]
+Loading weights:  41%|████▏     | 105/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.post_attention_layernorm.weight]
+Loading weights:  41%|████▏     | 105/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.post_attention_layernorm.weight]
+Loading weights:  42%|████▏     | 106/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.self_attn.k_proj.weight]        
+Loading weights:  42%|████▏     | 106/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.self_attn.k_proj.weight]
+Loading weights:  42%|████▏     | 107/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.self_attn.o_proj.weight]
+Loading weights:  42%|████▏     | 107/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.self_attn.o_proj.weight]
+Loading weights:  43%|████▎     | 108/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.self_attn.q_proj.weight]
+Loading weights:  43%|████▎     | 108/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.self_attn.q_proj.weight]
+Loading weights:  43%|████▎     | 109/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.self_attn.v_proj.weight]
+Loading weights:  43%|████▎     | 109/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.11.self_attn.v_proj.weight]
+Loading weights:  43%|████▎     | 110/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.input_layernorm.weight] 
+Loading weights:  43%|████▎     | 110/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.input_layernorm.weight]
+Loading weights:  44%|████▎     | 111/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.mlp.down_proj.weight]  
+Loading weights:  44%|████▎     | 111/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.mlp.down_proj.weight]
+Loading weights:  44%|████▍     | 112/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.mlp.gate_proj.weight]
+Loading weights:  44%|████▍     | 112/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.mlp.gate_proj.weight]
+Loading weights:  44%|████▍     | 113/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.mlp.up_proj.weight]  
+Loading weights:  44%|████▍     | 113/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.mlp.up_proj.weight]
+Loading weights:  45%|████▍     | 114/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.post_attention_layernorm.weight]
+Loading weights:  45%|████▍     | 114/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.post_attention_layernorm.weight]
+Loading weights:  45%|████▌     | 115/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.self_attn.k_proj.weight]        
+Loading weights:  45%|████▌     | 115/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.self_attn.k_proj.weight]
+Loading weights:  46%|████▌     | 116/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.self_attn.o_proj.weight]
+Loading weights:  46%|████▌     | 116/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.self_attn.o_proj.weight]
+Loading weights:  46%|████▌     | 117/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.self_attn.q_proj.weight]
+Loading weights:  46%|████▌     | 117/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.self_attn.q_proj.weight]
+Loading weights:  46%|████▋     | 118/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.self_attn.v_proj.weight]
+Loading weights:  46%|████▋     | 118/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.12.self_attn.v_proj.weight]
+Loading weights:  47%|████▋     | 119/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.input_layernorm.weight] 
+Loading weights:  47%|████▋     | 119/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.input_layernorm.weight]
+Loading weights:  47%|████▋     | 120/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.mlp.down_proj.weight]  
+Loading weights:  47%|████▋     | 120/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.mlp.down_proj.weight]
+Loading weights:  48%|████▊     | 121/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.mlp.gate_proj.weight]
+Loading weights:  48%|████▊     | 121/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.mlp.gate_proj.weight]
+Loading weights:  48%|████▊     | 122/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.mlp.up_proj.weight]  
+Loading weights:  48%|████▊     | 122/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.mlp.up_proj.weight]
+Loading weights:  48%|████▊     | 123/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.post_attention_layernorm.weight]
+Loading weights:  48%|████▊     | 123/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.post_attention_layernorm.weight]
+Loading weights:  49%|████▉     | 124/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.self_attn.k_proj.weight]        
+Loading weights:  49%|████▉     | 124/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.self_attn.k_proj.weight]
+Loading weights:  49%|████▉     | 125/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.self_attn.o_proj.weight]
+Loading weights:  49%|████▉     | 125/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.self_attn.o_proj.weight]
+Loading weights:  50%|████▉     | 126/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.self_attn.q_proj.weight]
+Loading weights:  50%|████▉     | 126/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.self_attn.q_proj.weight]
+Loading weights:  50%|█████     | 127/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.self_attn.v_proj.weight]
+Loading weights:  50%|█████     | 127/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.13.self_attn.v_proj.weight]
+Loading weights:  50%|█████     | 128/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.14.input_layernorm.weight] 
+Loading weights:  50%|█████     | 128/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.14.input_layernorm.weight]
+Loading weights:  51%|█████     | 129/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.14.mlp.down_proj.weight]  
+Loading weights:  51%|█████     | 129/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.14.mlp.down_proj.weight]
+Loading weights:  51%|█████     | 130/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.14.mlp.gate_proj.weight]
+Loading weights:  51%|█████     | 130/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.14.mlp.gate_proj.weight]
+Loading weights:  52%|█████▏    | 131/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.14.mlp.up_proj.weight]  
+Loading weights:  52%|█████▏    | 131/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.14.mlp.up_proj.weight]
+Loading weights:  52%|█████▏    | 132/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.14.post_attention_layernorm.weight]
+Loading weights:  52%|█████▏    | 132/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.14.post_attention_layernorm.weight]
+Loading weights:  52%|█████▏    | 133/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.14.self_attn.k_proj.weight]        
+Loading weights:  52%|█████▏    | 133/254 [00:10<00:04, 30.24it/s, Materializing param=model.layers.14.self_attn.k_proj.weight]
+Loading weights:  53%|█████▎    | 134/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.14.self_attn.o_proj.weight]
+Loading weights:  53%|█████▎    | 134/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.14.self_attn.o_proj.weight]
+Loading weights:  53%|█████▎    | 135/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.14.self_attn.q_proj.weight]
+Loading weights:  53%|█████▎    | 135/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.14.self_attn.q_proj.weight]
+Loading weights:  54%|█████▎    | 136/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.14.self_attn.v_proj.weight]
+Loading weights:  54%|█████▎    | 136/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.14.self_attn.v_proj.weight]
+Loading weights:  54%|█████▍    | 137/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.input_layernorm.weight] 
+Loading weights:  54%|█████▍    | 137/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.input_layernorm.weight]
+Loading weights:  54%|█████▍    | 138/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.mlp.down_proj.weight]  
+Loading weights:  54%|█████▍    | 138/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.mlp.down_proj.weight]
+Loading weights:  55%|█████▍    | 139/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.mlp.gate_proj.weight]
+Loading weights:  55%|█████▍    | 139/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.mlp.gate_proj.weight]
+Loading weights:  55%|█████▌    | 140/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.mlp.up_proj.weight]  
+Loading weights:  55%|█████▌    | 140/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.mlp.up_proj.weight]
+Loading weights:  56%|█████▌    | 141/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.post_attention_layernorm.weight]
+Loading weights:  56%|█████▌    | 141/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.post_attention_layernorm.weight]
+Loading weights:  56%|█████▌    | 142/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.self_attn.k_proj.weight]        
+Loading weights:  56%|█████▌    | 142/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.self_attn.k_proj.weight]
+Loading weights:  56%|█████▋    | 143/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.self_attn.o_proj.weight]
+Loading weights:  56%|█████▋    | 143/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.self_attn.o_proj.weight]
+Loading weights:  57%|█████▋    | 144/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.self_attn.q_proj.weight]
+Loading weights:  57%|█████▋    | 144/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.self_attn.q_proj.weight]
+Loading weights:  57%|█████▋    | 145/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.self_attn.v_proj.weight]
+Loading weights:  57%|█████▋    | 145/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.15.self_attn.v_proj.weight]
+Loading weights:  57%|█████▋    | 146/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.input_layernorm.weight] 
+Loading weights:  57%|█████▋    | 146/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.input_layernorm.weight]
+Loading weights:  58%|█████▊    | 147/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.mlp.down_proj.weight]  
+Loading weights:  58%|█████▊    | 147/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.mlp.down_proj.weight]
+Loading weights:  58%|█████▊    | 148/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.mlp.gate_proj.weight]
+Loading weights:  58%|█████▊    | 148/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.mlp.gate_proj.weight]
+Loading weights:  59%|█████▊    | 149/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.mlp.up_proj.weight]  
+Loading weights:  59%|█████▊    | 149/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.mlp.up_proj.weight]
+Loading weights:  59%|█████▉    | 150/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.post_attention_layernorm.weight]
+Loading weights:  59%|█████▉    | 150/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.post_attention_layernorm.weight]
+Loading weights:  59%|█████▉    | 151/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.self_attn.k_proj.weight]        
+Loading weights:  59%|█████▉    | 151/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.self_attn.k_proj.weight]
+Loading weights:  60%|█████▉    | 152/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.self_attn.o_proj.weight]
+Loading weights:  60%|█████▉    | 152/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.self_attn.o_proj.weight]
+Loading weights:  60%|██████    | 153/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.self_attn.q_proj.weight]
+Loading weights:  60%|██████    | 153/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.self_attn.q_proj.weight]
+Loading weights:  61%|██████    | 154/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.self_attn.v_proj.weight]
+Loading weights:  61%|██████    | 154/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.16.self_attn.v_proj.weight]
+Loading weights:  61%|██████    | 155/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.input_layernorm.weight] 
+Loading weights:  61%|██████    | 155/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.input_layernorm.weight]
+Loading weights:  61%|██████▏   | 156/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.mlp.down_proj.weight]  
+Loading weights:  61%|██████▏   | 156/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.mlp.down_proj.weight]
+Loading weights:  62%|██████▏   | 157/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.mlp.gate_proj.weight]
+Loading weights:  62%|██████▏   | 157/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.mlp.gate_proj.weight]
+Loading weights:  62%|██████▏   | 158/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.mlp.up_proj.weight]  
+Loading weights:  62%|██████▏   | 158/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.mlp.up_proj.weight]
+Loading weights:  63%|██████▎   | 159/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.post_attention_layernorm.weight]
+Loading weights:  63%|██████▎   | 159/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.post_attention_layernorm.weight]
+Loading weights:  63%|██████▎   | 160/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.self_attn.k_proj.weight]        
+Loading weights:  63%|██████▎   | 160/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.self_attn.k_proj.weight]
+Loading weights:  63%|██████▎   | 161/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.self_attn.o_proj.weight]
+Loading weights:  63%|██████▎   | 161/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.self_attn.o_proj.weight]
+Loading weights:  64%|██████▍   | 162/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.self_attn.q_proj.weight]
+Loading weights:  64%|██████▍   | 162/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.self_attn.q_proj.weight]
+Loading weights:  64%|██████▍   | 163/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.self_attn.v_proj.weight]
+Loading weights:  64%|██████▍   | 163/254 [00:10<00:03, 30.24it/s, Materializing param=model.layers.17.self_attn.v_proj.weight]
+Loading weights:  65%|██████▍   | 164/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.input_layernorm.weight] 
+Loading weights:  65%|██████▍   | 164/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.input_layernorm.weight]
+Loading weights:  65%|██████▍   | 165/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.mlp.down_proj.weight]  
+Loading weights:  65%|██████▍   | 165/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.mlp.down_proj.weight]
+Loading weights:  65%|██████▌   | 166/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.mlp.gate_proj.weight]
+Loading weights:  65%|██████▌   | 166/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.mlp.gate_proj.weight]
+Loading weights:  66%|██████▌   | 167/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.mlp.up_proj.weight]  
+Loading weights:  66%|██████▌   | 167/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.mlp.up_proj.weight]
+Loading weights:  66%|██████▌   | 168/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.post_attention_layernorm.weight]
+Loading weights:  66%|██████▌   | 168/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.post_attention_layernorm.weight]
+Loading weights:  67%|██████▋   | 169/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.self_attn.k_proj.weight]        
+Loading weights:  67%|██████▋   | 169/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.self_attn.k_proj.weight]
+Loading weights:  67%|██████▋   | 170/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.self_attn.o_proj.weight]
+Loading weights:  67%|██████▋   | 170/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.self_attn.o_proj.weight]
+Loading weights:  67%|██████▋   | 171/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.self_attn.q_proj.weight]
+Loading weights:  67%|██████▋   | 171/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.self_attn.q_proj.weight]
+Loading weights:  68%|██████▊   | 172/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.self_attn.v_proj.weight]
+Loading weights:  68%|██████▊   | 172/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.18.self_attn.v_proj.weight]
+Loading weights:  68%|██████▊   | 173/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.input_layernorm.weight] 
+Loading weights:  68%|██████▊   | 173/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.input_layernorm.weight]
+Loading weights:  69%|██████▊   | 174/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.mlp.down_proj.weight]  
+Loading weights:  69%|██████▊   | 174/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.mlp.down_proj.weight]
+Loading weights:  69%|██████▉   | 175/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.mlp.gate_proj.weight]
+Loading weights:  69%|██████▉   | 175/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.mlp.gate_proj.weight]
+Loading weights:  69%|██████▉   | 176/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.mlp.up_proj.weight]  
+Loading weights:  69%|██████▉   | 176/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.mlp.up_proj.weight]
+Loading weights:  70%|██████▉   | 177/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.post_attention_layernorm.weight]
+Loading weights:  70%|██████▉   | 177/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.post_attention_layernorm.weight]
+Loading weights:  70%|███████   | 178/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.self_attn.k_proj.weight]        
+Loading weights:  70%|███████   | 178/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.self_attn.k_proj.weight]
+Loading weights:  70%|███████   | 179/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.self_attn.o_proj.weight]
+Loading weights:  70%|███████   | 179/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.self_attn.o_proj.weight]
+Loading weights:  71%|███████   | 180/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.self_attn.q_proj.weight]
+Loading weights:  71%|███████   | 180/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.self_attn.q_proj.weight]
+Loading weights:  71%|███████▏  | 181/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.self_attn.v_proj.weight]
+Loading weights:  71%|███████▏  | 181/254 [00:10<00:02, 30.24it/s, Materializing param=model.layers.19.self_attn.v_proj.weight]
+Loading weights:  72%|███████▏  | 182/254 [00:10<00:01, 70.14it/s, Materializing param=model.layers.19.self_attn.v_proj.weight]
+Loading weights:  72%|███████▏  | 182/254 [00:10<00:01, 70.14it/s, Materializing param=model.layers.20.input_layernorm.weight] 
+Loading weights:  72%|███████▏  | 182/254 [00:10<00:01, 70.14it/s, Materializing param=model.layers.20.input_layernorm.weight]
+Loading weights:  72%|███████▏  | 183/254 [00:10<00:01, 70.14it/s, Materializing param=model.layers.20.mlp.down_proj.weight]  
+Loading weights:  72%|███████▏  | 183/254 [00:10<00:01, 70.14it/s, Materializing param=model.layers.20.mlp.down_proj.weight]
+Loading weights:  72%|███████▏  | 184/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.mlp.gate_proj.weight]
+Loading weights:  72%|███████▏  | 184/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.mlp.gate_proj.weight]
+Loading weights:  73%|███████▎  | 185/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.mlp.up_proj.weight]  
+Loading weights:  73%|███████▎  | 185/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.mlp.up_proj.weight]
+Loading weights:  73%|███████▎  | 186/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.post_attention_layernorm.weight]
+Loading weights:  73%|███████▎  | 186/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.post_attention_layernorm.weight]
+Loading weights:  74%|███████▎  | 187/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.self_attn.k_proj.weight]        
+Loading weights:  74%|███████▎  | 187/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.self_attn.k_proj.weight]
+Loading weights:  74%|███████▍  | 188/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.self_attn.o_proj.weight]
+Loading weights:  74%|███████▍  | 188/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.self_attn.o_proj.weight]
+Loading weights:  74%|███████▍  | 189/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.self_attn.q_proj.weight]
+Loading weights:  74%|███████▍  | 189/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.self_attn.q_proj.weight]
+Loading weights:  75%|███████▍  | 190/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.self_attn.v_proj.weight]
+Loading weights:  75%|███████▍  | 190/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.20.self_attn.v_proj.weight]
+Loading weights:  75%|███████▌  | 191/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.input_layernorm.weight] 
+Loading weights:  75%|███████▌  | 191/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.input_layernorm.weight]
+Loading weights:  76%|███████▌  | 192/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.mlp.down_proj.weight]  
+Loading weights:  76%|███████▌  | 192/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.mlp.down_proj.weight]
+Loading weights:  76%|███████▌  | 193/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.mlp.gate_proj.weight]
+Loading weights:  76%|███████▌  | 193/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.mlp.gate_proj.weight]
+Loading weights:  76%|███████▋  | 194/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.mlp.up_proj.weight]  
+Loading weights:  76%|███████▋  | 194/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.mlp.up_proj.weight]
+Loading weights:  77%|███████▋  | 195/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.post_attention_layernorm.weight]
+Loading weights:  77%|███████▋  | 195/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.post_attention_layernorm.weight]
+Loading weights:  77%|███████▋  | 196/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.self_attn.k_proj.weight]        
+Loading weights:  77%|███████▋  | 196/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.self_attn.k_proj.weight]
+Loading weights:  78%|███████▊  | 197/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.self_attn.o_proj.weight]
+Loading weights:  78%|███████▊  | 197/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.self_attn.o_proj.weight]
+Loading weights:  78%|███████▊  | 198/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.self_attn.q_proj.weight]
+Loading weights:  78%|███████▊  | 198/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.self_attn.q_proj.weight]
+Loading weights:  78%|███████▊  | 199/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.self_attn.v_proj.weight]
+Loading weights:  78%|███████▊  | 199/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.21.self_attn.v_proj.weight]
+Loading weights:  79%|███████▊  | 200/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.input_layernorm.weight] 
+Loading weights:  79%|███████▊  | 200/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.input_layernorm.weight]
+Loading weights:  79%|███████▉  | 201/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.mlp.down_proj.weight]  
+Loading weights:  79%|███████▉  | 201/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.mlp.down_proj.weight]
+Loading weights:  80%|███████▉  | 202/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.mlp.gate_proj.weight]
+Loading weights:  80%|███████▉  | 202/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.mlp.gate_proj.weight]
+Loading weights:  80%|███████▉  | 203/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.mlp.up_proj.weight]  
+Loading weights:  80%|███████▉  | 203/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.mlp.up_proj.weight]
+Loading weights:  80%|████████  | 204/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.post_attention_layernorm.weight]
+Loading weights:  80%|████████  | 204/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.post_attention_layernorm.weight]
+Loading weights:  81%|████████  | 205/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.self_attn.k_proj.weight]        
+Loading weights:  81%|████████  | 205/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.self_attn.k_proj.weight]
+Loading weights:  81%|████████  | 206/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.self_attn.o_proj.weight]
+Loading weights:  81%|████████  | 206/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.self_attn.o_proj.weight]
+Loading weights:  81%|████████▏ | 207/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.self_attn.q_proj.weight]
+Loading weights:  81%|████████▏ | 207/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.self_attn.q_proj.weight]
+Loading weights:  82%|████████▏ | 208/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.self_attn.v_proj.weight]
+Loading weights:  82%|████████▏ | 208/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.22.self_attn.v_proj.weight]
+Loading weights:  82%|████████▏ | 209/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.input_layernorm.weight] 
+Loading weights:  82%|████████▏ | 209/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.input_layernorm.weight]
+Loading weights:  83%|████████▎ | 210/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.mlp.down_proj.weight]  
+Loading weights:  83%|████████▎ | 210/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.mlp.down_proj.weight]
+Loading weights:  83%|████████▎ | 211/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.mlp.gate_proj.weight]
+Loading weights:  83%|████████▎ | 211/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.mlp.gate_proj.weight]
+Loading weights:  83%|████████▎ | 212/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.mlp.up_proj.weight]  
+Loading weights:  83%|████████▎ | 212/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.mlp.up_proj.weight]
+Loading weights:  84%|████████▍ | 213/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.post_attention_layernorm.weight]
+Loading weights:  84%|████████▍ | 213/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.post_attention_layernorm.weight]
+Loading weights:  84%|████████▍ | 214/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.self_attn.k_proj.weight]        
+Loading weights:  84%|████████▍ | 214/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.self_attn.k_proj.weight]
+Loading weights:  85%|████████▍ | 215/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.self_attn.o_proj.weight]
+Loading weights:  85%|████████▍ | 215/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.self_attn.o_proj.weight]
+Loading weights:  85%|████████▌ | 216/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.self_attn.q_proj.weight]
+Loading weights:  85%|████████▌ | 216/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.self_attn.q_proj.weight]
+Loading weights:  85%|████████▌ | 217/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.self_attn.v_proj.weight]
+Loading weights:  85%|████████▌ | 217/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.23.self_attn.v_proj.weight]
+Loading weights:  86%|████████▌ | 218/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.input_layernorm.weight] 
+Loading weights:  86%|████████▌ | 218/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.input_layernorm.weight]
+Loading weights:  86%|████████▌ | 219/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.mlp.down_proj.weight]  
+Loading weights:  86%|████████▌ | 219/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.mlp.down_proj.weight]
+Loading weights:  87%|████████▋ | 220/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.mlp.gate_proj.weight]
+Loading weights:  87%|████████▋ | 220/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.mlp.gate_proj.weight]
+Loading weights:  87%|████████▋ | 221/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.mlp.up_proj.weight]  
+Loading weights:  87%|████████▋ | 221/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.mlp.up_proj.weight]
+Loading weights:  87%|████████▋ | 222/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.post_attention_layernorm.weight]
+Loading weights:  87%|████████▋ | 222/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.post_attention_layernorm.weight]
+Loading weights:  88%|████████▊ | 223/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.self_attn.k_proj.weight]        
+Loading weights:  88%|████████▊ | 223/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.self_attn.k_proj.weight]
+Loading weights:  88%|████████▊ | 224/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.self_attn.o_proj.weight]
+Loading weights:  88%|████████▊ | 224/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.self_attn.o_proj.weight]
+Loading weights:  89%|████████▊ | 225/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.self_attn.q_proj.weight]
+Loading weights:  89%|████████▊ | 225/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.self_attn.q_proj.weight]
+Loading weights:  89%|████████▉ | 226/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.self_attn.v_proj.weight]
+Loading weights:  89%|████████▉ | 226/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.24.self_attn.v_proj.weight]
+Loading weights:  89%|████████▉ | 227/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.input_layernorm.weight] 
+Loading weights:  89%|████████▉ | 227/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.input_layernorm.weight]
+Loading weights:  90%|████████▉ | 228/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.mlp.down_proj.weight]  
+Loading weights:  90%|████████▉ | 228/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.mlp.down_proj.weight]
+Loading weights:  90%|█████████ | 229/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.mlp.gate_proj.weight]
+Loading weights:  90%|█████████ | 229/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.mlp.gate_proj.weight]
+Loading weights:  91%|█████████ | 230/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.mlp.up_proj.weight]  
+Loading weights:  91%|█████████ | 230/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.mlp.up_proj.weight]
+Loading weights:  91%|█████████ | 231/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.post_attention_layernorm.weight]
+Loading weights:  91%|█████████ | 231/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.post_attention_layernorm.weight]
+Loading weights:  91%|█████████▏| 232/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.self_attn.k_proj.weight]        
+Loading weights:  91%|█████████▏| 232/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.self_attn.k_proj.weight]
+Loading weights:  92%|█████████▏| 233/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.self_attn.o_proj.weight]
+Loading weights:  92%|█████████▏| 233/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.self_attn.o_proj.weight]
+Loading weights:  92%|█████████▏| 234/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.self_attn.q_proj.weight]
+Loading weights:  92%|█████████▏| 234/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.self_attn.q_proj.weight]
+Loading weights:  93%|█████████▎| 235/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.self_attn.v_proj.weight]
+Loading weights:  93%|█████████▎| 235/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.25.self_attn.v_proj.weight]
+Loading weights:  93%|█████████▎| 236/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.input_layernorm.weight] 
+Loading weights:  93%|█████████▎| 236/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.input_layernorm.weight]
+Loading weights:  93%|█████████▎| 237/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.mlp.down_proj.weight]  
+Loading weights:  93%|█████████▎| 237/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.mlp.down_proj.weight]
+Loading weights:  94%|█████████▎| 238/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.mlp.gate_proj.weight]
+Loading weights:  94%|█████████▎| 238/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.mlp.gate_proj.weight]
+Loading weights:  94%|█████████▍| 239/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.mlp.up_proj.weight]  
+Loading weights:  94%|█████████▍| 239/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.mlp.up_proj.weight]
+Loading weights:  94%|█████████▍| 240/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.post_attention_layernorm.weight]
+Loading weights:  94%|█████████▍| 240/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.post_attention_layernorm.weight]
+Loading weights:  95%|█████████▍| 241/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.self_attn.k_proj.weight]        
+Loading weights:  95%|█████████▍| 241/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.self_attn.k_proj.weight]
+Loading weights:  95%|█████████▌| 242/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.self_attn.o_proj.weight]
+Loading weights:  95%|█████████▌| 242/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.self_attn.o_proj.weight]
+Loading weights:  96%|█████████▌| 243/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.self_attn.q_proj.weight]
+Loading weights:  96%|█████████▌| 243/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.self_attn.q_proj.weight]
+Loading weights:  96%|█████████▌| 244/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.self_attn.v_proj.weight]
+Loading weights:  96%|█████████▌| 244/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.26.self_attn.v_proj.weight]
+Loading weights:  96%|█████████▋| 245/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.input_layernorm.weight] 
+Loading weights:  96%|█████████▋| 245/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.input_layernorm.weight]
+Loading weights:  97%|█████████▋| 246/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.mlp.down_proj.weight]  
+Loading weights:  97%|█████████▋| 246/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.mlp.down_proj.weight]
+Loading weights:  97%|█████████▋| 247/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.mlp.gate_proj.weight]
+Loading weights:  97%|█████████▋| 247/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.mlp.gate_proj.weight]
+Loading weights:  98%|█████████▊| 248/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.mlp.up_proj.weight]  
+Loading weights:  98%|█████████▊| 248/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.mlp.up_proj.weight]
+Loading weights:  98%|█████████▊| 249/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.post_attention_layernorm.weight]
+Loading weights:  98%|█████████▊| 249/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.post_attention_layernorm.weight]
+Loading weights:  98%|█████████▊| 250/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.self_attn.k_proj.weight]        
+Loading weights:  98%|█████████▊| 250/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.self_attn.k_proj.weight]
+Loading weights:  99%|█████████▉| 251/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.self_attn.o_proj.weight]
+Loading weights:  99%|█████████▉| 251/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.self_attn.o_proj.weight]
+Loading weights:  99%|█████████▉| 252/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.self_attn.q_proj.weight]
+Loading weights:  99%|█████████▉| 252/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.self_attn.q_proj.weight]
+Loading weights: 100%|█████████▉| 253/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.self_attn.v_proj.weight]
+Loading weights: 100%|█████████▉| 253/254 [00:10<00:00, 70.14it/s, Materializing param=model.layers.27.self_attn.v_proj.weight]
+Loading weights: 100%|██████████| 254/254 [00:10<00:00, 70.14it/s, Materializing param=model.norm.weight]                      
+Loading weights: 100%|██████████| 254/254 [00:10<00:00, 70.14it/s, Materializing param=model.norm.weight]
+Loading weights: 100%|██████████| 254/254 [00:10<00:00, 24.73it/s, Materializing param=model.norm.weight]
+
+ Loading benchmark: gsm_ic
+[1 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 14
+- 10
+- 4
+- 3
+
+**Answer:**
+
+Answer: 10 boys and 7 girls are left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[2 / 200] Evaluting Question
+Response: **Numbers:**
+- $300
+- $500
+- $300 + $500 = $800
+
+**Answer:**
+Answer: $300, $800, $800
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[3 / 200] Evaluting Question
+Response: **Numbers:**
+- 4
+- Double of 4 = 8
+
+**Answer:**
+Answer: 8 - 4 = 4
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[4 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $45
+* 20%
+* 3
+
+**Answer:**
+
+Answer: $45 * 0.2 * 3 = $4.5 * 3 = $13.50
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[5 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 30
+* 20
+* 10
+* 1/3
+* 1/2
+
+**Answer:**
+
+The total number of berries picked is 30 + 20 + 10 = 40 berries. 1/3 of the berries are rotten, which is 40 * 1/3 = 13 berries. The remaining 1/2 of the fresh berries are 40 * 1/2 = 20 berries. Therefore, a total of 20 berries can be sold.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[6 / 200] Evaluting Question
+Response: **Numbers:**
+- 180
+- Half of 180 = 90
+- One-third of 90 = 30
+
+**Answer:**
+
+Answer: 180 + 90 + 30 = 240
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[7 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $13,380
+* $5,400
+* $420
+
+**Answer:**
+
+Mr. Dubois will pay off the car in the following number of months:
+
+**Answer:**
+
+The remaining balance to be paid is $13,380 - $5,400 = $7,980. $420 is paid every month, therefore, the car will be paid off in 18 months.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[8 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 30
+- 5
+- 3
+- 1000
+
+**Answer:**
+
+Answer: 1500
+
+The child weighs 30 kilograms, so he will need to be given 5 ml of medicine for every kilogram of weight, which is a total of 30 x 5 = 150 ml of medicine. The full dose has to be given in 3 equal parts, so each part of the dose will be 150 / 3 = 50 mg.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[9 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 6
+- 4
+- 16
+
+**Answer:**
+
+Answer: 2
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[10 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 250
+- 5
+- 11
+
+**Answer:**
+
+Answer: After giving each friend 11 balloons, there are 250 - (5 x 11) = 10 balloons left. Each friend has 11 balloons and there are 10 balloons left.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[11 / 200] Evaluting Question
+Response: **Numbers:**
+- 63
+- 354
+- 2
+- 10
+
+**Answer:**
+Answer: The number of pages Hallie read on the fourth day is 354 - (63 * 2 + 10) pages.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[12 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 2
+- 150%
+- 100
+
+**Answer:**
+
+Answer: Mark reads 200 pages a day now.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[13 / 200] Evaluting Question
+Response: **Numbers:**
+- 20kg
+- 15 crates
+- 4 bags of nails (5kg)
+- 12 bags of hammers (5kg)
+- 10 bags of wooden planks (30kg)
+
+**Answer:**
+The total weight of the items to be loaded is 4 x 5kg + 12 x 5kg + 10 x 30kg = 20kg + 60kg + 300kg = 380kg. The weight limit for each crate is 20kg, so Daryl will have to leave out a total of 380kg - 20kg = 360kg of items from the crates to meet the weight limit.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[14 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 6
+* 150
+* 50
+* 1
+
+**Answer:**
+
+Answer: To find Skye's average speed for the entire race, we need to calculate the total distance he covered and the total time taken to cover that distance.
+
+The distance covered is 6 kilometers. The time taken to cover the first 3 kilometers is 3 kilometers/150 kilometers per hour = 0.02 hours. The time taken to cover the next 2 kilometers is 2 kilometers/50 kilometers per hour = 0.04 hours. The time taken to cover the remaining 1 kilometer is 1 kilometer/2*150 kilometers per hour = 0.005 hours.
+
+The total time taken is 0.02 hours + 0.04 hours + 0.005 hours = 0.065 hours.
+
+The average speed is 6 kilometers/0.065 hours = 92 kilometers per hour.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[15 / 200] Evaluting Question
+Response: **Numbers:**
+- 3
+- 20
+- 15
+- 0.50
+
+**Answer:**
+
+The total number of face masks is 3 boxes * 20 face masks per box = 60 face masks. He plans to sell them for $0.50 each, so the total revenue is 60 face masks * $0.50 = $30. The cost of the boxes is $15, so the total profit is $30 - $15 = $15.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[16 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 4
+* 20
+* 2
+* 3/5
+
+**Answer:**
+
+Answer: $2 * 20 * 3/5 = $12
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[17 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 12
+- 4
+- Twice
+
+**Answer:**
+
+Answer:  The number of apples in Jack's basket currently is 12, and Jill's basket can hold twice as much as Jack's basket when both are full.  Therefore, Jack's current number of apples could fit into Jill's basket 2 times.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[18 / 200] Evaluting Question
+Response: **Numbers:**
+- 400
+- 8
+- 1/8
+- Double
+
+**Answer:**
+Answer: If Nathalie eats one-eighth of the cake, and Pierre eats double what Nathalie ate, then Pierre ate 2/8 of the cake, which is 2/8 * 400 = 50 grams.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[19 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 800
+- 400
+- 4.8 L
+
+**Answer:**
+
+Answer: The total water consumption for Violet and her dog is 800 + 400 = 1200 ml. Since Violet can carry 4.8 L, which is equivalent to 4800 ml, she can provide enough water for herself and her dog for a total of 4 hours.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[20 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 20
+* 150
+* 30
+* 5
+* 4
+* 100
+* 5
+
+**Answer:**
+
+Answer: $150 x 20 + $30 x 5 x 4 + $5 x 100 = $3,000
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[21 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 16
+* Half
+
+**Answer:**
+
+Answer: 8
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[22 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $2
+* $10
+* 400
+* 40
+
+**Answer:**
+
+Answer: $400 x 0.4 + 2 = $160
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[23 / 200] Evaluting Question
+Response: **Numbers:**
+- 37
+- 23
+- 7
+- 3
+
+**Answer:**
+
+Answer: If the Seattle Seahawks scored 3 field goals and the final score was 37-23, they scored a total of 3 * 3 = 9 points from field goals.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[24 / 200] Evaluting Question
+Response: **Numbers:**
+- 30
+- 90
+- 60
+
+**Answer:**
+Answer: There is not enough information to determine the number of servings of popcorn that Jared should order.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[25 / 200] Evaluting Question
+Response: **Numbers:**
+- 2
+- 12
+- 35
+- 0.1
+
+**Answer:**
+Answer: $0.1 * 2 * 35 + 12 = $7
+
+The total number of candies distributed to the classmates is 2 * 35 = 70 candies. So, the total cost of the candies is 70 * 0.1 = $7.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[26 / 200] Evaluting Question
+Response: **Numbers:**
+- 48
+- 4%
+
+**Answer:**
+
+Answer: 48 + 4% = 50.16 ounces
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[27 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 99
+- 12
+- 2
+- 3
+- 0.5
+
+**Answer:**
+
+Answer: 99
+
+The final weight is 99.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[28 / 200] Evaluting Question
+Response: **Numbers:**
+- 6
+- 50
+
+**Answer:**
+
+Answer: 6 x 50 = 300 strawberries
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[29 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 2.5
+- 6.4
+- 0.5
+
+**Answer:**
+
+Answer: The pressure on each leg of the giant spider is 2.5 times the pressure on the largest spider, which is 6.4 ounces per square inch. Therefore, the pressure on each leg of the giant spider is 2.5 * 6.4 = 16 ounces per square inch.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[30 / 200] Evaluting Question
+Response: **Numbers:**
+- 200
+- 3/4
+- 4/5
+
+**Answer:**
+
+The total number of people the bus carried on the two trips is:
+
+3/4 * 200 + 4/5 * 200 = 150 + 160 = 310 people
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[31 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 4
+* 30
+* 40.00
+
+**Answer:**
+
+Answer: $40.00 + 30% = $52.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[32 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 21
+* 4
+* 3
+* 4 feet
+* 3 inches
+
+**Answer:**
+
+Answer:  Marissa's sunflower is 21 inches taller than her little sister, which is equivalent to 2 feet and 1 inch. Therefore, Marissa's sunflower is 4 feet 1 inch tall.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[33 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 6
+- 15
+- 20
+- 10%
+- 25
+- 8
+
+**Answer:**
+
+Answer:
+
+The total number of hours worked is 25 days a month and 8 hours a day, so the total number of hours worked is 25 * 8 = 200 hours.
+
+The salary for warehouse workers is $15/hour and the salary for managers is $20/hour, so the total salary is 4 * 15 + 2 * 20 = $600.
+
+The FICA tax is 10%, so the total tax owed is $600 * 10% = $60.
+
+The total cost for wages and taxes is $600 + $60 = $660.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[34 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $500
+* 5%
+* 4%
+
+**Answer:**
+
+Answer: $20
+
+**Solution:**
+
+The original price of the bag is $500. There was a 5% reduction, which is $500 * 5% = $25. The remaining price is $500 - $25 = $475. There was a further 4% reduction, which is $475 * 4% = $20. The total reduction from the original selling price is $25 + $20 = $45.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[35 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 2000
+- 500
+- 1
+- 1500
+- 1000
+- 2
+- 3000
+
+**Answer:**
+
+Answer: 1500 + 2000 = 3500 cans of food were given away.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[36 / 200] Evaluting Question
+Response: **Numbers:**
+- 50
+- 2
+- 5
+
+**Answer:**
+Answer: The number of ants in the jar will be 50 * 2^5 = 200 ants after 5 hours.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[37 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 560
+- 7
+
+**Answer:**
+
+Answer: 560 / 7 = 80 minutes spent calling clients
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[38 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $12
+* $3
+* $50
+
+**Answer:**
+
+Answer: $0
+
+The total amount paid off is $12 + 3 = $15. Subtracting this from the total debt of $50, the remaining debt is $0.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[39 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 80
+- 15
+- Half
+
+**Answer:**
+
+Answer: The number of green fish is not included in the text therefore I cannot answer the question.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[40 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 5
+* 3
+* 2
+* Unknown years of experience for Bill
+
+**Answer:**
+
+Answer: The number of years of experience Bill has now is equal to the number of years of experience he had 5 years ago.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[41 / 200] Evaluting Question
+Response: **Numbers:**
+- The sum of the ages = 96
+- Age of the youngest brother = x
+
+**Solution:**
+The sum of the ages is equal to 96. Since the ages are consecutive integers, the sum of the ages is equal to x + (x + 1) + (x + 2) = 96.
+
+**Answer:**
+Answer: The age of the youngest brother is x.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[42 / 200] Evaluting Question
+Response: **Numbers:**
+- 1000
+- 20
+- 2
+- 3
+
+**Answer:**
+
+Answer: 
+
+The information about Tracy and Katie's driving distances is not relevant to the question, therefore I cannot answer the question.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[43 / 200] Evaluting Question
+Response: **Numbers:**
+- 518
+- 476
+
+**Answer:**
+
+Answer: He should aim to complete the same number of questions each day, which is the average of 518 and 476, which is 502 questions.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[44 / 200] Evaluting Question
+Response: **Numbers:**
+- 300
+- 30
+- 25
+
+**Answer:**
+Answer: 300 + 30 = 330
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[45 / 200] Evaluting Question
+Response: **Numbers:**
+
+- $5
+- 2
+- 7
+- 2 + 1 = 3
+- 3 + 1 = 4
+- 4 + 1 = 5
+- 5 + 1 = 6
+- 6 + 1 = 7
+
+**Answer:**
+
+Answer: The average number of pastries sold on each day of the week is 7.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[46 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 120
+* 5
+* 50
+
+**Answer:**
+
+Answer: There are a total of 120 + 5 * 5 + 50 = 220 jelly beans.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[47 / 200] Evaluting Question
+Response: **Numbers:**
+- 10
+- 2
+- 5
+- 7
+- 20
+- 10
+- 5
+
+**Answer:**
+Answer: 52
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[48 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 3
+- 76
+
+**Answer:**
+
+Answer: $24
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[49 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 15
+- 30%
+- 20
+- Unknown number of claims for Missy
+
+**Answer:**
+
+Answer: 15 + 20 = 35 claims
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[50 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 6
+* 20
+* 25
+* 10
+* 28
+
+**Answer:**
+
+Answer: 60
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[51 / 200] Evaluting Question
+Response: **Numbers:**
+- 4
+- 9
+- 2
+- 3
+- 65
+
+**Answer:**
+
+The number of Oreos and cookies in a box is in the ratio 4:9. So, the number of Oreos in the box is 4/13 * 65 = 20 and the number of cookies in the box is 9/13 * 65 = 45.
+
+The cost of each Oreo is $2 and the cost of each cookie is $3. So, the total cost of buying the Oreos is 2 * 20 = $40 and the total cost of buying the cookies is 3 * 45 = $135.
+
+The total amount of money Zane spent on buying the Oreos and cookies is $40 + $135 = $175.
+
+The amount of money Zane spent on buying the Oreos is $40. So, the amount of money Zane spent on buying the cookies is $175 - $40 = $135.
+
+Therefore, Zane spent $135 more money on buying the cookies than buying the Oreos.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[52 / 200] Evaluting Question
+Response: **Numbers:**
+- 8
+- 4
+- 3
+- 8 + 4 = 12
+- 3 * 12 = 36
+
+**Answer:**
+Answer: 36
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[53 / 200] Evaluting Question
+Response: **Numbers:**
+- 6:00
+- 18
+- 10:00
+
+**Answer:**
+Answer: 18 hours
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[54 / 200] Evaluting Question
+Response: **Numbers:**
+- 12
+- 4
+- 3
+- 3 dozen
+
+**Answer:**
+Answer: To make 3 dozen lemon cupcakes, Jose will need 3 times the number of tablespoons of lemon juice that he needs to make a dozen cupcakes, which is 3 * 12 = 36 tablespoons of lemon juice.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[55 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $100
+* $110
+* $75
+* $0.75
+* 200
+
+**Answer:**
+
+Answer: $25
+
+The remaining money after paying back his brother and spending on ingredients is $100 - $110 - $75 = $25.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[56 / 200] Evaluting Question
+Response: **Numbers:**
+- 5
+- 20
+
+**Answer:**
+Answer: 5
+
+The number of steaks needed is equal to the number of family members, which is 5.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[57 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 7
+* 18
+* 15
+
+**Answer:**
+
+Answer: 7 rows of 18 plants and 15 additional plants, a total of 7 x 18 + 15 = 129 plants.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[58 / 200] Evaluting Question
+Response: **Numbers:**
+- 13
+- 14
+- 10
+
+**Answer:**
+Answer: 13 rooms have 10ml of bubble bath, and 14 single rooms have 10ml of bubble bath. Therefore, a total of 13 + 14 = 27 rooms will need a total of 10ml * 27 = 270ml of bubble bath.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[59 / 200] Evaluting Question
+Response: **Numbers:**
+- 51
+- 90
+- 1/6
+- 1/3
+
+**Answer:**
+
+The number of beads that Charley pulled out is as follows:
+
+1/6 of 90 = 15 black beads
+1/3 of 51 = 17 white beads
+
+Total number of beads pulled out = 15 + 17 = 32 beads
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[60 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $125.00
+* $100.00
+* 20%
+* 50%
+
+**Answer:**
+
+Answer: 50% of the entire bill, which is 50% x ($125.00 + $100.00 + 20% x ($125.00 + $100.00)) = $62.50
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[61 / 200] Evaluting Question
+Response: **Numbers:**
+- 2
+- 3
+- 1
+- 2
+- 2
+
+**Answer:**
+
+Answer: 4
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[62 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 16
+- 1/4
+- 2/3
+
+**Answer:**
+
+The combined number of marbles is 16 + 1/4 * 16 + 2/3 * (16 + 1/4 * 16) = 21 marbles. Each person will get 21 / 3 = 7 marbles.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[63 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $12000
+* 10
+
+**Answer:**
+
+Answer: $12000
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[64 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 40
+- 10
+- 60
+
+**Answer:**
+
+Answer: 40 - 10 = 30 Judges are over 50 years old.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[65 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 20
+- 25% (one-fourth)
+- 33.3% (one-third)
+
+**Answer:**
+
+Answer: There are a total of 20 students in a class. One-fourth of the students stayed in the classroom, which is equivalent to 25%. The remaining students went to the playground, and one-third of those students are boys, which is equivalent to 33.3%. Therefore, the number of girls on the playground from this class is 25% - 33.3% = -8.3%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[66 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 80
+- 1.5
+- 2.2
+- 2
+- 14
+
+**Answer:**
+
+Answer: If Ajax exercises for 2 hours every day for two weeks, he will weigh 80 - (1.5 * 2 * 14) = 20 kilograms.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[67 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 26
+- 8
+- 7
+- 11
+
+**Answer:**
+
+Answer:
+
+Victor, Austin, and Brian will each make $100.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[68 / 200] Evaluting Question
+Response: **Numbers:**
+- 18
+- 90
+- 3
+
+**Answer:**
+
+The number of gift boxes that Edmund can wrap every 3 days is 5.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[69 / 200] Evaluting Question
+Response: **Numbers:**
+- 5
+- 20
+- .5
+
+**Answer:**
+
+Answer: James will need to buy 4 jars to store the honey.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[70 / 200] Evaluting Question
+Response: **Numbers:**
+- 2
+- 3
+- 2
+- 80
+
+**Answer:**
+Answer: 80 times greater
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[71 / 200] Evaluting Question
+Response: **Numbers:**
+- 30
+- 5
+- 7
+- 2
+
+**Answer:**
+
+The information about the third and fourth sets is not included in the text therefore I cannot answer the question.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[72 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 4
+* 2
+* 3
+* 12
+
+**Answer:**
+
+Answer: 12 + 3 * 4 = 24
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[73 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 30
+- 20
+- 4.80
+- 3.40
+
+**Answer:**
+
+Answer:  1.60
+
+The cost per ounce for the smaller box is $3.40/20 = 1.60 cents per ounce.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[74 / 200] Evaluting Question
+Response: **Numbers:**
+
+- $140
+- $350
+
+**Answer:**
+
+Answer: 60%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[75 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 17.5
+- 2
+- 4
+
+**Answer:**
+
+Answer: Zane picked up 4 times as many pounds of garbage as Dewei, which is equal to 4 * (17.5 - 2) = 50 pounds of garbage.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[76 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 30%
+* 50%
+* 5,000,000
+* 1,000,000
+* 2,000,000
+
+**Answer:**
+
+Answer: The provided text does not describe any information about the likelihood of Andy winning or losing both lawsuits, therefore I cannot provide the answer to this question.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[77 / 200] Evaluting Question
+Response: **Numbers:**
+- 9
+- 8
+- 40
+
+**Answer:**
+Answer: 5
+
+The number of packs opened for the classmates is 5.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[78 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 60%
+- 25%
+- 20
+- 40
+
+**Answer:**
+
+The final answer is:
+
+**Answer:** $100
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[79 / 200] Evaluting Question
+Response: **Numbers:**
+- 1/4
+- 2/5
+- 10
+- 8
+- 130
+
+**Answer:**
+
+The final answer is:
+
+**Answer:** $200
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[80 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 15
+- 58940
+- 130000
+
+**Answer:**
+
+Answer:
+
+The text states that Salem is 15 times the size of Leesburg, therefore the total number of people in Salem is 15 times the number of people in Leesburg, which is 58940. If 130000 people move out of Salem and half of Salem's population is women, the remaining number of people in Salem is 58940 - 130000 = -71060. Since the number of people in a population cannot be negative, the final answer is 0.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[81 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 15
+* 2 * 15 = 30
+* 5
+* 100
+
+**Answer:**
+
+Answer: The remaining pages to be read are 100 - 15 - 30 - 5 = 50 pages.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[82 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 8
+* 50%
+* 6
+
+**Answer:**
+
+Samanta, Mark, and Eric have a total of 8 + 8 + 6 = 24 points.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[83 / 200] Evaluting Question
+Response: **Numbers:**
+- 1/2
+- 2.00
+- 30
+
+**Answer:**
+Answer: $2.00 x 30 = $60.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[84 / 200] Evaluting Question
+Response: **Numbers:**
+- $100
+- $5
+- $20
+- $10
+
+**Answer:**
+
+There are a total of 10 $10 bills in Gail's wallet.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[85 / 200] Evaluting Question
+Response: **Numbers:**
+- 32
+- 1/4
+- 3/8
+- 50%
+- 4
+
+**Answer:**
+
+The total number of teeth removed is 
+
+1/4 * 32 + 3/8 * 32 + 50% * 32 + 4 = 8 + 12 + 16 + 4 = 40 teeth
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[86 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 20
+* 5
+* 3
+* 6
+
+**Answer:**
+
+Answer: Shara has a total of 20 + (5 x 3) + 6 = 51 shells now.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[87 / 200] Evaluting Question
+Response: **Numbers:**
+- 4
+- 10
+
+**Answer:**
+
+Answer: The number of spokes inside the garage is not specified in the text, therefore I cannot provide an answer to this question.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[88 / 200] Evaluting Question
+Response: **Numbers:**
+- 3
+- 5
+- 4
+
+**Answer:**
+
+The total number of points scored is:
+
+3 + (3 + 5) - 4 = 13 points
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[89 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $200
+* $130
+* $444
+* $50
+* $40
+
+**Answer:**
+
+**Answer:**
+
+The total amount owed by Ariana is $200 + $130 + $444 = $874.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[90 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 2
+* 30.00
+* 9
+* 15.00
+* 50.00
+
+**Answer:**
+
+Answer: $30.00 * 2 + 15.00 * 9 + 50.00 = $60.00 + $135.00 + $50.00 = $245.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[91 / 200] Evaluting Question
+Response: **Numbers:**
+- $40
+- $14
+- $11
+- $5
+- $50
+- $7
+
+**Answer:**
+
+Answer: $43
+
+The remaining money that Dave has is $50 - $7 = $43.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[92 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 10
+- 5
+- 30
+- 5
+
+**Answer:**
+
+Answer: $10 x 6 = $60
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[93 / 200] Evaluting Question
+Response: **Numbers:**
+
+- Bob's age: 11
+- Susan's age: 15
+- Arthur's age: Unknown
+- Tom's age: Unknown
+
+**Answer:**
+
+The total age of the family members is as follows:
+
+Bob's age = 11
+Susan's age = 15
+Arthur's age = 2 + 15 = 17
+Tom's age = 11 + 3 = 14
+
+Total age = 11 + 15 + 17 + 14 = 57
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[94 / 200] Evaluting Question
+Response: **Numbers:**
+- 4
+- 6
+- 42
+- 3
+
+**Answer:**
+
+Answer: $7
+
+The information about the cost of the red socks is not relevant to the calculation of the cost of each blue pair, therefore I have not included it in the final answer.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[95 / 200] Evaluting Question
+Response: **Numbers:**
+- 20
+- 50
+
+**Answer:**
+
+Answer: $50 x 20 x 2 = $2000
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[96 / 200] Evaluting Question
+Response: **Numbers:**
+- 30
+- 15
+- 6
+
+**Answer:**
+
+Answer: 30 - 15 - 6 = 9 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[97 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 16
+* Unknown age of Ral
+* Age of Suri
+
+**Answer:**
+
+Answer: The unknown age of Ral is 16 / 2 = 8.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[98 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 270
+- 3
+- 180
+
+**Answer:**
+
+Answer: The train would take an additional 2 hours to travel an additional 180 miles.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[99 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 5
+- 100
+- 25
+
+**Answer:**
+
+Answer: 5 * 100 * 25 = 1250 calories burned
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[100 / 200] Evaluting Question
+Response: **Numbers:**
+
+- Number of fingers on a hand: Unknown
+- Number of trumpets owned by Miles: Unknown
+- Number of guitars owned by Miles: Unknown
+- Number of hands: Unknown
+- Number of trombones owned by Miles: Unknown
+- Number of heads on a human: Unknown
+- Number of French horns owned by Miles: Unknown
+
+**Answer:**
+
+The text does not provide information about the number of fingers, hands, heads, or French horns on a human, therefore I cannot provide the final answer to this problem.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[101 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 5
+- 6
+- 4
+- 8
+
+**Answer:**
+
+Answer: The total number of fishes caught throughout the competition is 6 + 4 + 8 = 18 fishes.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[102 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 2
+- 5
+- 4
+- 28
+
+**Answer:**
+
+Answer: 5
+
+The number of nights that 5 boxes of crackers will last Chad is 5.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[103 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $3
+* $3.50
+* 10
+
+**Answer:**
+
+Answer: $3.50 x 10 = $35.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[104 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 10
+- 40
+- 200
+
+**Answer:**
+
+Answer: Juan needs 20 half-gallons of milk to bake 200 dozen cookies.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[105 / 200] Evaluting Question
+Response: **Numbers:**
+- 15
+- 12
+
+**Answer:**
+
+Answer: 3
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[106 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 3/4
+- 70
+
+**Answer:**
+
+Answer: Rickey took a total of 70 minutes to finish the race, and the time he took is equal to the time Prejean took, which is 3/4 of 70 minutes. Therefore, Rickey took 3/4 * 70 = 52.5 minutes to finish the race.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[107 / 200] Evaluting Question
+Response: **Numbers:**
+- 1
+- 3
+- 4
+
+**Answer:**
+Answer: 12
+
+The mom had 1 eye, the dad had 3 eyes, and each kid had 4 eyes. So, the total number of eyes in the family is 1 + 3 + 3 * 4 = 12 eyes.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[108 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $8
+* $400
+* $1600
+
+**Answer:**
+
+Answer: The information about the number of kilograms of cherries bought in this problem is not included in the text, therefore I cannot provide the final answer.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[109 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 5
+- 10
+- 3
+- 3 x 10 = 30
+
+**Answer:**
+
+Answer: 30 feet
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[110 / 200] Evaluting Question
+Response: **Numbers:**
+- 3
+- 1
+- 2
+- 3
+
+**Answer:**
+Answer: 2
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[111 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 10
+- 20
+- 30
+- 20
+- $20
+- $10
+
+**Answer:**
+
+Answer: $200
+
+**Explanation:**
+
+- Marites current internet speed is 10 Mbps and her monthly bill is $20.
+- If she upgrades to 30 Mbps, the price will be double her current bill, which is $20 x 2 = $40.
+- If she upgrades to 20 Mbps, the price will be $20 + 10 = $30.
+- The savings per year will be $40 - $30 = $10 per month, which is a total of $1200 per year.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[112 / 200] Evaluting Question
+Response: **Numbers:**
+- 300
+- 2
+- Half
+
+**Answer:**
+
+Answer: There are twice as many females as males, and half the females and half the males have horns. Therefore, there are no more females with spots than males with horns.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[113 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 8
+* 2
+* Sum of brother's ages = 8 + 8 = 16
+
+**Answer:**
+
+Answer: Hannah is 2(16) = 32 years old.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[114 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 40%
+- 2
+- 15
+- 8
+- 1
+- 2
+
+**Answer:**
+
+Answer:
+
+The number of girls in the lunchroom is 40% of the total number of students, which is not given in the text therefore I cannot provide the final answer.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[115 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 5
+- 16
+- 56
+
+**Answer:**
+
+Answer: 77
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[116 / 200] Evaluting Question
+Response: **Numbers:**
+- 7
+- 12
+- 9
+- 5
+
+**Answer:**
+Answer: $5 * (7 + 12 + 9) = $5 * 28 = $140
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[117 / 200] Evaluting Question
+Response: **Numbers:**
+- $1000
+- $65
+- $20
+- 20%
+- 4
+
+**Answer:**
+
+The down payment is $20 and the monthly installments are $65. After a down payment of $20, the remaining balance is $1000 - $20 = $980. After paying for 4 months, the total amount paid is $65 * 4 = $260. The remaining balance is $980 - $260 = $720.
+
+**Answer:**
+
+$720
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[118 / 200] Evaluting Question
+Response: **Numbers:**
+- 1000
+- 25
+- 1/4
+- 50
+
+**Answer:**
+Answer: 400
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[119 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 1165
+- 154
+- 150
+- 100
+
+**Answer:**
+
+Answer: 7
+
+The remaining pieces are 100mm each, and 1165 - 150 = 1015mm, which is equal to 7mm.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[120 / 200] Evaluting Question
+Response: **Numbers:**
+
+* Number of couples: 3
+* Number of single people: 5
+* Number of times Ron gets to pick a new book per year: Unknown
+
+**Answer:**
+
+Answer: The text does not specify the number of times Ron gets to pick a new book per year, therefore I cannot provide an answer to this question.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[121 / 200] Evaluting Question
+Response: **Numbers:**
+
+* Age of Will (now) = 4
+* Age of Diane = Unknown
+* Age of Will in 3 years = 4 + 3 = 7
+* Age of Diane in 5 years = Unknown
+
+**Answer:**
+
+Answer: The sum of Will and Diane's ages in 5 years will be 7 + Unknown = Unknown.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[122 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 6
+- 2
+- 3
+
+**Answer:**
+
+Answer: $6 + 2 = $8
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[123 / 200] Evaluting Question
+Response: **Numbers:**
+- 12
+- 3
+- Twice
+
+**Answer:**
+
+Answer: 12 + 2(12 - 3) = 21 miles
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[124 / 200] Evaluting Question
+Response: **Numbers:**
+- 2
+- 8
+- 1
+- 10
+
+**Answer:**
+Answer: Bob will need to use 2 planks of 8-foot-long boards to construct 10 raised beds.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[125 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 23
+* 19
+* 1
+
+**Answer:**
+
+Answer: The farmer has to order a total of 23 + 19 = 42 apples for a month.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[126 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 1
+- 2
+- 1/3
+
+**Answer:**
+
+Answer: To tie Tiffany on Saturday, Billy has to run 2 miles.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[127 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 20
+- 80
+- 1/2
+
+**Answer:**
+
+Answer: $40
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[128 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 212
+- 310
+- 502
+
+**Answer:**
+
+Answer: The total number of sweets is 1024, which will be shared between Jennifer and her 3 friends equally, therefore each person will get 341 sweets.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[129 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 38
+* 10
+* 20
+
+**Answer:**
+
+Answer: 3
+
+The box was too heavy with 38 plates. After removing 3 plates, the box was still too heavy. Therefore, each shipping box can hold a total of 20 pounds.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[130 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 25
+- 2
+- 15
+- 20
+
+**Answer:**
+
+Answer: $25 x 2 + 2 x $15 + $20 = $50 + $30 + $20 = $100
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[131 / 200] Evaluting Question
+Response: **Numbers:**
+- 132
+- 1/3
+- 2
+
+**Answer:**
+
+Answer:  The combined age of Amy, Jeremy, and Chris is 132.  Amy is 1/3 the age of Jeremy, and Chris is twice as old as Amy.  Therefore, the age of Jeremy is 3 * 1/3 = 1 year old.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[132 / 200] Evaluting Question
+Response: **Numbers:**
+- 450
+- 33
+- 10
+- 3
+
+**Answer:**
+
+Answer: The information about the adults in Bob's family is not sufficient to answer the question therefore I cannot provide the final answer.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[133 / 200] Evaluting Question
+Response: **Numbers:**
+- 10
+- 3
+- 1
+- 8
+
+**Answer:**
+Answer: 3
+
+Alex had to cook 3 burgers for each of the 10 guests, but 1 guest won't eat meat and another guest won't eat bread. So, the total number of burgers to be made is 10 * 3 - 1 - 1 = 29. The burger buns came in packs of 8, so Alex will need to buy 29 / 8 = 3 packs of buns.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[134 / 200] Evaluting Question
+Response: **Numbers:**
+- 81
+- 5
+- 8
+
+**Answer:**
+Answer: 0
+
+The information about the 81 inches of sub and the 8-inch subs is not relevant to the question of how many 5-inch subs Venus needs to buy.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[135 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 6
+* 50%
+* 20
+
+**Answer:**
+
+Answer: $20 x 6 - (20 x 6 x 50%) = $120 - $60 = $60
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[136 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $500
+* $12
+* $0.30
+* $2
+* 15
+* 40
+* 25
+
+**Answer:**
+
+Answer: $100
+
+The total number of items sold is 15 boxes of pizza, 40 packs of potato fries, and 25 cans of soda, which totals to a total of 80 items. The total cost of items sold is $12 x 15 + 0.30 x 40 + 2 x 25 = $180 + $12.00 + $50 = $252.00. To reach his goal of $500, Einstein still needs to raise $500 - $252 = $248.00.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[137 / 200] Evaluting Question
+Response: **Numbers:**
+- 10
+- 1/2
+- 1/5
+- 1/3
+
+**Answer:**
+Answer: 2.5
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[138 / 200] Evaluting Question
+Response: **Numbers:**
+- 2
+- 30
+- 25
+- 38
+
+**Answer:**
+
+Answer: 0
+
+The remaining time is 0 minutes as all of Joan's time has been spent on her music practice and reading about the history of the piano.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[139 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 8
+- 20
+
+**Answer:**
+
+Answer: 48
+
+The number of tiles running the width of the wall is 8 and the number of tiles running the height of the wall is 20. To find the total number of tiles in the shower, we need to multiply the number of tiles running the width of the wall by the number of tiles running the height of the wall. 8 * 20 = 48. Therefore, there are a total of 48 tiles in the shower.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[140 / 200] Evaluting Question
+Response: **Numbers:**
+- 10ml
+- 5ml
+
+**Answer:**
+Answer: 10ml + 5ml = 15ml
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[141 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 2 kg
+* $82
+* $180
+
+**Answer:**
+
+Answer: $180 - (2 kg x $82) = $180 - $164 = $16
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[142 / 200] Evaluting Question
+Response: **Numbers:**
+- 45
+- 15
+
+**Answer:**
+
+Answer: The house will be cleaned in 45/15 = 3 minutes.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[143 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 60
+* 40%
+* One-third
+
+**Answer:**
+
+Answer: The granddaughter's age is one-third of her mother's age, which is 60. So, the granddaughter's age is 60 / 3 = 20 years old.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[144 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 200
+* 50
+* 3
+* 4
+* 25
+* 10
+* 12
+* 7
+* 8
+
+**Answer:**
+
+The area of the yard is 200 * 50 = 10,000 square feet. The area of the sidewalk is 3 * 50 = 150 square feet. The area of the flower beds is 4 * 25 = 100 square feet, 10 * 12 = 120 square feet, and 7 * 8 = 56 square feet. The total area used up is 150 + 100 + 120 + 56 = 826 square feet. Therefore, the area of sod that Jill will need to cover is 10,000 - 826 = 9,174 square feet.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[145 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 1
+* 2
+* 2
+* 0.5
+
+**Answer:**
+
+Answer: 3.5
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[146 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 500
+- 2
+- 4
+- 1
+- 0.5
+
+**Answer:**
+
+Answer: $1,000
+
+The store will receive a total of 500 customers per month, each customer purchasing 2 heads of lettuce for $1 and 4 tomatoes for $0.5. So, the total number of heads of lettuce sold per month is 500 * 2 = 1,000. The total number of tomatoes sold per month is also 500 * 4 = 2,000. The total revenue from lettuce and tomatoes is 1,000 * 1 + 2,000 * 0.5 = $1,000 + $1,000 = $2,000.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[147 / 200] Evaluting Question
+Response: **Numbers:**
+
+- Ten
+- Twice
+- Eight
+- Two
+- Red pens = Two fewer than pencils
+
+**Answer:**
+
+Answer:  The total number of pens in Sam's collection is unknown.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[148 / 200] Evaluting Question
+Response: **Numbers:**
+- 1
+- 2
+- 5
+- Double the number of trains he already has
+
+**Answer:**
+Answer: Max has a total of 11 trains at the end of the 5 years.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[149 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 500
+- 20%
+- 25%
+- 4
+
+**Answer:**
+
+Answer: The number of clovers in the field that are both purple and four-leaved is 20% * 25% * 500 = 250 clovers.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[150 / 200] Evaluting Question
+Response: **Numbers:**
+- 4
+- 1.50
+- 2
+- 15
+
+**Answer:**
+
+Chastity had a total of $15. She spent $4 x $1.50 = $6.00 on lollipops and $2 x 2 = $4.00 on packs of gummies. Therefore, she was left with $15 - $6.00 - $4.00 = $5.00 after spending on the candies.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[151 / 200] Evaluting Question
+Response: **Numbers:**
+- 63
+- 7
+
+**Answer:**
+
+The total weight of the dogs is 63 + 63 * 7 = 491 pounds.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[152 / 200] Evaluting Question
+Response: **Numbers:**
+- $5
+- $8
+- $4
+- 7
+
+**Answer:**
+Answer: $5 x 7 + $8 x 7 + $4 x 7 = $35 + $56 + $28 = $129
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[153 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 3
+* 20
+* 40
+* 8
+
+**Answer:**
+
+Answer: 480
+
+The area of a slanted rectangular side is found by the formula A = 20x40xsin(theta). The area of one roof is 20x40xsin(theta) square feet. If he needs 8 shingles to cover one square foot of roof, the total number of shingles needed is 20x40xsin(theta)x8. The total number of shingles needed is 480 shingles.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[154 / 200] Evaluting Question
+Response: **Numbers:**
+- 32
+- 2
+- 5
+- 4
+
+**Answer:**
+Answer: There are a total of 32 tables in the hall. Half of the tables have 2 chairs each, 5 have 3 chairs each and the rest have 4 chairs each. Therefore, the total number of chairs in the hall is 32 * 2 + 5 * 3 + 32 * 4 = 64 + 15 + 128 = 207 chairs.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[155 / 200] Evaluting Question
+Response: **Numbers:**
+- 83
+- 14
+- 17
+
+**Answer:**
+Answer: 52 - 14 - 17 = 51 - 14 - 17 = 10
+
+The remaining number of spelling badges is 10, which is the number of spelling badges that Celestia has.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[156 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 1,000
+- 2,300
+- 1/4
+
+**Answer:**
+
+The total area of the house is 2,300 sq ft and the living room, dining room and kitchen take up 1,000 sq ft. Therefore, the remaining area is the master bedroom suite and guest bedroom, which is 1,300 sq ft.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[157 / 200] Evaluting Question
+Response: **Numbers:**
+- 900
+- 2/9
+
+**Answer:**
+
+The total number of strawberries that each hedgehog ate is 810.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[158 / 200] Evaluting Question
+Response: **Numbers:**
+- 3
+- 7
+- 5
+
+**Answer:**
+
+Answer: Cara's cat catches 3 less than five times as many animals as Martha's cat, which is 3 less than 5 times 3 = 15, therefore Cara's cat catches 12 animals.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[159 / 200] Evaluting Question
+Response: **Numbers:**
+- 100000
+- 1000
+- 20000
+
+**Answer:**
+
+Answer: 100000 - 20000 = 80000
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[160 / 200] Evaluting Question
+Response: **Numbers:**
+- 91
+- 92
+- 90
+
+**Answer:**
+Answer: 92
+
+In order for Ahmed to beat Emily, he must get a grade that is higher than her grade of 92. Therefore, the minimum grade that Ahmed needs to get is 93.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[161 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 2
+- 5
+- 13
+- 2 years
+- 5 months
+
+**Answer:**
+
+Answer:  The total time it took to complete all the goals is 2 years and 13 months.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[162 / 200] Evaluting Question
+Response: **Numbers:**
+- 3
+- 2.5
+- Unknown time for Diego
+
+**Answer:**
+
+The text does not specify the time taken by Diego to complete the remaining portion of the race, therefore I cannot provide the final answer.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[163 / 200] Evaluting Question
+Response: **Numbers:**
+- 72
+- Half (can be represented as 0.5)
+- One-third (can be represented as 1/3)
+
+**Answer:**
+
+Mr. Lu sold a total of 72 computers, half of which are laptops and one-third are netbooks. Therefore, the number of desktop computers sold is 72 - 0.5 * 72 - 1/3 * 72 = 12 computers.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[164 / 200] Evaluting Question
+Response: **Numbers:**
+- 7
+- 2
+- 20
+
+**Answer:**
+Answer: $16
+
+The total cost of two pounds of steak is 2 x 7 = $14. The total amount paid is $20. The change given back is $20 - $14 = $6.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[165 / 200] Evaluting Question
+Response: **Numbers:**
+- 7
+- 11
+- 9
+
+**Answer:**
+
+Answer: The average number of birds seen by Marcus, Humphrey, and Darrel is 9, 11, and 7, respectively.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[166 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 10
+- 20
+- 60
+
+**Answer:**
+
+Answer: The number of wipes in the container in the morning is unknown.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[167 / 200] Evaluting Question
+Response: **Numbers:**
+
+- $120 million
+- 3.5
+- 60%
+- $60 million
+
+**Answer:**
+
+Answer: $120 million * 3.5 = $420 million
+
+The production company made a profit of $420 million.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[168 / 200] Evaluting Question
+Response: **Numbers:**
+- 100
+- 20%
+- 300
+
+**Answer:**
+
+The number of photographs to be taken today is 20% fewer than 100, which is 20% * 100 = 20 photographs. Therefore, the total number of photographs to be taken is 100 - 20 = 80 photographs.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[169 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 200
+- 20%
+- 200 * 20% = 40
+- 200 + 40 = 240
+- 240 * 2 = 480
+
+**Answer:**
+
+Answer: 480
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[170 / 200] Evaluting Question
+Response: **Numbers:**
+- 50
+- 5
+- 2
+
+**Answer:**
+
+Bob buys 50 feet of rope, uses a 5th of it to make a small piece of art, and gives half of the remaining rope to a friend. So, the total amount of rope left is 40 feet. He then cuts 2-foot sections, so the number of sections he gets is 40/2 = 20 sections.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[171 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 3
+- 1
+- 40
+- 8
+
+**Answer:**
+
+Answer: 4 tablespoons of soap should be added to the container.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[172 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 30
+* 15
+* 30
+
+**Answer:**
+
+Answer: 30 + 15 + 30 = 75 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[173 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 16
+* 256
+* 50
+
+**Answer:**
+
+Answer: Jed was fined for traveling at a speed of 50 + 16 = 66 miles per hour.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[174 / 200] Evaluting Question
+Response: **Numbers:**
+- 60
+- 30
+- 8
+- 4
+- 2
+
+**Answer:**
+
+The information about the number of paintings sold and the cost of each painting is as follows:
+
+* Number of large paintings sold = 8
+* Cost of a large painting = $60
+* Number of small paintings sold = 4
+* Cost of a small painting = $30
+
+Therefore, the total cost of paintings sold last month is:
+
+8 * 60 + 4 * 30 = $480 + $120 = $600
+
+**Answer:**
+
+$600
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[175 / 200] Evaluting Question
+Response: **Numbers:**
+- $200
+- Unknown amount for jellyfish
+- Nine times the amount of jellyfish
+
+**Answer:**
+
+The information about the cost of the jellyfish is not available in the text, therefore I cannot provide the final answer.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[176 / 200] Evaluting Question
+Response: **Numbers:**
+- 14
+- Twice the number of trash cans added to the back of stores, which is 14 * 2 = 28
+
+**Answer:**
+Answer: 14 + 28 = 42
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[177 / 200] Evaluting Question
+Response: **Numbers:**
+- 2008
+- 45
+- 4
+- 2
+
+**Answer:**
+
+Answer: If children 6–11 years old spend 45 minutes each day watching television and are allowed to watch television 4 days a week, they will spend a total of 45 minutes * 4 days = 180 minutes watching television in 2 weeks.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[178 / 200] Evaluting Question
+Response: **Numbers:**
+- 8
+- 3
+- 8
+
+**Answer:**
+
+Answer: The free time that Jackie has is 8 - 8 - 3 = 1 hour per day.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[179 / 200] Evaluting Question
+Response: **Numbers:**
+- 12
+- 85
+- Twice
+- 5
+- 85
+
+**Answer:**
+
+Answer: 85 - 12 = 73
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[180 / 200] Evaluting Question
+Response: **Numbers:**
+- 100
+- 30
+- Double
+
+**Answer:**
+
+The bald eagle can dive at a speed of 100 miles per hour, and the peregrine falcon can dive at a speed of twice that of the bald eagle. If the bald eagle takes 30 seconds to dive to the ground, then the peregrine falcon will take half the time to dive the same distance, which is 30 / 2 = 15 seconds.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[181 / 200] Evaluting Question
+Response: **Numbers:**
+- 20
+- 10 (half of 20)
+- 2
+- 5 (half of 10 and the two brownies given to Simon)
+
+**Answer:**
+Answer: 5
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[182 / 200] Evaluting Question
+Response: **Numbers:**
+- 20
+- 30
+- 1/5
+
+**Answer:**
+
+The total number of books the three have is as follows:
+
+**Answer:** 30 + 20 + (20 x 1/5) = 50 books
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[183 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 175
+* 20%
+* 50
+
+**Answer:**
+
+Answer: Mark can bench press 50 pounds less than Craig, so he can bench press 175 - 50 = 125 pounds.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[184 / 200] Evaluting Question
+Response: **Numbers:**
+- 55
+- 30
+- 3/5
+
+**Answer:**
+
+Answer: The number of girls with short hair is 2/3 of the girls, which is equal to 2/3 * 30 = 20 girls.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[185 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $30
+* 1.5
+* 18
+
+**Answer:**
+
+Answer: $30 x 1.5 x 18 = $900
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[186 / 200] Evaluting Question
+Response: **Numbers:**
+- 40
+- 200
+- 60
+- 5
+
+**Answer:**
+
+The number of books Evan will have in five years is 200 + 40 = 240 books.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[187 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 3
+- 30
+- 5
+- 2
+
+**Answer:**
+
+Answer: 30 * 2 = 60 worms
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[188 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 200
+- 8
+- 15
+
+**Answer:**
+
+Answer: To reach his goal of giving out 200 tickets in May, Officer Hopps has to average 12 tickets a day for the remaining 15 days of the month.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[189 / 200] Evaluting Question
+Response: **Numbers:**
+
+* $3,000
+* $8,000
+* 2%
+* 3
+* $110,000
+
+**Answer:**
+
+Answer: $2,000
+
+**Explanation:**
+
+Here is the solution to the problem:
+
+Nigella's total earnings for the month are $8,000. This means that the commission she earned on the sale of the three houses is $8,000 - $3,000 = $5,000. The commission on each house is 2%, so the total number of houses sold is 5,000 * 100% = 250. Therefore, the cost of House A is $2,000.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[190 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 20 oz = 20
+* 5 oz = 5
+* 1 oz = 1
+* 10%
+
+**Answer:**
+
+Haleigh has a total of 20 oz, 5 oz, and 25 oz of wax. If each candle has 10% of its original wax left, that means that she can make a total of 20 * 0.1 + 5 * 0.1 = 2.5 candles. Therefore, Haleigh can make 2 candles and the remaining wax will be used to make a third candle.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[191 / 200] Evaluting Question
+Response: **Numbers:**
+
+- 80
+- 4
+- 5
+
+**Answer:**
+
+Answer: $80 / 4 = $20
+
+Each piece of pizza cost $20.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[192 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 40%
+* 20%
+* 50
+* 100
+
+**Answer:**
+
+The final cost of the items is as follows:
+
+**Shoes:** 50 * 40% = $20 off, remaining cost $50 - $20 = $30
+
+**Dress:** 100 * 20% = $20 off, remaining cost $100 - $20 = $80
+
+**Total cost:** $30 + $80 = $110
+
+**Answer:**
+
+$110
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[193 / 200] Evaluting Question
+Response: **Numbers:**
+- 2/3
+- 1/3
+- 9
+
+**Answer:**
+
+The total time taken to complete the marathon is as follows:
+
+The time taken by Dean is 9 hours.
+
+The time taken by Micah is 2/3 of Dean's time = 2/3 * 9 = 6 hours
+
+The time taken by Jake is 1/3 more than Dean's time = 1/3 * 9 = 3 hours
+
+Total time taken = Dean's time + Micah's time + Jake's time = 9 + 6 + 3 = 18 hours
+
+**Answer:**
+
+The total time taken to complete the marathon is 18 hours.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[194 / 200] Evaluting Question
+Response: **Numbers:**
+- 12
+- 4
+
+**Answer:**
+
+Answer: If each of the friends ate 4 slices, and a 12-slice pizza was ordered, the number of friends with Ron was more than one.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[195 / 200] Evaluting Question
+Response: **Numbers:**
+- $30
+- $30 / 3 = $10
+
+**Answer:**
+Answer: $20
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[196 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 3
+* 2
+* 4
+* 4
+
+**Answer:**
+
+Answer: 4/3 of the bacon bits on Grandma's salad were red.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[197 / 200] Evaluting Question
+Response: **Numbers:**
+- 12
+- 3
+- Bill's number of pies
+
+**Answer:**
+
+There is no information about Bill's number of pies in the text, therefore I cannot complete the problem.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[198 / 200] Evaluting Question
+Response: **Numbers:**
+- 3
+- 6
+- 4
+- 2400
+- 1800
+
+**Answer:**
+
+Answer: The time it will take for Hugo and Tom to fold 2400 small boxes and 1800 medium boxes is the sum of the time it takes to fold a small box and a medium box, which is 3 + 6 = 9 seconds.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[199 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 12
+* 100
+* 24
+* 3.5
+
+**Answer:**
+
+Answer: $3.50 per minute.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+[200 / 200] Evaluting Question
+Response: **Numbers:**
+
+* 50
+* 100
+* $.1
+* $100
+
+**Answer:**
+
+Answer:  The total cost of Tom's lease in a year can be calculated as follows:
+
+- Distance driven per week = 50 * 3 + 100 * 4 = 150 + 400 = 550 miles
+- Cost per mile = $.1 * 550 = $55
+- Weekly fee = $100
+
+Total cost = $55 + $100 = $155 per week
+
+Total cost per year = $155 * 52 = $8,300
+
+Therefore, Tom's total cost of lease in a year is $8,300.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_ic/google_gemma-7b-it__gsm_ic__20260526_0844.json
+ Completed 200 questions for gsm_ic
+Model 'google/gemma-7b-it' released from the notebook process.
+=============
+All experiments are completed. Total time taken: 14.1 minutes
+Results are saved to: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/

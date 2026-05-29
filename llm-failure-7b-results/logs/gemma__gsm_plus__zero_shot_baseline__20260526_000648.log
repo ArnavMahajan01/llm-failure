@@ -1,0 +1,3251 @@
+COMMAND: /usr/bin/python3 /content/drive/MyDrive/COMP6242/Project/llm-failure/run_experiment.py --model gemma --benchmark gsm_plus --condition zero_shot_baseline
+
+`torch_dtype` is deprecated! Use `dtype` instead!
+FULL RUN: 200 samples per benchmark
+Models: ['gemma']
+Benchmarks: ['gsm_plus']
+Conditions: ['zero_shot_baseline']
+Runs per questions: 1
+
+===========
+MODEL: google/gemma-7b-it
+
+===========
+Loading HF model: google/gemma-7b-it
+Quantization: 4-bit; dtype: torch.bfloat16
+
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/254 [00:00<00:00, 8756.38it/s, Materializing param=model.embed_tokens.weight]
+Loading weights:   0%|          | 1/254 [00:00<00:00, 4583.94it/s, Materializing param=model.embed_tokens.weight]
+Loading weights:   1%|          | 2/254 [00:00<01:51,  2.26it/s, Materializing param=model.embed_tokens.weight]  
+Loading weights:   1%|          | 2/254 [00:00<01:51,  2.26it/s, Materializing param=model.layers.0.input_layernorm.weight]
+Loading weights:   1%|          | 2/254 [00:00<01:51,  2.26it/s, Materializing param=model.layers.0.input_layernorm.weight]
+Loading weights:   1%|          | 3/254 [00:00<01:51,  2.26it/s, Materializing param=model.layers.0.mlp.down_proj.weight]  
+Loading weights:   1%|          | 3/254 [00:00<01:51,  2.26it/s, Materializing param=model.layers.0.mlp.down_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:02<02:08,  1.95it/s, Materializing param=model.layers.0.mlp.down_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:02<02:08,  1.95it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 4/254 [00:02<02:08,  1.95it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 5/254 [00:03<02:50,  1.46it/s, Materializing param=model.layers.0.mlp.gate_proj.weight]
+Loading weights:   2%|▏         | 5/254 [00:03<02:50,  1.46it/s, Materializing param=model.layers.0.mlp.up_proj.weight]  
+Loading weights:   2%|▏         | 5/254 [00:03<02:50,  1.46it/s, Materializing param=model.layers.0.mlp.up_proj.weight]
+Loading weights:   2%|▏         | 6/254 [00:04<03:47,  1.09it/s, Materializing param=model.layers.0.mlp.up_proj.weight]
+Loading weights:   2%|▏         | 6/254 [00:04<03:47,  1.09it/s, Materializing param=model.layers.0.post_attention_layernorm.weight]
+Loading weights:   2%|▏         | 6/254 [00:04<03:47,  1.09it/s, Materializing param=model.layers.0.post_attention_layernorm.weight]
+Loading weights:   3%|▎         | 7/254 [00:04<03:47,  1.09it/s, Materializing param=model.layers.0.self_attn.k_proj.weight]        
+Loading weights:   3%|▎         | 7/254 [00:04<03:47,  1.09it/s, Materializing param=model.layers.0.self_attn.k_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:05<03:14,  1.26it/s, Materializing param=model.layers.0.self_attn.k_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:05<03:14,  1.26it/s, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   3%|▎         | 8/254 [00:05<03:14,  1.26it/s, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:07<04:12,  1.03s/it, Materializing param=model.layers.0.self_attn.o_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:07<04:12,  1.03s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▎         | 9/254 [00:07<04:12,  1.03s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:09<04:48,  1.18s/it, Materializing param=model.layers.0.self_attn.q_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:09<04:48,  1.18s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 10/254 [00:09<04:48,  1.18s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 11/254 [00:10<04:36,  1.14s/it, Materializing param=model.layers.0.self_attn.v_proj.weight]
+Loading weights:   4%|▍         | 11/254 [00:10<04:36,  1.14s/it, Materializing param=model.layers.1.input_layernorm.weight] 
+Loading weights:   4%|▍         | 11/254 [00:10<04:36,  1.14s/it, Materializing param=model.layers.1.input_layernorm.weight]
+Loading weights:   5%|▍         | 12/254 [00:10<04:35,  1.14s/it, Materializing param=model.layers.1.mlp.down_proj.weight]  
+Loading weights:   5%|▍         | 12/254 [00:10<04:35,  1.14s/it, Materializing param=model.layers.1.mlp.down_proj.weight]
+Loading weights:   5%|▌         | 13/254 [00:10<04:34,  1.14s/it, Materializing param=model.layers.1.mlp.gate_proj.weight]
+Loading weights:   5%|▌         | 13/254 [00:10<04:34,  1.14s/it, Materializing param=model.layers.1.mlp.gate_proj.weight]
+Loading weights:   6%|▌         | 14/254 [00:10<04:33,  1.14s/it, Materializing param=model.layers.1.mlp.up_proj.weight]  
+Loading weights:   6%|▌         | 14/254 [00:10<04:33,  1.14s/it, Materializing param=model.layers.1.mlp.up_proj.weight]
+Loading weights:   6%|▌         | 15/254 [00:10<04:32,  1.14s/it, Materializing param=model.layers.1.post_attention_layernorm.weight]
+Loading weights:   6%|▌         | 15/254 [00:10<04:32,  1.14s/it, Materializing param=model.layers.1.post_attention_layernorm.weight]
+Loading weights:   6%|▋         | 16/254 [00:10<04:30,  1.14s/it, Materializing param=model.layers.1.self_attn.k_proj.weight]        
+Loading weights:   6%|▋         | 16/254 [00:10<04:30,  1.14s/it, Materializing param=model.layers.1.self_attn.k_proj.weight]
+Loading weights:   7%|▋         | 17/254 [00:10<04:29,  1.14s/it, Materializing param=model.layers.1.self_attn.o_proj.weight]
+Loading weights:   7%|▋         | 17/254 [00:10<04:29,  1.14s/it, Materializing param=model.layers.1.self_attn.o_proj.weight]
+Loading weights:   7%|▋         | 18/254 [00:10<04:28,  1.14s/it, Materializing param=model.layers.1.self_attn.q_proj.weight]
+Loading weights:   7%|▋         | 18/254 [00:10<04:28,  1.14s/it, Materializing param=model.layers.1.self_attn.q_proj.weight]
+Loading weights:   7%|▋         | 19/254 [00:10<04:27,  1.14s/it, Materializing param=model.layers.1.self_attn.v_proj.weight]
+Loading weights:   7%|▋         | 19/254 [00:10<04:27,  1.14s/it, Materializing param=model.layers.1.self_attn.v_proj.weight]
+Loading weights:   8%|▊         | 20/254 [00:10<04:26,  1.14s/it, Materializing param=model.layers.2.input_layernorm.weight] 
+Loading weights:   8%|▊         | 20/254 [00:10<04:26,  1.14s/it, Materializing param=model.layers.2.input_layernorm.weight]
+Loading weights:   8%|▊         | 21/254 [00:10<04:25,  1.14s/it, Materializing param=model.layers.2.mlp.down_proj.weight]  
+Loading weights:   8%|▊         | 21/254 [00:10<04:25,  1.14s/it, Materializing param=model.layers.2.mlp.down_proj.weight]
+Loading weights:   9%|▊         | 22/254 [00:10<04:24,  1.14s/it, Materializing param=model.layers.2.mlp.gate_proj.weight]
+Loading weights:   9%|▊         | 22/254 [00:10<04:24,  1.14s/it, Materializing param=model.layers.2.mlp.gate_proj.weight]
+Loading weights:   9%|▉         | 23/254 [00:10<04:22,  1.14s/it, Materializing param=model.layers.2.mlp.up_proj.weight]  
+Loading weights:   9%|▉         | 23/254 [00:10<04:22,  1.14s/it, Materializing param=model.layers.2.mlp.up_proj.weight]
+Loading weights:   9%|▉         | 24/254 [00:10<04:21,  1.14s/it, Materializing param=model.layers.2.post_attention_layernorm.weight]
+Loading weights:   9%|▉         | 24/254 [00:10<04:21,  1.14s/it, Materializing param=model.layers.2.post_attention_layernorm.weight]
+Loading weights:  10%|▉         | 25/254 [00:10<04:20,  1.14s/it, Materializing param=model.layers.2.self_attn.k_proj.weight]        
+Loading weights:  10%|▉         | 25/254 [00:10<04:20,  1.14s/it, Materializing param=model.layers.2.self_attn.k_proj.weight]
+Loading weights:  10%|█         | 26/254 [00:10<04:19,  1.14s/it, Materializing param=model.layers.2.self_attn.o_proj.weight]
+Loading weights:  10%|█         | 26/254 [00:10<04:19,  1.14s/it, Materializing param=model.layers.2.self_attn.o_proj.weight]
+Loading weights:  11%|█         | 27/254 [00:10<04:18,  1.14s/it, Materializing param=model.layers.2.self_attn.q_proj.weight]
+Loading weights:  11%|█         | 27/254 [00:10<04:18,  1.14s/it, Materializing param=model.layers.2.self_attn.q_proj.weight]
+Loading weights:  11%|█         | 28/254 [00:10<04:17,  1.14s/it, Materializing param=model.layers.2.self_attn.v_proj.weight]
+Loading weights:  11%|█         | 28/254 [00:10<04:17,  1.14s/it, Materializing param=model.layers.2.self_attn.v_proj.weight]
+Loading weights:  11%|█▏        | 29/254 [00:10<04:16,  1.14s/it, Materializing param=model.layers.3.input_layernorm.weight] 
+Loading weights:  11%|█▏        | 29/254 [00:10<04:16,  1.14s/it, Materializing param=model.layers.3.input_layernorm.weight]
+Loading weights:  12%|█▏        | 30/254 [00:10<04:15,  1.14s/it, Materializing param=model.layers.3.mlp.down_proj.weight]  
+Loading weights:  12%|█▏        | 30/254 [00:10<04:15,  1.14s/it, Materializing param=model.layers.3.mlp.down_proj.weight]
+Loading weights:  12%|█▏        | 31/254 [00:10<04:13,  1.14s/it, Materializing param=model.layers.3.mlp.gate_proj.weight]
+Loading weights:  12%|█▏        | 31/254 [00:10<04:13,  1.14s/it, Materializing param=model.layers.3.mlp.gate_proj.weight]
+Loading weights:  13%|█▎        | 32/254 [00:10<04:12,  1.14s/it, Materializing param=model.layers.3.mlp.up_proj.weight]  
+Loading weights:  13%|█▎        | 32/254 [00:10<04:12,  1.14s/it, Materializing param=model.layers.3.mlp.up_proj.weight]
+Loading weights:  13%|█▎        | 33/254 [00:10<04:11,  1.14s/it, Materializing param=model.layers.3.post_attention_layernorm.weight]
+Loading weights:  13%|█▎        | 33/254 [00:10<04:11,  1.14s/it, Materializing param=model.layers.3.post_attention_layernorm.weight]
+Loading weights:  13%|█▎        | 34/254 [00:10<04:10,  1.14s/it, Materializing param=model.layers.3.self_attn.k_proj.weight]        
+Loading weights:  13%|█▎        | 34/254 [00:10<04:10,  1.14s/it, Materializing param=model.layers.3.self_attn.k_proj.weight]
+Loading weights:  14%|█▍        | 35/254 [00:10<04:09,  1.14s/it, Materializing param=model.layers.3.self_attn.o_proj.weight]
+Loading weights:  14%|█▍        | 35/254 [00:10<04:09,  1.14s/it, Materializing param=model.layers.3.self_attn.o_proj.weight]
+Loading weights:  14%|█▍        | 36/254 [00:10<04:08,  1.14s/it, Materializing param=model.layers.3.self_attn.q_proj.weight]
+Loading weights:  14%|█▍        | 36/254 [00:10<04:08,  1.14s/it, Materializing param=model.layers.3.self_attn.q_proj.weight]
+Loading weights:  15%|█▍        | 37/254 [00:10<04:07,  1.14s/it, Materializing param=model.layers.3.self_attn.v_proj.weight]
+Loading weights:  15%|█▍        | 37/254 [00:10<04:07,  1.14s/it, Materializing param=model.layers.3.self_attn.v_proj.weight]
+Loading weights:  15%|█▍        | 38/254 [00:10<04:05,  1.14s/it, Materializing param=model.layers.4.input_layernorm.weight] 
+Loading weights:  15%|█▍        | 38/254 [00:10<04:05,  1.14s/it, Materializing param=model.layers.4.input_layernorm.weight]
+Loading weights:  15%|█▌        | 39/254 [00:10<04:04,  1.14s/it, Materializing param=model.layers.4.mlp.down_proj.weight]  
+Loading weights:  15%|█▌        | 39/254 [00:10<04:04,  1.14s/it, Materializing param=model.layers.4.mlp.down_proj.weight]
+Loading weights:  16%|█▌        | 40/254 [00:10<04:03,  1.14s/it, Materializing param=model.layers.4.mlp.gate_proj.weight]
+Loading weights:  16%|█▌        | 40/254 [00:10<04:03,  1.14s/it, Materializing param=model.layers.4.mlp.gate_proj.weight]
+Loading weights:  16%|█▌        | 41/254 [00:10<04:02,  1.14s/it, Materializing param=model.layers.4.mlp.up_proj.weight]  
+Loading weights:  16%|█▌        | 41/254 [00:10<04:02,  1.14s/it, Materializing param=model.layers.4.mlp.up_proj.weight]
+Loading weights:  17%|█▋        | 42/254 [00:10<04:01,  1.14s/it, Materializing param=model.layers.4.post_attention_layernorm.weight]
+Loading weights:  17%|█▋        | 42/254 [00:10<04:01,  1.14s/it, Materializing param=model.layers.4.post_attention_layernorm.weight]
+Loading weights:  17%|█▋        | 43/254 [00:10<04:00,  1.14s/it, Materializing param=model.layers.4.self_attn.k_proj.weight]        
+Loading weights:  17%|█▋        | 43/254 [00:10<04:00,  1.14s/it, Materializing param=model.layers.4.self_attn.k_proj.weight]
+Loading weights:  17%|█▋        | 44/254 [00:10<03:59,  1.14s/it, Materializing param=model.layers.4.self_attn.o_proj.weight]
+Loading weights:  17%|█▋        | 44/254 [00:10<03:59,  1.14s/it, Materializing param=model.layers.4.self_attn.o_proj.weight]
+Loading weights:  18%|█▊        | 45/254 [00:10<03:57,  1.14s/it, Materializing param=model.layers.4.self_attn.q_proj.weight]
+Loading weights:  18%|█▊        | 45/254 [00:10<03:57,  1.14s/it, Materializing param=model.layers.4.self_attn.q_proj.weight]
+Loading weights:  18%|█▊        | 46/254 [00:10<03:56,  1.14s/it, Materializing param=model.layers.4.self_attn.v_proj.weight]
+Loading weights:  18%|█▊        | 46/254 [00:10<03:56,  1.14s/it, Materializing param=model.layers.4.self_attn.v_proj.weight]
+Loading weights:  19%|█▊        | 47/254 [00:10<03:55,  1.14s/it, Materializing param=model.layers.5.input_layernorm.weight] 
+Loading weights:  19%|█▊        | 47/254 [00:10<03:55,  1.14s/it, Materializing param=model.layers.5.input_layernorm.weight]
+Loading weights:  19%|█▉        | 48/254 [00:10<03:54,  1.14s/it, Materializing param=model.layers.5.mlp.down_proj.weight]  
+Loading weights:  19%|█▉        | 48/254 [00:10<03:54,  1.14s/it, Materializing param=model.layers.5.mlp.down_proj.weight]
+Loading weights:  19%|█▉        | 49/254 [00:10<03:53,  1.14s/it, Materializing param=model.layers.5.mlp.gate_proj.weight]
+Loading weights:  19%|█▉        | 49/254 [00:10<03:53,  1.14s/it, Materializing param=model.layers.5.mlp.gate_proj.weight]
+Loading weights:  20%|█▉        | 50/254 [00:10<03:52,  1.14s/it, Materializing param=model.layers.5.mlp.up_proj.weight]  
+Loading weights:  20%|█▉        | 50/254 [00:10<03:52,  1.14s/it, Materializing param=model.layers.5.mlp.up_proj.weight]
+Loading weights:  20%|██        | 51/254 [00:10<03:51,  1.14s/it, Materializing param=model.layers.5.post_attention_layernorm.weight]
+Loading weights:  20%|██        | 51/254 [00:10<03:51,  1.14s/it, Materializing param=model.layers.5.post_attention_layernorm.weight]
+Loading weights:  20%|██        | 52/254 [00:10<03:49,  1.14s/it, Materializing param=model.layers.5.self_attn.k_proj.weight]        
+Loading weights:  20%|██        | 52/254 [00:10<03:49,  1.14s/it, Materializing param=model.layers.5.self_attn.k_proj.weight]
+Loading weights:  21%|██        | 53/254 [00:10<03:48,  1.14s/it, Materializing param=model.layers.5.self_attn.o_proj.weight]
+Loading weights:  21%|██        | 53/254 [00:10<03:48,  1.14s/it, Materializing param=model.layers.5.self_attn.o_proj.weight]
+Loading weights:  21%|██▏       | 54/254 [00:10<03:47,  1.14s/it, Materializing param=model.layers.5.self_attn.q_proj.weight]
+Loading weights:  21%|██▏       | 54/254 [00:10<03:47,  1.14s/it, Materializing param=model.layers.5.self_attn.q_proj.weight]
+Loading weights:  22%|██▏       | 55/254 [00:10<03:46,  1.14s/it, Materializing param=model.layers.5.self_attn.v_proj.weight]
+Loading weights:  22%|██▏       | 55/254 [00:10<03:46,  1.14s/it, Materializing param=model.layers.5.self_attn.v_proj.weight]
+Loading weights:  22%|██▏       | 56/254 [00:10<03:45,  1.14s/it, Materializing param=model.layers.6.input_layernorm.weight] 
+Loading weights:  22%|██▏       | 56/254 [00:10<03:45,  1.14s/it, Materializing param=model.layers.6.input_layernorm.weight]
+Loading weights:  22%|██▏       | 57/254 [00:10<03:44,  1.14s/it, Materializing param=model.layers.6.mlp.down_proj.weight]  
+Loading weights:  22%|██▏       | 57/254 [00:10<03:44,  1.14s/it, Materializing param=model.layers.6.mlp.down_proj.weight]
+Loading weights:  23%|██▎       | 58/254 [00:10<03:43,  1.14s/it, Materializing param=model.layers.6.mlp.gate_proj.weight]
+Loading weights:  23%|██▎       | 58/254 [00:10<03:43,  1.14s/it, Materializing param=model.layers.6.mlp.gate_proj.weight]
+Loading weights:  23%|██▎       | 59/254 [00:10<03:41,  1.14s/it, Materializing param=model.layers.6.mlp.up_proj.weight]  
+Loading weights:  23%|██▎       | 59/254 [00:10<03:41,  1.14s/it, Materializing param=model.layers.6.mlp.up_proj.weight]
+Loading weights:  24%|██▎       | 60/254 [00:10<03:40,  1.14s/it, Materializing param=model.layers.6.post_attention_layernorm.weight]
+Loading weights:  24%|██▎       | 60/254 [00:10<03:40,  1.14s/it, Materializing param=model.layers.6.post_attention_layernorm.weight]
+Loading weights:  24%|██▍       | 61/254 [00:10<03:39,  1.14s/it, Materializing param=model.layers.6.self_attn.k_proj.weight]        
+Loading weights:  24%|██▍       | 61/254 [00:10<03:39,  1.14s/it, Materializing param=model.layers.6.self_attn.k_proj.weight]
+Loading weights:  24%|██▍       | 62/254 [00:10<03:38,  1.14s/it, Materializing param=model.layers.6.self_attn.o_proj.weight]
+Loading weights:  24%|██▍       | 62/254 [00:10<03:38,  1.14s/it, Materializing param=model.layers.6.self_attn.o_proj.weight]
+Loading weights:  25%|██▍       | 63/254 [00:10<03:37,  1.14s/it, Materializing param=model.layers.6.self_attn.q_proj.weight]
+Loading weights:  25%|██▍       | 63/254 [00:10<03:37,  1.14s/it, Materializing param=model.layers.6.self_attn.q_proj.weight]
+Loading weights:  25%|██▌       | 64/254 [00:10<03:36,  1.14s/it, Materializing param=model.layers.6.self_attn.v_proj.weight]
+Loading weights:  25%|██▌       | 64/254 [00:10<03:36,  1.14s/it, Materializing param=model.layers.6.self_attn.v_proj.weight]
+Loading weights:  26%|██▌       | 65/254 [00:10<03:35,  1.14s/it, Materializing param=model.layers.7.input_layernorm.weight] 
+Loading weights:  26%|██▌       | 65/254 [00:10<03:35,  1.14s/it, Materializing param=model.layers.7.input_layernorm.weight]
+Loading weights:  26%|██▌       | 66/254 [00:10<03:34,  1.14s/it, Materializing param=model.layers.7.mlp.down_proj.weight]  
+Loading weights:  26%|██▌       | 66/254 [00:10<03:34,  1.14s/it, Materializing param=model.layers.7.mlp.down_proj.weight]
+Loading weights:  26%|██▋       | 67/254 [00:10<03:32,  1.14s/it, Materializing param=model.layers.7.mlp.gate_proj.weight]
+Loading weights:  26%|██▋       | 67/254 [00:10<03:32,  1.14s/it, Materializing param=model.layers.7.mlp.gate_proj.weight]
+Loading weights:  27%|██▋       | 68/254 [00:10<03:31,  1.14s/it, Materializing param=model.layers.7.mlp.up_proj.weight]  
+Loading weights:  27%|██▋       | 68/254 [00:10<03:31,  1.14s/it, Materializing param=model.layers.7.mlp.up_proj.weight]
+Loading weights:  27%|██▋       | 69/254 [00:10<03:30,  1.14s/it, Materializing param=model.layers.7.post_attention_layernorm.weight]
+Loading weights:  27%|██▋       | 69/254 [00:10<03:30,  1.14s/it, Materializing param=model.layers.7.post_attention_layernorm.weight]
+Loading weights:  28%|██▊       | 70/254 [00:10<03:29,  1.14s/it, Materializing param=model.layers.7.self_attn.k_proj.weight]        
+Loading weights:  28%|██▊       | 70/254 [00:10<03:29,  1.14s/it, Materializing param=model.layers.7.self_attn.k_proj.weight]
+Loading weights:  28%|██▊       | 71/254 [00:10<03:28,  1.14s/it, Materializing param=model.layers.7.self_attn.o_proj.weight]
+Loading weights:  28%|██▊       | 71/254 [00:10<03:28,  1.14s/it, Materializing param=model.layers.7.self_attn.o_proj.weight]
+Loading weights:  28%|██▊       | 72/254 [00:10<03:27,  1.14s/it, Materializing param=model.layers.7.self_attn.q_proj.weight]
+Loading weights:  28%|██▊       | 72/254 [00:10<03:27,  1.14s/it, Materializing param=model.layers.7.self_attn.q_proj.weight]
+Loading weights:  29%|██▊       | 73/254 [00:10<03:26,  1.14s/it, Materializing param=model.layers.7.self_attn.v_proj.weight]
+Loading weights:  29%|██▊       | 73/254 [00:10<03:26,  1.14s/it, Materializing param=model.layers.7.self_attn.v_proj.weight]
+Loading weights:  29%|██▉       | 74/254 [00:10<03:24,  1.14s/it, Materializing param=model.layers.8.input_layernorm.weight] 
+Loading weights:  29%|██▉       | 74/254 [00:10<03:24,  1.14s/it, Materializing param=model.layers.8.input_layernorm.weight]
+Loading weights:  30%|██▉       | 75/254 [00:10<03:23,  1.14s/it, Materializing param=model.layers.8.mlp.down_proj.weight]  
+Loading weights:  30%|██▉       | 75/254 [00:10<03:23,  1.14s/it, Materializing param=model.layers.8.mlp.down_proj.weight]
+Loading weights:  30%|██▉       | 76/254 [00:10<03:22,  1.14s/it, Materializing param=model.layers.8.mlp.gate_proj.weight]
+Loading weights:  30%|██▉       | 76/254 [00:10<03:22,  1.14s/it, Materializing param=model.layers.8.mlp.gate_proj.weight]
+Loading weights:  30%|███       | 77/254 [00:10<03:21,  1.14s/it, Materializing param=model.layers.8.mlp.up_proj.weight]  
+Loading weights:  30%|███       | 77/254 [00:10<03:21,  1.14s/it, Materializing param=model.layers.8.mlp.up_proj.weight]
+Loading weights:  31%|███       | 78/254 [00:10<03:20,  1.14s/it, Materializing param=model.layers.8.post_attention_layernorm.weight]
+Loading weights:  31%|███       | 78/254 [00:10<03:20,  1.14s/it, Materializing param=model.layers.8.post_attention_layernorm.weight]
+Loading weights:  31%|███       | 79/254 [00:10<03:19,  1.14s/it, Materializing param=model.layers.8.self_attn.k_proj.weight]        
+Loading weights:  31%|███       | 79/254 [00:10<03:19,  1.14s/it, Materializing param=model.layers.8.self_attn.k_proj.weight]
+Loading weights:  31%|███▏      | 80/254 [00:10<03:18,  1.14s/it, Materializing param=model.layers.8.self_attn.o_proj.weight]
+Loading weights:  31%|███▏      | 80/254 [00:10<03:18,  1.14s/it, Materializing param=model.layers.8.self_attn.o_proj.weight]
+Loading weights:  32%|███▏      | 81/254 [00:10<03:16,  1.14s/it, Materializing param=model.layers.8.self_attn.q_proj.weight]
+Loading weights:  32%|███▏      | 81/254 [00:10<03:16,  1.14s/it, Materializing param=model.layers.8.self_attn.q_proj.weight]
+Loading weights:  32%|███▏      | 82/254 [00:10<03:15,  1.14s/it, Materializing param=model.layers.8.self_attn.v_proj.weight]
+Loading weights:  32%|███▏      | 82/254 [00:10<03:15,  1.14s/it, Materializing param=model.layers.8.self_attn.v_proj.weight]
+Loading weights:  33%|███▎      | 83/254 [00:10<03:14,  1.14s/it, Materializing param=model.layers.9.input_layernorm.weight] 
+Loading weights:  33%|███▎      | 83/254 [00:10<03:14,  1.14s/it, Materializing param=model.layers.9.input_layernorm.weight]
+Loading weights:  33%|███▎      | 84/254 [00:10<03:13,  1.14s/it, Materializing param=model.layers.9.mlp.down_proj.weight]  
+Loading weights:  33%|███▎      | 84/254 [00:10<03:13,  1.14s/it, Materializing param=model.layers.9.mlp.down_proj.weight]
+Loading weights:  33%|███▎      | 85/254 [00:10<03:12,  1.14s/it, Materializing param=model.layers.9.mlp.gate_proj.weight]
+Loading weights:  33%|███▎      | 85/254 [00:10<03:12,  1.14s/it, Materializing param=model.layers.9.mlp.gate_proj.weight]
+Loading weights:  34%|███▍      | 86/254 [00:10<03:11,  1.14s/it, Materializing param=model.layers.9.mlp.up_proj.weight]  
+Loading weights:  34%|███▍      | 86/254 [00:10<03:11,  1.14s/it, Materializing param=model.layers.9.mlp.up_proj.weight]
+Loading weights:  34%|███▍      | 87/254 [00:10<03:10,  1.14s/it, Materializing param=model.layers.9.post_attention_layernorm.weight]
+Loading weights:  34%|███▍      | 87/254 [00:10<03:10,  1.14s/it, Materializing param=model.layers.9.post_attention_layernorm.weight]
+Loading weights:  35%|███▍      | 88/254 [00:10<03:08,  1.14s/it, Materializing param=model.layers.9.self_attn.k_proj.weight]        
+Loading weights:  35%|███▍      | 88/254 [00:10<03:08,  1.14s/it, Materializing param=model.layers.9.self_attn.k_proj.weight]
+Loading weights:  35%|███▌      | 89/254 [00:10<03:07,  1.14s/it, Materializing param=model.layers.9.self_attn.o_proj.weight]
+Loading weights:  35%|███▌      | 89/254 [00:10<03:07,  1.14s/it, Materializing param=model.layers.9.self_attn.o_proj.weight]
+Loading weights:  35%|███▌      | 90/254 [00:10<03:06,  1.14s/it, Materializing param=model.layers.9.self_attn.q_proj.weight]
+Loading weights:  35%|███▌      | 90/254 [00:10<03:06,  1.14s/it, Materializing param=model.layers.9.self_attn.q_proj.weight]
+Loading weights:  36%|███▌      | 91/254 [00:10<03:05,  1.14s/it, Materializing param=model.layers.9.self_attn.v_proj.weight]
+Loading weights:  36%|███▌      | 91/254 [00:10<03:05,  1.14s/it, Materializing param=model.layers.9.self_attn.v_proj.weight]
+Loading weights:  36%|███▌      | 92/254 [00:10<03:04,  1.14s/it, Materializing param=model.layers.10.input_layernorm.weight]
+Loading weights:  36%|███▌      | 92/254 [00:10<03:04,  1.14s/it, Materializing param=model.layers.10.input_layernorm.weight]
+Loading weights:  37%|███▋      | 93/254 [00:10<03:03,  1.14s/it, Materializing param=model.layers.10.mlp.down_proj.weight]  
+Loading weights:  37%|███▋      | 93/254 [00:10<03:03,  1.14s/it, Materializing param=model.layers.10.mlp.down_proj.weight]
+Loading weights:  37%|███▋      | 94/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.mlp.down_proj.weight]
+Loading weights:  37%|███▋      | 94/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 94/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.mlp.gate_proj.weight]
+Loading weights:  37%|███▋      | 95/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.mlp.up_proj.weight]  
+Loading weights:  37%|███▋      | 95/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.mlp.up_proj.weight]
+Loading weights:  38%|███▊      | 96/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.post_attention_layernorm.weight]
+Loading weights:  38%|███▊      | 96/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.post_attention_layernorm.weight]
+Loading weights:  38%|███▊      | 97/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.self_attn.k_proj.weight]        
+Loading weights:  38%|███▊      | 97/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.self_attn.k_proj.weight]
+Loading weights:  39%|███▊      | 98/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.self_attn.o_proj.weight]
+Loading weights:  39%|███▊      | 98/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.self_attn.o_proj.weight]
+Loading weights:  39%|███▉      | 99/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.self_attn.q_proj.weight]
+Loading weights:  39%|███▉      | 99/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.self_attn.q_proj.weight]
+Loading weights:  39%|███▉      | 100/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.self_attn.v_proj.weight]
+Loading weights:  39%|███▉      | 100/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.10.self_attn.v_proj.weight]
+Loading weights:  40%|███▉      | 101/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.input_layernorm.weight] 
+Loading weights:  40%|███▉      | 101/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.input_layernorm.weight]
+Loading weights:  40%|████      | 102/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.mlp.down_proj.weight]  
+Loading weights:  40%|████      | 102/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.mlp.down_proj.weight]
+Loading weights:  41%|████      | 103/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.mlp.gate_proj.weight]
+Loading weights:  41%|████      | 103/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.mlp.gate_proj.weight]
+Loading weights:  41%|████      | 104/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.mlp.up_proj.weight]  
+Loading weights:  41%|████      | 104/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.mlp.up_proj.weight]
+Loading weights:  41%|████▏     | 105/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.post_attention_layernorm.weight]
+Loading weights:  41%|████▏     | 105/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.post_attention_layernorm.weight]
+Loading weights:  42%|████▏     | 106/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.self_attn.k_proj.weight]        
+Loading weights:  42%|████▏     | 106/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.self_attn.k_proj.weight]
+Loading weights:  42%|████▏     | 107/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.self_attn.o_proj.weight]
+Loading weights:  42%|████▏     | 107/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.self_attn.o_proj.weight]
+Loading weights:  43%|████▎     | 108/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.self_attn.q_proj.weight]
+Loading weights:  43%|████▎     | 108/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.self_attn.q_proj.weight]
+Loading weights:  43%|████▎     | 109/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.self_attn.v_proj.weight]
+Loading weights:  43%|████▎     | 109/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.11.self_attn.v_proj.weight]
+Loading weights:  43%|████▎     | 110/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.12.input_layernorm.weight] 
+Loading weights:  43%|████▎     | 110/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.12.input_layernorm.weight]
+Loading weights:  44%|████▎     | 111/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.12.mlp.down_proj.weight]  
+Loading weights:  44%|████▎     | 111/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.12.mlp.down_proj.weight]
+Loading weights:  44%|████▍     | 112/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.12.mlp.gate_proj.weight]
+Loading weights:  44%|████▍     | 112/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.12.mlp.gate_proj.weight]
+Loading weights:  44%|████▍     | 113/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.12.mlp.up_proj.weight]  
+Loading weights:  44%|████▍     | 113/254 [00:10<00:05, 28.18it/s, Materializing param=model.layers.12.mlp.up_proj.weight]
+Loading weights:  45%|████▍     | 114/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.12.post_attention_layernorm.weight]
+Loading weights:  45%|████▍     | 114/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.12.post_attention_layernorm.weight]
+Loading weights:  45%|████▌     | 115/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.12.self_attn.k_proj.weight]        
+Loading weights:  45%|████▌     | 115/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.12.self_attn.k_proj.weight]
+Loading weights:  46%|████▌     | 116/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.12.self_attn.o_proj.weight]
+Loading weights:  46%|████▌     | 116/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.12.self_attn.o_proj.weight]
+Loading weights:  46%|████▌     | 117/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.12.self_attn.q_proj.weight]
+Loading weights:  46%|████▌     | 117/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.12.self_attn.q_proj.weight]
+Loading weights:  46%|████▋     | 118/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.12.self_attn.v_proj.weight]
+Loading weights:  46%|████▋     | 118/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.12.self_attn.v_proj.weight]
+Loading weights:  47%|████▋     | 119/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.input_layernorm.weight] 
+Loading weights:  47%|████▋     | 119/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.input_layernorm.weight]
+Loading weights:  47%|████▋     | 120/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.mlp.down_proj.weight]  
+Loading weights:  47%|████▋     | 120/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.mlp.down_proj.weight]
+Loading weights:  48%|████▊     | 121/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.mlp.gate_proj.weight]
+Loading weights:  48%|████▊     | 121/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.mlp.gate_proj.weight]
+Loading weights:  48%|████▊     | 122/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.mlp.up_proj.weight]  
+Loading weights:  48%|████▊     | 122/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.mlp.up_proj.weight]
+Loading weights:  48%|████▊     | 123/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.post_attention_layernorm.weight]
+Loading weights:  48%|████▊     | 123/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.post_attention_layernorm.weight]
+Loading weights:  49%|████▉     | 124/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.self_attn.k_proj.weight]        
+Loading weights:  49%|████▉     | 124/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.self_attn.k_proj.weight]
+Loading weights:  49%|████▉     | 125/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.self_attn.o_proj.weight]
+Loading weights:  49%|████▉     | 125/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.self_attn.o_proj.weight]
+Loading weights:  50%|████▉     | 126/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.self_attn.q_proj.weight]
+Loading weights:  50%|████▉     | 126/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.self_attn.q_proj.weight]
+Loading weights:  50%|█████     | 127/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.self_attn.v_proj.weight]
+Loading weights:  50%|█████     | 127/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.13.self_attn.v_proj.weight]
+Loading weights:  50%|█████     | 128/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.input_layernorm.weight] 
+Loading weights:  50%|█████     | 128/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.input_layernorm.weight]
+Loading weights:  51%|█████     | 129/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.mlp.down_proj.weight]  
+Loading weights:  51%|█████     | 129/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.mlp.down_proj.weight]
+Loading weights:  51%|█████     | 130/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.mlp.gate_proj.weight]
+Loading weights:  51%|█████     | 130/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.mlp.gate_proj.weight]
+Loading weights:  52%|█████▏    | 131/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.mlp.up_proj.weight]  
+Loading weights:  52%|█████▏    | 131/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.mlp.up_proj.weight]
+Loading weights:  52%|█████▏    | 132/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.post_attention_layernorm.weight]
+Loading weights:  52%|█████▏    | 132/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.post_attention_layernorm.weight]
+Loading weights:  52%|█████▏    | 133/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.self_attn.k_proj.weight]        
+Loading weights:  52%|█████▏    | 133/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.self_attn.k_proj.weight]
+Loading weights:  53%|█████▎    | 134/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.self_attn.o_proj.weight]
+Loading weights:  53%|█████▎    | 134/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.self_attn.o_proj.weight]
+Loading weights:  53%|█████▎    | 135/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.self_attn.q_proj.weight]
+Loading weights:  53%|█████▎    | 135/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.self_attn.q_proj.weight]
+Loading weights:  54%|█████▎    | 136/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.self_attn.v_proj.weight]
+Loading weights:  54%|█████▎    | 136/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.14.self_attn.v_proj.weight]
+Loading weights:  54%|█████▍    | 137/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.15.input_layernorm.weight] 
+Loading weights:  54%|█████▍    | 137/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.15.input_layernorm.weight]
+Loading weights:  54%|█████▍    | 138/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.15.mlp.down_proj.weight]  
+Loading weights:  54%|█████▍    | 138/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.15.mlp.down_proj.weight]
+Loading weights:  55%|█████▍    | 139/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.15.mlp.gate_proj.weight]
+Loading weights:  55%|█████▍    | 139/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.15.mlp.gate_proj.weight]
+Loading weights:  55%|█████▌    | 140/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.15.mlp.up_proj.weight]  
+Loading weights:  55%|█████▌    | 140/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.15.mlp.up_proj.weight]
+Loading weights:  56%|█████▌    | 141/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.15.post_attention_layernorm.weight]
+Loading weights:  56%|█████▌    | 141/254 [00:10<00:04, 28.18it/s, Materializing param=model.layers.15.post_attention_layernorm.weight]
+Loading weights:  56%|█████▌    | 142/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.15.self_attn.k_proj.weight]        
+Loading weights:  56%|█████▌    | 142/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.15.self_attn.k_proj.weight]
+Loading weights:  56%|█████▋    | 143/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.15.self_attn.o_proj.weight]
+Loading weights:  56%|█████▋    | 143/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.15.self_attn.o_proj.weight]
+Loading weights:  57%|█████▋    | 144/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.15.self_attn.q_proj.weight]
+Loading weights:  57%|█████▋    | 144/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.15.self_attn.q_proj.weight]
+Loading weights:  57%|█████▋    | 145/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.15.self_attn.v_proj.weight]
+Loading weights:  57%|█████▋    | 145/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.15.self_attn.v_proj.weight]
+Loading weights:  57%|█████▋    | 146/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.input_layernorm.weight] 
+Loading weights:  57%|█████▋    | 146/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.input_layernorm.weight]
+Loading weights:  58%|█████▊    | 147/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.mlp.down_proj.weight]  
+Loading weights:  58%|█████▊    | 147/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.mlp.down_proj.weight]
+Loading weights:  58%|█████▊    | 148/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.mlp.gate_proj.weight]
+Loading weights:  58%|█████▊    | 148/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.mlp.gate_proj.weight]
+Loading weights:  59%|█████▊    | 149/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.mlp.up_proj.weight]  
+Loading weights:  59%|█████▊    | 149/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.mlp.up_proj.weight]
+Loading weights:  59%|█████▉    | 150/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.post_attention_layernorm.weight]
+Loading weights:  59%|█████▉    | 150/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.post_attention_layernorm.weight]
+Loading weights:  59%|█████▉    | 151/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.self_attn.k_proj.weight]        
+Loading weights:  59%|█████▉    | 151/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.self_attn.k_proj.weight]
+Loading weights:  60%|█████▉    | 152/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.self_attn.o_proj.weight]
+Loading weights:  60%|█████▉    | 152/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.self_attn.o_proj.weight]
+Loading weights:  60%|██████    | 153/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.self_attn.q_proj.weight]
+Loading weights:  60%|██████    | 153/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.self_attn.q_proj.weight]
+Loading weights:  61%|██████    | 154/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.self_attn.v_proj.weight]
+Loading weights:  61%|██████    | 154/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.16.self_attn.v_proj.weight]
+Loading weights:  61%|██████    | 155/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.input_layernorm.weight] 
+Loading weights:  61%|██████    | 155/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.input_layernorm.weight]
+Loading weights:  61%|██████▏   | 156/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.mlp.down_proj.weight]  
+Loading weights:  61%|██████▏   | 156/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.mlp.down_proj.weight]
+Loading weights:  62%|██████▏   | 157/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.mlp.gate_proj.weight]
+Loading weights:  62%|██████▏   | 157/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.mlp.gate_proj.weight]
+Loading weights:  62%|██████▏   | 158/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.mlp.up_proj.weight]  
+Loading weights:  62%|██████▏   | 158/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.mlp.up_proj.weight]
+Loading weights:  63%|██████▎   | 159/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.post_attention_layernorm.weight]
+Loading weights:  63%|██████▎   | 159/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.post_attention_layernorm.weight]
+Loading weights:  63%|██████▎   | 160/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.self_attn.k_proj.weight]        
+Loading weights:  63%|██████▎   | 160/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.self_attn.k_proj.weight]
+Loading weights:  63%|██████▎   | 161/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.self_attn.o_proj.weight]
+Loading weights:  63%|██████▎   | 161/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.self_attn.o_proj.weight]
+Loading weights:  64%|██████▍   | 162/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.self_attn.q_proj.weight]
+Loading weights:  64%|██████▍   | 162/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.self_attn.q_proj.weight]
+Loading weights:  64%|██████▍   | 163/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.self_attn.v_proj.weight]
+Loading weights:  64%|██████▍   | 163/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.17.self_attn.v_proj.weight]
+Loading weights:  65%|██████▍   | 164/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.18.input_layernorm.weight] 
+Loading weights:  65%|██████▍   | 164/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.18.input_layernorm.weight]
+Loading weights:  65%|██████▍   | 165/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.18.mlp.down_proj.weight]  
+Loading weights:  65%|██████▍   | 165/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.18.mlp.down_proj.weight]
+Loading weights:  65%|██████▌   | 166/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.18.mlp.gate_proj.weight]
+Loading weights:  65%|██████▌   | 166/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.18.mlp.gate_proj.weight]
+Loading weights:  66%|██████▌   | 167/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.18.mlp.up_proj.weight]  
+Loading weights:  66%|██████▌   | 167/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.18.mlp.up_proj.weight]
+Loading weights:  66%|██████▌   | 168/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.18.post_attention_layernorm.weight]
+Loading weights:  66%|██████▌   | 168/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.18.post_attention_layernorm.weight]
+Loading weights:  67%|██████▋   | 169/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.18.self_attn.k_proj.weight]        
+Loading weights:  67%|██████▋   | 169/254 [00:10<00:03, 28.18it/s, Materializing param=model.layers.18.self_attn.k_proj.weight]
+Loading weights:  67%|██████▋   | 170/254 [00:10<00:02, 28.18it/s, Materializing param=model.layers.18.self_attn.o_proj.weight]
+Loading weights:  67%|██████▋   | 170/254 [00:10<00:02, 28.18it/s, Materializing param=model.layers.18.self_attn.o_proj.weight]
+Loading weights:  67%|██████▋   | 171/254 [00:10<00:02, 28.18it/s, Materializing param=model.layers.18.self_attn.q_proj.weight]
+Loading weights:  67%|██████▋   | 171/254 [00:10<00:02, 28.18it/s, Materializing param=model.layers.18.self_attn.q_proj.weight]
+Loading weights:  68%|██████▊   | 172/254 [00:10<00:02, 28.18it/s, Materializing param=model.layers.18.self_attn.v_proj.weight]
+Loading weights:  68%|██████▊   | 172/254 [00:10<00:02, 28.18it/s, Materializing param=model.layers.18.self_attn.v_proj.weight]
+Loading weights:  68%|██████▊   | 173/254 [00:10<00:02, 28.18it/s, Materializing param=model.layers.19.input_layernorm.weight] 
+Loading weights:  68%|██████▊   | 173/254 [00:10<00:02, 28.18it/s, Materializing param=model.layers.19.input_layernorm.weight]
+Loading weights:  69%|██████▊   | 174/254 [00:10<00:02, 28.18it/s, Materializing param=model.layers.19.mlp.down_proj.weight]  
+Loading weights:  69%|██████▊   | 174/254 [00:10<00:02, 28.18it/s, Materializing param=model.layers.19.mlp.down_proj.weight]
+Loading weights:  69%|██████▉   | 175/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.mlp.down_proj.weight]
+Loading weights:  69%|██████▉   | 175/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.mlp.gate_proj.weight]
+Loading weights:  69%|██████▉   | 175/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.mlp.gate_proj.weight]
+Loading weights:  69%|██████▉   | 176/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.mlp.up_proj.weight]  
+Loading weights:  69%|██████▉   | 176/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.mlp.up_proj.weight]
+Loading weights:  70%|██████▉   | 177/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.post_attention_layernorm.weight]
+Loading weights:  70%|██████▉   | 177/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.post_attention_layernorm.weight]
+Loading weights:  70%|███████   | 178/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.self_attn.k_proj.weight]        
+Loading weights:  70%|███████   | 178/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.self_attn.k_proj.weight]
+Loading weights:  70%|███████   | 179/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.self_attn.o_proj.weight]
+Loading weights:  70%|███████   | 179/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.self_attn.o_proj.weight]
+Loading weights:  71%|███████   | 180/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.self_attn.q_proj.weight]
+Loading weights:  71%|███████   | 180/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.self_attn.q_proj.weight]
+Loading weights:  71%|███████▏  | 181/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.self_attn.v_proj.weight]
+Loading weights:  71%|███████▏  | 181/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.19.self_attn.v_proj.weight]
+Loading weights:  72%|███████▏  | 182/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.input_layernorm.weight] 
+Loading weights:  72%|███████▏  | 182/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.input_layernorm.weight]
+Loading weights:  72%|███████▏  | 183/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.mlp.down_proj.weight]  
+Loading weights:  72%|███████▏  | 183/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.mlp.down_proj.weight]
+Loading weights:  72%|███████▏  | 184/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.mlp.gate_proj.weight]
+Loading weights:  72%|███████▏  | 184/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.mlp.gate_proj.weight]
+Loading weights:  73%|███████▎  | 185/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.mlp.up_proj.weight]  
+Loading weights:  73%|███████▎  | 185/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.mlp.up_proj.weight]
+Loading weights:  73%|███████▎  | 186/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.post_attention_layernorm.weight]
+Loading weights:  73%|███████▎  | 186/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.post_attention_layernorm.weight]
+Loading weights:  74%|███████▎  | 187/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.self_attn.k_proj.weight]        
+Loading weights:  74%|███████▎  | 187/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.self_attn.k_proj.weight]
+Loading weights:  74%|███████▍  | 188/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.self_attn.o_proj.weight]
+Loading weights:  74%|███████▍  | 188/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.self_attn.o_proj.weight]
+Loading weights:  74%|███████▍  | 189/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.self_attn.q_proj.weight]
+Loading weights:  74%|███████▍  | 189/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.self_attn.q_proj.weight]
+Loading weights:  75%|███████▍  | 190/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.self_attn.v_proj.weight]
+Loading weights:  75%|███████▍  | 190/254 [00:10<00:01, 63.30it/s, Materializing param=model.layers.20.self_attn.v_proj.weight]
+Loading weights:  75%|███████▌  | 191/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.input_layernorm.weight] 
+Loading weights:  75%|███████▌  | 191/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.input_layernorm.weight]
+Loading weights:  76%|███████▌  | 192/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.mlp.down_proj.weight]  
+Loading weights:  76%|███████▌  | 192/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.mlp.down_proj.weight]
+Loading weights:  76%|███████▌  | 193/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.mlp.gate_proj.weight]
+Loading weights:  76%|███████▌  | 193/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.mlp.gate_proj.weight]
+Loading weights:  76%|███████▋  | 194/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.mlp.up_proj.weight]  
+Loading weights:  76%|███████▋  | 194/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.mlp.up_proj.weight]
+Loading weights:  77%|███████▋  | 195/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.post_attention_layernorm.weight]
+Loading weights:  77%|███████▋  | 195/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.post_attention_layernorm.weight]
+Loading weights:  77%|███████▋  | 196/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.self_attn.k_proj.weight]        
+Loading weights:  77%|███████▋  | 196/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.self_attn.k_proj.weight]
+Loading weights:  78%|███████▊  | 197/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.self_attn.o_proj.weight]
+Loading weights:  78%|███████▊  | 197/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.self_attn.o_proj.weight]
+Loading weights:  78%|███████▊  | 198/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.self_attn.q_proj.weight]
+Loading weights:  78%|███████▊  | 198/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.self_attn.q_proj.weight]
+Loading weights:  78%|███████▊  | 199/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.self_attn.v_proj.weight]
+Loading weights:  78%|███████▊  | 199/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.21.self_attn.v_proj.weight]
+Loading weights:  79%|███████▊  | 200/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.input_layernorm.weight] 
+Loading weights:  79%|███████▊  | 200/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.input_layernorm.weight]
+Loading weights:  79%|███████▉  | 201/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.mlp.down_proj.weight]  
+Loading weights:  79%|███████▉  | 201/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.mlp.down_proj.weight]
+Loading weights:  80%|███████▉  | 202/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.mlp.gate_proj.weight]
+Loading weights:  80%|███████▉  | 202/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.mlp.gate_proj.weight]
+Loading weights:  80%|███████▉  | 203/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.mlp.up_proj.weight]  
+Loading weights:  80%|███████▉  | 203/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.mlp.up_proj.weight]
+Loading weights:  80%|████████  | 204/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.post_attention_layernorm.weight]
+Loading weights:  80%|████████  | 204/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.post_attention_layernorm.weight]
+Loading weights:  81%|████████  | 205/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.self_attn.k_proj.weight]        
+Loading weights:  81%|████████  | 205/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.self_attn.k_proj.weight]
+Loading weights:  81%|████████  | 206/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.self_attn.o_proj.weight]
+Loading weights:  81%|████████  | 206/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.self_attn.o_proj.weight]
+Loading weights:  81%|████████▏ | 207/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.self_attn.q_proj.weight]
+Loading weights:  81%|████████▏ | 207/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.self_attn.q_proj.weight]
+Loading weights:  82%|████████▏ | 208/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.self_attn.v_proj.weight]
+Loading weights:  82%|████████▏ | 208/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.22.self_attn.v_proj.weight]
+Loading weights:  82%|████████▏ | 209/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.input_layernorm.weight] 
+Loading weights:  82%|████████▏ | 209/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.input_layernorm.weight]
+Loading weights:  83%|████████▎ | 210/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.mlp.down_proj.weight]  
+Loading weights:  83%|████████▎ | 210/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.mlp.down_proj.weight]
+Loading weights:  83%|████████▎ | 211/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.mlp.gate_proj.weight]
+Loading weights:  83%|████████▎ | 211/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.mlp.gate_proj.weight]
+Loading weights:  83%|████████▎ | 212/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.mlp.up_proj.weight]  
+Loading weights:  83%|████████▎ | 212/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.mlp.up_proj.weight]
+Loading weights:  84%|████████▍ | 213/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.post_attention_layernorm.weight]
+Loading weights:  84%|████████▍ | 213/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.post_attention_layernorm.weight]
+Loading weights:  84%|████████▍ | 214/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.self_attn.k_proj.weight]        
+Loading weights:  84%|████████▍ | 214/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.self_attn.k_proj.weight]
+Loading weights:  85%|████████▍ | 215/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.self_attn.o_proj.weight]
+Loading weights:  85%|████████▍ | 215/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.self_attn.o_proj.weight]
+Loading weights:  85%|████████▌ | 216/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.self_attn.q_proj.weight]
+Loading weights:  85%|████████▌ | 216/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.self_attn.q_proj.weight]
+Loading weights:  85%|████████▌ | 217/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.self_attn.v_proj.weight]
+Loading weights:  85%|████████▌ | 217/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.23.self_attn.v_proj.weight]
+Loading weights:  86%|████████▌ | 218/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.input_layernorm.weight] 
+Loading weights:  86%|████████▌ | 218/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.input_layernorm.weight]
+Loading weights:  86%|████████▌ | 219/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.mlp.down_proj.weight]  
+Loading weights:  86%|████████▌ | 219/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.mlp.down_proj.weight]
+Loading weights:  87%|████████▋ | 220/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.mlp.gate_proj.weight]
+Loading weights:  87%|████████▋ | 220/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.mlp.gate_proj.weight]
+Loading weights:  87%|████████▋ | 221/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.mlp.up_proj.weight]  
+Loading weights:  87%|████████▋ | 221/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.mlp.up_proj.weight]
+Loading weights:  87%|████████▋ | 222/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.post_attention_layernorm.weight]
+Loading weights:  87%|████████▋ | 222/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.post_attention_layernorm.weight]
+Loading weights:  88%|████████▊ | 223/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.self_attn.k_proj.weight]        
+Loading weights:  88%|████████▊ | 223/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.self_attn.k_proj.weight]
+Loading weights:  88%|████████▊ | 224/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.self_attn.o_proj.weight]
+Loading weights:  88%|████████▊ | 224/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.self_attn.o_proj.weight]
+Loading weights:  89%|████████▊ | 225/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.self_attn.q_proj.weight]
+Loading weights:  89%|████████▊ | 225/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.self_attn.q_proj.weight]
+Loading weights:  89%|████████▉ | 226/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.self_attn.v_proj.weight]
+Loading weights:  89%|████████▉ | 226/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.24.self_attn.v_proj.weight]
+Loading weights:  89%|████████▉ | 227/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.input_layernorm.weight] 
+Loading weights:  89%|████████▉ | 227/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.input_layernorm.weight]
+Loading weights:  90%|████████▉ | 228/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.mlp.down_proj.weight]  
+Loading weights:  90%|████████▉ | 228/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.mlp.down_proj.weight]
+Loading weights:  90%|█████████ | 229/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.mlp.gate_proj.weight]
+Loading weights:  90%|█████████ | 229/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.mlp.gate_proj.weight]
+Loading weights:  91%|█████████ | 230/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.mlp.up_proj.weight]  
+Loading weights:  91%|█████████ | 230/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.mlp.up_proj.weight]
+Loading weights:  91%|█████████ | 231/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.post_attention_layernorm.weight]
+Loading weights:  91%|█████████ | 231/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.post_attention_layernorm.weight]
+Loading weights:  91%|█████████▏| 232/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.self_attn.k_proj.weight]        
+Loading weights:  91%|█████████▏| 232/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.self_attn.k_proj.weight]
+Loading weights:  92%|█████████▏| 233/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.self_attn.o_proj.weight]
+Loading weights:  92%|█████████▏| 233/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.self_attn.o_proj.weight]
+Loading weights:  92%|█████████▏| 234/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.self_attn.q_proj.weight]
+Loading weights:  92%|█████████▏| 234/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.self_attn.q_proj.weight]
+Loading weights:  93%|█████████▎| 235/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.self_attn.v_proj.weight]
+Loading weights:  93%|█████████▎| 235/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.25.self_attn.v_proj.weight]
+Loading weights:  93%|█████████▎| 236/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.input_layernorm.weight] 
+Loading weights:  93%|█████████▎| 236/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.input_layernorm.weight]
+Loading weights:  93%|█████████▎| 237/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.mlp.down_proj.weight]  
+Loading weights:  93%|█████████▎| 237/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.mlp.down_proj.weight]
+Loading weights:  94%|█████████▎| 238/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.mlp.gate_proj.weight]
+Loading weights:  94%|█████████▎| 238/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.mlp.gate_proj.weight]
+Loading weights:  94%|█████████▍| 239/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.mlp.up_proj.weight]  
+Loading weights:  94%|█████████▍| 239/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.mlp.up_proj.weight]
+Loading weights:  94%|█████████▍| 240/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.post_attention_layernorm.weight]
+Loading weights:  94%|█████████▍| 240/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.post_attention_layernorm.weight]
+Loading weights:  95%|█████████▍| 241/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.self_attn.k_proj.weight]        
+Loading weights:  95%|█████████▍| 241/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.self_attn.k_proj.weight]
+Loading weights:  95%|█████████▌| 242/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.self_attn.o_proj.weight]
+Loading weights:  95%|█████████▌| 242/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.self_attn.o_proj.weight]
+Loading weights:  96%|█████████▌| 243/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.self_attn.q_proj.weight]
+Loading weights:  96%|█████████▌| 243/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.self_attn.q_proj.weight]
+Loading weights:  96%|█████████▌| 244/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.self_attn.v_proj.weight]
+Loading weights:  96%|█████████▌| 244/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.26.self_attn.v_proj.weight]
+Loading weights:  96%|█████████▋| 245/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.input_layernorm.weight] 
+Loading weights:  96%|█████████▋| 245/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.input_layernorm.weight]
+Loading weights:  97%|█████████▋| 246/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.mlp.down_proj.weight]  
+Loading weights:  97%|█████████▋| 246/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.mlp.down_proj.weight]
+Loading weights:  97%|█████████▋| 247/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.mlp.gate_proj.weight]
+Loading weights:  97%|█████████▋| 247/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.mlp.gate_proj.weight]
+Loading weights:  98%|█████████▊| 248/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.mlp.up_proj.weight]  
+Loading weights:  98%|█████████▊| 248/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.mlp.up_proj.weight]
+Loading weights:  98%|█████████▊| 249/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.post_attention_layernorm.weight]
+Loading weights:  98%|█████████▊| 249/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.post_attention_layernorm.weight]
+Loading weights:  98%|█████████▊| 250/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.self_attn.k_proj.weight]        
+Loading weights:  98%|█████████▊| 250/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.self_attn.k_proj.weight]
+Loading weights:  99%|█████████▉| 251/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.self_attn.o_proj.weight]
+Loading weights:  99%|█████████▉| 251/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.self_attn.o_proj.weight]
+Loading weights:  99%|█████████▉| 252/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.self_attn.q_proj.weight]
+Loading weights:  99%|█████████▉| 252/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.self_attn.q_proj.weight]
+Loading weights: 100%|█████████▉| 253/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.self_attn.v_proj.weight]
+Loading weights: 100%|█████████▉| 253/254 [00:10<00:00, 63.30it/s, Materializing param=model.layers.27.self_attn.v_proj.weight]
+Loading weights: 100%|██████████| 254/254 [00:10<00:00, 63.30it/s, Materializing param=model.norm.weight]                      
+Loading weights: 100%|██████████| 254/254 [00:10<00:00, 63.30it/s, Materializing param=model.norm.weight]
+Loading weights: 100%|██████████| 254/254 [00:10<00:00, 24.07it/s, Materializing param=model.norm.weight]
+
+ Loading benchmark: gsm_plus
+[1 / 200] Evaluting Question
+Response: **Solution:**
+
+The value of the house increased by $50,000 and then the value of the house increased by $70,000. So, the total value of the house is $80,000 + $50,000 = $130,000.
+
+The percentage appreciation of the house is 70,000/80,000 * 100% = 87.5%.
+
+**Answer:**
+
+The percentage appreciation of the house is 87.5%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[2 / 200] Evaluting Question
+Response: **Solution:**
+
+The cost of the property and renovations is $80,000 + $50,000 = $130,000.
+
+The value of the house after renovations is $130,000 * 1.50 = $195,000.
+
+The profit earned from the venture is $195,000 - $130,000 = $65,000.
+
+**Answer:**
+
+The amount of profit earned from this venture is $65,000.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[3 / 200] Evaluting Question
+Response: **Solution:**
+
+The value of the house increased by 150%, so the new value of the house is $80,000 * 1.5 = $120,000. The cost of repairs was $50,000, so the net profit is $120,000 - $50,000 = $70,000.
+
+**Answer:**
+
+The profit that Josh made is $70,000.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[4 / 200] Evaluting Question
+Response: **Solution:**
+
+The value of the house increased by 150%, so the new value of the house is 1.5 times the original value. Therefore, the increased value of the house is 1.5 * 50,000 = $75,000.
+
+**Answer:**
+
+The profit made by Josh is $75,000 - $50,000 = $25,000.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[5 / 200] Evaluting Question
+Response: **Solution:**
+
+James runs 5 sprints 4 times a week, and he runs 80 meters each sprint. So, the total number of meters he runs per week is 5 sprints * 4 times a week = 20 sprints. Each sprint is 80 meters, so the total number of meters he runs per week is 20 sprints * 80 meters per sprint = 1600 meters.
+
+**Answer:**
+
+James runs a total of 1600 meters a week.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[6 / 200] Evaluting Question
+Response: **Solution:**
+
+James runs 30 sprints 3 times a week, and he runs 600 meters each sprint. So, the total number of meters he runs per week is 30 sprints * 3 times a week * 600 meters per sprint = 1800 meters per week.
+
+**Answer:**
+
+James runs a total of 1800 meters per week.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[7 / 200] Evaluting Question
+Response: **Solution:**
+
+James runs 3/5 of 100 meters per sprint, which is 60 meters per sprint. He runs 3 sprints 3 times a week, so he covers a total of 60 * 3 = 180 meters per week.
+
+**Answer:**
+
+James runs a total of 180 meters per week.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[8 / 200] Evaluting Question
+Response: **Solution:**
+
+James runs 3 sprints 3 times a week, covering a distance of 60 meters per sprint. So, the total distance he covers in a week is 3 sprints/sprint distance = 3 * 60 = 180 meters.
+
+**Answer:**
+
+Answer: 180
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[9 / 200] Evaluting Question
+Response: **Solution:**
+
+James runs a total of 540 meters a week by doing sprints. If he runs 3 sprints 3 times a week, then the number of meters he runs in each sprint is 540 / 3 / 3 = 20 meters.
+
+**Answer:**
+
+James runs a total of 20 meters in each sprint.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[10 / 200] Evaluting Question
+Response: **Solution:**
+
+James runs a distance of 60 meters on each sprint, and he does three sprints per week. So, the total distance he covers in a week is 60 * 3 = 180 meters.
+
+**Answer:**
+
+Answer: 180
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[11 / 200] Evaluting Question
+Response: **Solution:**
+
+James runs 3 sprints 3 times a week, and he runs 60 meters for each sprint. So, the total distance he covers in one sprint is 60 meters.
+
+Therefore, the total distance he covers in a week is 3 sprints/sprint distance = 3 * 60 = 180 meters.
+
+**Answer:**
+
+James runs a total of 180 meters a week.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[12 / 200] Evaluting Question
+Response: **Solution:**
+
+James runs 3 sprints 3 times a week, and he runs some meters each sprint. So, the total number of meters he runs per week is the product of 3 sprints, 3 times a week, and the number of meters he runs per sprint.
+
+The formula for the total number of meters he runs per week is:
+
+Total meters = 3 sprints/week * meters per sprint * 3
+
+The number of meters he runs per sprint is not given in the problem, so I cannot complete the solution.
+
+**Answer:**
+
+I do not have the information necessary to complete the solution.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[13 / 200] Evaluting Question
+Response: **Solution:**
+
+Wendi has a flock of 25 chickens and feeds them a total of 20 cups in the morning and 30 cups in the afternoon. Therefore, the total number of cups of feed she needs to give her chickens in the final meal is 20 + 30 = 50 cups.
+
+**Answer:**
+
+Wendi needs to give a total of 50 cups of feed to her chickens in the final meal of the day.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[14 / 200] Evaluting Question
+Response: **Solution:**
+
+Wendi has a flock of 200 chickens and feeds them a total of 1500 + 2500 = 4000 cups of feed per day. So, in the final meal of the day, Wendi will need to give her chickens 4000 cups of feed.
+
+**Answer:**
+
+Wendi needs to give her chickens a total of 4000 cups of feed in the final meal of the day.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[15 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is as follows:
+
+- Wendi feeds each of her chickens 3 cups of mixed chicken feed per day.
+- She gives the chickens their feed in three separate meals.
+- In the morning, she gives her flock of chickens half of 30 cups of feed.
+- In the afternoon, she gives her chickens another 1/4 of one hundred cups of feed.
+
+**To find the total number of cups of feed Wendi needs to give her chickens in the final meal:**
+
+1. Calculate the total number of cups of feed Wendi gives in the morning and afternoon meals.
+   - Morning meal: Half of 30 cups = 15 cups
+   - Afternoon meal: 1/4 of 100 cups = 25 cups
+2. Add the number of cups of feed Wendi gives in the morning and afternoon meals.
+   - Total cups of feed = 15 cups + 25 cups = 40 cups
+
+**Answer:**
+
+The total number of cups of feed Wendi needs to give her chickens in the final meal is 40 cups.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[16 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is as follows:
+
+* Wendi has a flock of 20 chickens.
+* She feeds each chicken 3 cups of feed in 3 separate meals.
+* In the morning, she gives her flock of chickens 15 cups of feed.
+* In the afternoon, she gives her flock of chickens another 25 cups of feed.
+* In the evening, she gives each chicken an extra half cup of feed.
+
+To find out the total number of cups of feed Wendi needs to give her chickens in the final meal, we first need to calculate the total number of cups of feed she has already given them in the morning and afternoon meals. 
+
+Total cups of feed given in the morning and afternoon = 15 + 25 = 40 cups
+
+Now that we know the total number of cups of feed given in the morning and afternoon meals, we can add the additional half cup of feed for each chicken in the evening to find out the total number of cups of feed Wendi needs to give her chickens in the final meal.
+
+Total number of cups of feed given in the final meal = 40 + 0.5 * 20 = 40
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[17 / 200] Evaluting Question
+Response: **Solution:**
+
+Wendi has a flock of 20 chickens, and she feeds each chicken 3 cups of feed. So, the total number of cups of feed she needs to give in the first meal is 20 * 3 = 60 cups.
+
+**Answer:**
+
+60
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[18 / 200] Evaluting Question
+Response: **Solution:**
+
+Wendi has a total of 20 chickens and each chicken gets 3 cups of feed daily. In the morning, she distributes 15 cups of feed and in the afternoon, she provides an additional 25 cups. Therefore, a total of 15 + 25 = 40 cups of feed are distributed. To ensure that each chicken gets its daily quota, Wendi should distribute the remaining 40 - 20 * 3 = 0 cups of feed in the last feeding session.
+
+**Answer:**
+
+Wendi should distribute 0 cups of feed in the last feeding session to ensure that each chicken gets its daily quota.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[19 / 200] Evaluting Question
+Response: **Solution:**
+
+Wendi feeds each of her chickens 3 cups of feed per meal. She has a flock of 20 chickens. In the morning, she gives her flock a total of 15 cups of feed and 10 cups of water. In the afternoon, she gives her flock an additional 25 cups of feed. Therefore, the total number of cups of feed she needs to give her chickens in the final meal of the day is 15 + 25 = 40 cups.
+
+**Answer:**
+
+40
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[20 / 200] Evaluting Question
+Response: **Solution:**
+
+The total amount of feed Wendi gives to her chickens in the first two meals is 15 + 25 = 40 cups. Therefore, the final meal will require the remaining 60 - 40 = 20 cups of feed.
+
+**Answer:**
+
+The final meal of the day requires Wendi to give her chickens 20 cups of feed.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[21 / 200] Evaluting Question
+Response: **Solution:**
+
+Kylar wants to buy 20 glasses. One glass costs $6, and every second glass costs 50% of the price. So, the cost of the first glass is $6. The cost of the remaining glasses is 19 * 0.5 = $9.50. The total cost of the glasses is $6 + $9.50 = $15.50.
+
+**Answer:**
+
+$15.50
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[22 / 200] Evaluting Question
+Response: **Solution:**
+
+Kylar wants to buy 160 glasses. One glass costs $50 and every second glass costs 60% of the price. So, the cost of each glass decreases by 10%.
+
+To calculate the cost of each glass, we need to subtract 10% from the previous cost. Therefore, the cost of each glass is $50 - 10% = $45.
+
+The total cost of the glasses is 160 glasses * $45 = $7200.
+
+**Answer:**
+
+$7200
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[23 / 200] Evaluting Question
+Response: **Solution:**
+
+Kylar wants to buy 16 glasses. One glass costs $5.5, and every second glass costs 60% of the price. So, the cost of each glass is $5.5, and the cost of every second glass is $5.5 * 0.6.
+
+To calculate the total cost, we need to first calculate the number of glasses that cost $5.5 and the number of glasses that cost $5.5 * 0.6.
+
+The number of glasses that cost $5.5 is 8.
+The number of glasses that cost $5.5 * 0.6 is 8.
+
+The total cost is $5.5 * 8 + $5.5 * 0.6 * 8 = $44.0
+
+**Answer:**
+
+$44.0
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[24 / 200] Evaluting Question
+Response: **Solution:**
+
+Kylar wants to buy 16 glasses and 10 plates. One glass costs $5 and every second glass costs 60% of the price. So, the cost of the glasses is:
+
+1. Calculate the cost of the first glass: $5
+
+2. Calculate the cost of the remaining glasses: 15 glasses x 60% = $300
+
+Total cost of glasses = $5 + $300 = $305
+
+The cost of the plates is $10 each and he needs to buy 10 plates. So, the cost of the plates is:
+
+10 plates x $10 = $100
+
+Total cost = $305 + $100 = $405
+
+**Answer:**
+
+Kylar's total cost is $405.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[25 / 200] Evaluting Question
+Response: **Solution:**
+
+Kylar has a total of $64. One glass costs $5, and every second glass costs 60% of the price. So, the cost of each second glass is $5 * 0.6 = $3.
+
+Kylar can buy one glass for $5 and the remaining $59 can be used to buy an additional 19 glasses for $3 each.
+
+**Answer:**
+
+Kylar can buy a total of 20 glasses with his $64.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[26 / 200] Evaluting Question
+Response: **Solution:**
+
+The cost of a single glass is $5. If the cost of an alternate glass is reduced to 60% of the original price, then the cost of an alternate glass is $5 * 0.6 = $3.
+
+If Kylar plans to purchase 16 glasses, then the total amount he has to spend is 16 * $3 = $48.
+
+**Answer:**
+
+$48
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[27 / 200] Evaluting Question
+Response: **Solution:**
+
+Kylar wants to buy 16 glasses and has a $5 coupon. One glass costs $5 and every second glass costs 60% of the price. So, the cost of the first glass is $5. The cost of the remaining glasses is 15 glasses * 60% = $9. The total cost of the glasses is $5 + $9 = $14.
+
+**Answer:**
+
+Kylar will need to pay a total of $14 for the glasses.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[28 / 200] Evaluting Question
+Response: **Solution:**
+
+Kylar went to the store to buy glasses for his new apartment. One glass costs $5, and every second glass costs only 60% of the price. So, the cost of the glasses will be $5 + 5 * 0.6 = $5 + $3 = $8.
+
+**Answer:**
+
+$8
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[29 / 200] Evaluting Question
+Response: **Solution:**
+
+Toulouse has twice as many sheep as Charleston, and Charleston has 4 times as many sheep as Seattle. So, we can start by finding out the number of sheep that Charleston and Toulouse have.
+
+**Charleston:**
+Charleston has 4 times as many sheep as Seattle, so if Seattle has 15 sheep, then Charleston will have 15 * 4 = 60 sheep.
+
+**Toulouse:**
+Toulouse has twice as many sheep as Charleston, so if Charleston has 60 sheep, then Toulouse will have 60 * 2 = 120 sheep.
+
+**Final Answer:**
+
+Answer:
+Toulouse, Charleston, and Seattle have a total of 15 + 60 + 120 = 195 sheep.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[30 / 200] Evaluting Question
+Response: **Solution:**
+
+Toulouse has twice as many sheep as Charleston, and Charleston has 4 times as many sheep as Seattle. So, we can start by finding out the number of sheep that Charleston and Toulouse have.
+
+**Charleston:**
+Charleston has 4 times as many sheep as Seattle, so if Seattle has 2000 sheep, then Charleston will have 2000 * 4 = 8000 sheep.
+
+**Toulouse:**
+Toulouse has twice as many sheep as Charleston, so if Charleston has 8000 sheep, then Toulouse will have 8000 * 2 = 16000 sheep.
+
+**Final Answer:**
+
+Answer:
+Toulouse, Charleston, and Seattle have a total of 2000 + 8000 + 16000 = 24000 sheep.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[31 / 200] Evaluting Question
+Response: **Solution:**
+
+Charleston has 1/2 as many sheep as Toulouse, which is equivalent to saying that Charleston has half the number of sheep as Toulouse. So, if Toulouse has x number of sheep, Charleston will have x/2 sheep.
+
+Seattle has 0.25 times as many sheep as Charleston. This means that Seattle has 0.25x sheep.
+
+We know that Seattle has 20 sheep. So, we can substitute 20 for 0.25x in the above equation.
+
+x/2 + 0.25x = 20
+
+x = 20 * 2 = 40
+
+**Answer:**
+
+The total number of sheep that Toulouse, Charleston, and Seattle have is 40.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[32 / 200] Evaluting Question
+Response: **Solution:**
+
+Toulouse has twice as many sheep as Charleston, and Charleston has 4 times as many sheep as Seattle. So, we can start by finding out the number of sheep that Charleston and Seattle have.
+
+**Charleston:**
+Charleston has 4 times as many sheep as Seattle, so if Seattle has 20 sheep, then Charleston will have 20 * 4 = 80 sheep.
+
+**Toulouse:**
+Toulouse has twice as many sheep as Charleston, so if Charleston has 80 sheep, then Toulouse will have 80 * 2 = 160 sheep.
+
+**Total number of sheep:**
+The total number of sheep is 20 + 80 + 160 = 260 sheep.
+
+**Answer:**
+
+Answer: 260
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[33 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is:
+
+* Toulouse has twice as many sheep as Charleston.
+* Charleston has 4 times as many sheep as Seattle.
+* The total number of sheep is 260.
+
+**Step 1:**
+
+We know that Toulouse has twice as many sheep as Charleston, so we can say that the number of sheep in Toulouse is equal to 2x the number of sheep in Charleston.
+
+**Step 2:**
+
+We also know that Charleston has 4 times as many sheep as Seattle, so we can say that the number of sheep in Charleston is equal to 4y, where y is the number of sheep in Seattle.
+
+**Step 3:**
+
+Since the total number of sheep is 260, we can set the sum of the number of sheep in Toulouse, Charleston, and Seattle equal to 260.
+
+**Step 4:**
+
+Substituting the expressions for the number of sheep in Toulouse and Charleston into the equation from step 3, we get:
+
+2x + 4y = 260
+
+**Answer:**
+
+The number of sheep that Seattle has is 260 - 2x - 4y.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[34 / 200] Evaluting Question
+Response: **Solution:**
+
+- Seattle has 20 sheep.
+- Charleston has a sheep population 4 times that of Seattle, which is 20 * 4 = 80 sheep.
+- Toulouse boasts a sheep population double that of Charleston, which is 80 * 2 = 160 sheep.
+
+**Answer:**
+
+The total number of sheep in Seattle, Charleston, and Toulouse combined is 20 + 80 + 160 = 260 sheep.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[35 / 200] Evaluting Question
+Response: **Solution:**
+
+Toulouse has twice as many sheep as Charleston, and Charleston has 4 times as many sheep as Seattle. So, we can start by finding out the number of sheep that Charleston and Toulouse have.
+
+**Charleston:**
+Charleston has 4 times as many sheep as Seattle, so if Seattle has 20 sheep, then Charleston will have 20 * 4 = 80 sheep.
+
+**Toulouse:**
+Toulouse has twice as many sheep as Charleston, so if Charleston has 80 sheep, then Toulouse will have 80 * 2 = 160 sheep.
+
+**Total number of sheep:**
+
+Seattle has 20 sheep, so the total number of sheep is 20 + 80 + 160 = 260 sheep.
+
+**Answer:**
+
+260
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[36 / 200] Evaluting Question
+Response: **Solution:**
+
+Toulouse has twice as many sheep as Charleston, and Charleston has 4 times as many sheep as Seattle. So, we can say that Toulouse has 2x sheep, Charleston has 4x sheep, and Seattle has x sheep.
+
+Therefore, the total number of sheep is 2x + 4x + x = 7x sheep.
+
+**Answer:**
+
+7x sheep
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[37 / 200] Evaluting Question
+Response: **Solution:**
+
+The file size is 300 GB, which is equivalent to 300,000 MB. Carla can download 3 GB/minute, so the time it takes to download the file is 300,000 MB / 3 GB/minute = 100,000 minutes.
+
+However, 50% of the download is complete, which means that Carla has already downloaded 150,000 MB. So, the remaining download time is 300,000 - 150,000 = 150,000 MB.
+
+The time it takes to download the remaining 150,000 MB is 150,000 MB / 3 GB/minute = 50,000 minutes.
+
+**Answer:**
+
+The total time it takes to download the file is 100,000 minutes + 50,000 minutes = 150,000 minutes.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[38 / 200] Evaluting Question
+Response: **Solution:**
+
+The file size is 2000 GB, which is equivalent to 2000 * 1024 MB = 2048 MB. The download speed is 20 GB/minute, which is equivalent to 20 * 1024 MB/minute = 20480 MB/minute.
+
+The time taken to download 80% of the file (1638 MB) is 1638 MB / 20480 MB/minute = 0.08 hours.
+
+The time taken to install updates is 200 minutes.
+
+The time taken to restart the download is 0 minutes.
+
+The total time taken to download the file is 0.08 hours + 200 minutes = 200.08 hours.
+
+**Answer:**
+
+Download time = 200.08 hours
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[39 / 200] Evaluting Question
+Response: **Solution:**
+
+The file size is 0.2 TB, which is equivalent to 0.2 * 1024 MB = 204 MB.
+
+The download speed is 0.002 TB/minute, which is equivalent to 0.002 * 1024 MB/minute = 2 MB/minute.
+
+The time taken to download 2/5 of the file is 2/5 of the file size, which is 2/5 * 204 MB = 41.6 MB.
+
+The time taken to install updates is 1/3 of an hour, which is equivalent to 20 minutes.
+
+The time taken to restart the download is 20 minutes.
+
+The time taken to download the remaining 1/5 of the file is 1/5 of the file size, which is 1/5 * 204 MB = 41.6 MB.
+
+The total time taken to download the file is 41.6 MB/2 MB/minute + 20 minutes = 20 minutes
+
+**Answer:**
+
+The file download takes a total of 20 minutes to complete.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[40 / 200] Evaluting Question
+Response: **Solution:**
+
+The download speed is 2 GB/minute. 40% of the file is downloaded, which is equivalent to 0.4 * 200 = 80 GB. The remaining file to be downloaded is 200 - 80 = 120 GB.
+
+The download speed after the restart is 2 GB/minute * (1 - 0.25) = 1.5 GB/minute.
+
+The time taken to download the remaining file is 120 GB / 1.5 GB/minute = 80 minutes.
+
+**Answer:**
+
+Answer: 80 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[41 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is:
+
+* Carla can download 2GB of files per minute.
+* The system reboot and update takes a while.
+* The file size is 200GB.
+* The time taken to download the file is 160 minutes.
+
+We know that the file size is equal to the number of minutes it takes to download the file multiplied by the number of GB that can be downloaded per minute.
+
+Therefore, the time taken to download the file is 200GB / 2GB per minute = 100 minutes.
+
+**Answer:**
+
+The time taken to reboot and update the system and download the file is 160 - 100 = 60 minutes.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[42 / 200] Evaluting Question
+Response: **Solution:**
+
+1. Calculate the remaining download size after completing 40% of the file:
+   - 200 GB * 0.4 = 80 GB remaining
+2. Calculate the time required to download 80 GB at a speed of 2 GB per minute:
+   - 80 GB / 2 GB per minute = 40 minutes
+
+**Answer:**
+
+Answer: 40 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[43 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is:
+
+* File size = 200 GB
+* Download speed = 2 GB/minute
+* Battery level drop = 40%
+* Time for Windows restart = 20 minutes
+* Charge up during restart = 35%
+* Download restart time = Unknown
+
+**Step 1: Calculate the remaining file size after the battery level drop:**
+
+* 40% of the file size = 40% * 200 GB = 80 GB
+* Remaining file size = 200 GB - 80 GB = 120 GB
+
+**Step 2: Calculate the time taken to download the remaining file size:**
+
+* Time taken = File size / Download speed = 120 GB / 2 GB/minute = 60 minutes
+
+**Answer:**
+
+**Answer:**
+
+The total time taken to download the file is 60 minutes.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[44 / 200] Evaluting Question
+Response: **Solution:**
+
+The download speed is 2 GB/minute. 40% of the file has already been downloaded, which is equivalent to 0.4 * 2 GB = 0.8 GB. Therefore, the remaining amount of the file to download is 2 - 0.8 = 1.2 GB. The time taken to download 1.2 GB is 1.2 GB/2 GB/minute = 0.6 minutes.
+
+**Answer:**
+
+Download time = 0.6 minutes
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[45 / 200] Evaluting Question
+Response: **Solution:**
+
+John drives for 5 hours at a speed of 80 mph, covering a distance of 80 * 5 = 400 miles. He then turns around and drives for 6 hours at a speed of 60 mph, covering a distance of 60 * 6 = 360 miles. However, he spends 3 hours in standstill traffic, so the net distance covered is 400 - 3 hours * 60 = 360 miles.
+
+The remaining time is spent driving at a speed of 40 mph for 30 minutes, covering a distance of 40 * 0.5 = 20 miles.
+
+The total distance covered is 360 + 20 = 380 miles.
+
+**Answer:**
+
+The total distance covered is 380 miles.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[46 / 200] Evaluting Question
+Response: **Solution:**
+
+John drives for 30 hours at a speed of 60 mph, covering a distance of 30 hours x 60 mph = 1800 miles. He then spends 20 hours in standstill traffic, so he covers no distance. He drives for 5 hours at a speed of 30 mph, covering a distance of 5 hours x 30 mph = 150 miles. He drives for the remaining 15 hours at a speed of 80 mph, covering a distance of 15 hours x 80 mph = 1200 miles. Total distance covered is 1800 miles + 150 miles + 1200 miles = 3500 miles.
+
+**Answer:**
+
+Answer: 3500 miles
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[47 / 200] Evaluting Question
+Response: **Solution:**
+
+John drives for 3.5 hours at a speed of 60 mph, covering a distance of 60 mph * 3.5 hours = 210 miles. He then turns around and drives for 4.5 hours at a speed of 80 mph, covering a distance of 80 mph * 4.5 hours = 360 miles. However, he spends 2 hours in standstill traffic, so the total distance covered is 210 miles + 360 miles - 2 hours * 80 mph = 570 miles.
+
+**Answer:**
+
+Answer: 570 miles
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[48 / 200] Evaluting Question
+Response: **Solution:**
+
+John drives for 3 hours at a speed of 60 mph, covering a distance of 60 * 3 = 180 miles. He then turns around and drives for 4 hours at a speed of 80 mph, covering a distance of 80 * 4 = 320 miles. However, he spends 2 hours in standstill traffic and stops for half an hour, so the total time spent driving is 3 + 4 = 7 hours.
+
+The average speed for the entire journey is 
+
+(180 + 320) / 7 = 40 miles per hour
+
+Therefore, the total distance traveled is 180 + 320 = 500 miles.
+
+**Answer:**
+
+Answer: 500 miles
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[49 / 200] Evaluting Question
+Response: **Solution:**
+
+John drove for three hours at 60 miles per hour, so he covered a total of 60 * 3 = 180 miles. He then turned around and drove back for a total of four hours, but was stuck in traffic for the first two hours, so he actually drove for two hours and thirty minutes. He drove at 30 miles per hour for the next half hour, so he covered a total of 30 * 0.5 = 15 miles. He covered a total of 180 + 15 = 195 miles in a total of four hours, so he is going 195 / 4 = 48.75 miles per hour the rest of the time.
+
+**Answer:**
+
+John is going 48.75 miles per hour the rest of the time.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[50 / 200] Evaluting Question
+Response: **Solution:**
+
+John travels for 3 hours at a speed of 60 mph, covering a distance of 60 * 3 = 180 miles. He then spends 2 hours being blocked on the road, so he covers a total distance of 180 miles in the first 5 hours.
+
+In the next half-hour, he drives at a speed of 30 miles per hour, covering a distance of 30 * 0.5 = 15 miles. He then drives for 4 hours at a speed of 80 miles per hour, covering a distance of 80 * 4 = 320 miles.
+
+Total distance traveled = 180 + 15 + 320 = 515 miles
+
+**Answer:**
+
+Answer: 515 miles
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[51 / 200] Evaluting Question
+Response: **Solution:**
+
+John drives for 3 hours at a speed of 60 mph, covering a distance of 3 hours * 60 mph = 180 miles. He then drives back for 3 hours at a speed of 30 mph, covering a distance of 3 hours * 30 mph = 90 miles. He gets caught in a parade for 2 hours, so he does not cover any distance during that time. He drives for the next half-hour at a speed of 30 mph, covering a distance of 0.5 hours * 30 mph = 15 miles. He drives for the remaining 2 hours at a speed of 80 mph, covering a distance of 2 hours * 80 mph = 160 miles.
+
+**Answer:**
+
+Total distance traveled = 180 miles + 90 miles + 15 miles + 160 miles = 510 miles
+
+Therefore, John is a total of 510 miles from home at the end of those 4 hours.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[52 / 200] Evaluting Question
+Response: **Solution:**
+
+John drives for 3 hours at a speed of 80 mph, covering a distance of 3 hours * 80 mph = 240 miles. He spends 2 hours in standstill traffic, so he covers a distance of 0 miles. He spends the next half-hour driving at a speed of 30 mph, covering a distance of 30 mph * 0.5 hours = 15 miles. He drives the remaining 1 hour at a speed of 80 mph, covering a distance of 80 mph * 1 hour = 80 miles. Total distance covered is 240 miles + 15 miles + 80 miles = 335 miles.
+
+**Answer:**
+
+John is 335 miles from home at the end of those 4 hours.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[53 / 200] Evaluting Question
+Response: **Solution:**
+
+Eliza's rate per hour for the first 50 hours she works each week is $15. So, for the first 50 hours, her total earnings will be 50 x 15 = $750.
+
+For the remaining 5 hours, she will receive overtime pay of 1.5 times her regular hourly rate, which is $15 x 1.5 = $22.50 per hour. So, the total earnings for the overtime hours will be 5 x 22.50 = $112.50.
+
+Total earnings for the week = $750 + $112.50 = $862.50
+
+**Answer:**
+
+Answer: $862.50
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[54 / 200] Evaluting Question
+Response: **Solution:**
+
+Eliza's rate per hour for the first 40 hours she works each week is $100. So, for the first 40 hours, her earnings are $100 * 40 = $4000.
+
+Overtime pay is 1.2 times her regular hourly rate, which is $100 * 1.2 = $120 per hour. The number of overtime hours worked is 5 hours. So, her overtime earnings are $120 * 5 = $600.
+
+Total earnings for the week are $4000 + $600 = $4600.
+
+**Answer:**
+
+Answer: $4600
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[55 / 200] Evaluting Question
+Response: **Solution:**
+
+Eliza's rate per hour for the first 40 hours she works each week is $10.5. So, for the first 40 hours, her total earnings will be 40 x $10.5 = $420.
+
+For the overtime hours, she will earn 1.2 times her regular hourly rate of $10.5, which is $10.5 x 1.2 = $12.60 per hour.
+
+The total number of hours worked this week is 45 hours, so her total earnings for this week will be $420 + (12.60 x 5) = $530.
+
+**Answer:**
+
+$530
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[56 / 200] Evaluting Question
+Response: **Solution:**
+
+Eliza's rate per hour for the first 40 hours she works each week is $10. So, for the first 40 hours, her total earnings are 40 x 10 = $400.
+
+For the overtime hours, she receives an overtime pay of 1.2 times her regular hourly rate, which is $10 x 1.2 = $12.00 per hour. The number of overtime hours worked is 5, so her overtime earnings are 5 x 12.00 = $60.00.
+
+In addition to her regular earnings and overtime earnings, she also receives a weekly bonus of $50.
+
+Therefore, her total earnings for this week are $400 + $60.00 + $50 = $510.00.
+
+**Answer:**
+
+Answer: $510.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[57 / 200] Evaluting Question
+Response: **Solution:**
+
+Eliza earns $10 per hour for the first 40 hours she works each week and 1.2 times her regular hourly rate for any overtime. If she earned $460 this week, it means that she worked a total of 40 hours plus overtime hours.
+
+To find the number of overtime hours worked, we need to first calculate her overtime hourly rate. 1.2 times $10 is $12.
+
+Next, we need to find the number of overtime hours worked. To do this, we need to divide the total hours worked by her overtime hourly rate. $460 / $12 = 30 hours
+
+Therefore, Eliza worked a total of 40 hours and 30 hours of overtime this week.
+
+**Answer:**
+
+The total number of hours worked by Eliza this week is 40 + 30 = 70 hours.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[58 / 200] Evaluting Question
+Response: **Solution:**
+
+- Calculate the number of hours worked beyond the initial 40 hours: 45 - 40 = 5 hours
+- Calculate the overtime pay for the additional hours: 5 hours x $10 x 1.2 = $60
+- Add the regular pay and overtime pay: $10 x 40 + $60 = $460
+
+**Answer:**
+
+$460
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[59 / 200] Evaluting Question
+Response: **Solution:**
+
+- Calculate the number of hours worked beyond the initial 40 hours: 45 - 40 = 5 hours
+- Calculate the overtime pay for the additional hours worked: 5 hours x 1.2 x 10 = $60
+- Subtract the hours spent on training and lunch: 2 hours + 1 hour = 3 hours
+- Calculate the total hours worked: 40 hours + 5 hours - 3 hours = 42 hours
+- Calculate her total earnings: $10 x 42 hours = $420
+
+**Answer:**
+
+Answer: $420
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[60 / 200] Evaluting Question
+Response: **Solution:**
+
+Eliza's rate per hour for the first 40 hours she works each week is $10. So, for the first 40 hours, her total earnings will be 40 x 10 = $400.
+
+For the overtime hours, she will receive overtime pay at a rate of 1.5 times her regular hourly rate, which is $10 x 1.5 = $15 per hour. The number of overtime hours worked is 5 hours, so her total overtime earnings will be 5 x 15 = $75.
+
+Therefore, her total earnings for this week will be $400 + $75 = $475.
+
+**Answer:**
+
+Answer: $475
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[61 / 200] Evaluting Question
+Response: **Solution:**
+
+The number of downloads in the first month is 80.
+
+The number of downloads in the second month is four times the number of downloads in the first month, which is 80 * 4 = 320 downloads.
+
+The number of downloads in the third month is 20% less than the number of downloads in the second month, which is 320 - (320 * 0.20) = 256 downloads.
+
+**Answer:**
+
+The total number of downloads for the program over the three months is 80 + 320 + 256 = 756 downloads.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[62 / 200] Evaluting Question
+Response: **Solution:**
+
+The number of downloads in the first month was 6000. The number of downloads in the second month was three times as many downloads in the first month, which is 6000 * 3 = 18000 downloads. The number of downloads in the third month was reduced by 30%, which is 18000 * 0.3 = 5400 downloads.
+
+**Answer:**
+
+The total number of downloads for the program over the three months was 6000 + 18000 - 5400 = 19600 downloads.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[63 / 200] Evaluting Question
+Response: **Solution:**
+
+The number of downloads in the first month is 60.
+
+The number of downloads in the second month is 3.5 times the number of downloads in the first month, which is 60 * 3.5 = 210 downloads.
+
+The number of downloads in the third month is 0.3 times the number of downloads in the second month, which is 210 * 0.3 = 63 downloads.
+
+The total number of downloads is 60 + 210 - 63 = 267 downloads.
+
+**Answer:**
+
+The total number of downloads is 267.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[64 / 200] Evaluting Question
+Response: **Solution:**
+
+The number of downloads in the first month was 60.
+
+The number of downloads in the second month was three times the number of downloads in the first month, which is 60 * 3 = 180 downloads.
+
+The number of downloads in the third month was 30% less than the number of downloads in the second month, which is 180 - (180 * 0.3) = 126 downloads.
+
+The number of downloads in the fourth month was 50% less than the number of downloads in the third month, which is 126 - (126 * 0.5) = 63 downloads.
+
+**Answer:**
+
+The total number of downloads for the program over the four months was 60 + 180 + 126 + 63 = 433 downloads.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[65 / 200] Evaluting Question
+Response: **Solution:**
+
+The number of downloads in the second month was three times as many as the downloads in the first month, so the number of downloads in the second month was 3x the number of downloads in the first month. The number of downloads in the third month was reduced by 30%, so the number of downloads in the third month was 70% of the number of downloads in the second month.
+
+Therefore, the total number of downloads over the three months was 
+
+x + 3x - 0.3x = 366
+
+x = 366 + 0.3x
+
+x - 0.3x = 366
+
+0.7x = 366
+
+x = 366 / 0.7
+
+x = 530
+
+**Answer:**
+
+The number of downloads in the first month was 530.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[66 / 200] Evaluting Question
+Response: **Solution:**
+
+In the first month, there were 60 downloads. In the second month, the number of downloads tripled, so there were 60 * 3 = 180 downloads. In the third month, the number of downloads decreased by 30%, so the number of downloads in the third month was 180 * (1 - 0.3) = 126 downloads.
+
+**Answer:**
+
+Total number of downloads = 60 + 180 + 126 = 366
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[67 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is:
+
+* The number of downloads in the first month is 60.
+* The number of downloads in the second month is three times the number of downloads in the first month.
+* The number of downloads in the third month is reduced by 30%.
+
+**Step 1: Calculate the number of downloads in the second month.**
+
+The number of downloads in the second month is three times the number of downloads in the first month, which is 60 * 3 = 180 downloads.
+
+**Step 2: Calculate the number of downloads in the third month.**
+
+The number of downloads in the third month is reduced by 30%, which means that the number of downloads in the third month is 180 - (180 * 0.3) = 126 downloads.
+
+**Answer:**
+
+The total number of downloads over the three months is 60 + 180 + 126 = 366 downloads.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[68 / 200] Evaluting Question
+Response: **Solution:**
+
+The number of downloads in the first month is 60. The number of downloads in the second month is three times as many as the downloads in the first month, which is 60 * 3 = 180 downloads.
+
+**Answer:**
+
+The total number of downloads for the program over the three months is 60 + 180 = 240 downloads.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[69 / 200] Evaluting Question
+Response: **Solution:**
+
+**1. Calculate the cost of the donuts:**
+4 dozen donuts cost $75 per dozen, so the total cost of the donuts is 4 x $75 = $300.
+
+**2. Calculate the cost of the mini cupcakes:**
+3 dozen mini cupcakes cost $85 per dozen, so the total cost of the mini cupcakes is 3 x $85 = $255.
+
+**3. Calculate the cost of the mini cheesecakes:**
+5 dozen mini cheesecakes cost $60 per dozen, so the total cost of the mini cheesecakes is 5 x $60 = $300.
+
+**Total cost:**
+
+The total cost of the pastries is $300 + $255 + $300 = $855.
+
+**Answer:**
+
+The total cost of the pastries is $855.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[70 / 200] Evaluting Question
+Response: **Solution:**
+
+**1. Calculate the cost of the donuts:**
+30 dozen donuts x $680 = $20,400
+
+**2. Calculate the cost of the mini cupcakes:**
+20 dozen mini cupcakes x $800 = $16,000
+
+**3. Calculate the cost of the mini cheesecakes:**
+60 dozen mini cheesecakes x $550 = $33,000
+
+**Total cost:** $20,400 + $16,000 + $33,000 = $73,400
+
+**Answer:**
+
+The total cost of Toula's purchase was $73,400.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[71 / 200] Evaluting Question
+Response: **Solution:**
+
+**1. Calculate the cost of the donuts:**
+3 dozen donuts cost $68.5 per dozen, so the total cost of the donuts is 3 * $68.5 = $205.50
+
+**2. Calculate the cost of the mini cupcakes:**
+2 dozen mini cupcakes cost $80.5 per dozen, so the total cost of the mini cupcakes is 2 * $80.5 = $161.00
+
+**3. Calculate the cost of the mini cheesecakes:**
+6 dozen mini cheesecakes cost $55.5 per dozen, so the total cost of the mini cheesecakes is 6 * $55.5 = $333.00
+
+**Total cost:** $205.50 + $161.00 + $333.00 = $700.50
+
+**Answer:**
+
+The total cost of Toula's purchase is $700.50.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[72 / 200] Evaluting Question
+Response: **Solution:**
+
+- Calculate the cost of the donuts, mini cupcakes, and mini cheesecakes.
+- 3 dozen donuts cost $68 per dozen = $68 * 3 = $204
+- 2 dozen mini cupcakes cost $80 per dozen = $80 * 2 = $160
+- 6 dozen mini cheesecakes cost $55 per dozen = $55 * 6 = $330
+- Calculate the cost of the macarons.
+- 4 dozen macarons cost $75 per dozen = $75 * 4 = $300
+
+**Total cost:** $204 + $160 + $330 + $300 = $1,394
+
+**Answer:**
+
+The total cost of Toula's purchase was $1,394.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[73 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is:
+
+* Total cost of pastries = $694
+* Cost of 2 dozen mini cupcakes = $80
+* Cost of 6 dozen mini cheesecakes = $55
+* Cost of donuts = $68
+
+We know that the cost of the mini cupcakes and mini cheesecakes is a total of $80 + 55 = $135. Therefore, the remaining amount of $694 - 135 = $559 is spent on donuts.
+
+To find the number of dozens of donuts bought, we need to divide the remaining amount by the cost of donuts per dozen, which is $68.
+
+$559 / $68 = 8
+
+**Answer:**
+
+Toula bought a total of 8 dozen donuts.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[74 / 200] Evaluting Question
+Response: **Solution:**
+
+**Step 1: Calculate the cost of the donuts.**
+3 dozen donuts cost $68 per dozen, so the total cost of the donuts is 3 * 68 = $204.
+
+**Step 2: Calculate the cost of the mini cupcakes.**
+2 dozen mini cupcakes cost $80 per dozen, so the total cost of the mini cupcakes is 2 * 80 = $160.
+
+**Step 3: Calculate the cost of the mini cheesecakes.**
+6 dozen mini cheesecakes cost $55 per dozen, so the total cost of the mini cheesecakes is 6 * 55 = $330.
+
+**Final Answer:**
+
+Answer: $204 + $160 + $330 = $794
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[75 / 200] Evaluting Question
+Response: **Solution:**
+
+- Calculate the cost of the donuts, mini cupcakes, and mini cheesecakes separately.
+
+**Donuts:** 3 dozen donuts cost $68 per dozen, so the total cost of the donuts is 3 * 68 = $204.
+
+**Mini cupcakes:** 2 dozen mini cupcakes cost $80 per dozen, so the total cost of the mini cupcakes is 2 * 80 = $160.
+
+**Mini cheesecakes:** 6 dozen mini cheesecakes cost $55 per dozen, so the total cost of the mini cheesecakes is 6 * 55 = $330.
+
+**Total cost:** $204 + $160 + $330 = $794
+
+**Answer:**
+
+The total cost of the pastries that Toula bought was $794.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[76 / 200] Evaluting Question
+Response: **Solution:**
+
+The cost of the donuts is $68 per dozen, so the total cost of the donuts is 12 * 68 = $816.
+
+The cost of the mini cupcakes is $80 per dozen, so the total cost of the mini cupcakes is 2 * 80 = $160.
+
+The cost of the mini cheesecakes is $55 per dozen, so the total cost of the mini cheesecakes is 6 * 55 = $330.
+
+The total cost of the pastries is $816 + $160 + $330 = $1,306.
+
+**Answer:**
+
+The total cost of the pastries is $1,306.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[77 / 200] Evaluting Question
+Response: **Solution:**
+
+The tree will cost $80 to plant and it costs $4 a year to water and feed the tree. So, the total cost of owning the tree in the first year is $80 + 4 = $84.
+
+In the second year, the tree will grow 6 lemons and he can sell them for $1.5 each, so he will earn $6 * 1.5 = $9.
+
+In the third year, the tree will grow 6 lemons and he can sell them for $1.5 each, so he will earn $6 * 1.5 = $9.
+
+In the fourth year, the tree will grow 6 lemons and he can sell them for $1.5 each, so he will earn $6 * 1.5 = $9.
+
+In the fifth year, the tree will grow 6 lemons and he can sell them for $1.5 each, so he will earn $6 * 1.5 = $9.
+
+In the sixth year, the tree will grow 6 lemons and he can sell them for $1.5 each, so he will earn $6 * 1.5 = $9.
+
+After the sixth year, the tree will start to produce lemons and Carlos will start earning money on the lemon tree.
+
+**Answer:**
+
+The tree will start to produce lemons and Carlos will start earning money on the lemon tree after the sixth year.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[78 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is:
+
+* Cost of planting the orchard = $9000
+* Number of lemons grown per year = 700
+* Price of each lemon = $15
+* Cost of watering and feeding the trees = $300 per year
+
+To start earning money, Carlos needs to have enough lemons to sell to cover the cost of planting and watering and feeding the trees.
+
+So, we need to find the number of years it will take for the number of lemons grown to be greater than the cost of planting and watering and feeding the trees.
+
+The number of lemons grown per year is 700, so we need to see how many years it will take for 700 lemons to be greater than $9000.
+
+In the first year, Carlos will have 700 lemons, but the cost of planting and watering and feeding the trees is $300, so he will not earn any money.
+
+In the second year, Carlos will have 700 * 2 = 1400 lemons, and he will earn $15 * 1400 = $2100.
+
+In the third year, Carlos will have 700 * 3 = 2100 lemons, and he will earn $15 * 2100 = $2650.
+
+In the fourth year, 
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[79 / 200] Evaluting Question
+Response: **Solution:**
+
+The tree will cost $97.5 to plant, and it costs $3 a year to water and feed the tree. So, in order to start earning money on the lemon tree, Carlos will need to wait until he has grown enough lemons to sell.
+
+In order to grow enough lemons to sell, the tree will need to grow 7 lemons. This will take a year.
+
+**Answer:**
+
+After one year, Carlos will start earning money on the lemon tree.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[80 / 200] Evaluting Question
+Response: **Solution:**
+
+The tree will cost $90 to plant, and it will cost $3 a year to water and feed the tree, and $5 a year to apply fertilizer. So, in order to start earning money on the lemon tree, Carlos will need to wait for at least one year.
+
+**Answer:**
+
+One year
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[81 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is as follows:
+
+* Cost of planting a lemon tree = $90
+* Cost of watering and feeding the tree = $3 per year
+* Number of years before earning money = 13 years
+* Number of lemons produced per year = 7
+
+In order to calculate the income Carlos will earn, we first need to calculate the number of lemons he will produce each year. This is 7 lemons per year.
+
+Next, we need to calculate the cost of watering and feeding the tree each year. This is $3 per year.
+
+Now that we have the number of lemons and the cost of watering and feeding the tree, we can calculate the income Carlos will earn each year. This is 7 lemons x $3 = $21 per year.
+
+After 13 years, Carlos will have earned a total of $21 per year for a total of 13 years, which is $21 x 13 = $260.
+
+**Answer:**
+
+Carlos can sell each lemon for $2.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[82 / 200] Evaluting Question
+Response: **Solution:**
+
+The annual income from the tree is 7 lemons x $1.5 = $10.50. The annual cost of maintenance is $3. Therefore, the net income is $10.50 - $3 = $7.50.
+
+In order to make a profit, the net income must be greater than the cost of maintenance. So, we need to find the number of years it will take for the net income to be greater than the cost of maintenance.
+
+The net income increases by $7.50 each year, so we need to find the year in which the net income is greater than $3.
+
+The first year, the net income is $7.50. The second year, the net income is $7.50 + $7.50 = $15.00. The third year, the net income is $7.50 + $7.50 = $22.50.
+
+In the third year, the net income is greater than the cost of maintenance. Therefore, it will take Carlos 3 years to begin making a profit from his lemon tree.
+
+**Answer:**
+
+The number of years it will take for Carlos to begin making a profit from his lemon tree is 3.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[83 / 200] Evaluting Question
+Response: **Solution:**
+
+The key to solving this problem is to determine the total cost and revenue associated with the lemon tree in each year and then find the year in which the revenue exceeds the cost.
+
+**1. Calculate the revenue:**
+- Number of lemons produced = 7
+- Price of each lemon = $1.5
+- Revenue = 7 * 1.5 = $10.50
+
+**2. Calculate the cost:**
+- Cost of planting = $90
+- Cost of watering and feeding = $3
+- Cost of transportation = $2
+
+**Total cost = $90 + $3 + $2 = $95**
+
+**3. Compare the cost and revenue:**
+- In the first few years, the revenue will not be enough to cover the cost.
+- Once the tree starts producing lemons, the revenue will increase to $10.50 per year.
+- In the year in which the revenue exceeds the cost, Carlos will start earning money on the lemon tree.
+
+**Answer:**
+
+The tree will start earning money in the second year.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[84 / 200] Evaluting Question
+Response: **Solution:**
+
+The tree will start producing lemons in the second year, as it takes one year for a lemon tree to mature and start producing fruit.
+
+**Answer:**
+
+The tree will start producing lemons in the second year.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[85 / 200] Evaluting Question
+Response: **Solution:**
+
+Melanie started with a total of 4 vacuum cleaners left. She sold a quarter of her vacuum cleaners at the green house, which is equivalent to 1/4 of her total number of vacuum cleaners, which is 1 vacuum cleaner. She also sold 4 vacuum cleaners to the red house, so a total of 5 vacuum cleaners have been sold. Therefore, the remaining number of vacuum cleaners is 4.
+
+**Answer:**
+
+The total number of vacuum cleaners that Melanie started with is 4.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[86 / 200] Evaluting Question
+Response: **Solution:**
+
+Melanie started with a total of 50 vacuum cleaners. She sold a third of her vacuum cleaners at the green house, which is equivalent to 1/3 of 50, which is 16 vacuum cleaners. She sold 20 more vacuum cleaners to the red house, so there are 16 + 20 = 36 vacuum cleaners left. Half of the remaining vacuum cleaners were sold at the orange house, which is equivalent to 1/2 of 36, which is 18 vacuum cleaners. Therefore, the total number of vacuum cleaners sold is 16 + 20 + 18 = 54 vacuum cleaners.
+
+**Answer:**
+
+The total number of vacuum cleaners sold is 54.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[87 / 200] Evaluting Question
+Response: **Solution:**
+
+Melanie started with a total of 5 vacuum cleaners. She sold 0.33 of her vacuum cleaners at the green house, 2 more to the red house, and 0.5 of what was left at the orange house. Therefore, the remaining number of vacuum cleaners is 5 - 0.33 - 2 = 2.67.
+
+**Answer:**
+
+The total number of vacuum cleaners that Melanie started with is 2.67.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[88 / 200] Evaluting Question
+Response: **Solution:**
+
+Melanie started with a total of 5 vacuum cleaners left. So, to find out how many she started with, we need to add the number of vacuum cleaners sold to each house and the number of vacuum cleaners left.
+
+- Sold a third of the vacuum cleaners at the green house, which is equivalent to 1/3 of the total number of vacuum cleaners.
+- Sold 2 more vacuum cleaners to the red house.
+- Sold 4 more vacuum cleaners to the blue house.
+- Sold half of the remaining vacuum cleaners to the orange house, which is equivalent to 1/2 of the remaining vacuum cleaners.
+
+Total number of vacuum cleaners sold = 1/3 + 2 + 4 + 1/2 = 11/3 vacuum cleaners
+
+The remaining number of vacuum cleaners = 5
+
+**Answer:**
+
+The total number of vacuum cleaners that Melanie started with is 16.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[89 / 200] Evaluting Question
+Response: **Solution:**
+
+- A third of the vacuum cleaners in the green house is one vacuum cleaner.
+- Two vacuum cleaners were sold in the red house.
+- Half of the vacuum cleaners in the orange house is one vacuum cleaner.
+- Total number of vacuum cleaners sold is one plus two plus one, which is three vacuum cleaners.
+- Therefore, the number of vacuum cleaners remaining is 18 - 3 = 15 vacuum cleaners.
+
+**Answer:**
+
+The number of vacuum cleaners remaining is 15.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[90 / 200] Evaluting Question
+Response: **Solution:**
+
+- One-third of the stock (1/3) was sold at a house painted green, which is equivalent to 1/3 of the total number of vacuum cleaners.
+- Two vacuum cleaners were sold at a house painted red, which is equivalent to 2/3 of the remaining number of vacuum cleaners.
+- Half of the remaining stock (1/2) was sold at a house painted orange, which is equivalent to 1/2 of the remaining number of vacuum cleaners.
+
+Therefore, the remaining number of vacuum cleaners is 5.
+
+**Answer:**
+
+The initial quantity of vacuum cleaners Melanie had is 15.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[91 / 200] Evaluting Question
+Response: **Solution:**
+
+- Melanie started with an unknown number of vacuum cleaners.
+- She sold a third of her vacuum cleaners at the green house, which is 1/3 of the total number of vacuum cleaners.
+- She sold 2 more vacuum cleaners to the red house, which is 2 units.
+- She sold half of what was left at the orange house, which is 1/2 of the remaining number of vacuum cleaners.
+- Finally, she has 5 vacuum cleaners left.
+
+**Answer:**
+
+The total number of vacuum cleaners sold is 1/3 + 2 + 1/2 = 11/3 vacuum cleaners. Therefore, Melanie started with a total of 11/3 * 3 = 11 vacuum cleaners.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[92 / 200] Evaluting Question
+Response: **Solution:**
+
+Melanie started with a total of x vacuum cleaners. She sold a third of her vacuum cleaners at the green house, which is x/3 vacuum cleaners. She sold 2 more vacuum cleaners to the red house, which is 2 vacuum cleaners. She sold half of what was left at the orange house, which is x/2 vacuum cleaners. Therefore, the number of vacuum cleaners that remained is x - x/3 - 2 - x/2 vacuum cleaners.
+
+**Answer:**
+
+The number of vacuum cleaners that Melanie started with is x.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[93 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 50 students in the dance class. 30% of the students are enrolled in contemporary dance, which leaves 70% of the students enrolled in either jazz or hip-hop dance. 20% of the remaining students are enrolled in jazz dance, which leaves 50% of the students enrolled in hip-hop dance.
+
+**Answer:**
+
+50%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[94 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 200 students in the dance class. 20% of the students are enrolled in contemporary dance, which leaves 160 students remaining. 25% of the remaining students are enrolled in jazz dance, which leaves 112 students enrolled in hip-hop dance.
+
+Therefore, the percentage of students enrolled in hip-hop dance is 112/200 = 56%.
+
+**Answer:**
+
+In a dance class of 200 students, 56% of the students are enrolled in hip-hop dance.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[95 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 20 students in the dance class. 0.2 times the students enrolled in contemporary dance, which is 0.2 times 20 = 4 students. The remaining students enrolled in jazz dance and hip-hop dance are 16 students. So, the percentage of students enrolled in hip-hop dance is 16/20 * 100% = 80%.
+
+**Answer:**
+
+Answer: 80%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[96 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 20 students in the dance class. 20% of the students are enrolled in contemporary dance and ballet, which leaves 60% of the students enrolled in jazz dance and hip-hop dance. 25% of the students are enrolled in jazz dance, so the remaining 35% of the students are enrolled in hip-hop dance.
+
+**Answer:**
+
+35%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[97 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 20 students in the dance class. If 20% of the students take modern dance, that means that the remaining 80% of the students are taking jazz dance or hip-hop dance. If 60% of the students are taking hip-hop dance, then the remaining 20% of the students are taking jazz dance.
+
+**Answer:**
+
+20%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[98 / 200] Evaluting Question
+Response: **Solution:**
+
+The information is as follows:
+- 20% of the students are taking contemporary dance.
+- 25% of the students are taking jazz dance.
+- The remaining students are taking hip-hop dance.
+
+So, the percentage of students who chose to take hip-hop dance classes is 100% - 20% - 25% = 55%.
+
+**Answer:**
+
+In a 20-person dance class, 55% of the students chose to take hip-hop dance classes.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[99 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 20 students in the dance class. 20% of the students are enrolled in contemporary dance, which is equal to 0.2 * 20 = 4 students. 25% of the remaining students are enrolled in jazz dance, which is equal to 0.25 * 16 = 4 students. Therefore, a total of 4 + 4 = 8 students are enrolled in either contemporary dance or jazz dance. The remaining 12 students are enrolled in hip-hop dance. So, the percentage of students enrolled in hip-hop dance is 12/20 * 100% = 60%.
+
+**Answer:**
+
+In the dance class of 20 students, 60% of the students are enrolled in hip-hop dance.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[100 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 100 students in the dance class. 20% of the students are enrolled in contemporary dance, which leaves 75% of the students remaining. 25% of the remaining students are enrolled in jazz dance, which leaves 50% of the students enrolled in hip-hop dance.
+
+**Answer:**
+
+The percentage of students enrolled in hip-hop dance is 50%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[101 / 200] Evaluting Question
+Response: **Solution:**
+
+The merchant's potential profit is based on the value of the purchase and the market growth rate.
+
+**Step 1: Calculate the potential profit for the jewelry market:**
+   - Value of purchase = $7,000
+   - Market growth rate = 3.5%
+   - Profit = $7,000 x 3.5% = $245
+
+**Step 2: Calculate the potential profit for the electronic gadgets market:**
+   - Value of purchase = $6,000
+   - Market growth rate = 2.2%
+   - Profit = $6,000 x 2.2% = $132
+
+**Final Answer:**
+
+**Answer:**
+
+The merchant's potential profit is $245 for the jewelry market and $132 for the electronic gadgets market. Therefore, the total potential profit is $245 + 132 = $377.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[102 / 200] Evaluting Question
+Response: **Solution:**
+
+The merchant's potential profit is based on the value of the purchase and the market growth rate.
+
+**1. Calculate the potential profit for the jewelry market:**
+- Value of purchase = $50,000
+- Market growth rate = 2.5%
+- Profit = $50,000 x 2.5% = $1,250
+
+**2. Calculate the potential profit for the electronic gadgets market:**
+- Value of purchase = $80,000
+- Market growth rate = 1.2%
+- Profit = $80,000 x 1.2% = $960
+
+**Final Answer:**
+
+**Answer:**
+
+The merchant's potential profit is $1,250 for the jewelry market and $960 for the electronic gadgets market. Therefore, the total potential profit is $1,250 + $960 = $2,210.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[103 / 200] Evaluting Question
+Response: **Solution:**
+
+The merchant's potential profit is based on the value of the purchase plan and the market's growth.
+
+**Step 1: Calculate the potential profit for the jewelry market:**
+
+$5,000 x 0.025 = $125
+
+**Step 2: Calculate the potential profit for the electronic gadgets market:**
+
+$8,000 x 0.012 = $960
+
+**Final Answer:**
+
+**Answer:**
+
+The merchant's potential profit is $125 + $960 = $1,085.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[104 / 200] Evaluting Question
+Response: **Solution:**
+
+The merchant wants to make a choice between a purchase of jewelry worth $5,000 or electronic gadgets worth $8,000. The financial advisor speculates that the jewelry market will go up 2.5% while the electronic gadgets market will rise 1.2%. The cost of insurance for the jewelry is 0.5% of its value.
+
+**Calculating the potential profit for the jewelry:**
+
+* Increase in value of the jewelry = 2.5%
+* Insurance cost = 0.5%
+* Net profit = 2.5% - 0.5% = 2.0%
+
+**Calculating the potential profit for the electronic gadgets:**
+
+* Increase in value of the electronic gadgets = 1.2%
+* Insurance cost = N/A
+* Net profit = 1.2%
+
+**Final Answer:**
+
+**Answer:**
+
+The merchant can maximize his profit by purchasing the jewelry worth $5,000, as the potential profit for the jewelry is 2.0%, which is higher than the potential profit for the electronic gadgets, which is 1.2%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[105 / 200] Evaluting Question
+Response: **Solution:**
+
+The merchant wants to make a choice between a purchase of jewelry worth $5,000 or electronic gadgets worth $8,000. The financial advisor speculates that the jewelry market will go up some percent while the electronic gadgets market will rise by 1.2%. To profit greater than or equal to $125, the rise in the jewelry market must be greater than or equal to the rise in the electronic gadgets market by the same percentage.
+
+Therefore, the smallest rise percentage of jewelry that will result in a profit greater than or equal to $125 is 1.2%.
+
+**Answer:**
+
+The smallest rise percentage of jewelry that will result in a profit greater than or equal to $125 is 1.2%.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[106 / 200] Evaluting Question
+Response: **Solution:**
+
+The value of the jewels will increase by 2.5%, which means that the new value of the jewels will be $5,000 * 1.025 = $5,250.
+
+The value of the tech devices will increase by 1.2%, which means that the new value of the tech devices will be $8,000 * 1.012 = $8,840.
+
+The profit made by the trader will be the difference between the new value of the jewels and tech devices and the original value of the investments. Therefore, the profit made by the trader will be $5,250 - $8,000 = $2,750.
+
+**Answer:**
+
+The profit made by the trader is $2,750.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[107 / 200] Evaluting Question
+Response: **Solution:**
+
+**1. Calculate the increase in value for each item:**
+
+* Jewelry: 5,000 x 2.5% = $125
+* Electronic gadgets: 8,000 x 1.2% = $464
+* Real estate: 10,000 x 0.5% = $50
+
+**2. Calculate the total increase in value:**
+
+Total increase in value = $125 + $464 = $589
+
+**Answer:**
+
+**Answer:** $589
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[108 / 200] Evaluting Question
+Response: **Solution:**
+
+The merchant wants to make a purchase of jewelry worth $5,000. The jewelry market is expected to go up by 2.5%, and the electronic gadgets market is expected to rise by 1.2%. To maximize profit, the merchant should invest in the jewelry market.
+
+The potential profit from the jewelry market is 2.5% of $5,000, which is $125.
+
+**Answer:**
+
+The total profit the merchant would make is $125.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[109 / 200] Evaluting Question
+Response: **Solution:**
+
+The total distance covered by each train in the two days is 60 + 120 = 180 miles.
+
+**Answer:**
+
+The total distance covered by each train in the two days is 180 miles.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[110 / 200] Evaluting Question
+Response: **Solution:**
+
+The total distance covered by each train in the two days is 100 + 1500 = 1600 miles.
+
+**Answer:**
+
+The total distance covered by each train in the two days is 1600 miles.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[111 / 200] Evaluting Question
+Response: **Solution:**
+
+The total distance covered by each train in the first day is 4/5 of a hundred miles. So, the total distance covered in the first day is 4/5 * 100 = 80 miles.
+
+The distance covered in the second day is 1.5 times the distance covered in the first day. So, the distance covered in the second day is 1.5 * 80 = 120 miles.
+
+**Answer:**
+
+The total distance covered by each train in the two days is 80 miles and 120 miles.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[112 / 200] Evaluting Question
+Response: **Solution:**
+
+The total distance traveled by each train in the first two days is 80 + 150 = 230 miles.
+
+The total distance traveled by each train in the first three days is 230 + 100 = 330 miles.
+
+**Answer:**
+
+The distance covered by each train in the three days is 330 miles.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[113 / 200] Evaluting Question
+Response: **Solution:**
+
+Two trains leave San Rafael at the same time, traveling westward for 80 miles. So, the total distance covered in the first day is 80 miles.
+
+The total distance covered in the two days is 230 miles - 80 miles = 150 miles.
+
+Therefore, the distance covered by each train in the second day is 150 miles.
+
+**Answer:**
+
+The distance covered by each train in the second day is 150 miles.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[114 / 200] Evaluting Question
+Response: **Solution:**
+
+The total distance traveled by the two locomotives is 80 miles + 150 miles = 230 miles.
+
+**Answer:**
+
+The total distance traveled by the two locomotives is 230 miles.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[115 / 200] Evaluting Question
+Response: **Solution:**
+
+The total distance covered by each train in the two days is 80 + 150 = 230 miles.
+
+**Answer:**
+
+The total distance covered by each train in the two days is 230 miles.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[116 / 200] Evaluting Question
+Response: **Solution:**
+
+The information given is:
+
+* Two trains leave San Rafael at the same time.
+* They travel westward for an unknown distance.
+* The next day, they travel northwards for 150 miles.
+
+We know that the total distance covered is 150 miles. So, we need to find the distance covered in the westward direction first. Let's call this distance "x".
+
+Therefore, the equation to find "x" is:
+x + 150 = total distance
+
+We also know that the total distance is 150 miles. So, we can substitute that into the equation:
+x + 150 = 150
+
+Solving for "x", we get:
+x = 150 - 150 = 0
+
+**Answer:**
+
+The total distance covered by each train in the two days is 0 miles.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[117 / 200] Evaluting Question
+Response: **Solution:**
+
+**1. Calculate the total number of hours worked per year:**
+
+* Number of weeks worked as a teacher = 30 hours/week x 45 weeks = 1350 hours
+* Number of hours worked as a coach = 20 hours/week x 45 weeks = 900 hours
+
+**2. Calculate the total income:**
+
+* Income from teaching = $25/hour x 1350 hours = $33,750
+* Income from coaching = $35/hour x 900 hours = $10,500
+
+**Final Answer:**
+
+**Answer:**
+
+Total income = $33,750 + $10,500 = $44,250
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[118 / 200] Evaluting Question
+Response: **Solution:**
+
+**1. Calculate the total number of hours worked per year:**
+
+- Number of weeks worked as a teacher = 35 hours/week x 50 weeks = 1750 hours
+- Number of hours worked as a coach = 15 hours/week x 50 weeks = 750 hours
+- Total number of hours worked = 1750 hours + 750 hours = 2500 hours
+
+**2. Calculate the income earned per hour:**
+
+- Salary as a teacher = $200 per hour
+- Salary as a coach = $300 per hour
+
+**3. Calculate the total income:**
+
+- Total number of hours worked = 2500 hours
+- Income per hour = $200 or $300
+- Total income = 2500 hours x $200 = $500,000
+
+**Answer:**
+
+Answer: $500,000
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[119 / 200] Evaluting Question
+Response: **Solution:**
+
+**1. Calculate the total number of hours worked per year:**
+
+- Hours worked as a teacher = 35 hours per week x 50 weeks = 1,750 hours
+- Hours worked as a coach = 15 hours per week x 50 weeks = 750 hours
+
+**2. Calculate the total income:**
+
+- Income from teaching = $20.5 per hour x 1,750 hours = $35,000
+- Income from coaching = $30.5 per hour x 750 hours = $20,250
+
+**Total income:** $35,000 + $20,250 = $55,250
+
+**Answer:**
+
+Answer: $55,250
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[120 / 200] Evaluting Question
+Response: **Solution:**
+
+**1. Calculate the total number of hours worked per year:**
+
+- Hours worked as a teacher = 35 hours/week x 50 weeks = 1,750 hours
+- Hours worked as a coach = 15 hours/week x 50 weeks = 750 hours
+
+**2. Calculate the total income from teaching and coaching:**
+
+- Income from teaching = $20/hour x 1,750 hours = $35,000
+- Income from coaching = $30/hour x 750 hours = $22,500
+
+**3. Calculate the bonus:**
+
+- Bonus = $500 for every 10 weeks of work completed
+- Number of weeks worked = 50 weeks
+- Bonus = $500 x 5 = $2,500
+
+**Final Answer:**
+
+**Answer:**
+
+Total salary = $35,000 + $22,500 + $2,500 = $62,000
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[121 / 200] Evaluting Question
+Response: **Solution:**
+
+Jill's annual salary is $57,500. She earns $20 per hour as a teacher and $30 per hour as a cheerleading coach. If she works 50 weeks a year, some hours a week as a teacher, and 15 hours a week as a coach, the number of hours she works as a teacher per week is as follows:
+
+The number of hours per week that Jill works as a teacher is 50 weeks * x.
+
+Therefore, the number of hours that Jill works as a teacher per week is 50w.
+
+**Answer:**
+
+50w
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[122 / 200] Evaluting Question
+Response: **Solution:**
+
+**1. Calculate the total number of hours worked per week:**
+
+* Hours worked teaching = 35 hours per week
+* Hours worked coaching = 15 hours per week
+* Total hours worked = 35 + 15 = 50 hours per week
+
+**2. Multiply the number of hours worked per week by the hourly wage:**
+
+* Hourly wage for teaching = $20
+* Hourly wage for coaching = $30
+* Total income per week = $20 x 35 + $30 x 15 = $600 per week
+
+**3. Multiply the total income per week by the number of weeks in a year:**
+
+* Number of weeks in a year = 50 weeks
+* Total income per year = $600 x 50 = $30,000 per year
+
+**Answer:**
+
+**Answer:** $30,000 per year
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[123 / 200] Evaluting Question
+Response: **Solution:**
+
+**1. Calculate the total number of hours worked per week:**
+
+* Teaching: 35 hours per week
+* Coaching: 15 hours per week
+* Volunteering: 5 hours per week
+
+Total hours worked per week = 50 hours
+
+**2. Calculate the total number of weeks per year:**
+
+Number of weeks per year = 50 weeks
+
+**3. Calculate the total number of hours worked per year:**
+
+Total hours worked per year = 50 hours per week x 50 weeks per year = 2,500 hours
+
+**4. Calculate the income from teaching and coaching:**
+
+Income from teaching = $20 per hour x 35 hours per week x 50 weeks per year = $2,000
+
+Income from coaching = $30 per hour x 15 hours per week x 50 weeks per year = $900
+
+**Total income:** $2,000 + $900 = $2,900
+
+**Answer:**
+
+$2,900
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[124 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is:
+
+* Jill's hourly wage for teaching is $20.
+* Jill's hourly wage for coaching is $30.
+* Jill works 50 weeks a year, some hours a week as a teacher, and 15 hours a week as a coach.
+
+To calculate her annual salary, we first need to calculate her total number of hours worked per year. To do this, we need to multiply the number of hours worked per week by the number of weeks per year.
+
+Total hours worked per year = 50 weeks * 50 hours per week = 2500 hours
+
+Now that we know the total number of hours worked per year, we can calculate her annual salary. To do this, we need to multiply the total number of hours worked per year by her hourly wage.
+
+Annual salary = 2500 hours * $20 = $50,000
+
+**Answer:**
+
+Answer: $50,000
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[125 / 200] Evaluting Question
+Response: **Solution:**
+
+In one week, Claire will eat 2 eggs per day, so in one week she will eat a total of 2 * 7 = 14 eggs.
+
+In three weeks, she will eat 14 eggs per week, so in total she will eat a total of 14 * 3 = 42 eggs.
+
+**Answer:**
+
+The number of dozens of eggs that Claire will eat in 3 weeks is 42 / 12 = 3.5 dozen.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[126 / 200] Evaluting Question
+Response: **Solution:**
+
+Claire makes a 3-egg omelet every morning, which means she will eat 3 eggs per day. In one week, she will eat 3 eggs per day for 7 days, so a total of 3 * 7 = 21 eggs.
+
+In 12 weeks, she will eat 21 eggs per week for a total of 21 * 12 = 252 eggs.
+
+**Answer:**
+
+Claire will eat a total of 252 eggs in 12 weeks.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[127 / 200] Evaluting Question
+Response: **Solution:**
+
+Claire makes an omelet using 0.75 dozen eggs every morning. In one day, she will consume 0.75 dozen eggs.
+
+In one week, she will consume 0.75 * 7 = 5.25 dozen eggs.
+
+In four weeks, she will consume 0.75 * 7 * 4 = 16 eggs.
+
+**Answer:**
+
+At the end of 4 weeks, Claire will have consumed a total of 16 eggs.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[128 / 200] Evaluting Question
+Response: **Solution:**
+
+In a week, Claire consumes 3 eggs for breakfast and 4 eggs for the cake, a total of 3 + 4 = 7 eggs.
+
+In 4 weeks, she will consume 7 eggs/week * 4 weeks = 28 eggs.
+
+**Answer:**
+
+28
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[129 / 200] Evaluting Question
+Response: **Solution:**
+
+There are 12 eggs in a dozen. So, 7 dozens of eggs is equal to 84 eggs. If Claire eats one 7 dozens of eggs in 4 weeks, that means she eats 84 eggs in 4 weeks. Therefore, Claire eats 84 eggs for breakfast every morning.
+
+**Answer:**
+
+84
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[130 / 200] Evaluting Question
+Response: **Solution:**
+
+- Each day, Claire consumes 3 eggs.
+- In a week, she will consume 3 * 7 = 21 eggs.
+- In a month, she will consume 21 * 4 = 84 eggs.
+- Over a period of 4 weeks, Claire will consume a total of 84 eggs.
+
+**Answer:**
+
+Answer: 84
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[131 / 200] Evaluting Question
+Response: **Solution:**
+
+In one week, Claire will make 3 omelets and boil 2 eggs, but she does not eat the boiled eggs. Therefore, the number of eggs she consumes in one week is 3.
+
+In 4 weeks, she will make 3 omelets per day and consume a total of 3 * 4 = 12 eggs.
+
+**Answer:**
+
+The number of eggs that Claire will consume for her breakfast omelets in 4 weeks is 12.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[132 / 200] Evaluting Question
+Response: **Solution:**
+
+In one week, Claire will eat one dozen eggs. In 4 weeks, she will eat 4 dozen eggs.
+
+**Answer:**
+
+The number of dozens of eggs that Claire will eat in 4 weeks is 4.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[133 / 200] Evaluting Question
+Response: **Solution:**
+
+Marissa took a total of 2 + 1 = 3 hours to walk the first 6 miles and the next 3 miles.
+
+The remaining distance to be covered is 20 - 6 = 14 miles.
+
+To cover the remaining distance in 3 hours, Marissa needs to walk at a speed of 14 miles per hour.
+
+**Answer:**
+
+Marissa needs to walk at a speed of 14 miles per hour to complete the remaining distance.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[134 / 200] Evaluting Question
+Response: **Solution:**
+
+Marissa walked a total of 40 miles and 20 miles, which is a total of 60 miles. If she wants her average speed to be 4 miles per hour, then she will need to walk the remaining distance of 60 miles in 15 hours. This will give her an average speed of 4 miles per hour.
+
+**Answer:**
+
+Marissa needs to walk the remaining distance of 60 miles in 15 hours to maintain an average speed of 4 miles per hour.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[135 / 200] Evaluting Question
+Response: **Solution:**
+
+Marissa took 1 hour to walk the first 4.5 miles and another hour to walk the next two miles, so a total of 1 hour + 1 hour = 2 hours were used to walk a total of 4.5 miles + 2 miles = 6.5 miles.
+
+The remaining distance to be covered is 13.5 - 6.5 = 7 miles.
+
+To cover the remaining distance in 2 hours, Marissa needs to walk at a speed of 7 miles per hour.
+
+**Answer:**
+
+Marissa needs to walk at a speed of 7 miles per hour to complete the remaining distance.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[136 / 200] Evaluting Question
+Response: **Solution:**
+
+Marissa walked a total of 4 miles in the first two hours, and she took a 30-minute break, which is equivalent to 0.5 hours. So, the remaining distance to be covered is 8 miles.
+
+To cover 8 miles in a total time of 2 hours and 30 minutes, Marissa needs to walk at a speed of 8 miles per hour.
+
+**Answer:**
+
+Marissa needs to walk at a speed of 8 miles per hour to maintain an average speed of 4 miles per hour for the entire hike.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[137 / 200] Evaluting Question
+Response: **Solution:**
+
+Marissa walked the first four miles in one hour, and the last two miles in another hour. So, the total time spent walking is 1 hour + 1 hour = 2 hours.
+
+The total distance walked is 4 miles + 2 miles = 6 miles.
+
+The average speed is 6 miles / 2 hours = 3 miles per hour.
+
+**Answer:**
+
+Marissa's average speed is 3 miles per hour.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[138 / 200] Evaluting Question
+Response: **Solution:**
+
+Marissa has already covered 4 miles in 1 hour, and her average pace is 4 miles per hour. Therefore, the remaining distance to cover is 12 - 4 = 8 miles.
+
+To cover the remaining distance in the remaining time, which is 1 hour, her speed should be 8 miles per hour.
+
+**Answer:**
+
+Marissa should traverse the rest of the trail at a speed of 8 miles per hour.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[139 / 200] Evaluting Question
+Response: **Solution:**
+
+Marissa walked a total of 4 miles in the first hour and a half, and she walked the remaining 8 miles in the second hour. So, the total time spent walking is 1.5 hours.
+
+The average speed is the distance traveled divided by the time taken to complete the journey.
+
+Therefore, the average speed is 8 miles per 1.5 hours, which is 5.3 miles per hour.
+
+**Answer:**
+
+Marissa needs to walk the remaining distance at a speed of 5.3 miles per hour in order to maintain her average speed of 4 miles per hour for the entire hike.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[140 / 200] Evaluting Question
+Response: **Solution:**
+
+Marissa took 1 hour to walk the first 4 miles and another hour to walk the next two miles. So, a total of 1 + 1 = 2 hours were used to walk a total of 4 + 2 = 6 miles.
+
+The average speed is the distance traveled divided by the time taken. Therefore, the average speed is 6 miles divided by 2 hours, which is 3 miles per hour.
+
+**Answer:**
+
+Marissa needs to walk the remaining distance at a speed of 3 miles per hour in order to maintain her average speed of 4 miles per hour.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[141 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 20 liters of orange drink that are two-thirds water, which is equivalent to 20 * 2/3 = 13.33 liters of water.
+
+There are a total of 30 liters of pineapple drink that are three-fifths water, which is equivalent to 30 * 3/5 = 18 liters of water.
+
+After pouring two liters of orange drink, the remaining volume of orange drink is 13.33 - 2 = 11.33 liters.
+
+The total volume of water in the remaining 48 liters is 11.33 liters.
+
+**Answer:**
+
+Answer: 11.33 liters of water
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[142 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 100 liters of orange drink and 150 liters of pineapple drink, which add up to a total of 250 liters. However, we have to subtract the amount of water that was spilled, which is 10 liters. Therefore, the remaining water is 240 liters.
+
+**Answer:**
+
+The remaining water in the 240 liters is 160 liters.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[143 / 200] Evaluting Question
+Response: **Solution:**
+
+The orange drink has 10.6 liters and is two-thirds water, which is equivalent to 6.4 liters of water. The pineapple drink has 15.5 liters and is three-fifths water, which is equivalent to 5.2 liters of water. After pouring one liter of the orange drink, the remaining 9.6 liters of orange drink and the 15.5 liters of pineapple drink will have a total of 25.1 liters of water.
+
+**Answer:**
+
+The remaining water in the 24 liters is 25.1 liters.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[144 / 200] Evaluting Question
+Response: **Solution:**
+
+- Convert two-thirds and three-fifths to fractions.
+2/3 of 10 liters = 2/3 * 10 = 6.66 liters of water
+3/5 of 15 liters = 3/5 * 15 = 9 liters of water
+
+After pouring one liter of orange drink, the remaining water is 6.66 - 1 = 5.66 liters.
+
+- Add 5 liters of lemon drink, which contains 4/5 of 5 liters = 4 liters of water
+
+Total water in the resulting mixture = 5.66 + 4 = 9.66 liters
+
+**Answer:**
+
+The total amount of water in the resulting 29 liters of the mixed drink is 9.66 liters.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[145 / 200] Evaluting Question
+Response: **Solution:**
+
+- Convert two-thirds of 10 liters to liters.
+Two-thirds of 10 liters is 6.66 liters.
+- Add 6.66 liters of water to 15 liters of pineapple juice.
+The total volume of liquid is 21.66 liters.
+- Subtract 1 liter of orange juice that was spilled.
+The remaining volume of liquid is 20.66 liters.
+- The number of liters of water in the remaining 24 liters of liquid is 20.66 liters.
+- The percentage of water in the remaining 15 liters of pineapple juice is 20.66/15 * 100% = 13.7%.
+
+**Answer:**
+
+Answer: 13.7%
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[146 / 200] Evaluting Question
+Response: **Solution:**
+
+- Convert the two-thirds of the orange beverage (10 liters) to fractions. Two-thirds is equivalent to 2/3. So, 10 liters is equal to 2/3 of 10 liters, which is 6.66 liters.
+
+- Convert the three-fifths of the pineapple beverage (15 liters) to fractions. Three-fifths is equivalent to 3/5. So, 15 liters is equal to 3/5 of 15 liters, which is 9 liters.
+
+- Subtract the amount of water lost (1 liter) from the total amount of water (6.66 liters and 9 liters). This will result in a total of 8.66 liters of water.
+
+**Answer:**
+
+The total amount of water in the resulting 24 liters is 8.66 liters.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[147 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 10 liters of orange drink and 15 liters of pineapple drink, which add up to a total of 25 liters of drink. However, one liter of orange drink was spilled onto the table, so the total amount of drink remaining is 24 liters.
+
+The orange drink is two-thirds water, which means that 2/3 of the orange drink is water. So, 2/3 of 10 liters of orange drink is 2/3 * 10 = 6.66 liters of water.
+
+The pineapple drink is three-fifths water, which means that 3/5 of the pineapple drink is water. So, 3/5 of 15 liters of pineapple drink is 3/5 * 15 = 9 liters of water.
+
+The total amount of water in the remaining 24 liters of mixed drinks is 6.66 liters of water from the orange drink and 9 liters of water from the pineapple drink, which add up to a total of 15.66 liters of water.
+
+**Answer:**
+
+15.66 liters of water
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[148 / 200] Evaluting Question
+Response: **Solution:**
+
+We have 10 liters of orange drink that is mixed with water and 15 liters of pineapple drink that is three-fifths water. So, the total volume of liquid is 10 + 15 = 25 liters. After pouring one liter of orange drink, the remaining volume of liquid is 25 - 1 = 24 liters.
+
+**Answer:**
+
+The remaining water in the 24 liters is 3/5 of the total volume of liquid, which is 24 * 3/5 = 14.4 liters.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[149 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is as follows:
+
+* Raymond was born 8 years before Samantha.
+* Raymond had a son at the age of 25.
+* Samantha is now 35.
+
+To find out the number of years ago that Raymond's son was born, we need to first find out the age of Raymond when his son was born. To do this, we subtract 25 from 35.
+
+Age of Raymond when his son was born = 35 - 25 = 10
+
+Now that we know the age of Raymond when his son was born, we can find out the number of years ago that his son was born by subtracting 10 from 35.
+
+Number of years ago that Raymond's son was born = 35 - 10 = 25
+
+**Answer:**
+
+The answer is 25.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[150 / 200] Evaluting Question
+Response: **Solution:**
+
+In order to find out the number of years ago that Raymond's son was born, we need to first find out the age of Raymond. To do this, we subtract 16 from 31, which is 15.
+
+Now that we know Raymond's age, we can find out the age of his son by subtracting 23 from 15, which is 8.
+
+**Answer:**
+
+Raymond's son was born 8 years ago.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[151 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is as follows:
+
+* Raymond was born 6 years and 3 months before Samantha.
+* Raymond's son was born at the age of 23.
+* Samantha is now 31.
+
+To find out the number of years ago that Raymond's son was born, we first need to find out the age of Raymond at the time of his son's birth. To do this, we subtract 6 years and 3 months from 31. This will give us Raymond's age at the time of his son's birth.
+
+Raymond's age at the time of his son's birth = 31 - 6 - 0.03 = 25
+
+Now that we know Raymond's age at the time of his son's birth, we can find out the number of years ago that his son was born. This is simply the same as subtracting 25 from 23.
+
+Number of years ago that Raymond's son was born = 23 - 25 = -2
+
+**Answer:**
+
+-2
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[152 / 200] Evaluting Question
+Response: **Solution:**
+
+- Calculate the age of Raymond's son, which is 23 - 6 = 17 years.
+- Calculate the age of Samantha's son, which is 7 years old.
+- Calculate the age of Samantha when she gave birth to her son, which is 24 - 7 = 17 years.
+- Subtract the age of Raymond's son and the age of Samantha when she gave birth to her son, which is 17 - 17 = 0 years.
+
+**Answer:**
+
+The answer is 0 years.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[153 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is:
+
+* Raymond was born 6 years before Samantha.
+* Raymond's son was born 14 years ago.
+* Raymond's son is 23 years old.
+
+To find out the age of Samantha, we need to first find out the age of Raymond when his son was born. To do this, we subtract 6 from 23, which is 17.
+
+Now that we know Raymond's age when his son was born, we can find out the age of Samantha by adding 17 to the number of years since his son was born, which is 14. This gives us a total of 17 + 14 = 31.
+
+**Answer:**
+
+The age of Samantha now is 31.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[154 / 200] Evaluting Question
+Response: **Solution:**
+
+- Calculate the age of Raymond at the time of his son's birth (23 - 6 = 17 years).
+- Add the age of Raymond's son (17 years) to his current age (31 years).
+- The result is the number of years that have passed since the birth of Raymond's son (17 + 31 = 48 years).
+
+**Answer:**
+
+The number of years that have passed since the birth of Raymond's son is 48 years.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[155 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is:
+
+* Raymond was born 6 years before Samantha.
+* Raymond visited 15 countries by the time he was 23.
+* At the age of 23, Raymond also had a son.
+* Samantha is currently 31 years old and has visited 20 countries.
+
+To find out how many years ago Raymond's son was born, we need to first find out how old Raymond was when he had his son. We know that he was 23 when he had his son, so we need to subtract 6 from 23 to find out his age at the time of his son's birth. This will be 17 years.
+
+**Answer:**
+
+17
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[156 / 200] Evaluting Question
+Response: **Solution:**
+
+We know that Raymond was born 6 years before Samantha, and Samantha is now 31. So, the number of years that have passed since Raymond's birth is 31 + 6 = 37 years.
+
+**Answer:**
+
+The answer is 37.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[157 / 200] Evaluting Question
+Response: **Solution:**
+
+There are 9 customers in total.
+
+The first 3 customers buy one DVD each, so they buy a total of 3 DVDs.
+
+The next 3 customers buy 3 DVDs each, so they buy a total of 3 x 3 = 9 DVDs.
+
+The last 3 customers don't buy any DVDs, so they don't contribute to the total number of DVDs sold.
+
+Therefore, the total number of DVDs sold on Tuesday is 3 + 9 = 12 DVDs.
+
+**Answer:**
+
+12
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[158 / 200] Evaluting Question
+Response: **Solution:**
+
+* Billy has 80 customers and the first 30 customers buy one DVD, so a total of 30 customers buy one DVD, which is 30 DVDs.
+* The next 20 customers buy 2 DVDs, so a total of 20 customers buy 2 DVDs, which is 40 DVDs.
+* The last 30 customers don't buy any DVDs, so a total of 30 customers don't buy any DVDs.
+
+**Total number of DVDs sold:** 30 + 40 = 70 DVDs
+
+**Answer:**
+
+The total number of DVDs sold by Billy on Tuesday was 70 DVDs.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[159 / 200] Evaluting Question
+Response: **Solution:**
+
+**1. Calculate the number of DVDs sold to the first 3 customers:**
+   - 3 customers buy 1 DVD each = 3 DVDs
+
+**2. Calculate the number of DVDs sold to the next 12 customers:**
+   - 12 customers buy 10 DVDs each = 12 x 10 = 120 DVDs
+
+**3. Calculate the number of DVDs sold to the last 3 customers:**
+   - 3 customers don't buy any DVDs = 0 DVDs
+
+**Total number of DVDs sold:**
+   - 3 DVDs + 120 DVDs + 0 DVDs = 123 DVDs
+
+**Answer:**
+
+**Answer:**
+Billy sold a total of 123 DVDs on Tuesday.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[160 / 200] Evaluting Question
+Response: **Solution:**
+
+* Billy has 8 customers on Tuesday.
+* His first 3 customers buy one DVD each, so a total of 3 DVDs are sold.
+* One of the first 3 customers returns their DVD, so a total of 2 DVDs are sold.
+* His next 2 customers buy 2 DVDs each, so a total of 4 DVDs are sold.
+* His last 3 customers don't buy any DVDs.
+
+**Total number of DVDs sold:** 2 + 3 = 5 DVDs
+
+**Answer:**
+
+The total number of DVDs sold on Tuesday is 5.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[161 / 200] Evaluting Question
+Response: **Solution:**
+
+The information we have is:
+
+* Billy has 8 customers on Tuesday.
+* The first 3 customers buy one DVD each.
+* The next 2 customers buy some DVDs each.
+* The last 3 customers don't buy any DVDs.
+* Billy sold 7 DVDs on Tuesday.
+
+We know that the first 3 customers bought a total of 3 DVDs. So, the remaining number of DVDs to be sold is 7 - 3 = 4 DVDs.
+
+The next 2 customers bought some DVDs each. So, the total number of DVDs sold to the next 2 customers is 4 / 2 = 2 DVDs each.
+
+**Answer:**
+
+The total number of DVDs sold to the next 2 customers is 2 DVDs each.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[162 / 200] Evaluting Question
+Response: **Solution:**
+
+- The initial 3 clients purchase a single DVD each, so a total of 3 DVDs are sold.
+- The next 2 clients purchase a pair of DVDs, so a total of 2 * 2 = 4 DVDs are sold.
+- The final 3 clients do not make any purchases, so no additional DVDs are sold.
+
+**Total number of DVDs sold:** 3 + 4 = 7 DVDs
+
+**Answer:**
+
+The total number of DVDs sold by Billy on this day is 7.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[163 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 8 customers on Tuesday.
+
+- The first 3 customers buy one DVD each, so a total of 3 DVDs are sold.
+- The next 2 customers buy 2 DVDs each, so a total of 4 DVDs are sold.
+- The last 3 customers don't buy any DVDs.
+
+Total number of DVDs sold = 3 + 4 = 7
+
+**Answer:**
+
+The number of DVDs sold on Tuesday was 7.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[164 / 200] Evaluting Question
+Response: **Solution:**
+
+There are a total of 8 customers on Tuesday.
+
+- The first some customers buy one DVD each, so they buy a total of 8 DVDs.
+- The next 2 customers buy 2 DVDs each, so they buy a total of 2 x 2 = 4 DVDs.
+- The last 3 customers don't buy any DVDs.
+
+Total number of DVDs sold = 8 + 4 = 12 DVDs
+
+**Answer:**
+
+The total number of DVDs sold on Tuesday is 12 DVDs.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[165 / 200] Evaluting Question
+Response: **Solution:**
+
+The candle melts by 3 centimeters every hour, so after burning for 4 hours, the total number of centimeters it will have melted is 3 * 4 = 12 centimeters.
+
+**Answer:**
+
+The candle will be 12 centimeters shorter after burning from 2:00 PM to 6:00 PM.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[166 / 200] Evaluting Question
+Response: **Solution:**
+
+The problem is asking how many centimeters shorter a candle will be after burning from 1:00 PM to 5:00 PM. We know that a candle melts by 20 millimeters every hour. So, the total number of millimeters that the candle will melt is the number of hours it will burn multiplied by 20.
+
+From 1:00 PM to 5:00 PM, there are a total of 4 hours. Therefore, the total number of millimeters that the candle will melt is 4 hours multiplied by 20 = 80 millimeters.
+
+**Answer:**
+
+The candle will be 80 millimeters shorter after burning from 1:00 PM to 5:00 PM.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[167 / 200] Evaluting Question
+Response: **Solution:**
+
+The candle melts by 0.02 meters every hour, so the total amount of meters melted will be 0.02 * 4 hours = 0.08 meters.
+
+**Answer:**
+
+The candle will be 0.08 meters shorter after burning from 1:00 PM to 5:00 PM.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[168 / 200] Evaluting Question
+Response: **Solution:**
+
+The candle melts by 2 centimeters every hour, so the total number of hours it burns in the first burning period is 4 hours. Therefore, the total number of centimeters melted in the first burning period is 4 * 2 = 8 centimeters.
+
+The candle is then lit again at 6:00 PM, so it will burn for an additional 3 hours. Therefore, the total number of hours the candle burns in the second burning period is 3 hours. The total number of centimeters melted in the second burning period is 3 * 2 = 6 centimeters.
+
+The total number of centimeters melted in both burning periods is 8 + 6 = 14 centimeters.
+
+**Answer:**
+
+The candle will be 14 centimeters shorter in total after these two burning periods.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[169 / 200] Evaluting Question
+Response: **Solution:**
+
+The candle was 8 centimeters shorter after burning from 1:00 PM to 5:00 PM. So, the rate of change in the length of the candle is 8 centimeters per 4 hours.
+
+**Answer:**
+
+8 centimeters per 4 hours
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[170 / 200] Evaluting Question
+Response: **Solution:**
+
+The candle reduces in size by 2 centimeters for each hour it is lit. So, if the candle is lit for 4 hours, the total reduction in the candle's length will be 2 * 4 = 8 centimeters.
+
+**Answer:**
+
+The total reduction in the candle's length after it has been burning from 1:00 PM to 5:00 PM is 8 centimeters.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[171 / 200] Evaluting Question
+Response: **Solution:**
+
+The candle melts by 2 centimeters every hour. So, in 4 hours, the candle will melt by 2 * 4 = 8 centimeters.
+
+**Answer:**
+
+The candle will be 8 centimeters shorter after burning from 1:00 PM to 5:00 PM.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[172 / 200] Evaluting Question
+Response: **Solution:**
+
+The candle melts by 2 centimeters every hour, so the number of centimeters shorter the candle will be after burning is also 2 centimeters for each hour it burns.
+
+**Answer:**
+
+The candle will be 2 centimeters shorter after burning.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[173 / 200] Evaluting Question
+Response: **Solution:**
+
+The formula for calculating the original price with a discount is:
+
+Original price = $15.75 + (15.75 * 30%)
+
+To calculate the discount, we need to multiply the original price by the discount percentage (30%).
+
+Original price = $15.75 + (15.75 * 0.3)
+
+Original price = $15.75 + $4.73
+
+Original price = $20.48
+
+**Answer:**
+
+Original price = $20.48
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[174 / 200] Evaluting Question
+Response: **Solution:**
+
+The formula for calculating the discount is 25% of the original price. So, the discount is $195 * 0.25 = $50. The original price of the book is $195 + $50 = $245.
+
+**Answer:**
+
+The original price of the book is $245.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[175 / 200] Evaluting Question
+Response: **Solution:**
+
+The original price of the book is $19.50, and there is a discount of 1/4. So, the original price of the book is $19.50 + 1/4 = $24.00
+
+**Answer:**
+
+$24.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[176 / 200] Evaluting Question
+Response: **Solution:**
+
+The book was bought for $19.50 with a 25% discount and a $1.5 coupon used. So, the total discount is 25% + 1.5 = 26.5%.
+
+The original price of the book is $19.50 / (1 - 0.265) = $25.00
+
+**Answer:**
+
+$25.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[177 / 200] Evaluting Question
+Response: **Solution:**
+
+The original price of the book is $26 and there is a 25% discount. So, the discount is 25% of $26 = $6.50. The new price of the book is $26 - $6.50 = $19.50.
+
+**Answer:**
+
+Kyle spent $19.50 on last year's best-selling book.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[178 / 200] Evaluting Question
+Response: **Solution:**
+
+The book was purchased at a price of $19.50, which includes a 25% reduction from its initial cost. So, the original price of the book can be found by adding 25% to $19.50.
+
+**Final Answer:**
+
+Answer: $25.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[179 / 200] Evaluting Question
+Response: **Solution:**
+
+The book was sold for $19.50 last year, which is with a 25% discount from the original price. So, the original price of the book is $19.50 + 25% = $26.00
+
+**Answer:**
+
+The original price of the book is $26.00.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[180 / 200] Evaluting Question
+Response: **Solution:**
+
+The formula for calculating a discount is 25% of the original price. To find the original price, we need to divide the current price by (1 - 0.25).
+
+**Final Answer:**
+
+Original price of the book = $200
+
+The original price of the book is $200.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[181 / 200] Evaluting Question
+Response: **Solution:**
+
+Marie ordered one chicken meal that costs $15, 5 packs of milk that costs $5 each, and 6 apples that cost $1.50 each. The total cost of these items is $15 + 5 x $5 + 6 x $1.50 = $15 + $25 + $9 = $49.
+
+The remaining $34 is spent on boxes of pizza. Each box of pizza costs $8.50, so Marie ordered a total of $34 / $8.50 = 4 boxes of pizza.
+
+**Answer:**
+
+Marie ordered a total of 4 boxes of pizza.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[182 / 200] Evaluting Question
+Response: **Solution:**
+
+Marie ordered one chicken meal that costs $120, 5 packs of milk that costs $30 each, and 40 apples that cost $1.50 each. The total cost of these items is $120 + 5 x $30 + 40 x $1.50 = $120 + $150 + $60 = $900.
+
+**Answer:**
+
+The number of boxes of pizza that Marie ordered is 0.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[183 / 200] Evaluting Question
+Response: **Solution:**
+
+Marie ordered one chicken meal that costs $12, 5 packs of milk that costs $3.5 each, 4 apples that cost $1.50 each. The total cost of the other items is $12 + 5 x 3.5 + 4 x 1.50 = $52.50.
+
+Therefore, the remaining $52.50 must have been spent on the boxes of pizza. To find out how many boxes of pizza she ordered, we need to divide the remaining cost by the cost of each box of pizza. $52.50 / $8.50 = 6
+
+**Answer:**
+
+Marie ordered a total of 6 boxes of pizza.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[184 / 200] Evaluting Question
+Response: **Solution:**
+
+Marie ordered one chicken meal that cost $12, 5 packs of milk that cost $3 each, 4 apples that cost $1.50 each, 5 candies that cost $1.70 each, and some boxes of pizza. The total cost of the other items is $12 + 5 x 3 + 4 x 1.50 + 5 x 1.70 = $31.00.
+
+The remaining $19.00 is spent on the boxes of pizza. So, Marie ordered a total of 2 boxes of pizza.
+
+**Answer:**
+
+Marie ordered a total of 2 boxes of pizza.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[185 / 200] Evaluting Question
+Response: **Solution:**
+
+Marie ordered one chicken meal that costs $12, 4 apples that cost $1.50 each, and 2 boxes of pizza that cost $8.50 each. The total cost of her order is $12 + 4 x $1.50 + 2 x $8.50 = $12 + $6.00 + $17.00 = $43.00. Since Marie paid a total of $50, the remaining $7.00 must have been paid for the packs of milk. Therefore, each pack of milk costs $7.00 / 5 = $1.40.
+
+**Answer:**
+
+Answer: $1.40
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[186 / 200] Evaluting Question
+Response: **Solution:**
+
+Marie purchased a chicken dish for $12, five milk packets each priced at $3, and four apples each priced at $1.50, so the total cost of these items is $12 + 5 x $3 + 4 x $1.50 = $12 + $15 + $6 = $23.
+
+The remaining amount of money that Marie has is $50 - $23 = $27.
+
+The cost of each pizza box is $8.50, so the number of pizza boxes that Marie bought is $27 / $8.50 = 3.
+
+**Answer:**
+
+Marie bought a total of 3 pizza boxes.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[187 / 200] Evaluting Question
+Response: **Solution:**
+
+Marie went to a food fair and bought the following items:
+
+* One chicken meal for $12
+* 5 packs of milk for $3 each = $15
+* 4 apples for $1.50 each = $6
+* Pizza (50% discount) = $0
+
+Total cost of items = $12 + $15 + $6 = $33
+
+The total amount spent was $50, so the remaining $17 is the cost of the pizzas.
+
+To find the number of boxes of pizza, we need to divide the cost of the pizzas by the cost of each box.
+
+$17 / $8.50 = 2
+
+Therefore, Marie ordered a total of 2 boxes of pizza.
+
+**Answer:**
+
+Marie ordered a total of 2 boxes of pizza.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[188 / 200] Evaluting Question
+Response: **Solution:**
+
+Marie ordered one chicken meal that costs $12, 5 packs of milk that costs $3 each, and 4 apples that cost $1.50 each. The total cost of these items is $12 + 5 x $3 + 4 x $1.50 = $12 + $15 + $6 = $33.
+
+The remaining $17 is spent on boxes of pizza. Therefore, the number of boxes of pizza that Marie ordered is 17 / $2 = 9.
+
+**Answer:**
+
+Marie ordered a total of 9 boxes of pizza.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[189 / 200] Evaluting Question
+Response: **Solution:**
+
+The information given is:
+
+* Mishka bought 4 pairs of shorts, 2 pairs of pants, and 5 pairs of shoes.
+* One pair of shorts costs $16.50.
+* One pair of pants costs $22.50.
+* One pair of shoes costs $42.
+
+To find the total cost of the clothing items, we need to calculate the cost of each item and then add the total cost of all the items together.
+
+**Cost of shorts:**
+4 pairs of shorts x $16.50 = $66.00
+
+**Cost of pants:**
+2 pairs of pants x $22.50 = $45.00
+
+**Cost of shoes:**
+5 pairs of shoes x $42 = $210.00
+
+**Total cost:**
+$66.00 + $45.00 + $210.00 = $311.00
+
+**Answer:**
+
+Answer: $311.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[190 / 200] Evaluting Question
+Response: **Solution:**
+
+The information given is:
+
+* Mishka bought 30 pairs of shorts at $16.50 per pair = $16.50 * 30 = $500.00
+* Mishka bought 30 pairs of pants at $22.50 per pair = $22.50 * 30 = $675.00
+* Mishka bought 30 pairs of shoes at $42.00 per pair = $42.00 * 30 = $1260.00
+
+The total cost of the clothing items is $500.00 + $675.00 + $1260.00 = $2335.00
+
+**Answer:**
+
+The total cost of Mishka's clothing items is $2335.00.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[191 / 200] Evaluting Question
+Response: **Solution:**
+
+- Calculate the cost of each item separately:
+  - 3 pairs of shorts cost $16.50 * 3 = $50.00
+  - 3 pairs of pants cost $22.50 * 3 = $67.50
+  - 3 pairs of shoes cost $42.50 * 3 = $127.50
+
+- Add the cost of each item to get the total cost:
+  - $50.00 + $67.50 + $127.50 = $248.00
+
+**Answer:**
+
+Answer: $248.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[192 / 200] Evaluting Question
+Response: **Solution:**
+
+* Calculate the total cost of the shorts, pants and shoes separately.
+- 3 pairs of shorts cost $16.50 x 3 = $50.00
+- 3 pairs of pants cost $22.50 x 3 = $67.50
+- 3 pairs of shoes cost $42 x 3 = $126.00
+
+* Subtract the coupon discount of $10.00
+
+* Calculate the total cost after the discount.
+$50.00 + $67.50 + $126.00 - $10.00 = $253.50
+
+**Answer:**
+
+$253.50
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[193 / 200] Evaluting Question
+Response: **Solution:**
+
+- Mishka spent a total of $243 on clothing items.
+- She bought 3 pairs of shorts for a total cost of 3 x $16.50 = $50.
+- She bought 3 pairs of pants for a total cost of 3 x $22.50 = $67.50
+
+Therefore, the total cost of the clothes is $50 + $67.50 = $117.50
+
+**Answer:**
+
+$117.50
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[194 / 200] Evaluting Question
+Response: **Solution:**
+
+The cost of a set of shorts is $16.50, a set of pants is $22.50, and a set of shoes is $42. Mishka made a purchase of three sets of each item. So, the total cost of the shorts is 3 x $16.50 = $50.00, the total cost of the pants is 3 x $22.50 = $67.50, and the total cost of the shoes is 3 x $42 = $126.00.
+
+**Answer:**
+
+The total amount that Mishka spent on clothing items is $50.00 + $67.50 + $126.00 = $233.50.
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[195 / 200] Evaluting Question
+Response: **Solution:**
+
+Mishka bought 3 pairs of shorts, each with a matching hat for a total of 3 hats and 3 pairs of shorts for a total of 6 items. Each pair of shorts costs $16.50, so the total cost of the shorts is 6 x $16.50 = $100.
+
+She also bought 3 pairs of pants, each with a free belt. Therefore, the cost of the pants is $0.
+
+She bought 3 pairs of shoes, each with a pair of socks for a total of 6 items. Each pair of shoes costs $42, so the total cost of the shoes is 6 x $42 = $252.
+
+The total cost of all the clothing items is $100 + $0 + $252 = $352.
+
+**Answer:**
+
+$352
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[196 / 200] Evaluting Question
+Response: **Solution:**
+
+The cost of one pair of shorts is $16.50, one pair of pants is $22.50 and one pair of shoes is $42. So, the total cost of the clothing items is $16.50 + $22.50 + $42 = $81.00
+
+**Answer:**
+
+$81.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[197 / 200] Evaluting Question
+Response: **Solution:**
+
+Cynthia eats one serving of ice cream every night, and each carton contains 20 servings of ice cream. So, the number of servings of ice cream she will eat in 45 days is 45.
+
+The cost of one carton of ice cream is $5.00, so the total cost of the ice cream she will eat in 45 days is 45 x $5.00 = $225.00
+
+**Answer:**
+
+$225.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[198 / 200] Evaluting Question
+Response: **Solution:**
+
+Cynthia eats 3 servings of ice cream every night, and each carton contains 150 servings of ice cream. So, the number of servings of ice cream she will eat in a day is 3 * 150 = 450 servings.
+
+The cost of each carton is $40, and she will need to purchase a total of 450 servings, which means she will need to purchase 450 / 150 = 3 cartons of ice cream.
+
+The total cost of the ice cream will be 3 * $40 = $120
+
+**Answer:**
+
+$120
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[199 / 200] Evaluting Question
+Response: **Solution:**
+
+Cynthia eats one serving of ice cream every night, and she buys cartons of ice cream with 15 servings of ice cream per carton at a cost of $4.50 per carton. So, the total number of servings of ice cream she will eat in 60 days is 60.
+
+The total cost of ice cream she will spend is 60 servings of ice cream x $4.50 per carton = $270.00
+
+**Answer:**
+
+$270.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+[200 / 200] Evaluting Question
+Response: **Solution:**
+
+Cynthia eats one serving of ice cream every night, and she buys cartons of ice cream with 15 servings of ice cream per carton at a cost of $4.00 per carton. So, in one month, she will spend $4.00 per carton and eat one serving of ice cream per night. After 30 days, she will have spent a total of $4.00 per carton * 30 = $120.00 on ice cream. After 60 days, she will have spent a total of $120.00 per month * 2 = $240.00 on ice cream.
+
+**Answer:**
+
+$240.00
+  Saved: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/gsm_plus/google_gemma-7b-it__gsm_plus__20260526_0007.json
+ Completed 200 questions for gsm_plus
+Model 'google/gemma-7b-it' released from the notebook process.
+=============
+All experiments are completed. Total time taken: 29.3 minutes
+Results are saved to: /content/drive/MyDrive/COMP6242/Project/llm-failure/results/raw/

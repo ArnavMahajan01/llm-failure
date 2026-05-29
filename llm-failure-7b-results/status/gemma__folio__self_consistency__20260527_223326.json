@@ -1,0 +1,16 @@
+{
+  "run_id": "gemma__folio__self_consistency__20260527_223326",
+  "family": "gemma",
+  "display_name": "google/gemma-7b-it",
+  "hf_model_id": "google/gemma-7b-it",
+  "benchmark": "folio",
+  "condition": "self_consistency",
+  "status": "success",
+  "started_at": "2026-05-27T22:33:26",
+  "finished_at": "2026-05-28T01:18:56",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__folio__self_consistency__20260527_223326.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__folio__self_consistency__20260527_223326__folio__google_gemma-7b-it__folio__20260527_2233.json"
+  ]
+}

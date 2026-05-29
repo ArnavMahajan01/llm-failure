@@ -1,0 +1,16 @@
+{
+  "run_id": "gemma__folio__error_targeted_icl_random__20260527_212702",
+  "family": "gemma",
+  "display_name": "google/gemma-7b-it",
+  "hf_model_id": "google/gemma-7b-it",
+  "benchmark": "folio",
+  "condition": "error_targeted_icl_random",
+  "status": "success",
+  "started_at": "2026-05-27T21:27:02",
+  "finished_at": "2026-05-27T22:00:37",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__folio__error_targeted_icl_random__20260527_212702.log",
+  "output_files": [
+    "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/raw/gemma__folio__error_targeted_icl_random__20260527_212702__folio__google_gemma-7b-it__folio__20260527_2127.json"
+  ]
+}

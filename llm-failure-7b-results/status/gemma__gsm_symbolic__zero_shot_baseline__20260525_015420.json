@@ -1,0 +1,14 @@
+{
+  "run_id": "gemma__gsm_symbolic__zero_shot_baseline__20260525_015420",
+  "family": "gemma",
+  "display_name": "google/gemma-7b-it",
+  "hf_model_id": "google/gemma-7b-it",
+  "benchmark": "gsm_symbolic",
+  "condition": "zero_shot_baseline",
+  "status": "failed",
+  "started_at": "2026-05-25T01:54:20",
+  "finished_at": "2026-05-25T01:54:29",
+  "returncode": 0,
+  "log_path": "/content/drive/MyDrive/COMP6242/Project/llm-failure/llm-failure-7b-results/logs/gemma__gsm_symbolic__zero_shot_baseline__20260525_015420.log",
+  "output_files": []
+}
