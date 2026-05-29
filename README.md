@@ -126,6 +126,11 @@ For Line chart (Fig 6), Stacked Bar chart (Fig 7), Radar Charts (Fig 8 and Fig 9
 python3 -m analysis.heatmap -Llama/Llama3-2-3B --gsm8k
 ```
 
+To run for all datasets and models, run the following command
+```bash
+python3 -m analysis.heatmap --all
+```
+
 Generated charts can then be viewed in ```results/processed/charts```.
 
 ### Raw Results

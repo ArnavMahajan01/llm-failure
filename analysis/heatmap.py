@@ -193,8 +193,9 @@ def _parse_family_tier(model_name):
         return model_name, "other"
     family, raw = parts[0], parts[1]
     for token, tier in [("1-5B", "1B–1.5B"), ("1B", "1B–1.5B"),
-                        ("3B", "3B–4B"),   ("4B", "3B–4B")]:
-        if token in raw:
+                        ("3B", "3B–4B"),   ("4B", "3B–4B"),
+                        ("7b",  "7B"),     ("7B", "7B")]:
+        if token.lower() in raw.lower():
             return family, tier
     return family, "other"
 
@@ -268,9 +269,9 @@ def fig2_family_comparison(df_summary):
 # Does each model get better after each strategy step?
 # One colour per family, two line styles for the two sizes within each family
 FAMILY_STYLES = {
-    "Gemma": {"color": "#4CAF50", "sizes": {"1B": "-",   "4B": "--"}},
+    "Gemma": {"color": "#4CAF50", "sizes": {"1B": "-",   "4B": "--", "7B": ":"}},
     "Llama": {"color": "#E53935", "sizes": {"1.5B": "-", "3B": "--"}},
-    "Qwen":  {"color": "#7B1FA2", "sizes": {"1.5B": "-", "3B": "--"}},
+    "Qwen":  {"color": "#7B1FA2", "sizes": {"1.5B": "-", "3B": "--", "7B": ":"}},
 }
 
 def fig3_strategy_progression(df_summary):
@@ -311,7 +312,7 @@ def fig3_strategy_progression(df_summary):
         style = FAMILY_STYLES.get(family, {"color": "#888", "sizes": {}})
         color = style["color"]
         ls    = style["sizes"].get(size, "-")
-        marker = "o" if ls == "-" else "s"
+        marker = "o" if ls == "-" else ("s" if ls == "--" else "^")
 
         vals = [row[c] for c in cols]
         ax.plot(x, vals, linestyle=ls, marker=marker, color=color,
@@ -329,7 +330,7 @@ def fig3_strategy_progression(df_summary):
     ax.set_xlabel("Prompting Strategy  ->  increasing sophistication", fontsize=10)
     ax.set_title(
         "Fig 3: Does Each Model Improve Across Strategy Steps?\n"
-        "Solid line = smaller model (1B / 1.5B)   Dashed = larger (3B / 4B)",
+        "Solid = smaller (1B / 1.5B)   Dashed = mid (3B / 4B)   Dotted = larger (7B)",
         fontsize=12,
     )
     ax.legend(loc="lower right", fontsize=9, ncol=2, framealpha=0.9)
@@ -632,7 +633,7 @@ def fig6_cumulative_by_benchmark(benchmark, condition="zero_shot", save_dir=None
         style        = FAMILY_STYLES.get(family, {"color": fallback_colors[plotted % len(fallback_colors)], "sizes": {}})
         color        = style["color"]
         ls           = style["sizes"].get(size, "-")
-        marker       = "o" if ls == "-" else "s"
+        marker       = "o" if ls == "-" else ("s" if ls == "--" else "^")
 
         final_acc = running_acc[-1]
         ax.plot(x, running_acc, linewidth=1.8, color=color, linestyle=ls,
@@ -783,8 +784,9 @@ def fig7_error_distribution_by_benchmark(df_errors, df_summary, benchmark, save_
 # Fig 8: Family radar chart — one file per family, both sizes overlaid, fixed benchmark
 # Size → (line style, fill alpha) so the two polygons are visually distinct
 _SIZE_STYLE = {
-    0: {"ls": "-",  "marker": "o", "fill_alpha": 0.20},   # smaller model
-    1: {"ls": "--", "marker": "s", "fill_alpha": 0.10},   # larger model
+    0: {"ls": "-",  "marker": "o", "fill_alpha": 0.20},   # smallest model
+    1: {"ls": "--", "marker": "s", "fill_alpha": 0.10},   # mid model
+    2: {"ls": ":",  "marker": "^", "fill_alpha": 0.05},   # largest model (7B)
 }
 
 
@@ -860,7 +862,7 @@ def fig8_radar_by_benchmark_family(df_summary, benchmark, save_dir=None):
         for rank, size in enumerate(sizes):
             row   = family_df[family_df["size"] == size].iloc[0]
             vals  = [row[col] for col, _ in strategies] + [row[strategies[0][0]]]
-            sstyle = _SIZE_STYLE.get(rank, _SIZE_STYLE[1])
+            sstyle = _SIZE_STYLE.get(rank, _SIZE_STYLE[2])
 
             ax.plot(angles, vals,
                     linestyle=sstyle["ls"], linewidth=2.5, color=color,
@@ -896,7 +898,7 @@ def fig8_radar_by_benchmark_family(df_summary, benchmark, save_dir=None):
         ax.set_title(
             f"Fig 8: {family}  ·  {benchmark_label}\n"
             "Accuracy by ICL Strategy  "
-            "(solid = smaller model, dashed = larger)",
+            "(solid = smallest, dashed = mid, dotted = largest)",
             fontsize=10, pad=22,
         )
         plt.tight_layout()
@@ -959,6 +961,7 @@ def fig9_radar_by_benchmark_tier(df_summary, benchmark, save_dir=None):
     for tier, tier_df in df.groupby("tier"):
         if tier == "other":
             continue
+        # 7B tier: only Gemma and Qwen have 7B models
 
         families = sorted(tier_df["family"].unique())
 
@@ -1037,13 +1040,15 @@ def main():
     # CLI args:
     #   -<model>      → Fig 4 (radar) + Fig 5 (cumulative per dataset)
     #   --<benchmark> → Fig 6 (cumulative per model for that dataset)
-    model_arg = next(
+    run_all      = "--all" in sys.argv[1:]
+    model_arg    = next(
         (arg.lstrip("-") for arg in sys.argv[1:]
          if arg.startswith("-") and not arg.startswith("--")),
         None,
     )
     benchmark_arg = next(
-        (arg.lstrip("-") for arg in sys.argv[1:] if arg.startswith("--")),
+        (arg.lstrip("-") for arg in sys.argv[1:]
+         if arg.startswith("--") and arg != "--all"),
         None,
     )
 
@@ -1052,34 +1057,36 @@ def main():
     fig2_family_comparison(df_summary)
     fig3_strategy_progression(df_summary)
 
-    if model_arg:
-        # Subfolder: charts/<Llama_3B>/
-        model_folder = friendly_model(model_arg).replace(" ", "_")
+    all_models     = sorted(df_summary["model"].unique())     if run_all else ([model_arg]     if model_arg     else [])
+    all_benchmarks = sorted(df_summary["benchmark"].unique()) if run_all else ([benchmark_arg] if benchmark_arg else [])
+
+    for m in all_models:
+        model_folder = friendly_model(m).replace(" ", "_")
         model_dir = os.path.join(CHARTS_DIR, model_folder)
         os.makedirs(model_dir, exist_ok=True)
-        print(f"\nGenerating Fig 4 radar chart for model: {model_arg}")
-        fig4_radar_model(df_summary, model_arg, save_dir=model_dir)
-        print(f"\nGenerating Fig 5 cumulative accuracy for model: {model_arg}")
-        fig5_cumulative_accuracy(model_arg, save_dir=model_dir)
+        print(f"\nGenerating Fig 4 radar chart for model: {m}")
+        fig4_radar_model(df_summary, m, save_dir=model_dir)
+        print(f"\nGenerating Fig 5 cumulative accuracy for model: {m}")
+        fig5_cumulative_accuracy(m, save_dir=model_dir)
 
-    if benchmark_arg:
-        # Subfolder: charts/<gsm8k>/
-        bm_dir = os.path.join(CHARTS_DIR, benchmark_arg)
+    for b in all_benchmarks:
+        bm_dir = os.path.join(CHARTS_DIR, b)
         os.makedirs(bm_dir, exist_ok=True)
-        print(f"\nGenerating Fig 6 cumulative accuracy for benchmark: {benchmark_arg}")
-        fig6_cumulative_by_benchmark(benchmark_arg, save_dir=bm_dir)
-        print(f"\nGenerating Fig 7 error distribution for benchmark: {benchmark_arg}")
+        print(f"\nGenerating Fig 6 cumulative accuracy for benchmark: {b}")
+        fig6_cumulative_by_benchmark(b, save_dir=bm_dir)
+        print(f"\nGenerating Fig 7 error distribution for benchmark: {b}")
         if df_errors is not None:
-            fig7_error_distribution_by_benchmark(df_errors, df_summary, benchmark_arg, save_dir=bm_dir)
+            fig7_error_distribution_by_benchmark(df_errors, df_summary, b, save_dir=bm_dir)
         else:
             print("  Skipping Fig 7: error_distribution.csv not found.")
-        print(f"\nGenerating Fig 8 family radar charts for benchmark: {benchmark_arg}")
-        fig8_radar_by_benchmark_family(df_summary, benchmark_arg, save_dir=bm_dir)
-        print(f"\nGenerating Fig 9 tier radar charts for benchmark: {benchmark_arg}")
-        fig9_radar_by_benchmark_tier(df_summary, benchmark_arg, save_dir=bm_dir)
+        print(f"\nGenerating Fig 8 family radar charts for benchmark: {b}")
+        fig8_radar_by_benchmark_family(df_summary, b, save_dir=bm_dir)
+        print(f"\nGenerating Fig 9 tier radar charts for benchmark: {b}")
+        fig9_radar_by_benchmark_tier(df_summary, b, save_dir=bm_dir)
 
-    if not model_arg and not benchmark_arg:
+    if not run_all and not model_arg and not benchmark_arg:
         print("\nTip: pass optional args to generate per-model/benchmark figures:")
+        print("  --all         → all models (Fig 4+5) + all benchmarks (Fig 6+7+8+9)")
         print("  -<model>      → Fig 4 + Fig 5                 e.g. -Llama/Llama3-2-3B")
         print("  --<benchmark> → Fig 6 + Fig 7 + Fig 8 + Fig 9 e.g. --gsm8k")
 
