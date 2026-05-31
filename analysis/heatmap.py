@@ -857,49 +857,67 @@ def fig8_radar_by_benchmark_family(df_summary, benchmark, save_dir=None):
         ax.set_xticklabels(spoke_labels, fontsize=9)
         ax.set_ylim(0, 1)
         ax.set_yticks([0.2, 0.4, 0.6, 0.8, 1.0])
-        ax.set_yticklabels(["20%", "40%", "60%", "80%", "100%"], fontsize=7, color="grey")
+        ax.set_yticklabels([])
         ax.tick_params(pad=10)
 
+        # Per-rank colours: green = smallest, red = mid, purple = largest
+        RANK_COLORS = ["#2E7D32", "#C62828", "#6A1B9A"]
+
+        # First pass: draw lines and collect vals per size
+        all_vals_per_spoke = []
         for rank, size in enumerate(sizes):
-            row   = family_df[family_df["size"] == size].iloc[0]
-            vals  = [row[col] for col, _ in strategies] + [row[strategies[0][0]]]
+            row    = family_df[family_df["size"] == size].iloc[0]
+            vals   = [row[col] for col, _ in strategies] + [row[strategies[0][0]]]
             sstyle = _SIZE_STYLE.get(rank, _SIZE_STYLE[2])
+            rcolor = RANK_COLORS[rank % len(RANK_COLORS)]
 
             ax.plot(angles, vals,
-                    linestyle=sstyle["ls"], linewidth=2.5, color=color,
+                    linestyle=sstyle["ls"], linewidth=2.5, color=rcolor,
                     marker=sstyle["marker"], markersize=5,
                     label=f"{family} {size}")
-            ax.fill(angles, vals, alpha=sstyle["fill_alpha"], color=color)
+            ax.fill(angles, vals, alpha=sstyle["fill_alpha"], color=rcolor)
 
             # Highlight the Zero-Shot Baseline point
             if bold_idx is not None:
                 ax.scatter(
                     angles[bold_idx],
                     vals[bold_idx],
-                    s=120,
+                    s=100,
                     color="#212121",
                     edgecolors="white",
                     linewidth=1.5,
                     zorder=6,
                 )
 
-            # Accuracy label per spoke, offset outward a little
-            offset = 0.09 + rank * 0.05   # separate labels for each size
-            for angle, val in zip(angles[:-1], vals[:-1]):
+            all_vals_per_spoke.append(vals[:-1])
+
+        # Second pass: annotate with collision-aware nudging
+        for rank, size in enumerate(sizes):
+            vals_list = all_vals_per_spoke[rank]
+            rcolor    = RANK_COLORS[rank % len(RANK_COLORS)]
+            offset_base = 0.08 + rank * 0.03
+            for spoke_i, (angle, val) in enumerate(zip(angles[:-1], vals_list)):
+                others = [
+                    all_vals_per_spoke[r][spoke_i]
+                    for r in range(len(sizes))
+                    if r != rank
+                ]
+                too_close = any(abs(val - o) < 0.15 for o in others)
+                nudge = 0.12 * rank if too_close else 0.0
+                y_pos = min(val + offset_base + nudge, 0.97)
                 ax.annotate(
                     f"{val:.0%}",
                     xy=(angle, val),
-                    xytext=(angle, min(val + offset, 0.97)),
+                    xytext=(angle, y_pos),
                     ha="center", va="center",
-                    fontsize=8, color=color,
+                    fontsize=8, color=rcolor,
                     fontweight="bold" if rank == 0 else "normal",
                 )
 
         ax.legend(loc="lower right", bbox_to_anchor=(1.25, -0.05), fontsize=9, framealpha=0.9)
         ax.set_title(
             f"Fig 8: {family}  ·  {benchmark_label}\n"
-            "Accuracy by ICL Strategy  "
-            "(solid = smallest, dashed = mid, dotted = largest)",
+            "Accuracy by ICL Strategy  ",
             fontsize=10, pad=22,
         )
         plt.tight_layout()
