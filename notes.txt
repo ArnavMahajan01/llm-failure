@@ -1,0 +1,411 @@
+BIG PICTURE:
+
+We are trying to measure in a controlled and reproducible way, how and why small language models fail at reasoning tasks and whether we can fix those specific failure modes by using only smarter prompting without actually retraining the model.
+
+Mail Ouput is a recovery heatmap or a grid where:
+
+1. Rows are error classes (E1 through E7)
+2. Columns are ICL strategies (S1 through S6)
+3. Each cell displays a fraction of questions that were wrong under S0 (zero-shot) that are now correct under that strategy, for that error type. 
+
+Novelty lies in the fact that this heatmap does not exist in the published literature currently for open-weight models 1B-9B. Lot of studies today use GPT-4 or similar closed-weight models. We try to bridge this gap.
+
+NOVELTY CONTRIBUIONS:
+
+1. Strategy 5 (S5) - Error Targeted ICL
+
+The idea is that before running ICL, predict what error class a model will make by using its S0 baseline failure patterns, and then select the few-shot examples that specifically demonstrate that error type and its correction. 
+
+Prior work (Wei et al. 2022 Chain-of-Thought, Brown et al. 2020 GPT-3) shows generic few-shot examples help. But no prior work gives exemplars targeted at the specific failure mode of the specific model on that specific problem type.
+
+2. Per-error-class × per-strategy cross-tabulation
+
+Most papers report: "strategy X improves accuracy by Y% overall." We report: "strategy X improves E1 errors by Y% and E2 errors by Z% but makes E4 worse." This crossed table doesn't exist in the literature for the 1B–8B open-weight model range.
+
+3. Family-at-fixed-size comparison
+
+By testing Llama-3.2-3B, Qwen2.5-3B, and Phi-3.5-mini (all roughly 3B parameters) on identical tasks with identical strategies, we isolate training data / architecture effects from parameter count effects. This is a controlled comparison that avoids the confound of comparing a 1B model to a 7B model.
+
+4. Structured taxonomy with Cohen's k validation
+
+The 7-class taxonomy is validated with inter-annotator agreement (Cohen's κ ≥ 0.6 is the target), which makes the error labels scientifically credible.
+
+
+ACRONYMS & SHORT FORMS
+
+1. ICL - In-Context learning
+2. CoT - Chain of Thought
+3. NF4 - Normal Float 4-bit
+4. BnB - BitsAndBytes
+5. VRAM - Video RAM
+6. HF - HuggingFace
+7. GSM8K - Grade School Math 8k
+8. BBH - BIG-Bench Hard
+9. FOLIO - First-Order Logic Inference with conclusions - A dataset testing formal logical reasoning. 
+10. GSM-IC - GSM with irrelevant context - GSM8K problems with distracting irrelevant sentences added.
+11. GSM-Symbolic - GSM8k with names/number swapped to test robustness 
+12. GSM-Plus - GSM8k with 8 types of perturbations i.e. a small intentional change made to a problem, input, or wording to test whether a model truly understands the task or is just pattern-matching.
+13. S0-S6 - Strategy 0 through 6 - Our 7 ICL prompting strategies
+14. E0-E7 - Error class 0 through 7  and EU - Unclassifiable
+15. k (kappa) - Cohen's Kappa - A statistical measure of inter-rater agreement (0=chance, 1=perfect)
+16. JS divergence - Jensen-Shannon Divergence - A symmetric measure of how different two probability distributions are
+17. McNemar's test - McNemar's chi-squared test - A statistical test for paired binary outcomes (did strategy help?)
+18. gold answer - the correct reference answer from the dataset
+19. robustness ratio - accuracy(perturbed) / accuracy(clean) i.e. how much accuracy drops under pertubation
+20. recovery delta - Accuracy gain from baseline when using a specific ICL strategy
+21. temperature - Controls randomness in generation. 0=deterministic, >1=more random
+22. trivalent - Three valued logic - True/False/Unknown
+
+SOME KEY CONCEPTS:
+
+1. QUANTIZATION :  A technique to reduce model memory usage. A model with 7 billion parameters normally needs ~14GB of GPU memory (using 16-bit floats). With 4-bit NF4 quantization, the same model fits in ~5GB. The model is slightly less accurate, but for inference (not training) this trade-off is acceptable.
+
+2. CHAT TEMPLATE :  Each model family (Llama, Qwen, Phi, Gemma) expects messages formatted in a specific way with specific special tokens. Llama uses <|start_header_id|>, Qwen uses <|im_start|>, Phi uses <|user|>, Gemma doesn't support a system role at all and needs the system message merged into the user turn. format_prompt() in models.py handles all of these.
+
+
+DATA FLOW DIAGRAM
+
+Raw Datasets (HuggingFace)
+        │
+        ▼
+  data_loader.py
+  (normalise → List[Record])
+        │
+        ▼
+  prompts.py <----- config.py (strategies, exemplar bank)
+  (build_prompt → messages list)
+        │
+        ▼
+  models.py
+  (format_prompt → text, generate_response → raw output)
+        │
+        ▼
+  inference.py
+  (run_experiment → List[Result], with checkpointing)
+        │
+        ├──► checkpointing.py (save/load partial results)
+        │
+        ▼
+  taxonomy.py
+  (code_error → error class per result)
+        │
+        ▼
+  metrics.py
+  (accuracy_table, recovery_delta, robustness_ratio, js_divergence)
+        │
+        ▼
+  visualize.py
+  (6 figures → PDF files)
+
+
+
+THE 7 ERROR CLASSES
+
+E0 : Correct
+
+Not an error. The model answered correctly. Used as a label in taxonomy coding so we can distinguish "got it right" from "error not classifiable".
+
+E1 : Arithmetic Slip
+
+What it is: The model set up the problem correctly (right formula, right logical plan) but made a calculation mistake.
+Example: Problem requires 37+48. Model writes "37+48=84" (should be 85) and carries that wrong answer through.
+Detection: Rule-based: scan reasoning trace for arithmetic expressions like "A op B = C" and re-evaluate in Python.
+Why it matters: Arithmetic slips should be fixable by self-consistency (S6) — if you run the same reasoning 5 times with some randomness, the correct arithmetic will win by majority.
+Literature: Mirzadeh et al. 2024 (GSM-Symbolic), Li et al. 2024 (GSM-Plus)
+
+E2 : Distractor Capture
+
+What it is: The model incorporates irrelevant information from the problem into its reasoning.
+Example: "Tom has 24 marbles. His sister has 15 stamps. How many marbles does Tom have after giving 8 away?" A model with E2 might compute "24 - 8 + 15 = 31" using the stamps.
+Detection: Check if numbers from the distractor sentence (tagged in GSM-IC metadata) appear in the model output.
+Why it matters: GSM-IC is specifically designed to test this. Mirzadeh et al. found this is one of the most persistent failure modes — even strong models struggle.
+Literature: Shi et al. 2023 (GSM-IC)
+
+E3 : Premise-Order Sensitivity
+
+What it is: Changing the order of given information causes the model to fail, even though all the information is still present.
+Example: "All A are B. X is A. Is X a B?" works correctly, but "Is X a B? X is A. All A are B." (conclusion first, premises after) causes failure.
+Detection: Very hard to detect rule-based. We flag choice/trivalent non-E6/E7 failures as E3 (heuristic) and use LLM judge to confirm.
+Why it matters: Shows the model is doing surface-level pattern matching ("conclusion-first must be False") rather than logical reasoning.
+Literature: Chen et al. 2024
+
+E4 : Step Skipping
+
+What it is: The model jumps to an answer without showing necessary intermediate steps, often getting the wrong answer as a result.
+Example: "Car travels 60mph for 2 hours, then 40mph for 3 hours." Model says "Total: 50mph × 5 = 250 miles" (wrong: should compute each leg separately = 240 miles).
+Detection: Heuristic: output very short, few reasoning connectives, but problem has many numbers (is complex).
+Why it matters: Especially pronounced in smaller models (<3B). Chen et al. 2025 argues CoT in small models is a "format aligner" not a true reasoner — and step-skipping is evidence of this.
+Literature: Dziri et al. 2023 (Faith and Fate)
+
+E5 : Hallucinated Premise
+
+What it is: The model introduces facts, numbers, or assumptions not present in the problem statement.
+Example: "All mammals breathe air. Whales are mammals." Model says "Whales breathe through gills" — a false external fact not in the premises.
+Detection: Find numbers in output not present in question and not derivable from question numbers; check for factual assertions that contradict or go beyond premises.
+Why it matters: Represents the model "leaking" its pre-training knowledge into a reasoning task that requires ignoring prior knowledge and reasoning from premises alone.
+Literature: Dziri et al. 2023
+
+E6 : Format Error
+
+What it is: The model's reasoning is correct (or approximately correct) but the answer cannot be parsed in the required format.
+Example: Question expects "The answer is [number]." Model says "The answer is approximately five eighths, or about 62.5%" — can't extract a clean number.
+Detection: extract_model_answer() returns None but raw_output has >30 chars (so it's not an empty response).
+Priority: Checked FIRST in rule-based coding, because a format error masks all other error types.
+Literature: GSM-Plus perturbation types
+
+E7 : Logical Connective / Reversal Error
+
+What it is: The model incorrectly applies a logical operator — typically, reversing a negation or confusing "if A then B" with "if B then A" (affirming the consequent).
+Example 1: "No reptiles are warm-blooded. Snakes are reptiles." Model concludes snakes ARE warm-blooded (reversed the negation).
+Example 2: "If it rains, the ground gets wet. The ground is wet." Model concludes "it must be raining" (affirming the consequent; ground could be wet for other reasons).
+Detection: Question has negation words but model output doesn't — negation dropped/reversed.
+Literature: Berglund et al. 2023 (Reversal Curse), FOLIO benchmark
+
+
+The 7 ICL Strategies
+
+S0 : Zero-Shot (Baseline)
+
+What it is: Just give the model the question, no examples, no special instruction.
+Prompt structure: [system, user(question)]
+Purpose: Establishes the baseline accuracy. The error classes from S0 are used to configure S5.
+Expected behaviour: Lowest accuracy; establishes which error types are most common.
+
+S1 : Zero-Shot Chain-of-Thought
+
+What it is: Add "Let's think step by step." to the question. No examples.
+Prompt structure: [system, user(question + "Let's think step by step.")]
+Why it works: Forces the model to generate intermediate reasoning steps rather than jumping to an answer. This simple instruction alone (Kojima et al. 2022) dramatically improves accuracy.
+Expected benefit: Primarily helps E4 (step skipping) and E1 (arithmetic slips — more steps = more chances to catch errors).
+Literature: Kojima et al. 2022
+
+S2 : Few-Shot Answer-Only (k=3)
+
+What it is: 3 worked examples with question → answer, but no reasoning chain shown.
+Prompt structure: [system, user(q1), assistant(answer1), user(q2), assistant(answer2), user(q3), assistant(answer3), user(question)]
+Why it might help: Shows the model the expected output format.
+Expected benefit: Primarily helps E6 (format errors).
+Expected limitation: Without showing reasoning, unlikely to fix E1/E4.
+Literature: Brown et al. 2020
+
+S3 : Few-Shot CoT (k=3)
+
+What it is: 3 worked examples with full step-by-step reasoning chains.
+Prompt structure: Same as S2 but assistant turns contain the full cot field.
+Why it works: Wei et al. 2022 seminal finding: showing worked examples with reasoning dramatically improves complex problem-solving.
+Expected benefit: E1 (shows careful arithmetic), E4 (shows step-by-step approach), E6 (shows correct format).
+Literature: Wei et al. 2022
+
+S4 : Few-Shot CoT (k=5)
+
+What it is: Same as S3 but 5 examples instead of 3.
+Why more might help: More examples = more patterns for the model to generalize from. However, also longer prompt = more memory, more computation.
+Expected: Slightly better than S3, but diminishing returns. May hurt on very small models due to context length.
+
+S5 : Error-Targeted ICL (Novel Contribution ★)
+
+What it is: Choose exemplars based on what error type the model made in the S0 baseline run. Show the model: "Here's the mistake you typically make on this type of problem, and here's how to fix it."
+Prompt structure: Same k-shot format but each exemplar contains INCORRECT reasoning followed by CORRECT reasoning.
+Two-phase dependency:
+
+Phase 1 (S0): Run zero-shot, code errors → {item_id → error_class}
+Phase 2 (S5): For each item, look up its error class, select exemplars from EXEMPLAR_BANK[error_class]
+
+Why it's novel: Standard few-shot shows only correct examples. S5 shows the error explicitly labeled, which is like a targeted corrective lesson. The hypothesis is that labeled error demonstrations help the model avoid that specific mistake.
+
+Ablations:
+
+S5_RANDOM: Uses error-targeted format but picks a random wrong error class (tests: does targeting the right error class matter?)
+S5_CORRECT_ONLY: Uses the correct error class but shows only the correct reasoning, not the error (tests: is showing the error demonstration necessary?)
+
+S6 : Self-Consistency (n=5)
+
+What it is: Generate 5 independent responses using temperature sampling (0.7), then take the majority vote answer.
+Why it works: If a model is mostly right but occasionally makes arithmetic slips, running 5 times and voting averages out the random errors.
+Implementation note: Run sequentially (5 separate calls) not in one num_return_sequences=5 call, to avoid GPU OOM.
+Expected benefit: Best for E1 (arithmetic slips — the deterministic answer eventually comes out by majority).
+Expected limitation: Expensive (5× inference cost). Doesn't help with systematic errors  if the model always makes the same logical mistake, voting 5 times still picks the same wrong answer.
+Literature: Wang et al. 2022
+
+
+THE DATASETS
+
+GSM8K : Grade School Math (Clean Baseline)
+
+What it tests: Multi-step arithmetic word problems at grade-school level.
+Example: "Janet's ducks lay 16 eggs per day. She eats 3 for breakfast and bakes 4 into muffins. How many eggs left over each day?"
+Why we use it: Universal benchmark for math reasoning. Many papers report on it. Clean (no perturbations). Our "ground truth" for model capability.
+Answer format: Integer, extracted after #### delimiter.
+Tier: Easy
+Samples: 100 (from test set)
+Paired with: Itself (the "clean" version for robustness ratios)
+
+GSM-Symbolic (Mirzadeh et al. 2024, Apple)
+
+What it tests: GSM8K problems with names and numbers symbolically substituted. "Janet" becomes "Maria", eggs become widgets, 16 becomes 23, etc.
+Why we use it: Tests whether the model actually solves the problem or memorized the GSM8K training set answers. A model that memorized "Janet's problem = 9" will fail when Janet becomes Maria and 16 becomes 23.
+Novelty of the paper: Showed that frontier models (GPT-4) fail significantly more on symbolic variants, suggesting memorization contamination.
+Answer format: Same as GSM8K.
+Tier: Easy
+Paired with: GSM8K (for robustness ratio = acc(symbolic)/acc(clean))
+
+GSM-Plus (Li et al. 2024)
+
+What it tests: 8 types of perturbations: adding digits, replacing numbers with large/small values, changing operation types, rewriting questions, adding irrelevant information, rephrasing, critical thinking (unanswerable), and more.
+Why we use it: Tests robustness across many perturbation types simultaneously. The "perturbation_type" metadata lets us see which perturbation is hardest.
+Note: Some GSM-Plus questions are intentionally unanswerable ("critical thinking" perturbation) — gold answer is "None".
+Tier: Easy
+
+GSM-IC (Shi et al. 2023)
+
+What it tests: GSM8K problems with irrelevant distractor sentences inserted. Specifically designed to measure E2 (distractor capture).
+Example: "Tom has 24 marbles. His sister collected 15 stamps last week. He gives 8 marbles to his friend. How many marbles does Tom have now?"
+Why we use it: The only dataset specifically designed for our E2 error class. The distractor metadata tells us exactly which numbers are irrelevant.
+Availability issue: This dataset has been hosted under multiple HuggingFace IDs. The code tries several candidates and falls back to a synthetic version if needed.
+Tier: Easy
+
+BBH : BIG-Bench Hard (Logical Deduction subset)
+
+What it tests: Logical deduction problems with multiple objects and constraints. "The red cube is to the left of the purple ball. The blue cylinder is to the right of the green sphere. The yellow cone is between the red cube and the blue cylinder. What is the order from left to right?"
+Answer format: Multiple choice (A)–(E).
+Why we use it: Standard medium-difficulty reasoning benchmark. Tests E3 (premise order) and E7 (logical connectives).
+Tier: Medium
+
+BBH : BIG-Bench Hard (Object Tracking subset)
+
+What it tests: Track objects through a series of swap/move operations. "Alice has a red ball. Bob takes Alice's ball and gives Alice his blue ball. Who has the red ball?"
+Answer format: Multiple choice (A)–(E).
+Why we use it: Tests E4 (step skipping) — multi-step tracking where skipping any step leads to wrong answer.
+Tier: Medium
+
+FOLIO (Yale NLP)
+
+What it tests: First-order logic inference. Given a set of logical premises, determine if a conclusion is True, False, or Unknown (cannot be determined from premises alone).
+Example: "All mammals breathe air. Whales are mammals. Conclusion: Whales breathe air." → True. But if we add "Felix is a cat" and ask "Felix can fly", the answer is Unknown (no info about cats flying in premises).
+Answer format: Trivalent (True / False / Unknown).
+Why we use it: The hardest dataset. Tests E5 (hallucination — model brings in external knowledge it should ignore) and E7 (logical reversals).
+Tier: Hard
+
+
+WHY THESE 9 MODELS?
+
+The selection is designed to allow two types of comparison:
+
+Across parameter counts (scaling): Llama at 1B, 3B, 8B  does performance improve with size? Does error composition change?
+
+Across families at fixed size (family effect): Llama 3B vs Qwen 3B vs Phi 3.5-mini  all roughly 3B parameters, but different training data, architecture details, and RLHF/SFT recipes.
+
+
+EXPERIMENT FLOW
+
+
+For each MODEL in ACTIVE_MODELS:
+     
+ PHASE 1: S0 Baseline
+    		    |
+Load model → Load datasets → Run S0 inference 
+    	  	↓                                                  
+    	  For each result:                                   
+    	  code_error_rulebased() → error_class (E0–E7, EU)
+      		↓                                                  
+ Save: {item_id → error_class}  (baseline_errors)  
+        
+ 
+PHASE 2: ICL Strategies (S1, S3, S5)               
+                                        │
+      Load model → Run each strategy:                   
+      
+      S1: question + "Let's think step by step."         
+      S3: 3 correct CoT examples + question              
+      S5: look up error_class from Phase 1               
+           → choose exemplars from EXEMPLAR_BANK         
+           → exemplar shows error + correction           
+      ↓                                                  
+      For each item: extract answer, check correctness   
+      Checkpoint every 50 items                          
+    
+
+After all models done:
+    Load all checkpoints → full_metrics_report()
+    → accuracy_table, recovery_delta, robustness, error_dist
+    → 6 figures
+    → CSV export
+    → Archive
+
+
+METRICS
+
+1. Exact-Match Accuracy
+
+Formula: # correct / # total
+What it measures: Overall task performance
+Where reported: Table 1, Fig 2, Fig 3
+
+2. Per-Class Recovery Δ (the main result)
+
+Formula: For error class E_k, strategy S_i:
+
+recovery(S_i, E_k) = fraction of items [coded E_k in S0] that are now [correct in S_i]
+
+What it measures: How much does strategy S_i help with error type E_k specifically?
+Why it's interesting: Overall accuracy improvement conflates "it fixed arithmetic slips" with "it fixed format errors" with "it actually made things worse for some error types". This metric separates them.
+Where reported: Fig 1 (main heatmap)
+
+3. Paired Robustness Ratio
+
+Formula: acc(perturbed_dataset) / acc(clean_dataset) on paired items
+What it measures: How much does performance drop when the problem is perturbed?
+Values: 1.0 = no degradation; 0.8 = 20% of accuracy lost under perturbation
+Literature basis: Mirzadeh et al. 2024
+Where reported: Table 2, Fig 5
+
+4. Error Distribution JS Divergence
+
+Formula: Jensen-Shannon divergence between error class distributions of S0 and S_i
+What it measures: How much does ICL strategy S_i change the type of errors the model makes?
+Interpretation: High JSD = the strategy fundamentally shifts the error profile (e.g., fewer arithmetic slips but more format errors). Low JSD = strategy improves accuracy without changing error character.
+Where reported: Fig 6
+
+5. Cohen's κ (Inter-Annotator Agreement)
+
+Formula: (P_observed - P_chance) / (1 - P_chance)
+What it measures: How much do two annotators agree on error labels, correcting for chance agreement?
+Interpretation: κ < 0.4 = poor; 0.4–0.6 = moderate; 0.6–0.8 = substantial; > 0.8 = excellent
+Target: κ ≥ 0.6 (substantial agreement) to validate the taxonomy is meaningful
+Where reported: Reported in §Evaluation section of paper
+
+6. McNemar's Test
+
+Formula: Chi-squared test on n_01 (S0 wrong, S5 right) vs n_10 (S0 right, S5 wrong)
+What it measures: Is the improvement from S0→S5 statistically significant, or could it be chance?
+Output: chi-squared statistic + p-value
+Threshold: p < 0.05 = significant
+Where reported: Footnotes / Appendix
+
+
+FIGURES
+
+1. Fig 1 (heatmap)  ->  Heatmap (error × strategy)  ->  Which ICL strategies fix which errors?
+2. Fig 2 (family)  ->  Grouped bar chart  ->  At 3B, which model family is best?
+3. Fig 3 (scaling)  ->  Line plot (param count)  ->  Does more parameters = better with each strategy?
+4. Fig 4 (error dist)  ->  Stacked bar chart  ->  What types of errors does each model make?
+5. Fig 5 (robustness)  ->  Grouped bar chart  ->  How robust are models to perturbation?
+6. Fig 6 (JS div)  ->  Heatmap (model × strategy)  ->  How much does each strategy shift the error profile?
+
+
+ALTERNATE MODELS WORTH CONSIDERING
+
+1. MATH (Hendrycks et al.)  ->  Harder math (competition level); more arithmetic slips
+2. Very long solutions; slow inference  ->  ARC-Challenge (Clark et al.)  ->  Science MCQ; good for E2/E7  ->  Needs additional error taxonomy adjustment 
+3. HellaSwag  -> Tests commonsense reasoning; easy to confuse with distractors  ->  Less aligned with formal taxonomy
+4. BBEH (Kazemi et al. 2025)  -> "BIG-Bench Extra Hard" is extension of BBH  -> Very new; small models likely saturate at 0%
+5. LogiQA 2.0  ->  Logical reasoning in natural language  ->  Similar coverage to FOLIO but less formal
+6. ProntoQA  ->  Tests pure logical deduction (E3/E7 ideal)  ->  Small dataset
+
+
+ADDITIONAL MODEL WORTH CONSIDERING
+
+1. Mistral-7B-Instruct  ->  Strong open model; good comparator for Qwen-7B  ->  Similar size, may not add much
+2. Phi-3.5-mini  ->  Already in config; strong math focus   ->  Currently disabled due to Transformers bug
+3. DeepSeek-Math-7B  ->  Math-specialized; interesting E1 comparison  ->  HF auth; less general
+4. SmolLM2-1.7B (HuggingFaceTB)  -> Very small; extremely fast; no auth  ->  New model; less literature comparability

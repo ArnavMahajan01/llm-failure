@@ -1,0 +1,326 @@
+\documentclass[10pt,twocolumn]{article}
+
+\usepackage[a4paper,margin=0.68in]{geometry}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+\graphicspath{{../results/processed/charts/}{results/processed/charts/}}
+
+\title{\vspace{-1.2em}Systematic Failure Modes in Small Open-Weight LLMs:\\
+An Error-Taxonomy Study of In-Context Learning Recovery}
+\author{Adithya Rama \and Arnav Mahajan \and Tanisha Sharma\\
+Australian National University, COMP6242 Deep Learning}
+\date{June 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Small open-weight language models are useful local reasoning systems, but aggregate accuracy does not explain why a model failed or whether the failure can be repaired without retraining. This project therefore studies prompting as a recovery mechanism rather than only as an accuracy booster. We evaluate eight Gemma, Llama, and Qwen models over seven reasoning benchmarks, using 200 examples per benchmark where available and 183 FOLIO validation examples. Our main intervention is error-targeted in-context learning (ICL): the prompt shows a typical error pattern and a corrected reasoning trace for that error. We compare it with zero-shot controls, generic and targeted few-shot prompting, two error-targeted ablations, and self-consistency. The central result is that recovery is error-dependent. Self-consistency gives the highest mean accuracy overall (50.4\%), but random few-shot prompting gives the highest mean recovery over baseline failures (32.9\%). Error-targeted ICL is most useful for format/extraction and off-topic failures, while deeper drifting, hallucination, arithmetic-slip, and negation errors remain weakly recoverable. The irregular cases are also informative: Qwen 2 Math 1.5B beats larger general models on arithmetic but not logic, Gemma 3 4B outperforms the older Gemma 1 7B-IT despite being smaller, and some CoT prompts reduce accuracy when the baseline response was already strong. These findings support error-aware prompting as a diagnostic and partial recovery tool, not a complete substitute for stronger reasoning models.
+\end{abstract}
+
+\section{Introduction}
+Large language models (LLMs) can produce convincing multi-step solutions, but a correct-looking trace is not the same as reliable reasoning. This problem is especially important for small open-weight models, because they are attractive for local deployment and low-cost experimentation. A single accuracy number hides whether a model is failing because it uses an irrelevant number, skips a step, reverses a negation, gives an unparseable answer, or drifts midway through otherwise plausible reasoning.
+
+The goal of this project is to measure these failures in a controlled way and test whether our error-targeted prompting strategy can recover them without retraining. We study three questions:
+\begin{enumerate}
+    \item Which failure modes dominate after a baseline reasoning prompt?
+    \item Which failure types are recovered by error-targeted ICL and its ablations?
+    \item Which irregular model-size effects explain why larger models do not always win?
+\end{enumerate}
+
+The main contribution is an error-by-strategy recovery analysis. Instead of only reporting that an intervention improves accuracy, we estimate the fraction of zero-shot failures of each error class that become correct under each prompting strategy. This makes the result more actionable: it separates failures that prompting can repair from failures that need better model capability, better decoding, or external tools.
+
+\section{Related Work}
+Our design builds on work showing that prompting can elicit reasoning behavior. Chain-of-thought (CoT) prompting improves multi-step reasoning when models are sufficiently capable \cite{wei2022cot}, and zero-shot CoT shows that even a short instruction such as ``think step by step'' can improve arithmetic and symbolic tasks \cite{kojima2022zeroshot}. Self-consistency improves CoT by sampling several reasoning paths and voting on the answer \cite{wang2022selfconsistency}. Few-shot prompting more broadly was popularized by GPT-3 style in-context learning \cite{brown2020gpt3}.
+
+The benchmarks were chosen to expose different forms of reasoning fragility. GSM8K is a standard grade-school math dataset \cite{cobbe2021gsm8k}. GSM-Symbolic tests whether models remain robust when GSM-like questions are symbolically varied \cite{mirzadeh2024gsmsymbolic}. GSM-Plus evaluates robustness to multiple perturbation types in mathematical word problems \cite{li2024gsmplus}. GSM-IC inserts irrelevant context into arithmetic problems and directly motivates the distractor-capture error class \cite{shi2023gsmic}. BIG-Bench Hard (BBH) provides difficult reasoning tasks, including logical deduction and object tracking \cite{suzgun2023bbh}. FOLIO evaluates natural-language first-order logic inference \cite{han2022folio}. Our work combines these benchmark families with a shared operational error taxonomy and prompting ablations.
+
+\section{Method}
+
+\subsection{Models and Benchmarks}
+The processed results cover eight open-weight models: Gemma 3 1B, Gemma 3 4B, Gemma 1 7B-IT, Llama 3.2 1B/1.5B, Llama 3.2 3B, Qwen 2 Math 1.5B, Qwen 2.5 3B, and Qwen 2.5 7B Instruct. The originally planned 9B models and LLaVA 7B were not run because of compute limitations. This is recorded as a limitation rather than treated as missing-at-random evidence.
+
+We evaluate seven benchmarks: GSM8K, GSM-Symbolic, GSM-Plus, GSM-IC, BBH logical deduction, BBH object tracking, and FOLIO. Each non-FOLIO model-benchmark run uses 200 evaluation examples after reserving a small pool for few-shot exemplars. FOLIO uses 183 validation examples, reflecting the available split used by the loader. Raw responses are scored with exact-match answer extraction: numeric extraction for GSM-style tasks, option extraction for BBH, and True/False/Uncertain extraction for FOLIO.
+
+\subsection{Prompting Conditions}
+The experiments compare zero-shot controls with increasingly structured ICL strategies:
+\begin{itemize}
+    \item \textbf{Zero-shot baseline}: task-specific instruction and required answer format, without explicit CoT.
+    \item \textbf{Zero-shot CoT}: adds step-by-step reasoning instructions.
+    \item \textbf{Few-shot answer-only}: gives three examples with final answers only.
+    \item \textbf{Random few-shot CoT}: samples examples from a held-out pool.
+    \item \textbf{Targeted few-shot CoT}: selects hand-written examples based on question type, with $k=3$ and $k=5$ variants.
+    \item \textbf{Error-targeted ICL}: shows examples of a predicted error class, including an incorrect trace followed by the corrected trace.
+    \item \textbf{Error-targeted ablations}: random error-class targeting, and correct-only examples without the explicit wrong trace.
+    \item \textbf{Self-consistency}: generates five responses with temperature sampling and takes the majority-vote answer.
+\end{itemize}
+
+\subsection{Novel Error-Targeted ICL}
+The novel part of the project is not simply that we use few-shot examples, but that we try to align the examples with the failure that the model is likely to make. Generic ICL assumes that any correct demonstration may help. Error-targeted ICL instead gives a miniature corrective lesson: it names a failure pattern, shows an incorrect trace, and then shows the corrected reasoning. For example, a distractor-targeted prompt demonstrates ignoring irrelevant ages, locations, or professions before solving the arithmetic; a negation-targeted prompt explicitly unpacks words such as ``no'', ``not'', and ``none''.
+
+We test two ablations to understand what part of the method matters. The random-class ablation keeps the error-demonstration format but uses the wrong error class, testing whether targeting matters. The correct-only ablation keeps the predicted error class but removes the incorrect trace, testing whether models need to see the mistake or only need positive examples. This distinction becomes important in the results: correct-only examples often perform better than explicit mistake demonstrations, suggesting that some small models are more helped by clean target behavior than by longer contrastive prompts.
+
+\subsection{Error Taxonomy and Metrics}
+Each wrong answer is assigned an operational error label using the rule-based taxonomy code. The main observed classes are drifting, format/extraction error, hallucination, distractor capture, arithmetic slip, negation error, off-topic response, and premise-order sensitivity. Some planned labels, such as confidently wrong and multi-hop, occur rarely or not at all under the implemented classifier. This is important: the taxonomy is useful for diagnosis, but the current report should be read as an automatic error-coding study rather than a manually validated annotation study.
+
+We report four metrics:
+\begin{align}
+\mathrm{Accuracy}
+&= \frac{\#\mathrm{correct}}{\#\mathrm{examples}},
+\\[0.5em]
+\mathrm{Recovery}(s,e)
+&=
+\frac{
+\#\left\{
+\begin{array}{l}
+\mathrm{baseline\ wrong\ of\ type\ } e \\
+\mathrm{and\ correct\ under\ } s
+\end{array}
+\right\}
+}{
+\#\{\mathrm{baseline\ wrong\ of\ type\ } e\}
+},
+\\[0.5em]
+\mathrm{Gain}(s)
+&= \mathrm{Accuracy}(s)-\mathrm{Accuracy}(\mathrm{S0}).
+\end{align}
+We also inspect error distributions under zero-shot reasoning failures. In the code, recovery and error-distribution analysis use the \texttt{zero\_shot} condition, which includes step-by-step reasoning, because this produces a reasoning trace that can be error-coded. The stricter \texttt{zero\_shot\_baseline} condition is retained as an accuracy control in Table~\ref{tab:bench-strategies}. Duplicate processed rows for four Qwen 2.5 3B benchmark pairs are averaged for the numerical summaries in this report.
+
+\paragraph{How the recovery heatmap is paired.}
+The heatmap is not comparing two unrelated aggregate error counts. In the raw result files, each benchmark question is stored once, and all prompting conditions are stored under that same question item. The processing code first selects the set
+\[
+D_e =
+\left\{
+i:
+\begin{array}{l}
+\text{question } i \text{ is wrong under the baseline} \\
+\text{reasoning prompt and has error } e
+\end{array}
+\right\}.
+\]
+For every strategy $s$, it then checks those same question indices $i\in D_e$ and counts how many became correct under $s$. Therefore a heatmap cell answers a paired question-level counterfactual: among the exact questions that produced error type $e$ under the baseline reasoning prompt, what fraction were fixed by strategy $s$? This is why the heatmap is useful. It tells us whether an intervention fixes the same failures, not just whether it improves a global average.
+
+\section{Results}
+
+\subsection{Overall Strategy Performance}
+Across unique processed model-benchmark cells, self-consistency gives the highest mean accuracy (50.4\%), followed by random ICL (47.3\%), error-targeted correct-only ICL (47.2\%), few-shot answer-only (46.5\%), and zero-shot CoT (46.1\%). The zero-shot baseline mean is 40.8\%. However, this average hides strong dataset dependence. Table~\ref{tab:bench-strategies} shows that self-consistency is very helpful for GSM8K and GSM-IC, modest for GSM-Plus, FOLIO, and BBH, and nearly neutral for BBH object tracking.
+
+\begin{table*}[t]
+\centering
+\caption{Mean accuracy by benchmark and selected strategy, averaged over unique processed model-benchmark cells after averaging duplicate rows. FOLIO uses 183 examples; other rows use 200 examples per model-benchmark run.}
+\label{tab:bench-strategies}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Benchmark & S0 base & ZS CoT & Random ICL & Targeted CoT & Error-targeted & ET correct-only & Self-cons.\\
+\midrule
+BBH logical deduction & 34.1 & 34.4 & 37.4 & 35.9 & 35.2 & 35.8 & 38.6\\
+BBH object tracking & 38.6 & 37.3 & 38.1 & 32.4 & 38.7 & 33.6 & 37.4\\
+FOLIO & 50.7 & 49.8 & 48.8 & 48.2 & 51.4 & 51.0 & 51.6\\
+GSM8K & 37.5 & 64.1 & 62.9 & 61.6 & 58.4 & 62.0 & 68.0\\
+GSM-IC & 36.7 & 60.2 & 62.4 & 60.4 & 59.2 & 63.7 & 66.8\\
+GSM-Plus & 39.0 & 36.1 & 39.3 & 38.9 & 37.9 & 39.0 & 41.4\\
+GSM-Symbolic & 48.6 & 41.2 & 42.3 & 43.8 & 40.9 & 45.5 & 49.2\\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+The most striking gains occur on arithmetic-style datasets when the baseline underestimates a model's latent capability. For example, Llama 3.2 3B improves from 12.5\% to 89.5\% on GSM8K under self-consistency and from 17.0\% to 91.0\% on GSM-IC. Qwen 2.5 7B improves from 36.0\% to 95.0\% on GSM8K under random ICL and from 34.0\% to 93.0\% on GSM-IC. Gemma 3 4B improves from 24.0\% to 80.5\% on GSM-IC. These results suggest that the baseline prompt can be too weak for some models, and that examples or repeated sampling can unlock behavior not visible under a single direct prompt.
+
+At the same time, prompting is not monotonic. Qwen 2.5 7B drops on GSM-Symbolic from an 83.0\% zero-shot baseline to 53.5\% under zero-shot CoT. Gemma 3 1B drops from 31.0\% to 3.5\% on GSM8K under random ICL. Gemma 1 7B-IT drops from 26.5\% to 1.5\% on GSM-Symbolic under error-targeted ICL. These failures matter because they show that more elaborate prompts can introduce distribution shift, distract a small model, or over-constrain the answer format.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=1\textwidth]{figures/fig1_error_strategy_heatmap.png}
+\caption{Error-by-strategy recovery heatmap from the processed results. The value in each cell is the percentage of zero-shot failures of that error type that become correct under the strategy. Prompting is most effective for format/extraction and off-topic failures, and weaker for arithmetic slips, hallucination, drifting, and negation.}
+\label{fig:heatmap}
+\end{figure*}
+
+\subsection{Which Errors Are Recoverable?}
+Figure~\ref{fig:heatmap} is the central diagnostic result. The most recoverable classes are off-topic responses and format/extraction errors. Error-targeted correct-only ICL recovers 46.6\% of off-topic failures and 40.6\% of format/extraction failures. This makes intuitive sense: when the model has the relevant capability but fails to answer in the required style, demonstrations of the target format are highly useful.
+
+In contrast, deeper reasoning failures are much less recoverable. Arithmetic slips reach only 17.8\% recovery under self-consistency. Drifting reaches 22.2\% under random few-shot prompting. Hallucination reaches 23.4\% under targeted few-shot prompting. Negation reaches 25.8\% under random few-shot prompting but only 10.5\% under self-consistency, suggesting that repeated sampling does not fix systematic logical reversal. Distractor capture reaches 23.5\% under error-targeted correct-only ICL. Premise-order sensitivity has only two observed cases in the processed error table, so its 100\% recovery under $k=5$ targeted ICL is not statistically meaningful.
+
+\begin{table}[t]
+\centering
+\caption{Ablation view of the novel error-targeted method. Values are recovery rates for zero-shot reasoning failures of each type.}
+\label{tab:et-ablation}
+\begin{tabular}{lrrr}
+\toprule
+Error type & ET full & ET random & ET correct-only\\
+\midrule
+Format/extraction & 37.8 & 38.7 & \textbf{40.6}\\
+Off-topic & 45.8 & 41.2 & \textbf{46.6}\\
+Distractor & 19.0 & 21.2 & \textbf{23.5}\\
+Negation & \textbf{24.7} & 16.3 & 17.4\\
+Arithmetic slip & 14.4 & 15.9 & \textbf{16.3}\\
+Drifting & \textbf{19.9} & 19.8 & 19.1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:et-ablation} explains an important irregularity in our novel method. Showing an explicit incorrect trace is not always best. For format/extraction, off-topic, distractor, and arithmetic-slip failures, the correct-only ablation is slightly stronger than the full error-demonstration prompt. This suggests that for small models, the extra incorrect trace can increase prompt complexity or accidentally prime the model with the wrong behavior. The full error-targeted prompt is more useful for negation, where explicitly contrasting the wrong and correct interpretation of a logical operator appears to help. Thus, the main value of error-targeting is not simply ``show the model a mistake''; it is selecting an intervention that matches the failure type.
+
+\begin{table}[t]
+\centering
+\caption{Dominant zero-shot error distribution in the processed results. Counts are aggregated over automatic error labels for wrong zero-shot predictions.}
+\label{tab:error-dist}
+\begin{tabular}{lrr}
+\toprule
+Error type & Count & Share\\
+\midrule
+Drifting & 2727 & 43.0\%\\
+Format/extraction & 2014 & 31.8\%\\
+Hallucination & 542 & 8.6\%\\
+Distractor & 468 & 7.4\%\\
+Arithmetic slip & 264 & 4.2\%\\
+Negation & 190 & 3.0\%\\
+Off-topic & 131 & 2.1\%\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The error distribution in Table~\ref{tab:error-dist} explains why accuracy averages can be misleading. Drifting and format/extraction account for about three quarters of coded zero-shot reasoning failures. Drifting is frequent because many evaluated tasks require a sequence of arithmetic, tracking, or logical updates; once the model takes one wrong intermediate step, the final answer is wrong even if the early reasoning looked plausible. Format/extraction is also frequent because the evaluation is strict: a response can contain useful reasoning but still fail if it reports an intermediate value, omits the required answer form, or gives a final answer that the parser cannot normalize. Hallucination and distractor errors are less frequent overall, but they are concentrated in GSM-Plus, GSM-Symbolic, GSM-IC, and FOLIO-style settings where extra facts or external world knowledge can interfere with premise-only reasoning. Negation is rarer because fewer prompts contain explicit logical negation, but its low recovery is important: it reflects a systematic semantic error rather than a formatting issue.
+
+\subsection{Size, Specialization, and Irregularities}
+The models are used as probes for failure behavior, not as a leaderboard. The most useful comparisons are cases where model size gives an unexpected result. Qwen 2.5 7B Instruct has the highest mean zero-shot baseline accuracy among the processed models (58.9\%) and the highest mean best-strategy accuracy (82.4\%). However, Qwen 2 Math 1.5B is highly specialized: it is excellent on GSM8K (91.5\% baseline) and GSM-IC (85.5\% baseline), but much weaker on BBH and FOLIO. This explains why a smaller model can beat larger models in some radar plots: it is not generally smarter, it is better matched to arithmetic word-problem structure and numeric answer extraction.
+
+The clearest counterexample to parameter-count-only reasoning is the Gemma comparison. Gemma 3 4B averages 57.3\% zero-shot baseline accuracy and 74.4\% mean best-strategy accuracy, whereas the older Gemma 1 7B-IT averages only 20.0\% baseline and 29.0\% best-strategy accuracy. This does not prove a universal law about Gemma, but it does show that training generation, instruction tuning, and data curation can dominate raw size in this experimental setting.
+
+\begin{table*}[t]
+\centering
+\caption{Irregular results that are more informative than the obvious graph trends.}
+\label{tab:irregularities}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.28\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+Observation & Evidence & Likely explanation\\
+\midrule
+Small arithmetic model beats larger general models & Qwen 2 Math 1.5B has 91.5\% baseline on GSM8K and 85.5\% on GSM-IC, but only 30.0\% on BBH logical deduction and 37.7\% on FOLIO. & The model is math-specialized. It has strong priors for arithmetic word problems and numeric answer formatting, but that specialization does not transfer cleanly to symbolic logic or object-order reasoning.\\
+\addlinespace
+Newer smaller Gemma beats older larger Gemma & Gemma 3 4B reaches 57.3\% mean baseline and 74.4\% mean best-strategy accuracy; Gemma 1 7B-IT reaches 20.0\% and 29.0\%. & Parameter count is less important than model generation, post-training data, instruction tuning, and compatibility with strict answer-format prompts.\\
+\addlinespace
+CoT can hurt strong symbolic performance & Qwen 2.5 7B drops on GSM-Symbolic from 83.0\% baseline to 53.5\% under zero-shot CoT. & Extra reasoning can introduce unnecessary intermediate steps, wrong final extraction, or overthinking when the direct prompt already matches the task.\\
+\addlinespace
+Longer or mismatched examples can harm small models & Gemma 3 1B drops from 31.0\% to 3.5\% on GSM8K under random ICL. & Small models are more sensitive to prompt length and example mismatch; extra context may crowd out the actual question or prime the wrong solution pattern.\\
+\addlinespace
+Self-consistency helps arithmetic but not systematic logic & GSM8K and GSM-IC improve strongly under self-consistency, while FOLIO and BBH improve only slightly. & Voting helps when errors are stochastic arithmetic slips. It does not help much when the model repeatedly applies the same wrong logical heuristic.\\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\begin{figure*}[t]
+\centering
+\begin{subfigure}{0.48\textwidth}
+\centering
+\includegraphics[width=\linewidth]{figures/fig2.1_family_comparison.png}
+\caption{Family comparison at 1B--1.5B.}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+\centering
+\includegraphics[width=\linewidth]{figures/fig2.2_family_comparison.png}
+\caption{Family comparison at 3B--4B.}
+\end{subfigure}
+\caption{Family effects at comparable model-size bands. Qwen dominates the 1B--1.5B group because Qwen 2 Math is highly arithmetic-specialized. At 3B--4B, Gemma 3 4B is the strongest family representative in the processed results.}
+\label{fig:family}
+\end{figure*}
+
+Figure~\ref{fig:family} and Figure~\ref{fig:progression} also show that strategy choice interacts with model family. At 1B--1.5B, Qwen is far ahead, while random ICL harms Gemma. At 3B--4B, Gemma and Llama benefit more from prompting than Qwen, especially under self-consistency. For the 7B comparison, Qwen 2.5 7B Instruct benefits substantially from random and error-targeted ICL, while Gemma 1 7B-IT remains weak across most prompting conditions.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/fig3_strategy_progression.png}
+\caption{Strategy progression across models. Accuracy does not increase monotonically with prompt sophistication; several small models are harmed by longer or less well-matched prompts.}
+\label{fig:progression}
+\end{figure}
+
+\subsection{Dataset-Level Patterns}
+The arithmetic datasets separate clean calculation from robustness. GSM8K and GSM-IC show large gains from CoT, examples, and self-consistency. GSM-Plus is harder because perturbations alter the question distribution more broadly; self-consistency improves the mean only from 39.0\% to 41.4\%. GSM-Symbolic is especially revealing because some models perform well under the bare baseline but worse when CoT is added. This suggests that for symbolic perturbations, additional reasoning text can sometimes amplify brittle heuristics rather than improve calculation.
+
+The logic datasets show a different pattern. BBH logical deduction improves only slightly under self-consistency (34.1\% to 38.6\% mean accuracy). BBH object tracking is nearly unchanged at the dataset mean, although individual models vary widely. FOLIO has a relatively high zero-shot baseline mean (50.7\%) and small prompting gains, with self-consistency reaching 51.6\%. In FOLIO, many errors are not arithmetic but answer-format, negation, hallucination, and off-topic failures; these are less amenable to majority voting.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/gsm8k/fig6_gsm8k_cumulative_accuracy.png}
+\caption{GSM8K cumulative zero-shot accuracy. The arithmetic benchmark shows how model accuracy evolves over the processed example sequence.}
+\label{fig:gsm8k-cumulative}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/folio/fig6_folio_cumulative_accuracy.png}
+\caption{FOLIO cumulative zero-shot accuracy. The formal-logic benchmark exposes a different cumulative accuracy profile from the arithmetic benchmark.}
+\label{fig:folio-cumulative}
+\end{figure*}
+
+\section{Discussion}
+The results support three conclusions. First, error-aware prompting is useful as a diagnostic tool. A recovery heatmap can identify whether a model's failures are mostly superficial, such as format and off-topic behavior, or deeper, such as drifting and negation. This is more informative than reporting only a benchmark score.
+
+Second, the novel error-targeted ICL idea is promising but not uniformly superior. The correct-only ablation often performs as well as or better than the version that explicitly shows the incorrect trace. For format/extraction and off-topic failures, this suggests that the model may mainly need positive demonstrations of the expected behavior. For arithmetic slips and logical errors, simply naming and demonstrating the error may not be enough; the model may lack stable internal reasoning or may repeatedly follow the same mistaken heuristic.
+
+Third, model capability and training history shape the value of prompting. Qwen 2 Math 1.5B has strong arithmetic priors but weak general logical reasoning. Qwen 2.5 7B Instruct is the strongest broad model in these results. Gemma 3 4B shows that a newer smaller model can outperform an older larger model. Therefore, a deployment decision should not choose a model by parameter count alone. It should measure the target task, likely failure classes, and the expected intervention.
+
+\section{Limitations and Future Work}
+The largest limitation is compute scope. Planned 9B models and LLaVA 7B were not run, so the study cannot conclude how the methods scale beyond the included 7B text models or into multimodal reasoning. Some processed cells contain duplicate result rows for Qwen 2.5 3B; this report averages those duplicates, but future runs should use a single manifest-backed aggregation pipeline.
+
+The second limitation is error labeling. The implemented taxonomy is automatic and heuristic. It is useful for exploratory diagnosis, but it can misclassify ambiguous responses, especially when one answer contains multiple mistakes. A stronger final study would manually label a stratified sample and report inter-annotator agreement using Cohen's $\kappa$. It would also separate answer-extraction errors from genuine reasoning errors more carefully, because a strict parser can turn a semantically correct answer into a format failure.
+
+The third limitation is prompt fairness. Some strategies use hand-written examples while others sample from the benchmark pool. Long prompts may disadvantage small models by increasing context burden. Future work should control prompt length, example difficulty, and exemplar source, and should run several random seeds for few-shot selection. Finally, self-consistency is expensive because it multiplies inference cost by five; future work should compare it with cheaper verification or tool-assisted arithmetic.
+
+\section{Conclusion}
+This project finds that small open-weight LLM failures are systematic, but not all systematic failures are equally prompt-recoverable. Prompting is strongest when the failure is about task framing, answer format, or maintaining attention to relevant information. It is weaker for arithmetic drifting, hallucination, negation, and logic errors that reflect unstable reasoning rather than missing instructions. The best practical lesson is not ``use a more complex prompt'', but ``match the intervention to the failure type''. Error-aware prompting should therefore be used as a diagnostic layer: it identifies where prompting is sufficient and where model choice, decoding, verification, or external reasoning tools are needed.
+
+\section*{Contribution Declaration}
+
+\begin{itemize}
+     \item \textbf{Aditya Rama} [University ID: u8085375]. Contribution: Helped define the initial experimentation plan and execution roadmap, including the project framing, error-taxonomy motivation, prompting-strategy design, and evaluation flow later agreed on by the group. Ran the assigned Qwen 2.5 7B Instruct and Gemma 1 7B-IT experiments, collected their raw and processed results, and performed interim analysis while the experiments were running. Contributed to result interpretation and presentation quality by identifying issues in the slides and suggesting fixes, although the main slide drafting was completed by teammates. Prepared the initial LaTeX report draft for group review and revision. For the presentation video, presented the final result discussion and conclusion slides. The project was coordinated through mutual guidance rather than a single project lead.
+    \item \textbf{Arnav Mahajan} [University ID: TODO]. Contribution: TODO. Describe work on experiment design, model execution, prompt implementation, result processing, or report review.
+    \item \textbf{Tanisha Sharma} [University ID: TODO]. Contribution: TODO. Describe work on taxonomy design, prompt examples, visualisation, analysis, or report review.
+\end{itemize}
+
+\section*{Generative AI Declaration}
+Generative AI tools were used during the project for assistance with debugging figure/code issues, generating and refining some targeted prompt examples, and improving grammar and clarity of written explanations. For this final report draft, OpenAI Codex was used for assistance with LaTeX drafting, formatting, and refinement of the written report text. We remain responsible for checking all claims, figures, citations, and numerical results before submission. Generative AI was not treated as a source of experimental results.
+
+\begin{thebibliography}{10}
+\bibitem{brown2020gpt3}
+T. Brown et al. Language models are few-shot learners. \textit{NeurIPS}, 2020.
+
+\bibitem{wei2022cot}
+J. Wei et al. Chain-of-thought prompting elicits reasoning in large language models. arXiv:2201.11903, 2022. \url{https://arxiv.org/abs/2201.11903}
+
+\bibitem{kojima2022zeroshot}
+T. Kojima, S. S. Gu, M. Reid, Y. Matsuo, and Y. Iwasawa. Large language models are zero-shot reasoners. arXiv:2205.11916, 2022. \url{https://arxiv.org/abs/2205.11916}
+
+\bibitem{wang2022selfconsistency}
+X. Wang et al. Self-consistency improves chain of thought reasoning in language models. arXiv:2203.11171, 2022. \url{https://arxiv.org/abs/2203.11171}
+
+\bibitem{cobbe2021gsm8k}
+K. Cobbe et al. Training verifiers to solve math word problems. arXiv:2110.14168, 2021. \url{https://arxiv.org/abs/2110.14168}
+
+\bibitem{mirzadeh2024gsmsymbolic}
+I. Mirzadeh, K. Alizadeh, H. Shahrokhi, O. Tuzel, S. Bengio, and M. Farajtabar. GSM-Symbolic: Understanding the limitations of mathematical reasoning in large language models. arXiv:2410.05229, 2024. \url{https://arxiv.org/abs/2410.05229}
+
+\bibitem{li2024gsmplus}
+Q. Li et al. GSM-Plus: A comprehensive benchmark for evaluating the robustness of LLMs as mathematical problem solvers. arXiv:2402.19255, 2024. \url{https://arxiv.org/abs/2402.19255}
+
+\bibitem{shi2023gsmic}
+F. Shi et al. Large language models can be easily distracted by irrelevant context. \textit{ICML}, 2023. \url{https://proceedings.mlr.press/v202/shi23a.html}
+
+\bibitem{suzgun2023bbh}
+M. Suzgun et al. Challenging BIG-Bench tasks and whether chain-of-thought can solve them. \textit{Findings of ACL}, 2023. \url{https://arxiv.org/abs/2210.09261}
+
+\bibitem{han2022folio}
+S. Han et al. FOLIO: Natural language reasoning with first-order logic. arXiv:2209.00840, 2022. \url{https://arxiv.org/abs/2209.00840}
+\end{thebibliography}
+
+\end{document}
+    
